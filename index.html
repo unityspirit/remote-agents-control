@@ -20,12 +20,26 @@
         @media (min-width: 768px) { #app { flex-direction: row; } }
         
         /* Sidebar (Projects) */
-        .sidebar { width: 100%; height: auto; max-height: 30vh; background: #0f172a; color: white; display: flex; flex-direction: column; overflow-y: auto; }
-        @media (min-width: 768px) { .sidebar { width: 280px; height: 100%; max-height: 100vh; border-right: 1px solid var(--border); } }
-        .sidebar-header { padding: 20px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; }
-        .project-tab { padding: 15px 20px; cursor: pointer; border-bottom: 1px solid #1e293b; transition: 0.2s; }
+        .sidebar { width: 100%; flex: 1; min-height: 0; background: #0f172a; color: white; display: flex; flex-direction: column; }
+        @media (min-width: 768px) { .sidebar { flex: none; width: 300px; height: 100%; border-right: 1px solid var(--border); } }
+        .sidebar-header { padding: 16px 20px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; }
+        .sidebar-search { padding: 10px 14px; border-bottom: 1px solid #1e293b; }
+        .sidebar-search input { background: #1e293b; color: white; border: 1px solid #334155; font-size: 16px; }
+        .sidebar-search input::placeholder { color: #94a3b8; }
+        #project_list { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+        .project-tab { padding: 15px 20px; cursor: pointer; border-bottom: 1px solid #1e293b; transition: 0.2s; word-break: break-word; }
         .project-tab:hover { background: #1e293b; }
         .project-tab.active { background: var(--primary); font-weight: bold; }
+
+        /* Mobile: show either the project list OR the open project */
+        .back-btn { display: none; cursor: pointer; color: var(--primary); font-size: 15px; font-weight: 600; margin-right: 12px; white-space: nowrap; }
+        @media (max-width: 767px) {
+            #app.project-open .sidebar { display: none; }
+            #app:not(.project-open) .workspace { display: none !important; }
+            .back-btn { display: inline; }
+            .workspace-header { align-items: center; }
+            #current_project_name { flex: 1; font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        }
         
         /* Main Workspace */
         .workspace { flex: 1; display: flex; flex-direction: column; background: var(--bg); height: 100%; }
@@ -74,8 +88,11 @@
     <!-- Слева: Список проектов -->
     <div class="sidebar">
         <div class="sidebar-header">
-            Проекты
+            <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
             <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.7;" onclick="logout()">Выход</span>
+        </div>
+        <div class="sidebar-search">
+            <input type="text" id="project_search" placeholder="🔎 Поиск папки..." oninput="renderProjects()">
         </div>
         <div id="project_list">
             <div class="loading">Загрузка проектов...</div>
@@ -85,6 +102,7 @@
     <!-- Справа: Рабочая вкладка проекта -->
     <div class="workspace" id="workspace_area" style="display:none;">
         <div class="workspace-header">
+            <span class="back-btn" onclick="closeProject()">← Проекты</span>
             <span id="current_project_name">Выберите проект</span>
             <span style="font-size:12px; font-weight:normal; cursor:pointer; color:var(--primary);" onclick="loadProjectHistory()">🔄 Обновить</span>
         </div>
@@ -151,23 +169,43 @@
         return await res.json();
     }
 
+    let allProjects = [];
+
     async function loadProjects() {
         const list = document.getElementById('project_list');
         try {
             const data = await ghApi('/contents/projects.json');
-            const json = JSON.parse(decodeURIComponent(escape(atob(data.content))));
-            list.innerHTML = '';
-            json.projects.forEach(p => {
-                const div = document.createElement('div');
-                div.className = 'project-tab';
-                div.innerText = '📁 ' + p;
-                div.onclick = () => openProject(p, div);
-                list.appendChild(div);
-            });
+            const json = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
+            allProjects = json.projects || [];
+            renderProjects();
         } catch (e) {
-            list.innerHTML = '<div style="padding:20px; color:#f87171;">Ошибка загрузки. Ноутбук включен?</div>';
+            if (!allProjects.length) {
+                list.innerHTML = '<div style="padding:20px; color:#f87171;">Ошибка загрузки. Ноутбук включен?</div>';
+            }
         }
     }
+
+    function renderProjects() {
+        const list = document.getElementById('project_list');
+        const q = document.getElementById('project_search').value.trim().toLowerCase();
+        const shown = allProjects.filter(p => p.toLowerCase().includes(q));
+        document.getElementById('project_count').innerText = `(${shown.length}${q ? ' из ' + allProjects.length : ''})`;
+        list.innerHTML = '';
+        if (!shown.length) {
+            list.innerHTML = '<div class="loading">Ничего не найдено</div>';
+            return;
+        }
+        shown.forEach(p => {
+            const div = document.createElement('div');
+            div.className = 'project-tab' + (p === currentProject ? ' active' : '');
+            div.textContent = '📁 ' + p;
+            div.onclick = () => openProject(p, div);
+            list.appendChild(div);
+        });
+    }
+
+    // Список папок обновляется сам, чтобы новые проекты появлялись без перезагрузки
+    setInterval(() => { if (token && repo) loadProjects(); }, 60000);
 
     let autoRefreshInterval = null;
 
@@ -176,14 +214,23 @@
         document.querySelectorAll('.project-tab').forEach(el => el.classList.remove('active'));
         if(element) element.classList.add('active');
         
+        document.getElementById('app').classList.add('project-open');
         document.getElementById('workspace_area').style.display = 'flex';
-        document.getElementById('current_project_name').innerText = 'Вкладка проекта: ' + projName;
+        document.getElementById('current_project_name').textContent = projName;
         
         loadProjectHistory(true); // Загружаем с показом спиннера
         
         // Включаем автообновление чата каждые 10 секунд
         if (autoRefreshInterval) clearInterval(autoRefreshInterval);
         autoRefreshInterval = setInterval(() => loadProjectHistory(false), 10000);
+    }
+
+    function closeProject() {
+        document.getElementById('app').classList.remove('project-open');
+        if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+        autoRefreshInterval = null;
+        currentProject = '';
+        renderProjects();
     }
 
     function setCmd(cmd) { document.getElementById('custom_cmd').value = cmd; }
