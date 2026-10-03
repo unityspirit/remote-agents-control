@@ -169,6 +169,8 @@
         }
     }
 
+    let autoRefreshInterval = null;
+
     function openProject(projName, element) {
         currentProject = projName;
         document.querySelectorAll('.project-tab').forEach(el => el.classList.remove('active'));
@@ -177,15 +179,22 @@
         document.getElementById('workspace_area').style.display = 'flex';
         document.getElementById('current_project_name').innerText = 'Вкладка проекта: ' + projName;
         
-        loadProjectHistory();
+        loadProjectHistory(true); // Загружаем с показом спиннера
+        
+        // Включаем автообновление чата каждые 10 секунд
+        if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+        autoRefreshInterval = setInterval(() => loadProjectHistory(false), 10000);
     }
 
     function setCmd(cmd) { document.getElementById('custom_cmd').value = cmd; }
 
-    async function loadProjectHistory() {
+    async function loadProjectHistory(showLoading = false) {
         if (!currentProject) return;
         const area = document.getElementById('history_area');
-        area.innerHTML = '<div class="loading">Синхронизация с ноутбуком...</div>';
+        
+        if (showLoading) {
+            area.innerHTML = '<div class="loading">Синхронизация с ноутбуком...</div>';
+        }
         
         try {
             // Получаем все задачи (Issues)
@@ -193,19 +202,17 @@
             // Фильтруем те, что относятся к этому проекту
             const projIssues = issues.filter(i => i.title.includes(`PROJ: ${currentProject}`));
             
-            area.innerHTML = '';
             if (projIssues.length === 0) {
-                area.innerHTML = '<div class="loading">Нет истории задач. Отправьте первую команду ниже!</div>';
+                if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач. Отправьте первую команду ниже!</div>';
                 return;
             }
 
-            // Рендерим каждую задачу как диалог
+            let newHtml = '';
             for (const issue of projIssues) {
                 const cmdName = issue.title.split('|')[0].replace('CMD:', '').trim();
                 const isClosed = issue.state === 'closed';
                 
                 let commentsHtml = '';
-                // Если задача закрыта или у нее есть комментарии, подтягиваем ответы ИИ (комментарии)
                 if (issue.comments > 0) {
                     const comments = await ghApi(`/issues/${issue.number}/comments`);
                     comments.forEach(c => {
@@ -213,12 +220,11 @@
                     });
                 }
                 
-                // Если комментариев нет, но в самом теле Issue был ответ ИИ (например, я отправлял напрямую)
-                if (issue.body && issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту')) {
+                if (issue.body && (issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту'))) {
                     commentsHtml += `<div class="message-ai">${issue.body}</div>`;
                 }
 
-                area.innerHTML += `
+                newHtml += `
                     <div class="task-card">
                         <div class="task-header">
                             <span>Задача: ${cmdName}</span>
@@ -229,9 +235,14 @@
                     </div>
                 `;
             }
-            area.scrollTop = area.scrollHeight;
+            
+            // Обновляем HTML только если он изменился (чтобы не дергать скролл)
+            if (area.innerHTML !== newHtml) {
+                area.innerHTML = newHtml;
+                area.scrollTop = area.scrollHeight;
+            }
         } catch(e) {
-            area.innerHTML = `<div class="loading" style="color:red;">Ошибка загрузки истории</div>`;
+            console.error(e);
         }
     }
 
