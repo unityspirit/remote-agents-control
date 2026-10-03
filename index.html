@@ -46,12 +46,12 @@
     <div id="login_screen" class="card">
         <h1 style="text-align: center; margin-bottom: 30px;">🏢 Вход в Виртуальный Офис</h1>
         <div class="form-group">
-            <label>GitHub Token (PAT)</label>
-            <input type="password" id="gh_token" placeholder="ghp_...">
+            <label>Логин (Ваш GitHub репозиторий)</label>
+            <input type="text" id="gh_repo" placeholder="Например: unityspirit/remote-agents-control">
         </div>
         <div class="form-group">
-            <label>GitHub Репозиторий</label>
-            <input type="text" id="gh_repo" placeholder="username/remote-agents-control">
+            <label>Пароль (Ваш секретный GitHub Токен)</label>
+            <input type="password" id="gh_token" placeholder="ghp_...">
         </div>
         <button onclick="login()">Войти</button>
         <div id="login_status" class="status error"></div>
