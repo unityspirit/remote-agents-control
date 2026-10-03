@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECC Remote Control</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; background: #f0f2f5; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { font-size: 24px; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="password"], select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #0366d6; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; margin-bottom: 10px; }
+        button:hover { background: #005cc5; }
+        .status { margin-top: 15px; padding: 10px; border-radius: 6px; display: none; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📲 Офис Агентов (Удаленно)</h1>
+    
+    <div class="form-group">
+        <label>GitHub Token (сохраняется в браузере):</label>
+        <input type="password" id="gh_token" placeholder="ghp_...">
+    </div>
+    
+    <div class="form-group">
+        <label>Имя пользователя / Репозиторий:</label>
+        <input type="text" id="gh_repo" placeholder="username/remote-agents-control">
+    </div>
+
+    <hr>
+    
+    <div class="form-group">
+        <label>Выберите проект:</label>
+        <select id="project_select">
+            <option value="System 1">System 1</option>
+            <option value="Unity Inc">Unity Inc</option>
+            <option value="Poker">Poker</option>
+            <option value="Beyondyourfood.com">Beyondyourfood.com</option>
+            <option value="SoloMan">SoloMan</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Выберите команду для агентов:</label>
+        <select id="command_select">
+            <option value="STATUS">Проверить статус системы</option>
+            <option value="AUDIT_SECURITY">Провести аудит безопасности</option>
+            <option value="AUDIT_CODE">Провести ревью кода</option>
+            <option value="PLAN_WEEK">Составить план на неделю</option>
+        </select>
+    </div>
+
+    <button onclick="sendCommand()">Отправить команду на ноутбук 🚀</button>
+    <div id="status_msg" class="status"></div>
+</div>
+
+<script>
+    // Восстанавливаем токен и репо из localStorage
+    document.getElementById('gh_token').value = localStorage.getItem('ecc_gh_token') || '';
+    document.getElementById('gh_repo').value = localStorage.getItem('ecc_gh_repo') || '';
+
+    async function sendCommand() {
+        const token = document.getElementById('gh_token').value;
+        const repo = document.getElementById('gh_repo').value;
+        const project = document.getElementById('project_select').value;
+        const cmd = document.getElementById('command_select').value;
+        const statusEl = document.getElementById('status_msg');
+
+        if (!token || !repo) {
+            statusEl.className = 'status error';
+            statusEl.innerText = 'Пожалуйста, введите токен и репозиторий.';
+            statusEl.style.display = 'block';
+            return;
+        }
+
+        localStorage.setItem('ecc_gh_token', token);
+        localStorage.setItem('ecc_gh_repo', repo);
+
+        const issueTitle = `CMD: ${cmd} | PROJ: ${project}`;
+        const issueBody = `Удаленная команда отправлена с телефона.\n\n**Проект:** ${project}\n**Команда:** ${cmd}\n\n_Ноутбук ответит в комментариях к этому Issue._`;
+
+        statusEl.style.display = 'none';
+
+        try {
+            const response = await fetch(`https://api.github.com/repos/${repo}/issues`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: issueTitle,
+                    body: issueBody
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                statusEl.className = 'status success';
+                statusEl.innerHTML = `✅ Команда отправлена! <a href="${data.html_url}" target="_blank">Посмотреть статус</a>`;
+            } else {
+                const err = await response.json();
+                statusEl.className = 'status error';
+                statusEl.innerText = `❌ Ошибка: ${err.message}`;
+            }
+        } catch (error) {
+            statusEl.className = 'status error';
+            statusEl.innerText = `❌ Ошибка сети: ${error.message}`;
+        }
+        statusEl.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
