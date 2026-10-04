@@ -169,7 +169,13 @@
         const headers = { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' };
         const options = { method, headers };
         if (body) { options.body = JSON.stringify(body); headers['Content-Type'] = 'application/json'; }
-        const res = await fetch(`https://api.github.com/repos/${repo}${path}`, options);
+        
+        let url = `https://api.github.com/repos/${repo}${path}`;
+        if (method === 'GET') {
+            url += (url.includes('?') ? '&' : '?') + 't=' + Date.now();
+        }
+        
+        const res = await fetch(url, options);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return await res.json();
     }
