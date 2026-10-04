@@ -92,8 +92,9 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.7;" onclick="logout()">v3 · Выход</span>
+            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.7;" onclick="logout()">v4 · Выход</span>
         </div>
+        <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
         <div class="sidebar-search">
             <input type="text" id="project_search" placeholder="🔎 Поиск папки..." oninput="renderProjects()">
         </div>
@@ -161,6 +162,7 @@
         document.getElementById('login_screen').style.display = 'none';
         document.getElementById('app').style.display = 'flex';
         loadProjects();
+        loadStatus();
     }
 
     async function ghApi(path, method = 'GET', body = null) {
@@ -174,19 +176,44 @@
 
     let allProjects = [];
 
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    async function readRepoJson(path) {
+        // Данные ноутбука лежат в ветке data; старая копия в main — запасной вариант
+        for (const ref of ['data', 'main']) {
+            try {
+                const data = await ghApi(`/contents/${path}?ref=${ref}`);
+                return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
+            } catch (e) { /* пробуем следующую ветку */ }
+        }
+        return null;
+    }
+
     async function loadProjects() {
         const list = document.getElementById('project_list');
-        try {
-            const data = await ghApi('/contents/projects.json');
-            const json = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
-            allProjects = json.projects || [];
+        const json = await readRepoJson('projects.json');
+        if (json && json.projects) {
+            allProjects = json.projects;
             renderProjects();
-        } catch (e) {
-            if (!allProjects.length) {
-                list.innerHTML = '<div style="padding:20px; color:#f87171;">Ошибка загрузки. Ноутбук включен?</div>';
-            }
+        } else if (!allProjects.length) {
+            list.innerHTML = '<div style="padding:20px; color:#f87171;">Ошибка загрузки списка папок.</div>';
         }
     }
+
+    async function loadStatus() {
+        const el = document.getElementById('laptop_status');
+        const json = await readRepoJson('status.json');
+        if (!json || !json.last_seen) { el.textContent = '⚪ нет данных'; return; }
+        const mins = Math.round((Date.now() - new Date(json.last_seen).getTime()) / 60000);
+        if (mins <= 5) {
+            el.textContent = '🟢 ноутбук на связи';
+        } else {
+            el.textContent = `🔴 ноутбук не отвечает ${mins < 120 ? mins + ' мин' : Math.round(mins / 60) + ' ч'}`;
+        }
+    }
+    setInterval(() => { if (token && repo) loadStatus(); }, 60000);
 
     function renderProjects() {
         const list = document.getElementById('project_list');
@@ -238,11 +265,14 @@
 
     function setCmd(cmd) { document.getElementById('custom_cmd').value = cmd; }
 
+    let lastRenderedHtml = '';
+
     async function loadProjectHistory(showLoading = false) {
         if (!currentProject) return;
         const area = document.getElementById('history_area');
         
         if (showLoading) {
+            lastRenderedHtml = '';
             area.innerHTML = '<div class="loading">Синхронизация с ноутбуком...</div>';
         }
         
@@ -259,26 +289,32 @@
 
             let newHtml = '';
             for (const issue of projIssues) {
-                const cmdName = issue.title.split('|')[0].replace('CMD:', '').trim();
+                const cmdName = escapeHtml(issue.title.split('|')[0].replace('CMD:', '').trim());
                 const isClosed = issue.state === 'closed';
                 
                 let commentsHtml = '';
+                let waitingAgent = false;
                 if (issue.comments > 0) {
                     const comments = await ghApi(`/issues/${issue.number}/comments`);
                     comments.forEach(c => {
-                        commentsHtml += `<div class="message-ai"><b>Ответ ИИ:</b><br>${c.body}</div>`;
+                        if (c.body.includes('ожидает обработки в Antigravity')) waitingAgent = true;
+                        commentsHtml += `<div class="message-ai">${escapeHtml(c.body)}</div>`;
                     });
                 }
                 
                 if (issue.body && (issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту'))) {
-                    commentsHtml += `<div class="message-ai">${issue.body}</div>`;
+                    commentsHtml += `<div class="message-ai">${escapeHtml(issue.body)}</div>`;
                 }
+
+                let badge = '<span class="badge-open">В очереди</span>';
+                if (isClosed) badge = '<span class="badge-closed">Завершено</span>';
+                else if (waitingAgent) badge = '<span class="badge-open">Ждёт агента</span>';
 
                 newHtml += `
                     <div class="task-card">
                         <div class="task-header">
                             <span>Задача: ${cmdName}</span>
-                            <span class="${isClosed ? 'badge-closed' : 'badge-open'}">${isClosed ? 'Завершено' : 'В работе'}</span>
+                            ${badge}
                         </div>
                         <div class="message-user">Вы отправили команду на ноутбук.</div>
                         ${commentsHtml}
@@ -286,8 +322,9 @@
                 `;
             }
             
-            // Обновляем HTML только если он изменился (чтобы не дергать скролл)
-            if (area.innerHTML !== newHtml) {
+            // Перерисовываем только если данные изменились, чтобы не сбрасывать прокрутку
+            if (newHtml !== lastRenderedHtml) {
+                lastRenderedHtml = newHtml;
                 area.innerHTML = newHtml;
                 area.scrollTop = area.scrollHeight;
             }
