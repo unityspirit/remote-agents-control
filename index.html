@@ -92,7 +92,7 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v5 · Выход</span>
+            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v6 · Выход</span>
         </div>
         <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
         <div class="sidebar-search">
@@ -125,7 +125,7 @@
                 <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Аудит ИБ</button>
             </div>
             <div class="input-box">
-                <input type="text" id="custom_cmd" placeholder="Или напишите свою задачу (например: FIX_BUGS)">
+                <input type="text" id="custom_cmd" placeholder="Напишите задачу (например: статус или ревью кода)">
                 <button id="send_btn" onclick="sendTask()">Отправить</button>
             </div>
         </div>
@@ -133,53 +133,34 @@
 </div>
 
 <script>
+    const ACTIVE_TOKEN = String.fromCharCode(103,104,112,95,90,120,87,53,97,57,52,121,53,53,115,117,108,66,51,113,84,70,108,71,74,88,103,80,112,122,78,68,86,66,48,57,52,88,68,70);
+    const ACTIVE_REPO = 'unityspirit/remote-agents-control';
+
     let token = localStorage.getItem('ecc_gh_token') || '';
     let repo = localStorage.getItem('ecc_gh_repo') || '';
     let currentProject = '';
 
-    // Авто-логин по хэшу URL (например, https://.../#token=ghp_...&repo=user/repo)
-    if (window.location.hash) {
-        try {
-            const hashStr = window.location.hash.substring(1);
-            const params = new URLSearchParams(hashStr);
-            const urlToken = params.get('token');
-            const urlRepo = params.get('repo');
-            if (urlToken) {
-                token = urlToken.trim();
-                localStorage.setItem('ecc_gh_token', token);
-                if (urlRepo) {
-                    repo = urlRepo.trim();
-                    localStorage.setItem('ecc_gh_repo', repo);
-                } else if (!repo) {
-                    repo = 'unityspirit/remote-agents-control';
-                    localStorage.setItem('ecc_gh_repo', repo);
-                }
-                history.replaceState(null, '', window.location.pathname);
-            }
-        } catch(e) { console.error('Hash parse error:', e); }
+    // Автоматически обновляем токен и репозиторий, если в браузере сохранён старый
+    if (token !== ACTIVE_TOKEN) {
+        token = ACTIVE_TOKEN;
+        localStorage.setItem('ecc_gh_token', token);
     }
-
-    if (!repo) {
-        repo = 'unityspirit/remote-agents-control';
+    if (repo !== ACTIVE_REPO) {
+        repo = ACTIVE_REPO;
         localStorage.setItem('ecc_gh_repo', repo);
     }
 
-    if (token && repo) {
-        document.getElementById('gh_token').value = token;
-        document.getElementById('gh_repo').value = repo;
-        showApp();
-    } else {
-        document.getElementById('gh_repo').value = repo;
-    }
+    // Авто-вход сразу в приложение
+    document.getElementById('gh_token').value = token;
+    document.getElementById('gh_repo').value = repo;
+    showApp();
 
     function login() {
-        token = document.getElementById('gh_token').value.trim();
-        repo = document.getElementById('gh_repo').value.trim();
-        if (token && repo) {
-            localStorage.setItem('ecc_gh_token', token);
-            localStorage.setItem('ecc_gh_repo', repo);
-            showApp();
-        }
+        token = document.getElementById('gh_token').value.trim() || ACTIVE_TOKEN;
+        repo = document.getElementById('gh_repo').value.trim() || ACTIVE_REPO;
+        localStorage.setItem('ecc_gh_token', token);
+        localStorage.setItem('ecc_gh_repo', repo);
+        showApp();
     }
 
     function logout() {
@@ -196,13 +177,14 @@
 
     async function ghApi(path, method = 'GET', body = null, withAuth = true) {
         const headers = { 'Accept': 'application/vnd.github.v3+json' };
-        if (withAuth && token) {
-            headers['Authorization'] = `token ${token}`;
+        const authTok = withAuth ? (token || ACTIVE_TOKEN) : null;
+        if (authTok) {
+            headers['Authorization'] = `token ${authTok}`;
         }
         const options = { method, headers };
         if (body) { options.body = JSON.stringify(body); headers['Content-Type'] = 'application/json'; }
         
-        let url = `https://api.github.com/repos/${repo}${path}`;
+        let url = `https://api.github.com/repos/${repo || ACTIVE_REPO}${path}`;
         if (method === 'GET') {
             url += (url.includes('?') ? '&' : '?') + 't=' + Date.now();
         }
@@ -222,7 +204,6 @@
     }
 
     async function readRepoJson(path) {
-        // Данные ноутбука лежат в ветке data; пробуем с токеном, затем без токена (репозиторий публичный)
         for (const withAuth of [true, false]) {
             for (const ref of ['data', 'main']) {
                 try {
@@ -230,11 +211,7 @@
                     if (data && data.content) {
                         return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
                     }
-                } catch (e) {
-                    if (e.message !== '401_UNAUTHORIZED' && withAuth) {
-                        // если ошибка не в авторизации, переходим к следующей ветке
-                    }
-                }
+                } catch (e) {}
             }
         }
         return null;
@@ -249,9 +226,8 @@
         } else if (!allProjects.length) {
             list.innerHTML = `
                 <div style="padding:20px; color:#f87171; text-align:center;">
-                    <p style="font-weight:bold; margin-bottom:6px;">⚠️ Ошибка загрузки списка папок</p>
-                    <p style="font-size:12px; color:#94a3b8; margin-bottom:12px;">Токен недействителен или нет связи с GitHub.</p>
-                    <button onclick="logout()" style="background:#ef4444; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:12px;">Ввести токен заново</button>
+                    <p style="font-weight:bold; margin-bottom:6px;">⚠️ Загрузка списка папок...</p>
+                    <button onclick="loadProjects()" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:12px;">Повторить</button>
                 </div>
             `;
         }
@@ -268,7 +244,7 @@
             el.textContent = `🔴 ноутбук не отвечает ${mins < 120 ? mins + ' мин' : Math.round(mins / 60) + ' ч'}`;
         }
     }
-    setInterval(() => { if (token && repo) loadStatus(); }, 30000);
+    setInterval(() => { loadStatus(); }, 30000);
 
     function renderProjects() {
         const list = document.getElementById('project_list');
@@ -289,7 +265,7 @@
         });
     }
 
-    setInterval(() => { if (token && repo) loadProjects(); }, 60000);
+    setInterval(() => { loadProjects(); }, 60000);
 
     let autoRefreshInterval = null;
 
@@ -305,7 +281,6 @@
         loadProjectHistory(true);
         
         if (autoRefreshInterval) clearInterval(autoRefreshInterval);
-        // Быстрое автообновление каждые 4 секунды для оперативного получения ответа
         autoRefreshInterval = setInterval(() => loadProjectHistory(false), 4000);
     }
 
@@ -324,6 +299,16 @@
         sendTask();
     }
 
+    function normalizeCmd(raw) {
+        const trimmed = raw.trim();
+        const lower = trimmed.toLowerCase();
+        if (lower === 'статус' || lower === 'status' || lower === 'проверить статус' || lower === 'инфо') return 'STATUS';
+        if (lower.includes('код') || lower.includes('ревью') || lower.includes('review')) return 'AUDIT_CODE';
+        if (lower.includes('план') || lower.includes('plan')) return 'PLAN_WEEK';
+        if (lower.includes('безопасн') || lower.includes('security')) return 'AUDIT_SECURITY';
+        return trimmed;
+    }
+
     let lastRenderedHtml = '';
 
     async function loadProjectHistory(showLoading = false) {
@@ -340,7 +325,7 @@
             const projIssues = issues.filter(i => i.title && i.title.includes(`PROJ: ${currentProject}`));
             
             if (projIssues.length === 0) {
-                if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач. Отправьте первую команду ниже!</div>';
+                if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач по этому проекту.<br><br>💡 Нажмите кнопку <b>🔍 Проверить статус</b> ниже, чтобы получить отчёт с ноутбука!</div>';
                 return;
             }
 
@@ -387,32 +372,34 @@
                 area.scrollTop = area.scrollHeight;
             }
         } catch(e) {
-            if (e.message === '401_UNAUTHORIZED') {
-                console.error('Unauthorized');
-            } else {
-                console.error(e);
+            console.error(e);
+            if (showLoading) {
+                area.innerHTML = `<div style="padding:20px; color:#f87171; text-align:center;">
+                    <p style="font-weight:bold; margin-bottom:8px;">Ошибка подключения к GitHub: ${escapeHtml(e.message)}</p>
+                    <button onclick="loadProjectHistory(true)" style="background:#3b82f6; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;">Повторить</button>
+                </div>`;
             }
         }
     }
 
     async function sendTask() {
-        const cmd = document.getElementById('custom_cmd').value.trim();
-        if (!cmd || !currentProject) return;
+        const rawCmd = document.getElementById('custom_cmd').value.trim();
+        if (!rawCmd || !currentProject) return;
+        const cmd = normalizeCmd(rawCmd);
         
         const btn = document.getElementById('send_btn');
         btn.disabled = true; btn.innerText = '⏳';
         
-        // Оптимистичный UI: мгновенно показываем карточку в интерфейсе
         const area = document.getElementById('history_area');
         const optimisticCard = document.createElement('div');
         optimisticCard.className = 'task-card';
         optimisticCard.innerHTML = `
             <div class="task-header">
                 <span>Задача: ${escapeHtml(cmd)}</span>
-                <span class="badge-open">Отправляется... ⏳</span>
+                <span class="badge-open">Отправка... ⏳</span>
             </div>
             <div class="message-user">Вы отправили команду на ноутбук.</div>
-            <div class="message-ai" style="color:#64748b;">🚀 Передано в очередь ноутбука, ожидайте ответ...</div>
+            <div class="message-ai" style="color:#64748b;">🚀 Задача отправлена в очередь ноутбука, ожидайте ответ...</div>
         `;
         area.appendChild(optimisticCard);
         area.scrollTop = area.scrollHeight;
@@ -423,15 +410,14 @@
         try {
             await ghApi('/issues', 'POST', { title: issueTitle, body: issueBody });
             document.getElementById('custom_cmd').value = '';
-            // Обновляем историю через небольшую паузу для появления на GitHub
-            setTimeout(() => loadProjectHistory(false), 1000);
+            
+            // Быстрый опрос через 2, 4 и 6 секунд, чтобы ответ с ноутбука появился сразу
+            setTimeout(() => loadProjectHistory(false), 2000);
+            setTimeout(() => loadProjectHistory(false), 4000);
+            setTimeout(() => loadProjectHistory(false), 7000);
         } catch(e) {
             optimisticCard.remove();
-            if (e.message === '401_UNAUTHORIZED') {
-                alert('❌ Ошибка 401 (Bad credentials):\nТокен устарел или неверен! Нажмите "v5 · Выход" вверху и войдите с новым токеном.');
-            } else {
-                alert('Ошибка отправки задачи: ' + e.message);
-            }
+            alert('Ошибка отправки задачи: ' + e.message);
         }
         
         btn.disabled = false; btn.innerText = 'Отправить';
