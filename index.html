@@ -56,12 +56,12 @@
         .badge-closed { background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
         
         .message-user { background: #e0f2fe; padding: 10px; border-radius: 6px; margin-bottom: 10px; font-size: 14px;}
-        .message-ai { background: #f1f5f9; border-left: 3px solid var(--primary); padding: 10px; border-radius: 6px; font-size: 14px; white-space: pre-wrap; }
+        .message-ai { background: #f1f5f9; border-left: 3px solid var(--primary); padding: 10px; border-radius: 6px; font-size: 14px; white-space: pre-wrap; margin-bottom: 6px;}
         
         /* Input Area */
         .input-area { padding: 20px; background: var(--card); border-top: 1px solid var(--border); }
         .action-suggestions { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-        .suggestion-btn { background: #e2e8f0; border: none; padding: 6px 12px; border-radius: 16px; font-size: 13px; cursor: pointer; }
+        .suggestion-btn { background: #e2e8f0; border: none; padding: 6px 12px; border-radius: 16px; font-size: 13px; cursor: pointer; font-weight: 500; }
         .suggestion-btn:hover { background: #cbd5e1; }
         .input-box { display: flex; gap: 10px; }
         .input-box input { flex: 1; }
@@ -92,7 +92,7 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.7;" onclick="logout()">v4 · Выход</span>
+            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v5 · Выход</span>
         </div>
         <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
         <div class="sidebar-search">
@@ -108,7 +108,7 @@
         <div class="workspace-header">
             <span class="back-btn" onclick="closeProject()">← Проекты</span>
             <span id="current_project_name">Выберите проект</span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; color:var(--primary);" onclick="loadProjectHistory()">🔄 Обновить</span>
+            <span style="font-size:12px; font-weight:normal; cursor:pointer; color:var(--primary);" onclick="loadProjectHistory(true)">🔄 Обновить</span>
         </div>
         
         <!-- История задач и ответов ИИ -->
@@ -119,10 +119,10 @@
         <!-- Отправка новой задачи -->
         <div class="input-area">
             <div class="action-suggestions" id="suggestions">
-                <button class="suggestion-btn" onclick="setCmd('STATUS')">🔍 Проверить статус</button>
-                <button class="suggestion-btn" onclick="setCmd('AUDIT_CODE')">💻 Ревью кода</button>
-                <button class="suggestion-btn" onclick="setCmd('PLAN_WEEK')">📅 Составить план</button>
-                <button class="suggestion-btn" onclick="setCmd('AUDIT_SECURITY')">🛡️ Аудит ИБ</button>
+                <button class="suggestion-btn" onclick="quickSend('STATUS')">🔍 Проверить статус</button>
+                <button class="suggestion-btn" onclick="quickSend('AUDIT_CODE')">💻 Ревью кода</button>
+                <button class="suggestion-btn" onclick="quickSend('PLAN_WEEK')">📅 Составить план</button>
+                <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Аудит ИБ</button>
             </div>
             <div class="input-box">
                 <input type="text" id="custom_cmd" placeholder="Или напишите свою задачу (например: FIX_BUGS)">
@@ -137,10 +137,39 @@
     let repo = localStorage.getItem('ecc_gh_repo') || '';
     let currentProject = '';
 
+    // Авто-логин по хэшу URL (например, https://.../#token=ghp_...&repo=user/repo)
+    if (window.location.hash) {
+        try {
+            const hashStr = window.location.hash.substring(1);
+            const params = new URLSearchParams(hashStr);
+            const urlToken = params.get('token');
+            const urlRepo = params.get('repo');
+            if (urlToken) {
+                token = urlToken.trim();
+                localStorage.setItem('ecc_gh_token', token);
+                if (urlRepo) {
+                    repo = urlRepo.trim();
+                    localStorage.setItem('ecc_gh_repo', repo);
+                } else if (!repo) {
+                    repo = 'unityspirit/remote-agents-control';
+                    localStorage.setItem('ecc_gh_repo', repo);
+                }
+                history.replaceState(null, '', window.location.pathname);
+            }
+        } catch(e) { console.error('Hash parse error:', e); }
+    }
+
+    if (!repo) {
+        repo = 'unityspirit/remote-agents-control';
+        localStorage.setItem('ecc_gh_repo', repo);
+    }
+
     if (token && repo) {
         document.getElementById('gh_token').value = token;
         document.getElementById('gh_repo').value = repo;
         showApp();
+    } else {
+        document.getElementById('gh_repo').value = repo;
     }
 
     function login() {
@@ -165,8 +194,11 @@
         loadStatus();
     }
 
-    async function ghApi(path, method = 'GET', body = null) {
-        const headers = { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' };
+    async function ghApi(path, method = 'GET', body = null, withAuth = true) {
+        const headers = { 'Accept': 'application/vnd.github.v3+json' };
+        if (withAuth && token) {
+            headers['Authorization'] = `token ${token}`;
+        }
         const options = { method, headers };
         if (body) { options.body = JSON.stringify(body); headers['Content-Type'] = 'application/json'; }
         
@@ -176,6 +208,9 @@
         }
         
         const res = await fetch(url, options);
+        if (res.status === 401) {
+            throw new Error('401_UNAUTHORIZED');
+        }
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return await res.json();
     }
@@ -187,12 +222,20 @@
     }
 
     async function readRepoJson(path) {
-        // Данные ноутбука лежат в ветке data; старая копия в main — запасной вариант
-        for (const ref of ['data', 'main']) {
-            try {
-                const data = await ghApi(`/contents/${path}?ref=${ref}`);
-                return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
-            } catch (e) { /* пробуем следующую ветку */ }
+        // Данные ноутбука лежат в ветке data; пробуем с токеном, затем без токена (репозиторий публичный)
+        for (const withAuth of [true, false]) {
+            for (const ref of ['data', 'main']) {
+                try {
+                    const data = await ghApi(`/contents/${path}?ref=${ref}`, 'GET', null, withAuth);
+                    if (data && data.content) {
+                        return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
+                    }
+                } catch (e) {
+                    if (e.message !== '401_UNAUTHORIZED' && withAuth) {
+                        // если ошибка не в авторизации, переходим к следующей ветке
+                    }
+                }
+            }
         }
         return null;
     }
@@ -204,14 +247,20 @@
             allProjects = json.projects;
             renderProjects();
         } else if (!allProjects.length) {
-            list.innerHTML = '<div style="padding:20px; color:#f87171;">Ошибка загрузки списка папок.</div>';
+            list.innerHTML = `
+                <div style="padding:20px; color:#f87171; text-align:center;">
+                    <p style="font-weight:bold; margin-bottom:6px;">⚠️ Ошибка загрузки списка папок</p>
+                    <p style="font-size:12px; color:#94a3b8; margin-bottom:12px;">Токен недействителен или нет связи с GitHub.</p>
+                    <button onclick="logout()" style="background:#ef4444; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:12px;">Ввести токен заново</button>
+                </div>
+            `;
         }
     }
 
     async function loadStatus() {
         const el = document.getElementById('laptop_status');
         const json = await readRepoJson('status.json');
-        if (!json || !json.last_seen) { el.textContent = '⚪ нет данных'; return; }
+        if (!json || !json.last_seen) { el.textContent = '⚪ нет данных связи'; return; }
         const mins = Math.round((Date.now() - new Date(json.last_seen).getTime()) / 60000);
         if (mins <= 5) {
             el.textContent = '🟢 ноутбук на связи';
@@ -219,7 +268,7 @@
             el.textContent = `🔴 ноутбук не отвечает ${mins < 120 ? mins + ' мин' : Math.round(mins / 60) + ' ч'}`;
         }
     }
-    setInterval(() => { if (token && repo) loadStatus(); }, 60000);
+    setInterval(() => { if (token && repo) loadStatus(); }, 30000);
 
     function renderProjects() {
         const list = document.getElementById('project_list');
@@ -240,7 +289,6 @@
         });
     }
 
-    // Список папок обновляется сам, чтобы новые проекты появлялись без перезагрузки
     setInterval(() => { if (token && repo) loadProjects(); }, 60000);
 
     let autoRefreshInterval = null;
@@ -254,11 +302,11 @@
         document.getElementById('workspace_area').style.display = 'flex';
         document.getElementById('current_project_name').textContent = projName;
         
-        loadProjectHistory(true); // Загружаем с показом спиннера
+        loadProjectHistory(true);
         
-        // Включаем автообновление чата каждые 10 секунд
         if (autoRefreshInterval) clearInterval(autoRefreshInterval);
-        autoRefreshInterval = setInterval(() => loadProjectHistory(false), 10000);
+        // Быстрое автообновление каждые 4 секунды для оперативного получения ответа
+        autoRefreshInterval = setInterval(() => loadProjectHistory(false), 4000);
     }
 
     function closeProject() {
@@ -270,6 +318,11 @@
     }
 
     function setCmd(cmd) { document.getElementById('custom_cmd').value = cmd; }
+
+    function quickSend(cmd) {
+        document.getElementById('custom_cmd').value = cmd;
+        sendTask();
+    }
 
     let lastRenderedHtml = '';
 
@@ -283,10 +336,8 @@
         }
         
         try {
-            // Получаем все задачи (Issues)
             const issues = await ghApi('/issues?state=all&per_page=100');
-            // Фильтруем те, что относятся к этому проекту
-            const projIssues = issues.filter(i => i.title.includes(`PROJ: ${currentProject}`));
+            const projIssues = issues.filter(i => i.title && i.title.includes(`PROJ: ${currentProject}`));
             
             if (projIssues.length === 0) {
                 if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач. Отправьте первую команду ниже!</div>';
@@ -301,20 +352,22 @@
                 let commentsHtml = '';
                 let waitingAgent = false;
                 if (issue.comments > 0) {
-                    const comments = await ghApi(`/issues/${issue.number}/comments`);
-                    comments.forEach(c => {
-                        if (c.body.includes('ожидает обработки в Antigravity')) waitingAgent = true;
-                        commentsHtml += `<div class="message-ai">${escapeHtml(c.body)}</div>`;
-                    });
+                    try {
+                        const comments = await ghApi(`/issues/${issue.number}/comments`);
+                        comments.forEach(c => {
+                            if (c.body && c.body.includes('ожидает обработки в Antigravity')) waitingAgent = true;
+                            commentsHtml += `<div class="message-ai">${escapeHtml(c.body)}</div>`;
+                        });
+                    } catch(ce) {}
                 }
                 
                 if (issue.body && (issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту'))) {
                     commentsHtml += `<div class="message-ai">${escapeHtml(issue.body)}</div>`;
                 }
 
-                let badge = '<span class="badge-open">В очереди</span>';
-                if (isClosed) badge = '<span class="badge-closed">Завершено</span>';
-                else if (waitingAgent) badge = '<span class="badge-open">Ждёт агента</span>';
+                let badge = '<span class="badge-open">В обработке ⏳</span>';
+                if (isClosed) badge = '<span class="badge-closed">Завершено ✅</span>';
+                else if (waitingAgent) badge = '<span class="badge-open" style="background:#e0e7ff; color:#3730a3;">ИИ анализирует 🧠</span>';
 
                 newHtml += `
                     <div class="task-card">
@@ -328,14 +381,17 @@
                 `;
             }
             
-            // Перерисовываем только если данные изменились, чтобы не сбрасывать прокрутку
             if (newHtml !== lastRenderedHtml) {
                 lastRenderedHtml = newHtml;
                 area.innerHTML = newHtml;
                 area.scrollTop = area.scrollHeight;
             }
         } catch(e) {
-            console.error(e);
+            if (e.message === '401_UNAUTHORIZED') {
+                console.error('Unauthorized');
+            } else {
+                console.error(e);
+            }
         }
     }
 
@@ -346,16 +402,36 @@
         const btn = document.getElementById('send_btn');
         btn.disabled = true; btn.innerText = '⏳';
         
+        // Оптимистичный UI: мгновенно показываем карточку в интерфейсе
+        const area = document.getElementById('history_area');
+        const optimisticCard = document.createElement('div');
+        optimisticCard.className = 'task-card';
+        optimisticCard.innerHTML = `
+            <div class="task-header">
+                <span>Задача: ${escapeHtml(cmd)}</span>
+                <span class="badge-open">Отправляется... ⏳</span>
+            </div>
+            <div class="message-user">Вы отправили команду на ноутбук.</div>
+            <div class="message-ai" style="color:#64748b;">🚀 Передано в очередь ноутбука, ожидайте ответ...</div>
+        `;
+        area.appendChild(optimisticCard);
+        area.scrollTop = area.scrollHeight;
+        
         const issueTitle = `CMD: ${cmd} | PROJ: ${currentProject}`;
         const issueBody = `Задача отправлена с телефона.\nКоманда: ${cmd}`;
         
         try {
             await ghApi('/issues', 'POST', { title: issueTitle, body: issueBody });
             document.getElementById('custom_cmd').value = '';
-            // Сразу отображаем новую задачу (заново грузим)
-            await loadProjectHistory();
+            // Обновляем историю через небольшую паузу для появления на GitHub
+            setTimeout(() => loadProjectHistory(false), 1000);
         } catch(e) {
-            alert('Ошибка отправки: ' + e.message);
+            optimisticCard.remove();
+            if (e.message === '401_UNAUTHORIZED') {
+                alert('❌ Ошибка 401 (Bad credentials):\nТокен устарел или неверен! Нажмите "v5 · Выход" вверху и войдите с новым токеном.');
+            } else {
+                alert('Ошибка отправки задачи: ' + e.message);
+            }
         }
         
         btn.disabled = false; btn.innerText = 'Отправить';
