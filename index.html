@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECC Виртуальный Офис</title>
+    <title>ECC Виртуальный Офис v8</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <style>
-        :root { --primary: #2563eb; --bg: #f1f5f9; --card: #ffffff; --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; height: 100vh; overflow: hidden; }
+        :root { --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; height: 100vh; overflow: hidden; }
         
         /* Login Screen */
         #login_screen { width: 100%; max-width: 400px; margin: auto; background: var(--card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -27,14 +27,14 @@
         @media (min-width: 768px) { .sidebar { flex: none; width: 300px; height: 100%; border-right: 1px solid var(--border); } }
         .sidebar-header { padding: 16px 20px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; }
         .sidebar-search { padding: 10px 14px; border-bottom: 1px solid #1e293b; }
-        .sidebar-search input { background: #1e293b; color: white; border: 1px solid #334155; font-size: 16px; }
+        .sidebar-search input { background: #1e293b; color: white; border: 1px solid #334155; font-size: 16px; border-radius: 6px; }
         .sidebar-search input::placeholder { color: #94a3b8; }
         #project_list { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-        .project-tab { padding: 15px 20px; cursor: pointer; border-bottom: 1px solid #1e293b; transition: 0.2s; word-break: break-word; }
+        .project-tab { padding: 15px 20px; cursor: pointer; border-bottom: 1px solid #1e293b; transition: 0.2s; word-break: break-word; font-size: 14.5px; }
         .project-tab:hover { background: #1e293b; }
         .project-tab.active { background: var(--primary); font-weight: bold; }
 
-        /* Mobile: show either the project list OR the open project */
+        /* Mobile Viewport Management */
         .back-btn { display: none; cursor: pointer; color: var(--primary); font-size: 15px; font-weight: 600; margin-right: 12px; white-space: nowrap; }
         @media (max-width: 767px) {
             #app.project-open .sidebar { display: none; }
@@ -46,26 +46,57 @@
         
         /* Main Workspace */
         .workspace { flex: 1; display: flex; flex-direction: column; background: var(--bg); height: 100%; }
-        .workspace-header { padding: 20px; background: var(--card); border-bottom: 1px solid var(--border); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between;}
+        .workspace-header { padding: 16px 20px; background: var(--card); border-bottom: 1px solid var(--border); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
         
         /* Chat / History Area */
-        .history-area { flex: 1; overflow-y: auto; padding: 20px; }
-        .task-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 15px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .task-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 10px;}
-        .badge-open { background: #fef08a; color: #854d0e; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
-        .badge-closed { background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
+        .history-area { flex: 1; overflow-y: auto; padding: 16px; -webkit-overflow-scrolling: touch; }
+        .task-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+        .task-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 15px; }
+        .badge-open { background: #fef08a; color: #854d0e; padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .badge-closed { background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 12px; }
         
-        .message-user { background: #e0f2fe; padding: 10px; border-radius: 6px; margin-bottom: 10px; font-size: 14px;}
-        .message-ai { background: #f1f5f9; border-left: 3px solid var(--primary); padding: 10px; border-radius: 6px; font-size: 14px; white-space: pre-wrap; margin-bottom: 6px;}
+        .message-user { background: #e0f2fe; color: #0369a1; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; font-weight: 500; }
         
-        /* Input Area */
-        .input-area { padding: 20px; background: var(--card); border-top: 1px solid var(--border); }
-        .action-suggestions { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-        .suggestion-btn { background: #e2e8f0; border: none; padding: 6px 12px; border-radius: 16px; font-size: 13px; cursor: pointer; font-weight: 500; }
-        .suggestion-btn:hover { background: #cbd5e1; }
+        /* AI Formatted Message */
+        .message-ai { background: #ffffff; border-left: 4px solid var(--primary); padding: 14px 16px; border-radius: 8px; font-size: 14px; line-height: 1.6; margin-bottom: 10px; border: 1px solid #f1f5f9; border-left-width: 4px; border-left-color: var(--primary); }
+        .message-ai h3, .message-ai h4, .message-ai h5 { margin: 12px 0 6px 0; color: #0f172a; font-weight: 700; }
+        .message-ai h3 { font-size: 16px; }
+        .message-ai h4 { font-size: 15px; }
+        .message-ai h5 { font-size: 14px; }
+        .message-ai p { margin: 6px 0; }
+        .message-ai ul, .message-ai ol { margin: 6px 0 10px 20px; padding: 0; }
+        .message-ai li { margin-bottom: 4px; }
+        .message-ai hr { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+        .message-ai strong { color: #0f172a; }
+        .inline-code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: #e11d48; }
+        .code-block { background: #0f172a; color: #f8fafc; padding: 12px; border-radius: 6px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.45; margin: 8px 0; }
+        
+        /* Interactive Choice Options (Interactive Buttons in chat) */
+        .choices-box { margin-top: 14px; padding: 14px; background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 10px; }
+        .choices-title { font-size: 13.5px; font-weight: 700; color: #1e40af; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .choices-grid { display: flex; flex-direction: column; gap: 8px; }
+        .choice-btn { display: flex; align-items: center; text-align: left; background: #ffffff; border: 1.5px solid #3b82f6; color: #1d4ed8; padding: 11px 15px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgba(37,99,235,0.08); transition: all 0.15s ease; word-break: break-word; -webkit-tap-highlight-color: transparent; }
+        .choice-btn:hover, .choice-btn:active { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
+        .choice-btn .icon { margin-right: 10px; font-size: 15px; flex-shrink: 0; }
+
+        /* Input Area & Action Suggestions Bar */
+        .input-area { padding: 14px 16px; background: var(--card); border-top: 1px solid var(--border); box-shadow: 0 -2px 6px rgba(0,0,0,0.02); }
+        .action-suggestions { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; align-items: center; }
+        .suggestion-btn { background: #e2e8f0; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 16px; font-size: 12.5px; cursor: pointer; font-weight: 500; transition: background 0.15s; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+        .suggestion-btn:hover, .suggestion-btn:active { background: #cbd5e1; }
+        .suggestion-btn.primary-action { background: #dbeafe; border-color: #93c5fd; color: #1e40af; font-weight: 600; }
+        .suggestion-btn.primary-action:hover { background: #bfdbfe; }
+        
+        .more-toggle-btn { background: #f1f5f9; border: 1px dashed #94a3b8; color: #475569; padding: 5px 11px; border-radius: 16px; font-size: 12px; cursor: pointer; font-weight: 600; }
+        .more-toggle-btn:hover { background: #e2e8f0; }
+        .extra-suggestions { display: none; gap: 6px; flex-wrap: wrap; width: 100%; margin-top: 6px; padding-top: 8px; border-top: 1px dashed #e2e8f0; }
+        .extra-suggestions.show { display: flex; }
+
         .input-box { display: flex; gap: 10px; }
-        .input-box input { flex: 1; }
-        .input-box button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight:bold; }
+        .input-box input { flex: 1; font-size: 15px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; outline: none; }
+        .input-box input:focus { border-color: var(--primary); }
+        .input-box button { background: var(--primary); color: white; border: none; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 14px; white-space: nowrap; }
+        .input-box button:hover { background: var(--primary-hover); }
         
         .loading { text-align: center; padding: 20px; color: var(--text-muted); }
     </style>
@@ -92,7 +123,7 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v7 · Выход</span>
+            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v8 · Выход</span>
         </div>
         <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
         <div class="sidebar-search">
@@ -106,9 +137,11 @@
     <!-- Справа: Рабочая вкладка проекта -->
     <div class="workspace" id="workspace_area" style="display:none;">
         <div class="workspace-header">
-            <span class="back-btn" onclick="closeProject()">← Проекты</span>
-            <span id="current_project_name">Выберите проект</span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; color:var(--primary);" onclick="loadProjectHistory(true)">🔄 Обновить</span>
+            <div style="display:flex; align-items:center;">
+                <span class="back-btn" onclick="closeProject()">← Проекты</span>
+                <span id="current_project_name">Выберите проект</span>
+            </div>
+            <span style="font-size:13px; font-weight:500; cursor:pointer; color:var(--primary); background:#eff6ff; padding:5px 10px; border-radius:6px;" onclick="loadProjectHistory(true)">🔄 Обновить</span>
         </div>
         
         <!-- История задач и ответов ИИ -->
@@ -116,22 +149,35 @@
             <!-- Сюда будут грузиться карточки задач -->
         </div>
 
-        <!-- Отправка новой задачи -->
+        <!-- Отправка новой задачи и кнопки быстрых действий -->
         <div class="input-area">
             <div class="action-suggestions" id="suggestions">
-                <button class="suggestion-btn" onclick="quickSend('STATUS')">🔍 Статус</button>
-                <button class="suggestion-btn" onclick="quickSend('NEXT_STEPS')">🚀 Что делать дальше</button>
-                <button class="suggestion-btn" onclick="quickSend('PLAN_WEEK')">📅 План на неделю</button>
-                <button class="suggestion-btn" onclick="quickSend('FULL_AUDIT')">⚡ Полный аудит</button>
-                <button class="suggestion-btn" onclick="quickSend('AUDIT_CODE')">💻 Ревью кода</button>
-                <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Аудит ИБ</button>
-                <button class="suggestion-btn" onclick="quickSend('FILES')">📂 Список файлов</button>
-                <button class="suggestion-btn" onclick="quickSend('GIT')">🌿 Git статус</button>
-                <button class="suggestion-btn" onclick="quickSend('TESTS')">🧪 Тесты</button>
-                <button class="suggestion-btn" onclick="quickSend('CLEANUP')">🧹 Очистка кэша</button>
+                <!-- Топ-6 основных команд (видны всегда) -->
+                <button class="suggestion-btn primary-action" onclick="quickSend('STATUS')">🔍 Статус</button>
+                <button class="suggestion-btn primary-action" onclick="quickSend('NEXT_STEPS')">🚀 Что дальше</button>
+                <button class="suggestion-btn primary-action" onclick="quickSend('AUDIT_CODE')">💻 Ревью кода</button>
+                <button class="suggestion-btn primary-action" onclick="quickSend('BUGS')">🐛 Поиск багов</button>
+                <button class="suggestion-btn primary-action" onclick="quickSend('PLAN_WEEK')">📅 План недели</button>
+                <button class="suggestion-btn primary-action" onclick="quickSend('FULL_AUDIT')">⚡ Полный аудит</button>
+                
+                <button class="more-toggle-btn" id="toggle_more_btn" onclick="toggleMoreCommands()">➕ Ещё команды (10) ▼</button>
+                
+                <!-- Дополнительные 10 команд (раскрываются по кнопке) -->
+                <div class="extra-suggestions" id="extra_suggestions">
+                    <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Безопасность</button>
+                    <button class="suggestion-btn" onclick="quickSend('ARCH')">🏛️ Архитектура</button>
+                    <button class="suggestion-btn" onclick="quickSend('OPTIMIZE')">⚡ Оптимизация</button>
+                    <button class="suggestion-btn" onclick="quickSend('DOCS')">📝 Создать README</button>
+                    <button class="suggestion-btn" onclick="quickSend('MARKETING')">📢 Маркетинг / Воронка</button>
+                    <button class="suggestion-btn" onclick="quickSend('EXPLAIN')">💡 Разбор проекта</button>
+                    <button class="suggestion-btn" onclick="quickSend('FILES')">📂 Список файлов</button>
+                    <button class="suggestion-btn" onclick="quickSend('GIT')">🌿 Git статус</button>
+                    <button class="suggestion-btn" onclick="quickSend('TESTS')">🧪 Запуск тестов</button>
+                    <button class="suggestion-btn" onclick="quickSend('CLEANUP')">🧹 Очистка кэша</button>
+                </div>
             </div>
             <div class="input-box">
-                <input type="text" id="custom_cmd" placeholder="Напишите задачу (например: статус или ревью кода)">
+                <input type="text" id="custom_cmd" placeholder="Задайте любой вопрос или задачу по проекту...">
                 <button id="send_btn" onclick="sendTask()">Отправить</button>
             </div>
         </div>
@@ -146,7 +192,7 @@
     let repo = localStorage.getItem('ecc_gh_repo') || '';
     let currentProject = '';
 
-    // Автоматически обновляем токен и репозиторий, если в браузере сохранён старый
+    // Автоматически синхронизируем токен и репозиторий
     if (token !== ACTIVE_TOKEN) {
         token = ACTIVE_TOKEN;
         localStorage.setItem('ecc_gh_token', token);
@@ -156,7 +202,7 @@
         localStorage.setItem('ecc_gh_repo', repo);
     }
 
-    // Авто-вход сразу в приложение
+    // Авто-вход
     document.getElementById('gh_token').value = token;
     document.getElementById('gh_repo').value = repo;
     showApp();
@@ -207,6 +253,94 @@
 
     function escapeHtml(s) {
         return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    function renderMarkdown(raw) {
+        if (!raw) return '';
+        let s = raw;
+        s = s.replace(/<!--\s*CHOICES:\s*\[.*?\]\s*-->/gs, '');
+        s = escapeHtml(s);
+        
+        // Code blocks
+        s = s.replace(/```([\s\S]*?)```/g, (m, code) => `<pre class="code-block"><code>${code.trim()}</code></pre>`);
+        // Inline code
+        s = s.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
+        // Headings
+        s = s.replace(/^### (.*$)/gim, '<h4>$1</h4>');
+        s = s.replace(/^#### (.*$)/gim, '<h5>$1</h5>');
+        s = s.replace(/^## (.*$)/gim, '<h3>$1</h3>');
+        // Bold & Italic
+        s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+        // Lists
+        s = s.replace(/^\s*-\s+(.*$)/gim, '<li>$1</li>');
+        s = s.replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>');
+        s = s.replace(/<\/ul>\s*<ul>/g, '');
+        // Hr
+        s = s.replace(/^---$/gim, '<hr>');
+        // Newlines
+        s = s.replace(/\n\n/g, '<br><br>');
+        s = s.replace(/\n/g, '<br>');
+        
+        return s;
+    }
+
+    function extractChoices(text) {
+        if (!text) return [];
+        const choices = [];
+        // 1. Извлекаем из JSON блока <!-- CHOICES: [...] -->
+        const m = text.match(/<!--\s*CHOICES:\s*(\[.*?\])\s*-->/s);
+        if (m) {
+            try {
+                const arr = JSON.parse(m[1]);
+                if (Array.isArray(arr) && arr.length) return arr;
+            } catch(e) {}
+        }
+        // 2. Извлекаем из строк 🔘
+        const lines = text.split('\n');
+        for (const l of lines) {
+            const trimmed = l.trim();
+            if (trimmed.startsWith('🔘')) {
+                let val = trimmed.replace(/^🔘\s*/, '').replace(/^\[(.*?)\]$/, '$1').trim();
+                val = val.replace(/^Вариант\s*\d+\s*:\s*/i, '').trim();
+                if (val && !choices.includes(val)) {
+                    choices.push(val);
+                }
+            }
+        }
+        return choices;
+    }
+
+    function renderAiMessage(rawText) {
+        const choices = extractChoices(rawText);
+        
+        // Убираем текстовые варианты выбора из основного тела, чтобы отрендерить их как кнопки
+        let cleaned = rawText.replace(/###\s*🎯\s*Выберите следующий шаг:[\s\S]*$/i, '').trim();
+        cleaned = cleaned.replace(/<!--\s*CHOICES:[\s\S]*?-->/g, '').trim();
+        
+        let html = renderMarkdown(cleaned || rawText);
+        
+        if (choices.length > 0) {
+            html += `
+                <div class="choices-box">
+                    <div class="choices-title">🎯 Выберите следующий шаг (нажмите для запуска):</div>
+                    <div class="choices-grid">
+                        ${choices.map(c => {
+                            const safeDisplay = escapeHtml(c);
+                            const jsParam = c.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                            return `
+                                <button class="choice-btn" onclick="quickSend('${jsParam}')">
+                                    <span class="icon">👉</span>
+                                    <span>${safeDisplay}</span>
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        return `<div class="message-ai">${html}</div>`;
     }
 
     async function readRepoJson(path) {
@@ -298,7 +432,17 @@
         renderProjects();
     }
 
-    function setCmd(cmd) { document.getElementById('custom_cmd').value = cmd; }
+    function toggleMoreCommands() {
+        const el = document.getElementById('extra_suggestions');
+        const btn = document.getElementById('toggle_more_btn');
+        if (el.classList.contains('show')) {
+            el.classList.remove('show');
+            btn.innerHTML = '➕ Ещё команды (10) ▼';
+        } else {
+            el.classList.add('show');
+            btn.innerHTML = 'Свернуть ▲';
+        }
+    }
 
     function quickSend(cmd) {
         document.getElementById('custom_cmd').value = cmd;
@@ -308,16 +452,24 @@
     function normalizeCmd(raw) {
         const trimmed = raw.trim();
         const lower = trimmed.toLowerCase();
-        if (lower === 'статус' || lower === 'status' || lower === 'проверить статус' || lower === 'инфо') return 'STATUS';
-        if (lower.includes('код') || lower.includes('ревью') || lower.includes('review')) return 'AUDIT_CODE';
-        if (lower.includes('план') || lower.includes('plan')) return 'PLAN_WEEK';
-        if (lower.includes('безопасн') || lower.includes('security')) return 'AUDIT_SECURITY';
-        if (lower.includes('дальше') || lower.includes('next') || lower.includes('шаг') || lower.includes('работ') || lower.includes('изуч')) return 'NEXT_STEPS';
-        if (lower.includes('полный') || lower.includes('full')) return 'FULL_AUDIT';
-        if (lower.includes('файл') || lower.includes('file') || lower.includes('ls') || lower.includes('dir')) return 'FILES';
-        if (lower.includes('git') || lower.includes('гит')) return 'GIT';
-        if (lower.includes('тест') || lower.includes('test')) return 'TESTS';
-        if (lower.includes('очист') || lower.includes('clean') || lower.includes('кэш')) return 'CLEANUP';
+        
+        if (lower === 'статус' || lower === 'status' || lower === 'инфо' || lower === 'state') return 'STATUS';
+        if (lower === 'что дальше' || lower === 'next' || lower === 'next_steps' || lower === 'дальше') return 'NEXT_STEPS';
+        if (lower === 'план' || lower === 'план недели' || lower === 'plan' || lower === 'plan_week') return 'PLAN_WEEK';
+        if (lower === 'полный аудит' || lower === 'full' || lower === 'full_audit') return 'FULL_AUDIT';
+        if (lower === 'ревью' || lower === 'код' || lower === 'код ревью' || lower === 'audit_code') return 'AUDIT_CODE';
+        if (lower === 'безопасность' || lower === 'security' || lower === 'audit_security') return 'AUDIT_SECURITY';
+        if (lower === 'баги' || lower === 'ошибки' || lower === 'bugs') return 'BUGS';
+        if (lower === 'доки' || lower === 'документация' || lower === 'readme' || lower === 'docs') return 'DOCS';
+        if (lower === 'архитектура' || lower === 'arch') return 'ARCH';
+        if (lower === 'оптимизация' || lower === 'optimize') return 'OPTIMIZE';
+        if (lower === 'маркетинг' || lower === 'воронка' || lower === 'marketing') return 'MARKETING';
+        if (lower === 'объясни' || lower === 'разбор' || lower === 'explain') return 'EXPLAIN';
+        if (lower === 'файлы' || lower === 'files' || lower === 'ls' || lower === 'dir') return 'FILES';
+        if (lower === 'git' || lower === 'гит') return 'GIT';
+        if (lower === 'тесты' || lower === 'tests') return 'TESTS';
+        if (lower === 'очистка' || lower === 'кэш' || lower === 'cleanup') return 'CLEANUP';
+        
         return trimmed;
     }
 
@@ -337,7 +489,7 @@
             const projIssues = issues.filter(i => i.title && i.title.includes(`PROJ: ${currentProject}`));
             
             if (projIssues.length === 0) {
-                if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач по этому проекту.<br><br>💡 Нажмите кнопку <b>🔍 Проверить статус</b> ниже, чтобы получить отчёт с ноутбука!</div>';
+                if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач по этому проекту.<br><br>💡 Нажмите <b>🔍 Статус</b> или задайте любой вопрос ниже!</div>';
                 return;
             }
 
@@ -348,18 +500,19 @@
                 
                 let commentsHtml = '';
                 let waitingAgent = false;
+                
                 if (issue.comments > 0) {
                     try {
                         const comments = await ghApi(`/issues/${issue.number}/comments`);
                         comments.forEach(c => {
                             if (c.body && c.body.includes('ожидает обработки в Antigravity')) waitingAgent = true;
-                            commentsHtml += `<div class="message-ai">${escapeHtml(c.body)}</div>`;
+                            commentsHtml += renderAiMessage(c.body);
                         });
                     } catch(ce) {}
                 }
                 
-                if (issue.body && (issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту'))) {
-                    commentsHtml += `<div class="message-ai">${escapeHtml(issue.body)}</div>`;
+                if (issue.body && (issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту') || issue.body.includes('Отчёт с домашнего ноутбука'))) {
+                    commentsHtml += renderAiMessage(issue.body);
                 }
 
                 let badge = '<span class="badge-open">В обработке ⏳</span>';
@@ -372,7 +525,7 @@
                             <span>Задача: ${cmdName}</span>
                             ${badge}
                         </div>
-                        <div class="message-user">Вы отправили команду на ноутбук.</div>
+                        <div class="message-user">Вы отправили задачу на ноутбук: "${cmdName}"</div>
                         ${commentsHtml}
                     </div>
                 `;
@@ -410,8 +563,8 @@
                 <span>Задача: ${escapeHtml(cmd)}</span>
                 <span class="badge-open">Отправка... ⏳</span>
             </div>
-            <div class="message-user">Вы отправили команду на ноутбук.</div>
-            <div class="message-ai" style="color:#64748b;">🚀 Задача отправлена в очередь ноутбука, ожидайте ответ...</div>
+            <div class="message-user">Вы отправили задачу: "${escapeHtml(cmd)}"</div>
+            <div class="message-ai" style="color:#64748b;">🚀 Задача отправлена в автономный контур ноутбука, обработка...</div>
         `;
         area.appendChild(optimisticCard);
         area.scrollTop = area.scrollHeight;
@@ -423,10 +576,9 @@
             await ghApi('/issues', 'POST', { title: issueTitle, body: issueBody });
             document.getElementById('custom_cmd').value = '';
             
-            // Быстрый опрос через 2, 4 и 6 секунд, чтобы ответ с ноутбука появился сразу
             setTimeout(() => loadProjectHistory(false), 2000);
-            setTimeout(() => loadProjectHistory(false), 4000);
-            setTimeout(() => loadProjectHistory(false), 7000);
+            setTimeout(() => loadProjectHistory(false), 4500);
+            setTimeout(() => loadProjectHistory(false), 8000);
         } catch(e) {
             optimisticCard.remove();
             alert('Ошибка отправки задачи: ' + e.message);
