@@ -92,7 +92,7 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v6 · Выход</span>
+            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v7 · Выход</span>
         </div>
         <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
         <div class="sidebar-search">
@@ -119,10 +119,16 @@
         <!-- Отправка новой задачи -->
         <div class="input-area">
             <div class="action-suggestions" id="suggestions">
-                <button class="suggestion-btn" onclick="quickSend('STATUS')">🔍 Проверить статус</button>
+                <button class="suggestion-btn" onclick="quickSend('STATUS')">🔍 Статус</button>
+                <button class="suggestion-btn" onclick="quickSend('NEXT_STEPS')">🚀 Что делать дальше</button>
+                <button class="suggestion-btn" onclick="quickSend('PLAN_WEEK')">📅 План на неделю</button>
+                <button class="suggestion-btn" onclick="quickSend('FULL_AUDIT')">⚡ Полный аудит</button>
                 <button class="suggestion-btn" onclick="quickSend('AUDIT_CODE')">💻 Ревью кода</button>
-                <button class="suggestion-btn" onclick="quickSend('PLAN_WEEK')">📅 Составить план</button>
                 <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Аудит ИБ</button>
+                <button class="suggestion-btn" onclick="quickSend('FILES')">📂 Список файлов</button>
+                <button class="suggestion-btn" onclick="quickSend('GIT')">🌿 Git статус</button>
+                <button class="suggestion-btn" onclick="quickSend('TESTS')">🧪 Тесты</button>
+                <button class="suggestion-btn" onclick="quickSend('CLEANUP')">🧹 Очистка кэша</button>
             </div>
             <div class="input-box">
                 <input type="text" id="custom_cmd" placeholder="Напишите задачу (например: статус или ревью кода)">
@@ -306,6 +312,12 @@
         if (lower.includes('код') || lower.includes('ревью') || lower.includes('review')) return 'AUDIT_CODE';
         if (lower.includes('план') || lower.includes('plan')) return 'PLAN_WEEK';
         if (lower.includes('безопасн') || lower.includes('security')) return 'AUDIT_SECURITY';
+        if (lower.includes('дальше') || lower.includes('next') || lower.includes('шаг') || lower.includes('работ') || lower.includes('изуч')) return 'NEXT_STEPS';
+        if (lower.includes('полный') || lower.includes('full')) return 'FULL_AUDIT';
+        if (lower.includes('файл') || lower.includes('file') || lower.includes('ls') || lower.includes('dir')) return 'FILES';
+        if (lower.includes('git') || lower.includes('гит')) return 'GIT';
+        if (lower.includes('тест') || lower.includes('test')) return 'TESTS';
+        if (lower.includes('очист') || lower.includes('clean') || lower.includes('кэш')) return 'CLEANUP';
         return trimmed;
     }
 
