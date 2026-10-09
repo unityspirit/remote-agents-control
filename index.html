@@ -152,18 +152,20 @@
         <!-- Отправка новой задачи и кнопки быстрых действий -->
         <div class="input-area">
             <div class="action-suggestions" id="suggestions">
-                <!-- Топ-6 основных команд (видны всегда) -->
+                <!-- Топ основных команд (видны всегда) -->
                 <button class="suggestion-btn primary-action" onclick="quickSend('STATUS')">🔍 Статус</button>
                 <button class="suggestion-btn primary-action" onclick="quickSend('NEXT_STEPS')">🚀 Что дальше</button>
+                <button class="suggestion-btn primary-action" onclick="quickSend('EVOLVE')">🧠 Самообучение</button>
                 <button class="suggestion-btn primary-action" onclick="quickSend('AUDIT_CODE')">💻 Ревью кода</button>
                 <button class="suggestion-btn primary-action" onclick="quickSend('BUGS')">🐛 Поиск багов</button>
                 <button class="suggestion-btn primary-action" onclick="quickSend('PLAN_WEEK')">📅 План недели</button>
-                <button class="suggestion-btn primary-action" onclick="quickSend('FULL_AUDIT')">⚡ Полный аудит</button>
                 
-                <button class="more-toggle-btn" id="toggle_more_btn" onclick="toggleMoreCommands()">➕ Ещё команды (10) ▼</button>
+                <button class="more-toggle-btn" id="toggle_more_btn" onclick="toggleMoreCommands()">➕ Ещё команды (11) ▼</button>
                 
-                <!-- Дополнительные 10 команд (раскрываются по кнопке) -->
+                <!-- Дополнительные команды (раскрываются по кнопке) -->
                 <div class="extra-suggestions" id="extra_suggestions">
+                    <button class="suggestion-btn" onclick="quickSend('NOTEBOOKLM')">📚 NotebookLM</button>
+                    <button class="suggestion-btn" onclick="quickSend('FULL_AUDIT')">⚡ Полный аудит</button>
                     <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Безопасность</button>
                     <button class="suggestion-btn" onclick="quickSend('ARCH')">🏛️ Архитектура</button>
                     <button class="suggestion-btn" onclick="quickSend('OPTIMIZE')">⚡ Оптимизация</button>
