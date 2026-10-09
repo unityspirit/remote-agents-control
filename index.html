@@ -8,14 +8,41 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <style>
-        :root { --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0; }
+        :root { 
+            --primary: #3b82f6; --primary-hover: #60a5fa; 
+            --bg: #000000; --card: #111111; 
+            --text: #ffffff; --text-muted: #94a3b8; --border: #333333; 
+            --msg-user-bg: #1e3a8a; --msg-user-text: #bfdbfe;
+            --msg-ai-bg: #111111; --msg-ai-border: #1e3a8a; --msg-ai-text: #ffffff;
+            --choice-bg: #0f172a; --choice-border: #1e3a8a; --choice-text: #60a5fa; --choice-hover: #2563eb;
+            --btn-bg: #1f2937; --btn-border: #374151; --btn-hover: #374151; --btn-text: #f8fafc;
+            --btn-primary-bg: #1e3a8a; --btn-primary-border: #3b82f6; --btn-primary-text: #bfdbfe;
+            --badge-open-bg: #854d0e; --badge-open-text: #fef08a;
+            --badge-closed-bg: #166534; --badge-closed-text: #dcfce7;
+            --badge-ai-bg: #3730a3; --badge-ai-text: #e0e7ff;
+            --input-bg: #000000;
+        }
+        :root.light-theme { 
+            --primary: #2563eb; --primary-hover: #1d4ed8; 
+            --bg: #f8fafc; --card: #ffffff; 
+            --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
+            --msg-user-bg: #e0f2fe; --msg-user-text: #0369a1;
+            --msg-ai-bg: #ffffff; --msg-ai-border: #f1f5f9; --msg-ai-text: #0f172a;
+            --choice-bg: #eff6ff; --choice-border: #93c5fd; --choice-text: #1e40af; --choice-hover: #2563eb;
+            --btn-bg: #e2e8f0; --btn-border: #cbd5e1; --btn-hover: #cbd5e1; --btn-text: #0f172a;
+            --btn-primary-bg: #dbeafe; --btn-primary-border: #93c5fd; --btn-primary-text: #1e40af;
+            --badge-open-bg: #fef08a; --badge-open-text: #854d0e;
+            --badge-closed-bg: #dcfce7; --badge-closed-text: #166534;
+            --badge-ai-bg: #e0e7ff; --badge-ai-text: #3730a3;
+            --input-bg: #ffffff;
+        }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; height: 100vh; overflow: hidden; }
         
         /* Login Screen */
-        #login_screen { width: 100%; max-width: 400px; margin: auto; background: var(--card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        #login_screen { width: 100%; max-width: 400px; margin: auto; background: var(--card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--border); }
         .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; }
-        input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; color: var(--text); }
+        input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; background: var(--input-bg); color: var(--text); }
         button.primary { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
         
         /* App Layout */
@@ -52,14 +79,14 @@
         .history-area { flex: 1; overflow-y: auto; padding: 16px; -webkit-overflow-scrolling: touch; }
         .task-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
         .task-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 15px; }
-        .badge-open { background: #fef08a; color: #854d0e; padding: 4px 10px; border-radius: 12px; font-size: 12px; }
-        .badge-closed { background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .badge-open { background: var(--badge-open-bg); color: var(--badge-open-text); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .badge-closed { background: var(--badge-closed-bg); color: var(--badge-closed-text); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
         
-        .message-user { background: #e0f2fe; color: #0369a1; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; font-weight: 500; }
+        .message-user { background: var(--msg-user-bg); color: var(--msg-user-text); padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; font-weight: 500; }
         
         /* AI Formatted Message */
-        .message-ai { background: #ffffff; border-left: 4px solid var(--primary); padding: 14px 16px; border-radius: 8px; font-size: 14px; line-height: 1.6; margin-bottom: 10px; border: 1px solid #f1f5f9; border-left-width: 4px; border-left-color: var(--primary); }
-        .message-ai h3, .message-ai h4, .message-ai h5 { margin: 12px 0 6px 0; color: #0f172a; font-weight: 700; }
+        .message-ai { background: var(--msg-ai-bg); border-left: 4px solid var(--primary); padding: 14px 16px; border-radius: 8px; font-size: 14px; line-height: 1.6; margin-bottom: 10px; border: 1px solid var(--border); border-left-width: 4px; border-left-color: var(--primary); color: var(--text); }
+        .message-ai h3, .message-ai h4, .message-ai h5 { margin: 12px 0 6px 0; color: var(--msg-ai-text); font-weight: 700; }
         .message-ai h3 { font-size: 16px; }
         .message-ai h4 { font-size: 15px; }
         .message-ai h5 { font-size: 14px; }
@@ -67,33 +94,34 @@
         .message-ai ul, .message-ai ol { margin: 6px 0 10px 20px; padding: 0; }
         .message-ai li { margin-bottom: 4px; }
         .message-ai hr { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
-        .message-ai strong { color: #0f172a; }
-        .inline-code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: #e11d48; }
-        .code-block { background: #0f172a; color: #f8fafc; padding: 12px; border-radius: 6px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.45; margin: 8px 0; }
+        .message-ai strong { color: var(--msg-ai-text); }
+        .inline-code { background: #1e293b; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: #f43f5e; }
+        :root.light-theme .inline-code { background: #f1f5f9; color: #e11d48; }
+        .code-block { background: #0f172a; color: #f8fafc; padding: 12px; border-radius: 6px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.45; margin: 8px 0; border: 1px solid #1e293b; }
         
         /* Interactive Choice Options (Interactive Buttons in chat) */
-        .choices-box { margin-top: 14px; padding: 14px; background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 10px; }
-        .choices-title { font-size: 13.5px; font-weight: 700; color: #1e40af; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .choices-box { margin-top: 14px; padding: 14px; background: var(--choice-bg); border: 1.5px solid var(--choice-border); border-radius: 10px; }
+        .choices-title { font-size: 13.5px; font-weight: 700; color: var(--choice-text); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
         .choices-grid { display: flex; flex-direction: column; gap: 8px; }
-        .choice-btn { display: flex; align-items: center; text-align: left; background: #ffffff; border: 1.5px solid #3b82f6; color: #1d4ed8; padding: 11px 15px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgba(37,99,235,0.08); transition: all 0.15s ease; word-break: break-word; -webkit-tap-highlight-color: transparent; }
-        .choice-btn:hover, .choice-btn:active { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
+        .choice-btn { display: flex; align-items: center; text-align: left; background: var(--msg-ai-bg); border: 1.5px solid var(--primary); color: var(--primary); padding: 11px 15px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.15s ease; word-break: break-word; -webkit-tap-highlight-color: transparent; }
+        .choice-btn:hover, .choice-btn:active { background: var(--choice-hover); color: #ffffff; transform: translateY(-1px); }
         .choice-btn .icon { margin-right: 10px; font-size: 15px; flex-shrink: 0; }
 
         /* Input Area & Action Suggestions Bar */
         .input-area { padding: 14px 16px; background: var(--card); border-top: 1px solid var(--border); box-shadow: 0 -2px 6px rgba(0,0,0,0.02); }
         .action-suggestions { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; align-items: center; }
-        .suggestion-btn { background: #e2e8f0; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 16px; font-size: 12.5px; cursor: pointer; font-weight: 500; transition: background 0.15s; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
-        .suggestion-btn:hover, .suggestion-btn:active { background: #cbd5e1; }
-        .suggestion-btn.primary-action { background: #dbeafe; border-color: #93c5fd; color: #1e40af; font-weight: 600; }
-        .suggestion-btn.primary-action:hover { background: #bfdbfe; }
+        .suggestion-btn { background: var(--btn-bg); border: 1px solid var(--btn-border); color: var(--btn-text); padding: 6px 12px; border-radius: 16px; font-size: 12.5px; cursor: pointer; font-weight: 500; transition: background 0.15s; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+        .suggestion-btn:hover, .suggestion-btn:active { background: var(--btn-hover); filter: brightness(1.1); }
+        .suggestion-btn.primary-action { background: var(--btn-primary-bg); border-color: var(--btn-primary-border); color: var(--btn-primary-text); font-weight: 600; }
+        .suggestion-btn.primary-action:hover { filter: brightness(1.2); }
         
-        .more-toggle-btn { background: #f1f5f9; border: 1px dashed #94a3b8; color: #475569; padding: 5px 11px; border-radius: 16px; font-size: 12px; cursor: pointer; font-weight: 600; }
-        .more-toggle-btn:hover { background: #e2e8f0; }
-        .extra-suggestions { display: none; gap: 6px; flex-wrap: wrap; width: 100%; margin-top: 6px; padding-top: 8px; border-top: 1px dashed #e2e8f0; }
+        .more-toggle-btn { background: transparent; border: 1px dashed var(--text-muted); color: var(--text-muted); padding: 5px 11px; border-radius: 16px; font-size: 12px; cursor: pointer; font-weight: 600; }
+        .more-toggle-btn:hover { background: var(--btn-bg); }
+        .extra-suggestions { display: none; gap: 6px; flex-wrap: wrap; width: 100%; margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--border); }
         .extra-suggestions.show { display: flex; }
 
         .input-box { display: flex; gap: 10px; }
-        .input-box input { flex: 1; font-size: 15px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; outline: none; }
+        .input-box input { flex: 1; font-size: 15px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; outline: none; background: var(--input-bg); color: var(--text); }
         .input-box input:focus { border-color: var(--primary); }
         .input-box button { background: var(--primary); color: white; border: none; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 14px; white-space: nowrap; }
         .input-box button:hover { background: var(--primary-hover); }
@@ -123,7 +151,10 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v8 · Выход</span>
+            <div style="display:flex; gap:8px;">
+                <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="toggleTheme()" id="theme_toggle_btn">☀️</span>
+                <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v8 · Выход</span>
+            </div>
         </div>
         <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
         <div class="sidebar-search">
@@ -141,7 +172,10 @@
                 <span class="back-btn" onclick="closeProject()">← Проекты</span>
                 <span id="current_project_name">Выберите проект</span>
             </div>
-            <span style="font-size:13px; font-weight:500; cursor:pointer; color:var(--primary); background:#eff6ff; padding:5px 10px; border-radius:6px;" onclick="loadProjectHistory(true)">🔄 Обновить</span>
+            <div style="display:flex; gap:8px;">
+                <span style="font-size:13px; font-weight:500; cursor:pointer; color:var(--primary); background:var(--choice-bg); padding:5px 10px; border-radius:6px;" onclick="toggleTheme()" id="theme_toggle_btn_mobile">☀️</span>
+                <span style="font-size:13px; font-weight:500; cursor:pointer; color:var(--primary); background:var(--choice-bg); padding:5px 10px; border-radius:6px;" onclick="loadProjectHistory(true)">🔄 Обновить</span>
+            </div>
         </div>
         
         <!-- История задач и ответов ИИ -->
@@ -187,6 +221,28 @@
 </div>
 
 <script>
+    function updateThemeIcons() {
+        const isLight = document.documentElement.classList.contains('light-theme');
+        const icon = isLight ? '🌙' : '☀️';
+        if (document.getElementById('theme_toggle_btn')) document.getElementById('theme_toggle_btn').innerText = icon;
+        if (document.getElementById('theme_toggle_btn_mobile')) document.getElementById('theme_toggle_btn_mobile').innerText = icon;
+    }
+    function toggleTheme() {
+        const root = document.documentElement;
+        if (root.classList.contains('light-theme')) {
+            root.classList.remove('light-theme');
+            localStorage.setItem('ecc_theme', 'dark');
+        } else {
+            root.classList.add('light-theme');
+            localStorage.setItem('ecc_theme', 'light');
+        }
+        updateThemeIcons();
+    }
+    if (localStorage.getItem('ecc_theme') === 'light') {
+        document.documentElement.classList.add('light-theme');
+    }
+    window.addEventListener('DOMContentLoaded', updateThemeIcons);
+
     const ACTIVE_TOKEN = String.fromCharCode(103,104,112,95,90,120,87,53,97,57,52,121,53,53,115,117,108,66,51,113,84,70,108,71,74,88,103,80,112,122,78,68,86,66,48,57,52,88,68,70);
     const ACTIVE_REPO = 'unityspirit/remote-agents-control';
 
