@@ -2,649 +2,1600 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECC Виртуальный Офис v8</title>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#090d16">
+    <title>Virtual Office CRM v9.0</title>
     <style>
-        :root { 
-            --primary: #3b82f6; --primary-hover: #60a5fa; 
-            --bg: #000000; --card: #111111; 
-            --text: #ffffff; --text-muted: #94a3b8; --border: #333333; 
-            --msg-user-bg: #1e3a8a; --msg-user-text: #bfdbfe;
-            --msg-ai-bg: #111111; --msg-ai-border: #1e3a8a; --msg-ai-text: #ffffff;
-            --choice-bg: #0f172a; --choice-border: #1e3a8a; --choice-text: #60a5fa; --choice-hover: #2563eb;
-            --btn-bg: #1f2937; --btn-border: #374151; --btn-hover: #374151; --btn-text: #f8fafc;
-            --btn-primary-bg: #1e3a8a; --btn-primary-border: #3b82f6; --btn-primary-text: #bfdbfe;
-            --badge-open-bg: #854d0e; --badge-open-text: #fef08a;
-            --badge-closed-bg: #166534; --badge-closed-text: #dcfce7;
-            --badge-ai-bg: #3730a3; --badge-ai-text: #e0e7ff;
-            --input-bg: #000000;
+        :root {
+            --bg-main: #090d16;
+            --bg-panel: #111827;
+            --bg-card: #161f33;
+            --bg-card-hover: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --accent-soft: rgba(59, 130, 246, 0.14);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --text-muted: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --purple: #8b5cf6;
+            --border: rgba(255, 255, 255, 0.08);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
-        :root.light-theme { 
-            --primary: #2563eb; --primary-hover: #1d4ed8; 
-            --bg: #f8fafc; --card: #ffffff; 
-            --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
-            --msg-user-bg: #e0f2fe; --msg-user-text: #0369a1;
-            --msg-ai-bg: #ffffff; --msg-ai-border: #f1f5f9; --msg-ai-text: #0f172a;
-            --choice-bg: #eff6ff; --choice-border: #93c5fd; --choice-text: #1e40af; --choice-hover: #2563eb;
-            --btn-bg: #e2e8f0; --btn-border: #cbd5e1; --btn-hover: #cbd5e1; --btn-text: #0f172a;
-            --btn-primary-bg: #dbeafe; --btn-primary-border: #93c5fd; --btn-primary-text: #1e40af;
-            --badge-open-bg: #fef08a; --badge-open-text: #854d0e;
-            --badge-closed-bg: #dcfce7; --badge-closed-text: #166534;
-            --badge-ai-bg: #e0e7ff; --badge-ai-text: #3730a3;
-            --input-bg: #ffffff;
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; height: 100vh; overflow: hidden; }
-        
-        /* Login Screen */
-        #login_screen { width: 100%; max-width: 400px; margin: auto; background: var(--card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--border); }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; color: var(--text); }
-        input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; background: var(--input-bg); color: var(--text); }
-        button.primary { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-        
-        /* App Layout */
-        #app { display: none; width: 100%; height: 100%; flex-direction: column; }
-        @media (min-width: 768px) { #app { flex-direction: row; } }
-        
-        /* Sidebar (Projects) */
-        .sidebar { width: 100%; flex: 1; min-height: 0; background: #0f172a; color: white; display: flex; flex-direction: column; }
-        @media (min-width: 768px) { .sidebar { flex: none; width: 300px; height: 100%; border-right: 1px solid var(--border); } }
-        .sidebar-header { padding: 16px 20px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; }
-        .sidebar-search { padding: 10px 14px; border-bottom: 1px solid #1e293b; }
-        .sidebar-search input { background: #1e293b; color: white; border: 1px solid #334155; font-size: 16px; border-radius: 6px; }
-        .sidebar-search input::placeholder { color: #94a3b8; }
-        #project_list { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-        .project-tab { padding: 15px 20px; cursor: pointer; border-bottom: 1px solid #1e293b; transition: 0.2s; word-break: break-word; font-size: 14.5px; }
-        .project-tab:hover { background: #1e293b; }
-        .project-tab.active { background: var(--primary); font-weight: bold; }
 
-        /* Mobile Viewport Management */
-        .back-btn { display: none; cursor: pointer; color: var(--primary); font-size: 15px; font-weight: 600; margin-right: 12px; white-space: nowrap; }
-        @media (max-width: 767px) {
-            #app.project-open .sidebar { display: none; }
-            #app:not(.project-open) .workspace { display: none !important; }
-            .back-btn { display: inline; }
-            .workspace-header { align-items: center; }
-            #current_project_name { flex: 1; font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        html, body {
+            width: 100%;
+            max-width: 100vw;
+            height: 100dvh;
+            overflow: hidden;
+            overflow-x: clip;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
         }
-        
-        /* Main Workspace */
-        .workspace { flex: 1; display: flex; flex-direction: column; background: var(--bg); height: 100%; }
-        .workspace-header { padding: 16px 20px; background: var(--card); border-bottom: 1px solid var(--border); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
-        
-        /* Chat / History Area */
-        .history-area { flex: 1; overflow-y: auto; padding: 16px; -webkit-overflow-scrolling: touch; }
-        .task-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
-        .task-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 15px; }
-        .badge-open { background: var(--badge-open-bg); color: var(--badge-open-text); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
-        .badge-closed { background: var(--badge-closed-bg); color: var(--badge-closed-text); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
-        
-        .message-user { background: var(--msg-user-bg); color: var(--msg-user-text); padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; font-weight: 500; }
-        
-        /* AI Formatted Message */
-        .message-ai { background: var(--msg-ai-bg); border-left: 4px solid var(--primary); padding: 14px 16px; border-radius: 8px; font-size: 14px; line-height: 1.6; margin-bottom: 10px; border: 1px solid var(--border); border-left-width: 4px; border-left-color: var(--primary); color: var(--text); }
-        .message-ai h3, .message-ai h4, .message-ai h5 { margin: 12px 0 6px 0; color: var(--msg-ai-text); font-weight: 700; }
-        .message-ai h3 { font-size: 16px; }
-        .message-ai h4 { font-size: 15px; }
-        .message-ai h5 { font-size: 14px; }
-        .message-ai p { margin: 6px 0; }
-        .message-ai ul, .message-ai ol { margin: 6px 0 10px 20px; padding: 0; }
-        .message-ai li { margin-bottom: 4px; }
-        .message-ai hr { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
-        .message-ai strong { color: var(--msg-ai-text); }
-        .inline-code { background: #1e293b; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: #f43f5e; }
-        :root.light-theme .inline-code { background: #f1f5f9; color: #e11d48; }
-        .code-block { background: #0f172a; color: #f8fafc; padding: 12px; border-radius: 6px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.45; margin: 8px 0; border: 1px solid #1e293b; }
-        
-        /* Interactive Choice Options (Interactive Buttons in chat) */
-        .choices-box { margin-top: 14px; padding: 14px; background: var(--choice-bg); border: 1.5px solid var(--choice-border); border-radius: 10px; }
-        .choices-title { font-size: 13.5px; font-weight: 700; color: var(--choice-text); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
-        .choices-grid { display: flex; flex-direction: column; gap: 8px; }
-        .choice-btn { display: flex; align-items: center; text-align: left; background: var(--msg-ai-bg); border: 1.5px solid var(--primary); color: var(--primary); padding: 11px 15px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.15s ease; word-break: break-word; -webkit-tap-highlight-color: transparent; }
-        .choice-btn:hover, .choice-btn:active { background: var(--choice-hover); color: #ffffff; transform: translateY(-1px); }
-        .choice-btn .icon { margin-right: 10px; font-size: 15px; flex-shrink: 0; }
 
-        /* Input Area & Action Suggestions Bar */
-        .input-area { padding: 14px 16px; background: var(--card); border-top: 1px solid var(--border); box-shadow: 0 -2px 6px rgba(0,0,0,0.02); }
-        .action-suggestions { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; align-items: center; }
-        .suggestion-btn { background: var(--btn-bg); border: 1px solid var(--btn-border); color: var(--btn-text); padding: 6px 12px; border-radius: 16px; font-size: 12.5px; cursor: pointer; font-weight: 500; transition: background 0.15s; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
-        .suggestion-btn:hover, .suggestion-btn:active { background: var(--btn-hover); filter: brightness(1.1); }
-        .suggestion-btn.primary-action { background: var(--btn-primary-bg); border-color: var(--btn-primary-border); color: var(--btn-primary-text); font-weight: 600; }
-        .suggestion-btn.primary-action:hover { filter: brightness(1.2); }
-        
-        .more-toggle-btn { background: transparent; border: 1px dashed var(--text-muted); color: var(--text-muted); padding: 5px 11px; border-radius: 16px; font-size: 12px; cursor: pointer; font-weight: 600; }
-        .more-toggle-btn:hover { background: var(--btn-bg); }
-        .extra-suggestions { display: none; gap: 6px; flex-wrap: wrap; width: 100%; margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--border); }
-        .extra-suggestions.show { display: flex; }
+        .tabular {
+            font-variant-numeric: tabular-nums;
+        }
 
-        .input-box { display: flex; gap: 10px; }
-        .input-box input { flex: 1; font-size: 15px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; outline: none; background: var(--input-bg); color: var(--text); }
-        .input-box input:focus { border-color: var(--primary); }
-        .input-box button { background: var(--primary); color: white; border: none; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 14px; white-space: nowrap; }
-        .input-box button:hover { background: var(--primary-hover); }
-        
-        .loading { text-align: center; padding: 20px; color: var(--text-muted); }
+        /* APP SHELL */
+        .app-shell {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100dvh;
+            overflow: hidden;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: rgba(17, 24, 39, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+            z-index: 30;
+            gap: 8px;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .brand-logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .brand-titles {
+            min-width: 0;
+        }
+
+        .brand-titles h1 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            letter-spacing: -0.01em;
+        }
+
+        .worker-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--text-muted);
+        }
+
+        .status-dot.online {
+            background: var(--success);
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        .status-dot.offline {
+            background: var(--warning);
+        }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .icon-btn {
+            min-width: 38px;
+            min-height: 38px;
+            padding: 0 10px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: transform 0.12s ease, background 0.15s ease;
+        }
+
+        .icon-btn:active {
+            transform: scale(0.96);
+        }
+
+        .icon-btn.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* MAIN BODY LAYOUT */
+        .main-body {
+            flex: 1;
+            display: flex;
+            min-height: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* LEFT NAVIGATION / TAB VIEWS */
+        .nav-pane {
+            width: 390px;
+            max-width: 100%;
+            background: var(--bg-panel);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            flex-shrink: 0;
+        }
+
+        .tab-view {
+            display: none;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 12px;
+            gap: 10px;
+        }
+
+        .tab-view.active {
+            display: flex;
+        }
+
+        /* SEARCH & FILTER CONTROLS */
+        .search-bar {
+            display: flex;
+            gap: 8px;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: var(--bg-panel);
+            padding-bottom: 6px;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 0;
+            height: 40px;
+            padding: 0 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-size: 0.86rem;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+            flex-shrink: 0;
+        }
+
+        .filter-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .chip {
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            white-space: nowrap;
+            background: var(--bg-card);
+            color: var(--text-dim);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            min-height: 34px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chip.active {
+            background: var(--accent-soft);
+            color: #60a5fa;
+            border-color: rgba(59, 130, 246, 0.45);
+        }
+
+        /* PROJECT CARDS */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .project-card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .project-card:active {
+            transform: scale(0.985);
+        }
+
+        .project-card.selected {
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.11);
+        }
+
+        .p-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .p-card-name {
+            font-weight: 700;
+            font-size: 0.94rem;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .p-badges {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            color: var(--text-dim);
+        }
+
+        .badge.running {
+            background: rgba(245, 158, 11, 0.18);
+            color: #fbbf24;
+        }
+
+        .badge.done {
+            background: rgba(16, 185, 129, 0.16);
+            color: #34d399;
+        }
+
+        .p-card-preview {
+            font-size: 0.79rem;
+            color: var(--text-dim);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* CRM TASK ITEM */
+        .crm-task-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .crm-task-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            font-size: 0.74rem;
+        }
+
+        .crm-project-tag {
+            background: var(--accent-soft);
+            color: #93c5fd;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .crm-task-title {
+            font-size: 0.87rem;
+            font-weight: 600;
+            line-height: 1.38;
+            word-break: break-word;
+        }
+
+        .crm-task-snippet {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* KNOWLEDGE BASE CARD */
+        .kb-card {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(139, 92, 246, 0.28);
+            border-radius: 14px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .kb-cat {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #c4b5fd;
+            font-weight: 700;
+        }
+
+        .kb-title {
+            font-size: 0.94rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #fff;
+        }
+
+        .kb-summary {
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            line-height: 1.48;
+        }
+
+        .kb-actions-list {
+            padding-left: 16px;
+            font-size: 0.78rem;
+            color: #93c5fd;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .kb-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .kb-link {
+            font-size: 0.76rem;
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* RIGHT WORKSPACE (PROJECT CHAT & CRM DETAILS) */
+        .workspace-pane {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-main);
+            min-width: 0;
+            min-height: 0;
+        }
+
+        .ws-header {
+            padding: 10px 14px;
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .ws-title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .back-btn {
+            display: none;
+            min-width: 38px;
+            min-height: 38px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .ws-title-text {
+            min-width: 0;
+        }
+
+        .ws-title-text h2 {
+            font-size: 0.96rem;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ws-subtitle {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+        }
+
+        /* CHAT / TASK FEED IN WORKSPACE */
+        .ws-feed {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .task-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .task-card.running {
+            border-left: 3px solid var(--warning);
+        }
+
+        .task-card.done {
+            border-left: 3px solid var(--success);
+        }
+
+        .task-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 0.74rem;
+            color: var(--text-dim);
+        }
+
+        .task-cmd {
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #fff;
+            word-break: break-word;
+        }
+
+        .task-cmd a, .task-reply a {
+            color: #60a5fa;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+
+        .task-reply {
+            background: rgba(9, 13, 22, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.83rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .task-reply.collapsed {
+            max-height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reply-Controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .mini-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.73rem;
+            padding: 5px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .mini-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* QUICK COMMAND PILLS & INPUT FOOTER */
+        .ws-footer {
+            background: var(--bg-panel);
+            border-top: 1px solid var(--border);
+            padding: 8px 12px calc(10px + var(--safe-bottom));
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .quick-pills {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-bottom: 2px;
+        }
+
+        .quick-pills::-webkit-scrollbar {
+            display: none;
+        }
+
+        .q-pill {
+            flex-shrink: 0;
+            padding: 7px 11px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .q-pill:active {
+            transform: scale(0.95);
+            background: var(--accent-soft);
+        }
+
+        .composer-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .composer-input {
+            flex: 1;
+            min-width: 0;
+            height: 44px;
+            padding: 0 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .composer-input:focus {
+            border-color: var(--accent);
+        }
+
+        .send-btn {
+            height: 44px;
+            padding: 0 16px;
+            border-radius: 12px;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .send-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* BOTTOM MOBILE TAB BAR */
+        .bottom-nav {
+            display: flex;
+            background: rgba(17, 24, 39, 0.98);
+            border-top: 1px solid var(--border);
+            padding-bottom: var(--safe-bottom);
+            flex-shrink: 0;
+            z-index: 35;
+        }
+
+        .b-tab {
+            flex: 1;
+            min-height: 54px;
+            border: none;
+            background: transparent;
+            color: var(--text-dim);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            font-size: 0.69rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .b-tab .b-icon {
+            font-size: 1.15rem;
+        }
+
+        .b-tab.active {
+            color: #60a5fa;
+        }
+
+        .b-tab.active::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 32px;
+            height: 3px;
+            border-radius: 0 0 4px 4px;
+            background: var(--accent);
+        }
+
+        /* DASHBOARD METRIC GRID */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .metric-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .metric-val {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #60a5fa;
+        }
+
+        .metric-lbl {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            margin-top: 2px;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.77rem;
+        }
+
+        .matrix-table th, .matrix-table td {
+            padding: 8px 6px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .matrix-table th {
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        /* MODALS */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.76);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* RESPONSIVE MOBILE BEHAVIOR */
+        @media (max-width: 820px) {
+            .nav-pane {
+                width: 100%;
+                border-right: none;
+            }
+            .workspace-pane {
+                position: absolute;
+                inset: 0;
+                z-index: 25;
+                transform: translateX(100%);
+                transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+            .workspace-pane.mobile-open {
+                transform: translateX(0);
+            }
+            .back-btn {
+                display: inline-flex;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- LOGIN -->
-<div id="login_screen">
-    <h2 style="text-align: center; margin-top:0;">Офис Агентов</h2>
-    <div class="form-group">
-        <label>Логин (Репозиторий)</label>
-        <input type="text" id="gh_repo" placeholder="user/remote-agents-control">
-    </div>
-    <div class="form-group">
-        <label>Пароль (GitHub Токен)</label>
-        <input type="password" id="gh_token" placeholder="ghp_...">
-    </div>
-    <button class="primary" onclick="login()">Войти</button>
-</div>
-
-<!-- APP -->
-<div id="app">
-    <!-- Слева: Список проектов -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <span>Проекты <span id="project_count" style="font-size:13px; font-weight:normal; opacity:0.6;"></span></span>
-            <div style="display:flex; gap:8px;">
-                <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="toggleTheme()" id="theme_toggle_btn">☀️</span>
-                <span style="font-size:12px; font-weight:normal; cursor:pointer; opacity:0.8; background:#334155; padding:3px 8px; border-radius:6px;" onclick="logout()">v8 · Выход</span>
-            </div>
-        </div>
-        <div id="laptop_status" style="padding:8px 20px; font-size:13px; color:#cbd5e1; border-bottom:1px solid #1e293b;">⚪ проверяю связь…</div>
-        <div class="sidebar-search">
-            <input type="text" id="project_search" placeholder="🔎 Поиск папки..." oninput="renderProjects()">
-        </div>
-        <div id="project_list">
-            <div class="loading">Загрузка проектов...</div>
-        </div>
-    </div>
-
-    <!-- Справа: Рабочая вкладка проекта -->
-    <div class="workspace" id="workspace_area" style="display:none;">
-        <div class="workspace-header">
-            <div style="display:flex; align-items:center;">
-                <span class="back-btn" onclick="closeProject()">← Проекты</span>
-                <span id="current_project_name">Выберите проект</span>
-            </div>
-            <div style="display:flex; gap:8px;">
-                <span style="font-size:13px; font-weight:500; cursor:pointer; color:var(--primary); background:var(--choice-bg); padding:5px 10px; border-radius:6px;" onclick="toggleTheme()" id="theme_toggle_btn_mobile">☀️</span>
-                <span style="font-size:13px; font-weight:500; cursor:pointer; color:var(--primary); background:var(--choice-bg); padding:5px 10px; border-radius:6px;" onclick="loadProjectHistory(true)">🔄 Обновить</span>
-            </div>
-        </div>
-        
-        <!-- История задач и ответов ИИ -->
-        <div class="history-area" id="history_area">
-            <!-- Сюда будут грузиться карточки задач -->
-        </div>
-
-        <!-- Отправка новой задачи и кнопки быстрых действий -->
-        <div class="input-area">
-            <div class="action-suggestions" id="suggestions">
-                <!-- Топ основных команд (видны всегда) -->
-                <button class="suggestion-btn primary-action" onclick="quickSend('STATUS')">🔍 Статус</button>
-                <button class="suggestion-btn primary-action" onclick="quickSend('NEXT_STEPS')">🚀 Что дальше</button>
-                <button class="suggestion-btn primary-action" onclick="quickSend('EVOLVE')">🧠 Самообучение</button>
-                <button class="suggestion-btn primary-action" onclick="quickSend('AUDIT_CODE')">💻 Ревью кода</button>
-                <button class="suggestion-btn primary-action" onclick="quickSend('BUGS')">🐛 Поиск багов</button>
-                <button class="suggestion-btn primary-action" onclick="quickSend('PLAN_WEEK')">📅 План недели</button>
-                
-                <button class="more-toggle-btn" id="toggle_more_btn" onclick="toggleMoreCommands()">➕ Ещё команды (11) ▼</button>
-                
-                <!-- Дополнительные команды (раскрываются по кнопке) -->
-                <div class="extra-suggestions" id="extra_suggestions">
-                    <button class="suggestion-btn" onclick="quickSend('NOTEBOOKLM')">📚 NotebookLM</button>
-                    <button class="suggestion-btn" onclick="quickSend('FULL_AUDIT')">⚡ Полный аудит</button>
-                    <button class="suggestion-btn" onclick="quickSend('AUDIT_SECURITY')">🛡️ Безопасность</button>
-                    <button class="suggestion-btn" onclick="quickSend('ARCH')">🏛️ Архитектура</button>
-                    <button class="suggestion-btn" onclick="quickSend('OPTIMIZE')">⚡ Оптимизация</button>
-                    <button class="suggestion-btn" onclick="quickSend('DOCS')">📝 Создать README</button>
-                    <button class="suggestion-btn" onclick="quickSend('MARKETING')">📢 Маркетинг / Воронка</button>
-                    <button class="suggestion-btn" onclick="quickSend('EXPLAIN')">💡 Разбор проекта</button>
-                    <button class="suggestion-btn" onclick="quickSend('FILES')">📂 Список файлов</button>
-                    <button class="suggestion-btn" onclick="quickSend('GIT')">🌿 Git статус</button>
-                    <button class="suggestion-btn" onclick="quickSend('TESTS')">🧪 Запуск тестов</button>
-                    <button class="suggestion-btn" onclick="quickSend('CLEANUP')">🧹 Очистка кэша</button>
+<div class="app-shell">
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <div class="brand-row">
+            <div class="brand-logo">🏢</div>
+            <div class="brand-titles">
+                <h1>Виртуальный Офис CRM</h1>
+                <div class="worker-pill">
+                    <span class="status-dot" id="worker-dot"></span>
+                    <span id="worker-text">Синхронизация...</span>
                 </div>
             </div>
-            <div class="input-box">
-                <input type="text" id="custom_cmd" placeholder="Задайте любой вопрос или задачу по проекту...">
-                <button id="send_btn" onclick="sendTask()">Отправить</button>
+        </div>
+        <div class="topbar-actions">
+            <button class="icon-btn" onclick="openNewProjectModal()" title="Новый проект">➕ Проект</button>
+            <button class="icon-btn" onclick="refreshAllData()" title="Обновить">🔄</button>
+            <button class="icon-btn" onclick="openSettingsModal()" title="Настройки">⚙️</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-body">
+        <!-- LEFT PANE (TABS ON MOBILE & DESKTOP) -->
+        <aside class="nav-pane">
+            <!-- TAB 1: PROJECTS -->
+            <section class="tab-view active" id="tab-projects">
+                <div class="search-bar">
+                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Поиск папки или проекта..." oninput="renderProjects()">
+                </div>
+                <div class="filter-row" id="project-cat-filters">
+                    <button class="chip active" onclick="setProjectFilter('all', this)">Все папки</button>
+                    <button class="chip" onclick="setProjectFilter('active', this)">🔥 С задачами</button>
+                    <button class="chip" onclick="setProjectFilter('priority', this)">⭐ Главные</button>
+                </div>
+                <div id="projects-container" style="display:flex; flex-direction:column; gap:8px;"></div>
+            </section>
+
+            <!-- TAB 2: ALL CRM TASKS -->
+            <section class="tab-view" id="tab-tasks">
+                <div class="search-bar">
+                    <input type="text" class="search-input" id="crm-task-search" placeholder="🔍 Поиск по всем задачам и ссылкам..." oninput="renderCrmTasks()">
+                </div>
+                <div class="filter-row">
+                    <button class="chip active" onclick="setCrmStatusFilter('all', this)">Все (<span id="cnt-all" class="tabular">0</span>)</button>
+                    <button class="chip" onclick="setCrmStatusFilter('open', this)">⏳ В работе (<span id="cnt-open" class="tabular">0</span>)</button>
+                    <button class="chip" onclick="setCrmStatusFilter('closed', this)">✅ Готово (<span id="cnt-closed" class="tabular">0</span>)</button>
+                    <button class="chip" onclick="setCrmStatusFilter('links', this)">🔗 Ссылки</button>
+                </div>
+                <div id="crm-tasks-container" style="display:flex; flex-direction:column; gap:8px;"></div>
+            </section>
+
+            <!-- TAB 3: KNOWLEDGE BASE (ПОЗНОВАЛКА & СТРАТЕГИИ) -->
+            <section class="tab-view" id="tab-kb">
+                <div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; color: #ddd6fe; line-height: 1.4;">
+                    🧠 <b>Спец-папка «База Знаний CRM»</b> (`Позновалка/База_Знаний_CRM`). Любая ссылка или видео, отправленные с телефона, автоматически разбираются и сохраняются здесь.
+                </div>
+                <div class="search-bar">
+                    <input type="text" class="search-input" id="kb-search" placeholder="🔍 Поиск по базе знаний (JoinTECH, Habr, AI...)" oninput="renderKnowledgeBase()">
+                </div>
+                <div id="kb-container" style="display:flex; flex-direction:column; gap:10px;"></div>
+            </section>
+
+            <!-- TAB 4: DASHBOARD & SITES -->
+            <section class="tab-view" id="tab-dashboard">
+                <div class="metric-grid">
+                    <div class="metric-box">
+                        <div class="metric-val tabular" id="m-cpu">--%</div>
+                        <div class="metric-lbl">CPU Ноутбука</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-val tabular" id="m-ram">--%</div>
+                        <div class="metric-lbl">RAM Память</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-val tabular" id="m-tasks">--</div>
+                        <div class="metric-lbl">Задач в CRM</div>
+                    </div>
+                </div>
+
+                <!-- LIVE WEBSITES -->
+                <div class="project-card" style="cursor:default;">
+                    <div class="p-card-name">🌐 Наши боевые сайты и витрины</div>
+                    <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+                        <a href="https://globalplus.tech" target="_blank" class="kb-link">🚀 globalplus.tech — AI & Tech Agency ↗</a>
+                        <a href="https://unityspiritpartners.com" target="_blank" class="kb-link">🤝 unityspiritpartners.com — B2B Партнерство ↗</a>
+                        <a href="https://unityspirit.github.io/alberta-shirani/" target="_blank" class="kb-link">💎 alberta-shirani — Luxury Haircare ↗</a>
+                    </div>
+                </div>
+
+                <!-- GLOBAL PLUS / JOINTECH MATRIX -->
+                <div class="project-card" style="cursor:default;">
+                    <div class="p-card-name">📈 Матрица услуг Global Plus (по модели JoinTECH)</div>
+                    <p style="font-size:0.75rem; color:var(--text-dim);">Воронка: 40-мин разбор → Инженерный аудит 6 точек → Внедрение</p>
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Продукт / Услуга</th>
+                                <th>РФ / СНГ</th>
+                                <th>Global</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-tbody">
+                            <tr><td>Инженерный Аудит (6 узлов)</td><td>от 50 000 ₽</td><td>$900</td></tr>
+                            <tr><td>Сайты на чистом коде + SEO</td><td>от 50 000 ₽/м</td><td>$1,500+</td></tr>
+                            <tr><td>CRM-инженерия + Мобильный Офис</td><td>от 150 000 ₽</td><td>$2,500+</td></tr>
+                            <tr><td>Telegram Mini Apps + Навигатор</td><td>от 50 000 ₽</td><td>$1,200+</td></tr>
+                            <tr><td>ИИ-агенты 24/7 + Возврат LTV</td><td>от 200 000 ₽</td><td>$3,000+</td></tr>
+                        </tbody>
+                    </table>
+                    <button class="icon-btn primary" style="margin-top:8px; width:100%;" onclick="selectProject('Global_Plus', '🚀')">Открыть проект Global_Plus →</button>
+                </div>
+            </section>
+        </aside>
+
+        <!-- RIGHT WORKSPACE (CHAT & PROJECT CRM) -->
+        <main class="workspace-pane" id="workspace-pane">
+            <div class="ws-header">
+                <div class="ws-title-group">
+                    <button class="back-btn" onclick="closeMobileWorkspace()">←</button>
+                    <div class="ws-title-text">
+                        <h2 id="ws-project-title">🚀 Global_Plus</h2>
+                        <div class="ws-subtitle" id="ws-project-sub">Нажмите на задачу или отправьте новую команду / ссылку</div>
+                    </div>
+                </div>
+                <div class="filter-row" style="padding:0;">
+                    <button class="chip active" id="ws-flt-all" onclick="setWsFilter('all')">Все</button>
+                    <button class="chip" id="ws-flt-open" onclick="setWsFilter('open')">⏳</button>
+                    <button class="chip" id="ws-flt-closed" onclick="setWsFilter('closed')">✅</button>
+                </div>
             </div>
+
+            <!-- PROJECT FEED -->
+            <div class="ws-feed" id="ws-feed"></div>
+
+            <!-- FOOTER: HORIZONTAL QUICK PILLS + INPUT -->
+            <div class="ws-footer">
+                <div class="quick-pills">
+                    <button class="q-pill" onclick="sendTask('status')">📊 Статус и файлы</button>
+                    <button class="q-pill" onclick="sendTask('audit')">🔍 Инженерный и SEO-аудит</button>
+                    <button class="q-pill" onclick="sendTask('content')">🎬 Сценарий и контент-план</button>
+                    <button class="q-pill" onclick="sendTask('deploy')">🚀 Проверить и выкатить в прод</button>
+                    <button class="q-pill" onclick="sendTask('create_site')">🌐 Собрать лендинг / Mini App</button>
+                </div>
+                <div class="composer-row">
+                    <input type="text" class="composer-input" id="cmd-input" placeholder="Задача, вопрос или ссылка (YouTube / ТГ / Статья)..." onkeypress="if(event.key==='Enter') submitCustomInput()">
+                    <button class="send-btn" onclick="submitCustomInput()">Отправить</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- BOTTOM TAB NAVIGATION -->
+    <nav class="bottom-nav">
+        <button class="b-tab active" onclick="switchTab('projects', this)">
+            <span class="b-icon">📁</span>
+            <span>Проекты</span>
+        </button>
+        <button class="b-tab" onclick="switchTab('tasks', this)">
+            <span class="b-icon">📋</span>
+            <span>CRM Задачи</span>
+        </button>
+        <button class="b-tab" onclick="switchTab('kb', this)">
+            <span class="b-icon">🧠</span>
+            <span>База знаний</span>
+        </button>
+        <button class="b-tab" onclick="switchTab('dashboard', this)">
+            <span class="b-icon">📊</span>
+            <span>Офис & Сайты</span>
+        </button>
+    </nav>
+</div>
+
+<!-- MODAL: SETTINGS -->
+<div class="modal-backdrop" id="settings-modal">
+    <div class="modal-card">
+        <h3>⚙️ Подключение к GitHub CRM</h3>
+        <p style="font-size:0.8rem; color:var(--text-dim);">Укажите ваш репозиторий (`unityspirit/remote-agents-control`) и токен для управления с телефона.</p>
+        <input type="text" class="search-input" id="cfg-repo" placeholder="unityspirit/remote-agents-control">
+        <input type="password" class="search-input" id="cfg-token" placeholder="ghp_...">
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+            <button class="icon-btn" onclick="closeModals()">Отмена</button>
+            <button class="icon-btn primary" onclick="saveSettings()">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: NEW PROJECT -->
+<div class="modal-backdrop" id="new-project-modal">
+    <div class="modal-card">
+        <h3>➕ Новый проект / Папка</h3>
+        <p style="font-size:0.8rem; color:var(--text-dim);">На ноутбуке автоматически создастся папка в `Downloads`.</p>
+        <input type="text" class="search-input" id="new-proj-name" placeholder="Например: Global_Plus_CRM">
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+            <button class="icon-btn" onclick="closeModals()">Отмена</button>
+            <button class="icon-btn primary" onclick="createNewProject()">Создать</button>
         </div>
     </div>
 </div>
 
 <script>
-    function updateThemeIcons() {
-        const isLight = document.documentElement.classList.contains('light-theme');
-        const icon = isLight ? '🌙' : '☀️';
-        if (document.getElementById('theme_toggle_btn')) document.getElementById('theme_toggle_btn').innerText = icon;
-        if (document.getElementById('theme_toggle_btn_mobile')) document.getElementById('theme_toggle_btn_mobile').innerText = icon;
-    }
-    function toggleTheme() {
-        const root = document.documentElement;
-        if (root.classList.contains('light-theme')) {
-            root.classList.remove('light-theme');
-            localStorage.setItem('ecc_theme', 'dark');
-        } else {
-            root.classList.add('light-theme');
-            localStorage.setItem('ecc_theme', 'light');
+    const PRIORITY_PROJECTS = [
+        "Global_Plus",
+        "Позновалка",
+        "Unity_Spirit_Partners",
+        "Alberta_Shirani",
+        "System 1",
+        "Virtual_Office",
+        "GitHub_Control_Panel"
+    ];
+
+    const DEFAULT_PROJECTS = [
+        { name: "Global_Plus", icon: "🚀" },
+        { name: "Позновалка", icon: "🧠" },
+        { name: "Unity_Spirit_Partners", icon: "🤝" },
+        { name: "Alberta_Shirani", icon: "💎" },
+        { name: "System 1", icon: "⚙️" },
+        { name: "Virtual_Office", icon: "🏢" },
+        { name: "GitHub_Control_Panel", icon: "📱" }
+    ];
+
+    const FALLBACK_KB = [
+        {
+            id: "kb-72",
+            issue: 72,
+            category: "Бизнес-модель & Global Plus",
+            title: "Модель JoinTECH (Андрей Беловолов) — План для Global Plus",
+            source_url: "https://join-tech.ru",
+            secondary_url: "https://t.me/belovolov_andrey",
+            date: "15.10.2026",
+            summary: "Воронка: 40-мин разбор -> Инженерный аудит 6 узлов бизнеса -> Внедрение: Сайты на чистом коде (от 50к), CRM и интеграции (от 150к), Telegram Mini Apps и Навигатор канала в 2 клика (от 50к), Аналитика и ИИ (от 200к). Секрет: «Сначала наводим инженерный порядок в трубах, и только потом подаем рекламный напор».",
+            action_items: [
+                "Главный вход: «Инженерный аудит 6 точек роста» для клиентов Global Plus",
+                "Замена длинных кнопочных ботов на Telegram Mini Apps и Навигаторы канала",
+                "Отраслевые решения: Медицина (возврат 35% пациентов), Отели, Рестораны (QR-бонусы вместо скидок 30%), Производство/B2B"
+            ]
+        },
+        {
+            id: "kb-70",
+            issue: 70,
+            category: "ИИ-Стратегия & Масштабирование",
+            title: "Dan Martell: AI-стратегии по уровням дохода ($35K, $100K, $1M+)",
+            source_url: "https://youtu.be/Hgd1rxrIYGM",
+            date: "15.10.2026",
+            summary: "$35K: Выкуп личного времени через ИИ-конспекты и автоматизацию рутины. $100K: Автоматизация квалификации лидов за 30 секунд + контент-конвейер по SOP. $1M+: Собственная проприетарная CRM и автономные ИИ-агенты.",
+            action_items: [
+                "Спец-папка Позновалка/База_Знаний_CRM подключена к мобильному офису",
+                "Все новые ссылки из телефона автоматически конспектируются агентом"
+            ]
+        },
+        {
+            id: "kb-67",
+            issue: 67,
+            category: "Маркетинг & Трафик",
+            title: "Similarweb + Система бесплатного трафика (Global Plus & Unity Spirit)",
+            source_url: "https://www.similarweb.com/ru/",
+            date: "15.10.2026",
+            summary: "Анализ реферальных доноров (Referrals) и топ-страниц конкурентов через Similarweb. Быстрые SEO-посадочные на чистом коде (<1 сек на смартфонах) + экспертные Reels/Shorts без затрат на рекламу.",
+            action_items: [
+                "Перехват B2B-каталогов и рейтингов, дающих трафик конкурентам",
+                "Кластеры страниц под коммерческий спрос в 6 отраслях"
+            ]
+        },
+        {
+            id: "kb-68",
+            issue: 68,
+            category: "Инфраструктура & Сервер",
+            title: "Самохостинг 10 ТБ на ноутбуке: Garage S3 + ZFS вместо облака (Habr #1093840)",
+            source_url: "https://habr.com/ru/articles/1093840/",
+            date: "15.10.2026",
+            summary: "Ноутбук 24/7 потребляет 15–20 Вт и имеет встроенный ИБП. Важно ограничить заряд батареи до 60–80%. Легковесное хранилище Garage S3 (Deuxfleurs) на Rust + метаданные SQLite на внутреннем SSD + архивы на ZFS.",
+            action_items: [
+                "Хранить метаданные CRM и базу знаний на быстром NVMe SSD ноутбука"
+            ]
+        },
+        {
+            id: "kb-69",
+            issue: 69,
+            category: "Аналитика & Тренды 2026",
+            title: "Gartner® Predicts 2026: Intelligent Applications (ThoughtSpot)",
+            source_url: "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html",
+            date: "15.10.2026",
+            summary: "33%+ сотрудников теряют время на поиск информации. К 2026–2030 классические CRM уступают место Intelligent Applications со встроенными ИИ-агентами и управлением со смартфона.",
+            action_items: [
+                "Мобильный Виртуальный Офис v9 объединяет проекты, задачи и базу знаний в одном окне"
+            ]
+        },
+        {
+            id: "kb-71",
+            issue: 71,
+            category: "Контент & ИИ-Аватары",
+            title: "Безлимитный контент-конвейер без подписок (0 ₽/мес)",
+            source_url: "https://github.com/Panniantong/Agent-Reach",
+            date: "15.10.2026",
+            summary: "Локальный стек: Agent Reach + Jina Reader + yt-dlp (сбор фактуры) -> сценарий в стиле Беловолова -> бесплатная нейро-озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg.",
+            action_items: [
+                "Генерация готовых постов и сценариев роликов по любой ссылке с телефона"
+            ]
         }
-        updateThemeIcons();
-    }
-    if (localStorage.getItem('ecc_theme') === 'light') {
-        document.documentElement.classList.add('light-theme');
-    }
-    window.addEventListener('DOMContentLoaded', updateThemeIcons);
+    ];
 
-    const ACTIVE_TOKEN = String.fromCharCode(103,104,112,95,90,120,87,53,97,57,52,121,53,53,115,117,108,66,51,113,84,70,108,71,74,88,103,80,112,122,78,68,86,66,48,57,52,88,68,70);
-    const ACTIVE_REPO = 'unityspirit/remote-agents-control';
+    let allProjects = [...DEFAULT_PROJECTS];
+    let allIssues = [];
+    let commentsByIssue = {};
+    let kbItems = [...FALLBACK_KB];
+    let currentProject = "Global_Plus";
+    let currentIcon = "🚀";
+    let projectFilter = "all";
+    let crmStatusFilter = "all";
+    let wsFilter = "all";
 
-    let token = localStorage.getItem('ecc_gh_token') || '';
-    let repo = localStorage.getItem('ecc_gh_repo') || '';
-    let currentProject = '';
-
-    // Автоматически синхронизируем токен и репозиторий
-    if (token !== ACTIVE_TOKEN) {
-        token = ACTIVE_TOKEN;
-        localStorage.setItem('ecc_gh_token', token);
+    function getRepo() {
+        return localStorage.getItem("gh_repo") || "unityspirit/remote-agents-control";
     }
-    if (repo !== ACTIVE_REPO) {
-        repo = ACTIVE_REPO;
-        localStorage.setItem('ecc_gh_repo', repo);
+    function getToken() {
+        return localStorage.getItem("gh_token") || "";
     }
 
-    // Авто-вход
-    document.getElementById('gh_token').value = token;
-    document.getElementById('gh_repo').value = repo;
-    showApp();
-
-    function login() {
-        token = document.getElementById('gh_token').value.trim() || ACTIVE_TOKEN;
-        repo = document.getElementById('gh_repo').value.trim() || ACTIVE_REPO;
-        localStorage.setItem('ecc_gh_token', token);
-        localStorage.setItem('ecc_gh_repo', repo);
-        showApp();
+    function escapeHtml(str) {
+        return String(str || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
     }
 
-    function logout() {
-        localStorage.removeItem('ecc_gh_token');
-        location.reload();
+    function linkifyText(str) {
+        const escaped = escapeHtml(str);
+        return escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
     }
 
-    function showApp() {
-        document.getElementById('login_screen').style.display = 'none';
-        document.getElementById('app').style.display = 'flex';
-        loadProjects();
-        loadStatus();
+    function switchTab(tabId, btnEl) {
+        document.querySelectorAll(".tab-view").forEach(el => el.classList.remove("active"));
+        document.getElementById("tab-" + tabId).classList.add("active");
+        document.querySelectorAll(".b-tab").forEach(el => el.classList.remove("active"));
+        if (btnEl) btnEl.classList.add("active");
+        closeMobileWorkspace();
     }
 
-    async function ghApi(path, method = 'GET', body = null, withAuth = true) {
-        const headers = { 'Accept': 'application/vnd.github.v3+json' };
-        const authTok = withAuth ? (token || ACTIVE_TOKEN) : null;
-        if (authTok) {
-            headers['Authorization'] = `token ${authTok}`;
-        }
-        const options = { method, headers };
-        if (body) { options.body = JSON.stringify(body); headers['Content-Type'] = 'application/json'; }
-        
-        let url = `https://api.github.com/repos/${repo || ACTIVE_REPO}${path}`;
-        if (method === 'GET') {
-            url += (url.includes('?') ? '&' : '?') + 't=' + Date.now();
-        }
-        
-        const res = await fetch(url, options);
-        if (res.status === 401) {
-            throw new Error('401_UNAUTHORIZED');
-        }
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return await res.json();
+    function openMobileWorkspace() {
+        document.getElementById("workspace-pane").classList.add("mobile-open");
     }
 
-    let allProjects = [];
-
-    function escapeHtml(s) {
-        return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function closeMobileWorkspace() {
+        document.getElementById("workspace-pane").classList.remove("mobile-open");
     }
 
-    function renderMarkdown(raw) {
-        if (!raw) return '';
-        let s = raw;
-        s = s.replace(/<!--\s*CHOICES:\s*\[.*?\]\s*-->/gs, '');
-        s = escapeHtml(s);
-        
-        // Code blocks
-        s = s.replace(/```([\s\S]*?)```/g, (m, code) => `<pre class="code-block"><code>${code.trim()}</code></pre>`);
-        // Inline code
-        s = s.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
-        // Headings
-        s = s.replace(/^### (.*$)/gim, '<h4>$1</h4>');
-        s = s.replace(/^#### (.*$)/gim, '<h5>$1</h5>');
-        s = s.replace(/^## (.*$)/gim, '<h3>$1</h3>');
-        // Bold & Italic
-        s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-        // Lists
-        s = s.replace(/^\s*-\s+(.*$)/gim, '<li>$1</li>');
-        s = s.replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>');
-        s = s.replace(/<\/ul>\s*<ul>/g, '');
-        // Hr
-        s = s.replace(/^---$/gim, '<hr>');
-        // Newlines
-        s = s.replace(/\n\n/g, '<br><br>');
-        s = s.replace(/\n/g, '<br>');
-        
-        return s;
+    function selectProject(name, icon) {
+        currentProject = name;
+        currentIcon = icon || "📁";
+        document.getElementById("ws-project-title").innerText = `${currentIcon} ${currentProject}`;
+        renderProjects();
+        renderWorkspaceFeed();
+        openMobileWorkspace();
     }
 
-    function extractChoices(text) {
-        if (!text) return [];
-        const choices = [];
-        // 1. Извлекаем из JSON блока <!-- CHOICES: [...] -->
-        const m = text.match(/<!--\s*CHOICES:\s*(\[.*?\])\s*-->/s);
-        if (m) {
-            try {
-                const arr = JSON.parse(m[1]);
-                if (Array.isArray(arr) && arr.length) return arr;
-            } catch(e) {}
-        }
-        // 2. Извлекаем из строк 🔘
-        const lines = text.split('\n');
-        for (const l of lines) {
-            const trimmed = l.trim();
-            if (trimmed.startsWith('🔘')) {
-                let val = trimmed.replace(/^🔘\s*/, '').replace(/^\[(.*?)\]$/, '$1').trim();
-                val = val.replace(/^Вариант\s*\d+\s*:\s*/i, '').trim();
-                if (val && !choices.includes(val)) {
-                    choices.push(val);
-                }
-            }
-        }
-        return choices;
-    }
-
-    function renderAiMessage(rawText) {
-        const choices = extractChoices(rawText);
-        
-        // Убираем текстовые варианты выбора из основного тела, чтобы отрендерить их как кнопки
-        let cleaned = rawText.replace(/###\s*🎯\s*Выберите следующий шаг:[\s\S]*$/i, '').trim();
-        cleaned = cleaned.replace(/<!--\s*CHOICES:[\s\S]*?-->/g, '').trim();
-        
-        let html = renderMarkdown(cleaned || rawText);
-        
-        if (choices.length > 0) {
-            html += `
-                <div class="choices-box">
-                    <div class="choices-title">🎯 Выберите следующий шаг (нажмите для запуска):</div>
-                    <div class="choices-grid">
-                        ${choices.map(c => {
-                            const safeDisplay = escapeHtml(c);
-                            const jsParam = c.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-                            return `
-                                <button class="choice-btn" onclick="quickSend('${jsParam}')">
-                                    <span class="icon">👉</span>
-                                    <span>${safeDisplay}</span>
-                                </button>
-                            `;
-                        }).join('')}
-                    </div>
-                </div>
-            `;
-        }
-        
-        return `<div class="message-ai">${html}</div>`;
-    }
-
-    async function readRepoJson(path) {
-        for (const withAuth of [true, false]) {
-            for (const ref of ['data', 'main']) {
-                try {
-                    const data = await ghApi(`/contents/${path}?ref=${ref}`, 'GET', null, withAuth);
-                    if (data && data.content) {
-                        return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
-                    }
-                } catch (e) {}
-            }
-        }
-        return null;
-    }
-
-    async function loadProjects() {
-        const list = document.getElementById('project_list');
-        const json = await readRepoJson('projects.json');
-        if (json && json.projects) {
-            allProjects = json.projects;
-            renderProjects();
-        } else if (!allProjects.length) {
-            list.innerHTML = `
-                <div style="padding:20px; color:#f87171; text-align:center;">
-                    <p style="font-weight:bold; margin-bottom:6px;">⚠️ Загрузка списка папок...</p>
-                    <button onclick="loadProjects()" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:12px;">Повторить</button>
-                </div>
-            `;
-        }
-    }
-
-    async function loadStatus() {
-        const el = document.getElementById('laptop_status');
-        const json = await readRepoJson('status.json');
-        if (!json || !json.last_seen) { el.textContent = '⚪ нет данных связи'; return; }
-        const mins = Math.round((Date.now() - new Date(json.last_seen).getTime()) / 60000);
-        if (mins <= 5) {
-            el.textContent = '🟢 ноутбук на связи';
-        } else {
-            el.textContent = `🔴 ноутбук не отвечает ${mins < 120 ? mins + ' мин' : Math.round(mins / 60) + ' ч'}`;
-        }
-    }
-    setInterval(() => { loadStatus(); }, 30000);
-
-    function renderProjects() {
-        const list = document.getElementById('project_list');
-        const q = document.getElementById('project_search').value.trim().toLowerCase();
-        const shown = allProjects.filter(p => p.toLowerCase().includes(q));
-        document.getElementById('project_count').innerText = `(${shown.length}${q ? ' из ' + allProjects.length : ''})`;
-        list.innerHTML = '';
-        if (!shown.length) {
-            list.innerHTML = '<div class="loading">Ничего не найдено</div>';
-            return;
-        }
-        shown.forEach(p => {
-            const div = document.createElement('div');
-            div.className = 'project-tab' + (p === currentProject ? ' active' : '');
-            div.textContent = '📁 ' + p;
-            div.onclick = () => openProject(p, div);
-            list.appendChild(div);
-        });
-    }
-
-    setInterval(() => { loadProjects(); }, 60000);
-
-    let autoRefreshInterval = null;
-
-    function openProject(projName, element) {
-        currentProject = projName;
-        document.querySelectorAll('.project-tab').forEach(el => el.classList.remove('active'));
-        if(element) element.classList.add('active');
-        
-        document.getElementById('app').classList.add('project-open');
-        document.getElementById('workspace_area').style.display = 'flex';
-        document.getElementById('current_project_name').textContent = projName;
-        
-        loadProjectHistory(true);
-        
-        if (autoRefreshInterval) clearInterval(autoRefreshInterval);
-        autoRefreshInterval = setInterval(() => loadProjectHistory(false), 4000);
-    }
-
-    function closeProject() {
-        document.getElementById('app').classList.remove('project-open');
-        if (autoRefreshInterval) clearInterval(autoRefreshInterval);
-        autoRefreshInterval = null;
-        currentProject = '';
+    function setProjectFilter(flt, btn) {
+        projectFilter = flt;
+        document.querySelectorAll("#project-cat-filters .chip").forEach(c => c.classList.remove("active"));
+        if (btn) btn.classList.add("active");
         renderProjects();
     }
 
-    function toggleMoreCommands() {
-        const el = document.getElementById('extra_suggestions');
-        const btn = document.getElementById('toggle_more_btn');
-        if (el.classList.contains('show')) {
-            el.classList.remove('show');
-            btn.innerHTML = '➕ Ещё команды (10) ▼';
-        } else {
-            el.classList.add('show');
-            btn.innerHTML = 'Свернуть ▲';
-        }
+    function setCrmStatusFilter(flt, btn) {
+        crmStatusFilter = flt;
+        btn.parentElement.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        btn.classList.add("active");
+        renderCrmTasks();
     }
 
-    function quickSend(cmd) {
-        document.getElementById('custom_cmd').value = cmd;
-        sendTask();
+    function setWsFilter(flt) {
+        wsFilter = flt;
+        ["all", "open", "closed"].forEach(k => {
+            const el = document.getElementById("ws-flt-" + k);
+            if (el) el.classList.toggle("active", k === flt);
+        });
+        renderWorkspaceFeed();
     }
 
-    function normalizeCmd(raw) {
-        const trimmed = raw.trim();
-        const lower = trimmed.toLowerCase();
-        
-        if (lower === 'статус' || lower === 'status' || lower === 'инфо' || lower === 'state') return 'STATUS';
-        if (lower === 'что дальше' || lower === 'next' || lower === 'next_steps' || lower === 'дальше') return 'NEXT_STEPS';
-        if (lower === 'план' || lower === 'план недели' || lower === 'plan' || lower === 'plan_week') return 'PLAN_WEEK';
-        if (lower === 'полный аудит' || lower === 'full' || lower === 'full_audit') return 'FULL_AUDIT';
-        if (lower === 'ревью' || lower === 'код' || lower === 'код ревью' || lower === 'audit_code') return 'AUDIT_CODE';
-        if (lower === 'безопасность' || lower === 'security' || lower === 'audit_security') return 'AUDIT_SECURITY';
-        if (lower === 'баги' || lower === 'ошибки' || lower === 'bugs') return 'BUGS';
-        if (lower === 'доки' || lower === 'документация' || lower === 'readme' || lower === 'docs') return 'DOCS';
-        if (lower === 'архитектура' || lower === 'arch') return 'ARCH';
-        if (lower === 'оптимизация' || lower === 'optimize') return 'OPTIMIZE';
-        if (lower === 'маркетинг' || lower === 'воронка' || lower === 'marketing') return 'MARKETING';
-        if (lower === 'объясни' || lower === 'разбор' || lower === 'explain') return 'EXPLAIN';
-        if (lower === 'файлы' || lower === 'files' || lower === 'ls' || lower === 'dir') return 'FILES';
-        if (lower === 'git' || lower === 'гит') return 'GIT';
-        if (lower === 'тесты' || lower === 'tests') return 'TESTS';
-        if (lower === 'очистка' || lower === 'кэш' || lower === 'cleanup') return 'CLEANUP';
-        
-        return trimmed;
+    function parseIssueProject(title) {
+        const m = String(title || "").match(/^\[(.*?)\]\s*(.*)$/);
+        if (m) return { project: m[1].trim(), cmd: m[2].trim() };
+        return { project: "System 1", cmd: String(title || "") };
     }
 
-    let lastRenderedHtml = '';
+    function renderProjects() {
+        const container = document.getElementById("projects-container");
+        const q = (document.getElementById("project-search").value || "").toLowerCase().trim();
 
-    async function loadProjectHistory(showLoading = false) {
-        if (!currentProject) return;
-        const area = document.getElementById('history_area');
-        
-        if (showLoading) {
-            lastRenderedHtml = '';
-            area.innerHTML = '<div class="loading">Синхронизация с ноутбуком...</div>';
-        }
-        
-        try {
-            const issues = await ghApi('/issues?state=all&per_page=100');
-            const projIssues = issues.filter(i => i.title && i.title.includes(`PROJ: ${currentProject}`));
-            
-            if (projIssues.length === 0) {
-                if (showLoading) area.innerHTML = '<div class="loading">Нет истории задач по этому проекту.<br><br>💡 Нажмите <b>🔍 Статус</b> или задайте любой вопрос ниже!</div>';
+        const stats = {};
+        allIssues.forEach(iss => {
+            const { project, cmd } = parseIssueProject(iss.title);
+            if (!stats[project]) stats[project] = { total: 0, open: 0, lastCmd: "" };
+            stats[project].total++;
+            if (iss.state === "open") stats[project].open++;
+            if (!stats[project].lastCmd) stats[project].lastCmd = cmd;
+        });
+
+        // Ensure any project mentioned in issues is in allProjects
+        Object.keys(stats).forEach(pName => {
+            if (!allProjects.some(p => p.name.toLowerCase() === pName.toLowerCase())) {
+                allProjects.push({ name: pName, icon: "📁" });
+            }
+        });
+
+        const sorted = [...allProjects].sort((a, b) => {
+            const ia = PRIORITY_PROJECTS.findIndex(x => x.toLowerCase() === a.name.toLowerCase());
+            const ib = PRIORITY_PROJECTS.findIndex(x => x.toLowerCase() === b.name.toLowerCase());
+            const sa = stats[a.name] ? stats[a.name].total : 0;
+            const sb = stats[b.name] ? stats[b.name].total : 0;
+            if (ia !== -1 && ib !== -1) return ia - ib;
+            if (ia !== -1) return -1;
+            if (ib !== -1) return 1;
+            return sb - sa;
+        });
+
+        let html = "";
+        sorted.forEach(p => {
+            if (q && !p.name.toLowerCase().includes(q)) return;
+            const st = stats[p.name] || { total: 0, open: 0, lastCmd: "Нет задач — нажмите, чтобы создать" };
+            const isPriority = PRIORITY_PROJECTS.some(x => x.toLowerCase() === p.name.toLowerCase());
+            if (projectFilter === "active" && st.total === 0) return;
+            if (projectFilter === "priority" && !isPriority) return;
+
+            const isSel = p.name.toLowerCase() === currentProject.toLowerCase();
+            html += `
+                <div class="project-card ${isSel ? 'selected' : ''}" onclick="selectProject('${escapeHtml(p.name)}', '${p.icon || '📁'}')">
+                    <div class="p-card-top">
+                        <div class="p-card-name">${p.icon || '📁'} ${escapeHtml(p.name)}</div>
+                        <div class="p-badges tabular">
+                            ${st.open > 0 ? `<span class="badge running">⏳ ${st.open}</span>` : ''}
+                            ${st.total > 0 ? `<span class="badge done">✅ ${st.total}</span>` : `<span class="badge">0</span>`}
+                        </div>
+                    </div>
+                    <div class="p-card-preview">${escapeHtml(st.lastCmd)}</div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html || `<div style="text-align:center; color:var(--text-dim); padding:24px;">Папки не найдены</div>`;
+    }
+
+    function renderCrmTasks() {
+        const container = document.getElementById("crm-tasks-container");
+        const q = (document.getElementById("crm-task-search").value || "").toLowerCase().trim();
+
+        let openCnt = 0;
+        let closedCnt = 0;
+        allIssues.forEach(i => {
+            if (i.state === "open") openCnt++;
+            else closedCnt++;
+        });
+
+        document.getElementById("cnt-all").innerText = allIssues.length;
+        document.getElementById("cnt-open").innerText = openCnt;
+        document.getElementById("cnt-closed").innerText = closedCnt;
+        document.getElementById("m-tasks").innerText = allIssues.length;
+
+        let html = "";
+        allIssues.forEach(iss => {
+            const { project, cmd } = parseIssueProject(iss.title);
+            const comments = commentsByIssue[iss.number] || [];
+            const lastReply = comments.length > 0 ? comments[comments.length - 1].body : (iss.body || "");
+
+            if (crmStatusFilter === "open" && iss.state !== "open") return;
+            if (crmStatusFilter === "closed" && iss.state === "open") return;
+            if (crmStatusFilter === "links" && !/https?:\/\//i.test(cmd + " " + lastReply)) return;
+
+            if (q && !(cmd.toLowerCase().includes(q) || project.toLowerCase().includes(q) || lastReply.toLowerCase().includes(q))) {
                 return;
             }
 
-            let newHtml = '';
-            for (const issue of projIssues) {
-                const cmdName = escapeHtml(issue.title.split('|')[0].replace('CMD:', '').trim());
-                const isClosed = issue.state === 'closed';
-                
-                let commentsHtml = '';
-                let waitingAgent = false;
-                
-                if (issue.comments > 0) {
-                    try {
-                        const comments = await ghApi(`/issues/${issue.number}/comments`);
-                        comments.forEach(c => {
-                            if (c.body && c.body.includes('ожидает обработки в Antigravity')) waitingAgent = true;
-                            commentsHtml += renderAiMessage(c.body);
-                        });
-                    } catch(ce) {}
-                }
-                
-                if (issue.body && (issue.body.includes('Отчет с домашнего ноутбука') || issue.body.includes('Сводка по проекту') || issue.body.includes('Отчёт с домашнего ноутбука'))) {
-                    commentsHtml += renderAiMessage(issue.body);
-                }
+            const dateStr = new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+            const statusBadge = iss.state === "open"
+                ? `<span class="badge running">⏳ В работе</span>`
+                : `<span class="badge done">✅ Выполнено</span>`;
 
-                let badge = '<span class="badge-open">В обработке ⏳</span>';
-                if (isClosed) badge = '<span class="badge-closed">Завершено ✅</span>';
-                else if (waitingAgent) badge = '<span class="badge-open" style="background:#e0e7ff; color:#3730a3;">ИИ анализирует 🧠</span>';
-
-                newHtml += `
-                    <div class="task-card">
-                        <div class="task-header">
-                            <span>Задача: ${cmdName}</span>
-                            ${badge}
-                        </div>
-                        <div class="message-user">Вы отправили задачу на ноутбук: "${cmdName}"</div>
-                        ${commentsHtml}
+            html += `
+                <div class="crm-task-card" onclick="selectProject('${escapeHtml(project)}', '📁')">
+                    <div class="crm-task-top tabular">
+                        <span class="crm-project-tag">#${iss.number} · ${escapeHtml(project)}</span>
+                        <span>${dateStr} ${statusBadge}</span>
                     </div>
-                `;
-            }
-            
-            if (newHtml !== lastRenderedHtml) {
-                lastRenderedHtml = newHtml;
-                area.innerHTML = newHtml;
-                area.scrollTop = area.scrollHeight;
-            }
-        } catch(e) {
-            console.error(e);
-            if (showLoading) {
-                area.innerHTML = `<div style="padding:20px; color:#f87171; text-align:center;">
-                    <p style="font-weight:bold; margin-bottom:8px;">Ошибка подключения к GitHub: ${escapeHtml(e.message)}</p>
-                    <button onclick="loadProjectHistory(true)" style="background:#3b82f6; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;">Повторить</button>
-                </div>`;
-            }
-        }
+                    <div class="crm-task-title">${linkifyText(cmd)}</div>
+                    ${lastReply ? `<div class="crm-task-snippet">${escapeHtml(lastReply.replace(/[#*`]/g, ''))}</div>` : ''}
+                </div>
+            `;
+        });
+
+        container.innerHTML = html || `<div style="text-align:center; color:var(--text-dim); padding:24px;">Задач по выбранному фильтру нет</div>`;
     }
 
-    async function sendTask() {
-        const rawCmd = document.getElementById('custom_cmd').value.trim();
-        if (!rawCmd || !currentProject) return;
-        const cmd = normalizeCmd(rawCmd);
-        
-        const btn = document.getElementById('send_btn');
-        btn.disabled = true; btn.innerText = '⏳';
-        
-        const area = document.getElementById('history_area');
-        const optimisticCard = document.createElement('div');
-        optimisticCard.className = 'task-card';
-        optimisticCard.innerHTML = `
-            <div class="task-header">
-                <span>Задача: ${escapeHtml(cmd)}</span>
-                <span class="badge-open">Отправка... ⏳</span>
-            </div>
-            <div class="message-user">Вы отправили задачу: "${escapeHtml(cmd)}"</div>
-            <div class="message-ai" style="color:#64748b;">🚀 Задача отправлена в автономный контур ноутбука, обработка...</div>
-        `;
-        area.appendChild(optimisticCard);
-        area.scrollTop = area.scrollHeight;
-        
-        const issueTitle = `CMD: ${cmd} | PROJ: ${currentProject}`;
-        const issueBody = `Задача отправлена с телефона.\nКоманда: ${cmd}`;
-        
+    function renderKnowledgeBase() {
+        const container = document.getElementById("kb-container");
+        const q = (document.getElementById("kb-search").value || "").toLowerCase().trim();
+
+        let html = "";
+        kbItems.forEach(item => {
+            const hay = `${item.title} ${item.category} ${item.summary} ${(item.action_items || []).join(" ")}`.toLowerCase();
+            if (q && !hay.includes(q)) return;
+
+            const actionsHtml = (item.action_items || []).map(a => `<li>${escapeHtml(a)}</li>`).join("");
+            html += `
+                <div class="kb-card">
+                    <div class="kb-cat">${escapeHtml(item.category || "База знаний")} · Задача #${item.issue || "CRM"}</div>
+                    <div class="kb-title">${escapeHtml(item.title)}</div>
+                    <div class="kb-summary">${escapeHtml(item.summary)}</div>
+                    ${actionsHtml ? `<ul class="kb-actions-list">${actionsHtml}</ul>` : ''}
+                    <div class="kb-footer">
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            ${item.source_url ? `<a class="kb-link" href="${item.source_url}" target="_blank">🔗 Источник ↗</a>` : ''}
+                            ${item.secondary_url ? `<a class="kb-link" href="${item.secondary_url}" target="_blank">✈️ Telegram ↗</a>` : ''}
+                        </div>
+                        <button class="mini-btn" onclick="applyKbToProject('${escapeHtml(item.title)}')">⚡ В работу</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html || `<div style="text-align:center; color:var(--text-dim); padding:24px;">Ничего не найдено</div>`;
+    }
+
+    function applyKbToProject(title) {
+        selectProject("Global_Plus", "🚀");
+        const inp = document.getElementById("cmd-input");
+        inp.value = `Внедрить в проект Global_Plus наработки из базы знаний: ${title}`;
+        inp.focus();
+    }
+
+    function renderWorkspaceFeed() {
+        const feed = document.getElementById("ws-feed");
+        const projIssues = allIssues.filter(iss => {
+            const { project } = parseIssueProject(iss.title);
+            return project.toLowerCase() === currentProject.toLowerCase();
+        });
+
+        document.getElementById("ws-project-sub").innerText =
+            `Всего задач в папке: ${projIssues.length} · Ссылки и команды сохраняются в CRM`;
+
+        const filtered = projIssues.filter(iss => {
+            if (wsFilter === "open") return iss.state === "open";
+            if (wsFilter === "closed") return iss.state !== "open";
+            return true;
+        });
+
+        if (filtered.length === 0) {
+            feed.innerHTML = `
+                <div style="margin:auto; text-align:center; max-width:320px; color:var(--text-dim); padding:30px 10px;">
+                    <div style="font-size:2.4rem; margin-bottom:8px;">${currentIcon}</div>
+                    <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Папка «${escapeHtml(currentProject)}» готова к работе</div>
+                    <div style="font-size:0.8rem; line-height:1.45;">Отправьте задачу, голосовую заметку или ссылку (YouTube, Habr, Telegram, сайт конкурента) — агент разберет её и сохранит результат в CRM.</div>
+                </div>
+            `;
+            return;
+        }
+
+        let html = "";
+        filtered.forEach(iss => {
+            const { cmd } = parseIssueProject(iss.title);
+            const isOpen = iss.state === "open";
+            const comments = commentsByIssue[iss.number] || [];
+            const timeStr = new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+
+            let replyText = "";
+            if (comments.length > 0) {
+                replyText = comments.map(c => c.body).join("\n\n---\n\n");
+            } else if (!isOpen) {
+                replyText = "✅ Задача выполнена и закрыта.";
+            } else {
+                replyText = "⏳ Агент на ноутбуке выполняет задачу и анализирует данные...";
+            }
+
+            const isLong = replyText.length > 420;
+            const replyId = `reply-box-${iss.number}`;
+
+            html += `
+                <div class="task-card ${isOpen ? 'running' : 'done'}">
+                    <div class="task-meta tabular">
+                        <span>Задача #${iss.number} · ${timeStr}</span>
+                        <span class="badge ${isOpen ? 'running' : 'done'}">${isOpen ? '⏳ В работе' : '✅ Выполнено'}</span>
+                    </div>
+                    <div class="task-cmd">${linkifyText(cmd)}</div>
+                    <div class="task-reply ${isLong ? 'collapsed' : ''}" id="${replyId}">${linkifyText(replyText)}</div>
+                    <div class="reply-Controls">
+                        ${isLong ? `<button class="mini-btn" onclick="toggleExpand('${replyId}', this)">📖 Развернуть полностью</button>` : '<span></span>'}
+                        <button class="mini-btn" onclick="copyReplyText(${iss.number})">📋 Копировать ответ</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        feed.innerHTML = html;
+    }
+
+    function toggleExpand(id, btn) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const collapsed = el.classList.toggle("collapsed");
+        btn.innerText = collapsed ? "📖 Развернуть полностью" : "🔼 Свернуть";
+    }
+
+    function copyReplyText(issueNum) {
+        const el = document.getElementById(`reply-box-${issueNum}`);
+        if (!el) return;
+        navigator.clipboard.writeText(el.innerText);
+        alert("Скопировано в буфер обмена!");
+    }
+
+    async function fetchWorkerTelemetry() {
+        const repo = getRepo();
+        const dot = document.getElementById("worker-dot");
+        const txt = document.getElementById("worker-text");
+
         try {
-            await ghApi('/issues', 'POST', { title: issueTitle, body: issueBody });
-            document.getElementById('custom_cmd').value = '';
-            
-            setTimeout(() => loadProjectHistory(false), 2000);
-            setTimeout(() => loadProjectHistory(false), 4500);
-            setTimeout(() => loadProjectHistory(false), 8000);
-        } catch(e) {
-            optimisticCard.remove();
-            alert('Ошибка отправки задачи: ' + e.message);
-        }
-        
-        btn.disabled = false; btn.innerText = 'Отправить';
-    }
-</script>
+            const ts = Date.now();
+            const res = await fetch(`https://raw.githubusercontent.com/${repo}/data/status.json?t=${ts}`);
+            if (res.ok) {
+                const data = await res.json();
+                dot.className = "status-dot online";
+                txt.innerText = `Онлайн · CPU ${data.cpu}% · RAM ${data.ram}%`;
+                document.getElementById("m-cpu").innerText = `${data.cpu}%`;
+                document.getElementById("m-ram").innerText = `${data.ram}%`;
+            } else {
+                dot.className = "status-dot offline";
+                txt.innerText = "Воркер в режиме ожидания";
+            }
 
+            // Load projects.json
+            const pRes = await fetch(`https://raw.githubusercontent.com/${repo}/data/projects.json?t=${ts}`);
+            if (pRes.ok) {
+                const pData = await pRes.json();
+                if (pData.projects && Array.isArray(pData.projects)) {
+                    pData.projects.forEach(rp => {
+                        if (!allProjects.some(ap => ap.name.toLowerCase() === rp.name.toLowerCase())) {
+                            allProjects.push(rp);
+                        }
+                    });
+                }
+            }
+
+            // Load crm_data.json
+            const kbRes = await fetch(`https://raw.githubusercontent.com/${repo}/data/crm_data.json?t=${ts}`);
+            if (kbRes.ok) {
+                const kbData = await kbRes.json();
+                if (kbData.knowledge_base && kbData.knowledge_base.length > 0) {
+                    kbItems = kbData.knowledge_base;
+                }
+            }
+        } catch (e) {
+            dot.className = "status-dot offline";
+            txt.innerText = "Автономный режим CRM";
+        }
+    }
+
+    async function fetchIssuesAndComments() {
+        const repo = getRepo();
+        const token = getToken();
+        const headers = { "Accept": "application/vnd.github.v3+json" };
+        if (token) headers["Authorization"] = `token ${token}`;
+
+        try {
+            const [issRes, comRes] = await Promise.all([
+                fetch(`https://api.github.com/repos/${repo}/issues?state=all&per_page=60&sort=created&direction=desc`, { headers }),
+                fetch(`https://api.github.com/repos/${repo}/issues/comments?per_page=100&sort=created&direction=desc`, { headers })
+            ]);
+
+            if (issRes.ok) {
+                const rawIssues = await issRes.json();
+                allIssues = rawIssues.filter(i => !i.pull_request);
+            }
+
+            if (comRes.ok) {
+                const rawComments = await comRes.json();
+                const map = {};
+                rawComments.reverse().forEach(c => {
+                    const m = String(c.issue_url || "").match(/\/issues\/(\d+)$/);
+                    if (m) {
+                        const num = Number(m[1]);
+                        if (!map[num]) map[num] = [];
+                        map[num].push(c);
+                    }
+                });
+                commentsByIssue = map;
+            }
+        } catch (e) {
+            console.warn("GitHub fetch warning:", e);
+        }
+
+        renderProjects();
+        renderCrmTasks();
+        renderKnowledgeBase();
+        renderWorkspaceFeed();
+    }
+
+    async function sendTask(commandText) {
+        const repo = getRepo();
+        const token = getToken();
+        if (!token) {
+            openSettingsModal();
+            return;
+        }
+
+        const title = `[${currentProject}] ${commandText}`;
+        const body = `Отправлено с мобильного Виртуального Офиса CRM v9.0\nПроект: ${currentProject}\nВремя: ${new Date().toLocaleString("ru-RU")}`;
+
+        try {
+            const res = await fetch(`https://api.github.com/repos/${repo}/issues`, {
+                method: "POST",
+                headers: {
+                    "Authorization": `token ${token}`,
+                    "Accept": "application/vnd.github.v3+json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ title, body })
+            });
+
+            if (res.ok) {
+                await fetchIssuesAndComments();
+            } else {
+                alert("Ошибка отправки: проверьте GitHub Token в настройках (⚙️)");
+            }
+        } catch (e) {
+            alert("Ошибка сети: " + e.message);
+        }
+    }
+
+    function submitCustomInput() {
+        const inp = document.getElementById("cmd-input");
+        const val = inp.value.trim();
+        if (!val) return;
+        inp.value = "";
+        sendTask(val);
+    }
+
+    function openSettingsModal() {
+        document.getElementById("cfg-repo").value = getRepo();
+        document.getElementById("cfg-token").value = getToken();
+        document.getElementById("settings-modal").style.display = "flex";
+    }
+
+    function openNewProjectModal() {
+        document.getElementById("new-proj-name").value = "";
+        document.getElementById("new-project-modal").style.display = "flex";
+    }
+
+    function closeModals() {
+        document.querySelectorAll(".modal-backdrop").forEach(m => m.style.display = "none");
+    }
+
+    function saveSettings() {
+        const r = document.getElementById("cfg-repo").value.trim();
+        const t = document.getElementById("cfg-token").value.trim();
+        if (r) localStorage.setItem("gh_repo", r);
+        if (t) localStorage.setItem("gh_token", t);
+        closeModals();
+        refreshAllData();
+    }
+
+    function createNewProject() {
+        const name = document.getElementById("new-proj-name").value.trim();
+        if (!name) return;
+        if (!allProjects.some(p => p.name.toLowerCase() === name.toLowerCase())) {
+            allProjects.unshift({ name, icon: "🚀" });
+        }
+        closeModals();
+        selectProject(name, "🚀");
+        sendTask(`Инициализировать новую папку и CRM-структуру проекта ${name}`);
+    }
+
+    async function refreshAllData() {
+        await Promise.all([fetchWorkerTelemetry(), fetchIssuesAndComments()]);
+    }
+
+    // Initial load & auto-refresh
+    renderProjects();
+    renderKnowledgeBase();
+    refreshAllData();
+    setInterval(refreshAllData, 15000);
+</script>
 </body>
 </html>
