@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-16T16:36:08.313058+00:00",
+  "updated_at": "2026-10-16T16:37:57.149Z",
   "version": "9.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792168676114",
+      "issue": 76,
+      "category": "Проект: Позновалка",
+      "title": "https://tbank-online.com/baf/6eNKZud3qzd. Проверь эту ссылку на безопасность!!!!",
+      "source_url": "https://tbank-online.com/baf/6eNKZud3qzd.",
+      "secondary_url": "",
+      "date": "16.10.2026",
+      "summary": "Title: 404 | Страница не найдена\n• URL Source: https://tbank-online.com/baf/6eNKZud3qzd.\n• Warning: Target URL returned error 404: Not Found\n• [![Image 1: Т-Банк](https://www.tbank-online.com/system/images/404-logo-wordmark.svg)](https://www.tbank-online.com/)\n• ![Image 2: 404](https://www.tbank-online.com/system/images/404.svg)\n• ![Image 3: 404](https://www.tbank-online.com/system/images/404.svg)\n• ## Такой страницы нет\n• Но есть много других полезных страниц",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Позновалка"
+      ]
+    },
     {
       "id": "kb-20261015_192813",
       "issue": "Auto",
