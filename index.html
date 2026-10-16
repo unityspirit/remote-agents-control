@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#090d16">
-    <title>Virtual Office CRM v9.0</title>
+    <title>Виртуальный Офис CRM v9.5</title>
     <style>
         :root {
             --bg-main: #090d16;
@@ -15,7 +15,7 @@
             --bg-card-hover: #1e293b;
             --accent: #3b82f6;
             --accent-hover: #2563eb;
-            --accent-soft: rgba(59, 130, 246, 0.14);
+            --accent-soft: rgba(59, 130, 246, 0.15);
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
             --text-muted: #64748b;
@@ -50,7 +50,6 @@
             font-variant-numeric: tabular-nums;
         }
 
-        /* APP SHELL */
         .app-shell {
             display: flex;
             flex-direction: column;
@@ -65,7 +64,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 14px;
-            background: rgba(17, 24, 39, 0.92);
+            background: rgba(17, 24, 39, 0.94);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             flex-shrink: 0;
@@ -98,19 +97,18 @@
         }
 
         .brand-titles h1 {
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             font-weight: 700;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            letter-spacing: -0.01em;
         }
 
         .worker-pill {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-size: 0.72rem;
+            font-size: 0.71rem;
             color: var(--text-dim);
         }
 
@@ -145,7 +143,7 @@
             border: 1px solid var(--border);
             background: var(--bg-card);
             color: var(--text-main);
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
@@ -165,7 +163,7 @@
             color: #fff;
         }
 
-        /* MAIN BODY LAYOUT */
+        /* MAIN BODY */
         .main-body {
             flex: 1;
             display: flex;
@@ -174,9 +172,8 @@
             overflow: hidden;
         }
 
-        /* LEFT NAVIGATION / TAB VIEWS */
         .nav-pane {
-            width: 390px;
+            width: 420px;
             max-width: 100%;
             background: var(--bg-panel);
             border-right: 1px solid var(--border);
@@ -200,7 +197,7 @@
             display: flex;
         }
 
-        /* SEARCH & FILTER CONTROLS */
+        /* SEARCH & CHIPS */
         .search-bar {
             display: flex;
             gap: 8px;
@@ -220,7 +217,7 @@
             border: 1px solid var(--border);
             background: var(--bg-main);
             color: var(--text-main);
-            font-size: 0.86rem;
+            font-size: 0.85rem;
             outline: none;
         }
 
@@ -244,7 +241,7 @@
         .chip {
             padding: 7px 12px;
             border-radius: 999px;
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             font-weight: 600;
             white-space: nowrap;
             background: var(--bg-card);
@@ -263,6 +260,18 @@
             border-color: rgba(59, 130, 246, 0.45);
         }
 
+        .section-divider {
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #93c5fd;
+            padding: 6px 4px 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         /* PROJECT CARDS */
         .project-card {
             background: var(--bg-card);
@@ -270,14 +279,10 @@
             border-radius: 14px;
             padding: 12px 14px;
             cursor: pointer;
-            transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+            transition: transform 0.12s ease, border-color 0.15s ease;
             display: flex;
             flex-direction: column;
-            gap: 6px;
-        }
-
-        .project-card:hover {
-            background: var(--bg-card-hover);
+            gap: 5px;
         }
 
         .project-card:active {
@@ -286,7 +291,11 @@
 
         .project-card.selected {
             border-color: var(--accent);
-            background: rgba(59, 130, 246, 0.11);
+            background: rgba(59, 130, 246, 0.12);
+        }
+
+        .project-card.worked-card {
+            border-left: 3px solid var(--accent);
         }
 
         .p-card-top {
@@ -298,7 +307,7 @@
 
         .p-card-name {
             font-weight: 700;
-            font-size: 0.94rem;
+            font-size: 0.92rem;
             display: flex;
             align-items: center;
             gap: 7px;
@@ -316,7 +325,7 @@
         }
 
         .badge {
-            font-size: 0.7rem;
+            font-size: 0.69rem;
             font-weight: 700;
             padding: 3px 8px;
             border-radius: 999px;
@@ -334,12 +343,100 @@
             color: #34d399;
         }
 
+        .badge.purple {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+        }
+
+        .p-card-desc {
+            font-size: 0.77rem;
+            color: #cbd5e1;
+            line-height: 1.35;
+        }
+
         .p-card-preview {
-            font-size: 0.79rem;
+            font-size: 0.74rem;
             color: var(--text-dim);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* PLAN & SELF-LEARNING CARDS */
+        .plan-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .plan-card.today {
+            border-left: 3px solid var(--success);
+        }
+
+        .plan-card.tomorrow {
+            border-left: 3px solid var(--accent);
+        }
+
+        .plan-card.studied {
+            border-left: 3px solid var(--purple);
+        }
+
+        .plan-step-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .plan-check-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.89rem;
+            line-height: 1.35;
+        }
+
+        .plan-check-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .plan-desc {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            line-height: 1.45;
+        }
+
+        .plan-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 2px;
+        }
+
+        .instinct-bar-bg {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .instinct-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            border-radius: 999px;
         }
 
         /* CRM TASK ITEM */
@@ -350,7 +447,7 @@
             padding: 12px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 7px;
             cursor: pointer;
         }
 
@@ -359,7 +456,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 6px;
-            font-size: 0.74rem;
+            font-size: 0.73rem;
         }
 
         .crm-project-tag {
@@ -371,14 +468,14 @@
         }
 
         .crm-task-title {
-            font-size: 0.87rem;
+            font-size: 0.86rem;
             font-weight: 600;
             line-height: 1.38;
             word-break: break-word;
         }
 
         .crm-task-snippet {
-            font-size: 0.78rem;
+            font-size: 0.77rem;
             color: var(--text-dim);
             line-height: 1.4;
             display: -webkit-box;
@@ -392,14 +489,14 @@
             background: linear-gradient(180deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
             border: 1px solid rgba(139, 92, 246, 0.28);
             border-radius: 14px;
-            padding: 14px;
+            padding: 13px;
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
         .kb-cat {
-            font-size: 0.7rem;
+            font-size: 0.69rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             color: #c4b5fd;
@@ -407,21 +504,21 @@
         }
 
         .kb-title {
-            font-size: 0.94rem;
+            font-size: 0.92rem;
             font-weight: 700;
             line-height: 1.35;
             color: #fff;
         }
 
         .kb-summary {
-            font-size: 0.82rem;
+            font-size: 0.81rem;
             color: #cbd5e1;
-            line-height: 1.48;
+            line-height: 1.46;
         }
 
         .kb-actions-list {
             padding-left: 16px;
-            font-size: 0.78rem;
+            font-size: 0.77rem;
             color: #93c5fd;
             display: flex;
             flex-direction: column;
@@ -444,7 +541,7 @@
             font-weight: 600;
         }
 
-        /* RIGHT WORKSPACE (PROJECT CHAT & CRM DETAILS) */
+        /* RIGHT WORKSPACE */
         .workspace-pane {
             flex: 1;
             display: flex;
@@ -491,7 +588,7 @@
         }
 
         .ws-title-text h2 {
-            font-size: 0.96rem;
+            font-size: 0.95rem;
             font-weight: 700;
             white-space: nowrap;
             overflow: hidden;
@@ -499,11 +596,13 @@
         }
 
         .ws-subtitle {
-            font-size: 0.72rem;
+            font-size: 0.71rem;
             color: var(--text-dim);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        /* CHAT / TASK FEED IN WORKSPACE */
         .ws-feed {
             flex: 1;
             overflow-y: auto;
@@ -536,12 +635,12 @@
             align-items: center;
             justify-content: space-between;
             gap: 8px;
-            font-size: 0.74rem;
+            font-size: 0.73rem;
             color: var(--text-dim);
         }
 
         .task-cmd {
-            font-size: 0.9rem;
+            font-size: 0.89rem;
             font-weight: 600;
             line-height: 1.4;
             color: #fff;
@@ -559,7 +658,7 @@
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 10px;
             padding: 10px 12px;
-            font-size: 0.83rem;
+            font-size: 0.82rem;
             line-height: 1.5;
             color: #e2e8f0;
             white-space: pre-wrap;
@@ -569,10 +668,9 @@
         .task-reply.collapsed {
             max-height: 180px;
             overflow: hidden;
-            position: relative;
         }
 
-        .reply-Controls {
+        .reply-controls {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -581,21 +679,29 @@
         }
 
         .mini-btn {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.07);
             border: 1px solid var(--border);
-            color: var(--text-dim);
+            color: var(--text-main);
             font-size: 0.73rem;
-            padding: 5px 10px;
+            padding: 6px 10px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mini-btn.accent {
+            background: var(--accent-soft);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
         }
 
         .mini-btn:active {
             transform: scale(0.96);
         }
 
-        /* QUICK COMMAND PILLS & INPUT FOOTER */
         .ws-footer {
             background: var(--bg-panel);
             border-top: 1px solid var(--border);
@@ -625,7 +731,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-main);
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
             display: inline-flex;
@@ -653,7 +759,7 @@
             border: 1px solid var(--border);
             background: var(--bg-main);
             color: var(--text-main);
-            font-size: 0.9rem;
+            font-size: 0.89rem;
             outline: none;
         }
 
@@ -663,26 +769,18 @@
 
         .send-btn {
             height: 44px;
-            padding: 0 16px;
+            padding: 0 15px;
             border-radius: 12px;
             border: none;
             background: var(--accent);
             color: #fff;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             cursor: pointer;
             flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
         }
 
-        .send-btn:active {
-            transform: scale(0.96);
-        }
-
-        /* BOTTOM MOBILE TAB BAR */
+        /* 5-TAB BOTTOM BAR FOR MOBILE */
         .bottom-nav {
             display: flex;
             background: rgba(17, 24, 39, 0.98);
@@ -702,15 +800,16 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3px;
-            font-size: 0.69rem;
+            gap: 2px;
+            font-size: 0.65rem;
             font-weight: 600;
             cursor: pointer;
             position: relative;
+            padding: 0 2px;
         }
 
         .b-tab .b-icon {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
         }
 
         .b-tab.active {
@@ -721,13 +820,12 @@
             content: "";
             position: absolute;
             top: 0;
-            width: 32px;
+            width: 28px;
             height: 3px;
             border-radius: 0 0 4px 4px;
             background: var(--accent);
         }
 
-        /* DASHBOARD METRIC GRID */
         .metric-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -743,13 +841,13 @@
         }
 
         .metric-val {
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 800;
             color: #60a5fa;
         }
 
         .metric-lbl {
-            font-size: 0.68rem;
+            font-size: 0.67rem;
             color: var(--text-dim);
             margin-top: 2px;
         }
@@ -757,21 +855,15 @@
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.77rem;
+            font-size: 0.76rem;
         }
 
         .matrix-table th, .matrix-table td {
-            padding: 8px 6px;
+            padding: 7px 5px;
             border-bottom: 1px solid var(--border);
             text-align: left;
         }
 
-        .matrix-table th {
-            color: var(--text-dim);
-            font-weight: 600;
-        }
-
-        /* MODALS */
         .modal-backdrop {
             display: none;
             position: fixed;
@@ -796,8 +888,7 @@
             gap: 12px;
         }
 
-        /* RESPONSIVE MOBILE BEHAVIOR */
-        @media (max-width: 820px) {
+        @media (max-width: 860px) {
             .nav-pane {
                 width: 100%;
                 border-right: none;
@@ -826,41 +917,50 @@
         <div class="brand-row">
             <div class="brand-logo">🏢</div>
             <div class="brand-titles">
-                <h1>Виртуальный Офис CRM</h1>
+                <h1>Виртуальный Офис CRM v9.5</h1>
                 <div class="worker-pill">
                     <span class="status-dot" id="worker-dot"></span>
-                    <span id="worker-text">Синхронизация...</span>
+                    <span id="worker-text">Подключение к ноутбуку...</span>
                 </div>
             </div>
         </div>
         <div class="topbar-actions">
-            <button class="icon-btn" onclick="openNewProjectModal()" title="Новый проект">➕ Проект</button>
-            <button class="icon-btn" onclick="refreshAllData()" title="Обновить">🔄</button>
-            <button class="icon-btn" onclick="openSettingsModal()" title="Настройки">⚙️</button>
+            <button class="icon-btn" onclick="openNewProjectModal()">➕ Папка</button>
+            <button class="icon-btn" onclick="refreshAllData()">🔄</button>
+            <button class="icon-btn" onclick="openSettingsModal()">⚙️</button>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <div class="main-body">
-        <!-- LEFT PANE (TABS ON MOBILE & DESKTOP) -->
+        <!-- LEFT NAVIGATION PANE -->
         <aside class="nav-pane">
-            <!-- TAB 1: PROJECTS -->
+            <!-- TAB 1: PROJECTS / FOLDERS -->
             <section class="tab-view active" id="tab-projects">
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Поиск папки или проекта..." oninput="renderProjects()">
+                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Найти проект (Alberta, Позновалка, Егор...)" oninput="renderProjects()">
                 </div>
                 <div class="filter-row" id="project-cat-filters">
-                    <button class="chip active" onclick="setProjectFilter('all', this)">Все папки</button>
-                    <button class="chip" onclick="setProjectFilter('active', this)">🔥 С задачами</button>
-                    <button class="chip" onclick="setProjectFilter('priority', this)">⭐ Главные</button>
+                    <button class="chip active" onclick="setProjectFilter('worked', this)">🔥 Работали ранее (<span id="cnt-worked" class="tabular">0</span>)</button>
+                    <button class="chip" onclick="setProjectFilter('all', this)">📂 Все папки ноутбука (<span id="cnt-folders" class="tabular">0</span>)</button>
+                    <button class="chip" onclick="setProjectFilter('clients', this)">🤝 Клиенты и B2B</button>
                 </div>
                 <div id="projects-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
 
-            <!-- TAB 2: ALL CRM TASKS -->
+            <!-- TAB 2: ACTION PLAN (TODAY / TOMORROW) + STUDIED IMPROVEMENTS + SELF-LEARNING -->
+            <section class="tab-view" id="tab-plan">
+                <div class="filter-row" id="plan-sub-filters">
+                    <button class="chip active" onclick="setPlanSubView('schedule', this)">🗓️ Сегодня и Завтра</button>
+                    <button class="chip" onclick="setPlanSubView('improvements', this)">🔍 Что изучил → Что улучшить</button>
+                    <button class="chip" onclick="setPlanSubView('instincts', this)">🧬 Самообучение (9)</button>
+                </div>
+                <div id="plan-container" style="display:flex; flex-direction:column; gap:10px;"></div>
+            </section>
+
+            <!-- TAB 3: ALL CRM TASKS -->
             <section class="tab-view" id="tab-tasks">
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="crm-task-search" placeholder="🔍 Поиск по всем задачам и ссылкам..." oninput="renderCrmTasks()">
+                    <input type="text" class="search-input" id="crm-task-search" placeholder="🔍 Поиск по всем 72+ задачам и ссылкам..." oninput="renderCrmTasks()">
                 </div>
                 <div class="filter-row">
                     <button class="chip active" onclick="setCrmStatusFilter('all', this)">Все (<span id="cnt-all" class="tabular">0</span>)</button>
@@ -871,37 +971,36 @@
                 <div id="crm-tasks-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
 
-            <!-- TAB 3: KNOWLEDGE BASE (ПОЗНОВАЛКА & СТРАТЕГИИ) -->
+            <!-- TAB 4: KNOWLEDGE BASE -->
             <section class="tab-view" id="tab-kb">
-                <div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; color: #ddd6fe; line-height: 1.4;">
-                    🧠 <b>Спец-папка «База Знаний CRM»</b> (`Позновалка/База_Знаний_CRM`). Любая ссылка или видео, отправленные с телефона, автоматически разбираются и сохраняются здесь.
+                <div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.77rem; color: #ddd6fe; line-height: 1.4;">
+                    🧠 <b>Спец-папка «Позновалка/База_Знаний_CRM»</b>. Все ссылки и видео разбираются агентом и превращаются в готовые инструкции.
                 </div>
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="kb-search" placeholder="🔍 Поиск по базе знаний (JoinTECH, Habr, AI...)" oninput="renderKnowledgeBase()">
+                    <input type="text" class="search-input" id="kb-search" placeholder="🔍 Поиск (JoinTECH, Беловолов, Habr, Martell...)" oninput="renderKnowledgeBase()">
                 </div>
                 <div id="kb-container" style="display:flex; flex-direction:column; gap:10px;"></div>
             </section>
 
-            <!-- TAB 4: DASHBOARD & SITES -->
+            <!-- TAB 5: OFFICE & SITES -->
             <section class="tab-view" id="tab-dashboard">
                 <div class="metric-grid">
                     <div class="metric-box">
-                        <div class="metric-val tabular" id="m-cpu">--%</div>
-                        <div class="metric-lbl">CPU Ноутбука</div>
+                        <div class="metric-val tabular" id="m-folders">46</div>
+                        <div class="metric-lbl">Папок на ПК</div>
                     </div>
                     <div class="metric-box">
-                        <div class="metric-val tabular" id="m-ram">--%</div>
-                        <div class="metric-lbl">RAM Память</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-val tabular" id="m-tasks">--</div>
+                        <div class="metric-val tabular" id="m-tasks">72</div>
                         <div class="metric-lbl">Задач в CRM</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-val tabular" id="m-instincts">96%</div>
+                        <div class="metric-lbl">Индекс ИИ</div>
                     </div>
                 </div>
 
-                <!-- LIVE WEBSITES -->
                 <div class="project-card" style="cursor:default;">
-                    <div class="p-card-name">🌐 Наши боевые сайты и витрины</div>
+                    <div class="p-card-name">🌐 Наши боевые сайты</div>
                     <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
                         <a href="https://globalplus.tech" target="_blank" class="kb-link">🚀 globalplus.tech — AI & Tech Agency ↗</a>
                         <a href="https://unityspiritpartners.com" target="_blank" class="kb-link">🤝 unityspiritpartners.com — B2B Партнерство ↗</a>
@@ -909,39 +1008,32 @@
                     </div>
                 </div>
 
-                <!-- GLOBAL PLUS / JOINTECH MATRIX -->
                 <div class="project-card" style="cursor:default;">
-                    <div class="p-card-name">📈 Матрица услуг Global Plus (по модели JoinTECH)</div>
-                    <p style="font-size:0.75rem; color:var(--text-dim);">Воронка: 40-мин разбор → Инженерный аудит 6 точек → Внедрение</p>
+                    <div class="p-card-name">📈 Прайс-матрица Global Plus (по модели JoinTECH)</div>
                     <table class="matrix-table">
                         <thead>
-                            <tr>
-                                <th>Продукт / Услуга</th>
-                                <th>РФ / СНГ</th>
-                                <th>Global</th>
-                            </tr>
+                            <tr><th>Услуга / Пакет</th><th>РФ / СНГ</th><th>Global</th></tr>
                         </thead>
-                        <tbody id="matrix-tbody">
+                        <tbody>
                             <tr><td>Инженерный Аудит (6 узлов)</td><td>от 50 000 ₽</td><td>$900</td></tr>
                             <tr><td>Сайты на чистом коде + SEO</td><td>от 50 000 ₽/м</td><td>$1,500+</td></tr>
-                            <tr><td>CRM-инженерия + Мобильный Офис</td><td>от 150 000 ₽</td><td>$2,500+</td></tr>
+                            <tr><td>CRM + Мобильный Офис</td><td>от 150 000 ₽</td><td>$2,500+</td></tr>
                             <tr><td>Telegram Mini Apps + Навигатор</td><td>от 50 000 ₽</td><td>$1,200+</td></tr>
                             <tr><td>ИИ-агенты 24/7 + Возврат LTV</td><td>от 200 000 ₽</td><td>$3,000+</td></tr>
                         </tbody>
                     </table>
-                    <button class="icon-btn primary" style="margin-top:8px; width:100%;" onclick="selectProject('Global_Plus', '🚀')">Открыть проект Global_Plus →</button>
                 </div>
             </section>
         </aside>
 
-        <!-- RIGHT WORKSPACE (CHAT & PROJECT CRM) -->
+        <!-- RIGHT WORKSPACE (PROJECT CHAT & TASKS) -->
         <main class="workspace-pane" id="workspace-pane">
             <div class="ws-header">
                 <div class="ws-title-group">
                     <button class="back-btn" onclick="closeMobileWorkspace()">←</button>
                     <div class="ws-title-text">
-                        <h2 id="ws-project-title">🚀 Global_Plus</h2>
-                        <div class="ws-subtitle" id="ws-project-sub">Нажмите на задачу или отправьте новую команду / ссылку</div>
+                        <h2 id="ws-project-title">🧠 Позновалка</h2>
+                        <div class="ws-subtitle" id="ws-project-sub">История задач папки и прямое управление агентом</div>
                     </div>
                 </div>
                 <div class="filter-row" style="padding:0;">
@@ -951,43 +1043,46 @@
                 </div>
             </div>
 
-            <!-- PROJECT FEED -->
             <div class="ws-feed" id="ws-feed"></div>
 
-            <!-- FOOTER: HORIZONTAL QUICK PILLS + INPUT -->
             <div class="ws-footer">
                 <div class="quick-pills">
-                    <button class="q-pill" onclick="sendTask('status')">📊 Статус и файлы</button>
-                    <button class="q-pill" onclick="sendTask('audit')">🔍 Инженерный и SEO-аудит</button>
-                    <button class="q-pill" onclick="sendTask('content')">🎬 Сценарий и контент-план</button>
-                    <button class="q-pill" onclick="sendTask('deploy')">🚀 Проверить и выкатить в прод</button>
-                    <button class="q-pill" onclick="sendTask('create_site')">🌐 Собрать лендинг / Mini App</button>
+                    <button class="q-pill" onclick="sendTask('STATUS')">📊 Статус папки</button>
+                    <button class="q-pill" onclick="sendTask('NEXT_STEPS')">🎯 Что делать дальше</button>
+                    <button class="q-pill" onclick="sendTask('EVOLVE')">🧬 Самообучение EVOLVE</button>
+                    <button class="q-pill" onclick="sendTask('MARKETING')">📈 Воронка и трафик</button>
+                    <button class="q-pill" onclick="sendTask('FULL_AUDIT')">🔍 Полный аудит</button>
+                    <button class="q-pill" onclick="sendTask('NOTEBOOKLM')">📓 NotebookLM</button>
                 </div>
                 <div class="composer-row">
-                    <input type="text" class="composer-input" id="cmd-input" placeholder="Задача, вопрос или ссылка (YouTube / ТГ / Статья)..." onkeypress="if(event.key==='Enter') submitCustomInput()">
+                    <input type="text" class="composer-input" id="cmd-input" placeholder="Команда, вопрос или ссылка для разбора..." onkeypress="if(event.key==='Enter') submitCustomInput()">
                     <button class="send-btn" onclick="submitCustomInput()">Отправить</button>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- BOTTOM TAB NAVIGATION -->
+    <!-- 5-TAB BOTTOM BAR -->
     <nav class="bottom-nav">
-        <button class="b-tab active" onclick="switchTab('projects', this)">
+        <button class="b-tab active" id="nav-btn-projects" onclick="switchTab('projects', this)">
             <span class="b-icon">📁</span>
-            <span>Проекты</span>
+            <span>Папки</span>
         </button>
-        <button class="b-tab" onclick="switchTab('tasks', this)">
+        <button class="b-tab" id="nav-btn-plan" onclick="switchTab('plan', this)">
+            <span class="b-icon">🗓️</span>
+            <span>План & ИИ</span>
+        </button>
+        <button class="b-tab" id="nav-btn-tasks" onclick="switchTab('tasks', this)">
             <span class="b-icon">📋</span>
-            <span>CRM Задачи</span>
+            <span>Задачи</span>
         </button>
-        <button class="b-tab" onclick="switchTab('kb', this)">
+        <button class="b-tab" id="nav-btn-kb" onclick="switchTab('kb', this)">
             <span class="b-icon">🧠</span>
-            <span>База знаний</span>
+            <span>Знания</span>
         </button>
-        <button class="b-tab" onclick="switchTab('dashboard', this)">
+        <button class="b-tab" id="nav-btn-dashboard" onclick="switchTab('dashboard', this)">
             <span class="b-icon">📊</span>
-            <span>Офис & Сайты</span>
+            <span>Офис</span>
         </button>
     </nav>
 </div>
@@ -996,7 +1091,7 @@
 <div class="modal-backdrop" id="settings-modal">
     <div class="modal-card">
         <h3>⚙️ Подключение к GitHub CRM</h3>
-        <p style="font-size:0.8rem; color:var(--text-dim);">Укажите ваш репозиторий (`unityspirit/remote-agents-control`) и токен для управления с телефона.</p>
+        <p style="font-size:0.8rem; color:var(--text-dim);">Репозиторий (`unityspirit/remote-agents-control`) и токен для отправки задач с телефона.</p>
         <input type="text" class="search-input" id="cfg-repo" placeholder="unityspirit/remote-agents-control">
         <input type="password" class="search-input" id="cfg-token" placeholder="ghp_...">
         <div style="display:flex; gap:8px; justify-content:flex-end;">
@@ -1009,9 +1104,8 @@
 <!-- MODAL: NEW PROJECT -->
 <div class="modal-backdrop" id="new-project-modal">
     <div class="modal-card">
-        <h3>➕ Новый проект / Папка</h3>
-        <p style="font-size:0.8rem; color:var(--text-dim);">На ноутбуке автоматически создастся папка в `Downloads`.</p>
-        <input type="text" class="search-input" id="new-proj-name" placeholder="Например: Global_Plus_CRM">
+        <h3>➕ Новая папка / проект</h3>
+        <input type="text" class="search-input" id="new-proj-name" placeholder="Название папки...">
         <div style="display:flex; gap:8px; justify-content:flex-end;">
             <button class="icon-btn" onclick="closeModals()">Отмена</button>
             <button class="icon-btn primary" onclick="createNewProject()">Создать</button>
@@ -1020,24 +1114,313 @@
 </div>
 
 <script>
-    const PRIORITY_PROJECTS = [
-        "Global_Plus",
-        "Позновалка",
-        "Unity_Spirit_Partners",
-        "Alberta_Shirani",
-        "System 1",
-        "Virtual_Office",
-        "GitHub_Control_Panel"
+    // Метаданные всех папок, над которыми ранее работали (с описанием и иконками)
+    const PROJECT_META = {
+        "Позновалка": {
+            icon: "🧠",
+            worked: true,
+            client: false,
+            desc: "Центр самообучения и База Знаний CRM: разборы JoinTECH, Dan Martell, Gartner 2026, Habr S3, Similarweb и безлимитного контента"
+        },
+        "Alberta": {
+            icon: "💎",
+            worked: true,
+            client: true,
+            desc: "Alberta Shirani: сайты V1/V2, 9 промптов Google VEO 3.1, 900 кадров WebP скролла, PDF гайд и Telegram-воронка"
+        },
+        "Alex ChopChop": {
+            icon: "💈",
+            worked: true,
+            client: true,
+            desc: "Сеть/барбершоп: архитектурный аудит, оптимизация, исследование NotebookLM и система возврата клиентов (LTV)"
+        },
+        "Татьяна tentorium.ru": {
+            icon: "🐝",
+            worked: true,
+            client: true,
+            desc: "Каталог и воронка продаж Тенториум: автоматизация повторных заказов и работа с клиентской базой"
+        },
+        "Егор Трансфер": {
+            icon: "🚐",
+            worked: true,
+            client: true,
+            desc: "Сервис трансфера: быстрый заказ в 2 клика со смартфона и автоматическая передача заявок в Telegram"
+        },
+        "Белый Доминикана": {
+            icon: "🌴",
+            worked: true,
+            client: true,
+            desc: "Услуги, туризм и недвижимость в Доминикане: мобильная упаковка и лидогенерация"
+        },
+        "Alex Brus Питер": {
+            icon: "🏗️",
+            worked: true,
+            client: true,
+            desc: "Строительство домов из бруса в СПб: квиз-калькулятор сметы и прогрев через Telegram"
+        },
+        "Unity Inc": {
+            icon: "🤝",
+            worked: true,
+            client: false,
+            desc: "Unity Spirit Partners (unityspiritpartners.com) и Global Plus (globalplus.tech) — B2B партнерство и ИИ-агентство"
+        },
+        "True 1 Team": {
+            icon: "🚀",
+            worked: true,
+            client: false,
+            desc: "Командная разработка, AI-агентство Global Plus и продуктовая воронка"
+        },
+        "Belgrade_Sales_Kit": {
+            icon: "🇷🇸",
+            worked: true,
+            client: true,
+            desc: "Коммерческие предложения и пакеты продаж ИИ/CRM-услуг для бизнеса в Белграде"
+        },
+        "Belgrade_Demo_Sites": {
+            icon: "🌐",
+            worked: true,
+            client: true,
+            desc: "Демо-сайты на чистом коде для презентации клиентам в Белграде"
+        },
+        "Beyondyourfood.com": {
+            icon: "🌿",
+            worked: true,
+            client: true,
+            desc: "Международный wellness/нутрициологический проект: сайт и контент-воронка"
+        },
+        "UpworkVault": {
+            icon: "💼",
+            worked: true,
+            client: false,
+            desc: "База кейсов, портфолио и ИИ-автоматизация откликов на международные заказы Upwork"
+        },
+        "Костя": {
+            icon: "👤",
+            worked: true,
+            client: true,
+            desc: "Клиентский проект Кости — задачи и материалы на ноутбуке"
+        },
+        "Юра": {
+            icon: "👤",
+            worked: true,
+            client: true,
+            desc: "Клиентский проект Юры — разработка и автоматизация"
+        },
+        "Светлана Notion": {
+            icon: "📝",
+            worked: true,
+            client: true,
+            desc: "Архитектура рабочего пространства и баз данных в Notion для Светланы"
+        },
+        "8 слайдов карусель Белорусия": {
+            icon: "🇧🇾",
+            worked: true,
+            client: true,
+            desc: "Генерация 8-слайдовых экспертных каруселей и контента (проект Беларусь)"
+        },
+        "package": {
+            icon: "📦",
+            worked: true,
+            client: false,
+            desc: "Сборка пакетов, зависимостей и проверенные модули системы"
+        },
+        "antigravity": {
+            icon: "🤖",
+            worked: true,
+            client: false,
+            desc: "Ядро автономных агентов Antigravity, MCP-серверы и кастомные скиллы"
+        },
+        "ai-memory-workspace": {
+            icon: "🧬",
+            worked: true,
+            client: false,
+            desc: "Долговременная память ИИ-агентов, графы знаний и контекст сессий"
+        },
+        "Poker": {
+            icon: "♠️",
+            worked: true,
+            client: false,
+            desc: "Аналитический проект и алгоритмы Poker"
+        },
+        "Test Video Load": {
+            icon: "🎬",
+            worked: true,
+            client: false,
+            desc: "Тестирование быстрой загрузки видео-скролла и WebP-анимаций"
+        },
+        "Карта Пятигорск 43 21а_files": {
+            icon: "🗺️",
+            worked: true,
+            client: true,
+            desc: "Гео-данные и локальные материалы по объекту в Пятигорске"
+        },
+        "Рязань": {
+            icon: "🏙️",
+            worked: true,
+            client: true,
+            desc: "Проекты по Рязани (включая подпроект Страйк и локальные конфигурации)"
+        }
+    };
+
+    // Все 46 реальных папок на ноутбуке (фоллбек до загрузки projects.json)
+    const ALL_LAPTOP_FOLDERS = [
+        "Позновалка", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
+        "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
+        "Belgrade_Sales_Kit", "Belgrade_Demo_Sites", "Beyondyourfood.com", "UpworkVault",
+        "Костя", "Юра", "Светлана Notion", "8 слайдов карусель Белорусия", "Рязань",
+        "package", "antigravity", "ai-memory-workspace", "Poker", "Test Video Load",
+        "Карта Пятигорск 43 21а_files", "GitHub_Control_Panel", "Автошкола", "Белорусь",
+        "Карусель Белорусь", "i&D белорусь", "Визуализированый Транспорт",
+        "Дима Верхняя Синичиха Алапаевск", "Alviole", "SoloMan", "Tripwires",
+        "lead-operator", "Funnydog", "Study Work Done", "Study Screeshots",
+        "Telegram Desktop", "agent_workspace (1)", "download",
+        "2f446e5b72c3c52b372510cd53353594bc60d693bbc6b27c34fabb589224fa6e (2)"
     ];
 
-    const DEFAULT_PROJECTS = [
-        { name: "Global_Plus", icon: "🚀" },
-        { name: "Позновалка", icon: "🧠" },
-        { name: "Unity_Spirit_Partners", icon: "🤝" },
-        { name: "Alberta_Shirani", icon: "💎" },
-        { name: "System 1", icon: "⚙️" },
-        { name: "Virtual_Office", icon: "🏢" },
-        { name: "GitHub_Control_Panel", icon: "📱" }
+    // План по очереди: СЕГОДНЯ и ЗАВТРА
+    const ACTION_PLAN_STEPS = [
+        // СЕГОДНЯ
+        {
+            id: "step-today-1",
+            day: "today",
+            order: "Сегодня · Очередь №1",
+            project: "Unity Inc",
+            title: "Упаковать воронку Global Plus по модели JoinTECH (Андрей Беловолов)",
+            desc: "Внедрить на globalplus.tech и в КП 3-шаговую воронку: 1) Бесплатный 40-мин разбор узких мест -> 2) Платный «Инженерный аудит 6 узлов бизнеса» (от 50 000 ₽ / $900) -> 3) Пакеты внедрения по 6 отраслям (Медицина, Отели, Рестораны, Производство, Франшизы, E-com).",
+            cmd: "Подготовить обновленные блоки оффера Инженерного Аудита и 6 отраслей для сайта globalplus.tech по модели JoinTECH",
+            doneDefault: false
+        },
+        {
+            id: "step-today-2",
+            day: "today",
+            order: "Сегодня · Очередь №2",
+            project: "Позновалка",
+            title: "Запустить «Навигатор Telegram-канала» в 2 клика + 5 экспертных постов",
+            desc: "По примеру @belovolov_andrey: собрать единое закрепленное меню-навигатор по нашим кейсам и услугам (чтобы подписчик не терялся в ленте) и выпустить первые 5 постов без воды про потери на стыках CRM и мобильных сайтах.",
+            cmd: "Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plus без воды",
+            doneDefault: false
+        },
+        {
+            id: "step-today-3",
+            day: "today",
+            order: "Сегодня · Очередь №3",
+            project: "Alberta",
+            title: "Alberta Shirani: Финализировать PDF Лид-магнит и быстрый Mini App вместо длинного бота",
+            desc: "Убрать сложные кнопочные лабиринты (которые режут конверсию на 20%). Сделать выдачу PDF-гайда за 2 касания + авто-прогрев к консультации.",
+            cmd: "Сформировать чистовую структуру PDF лид-магнита и сценарий выдачи в 2 клика для Alberta Shirani",
+            doneDefault: false
+        },
+        {
+            id: "step-today-4",
+            day: "today",
+            order: "Сегодня · Очередь №4",
+            project: "Alex ChopChop",
+            title: "Alex ChopChop: Спроектировать QR-механику возврата клиентов (+35% LTV)",
+            desc: "Вместо прямых скидок в лоб: QR-код в барбершопе -> переход в Telegram Mini App с бонусом на следующую стрижку -> авто-напоминание через 21 день.",
+            cmd: "Разработать механику QR-оцифровки гостей и триггер возврата через 21 день для Alex ChopChop",
+            doneDefault: false
+        },
+
+        // ЗАВТРА
+        {
+            id: "step-tmrw-1",
+            day: "tomorrow",
+            order: "Завтра · Очередь №1",
+            project: "Unity Inc",
+            title: "Бесплатный трафик по Similarweb для globalplus.tech и unityspiritpartners.com",
+            desc: "Выгрузить реферальные каталоги (Referrals) конкурентов + собрать 6 быстрых отраслевых SEO-страниц на чистом коде (загрузка <1 сек на мобилках).",
+            cmd: "Составить список реферальных площадок и SEO-структуру 6 отраслевых страниц для globalplus.tech и unityspiritpartners.com",
+            doneDefault: false
+        },
+        {
+            id: "step-tmrw-2",
+            day: "tomorrow",
+            order: "Завтра · Очередь №2",
+            project: "Alberta",
+            title: "Alberta: Генерация видео по 9 промптам VEO 3.1 и нарезка 900 WebP кадров",
+            desc: "Запустить пакетную конвертацию через FFmpeg для плавного Cinematic Scroll 60 FPS на смартфонах и утвердить финальную версию сайта V1/V2.",
+            cmd: "Проверить готовность пайплайна нарезки 900 WebP кадров и промптов VEO 3.1 для Alberta",
+            doneDefault: false
+        },
+        {
+            id: "step-tmrw-3",
+            day: "tomorrow",
+            order: "Завтра · Очередь №3",
+            project: "Егор Трансфер",
+            title: "Егор Трансфер & Татьяна tentorium.ru: Мобильная заявка за 3 секунды и авто-возврат",
+            desc: "Для Егора Трансфера — форма заказа трансфера в 2 клика с мгновенным вебхуком в Telegram. Для Татьяны — триггер повторного заказа курса через 25 дней.",
+            cmd: "Подготовить модуль быстрой заявки в 2 клика и уведомлений в Telegram для проекта Егор Трансфер",
+            doneDefault: false
+        },
+        {
+            id: "step-tmrw-4",
+            day: "tomorrow",
+            order: "Завтра · Очередь №4",
+            project: "Позновалка",
+            title: "Безлимитная контент-фабрика (0 ₽/мес): Выпуск первых 3 вертикальных Reels/Shorts",
+            desc: "Использовать локальный конвейер: сценарий из Базы Знаний -> нейро-озвучка edge-tts -> субтитры faster-whisper -> сборка 9:16 в FFmpeg.",
+            cmd: "Подготовить 3 сценария вертикальных роликов Reels/Shorts для озвучки через локальный конвейер edge-tts и FFmpeg",
+            doneDefault: false
+        }
+    ];
+
+    // Список изученных задач (#47-#72) и что именно улучшить
+    const STUDIED_IMPROVEMENTS = [
+        {
+            issue: "#72",
+            source: "Андрей Беловолов (@belovolov_andrey) & сайт join-tech.ru",
+            learned: "Собственники не покупают «просто сайт» или «просто CRM» — они покупают устранение дыр на стыках, где сгорает 30% рекламного бюджета и 35% первичных клиентов.",
+            improve: "1) Вводим платный локомотив «Инженерный Аудит 6 точек роста». 2) Меняем кнопочные боты-лабиринты на Telegram Mini Apps и Навигатор канала в 2 клика. 3) Внедряем QR-оцифровку базы для возврата клиентов без скидок 30% в лоб.",
+            projects: ["Unity Inc", "Alberta", "Alex ChopChop", "Егор Трансфер", "Татьяна tentorium.ru"]
+        },
+        {
+            issue: "#70",
+            source: "Dan Martell — AI Strategies by Income Level ($35K, $100K, $1M+)",
+            learned: "Три ступени рычага ИИ: $35K — выкуп личного времени (конспекты и рутина); $100K — автоматизация воронки и контента по SOP; $1M+ — собственная проприетарная CRM и автономные агенты.",
+            improve: "Создана спец-папка Позновалка/База_Знаний_CRM, встроен авто-парсер ссылок в воркер ноутбука, а интерфейс телефона превращен в полноценную мобильную CRM с очередью задач на Сегодня/Завтра.",
+            projects: ["Позновалка", "GitHub_Control_Panel", "Unity Inc"]
+        },
+        {
+            issue: "#64 и #67",
+            source: "Similarweb (similarweb.com/ru) & Разбор конкурентных репозиториев",
+            learned: "Конкуренты получают горячий B2B-трафик бесплатно через реферальные каталоги (Referrals) и кластеры SEO-страниц на быстром чистом коде.",
+            improve: "Создаем на globalplus.tech и unityspiritpartners.com 6 отраслевых SEO-разделов на чистом коде (загрузка <1 сек на мобилках) и размещаем карточки в каталогах-донорах.",
+            projects: ["Unity Inc", "True 1 Team", "Belgrade_Demo_Sites"]
+        },
+        {
+            issue: "#60, #61, #63, #71",
+            source: "Agent Reach + Локальный конвейер безлимитного контента",
+            learned: "Можно генерировать неограниченное число экспертных Reels/Shorts и каруселей на ноутбуке за 0 ₽/мес без платных облачных подписок.",
+            improve: "Установлен Agent Reach v1.5.0 + yt-dlp с Node.js + Jina Reader. Связка с бесплатной озвучкой edge-tts, субтитрами faster-whisper и рендером FFmpeg.",
+            projects: ["Позновалка", "8 слайдов карусель Белорусия", "Beyondyourfood.com"]
+        },
+        {
+            issue: "#69",
+            source: "Gartner® Predicts 2026: Intelligent Applications (ThoughtSpot)",
+            learned: "Более 33% времени уходит на поиск информации по разным папкам и чатам. Будущее за приложениями со встроенным ИИ-агентом и единым окном управления.",
+            improve: "Все 46 папок ноутбука, все 72 задачи, база знаний и план на Сегодня/Завтра сведены в единую мобильную панель под управление одной рукой.",
+            projects: ["GitHub_Control_Panel", "ai-memory-workspace"]
+        },
+        {
+            issue: "#68",
+            source: "Habr #1093840 — Самохостинг 10 ТБ на ноутбуке и Garage S3",
+            learned: "Ноутбук 24/7 потребляет всего 15–20 Вт и имеет встроенный ИБП. Главное — держать метаданные SQLite/JSON на внутреннем SSD и беречь ресурс батареи (лимит 60–80%).",
+            improve: "База знаний CRM и инстинкты самообучения размещены на быстром внутреннем NVMe SSD с автоматической синхронизацией в ветку data на GitHub.",
+            projects: ["antigravity", "Позновалка"]
+        }
+    ];
+
+    // Обученные инстинкты системы (Self-Learning v2.2)
+    const EVOLVED_INSTINCTS = [
+        { id: "jointech-engineering-funnel", conf: 96, domain: "Бизнес-модель", title: "Воронка Инженерного Аудита (JoinTECH)", rule: "Бесплатный 40-мин разбор -> Платный аудит 6 узлов -> Внедрение на чистом коде и Mini Apps" },
+        { id: "telegram-miniapp-over-labyrinths", conf: 95, domain: "UX & Конверсия", title: "Telegram Mini Apps вместо кнопочных лабиринтов", rule: "Заменять 10-шаговых ботов на визуальный Web UI в 2 клика и Навигатор канала" },
+        { id: "dan-martell-ai-leverage-matrix", conf: 95, domain: "AI-Стратегия", title: "Матрица рычага ИИ ($35K → $100K → $1M+)", rule: "Авто-конспект ссылок -> Авто-контент и ответ за 30 сек -> Собственная мобильная CRM" },
+        { id: "laptop-24x7-selfhosting-s3", conf: 94, domain: "Инфраструктура", title: "Серверный режим ноутбука 24/7 (Habr S3)", rule: "Метаданные CRM на NVMe SSD, защита от сна SetThreadExecutionState, бэкап в ветку data" },
+        { id: "ltv-qr-retention-loop", conf: 93, domain: "Повторные продажи", title: "Возврат 35% базы через QR + триггеры", rule: "Отказ от скидок 30% в лоб; QR-оцифровка гостя и авто-напоминание через 14–30 дней" },
+        { id: "similarweb-free-traffic-system", conf: 92, domain: "Трафик & SEO", title: "Перехват Referrals и SEO на чистом коде", rule: "Снятие реферальных доноров через Similarweb + посадочные под 6 отраслей (<1 сек на мобилках)" },
+        { id: "zero-cost-content-factory", conf: 92, domain: "Контент 0 ₽/мес", title: "Локальная фабрика Reels/Shorts без подписок", rule: "Agent Reach + Jina + yt-dlp -> сценарий -> edge-tts -> faster-whisper -> FFmpeg" },
+        { id: "gartner-2026-intelligent-crm", conf: 91, domain: "Архитектура", title: "Intelligent Application (Gartner 2026)", rule: "Единое мобильное окно папок, задач, плана и базы знаний без потери времени на поиск" },
+        { id: "alberta-funnel-voice", conf: 90, domain: "Маркетинг", title: "Эстетика Kinfolk & 60 FPS Scroll (Alberta)", rule: "Спокойный премиальный тон, 900 кадров WebP и выдача лид-магнита без трения" }
     ];
 
     const FALLBACK_KB = [
@@ -1048,7 +1431,6 @@
             title: "Модель JoinTECH (Андрей Беловолов) — План для Global Plus",
             source_url: "https://join-tech.ru",
             secondary_url: "https://t.me/belovolov_andrey",
-            date: "15.10.2026",
             summary: "Воронка: 40-мин разбор -> Инженерный аудит 6 узлов бизнеса -> Внедрение: Сайты на чистом коде (от 50к), CRM и интеграции (от 150к), Telegram Mini Apps и Навигатор канала в 2 клика (от 50к), Аналитика и ИИ (от 200к). Секрет: «Сначала наводим инженерный порядок в трубах, и только потом подаем рекламный напор».",
             action_items: [
                 "Главный вход: «Инженерный аудит 6 точек роста» для клиентов Global Plus",
@@ -1062,7 +1444,6 @@
             category: "ИИ-Стратегия & Масштабирование",
             title: "Dan Martell: AI-стратегии по уровням дохода ($35K, $100K, $1M+)",
             source_url: "https://youtu.be/Hgd1rxrIYGM",
-            date: "15.10.2026",
             summary: "$35K: Выкуп личного времени через ИИ-конспекты и автоматизацию рутины. $100K: Автоматизация квалификации лидов за 30 секунд + контент-конвейер по SOP. $1M+: Собственная проприетарная CRM и автономные ИИ-агенты.",
             action_items: [
                 "Спец-папка Позновалка/База_Знаний_CRM подключена к мобильному офису",
@@ -1075,11 +1456,10 @@
             category: "Маркетинг & Трафик",
             title: "Similarweb + Система бесплатного трафика (Global Plus & Unity Spirit)",
             source_url: "https://www.similarweb.com/ru/",
-            date: "15.10.2026",
             summary: "Анализ реферальных доноров (Referrals) и топ-страниц конкурентов через Similarweb. Быстрые SEO-посадочные на чистом коде (<1 сек на смартфонах) + экспертные Reels/Shorts без затрат на рекламу.",
             action_items: [
                 "Перехват B2B-каталогов и рейтингов, дающих трафик конкурентам",
-                "Кластеры страниц под коммерческий спрос в 6 отраслях"
+                "Кластеры страниц под коммерческий спрос в 6 отраслей"
             ]
         },
         {
@@ -1088,7 +1468,6 @@
             category: "Инфраструктура & Сервер",
             title: "Самохостинг 10 ТБ на ноутбуке: Garage S3 + ZFS вместо облака (Habr #1093840)",
             source_url: "https://habr.com/ru/articles/1093840/",
-            date: "15.10.2026",
             summary: "Ноутбук 24/7 потребляет 15–20 Вт и имеет встроенный ИБП. Важно ограничить заряд батареи до 60–80%. Легковесное хранилище Garage S3 (Deuxfleurs) на Rust + метаданные SQLite на внутреннем SSD + архивы на ZFS.",
             action_items: [
                 "Хранить метаданные CRM и базу знаний на быстром NVMe SSD ноутбука"
@@ -1100,10 +1479,9 @@
             category: "Аналитика & Тренды 2026",
             title: "Gartner® Predicts 2026: Intelligent Applications (ThoughtSpot)",
             source_url: "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html",
-            date: "15.10.2026",
             summary: "33%+ сотрудников теряют время на поиск информации. К 2026–2030 классические CRM уступают место Intelligent Applications со встроенными ИИ-агентами и управлением со смартфона.",
             action_items: [
-                "Мобильный Виртуальный Офис v9 объединяет проекты, задачи и базу знаний в одном окне"
+                "Мобильный Виртуальный Офис v9.5 объединяет папки, план, задачи и базу знаний в одном окне"
             ]
         },
         {
@@ -1112,7 +1490,6 @@
             category: "Контент & ИИ-Аватары",
             title: "Безлимитный контент-конвейер без подписок (0 ₽/мес)",
             source_url: "https://github.com/Panniantong/Agent-Reach",
-            date: "15.10.2026",
             summary: "Локальный стек: Agent Reach + Jina Reader + yt-dlp (сбор фактуры) -> сценарий в стиле Беловолова -> бесплатная нейро-озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg.",
             action_items: [
                 "Генерация готовых постов и сценариев роликов по любой ссылке с телефона"
@@ -1120,13 +1497,14 @@
         }
     ];
 
-    let allProjects = [...DEFAULT_PROJECTS];
+    let folderList = [...ALL_LAPTOP_FOLDERS];
     let allIssues = [];
     let commentsByIssue = {};
     let kbItems = [...FALLBACK_KB];
-    let currentProject = "Global_Plus";
-    let currentIcon = "🚀";
-    let projectFilter = "all";
+    let currentProject = "Позновалка";
+    let currentIcon = "🧠";
+    let projectFilter = "worked";
+    let planSubView = "schedule";
     let crmStatusFilter = "all";
     let wsFilter = "all";
 
@@ -1149,6 +1527,23 @@
         return escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
     }
 
+    // Универсальный парсер заголовков задач: поддерживает И "CMD: ... | PROJ: ...", И "[PROJ] ..."
+    function parseIssueProject(title) {
+        const raw = String(title || "").trim();
+        if (raw.includes("|") && raw.includes("PROJ:")) {
+            const parts = raw.split("|");
+            const cmd = parts[0].replace(/^CMD:\s*/i, "").trim();
+            const projPart = parts.slice(1).join("|");
+            const project = projPart.replace(/^\s*PROJ:\s*/i, "").trim() || "Позновалка";
+            return { project, cmd };
+        }
+        const m = raw.match(/^\[(.*?)\]\s*(.*)$/);
+        if (m) {
+            return { project: m[1].trim(), cmd: m[2].trim() };
+        }
+        return { project: "Позновалка", cmd: raw.replace(/^CMD:\s*/i, "").trim() };
+    }
+
     function switchTab(tabId, btnEl) {
         document.querySelectorAll(".tab-view").forEach(el => el.classList.remove("active"));
         document.getElementById("tab-" + tabId).classList.add("active");
@@ -1167,7 +1562,8 @@
 
     function selectProject(name, icon) {
         currentProject = name;
-        currentIcon = icon || "📁";
+        const meta = PROJECT_META[name] || {};
+        currentIcon = icon || meta.icon || "📁";
         document.getElementById("ws-project-title").innerText = `${currentIcon} ${currentProject}`;
         renderProjects();
         renderWorkspaceFeed();
@@ -1179,6 +1575,13 @@
         document.querySelectorAll("#project-cat-filters .chip").forEach(c => c.classList.remove("active"));
         if (btn) btn.classList.add("active");
         renderProjects();
+    }
+
+    function setPlanSubView(view, btn) {
+        planSubView = view;
+        document.querySelectorAll("#plan-sub-filters .chip").forEach(c => c.classList.remove("active"));
+        if (btn) btn.classList.add("active");
+        renderPlanView();
     }
 
     function setCrmStatusFilter(flt, btn) {
@@ -1197,12 +1600,6 @@
         renderWorkspaceFeed();
     }
 
-    function parseIssueProject(title) {
-        const m = String(title || "").match(/^\[(.*?)\]\s*(.*)$/);
-        if (m) return { project: m[1].trim(), cmd: m[2].trim() };
-        return { project: "System 1", cmd: String(title || "") };
-    }
-
     function renderProjects() {
         const container = document.getElementById("projects-container");
         const q = (document.getElementById("project-search").value || "").toLowerCase().trim();
@@ -1216,48 +1613,196 @@
             if (!stats[project].lastCmd) stats[project].lastCmd = cmd;
         });
 
-        // Ensure any project mentioned in issues is in allProjects
-        Object.keys(stats).forEach(pName => {
-            if (!allProjects.some(p => p.name.toLowerCase() === pName.toLowerCase())) {
-                allProjects.push({ name: pName, icon: "📁" });
-            }
+        // Объединяем все папки из ноутбука и из задач
+        const allNamesSet = new Set(folderList);
+        Object.keys(stats).forEach(k => {
+            if (k && k !== "Other") allNamesSet.add(k);
         });
+        Object.keys(PROJECT_META).forEach(k => allNamesSet.add(k));
 
-        const sorted = [...allProjects].sort((a, b) => {
-            const ia = PRIORITY_PROJECTS.findIndex(x => x.toLowerCase() === a.name.toLowerCase());
-            const ib = PRIORITY_PROJECTS.findIndex(x => x.toLowerCase() === b.name.toLowerCase());
-            const sa = stats[a.name] ? stats[a.name].total : 0;
-            const sb = stats[b.name] ? stats[b.name].total : 0;
-            if (ia !== -1 && ib !== -1) return ia - ib;
-            if (ia !== -1) return -1;
-            if (ib !== -1) return 1;
-            return sb - sa;
+        const allNames = Array.from(allNamesSet);
+        const workedNames = allNames.filter(name => (stats[name] && stats[name].total > 0) || (PROJECT_META[name] && PROJECT_META[name].worked));
+
+        document.getElementById("cnt-worked").innerText = workedNames.length;
+        document.getElementById("cnt-folders").innerText = allNames.length;
+        document.getElementById("m-folders").innerText = allNames.length;
+
+        // Сортируем: сначала по числу задач (Позновалка 18, Alberta 13, Alex ChopChop 6, Татьяна 4, Егор Трансфер 2...), затем по алфавиту
+        allNames.sort((a, b) => {
+            const ta = stats[a] ? stats[a].total : 0;
+            const tb = stats[b] ? stats[b].total : 0;
+            if (tb !== ta) return tb - ta;
+            const wa = PROJECT_META[a] && PROJECT_META[a].worked ? 1 : 0;
+            const wb = PROJECT_META[b] && PROJECT_META[b].worked ? 1 : 0;
+            if (wb !== wa) return wb - wa;
+            return a.localeCompare(b, "ru");
         });
 
         let html = "";
-        sorted.forEach(p => {
-            if (q && !p.name.toLowerCase().includes(q)) return;
-            const st = stats[p.name] || { total: 0, open: 0, lastCmd: "Нет задач — нажмите, чтобы создать" };
-            const isPriority = PRIORITY_PROJECTS.some(x => x.toLowerCase() === p.name.toLowerCase());
-            if (projectFilter === "active" && st.total === 0) return;
-            if (projectFilter === "priority" && !isPriority) return;
+        allNames.forEach(name => {
+            const meta = PROJECT_META[name] || {};
+            const st = stats[name] || { total: 0, open: 0, lastCmd: "" };
+            const isWorked = st.total > 0 || meta.worked;
+            const isClient = Boolean(meta.client);
 
-            const isSel = p.name.toLowerCase() === currentProject.toLowerCase();
+            if (projectFilter === "worked" && !isWorked) return;
+            if (projectFilter === "clients" && !isClient) return;
+
+            const hay = `${name} ${meta.desc || ""} ${st.lastCmd || ""}`.toLowerCase();
+            if (q && !hay.includes(q)) return;
+
+            const icon = meta.icon || (isWorked ? "🔥" : "📁");
+            const isSel = name.toLowerCase() === currentProject.toLowerCase();
+
             html += `
-                <div class="project-card ${isSel ? 'selected' : ''}" onclick="selectProject('${escapeHtml(p.name)}', '${p.icon || '📁'}')">
+                <div class="project-card ${isWorked ? 'worked-card' : ''} ${isSel ? 'selected' : ''}" onclick="selectProject('${escapeHtml(name)}', '${icon}')">
                     <div class="p-card-top">
-                        <div class="p-card-name">${p.icon || '📁'} ${escapeHtml(p.name)}</div>
+                        <div class="p-card-name">${icon} ${escapeHtml(name)}</div>
                         <div class="p-badges tabular">
                             ${st.open > 0 ? `<span class="badge running">⏳ ${st.open}</span>` : ''}
-                            ${st.total > 0 ? `<span class="badge done">✅ ${st.total}</span>` : `<span class="badge">0</span>`}
+                            ${st.total > 0 ? `<span class="badge done">✅ ${st.total} задач</span>` : `<span class="badge">Папка ПК</span>`}
                         </div>
                     </div>
-                    <div class="p-card-preview">${escapeHtml(st.lastCmd)}</div>
+                    ${meta.desc ? `<div class="p-card-desc">${escapeHtml(meta.desc)}</div>` : ''}
+                    ${st.lastCmd ? `<div class="p-card-preview">💬 Последнее: ${escapeHtml(st.lastCmd)}</div>` : ''}
                 </div>
             `;
         });
 
         container.innerHTML = html || `<div style="text-align:center; color:var(--text-dim); padding:24px;">Папки не найдены</div>`;
+    }
+
+    function isStepChecked(stepId, defaultVal) {
+        const saved = localStorage.getItem("crm_step_" + stepId);
+        if (saved === null) return defaultVal;
+        return saved === "1";
+    }
+
+    function toggleStepCheck(stepId, checkboxEl) {
+        localStorage.setItem("crm_step_" + stepId, checkboxEl.checked ? "1" : "0");
+    }
+
+    function runPlanStep(project, cmdText) {
+        const meta = PROJECT_META[project] || {};
+        selectProject(project, meta.icon || "🚀");
+        const inp = document.getElementById("cmd-input");
+        inp.value = cmdText;
+        sendTask(cmdText);
+    }
+
+    function renderPlanView() {
+        const container = document.getElementById("plan-container");
+
+        if (planSubView === "schedule") {
+            const todaySteps = ACTION_PLAN_STEPS.filter(s => s.day === "today");
+            const tomorrowSteps = ACTION_PLAN_STEPS.filter(s => s.day === "tomorrow");
+
+            let html = `
+                <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; color: #d1fae5; line-height: 1.42;">
+                    🤖 <b>Сформировано системой самообучения (SelfEvolvingSwarm v2.2):</b> Очередь выстроена по максимальной отдаче денег и времени на основе разбора задач #47–#72. Нажмите <b>«▶️ Запустить шаг»</b>, чтобы агент сразу выполнил задачу.
+                </div>
+                <div class="section-divider"><span>☀️ ЧТО ДЕЛАЕМ СЕГОДНЯ (ПО ОЧЕРЕДИ)</span><span>4 шага</span></div>
+            `;
+
+            todaySteps.forEach(s => {
+                const checked = isStepChecked(s.id, s.doneDefault);
+                html += `
+                    <div class="plan-card today">
+                        <div class="plan-step-header">
+                            <span class="badge done">${escapeHtml(s.order)}</span>
+                            <span class="crm-project-tag" onclick="selectProject('${escapeHtml(s.project)}')">📁 ${escapeHtml(s.project)}</span>
+                        </div>
+                        <label class="plan-check-row">
+                            <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleStepCheck('${s.id}', this)">
+                            <span>${escapeHtml(s.title)}</span>
+                        </label>
+                        <div class="plan-desc">${escapeHtml(s.desc)}</div>
+                        <div class="plan-footer">
+                            <button class="mini-btn accent" onclick="runPlanStep('${escapeHtml(s.project)}', '${escapeHtml(s.cmd)}')">▶️ Запустить шаг в работу</button>
+                            <button class="mini-btn" onclick="selectProject('${escapeHtml(s.project)}')">Открыть папку →</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `<div class="section-divider" style="margin-top:6px;"><span>🌅 ЧТО БУДЕМ ДЕЛАТЬ ЗАВТРА (СЛЕДУЮЩАЯ ОЧЕРЕДЬ)</span><span>4 шага</span></div>`;
+
+            tomorrowSteps.forEach(s => {
+                const checked = isStepChecked(s.id, s.doneDefault);
+                html += `
+                    <div class="plan-card tomorrow">
+                        <div class="plan-step-header">
+                            <span class="badge purple">${escapeHtml(s.order)}</span>
+                            <span class="crm-project-tag" onclick="selectProject('${escapeHtml(s.project)}')">📁 ${escapeHtml(s.project)}</span>
+                        </div>
+                        <label class="plan-check-row">
+                            <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleStepCheck('${s.id}', this)">
+                            <span>${escapeHtml(s.title)}</span>
+                        </label>
+                        <div class="plan-desc">${escapeHtml(s.desc)}</div>
+                        <div class="plan-footer">
+                            <button class="mini-btn accent" onclick="runPlanStep('${escapeHtml(s.project)}', '${escapeHtml(s.cmd)}')">▶️ Запустить сейчас</button>
+                            <button class="mini-btn" onclick="selectProject('${escapeHtml(s.project)}')">Открыть папку →</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            return;
+        }
+
+        if (planSubView === "improvements") {
+            let html = `
+                <div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; color: #ddd6fe; line-height: 1.42;">
+                    🔍 <b>Отдельный список изученных задач (#47–#72):</b> Что именно агент понял из вашей Базы Знаний и какие улучшения внедряются в наши папки.
+                </div>
+            `;
+            STUDIED_IMPROVEMENTS.forEach(item => {
+                const projButtons = item.projects.map(p =>
+                    `<button class="mini-btn" onclick="selectProject('${escapeHtml(p)}')">📁 ${escapeHtml(p)}</button>`
+                ).join(" ");
+                html += `
+                    <div class="plan-card studied">
+                        <div class="plan-step-header">
+                            <span class="badge purple">Задача ${escapeHtml(item.issue)}</span>
+                            <span style="font-size:0.74rem; color:var(--text-dim);">${escapeHtml(item.source)}</span>
+                        </div>
+                        <div style="font-size:0.83rem; font-weight:700; color:#fff;">💡 Что поняли из источника:</div>
+                        <div class="plan-desc">${escapeHtml(item.learned)}</div>
+                        <div style="font-size:0.83rem; font-weight:700; color:#34d399; margin-top:2px;">🚀 Что улучшаем в нашей системе:</div>
+                        <div class="plan-desc">${escapeHtml(item.improve)}</div>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">${projButtons}</div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        if (planSubView === "instincts") {
+            let html = `
+                <div style="background: rgba(59, 130, 246, 0.14); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:8px;">
+                    <div style="font-size:0.84rem; font-weight:700; color:#93c5fd;">🧬 Память самообучения (Continuous Learning v2.2)</div>
+                    <div style="font-size:0.77rem; color:#cbd5e1; line-height:1.4;">Система автоматически превращает разобранные задачи, ошибки и успешные кейсы в постоянные правила работы агента (`instincts.json`).</div>
+                    <button class="icon-btn primary" onclick="runPlanStep('Позновалка', 'EVOLVE')">⚡ Запустить новый цикл самообучения (EVOLVE)</button>
+                </div>
+            `;
+            EVOLVED_INSTINCTS.forEach(inst => {
+                html += `
+                    <div class="plan-card">
+                        <div class="plan-step-header">
+                            <span class="badge done">${inst.conf}% уверенность</span>
+                            <span class="badge">${escapeHtml(inst.domain)}</span>
+                        </div>
+                        <div style="font-size:0.89rem; font-weight:700;">${escapeHtml(inst.title)}</div>
+                        <div class="instinct-bar-bg"><div class="instinct-bar-fill" style="width:${inst.conf}%"></div></div>
+                        <div class="plan-desc">${escapeHtml(inst.rule)}</div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
     }
 
     function renderCrmTasks() {
@@ -1293,12 +1838,12 @@
             const dateStr = new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
             const statusBadge = iss.state === "open"
                 ? `<span class="badge running">⏳ В работе</span>`
-                : `<span class="badge done">✅ Выполнено</span>`;
+                : `<span class="badge done">✅ Готово</span>`;
 
             html += `
-                <div class="crm-task-card" onclick="selectProject('${escapeHtml(project)}', '📁')">
+                <div class="crm-task-card" onclick="selectProject('${escapeHtml(project)}')">
                     <div class="crm-task-top tabular">
-                        <span class="crm-project-tag">#${iss.number} · ${escapeHtml(project)}</span>
+                        <span class="crm-project-tag">#${iss.number} · 📁 ${escapeHtml(project)}</span>
                         <span>${dateStr} ${statusBadge}</span>
                     </div>
                     <div class="crm-task-title">${linkifyText(cmd)}</div>
@@ -1307,7 +1852,7 @@
             `;
         });
 
-        container.innerHTML = html || `<div style="text-align:center; color:var(--text-dim); padding:24px;">Задач по выбранному фильтру нет</div>`;
+        container.innerHTML = html || `<div style="text-align:center; color:var(--text-dim); padding:24px;">Задач по фильтру нет</div>`;
     }
 
     function renderKnowledgeBase() {
@@ -1331,7 +1876,7 @@
                             ${item.source_url ? `<a class="kb-link" href="${item.source_url}" target="_blank">🔗 Источник ↗</a>` : ''}
                             ${item.secondary_url ? `<a class="kb-link" href="${item.secondary_url}" target="_blank">✈️ Telegram ↗</a>` : ''}
                         </div>
-                        <button class="mini-btn" onclick="applyKbToProject('${escapeHtml(item.title)}')">⚡ В работу</button>
+                        <button class="mini-btn accent" onclick="applyKbToProject('${escapeHtml(item.title)}')">⚡ Внедрить</button>
                     </div>
                 </div>
             `;
@@ -1341,21 +1886,22 @@
     }
 
     function applyKbToProject(title) {
-        selectProject("Global_Plus", "🚀");
+        selectProject("Unity Inc", "🤝");
         const inp = document.getElementById("cmd-input");
-        inp.value = `Внедрить в проект Global_Plus наработки из базы знаний: ${title}`;
+        inp.value = `Внедрить наработку из Базы Знаний: ${title}`;
         inp.focus();
     }
 
     function renderWorkspaceFeed() {
         const feed = document.getElementById("ws-feed");
+        const meta = PROJECT_META[currentProject] || {};
         const projIssues = allIssues.filter(iss => {
             const { project } = parseIssueProject(iss.title);
             return project.toLowerCase() === currentProject.toLowerCase();
         });
 
         document.getElementById("ws-project-sub").innerText =
-            `Всего задач в папке: ${projIssues.length} · Ссылки и команды сохраняются в CRM`;
+            meta.desc ? `${meta.desc} (Задач: ${projIssues.length})` : `Задач в папке: ${projIssues.length}`;
 
         const filtered = projIssues.filter(iss => {
             if (wsFilter === "open") return iss.state === "open";
@@ -1365,10 +1911,11 @@
 
         if (filtered.length === 0) {
             feed.innerHTML = `
-                <div style="margin:auto; text-align:center; max-width:320px; color:var(--text-dim); padding:30px 10px;">
-                    <div style="font-size:2.4rem; margin-bottom:8px;">${currentIcon}</div>
-                    <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Папка «${escapeHtml(currentProject)}» готова к работе</div>
-                    <div style="font-size:0.8rem; line-height:1.45;">Отправьте задачу, голосовую заметку или ссылку (YouTube, Habr, Telegram, сайт конкурента) — агент разберет её и сохранит результат в CRM.</div>
+                <div style="margin:auto; text-align:center; max-width:330px; color:var(--text-dim); padding:26px 10px;">
+                    <div style="font-size:2.3rem; margin-bottom:8px;">${currentIcon}</div>
+                    <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Папка «${escapeHtml(currentProject)}»</div>
+                    <div style="font-size:0.8rem; line-height:1.45; margin-bottom:12px;">${escapeHtml(meta.desc || "Нажмите любую быструю кнопку ниже (Статус, Что делать дальше, Полный аудит) или напишите задачу для агента.")}</div>
+                    <button class="icon-btn primary" onclick="sendTask('STATUS')">📊 Запросить полный статус папки</button>
                 </div>
             `;
             return;
@@ -1387,7 +1934,7 @@
             } else if (!isOpen) {
                 replyText = "✅ Задача выполнена и закрыта.";
             } else {
-                replyText = "⏳ Агент на ноутбуке выполняет задачу и анализирует данные...";
+                replyText = "⏳ Агент на ноутбуке обрабатывает задачу...";
             }
 
             const isLong = replyText.length > 420;
@@ -1401,9 +1948,9 @@
                     </div>
                     <div class="task-cmd">${linkifyText(cmd)}</div>
                     <div class="task-reply ${isLong ? 'collapsed' : ''}" id="${replyId}">${linkifyText(replyText)}</div>
-                    <div class="reply-Controls">
+                    <div class="reply-controls">
                         ${isLong ? `<button class="mini-btn" onclick="toggleExpand('${replyId}', this)">📖 Развернуть полностью</button>` : '<span></span>'}
-                        <button class="mini-btn" onclick="copyReplyText(${iss.number})">📋 Копировать ответ</button>
+                        <button class="mini-btn" onclick="copyReplyText(${iss.number})">📋 Копировать</button>
                     </div>
                 </div>
             `;
@@ -1423,7 +1970,7 @@
         const el = document.getElementById(`reply-box-${issueNum}`);
         if (!el) return;
         navigator.clipboard.writeText(el.innerText);
-        alert("Скопировано в буфер обмена!");
+        alert("Ответ скопирован!");
     }
 
     async function fetchWorkerTelemetry() {
@@ -1437,28 +1984,27 @@
             if (res.ok) {
                 const data = await res.json();
                 dot.className = "status-dot online";
-                txt.innerText = `Онлайн · CPU ${data.cpu}% · RAM ${data.ram}%`;
-                document.getElementById("m-cpu").innerText = `${data.cpu}%`;
-                document.getElementById("m-ram").innerText = `${data.ram}%`;
+                txt.innerText = `Ноутбук онлайн · Самообучение v2.2 активно`;
             } else {
                 dot.className = "status-dot offline";
-                txt.innerText = "Воркер в режиме ожидания";
+                txt.innerText = "Режим облачной CRM";
             }
 
-            // Load projects.json
+            // Корректно загружаем массив строк из projects.json
             const pRes = await fetch(`https://raw.githubusercontent.com/${repo}/data/projects.json?t=${ts}`);
             if (pRes.ok) {
                 const pData = await pRes.json();
                 if (pData.projects && Array.isArray(pData.projects)) {
                     pData.projects.forEach(rp => {
-                        if (!allProjects.some(ap => ap.name.toLowerCase() === rp.name.toLowerCase())) {
-                            allProjects.push(rp);
+                        const pName = typeof rp === "string" ? rp : (rp && rp.name ? rp.name : "");
+                        if (pName && !folderList.includes(pName)) {
+                            folderList.push(pName);
                         }
                     });
                 }
             }
 
-            // Load crm_data.json
+            // Загружаем crm_data.json
             const kbRes = await fetch(`https://raw.githubusercontent.com/${repo}/data/crm_data.json?t=${ts}`);
             if (kbRes.ok) {
                 const kbData = await kbRes.json();
@@ -1480,7 +2026,7 @@
 
         try {
             const [issRes, comRes] = await Promise.all([
-                fetch(`https://api.github.com/repos/${repo}/issues?state=all&per_page=60&sort=created&direction=desc`, { headers }),
+                fetch(`https://api.github.com/repos/${repo}/issues?state=all&per_page=100&sort=created&direction=desc`, { headers }),
                 fetch(`https://api.github.com/repos/${repo}/issues/comments?per_page=100&sort=created&direction=desc`, { headers })
             ]);
 
@@ -1507,11 +2053,13 @@
         }
 
         renderProjects();
+        renderPlanView();
         renderCrmTasks();
         renderKnowledgeBase();
         renderWorkspaceFeed();
     }
 
+    // Отправка задачи в точном формате воркера: "CMD: <команда> | PROJ: <папка>"
     async function sendTask(commandText) {
         const repo = getRepo();
         const token = getToken();
@@ -1520,8 +2068,8 @@
             return;
         }
 
-        const title = `[${currentProject}] ${commandText}`;
-        const body = `Отправлено с мобильного Виртуального Офиса CRM v9.0\nПроект: ${currentProject}\nВремя: ${new Date().toLocaleString("ru-RU")}`;
+        const title = `CMD: ${commandText} | PROJ: ${currentProject}`;
+        const body = `Отправлено с мобильного Виртуального Офиса CRM v9.5\nПапка проекта: ${currentProject}\nВремя: ${new Date().toLocaleString("ru-RU")}`;
 
         try {
             const res = await fetch(`https://api.github.com/repos/${repo}/issues`, {
@@ -1537,7 +2085,7 @@
             if (res.ok) {
                 await fetchIssuesAndComments();
             } else {
-                alert("Ошибка отправки: проверьте GitHub Token в настройках (⚙️)");
+                alert("Проверьте GitHub Token в настройках (⚙️)");
             }
         } catch (e) {
             alert("Ошибка сети: " + e.message);
@@ -1579,23 +2127,24 @@
     function createNewProject() {
         const name = document.getElementById("new-proj-name").value.trim();
         if (!name) return;
-        if (!allProjects.some(p => p.name.toLowerCase() === name.toLowerCase())) {
-            allProjects.unshift({ name, icon: "🚀" });
+        if (!folderList.includes(name)) {
+            folderList.unshift(name);
         }
+        PROJECT_META[name] = { icon: "🚀", worked: true, client: false, desc: "Новый проект, созданный с телефона" };
         closeModals();
         selectProject(name, "🚀");
-        sendTask(`Инициализировать новую папку и CRM-структуру проекта ${name}`);
+        sendTask("STATUS");
     }
 
     async function refreshAllData() {
         await Promise.all([fetchWorkerTelemetry(), fetchIssuesAndComments()]);
     }
 
-    // Initial load & auto-refresh
     renderProjects();
+    renderPlanView();
     renderKnowledgeBase();
     refreshAllData();
-    setInterval(refreshAllData, 15000);
+    setInterval(refreshAllData, 12000);
 </script>
 </body>
 </html>
