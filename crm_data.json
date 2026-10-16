@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-16T19:46:40.579240+00:00",
+  "updated_at": "2026-10-16T19:50:37.369Z",
   "version": "9.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792180236419",
+      "issue": 78,
+      "category": "Проект: Позновалка",
+      "title": "https://habr.com/ru/amp/publications/1095202/ что это за  и как сделать это нам ?",
+      "source_url": "https://habr.com/ru/amp/publications/1095202/",
+      "secondary_url": "",
+      "date": "16.10.2026",
+      "summary": "Title: GLM 5.3 Flash и DeepSeek V4.1 Flash стали бесплатными в OpenCode\n• URL Source: https://habr.com/ru/amp/publications/1095202/\n• Published Time: 2026-10-16T12:24:56+03:00\n• В OpenCode [открыли бесплатный доступ к GLM 5.3 Flash](https://opencode.ai/v2/docs/console/models/#free-models). Незадолго до этого бесплатной стала DeepSeek V4.1 Flash. Обе модели уже есть в каталоге: можно выбрать подходящую и поручить агенту работу с проектом.\n• А с нашим **Meta Harness** ими можно пользоваться прямо в IDE: поставить задачу, посмотреть изменения в редакторе, запустить приложение и проверить результат. Если задача потребует другого инструмента, здесь же можно выбрать Claude Code, Codex или другого поддерживаемого агента.\n• ![Image 1](https://habrastorage.org/extt/b9/32/1d/b9321db7806677f3d45f39e2676ddfb8.png)\n• ### Что стало бесплатным\n• В списке моделей OpenCode появились две отдельные бесплатные версии:",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Позновалка"
+      ]
+    },
     {
       "id": "kb-20261016_114500",
       "issue": "Auto",
