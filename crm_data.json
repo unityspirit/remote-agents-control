@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-10-16T16:37:57.149Z",
+  "updated_at": "2026-10-16 10:38:32",
   "version": "9.0",
   "knowledge_base": [
     {
-      "id": "kb-1792168676114",
-      "issue": 76,
+      "id": "kb-20261016_103832",
+      "issue": "Auto",
       "category": "Проект: Позновалка",
       "title": "https://tbank-online.com/baf/6eNKZud3qzd. Проверь эту ссылку на безопасность!!!!",
       "source_url": "https://tbank-online.com/baf/6eNKZud3qzd.",
       "secondary_url": "",
       "date": "16.10.2026",
-      "summary": "Title: 404 | Страница не найдена\n• URL Source: https://tbank-online.com/baf/6eNKZud3qzd.\n• Warning: Target URL returned error 404: Not Found\n• [![Image 1: Т-Банк](https://www.tbank-online.com/system/images/404-logo-wordmark.svg)](https://www.tbank-online.com/)\n• ![Image 2: 404](https://www.tbank-online.com/system/images/404.svg)\n• ![Image 3: 404](https://www.tbank-online.com/system/images/404.svg)\n• ## Такой страницы нет\n• Но есть много других полезных страниц",
+      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://tbank-online.com/baf/6eNKZud3qzd.\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://tbank-online.com/baf/6eNKZud3qzd. ===\n- Title: Кредитная карта «Платинум» — до 1 000 000 ₽ и беспроцентный период до 55 дней\n- URL Source: https://tbank-online.com/baf/6eNKZud3qzd\n- [![Image 1: Т-Банк](https://cdn.tbank-online",
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
+        "Сохранено в Note_20261016_103832.md"
       ]
     },
     {
@@ -197,108 +197,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 22,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.668411"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 18,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.669310"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 21,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.670396"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 16,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.671420"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 16,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.672883"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.99,
-      "domain": "content-pipeline",
-      "evidence_count": 18,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.673395"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.9,
-      "domain": "marketing",
-      "evidence_count": 15,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.8,
-      "domain": "agent-behavior",
-      "evidence_count": 5,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.675406"
     }
   ]
 }
