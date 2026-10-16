@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T01:35:25.725553+00:00",
+  "updated_at": "2026-10-16T01:39:17.516656+00:00",
   "version": "9.0",
   "knowledge_base": [
     {
@@ -286,36 +286,6 @@
       "evidence_count": 5,
       "scope": "global",
       "last_updated": "2026-10-15T19:28:18.675406"
-    },
-    {
-      "id": "task-https://lp-demo.altahq.com/?utm_term=&utm_campaign=ppg+demandgen_uk+usa_tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905&hsa_acc=1922078764&hsa_cam=24010572905&hsa_grp=201787091475&hsa_ad=827969908054&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24010572905 как они работают как мы это можем применить и примени все задачи также выше которые отправлял после изучения примени для нашей системы",
-      "trigger": "when processing 'https://lp-demo.altahq.com/?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905&hsa_acc=1922078764&hsa_cam=24010572905&hsa_grp=201787091475&hsa_ad=827969908054&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24010572905 как они работают как мы это можем применить и примени все задачи также выше которые отправлял после изучения примени для нашей системы' for 'Позновалка'",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-15T19:10:44.237343"
-    },
-    {
-      "id": "task-https://youtube.com/shorts/6emz5gwt0q0?is=w_f2la0bshkhfbj_ learn and dothe",
-      "trigger": "when processing 'https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn and dothe' for 'Позновалка'",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-15T19:27:38.197312"
-    },
-    {
-      "id": "task-https://youtube.com/shorts/6emz5gwt0q0?is=w_f2la0bshkhfbj_ learn what it is and how can we implement it to my life for better living!",
-      "trigger": "when processing 'https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn what it is and how can we implement it to my life for better living!' for 'Позновалка'",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-15T19:28:16.218130"
     }
   ]
 }
