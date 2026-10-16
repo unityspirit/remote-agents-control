@@ -1,31 +1,18 @@
 {
-  "updated_at": "2026-10-16T01:27:39.096Z",
+  "updated_at": "2026-10-15 19:27:35",
   "version": "9.0",
   "knowledge_base": [
     {
-      "id": "kb-1792114058465",
-      "issue": 75,
-      "category": "Проект: Позновалка",
-      "title": "https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn what it is and how can we implement it to my ",
-      "source_url": "https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_",
-      "secondary_url": "",
-      "date": "16.10.2026",
-      "summary": "URL Source: https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_\n• Warning: Target URL returned error 401: Unauthorized\n• Back [![Image 1](https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_)](https://youtube.com/ \"YouTube Home\")\n• Search with your voice\n• [](https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_)\n• [Sign in](https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fshorts%252F6EMZ5GWt0q0%253Fis%253DW_F2LA0BsHkHfbj_&hl=en&ec=65620)\n• [![Image 2](https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_)](https://youtube.com/ \"YouTube Home\")\n• ![Image 3](https://yt3.ggpht.com/0EEjg1FatDs8_2tFmzmGEP6dRlQygfqN6uCV17iwl-AymS0OSdWrtDeKq8ZIMZeTWRJO_cTT=s48-c-k-c0x00ffffff-no-rj)",
-      "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
-      ]
-    },
-    {
-      "id": "kb-1792114026240",
-      "issue": 74,
+      "id": "kb-20261015_192735",
+      "issue": "Auto",
       "category": "Проект: Позновалка",
       "title": "https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn and dothe",
       "source_url": "https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_",
       "secondary_url": "",
-      "date": "16.10.2026",
-      "summary": "URL Source: https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_\n• Warning: Target URL returned error 401: Unauthorized\n• Back [![Image 1](https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_)](https://youtube.com/ \"YouTube Home\")\n• Search with your voice\n• [](https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_)\n• [Sign in](https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fshorts%252F6EMZ5GWt0q0%253Fis%253DW_F2LA0BsHkHfbj_&hl=en&ec=65620)\n• [![Image 2](https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_)](https://youtube.com/ \"YouTube Home\")\n• ![Image 3](https://yt3.ggpht.com/0EEjg1FatDs8_2tFmzmGEP6dRlQygfqN6uCV17iwl-AymS0OSdWrtDeKq8ZIMZeTWRJO_cTT=s48-c-k-c0x00ffffff-no-rj)",
+      "date": "15.10.2026",
+      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ ===\n- YouTube Видео: «How to delegate like a $100M CEO» | Автор: Dan Martell (https://www.youtube.com/@danmartell)\n- URL Source: https://youtube.com/shorts/6E",
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
+        "Сохранено в Note_20261015_192735.md"
       ]
     },
     {
@@ -184,118 +171,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 20,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:10:46.632398"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 16,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:10:46.635688"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 18,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:10:46.638836"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:10:46.641411"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 13,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:10:46.645052"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.92,
-      "domain": "content-pipeline",
-      "evidence_count": 15,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.9,
-      "domain": "marketing",
-      "evidence_count": 15,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.65,
-      "domain": "agent-behavior",
-      "evidence_count": 2,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:10:46.647712"
-    },
-    {
-      "id": "task-https://lp-demo.altahq.com/?utm_term=&utm_campaign=ppg+demandgen_uk+usa_tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905&hsa_acc=1922078764&hsa_cam=24010572905&hsa_grp=201787091475&hsa_ad=827969908054&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24010572905 как они работают как мы это можем применить и примени все задачи также выше которые отправлял после изучения примени для нашей системы",
-      "trigger": "when processing 'https://lp-demo.altahq.com/?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905&hsa_acc=1922078764&hsa_cam=24010572905&hsa_grp=201787091475&hsa_ad=827969908054&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24010572905 как они работают как мы это можем применить и примени все задачи также выше которые отправлял после изучения примени для нашей системы' for 'Позновалка'",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-15T19:10:44.237343"
     }
   ]
 }
