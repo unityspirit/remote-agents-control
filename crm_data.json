@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-10-17T13:30:48.595619+00:00",
+  "updated_at": "2026-10-17 07:31:36",
   "version": "9.0",
   "knowledge_base": [
     {
-      "id": "kb-1792207084194",
-      "issue": 80,
+      "id": "kb-20261017_073136",
+      "issue": "Auto",
       "category": "Проект: Learn & Implement",
-      "title": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campa",
+      "title": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_mediu",
       "source_url": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awareness_-_Demand_Gen&utm_content=197241853125&utm_term=&utm_id=24028112345&hsa_acc=3291578710&hsa_cam=24028112345&hsa_grp=197241853125&hsa_ad=825598797047&hsa_src=ytif&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24028112345",
       "secondary_url": "",
       "date": "17.10.2026",
-      "summary": "Title: 8 Embedded AI Agent Use Cases for SaaS: Free Ebook | ThoughtSpot\n• URL Source: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?hsa_acc=3291578710&hsa_cam=24028112345&hsa_grp=197241853125&hsa_ad=825598797047&hsa_src=ytif&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24028112345\n• Published Time: Thu, 10 Sep 2026 15:45:48 GMT\n• [![Image 1: ThoughtSpot_logo_white](https://go.thoughtspot.com/hs-fs/hubfs/ABA/Software%20and%20Technology/ThoughtSpot_logo_white.png?width=4167&height=655&name=ThoughtSpot_logo_white.png)](https://www.thoughtspot.com/)\n• # 8 Embedded AI Agent\n• Hidden Revenue Inside\n• ![Image 2: 8-Embedded-Agent-Use-Cases 5 (1)](https://go.thoughtspot.com/hs-fs/hubfs/8-Embedded-Agent-Use-Cases%205%20(1).png?width=250&height=343&name=8-Embedded-Agent-Use-Cases%205%20(1).png)\n• AI agents are rewriting what customers expect from SaaS products and opening a new world of opportunity for product leaders. Top teams are embedding AI agents directly into their products, turning data into premium experiences, new revenue streams, and analytics customers can't imagine working without. This ebook shows you what’s possible.",
+      "summary": "🔬 Анализ книги ThoughtSpot: «8 Embedded AI Agent Use Cases to Unleash Hidden Revenue»\n\nThoughtSpot — мировой лидер в области внедрения аналитики и ИИ (Search & AI-Driven Analytics). Их ключевой тезис книги: эпоха пассивных дашбордов и глупых чат-ботов окончена. Клиенты больше не хотят копаться в графиках или нажимать 10 кнопок в ботах. Будущее B2B и SaaS — Embedded AI Agents (встраиваемые автономные ИИ-агенты), кото",
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Learn & Implement"
+        "Сохранено в Note_20261017_073136.md"
       ]
     },
     {
@@ -236,118 +236,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 22,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.668411"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 19,
-      "scope": "global",
-      "last_updated": "2026-10-16T13:51:30.064228"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 21,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.670396"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 16,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.671420"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 19,
-      "scope": "global",
-      "last_updated": "2026-10-16T13:51:30.064228"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.99,
-      "domain": "content-pipeline",
-      "evidence_count": 18,
-      "scope": "global",
-      "last_updated": "2026-10-15T19:28:18.673395"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.9,
-      "domain": "marketing",
-      "evidence_count": 15,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.95,
-      "domain": "agent-behavior",
-      "evidence_count": 8,
-      "scope": "global",
-      "last_updated": "2026-10-16T13:51:30.066472"
-    },
-    {
-      "id": "task-custom-request",
-      "trigger": "when processing 'custom-request' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.7,
-      "domain": "operations",
-      "evidence_count": 3,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-16T13:51:27.370693"
     }
   ]
 }
