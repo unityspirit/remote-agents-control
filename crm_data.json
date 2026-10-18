@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T00:46:59.957Z",
+  "updated_at": "2026-10-18T00:47:24.307001+00:00",
   "version": "9.0",
   "knowledge_base": [
     {
@@ -281,9 +281,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 24,
+      "evidence_count": 25,
       "scope": "global",
-      "last_updated": "2026-10-17T15:59:27.860859"
+      "last_updated": "2026-10-17T18:47:23.430932"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -311,9 +311,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 21,
+      "evidence_count": 22,
       "scope": "global",
-      "last_updated": "2026-10-17T15:59:27.861930"
+      "last_updated": "2026-10-17T18:47:23.432146"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -361,19 +361,19 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 13,
+      "evidence_count": 14,
       "scope": "global",
-      "last_updated": "2026-10-17T15:59:27.864800"
+      "last_updated": "2026-10-17T18:47:23.432992"
     },
     {
       "id": "task-custom-request",
       "trigger": "when processing 'custom-request' tasks",
       "action": "Executed autonomously with report and choices",
-      "confidence": 0.8,
+      "confidence": 0.85,
       "domain": "operations",
-      "evidence_count": 5,
+      "evidence_count": 6,
       "scope": "project:Позновалка",
-      "last_updated": "2026-10-17T15:59:25.808721"
+      "last_updated": "2026-10-17T18:47:21.157660"
     }
   ]
 }
