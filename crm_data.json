@@ -1,31 +1,18 @@
 {
-  "updated_at": "2026-10-18T01:37:43.197Z",
+  "updated_at": "2026-10-17 19:38:09",
   "version": "9.0",
   "knowledge_base": [
     {
-      "id": "kb-1792287462610",
-      "issue": 83,
+      "id": "kb-20261017_193809",
+      "issue": "Auto",
       "category": "Проект: Позновалка",
-      "title": "https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ== learn each repo and then insta",
+      "title": "https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ== learn each repo",
       "source_url": "https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ==",
       "secondary_url": "",
-      "date": "18.10.2026",
-      "summary": "Title: AI Tech Origin on Instagram: \"GitHub has way more than code storage. These 9 repos can replace paid tools, improve AI workflows, and save a lot of time.\n• 1. Open Notebook — Turns PDFs, videos, websites, and notes into a private AI research assistant you can run locally.\n• 2. No AI Slop — Removes common AI-writing habits and makes generated writing feel cleaner, sharper, and less generic.\n• 3. I Have ADHD — Makes coding assistants answer more directly, use clearer steps, and avoid unnecessary filler.\n• 4. OpenSEO — An open-source SEO toolkit for keyword research, rank tracking, backlinks, audits, and competitor analysis.\n• 5. Book to Skill — Converts technical books into reusable skills so AI coding agents can pull only the relevant material when needed.\n• 6. OmniRoute — Connects coding tools to many AI models and can switch providers when one hits usage or quota limits.\n• 7. AI Job Search — Turns Claude Code into a job-search assistant for finding roles, tailoring resumes, writing cover letters, and interview prep.",
+      "date": "17.10.2026",
+      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ==\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ== ===\n- Title: AI Tech Origin on Instagram: \"GitHub has way more than code storage. These 9 repos can replace paid too",
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
-      ]
-    },
-    {
-      "id": "kb-1792284419125",
-      "issue": 82,
-      "category": "Проект: Позновалка",
-      "title": "Найди в системе аналог filmtools который мы делали и предоставь мне ссылку для открытия онлайн",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "18.10.2026",
-      "summary": "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
-      "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
+        "Сохранено в Note_20261017_193809.md"
       ]
     },
     {
@@ -275,118 +262,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 24,
-      "scope": "global",
-      "last_updated": "2026-10-17T07:32:00.826534"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 25,
-      "scope": "global",
-      "last_updated": "2026-10-17T18:47:23.430932"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 23,
-      "scope": "global",
-      "last_updated": "2026-10-17T07:32:00.831248"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 18,
-      "scope": "global",
-      "last_updated": "2026-10-17T07:32:00.832974"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 22,
-      "scope": "global",
-      "last_updated": "2026-10-17T18:47:23.432146"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.99,
-      "domain": "content-pipeline",
-      "evidence_count": 20,
-      "scope": "global",
-      "last_updated": "2026-10-17T15:59:27.863668"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.9,
-      "domain": "marketing",
-      "evidence_count": 15,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.99,
-      "domain": "agent-behavior",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-17T18:47:23.432992"
-    },
-    {
-      "id": "task-custom-request",
-      "trigger": "when processing 'custom-request' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.85,
-      "domain": "operations",
-      "evidence_count": 6,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-17T18:47:21.157660"
     }
   ]
 }
