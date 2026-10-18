@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-18T23:49:25.517013+00:00",
+  "updated_at": "2026-10-18T23:52:14.489Z",
   "version": "9.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792367533871",
+      "issue": 88,
+      "category": "Проект: Позновалка",
+      "title": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&ut",
+      "source_url": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa_cam=24303424977&hsa_grp=199951181039&hsa_ad=826684874285&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24303424977",
+      "secondary_url": "",
+      "date": "19.10.2026",
+      "summary": "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Позновалка"
+      ]
+    },
     {
       "id": "kb-20261017_194735",
       "issue": "Auto",
