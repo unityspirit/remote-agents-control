@@ -1501,11 +1501,17 @@
             worked: true,
             client: true,
             desc: "Проекты по Рязани (включая подпроект Страйк и локальные конфигурации)"
+        },
+        "GlobalFilms (Filmtools)": {
+            icon: "🎬",
+            worked: true,
+            client: false,
+            desc: "GlobalFilms — кинопроизводство, вызывные листы, съемочный график КПП, сценарии, актеры и смета бюджета (аналог Filmtools на Next.js 16)"
         }
     };
 
     const ALL_LAPTOP_FOLDERS = [
-        "Позновалка", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
+        "Позновалка", "GlobalFilms (Filmtools)", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
         "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
         "Belgrade_Sales_Kit", "Belgrade_Demo_Sites", "Beyondyourfood.com", "UpworkVault",
         "Костя", "Юра", "Светлана Notion", "8 слайдов карусель Белорусия", "Рязань",
@@ -1515,7 +1521,8 @@
         "Дима Верхняя Синичиха Алапаевск", "Alviole", "SoloMan", "Tripwires",
         "lead-operator", "Funnydog", "Study Work Done", "Study Screeshots",
         "Telegram Desktop", "agent_workspace (1)", "download",
-        "2f446e5b72c3c52b372510cd53353594bc60d693bbc6b27c34fabb589224fa6e (2)"
+        "2f446e5b72c3c52b372510cd53353594bc60d693bbc6b27c34fabb589224fa6e (2)",
+        "Learn & Implement"
     ];
 
     const ACTION_PLAN_STEPS = [
@@ -1660,6 +1667,18 @@
     ];
 
     const FALLBACK_KB = [
+        {
+            id: "kb-81-82",
+            issue: 82,
+            category: "Кинопроизводство & Медиа",
+            title: "GlobalFilms — Точный аналог Filmtools на Next.js 16 (Вызывные листы, КПП, Сценарии)",
+            source_url: "http://localhost:3000",
+            summary: "Полноценный комплекс для кино и съемок: Вызывные листы с таймингами грима и локациями, Календарно-постановочный план (КПП), учет смен («Космическая Одиссея 2026», Мосфильм), версионирование сценариев и база актеров/команды.",
+            action_items: [
+                "Локальный запуск: команда LAUNCH_FILMTOOLS запускает сервер на порту 3000",
+                "Разделы: /call-sheets (вызывные), /schedule (КПП), /script (сценарии), /team (команда)"
+            ]
+        },
         {
             id: "kb-72",
             issue: 72,
