@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-18T01:37:03.058292+00:00",
+  "updated_at": "2026-10-18T01:37:43.197Z",
   "version": "9.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792287462610",
+      "issue": 83,
+      "category": "Проект: Позновалка",
+      "title": "https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ== learn each repo and then insta",
+      "source_url": "https://www.instagram.com/p/Ddz7l-Ajt7H/?img_index=10&exln=MXYzcmhya2xreGRkNQ==",
+      "secondary_url": "",
+      "date": "18.10.2026",
+      "summary": "Title: AI Tech Origin on Instagram: \"GitHub has way more than code storage. These 9 repos can replace paid tools, improve AI workflows, and save a lot of time.\n• 1. Open Notebook — Turns PDFs, videos, websites, and notes into a private AI research assistant you can run locally.\n• 2. No AI Slop — Removes common AI-writing habits and makes generated writing feel cleaner, sharper, and less generic.\n• 3. I Have ADHD — Makes coding assistants answer more directly, use clearer steps, and avoid unnecessary filler.\n• 4. OpenSEO — An open-source SEO toolkit for keyword research, rank tracking, backlinks, audits, and competitor analysis.\n• 5. Book to Skill — Converts technical books into reusable skills so AI coding agents can pull only the relevant material when needed.\n• 6. OmniRoute — Connects coding tools to many AI models and can switch providers when one hits usage or quota limits.\n• 7. AI Job Search — Turns Claude Code into a job-search assistant for finding roles, tailoring resumes, writing cover letters, and interview prep.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Позновалка"
+      ]
+    },
     {
       "id": "kb-1792284419125",
       "issue": 82,
