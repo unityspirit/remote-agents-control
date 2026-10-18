@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T17:03:04.869548+00:00",
+  "updated_at": "2026-10-18T17:03:52.520986+00:00",
   "version": "9.0",
   "knowledge_base": [
     {
@@ -284,9 +284,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 24,
+      "evidence_count": 25,
       "scope": "global",
-      "last_updated": "2026-10-17T07:32:00.826534"
+      "last_updated": "2026-10-18T11:03:51.412719"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -294,9 +294,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 25,
+      "evidence_count": 26,
       "scope": "global",
-      "last_updated": "2026-10-17T18:47:23.430932"
+      "last_updated": "2026-10-18T11:03:51.413892"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -324,9 +324,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 24,
+      "evidence_count": 25,
       "scope": "global",
-      "last_updated": "2026-10-17T19:47:40.247835"
+      "last_updated": "2026-10-18T11:03:51.414470"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -374,19 +374,19 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 16,
+      "evidence_count": 17,
       "scope": "global",
-      "last_updated": "2026-10-17T19:47:40.249057"
+      "last_updated": "2026-10-18T11:03:51.415599"
     },
     {
       "id": "task-custom-request",
       "trigger": "when processing 'custom-request' tasks",
       "action": "Executed autonomously with report and choices",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "domain": "operations",
-      "evidence_count": 8,
+      "evidence_count": 9,
       "scope": "project:Позновалка",
-      "last_updated": "2026-10-17T19:47:38.107829"
+      "last_updated": "2026-10-18T11:03:48.879111"
     }
   ]
 }
