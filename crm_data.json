@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T20:09:34.113865+00:00",
+  "updated_at": "2026-10-18T20:12:55.314284+00:00",
   "version": "9.0",
   "knowledge_base": [
     {
@@ -324,9 +324,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 25,
+      "evidence_count": 26,
       "scope": "global",
-      "last_updated": "2026-10-18T11:03:51.414470"
+      "last_updated": "2026-10-18T14:12:54.377259"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -374,9 +374,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 17,
+      "evidence_count": 18,
       "scope": "global",
-      "last_updated": "2026-10-18T11:03:51.415599"
+      "last_updated": "2026-10-18T14:12:54.378396"
     },
     {
       "id": "task-custom-request",
@@ -387,6 +387,16 @@
       "evidence_count": 9,
       "scope": "project:Позновалка",
       "last_updated": "2026-10-18T11:03:48.879111"
+    },
+    {
+      "id": "task-status",
+      "trigger": "when processing 'status' tasks",
+      "action": "Executed autonomously with report and choices",
+      "confidence": 0.6,
+      "domain": "operations",
+      "evidence_count": 1,
+      "scope": "project:Рязань",
+      "last_updated": "2026-10-18T14:12:51.930431"
     }
   ]
 }
