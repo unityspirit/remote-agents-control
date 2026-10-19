@@ -1,18 +1,26 @@
 {
-  "updated_at": "2026-10-19T20:18:41.070Z",
+  "updated_at": "2026-10-19 14:19:07",
   "version": "10.0",
   "knowledge_base": [
     {
-      "id": "kb-1792441120162",
-      "issue": 110,
+      "id": "kb-20261019_141907",
+      "issue": "Auto",
       "category": "Проект: Позновалка",
-      "title": "https://www.altahq.com/lp/ai-sdr-katie?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_me",
+      "title": "https://www.altahq.com/lp/ai-sdr-katie?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source",
       "source_url": "https://www.altahq.com/lp/ai-sdr-katie?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa_cam=24303424977&hsa_grp=199404240886&hsa_ad=826684887017&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24303424977",
       "secondary_url": "",
       "date": "19.10.2026",
-      "summary": "Title: Meet Katie - Your New AI SDR Agent\n• URL Source: https://www.altahq.com/lp/ai-sdr-katie?hsa_acc=1922078764&hsa_cam=24303424977&hsa_grp=199404240886&hsa_ad=826684887017&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24303424977\n• ![Image 11: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisit.svg)\n• We value your privacy\n• We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n• Customise Reject All Accept All\n• Customise Consent Preferences![Image 12](https://cdn-cookieyes.com/assets/images/close.svg)\n• We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.",
+      "summary": "{\"role\":\"assistant\",\"reasoning\":\"We need to respond to user: They provided context of project \\\"Позновалка\\\", path, files, etc. They want to analyze the links and produce plan for projects. They also mention \\\"Контекст проекта: Проект: Позновалка Путь: C:\\\\Users\\\\Vlaslav\\\\Downloads\\\\Позновалка\\\". They want to include the structure: 1. Четкий ответ по существу задачи 2. 💡 Предложения по продолжению (ИИ) 3. 🚨 Требуется",
+      "agent": "Swarm Knowledge & Media Extraction Agent",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Alberta",
+        "Traffic"
+      ],
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
+        "Сохранено в Note_20261019_141907.md",
+        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
       ]
     },
     {
@@ -624,168 +632,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 46,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:43:14.153046"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 55,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:43:14.155646"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 36,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:43:14.157761"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 29,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:18:37.559372"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 49,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:18:37.561222"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.99,
-      "domain": "content-pipeline",
-      "evidence_count": 42,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:43:14.160745"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.99,
-      "domain": "marketing",
-      "evidence_count": 23,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-19T13:43:14.162975"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.99,
-      "domain": "agent-behavior",
-      "evidence_count": 48,
-      "scope": "global",
-      "last_updated": "2026-10-19T13:43:14.165388"
-    },
-    {
-      "id": "task-custom-request",
-      "trigger": "when processing 'custom-request' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.99,
-      "domain": "operations",
-      "evidence_count": 23,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-19T13:43:11.100371"
-    },
-    {
-      "id": "task-status",
-      "trigger": "when processing 'status' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.65,
-      "domain": "operations",
-      "evidence_count": 2,
-      "scope": "project:Рязань",
-      "last_updated": "2026-10-18T14:12:58.030905"
-    },
-    {
-      "id": "task-next_steps",
-      "trigger": "when processing 'next_steps' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Traffic",
-      "last_updated": "2026-10-18T18:48:36.564744"
-    },
-    {
-      "id": "task-evolve",
-      "trigger": "when processing 'evolve' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.7,
-      "domain": "operations",
-      "evidence_count": 3,
-      "scope": "project:Traffic",
-      "last_updated": "2026-10-19T13:18:34.022470"
-    },
-    {
-      "id": "task-plan_actions",
-      "trigger": "when processing 'plan_actions' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-19T10:08:11.948290"
-    },
-    {
-      "id": "delegate-10-80-10-dod",
-      "trigger": "при передаче задач ИИ-агентам и ассистентам",
-      "action": "Правило 10-80-10: человек даёт контекст и критерии (10%), агент делает черновую работу (80%), человек утверждает (10%); всегда задавать Definition of Done и записывать SOP по методу Camcorder",
-      "confidence": 0.65,
-      "domain": "delegation",
-      "evidence_count": 2,
-      "scope": "global",
-      "last_updated": "2026-10-19T11:34:42.324403"
     }
   ]
 }
