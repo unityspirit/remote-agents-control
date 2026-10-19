@@ -1102,6 +1102,79 @@
             .workspace-pane.mobile-open {
                 transform: translateX(0);
             }
+            .back-btn {
+                display: inline-flex;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topbar {
+                padding: 8px 10px;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .brand-titles h1 {
+                font-size: 0.88rem;
+            }
+            .worker-pill {
+                font-size: 0.66rem;
+            }
+            .topbar-actions {
+                width: 100%;
+                justify-content: space-between;
+                gap: 5px;
+            }
+            .topbar-actions .icon-btn {
+                flex: 1;
+                justify-content: center;
+                padding: 0 6px;
+                min-height: 34px;
+                font-size: 0.72rem;
+            }
+            .quick-save-banner {
+                padding: 6px 10px;
+                gap: 6px;
+            }
+            .quick-save-input {
+                height: 36px;
+                font-size: 0.78rem;
+            }
+            .quick-save-btn {
+                height: 36px;
+                padding: 0 10px;
+                font-size: 0.75rem;
+            }
+            .human-action-strip {
+                padding: 7px 10px;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            .strip-text {
+                white-space: normal;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: 0.73rem;
+                line-height: 1.3;
+                min-width: 180px;
+            }
+            .dialogue-input-row {
+                flex-direction: column;
+            }
+            .dialogue-input-row .mini-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 8px;
+            }
+            .plan-footer {
+                flex-wrap: wrap;
+            }
+            .plan-footer .mini-btn {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+
         .add-folder-banner-btn {
             width: 100%;
             padding: 11px 14px;
@@ -1128,13 +1201,13 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(5px);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 12px;
         }
 
         .modal-card {
@@ -1142,51 +1215,62 @@
             border: 1px solid var(--border);
             border-radius: 18px;
             width: 100%;
-            max-width: 420px;
-            padding: 20px;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+            max-width: 440px;
+            max-height: 88dvh;
+            padding: 16px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.45);
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
+            overflow: hidden;
         }
 
         .modal-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-shrink: 0;
         }
 
         .modal-header h3 {
             margin: 0;
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             font-weight: 800;
             color: var(--text-main);
         }
 
         .modal-close {
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            font-size: 1.2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
             cursor: pointer;
-            padding: 4px;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-body {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            overflow-y: auto;
+            max-height: 66dvh;
+            padding-right: 2px;
         }
 
         .modal-input {
             width: 100%;
-            height: 46px;
+            height: 44px;
             padding: 0 14px;
             border-radius: 12px;
             border: 1px solid var(--border);
             background: var(--bg-main);
             color: var(--text-main);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
             box-sizing: border-box;
         }
@@ -1214,13 +1298,14 @@
             display: flex;
             gap: 10px;
             justify-content: flex-end;
-            margin-top: 6px;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
         .modal-btn {
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 12px;
-            font-size: 0.86rem;
+            font-size: 0.84rem;
             font-weight: 700;
             cursor: pointer;
             border: none;
@@ -1255,24 +1340,24 @@
             </div>
         </div>
         <div class="topbar-actions">
-            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Требуется действие">🚨 Действия (<span id="topbar-action-cnt">4</span>)</button>
-            <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Тема">☀️</button>
+            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Предупреждения и ожидание действий">🚨 Действия (<span id="topbar-action-cnt">5</span>)</button>
             <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ Папка</button>
+            <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Тема">☀️</button>
             <button class="icon-btn" onclick="refreshAllData(true)" title="Обновить">🔄</button>
         </div>
     </header>
 
     <!-- INSTANT SAVE BAR (WORKS 24/7 EVEN IF LAPTOP IS OFFLINE) -->
     <div class="quick-save-banner">
-        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="🔗 Вставьте сайт, ссылку или мысль в Позновалку (работает даже без ПК)..." onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
+        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="🔗 Ссылка или «изучи и создай новую папку» (работает 24/7)..." onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
         <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
     </div>
 
-    <!-- ACTION REQUIRED ALERT STRIP -->
+    <!-- ACTION REQUIRED & WAITING ALERT STRIP -->
     <div class="human-action-strip" id="human-action-strip" onclick="openActionModal()">
-        <span class="strip-badge">🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ</span>
-        <span class="strip-text">Ожидают вашего решения: <strong>Alberta</strong> (API ключи), <strong>Урал Гранит</strong> (звонок/КП), <strong>Доминикана</strong> (WhatsApp), <strong>YouTube</strong> (Google OAuth).</span>
-        <span class="strip-arrow">Подробнее ➔</span>
+        <span class="strip-badge" id="strip-badge-label">🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ (5)</span>
+        <span class="strip-text" id="strip-dynamic-text">Ожидают решения: <strong>12 IT Продуктов</strong> (выбор Mini App), <strong>Traffic</strong> (ниша), <strong>Alberta</strong> (ключи), <strong>Урал</strong> (КП), <strong>Доминикана</strong> (WhatsApp).</span>
+        <span class="strip-arrow">Открыть ➔</span>
     </div>
 
     <div class="main-body">
@@ -1281,26 +1366,26 @@
             <!-- TAB 1: PROJECTS / FOLDERS -->
             <section class="tab-view active" id="tab-projects">
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Найти проект (Alberta, Позновалка, Егор...)" oninput="renderProjects()">
+                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Найти папку (12 IT Продуктов, Traffic, Alberta...)" oninput="renderProjects()">
                 </div>
                 <div class="filter-row" id="project-cat-filters">
-                    <button class="chip active" onclick="setProjectFilter('worked', this)">🔥 Работали ранее (<span id="cnt-worked" class="tabular">24</span>)</button>
-                    <button class="chip" onclick="setProjectFilter('all', this)">📂 Все папки (<span id="cnt-folders" class="tabular">46</span>)</button>
+                    <button class="chip active" onclick="setProjectFilter('worked', this)">🔥 Работали ранее (<span id="cnt-worked" class="tabular">25</span>)</button>
+                    <button class="chip" onclick="setProjectFilter('all', this)">📂 Все папки (<span id="cnt-folders" class="tabular">48</span>)</button>
                     <button class="chip" onclick="setProjectFilter('clients', this)">🤝 Клиенты и B2B</button>
                 </div>
                 <button class="add-folder-banner-btn" onclick="openNewFolderModal()">➕ Создать новую папку на ПК</button>
                 <div id="projects-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
 
-            <!-- TAB 2: ACTION PLAN (TODAY / TOMORROW) + STUDIED IMPROVEMENTS + SELF-LEARNING -->
+            <!-- TAB 2: ACTION PLAN (TODAY / TOMORROW) + WAITING FOR ACTIONS + STUDIED IMPROVEMENTS + SELF-LEARNING -->
             <section class="tab-view" id="tab-plan">
                 <div class="filter-row" id="plan-sub-filters">
-                    <button class="chip active" onclick="setPlanSubView('schedule', this)">🗓️ Сегодня и Завтра</button>
-                    <button class="chip" onclick="setPlanSubView('improvements', this)">🔍 Изучено → Улучшения</button>
-                    <button class="chip" onclick="setPlanSubView('instincts', this)">🧬 Самообучение (10)</button>
-                    <button class="chip" onclick="setPlanSubView('autonomy', this)">⚡ ИИ vs Человек</button>
-                    <button class="chip" onclick="setPlanSubView('reminders', this)">⏰ Напоминания</button>
-                    <button class="chip" onclick="setPlanSubView('report', this)">📋 Мастер-Отчёт</button>
+                    <button class="chip active" data-view="schedule" onclick="setPlanSubView('schedule', this)">🗓️ Сегодня и Завтра</button>
+                    <button class="chip" data-view="autonomy" onclick="setPlanSubView('autonomy', this)">🚨 Ожидание действий (<span id="plan-chip-actions-cnt">5</span>)</button>
+                    <button class="chip" data-view="improvements" onclick="setPlanSubView('improvements', this)">🔍 Изучено → Улучшения</button>
+                    <button class="chip" data-view="instincts" onclick="setPlanSubView('instincts', this)">🧬 Самообучение (12)</button>
+                    <button class="chip" data-view="reminders" onclick="setPlanSubView('reminders', this)">⏰ Напоминания</button>
+                    <button class="chip" data-view="report" onclick="setPlanSubView('report', this)">📋 Мастер-Отчёт</button>
                 </div>
                 <div id="plan-container" style="display:flex; flex-direction:column; gap:10px;"></div>
             </section>
@@ -1308,13 +1393,14 @@
             <!-- TAB 3: ALL CRM TASKS -->
             <section class="tab-view" id="tab-tasks">
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="crm-task-search" placeholder="🔍 Поиск по всем задачам и сохраненным ссылкам..." oninput="renderCrmTasks()">
+                    <input type="text" class="search-input" id="crm-task-search" placeholder="🔍 Поиск по задачам, папкам и ссылкам..." oninput="renderCrmTasks()">
                 </div>
-                <div class="filter-row">
-                    <button class="chip active" onclick="setCrmStatusFilter('all', this)">Все (<span id="cnt-all" class="tabular">0</span>)</button>
-                    <button class="chip" onclick="setCrmStatusFilter('open', this)">⏳ В очереди (<span id="cnt-open" class="tabular">0</span>)</button>
-                    <button class="chip" onclick="setCrmStatusFilter('closed', this)">✅ Готово (<span id="cnt-closed" class="tabular">0</span>)</button>
-                    <button class="chip" onclick="setCrmStatusFilter('links', this)">🔗 Ссылки</button>
+                <div class="filter-row" id="crm-task-filters">
+                    <button class="chip active" data-flt="all" onclick="setCrmStatusFilter('all', this)">Все (<span id="cnt-all" class="tabular">0</span>)</button>
+                    <button class="chip" data-flt="waiting_action" onclick="setCrmStatusFilter('waiting_action', this)">🚨 Ожидание действий (<span id="cnt-waiting-actions" class="tabular">5</span>)</button>
+                    <button class="chip" data-flt="open" onclick="setCrmStatusFilter('open', this)">⏳ Очередь ИИ (<span id="cnt-open" class="tabular">0</span>)</button>
+                    <button class="chip" data-flt="closed" onclick="setCrmStatusFilter('closed', this)">✅ Готово (<span id="cnt-closed" class="tabular">0</span>)</button>
+                    <button class="chip" data-flt="links" onclick="setCrmStatusFilter('links', this)">🔗 Ссылки</button>
                 </div>
                 <div id="crm-tasks-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
@@ -1325,7 +1411,7 @@
                     🧠 <b>Автономная База Знаний CRM («Позновалка»)</b>. Работает 24/7 напрямую через облако GitHub + Jina AI даже при выключенном ноутбуке!
                 </div>
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="kb-search" placeholder="🔍 Поиск по базе знаний (JoinTECH, Habr, Martell...)" oninput="renderKnowledgeBase()">
+                    <input type="text" class="search-input" id="kb-search" placeholder="🔍 Поиск по базе знаний (12 IT Продуктов, Traffic, JoinTECH...)" oninput="renderKnowledgeBase()">
                 </div>
                 <div id="kb-container" style="display:flex; flex-direction:column; gap:10px;"></div>
             </section>
@@ -1334,16 +1420,25 @@
             <section class="tab-view" id="tab-dashboard">
                 <div class="metric-grid">
                     <div class="metric-box">
-                        <div class="metric-val tabular" id="m-folders">46</div>
+                        <div class="metric-val tabular" id="m-folders">48</div>
                         <div class="metric-lbl">Папок в CRM</div>
                     </div>
                     <div class="metric-box">
-                        <div class="metric-val tabular" id="m-tasks">72</div>
+                        <div class="metric-val tabular" id="m-tasks">97</div>
                         <div class="metric-lbl">Задач и ссылок</div>
                     </div>
                     <div class="metric-box">
-                        <div class="metric-val tabular" id="m-instincts">96%</div>
+                        <div class="metric-val tabular" id="m-instincts">97%</div>
                         <div class="metric-lbl">Самообучение</div>
+                    </div>
+                </div>
+
+                <div class="project-card" style="cursor:default;">
+                    <div class="p-card-name">⚡ Интерактивные модули Виртуального Офиса</div>
+                    <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+                        <a href="12_IT_Products/index.html" class="kb-link">🚀 12 IT Продуктов (Короче Капитан) — Конвейер Mini Apps + Игра ↗</a>
+                        <a href="Traffic/index.html" class="kb-link">🚦 Traffic & Thought/Мысль — Калькулятор DFY + Profitroom ↗</a>
+                        <a href="AI_Skills_And_Macro_Stabilization/index.html" class="kb-link">📈 30 Навыков ИИ + Нобелевская Стабилизация 2026 ↗</a>
                     </div>
                 </div>
 
@@ -1358,18 +1453,20 @@
 
                 <div class="project-card" style="cursor:default;">
                     <div class="p-card-name">📈 Прайс-матрица Global Plus (по модели JoinTECH)</div>
-                    <table class="matrix-table">
-                        <thead>
-                            <tr><th>Услуга / Пакет</th><th>РФ / СНГ</th><th>Global</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Инженерный Аудит (6 узлов)</td><td>от 50 000 ₽</td><td>$900</td></tr>
-                            <tr><td>Сайты на чистом коде + SEO</td><td>от 50 000 ₽/м</td><td>$1,500+</td></tr>
-                            <tr><td>CRM + Мобильный Офис</td><td>от 150 000 ₽</td><td>$2,500+</td></tr>
-                            <tr><td>Telegram Mini Apps + Навигатор</td><td>от 50 000 ₽</td><td>$1,200+</td></tr>
-                            <tr><td>ИИ-агенты 24/7 + Возврат LTV</td><td>от 200 000 ₽</td><td>$3,000+</td></tr>
-                        </tbody>
-                    </table>
+                    <div style="overflow-x:auto;">
+                        <table class="matrix-table">
+                            <thead>
+                                <tr><th>Услуга / Пакет</th><th>РФ / СНГ</th><th>Global</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Инженерный Аудит (6 узлов)</td><td>от 50 000 ₽</td><td>$900</td></tr>
+                                <tr><td>Сайты на чистом коде + SEO</td><td>от 50 000 ₽/м</td><td>$1,500+</td></tr>
+                                <tr><td>CRM + Мобильный Офис</td><td>от 150 000 ₽</td><td>$2,500+</td></tr>
+                                <tr><td>Telegram Mini Apps + Навигатор</td><td>от 50 000 ₽</td><td>$1,200+</td></tr>
+                                <tr><td>ИИ-агенты 24/7 + Возврат LTV</td><td>от 200 000 ₽</td><td>$3,000+</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
         </aside>
@@ -1378,7 +1475,7 @@
         <main class="workspace-pane" id="workspace-pane">
             <div class="ws-header">
                 <div class="ws-title-group">
-                    <button class="back-btn" onclick="closeMobileWorkspace()">←</button>
+                    <button class="back-btn" onclick="closeMobileWorkspace()" title="Назад к списку папок">←</button>
                     <div class="ws-title-text">
                         <h2 id="ws-project-title">🧠 Позновалка</h2>
                         <div class="ws-subtitle" id="ws-project-sub">Отправляйте ссылки и задачи — сохраняется автономно 24/7</div>
@@ -1397,10 +1494,10 @@
                 <div class="quick-pills">
                     <button class="q-pill" onclick="sendTask('STATUS')">📊 Статус папки</button>
                     <button class="q-pill" onclick="sendTask('NEXT_STEPS')">🎯 Что делать дальше</button>
+                    <button class="q-pill" onclick="sendTask('PLAN_ACTIONS')">🚨 Где нужен человек?</button>
                     <button class="q-pill" onclick="sendTask('EVOLVE')">🧬 Самообучение EVOLVE</button>
                     <button class="q-pill" onclick="sendTask('MARKETING')">📈 Воронка и трафик</button>
                     <button class="q-pill" onclick="sendTask('FULL_AUDIT')">🔍 Полный аудит</button>
-                    <button class="q-pill" onclick="sendTask('NOTEBOOKLM')">📓 NotebookLM</button>
                 </div>
                 <div class="composer-row">
                     <input type="text" class="composer-input" id="cmd-input" placeholder="Ссылка, сайт или задача для папки..." onkeypress="if(event.key==='Enter') submitCustomInput()">
@@ -1446,7 +1543,7 @@
         </div>
         <div class="modal-body">
             <label style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Название папки / проекта на ПК:</label>
-            <input type="text" id="modal-folder-name" class="modal-input" placeholder="Например: Отель Волна, Кампания 2026..." onkeypress="if(event.key==='Enter') confirmCreateFolder()">
+            <input type="text" id="modal-folder-name" class="modal-input" placeholder="Например: 12 IT Продуктов, Отель Волна..." onkeypress="if(event.key==='Enter') confirmCreateFolder()">
             <div style="display:flex; gap:8px; margin-top:8px;">
                 <label class="modal-chip"><input type="radio" name="folder-type" value="worked" checked> 🔥 Рабочий проект</label>
                 <label class="modal-chip"><input type="radio" name="folder-type" value="client"> 🤝 Клиент B2B</label>
@@ -1459,22 +1556,26 @@
     </div>
 </div>
 
-<!-- ACTION REQUIRED MODAL -->
+<!-- ACTION REQUIRED & WAITING MODAL -->
 <div id="action-modal" class="modal-overlay" style="display:none;" onclick="if(event.target===this) closeActionModal()">
-    <div class="modal-card" style="max-width: 520px;">
+    <div class="modal-card" style="max-width: 540px;">
         <div class="modal-header">
-            <h3>🚨 Где требуется действие человека</h3>
+            <h3>🚨 Центр Предупреждений и Ожидания Действий</h3>
             <button class="modal-close" onclick="closeActionModal()">✕</button>
         </div>
         <div class="modal-body" style="gap:10px;">
-            <div style="font-size:0.77rem; color:var(--text-dim); line-height:1.4;">
-                ИИ завершил 100% автономной работы по всем проектам. Ниже пункты, где физически необходимо ваше участие (Власлав):
+            <div style="display:flex; gap:6px;">
+                <input type="text" id="new-human-action-input" class="search-input" placeholder="➕ Добавить действие в ожидание (например: Позвонить клиенту)..." style="flex:1; height:36px; font-size:0.78rem;" onkeypress="if(event.key==='Enter') addCustomHumanAction()">
+                <button class="icon-btn primary" onclick="addCustomHumanAction()" style="height:36px; padding:0 12px; font-size:0.76rem; flex-shrink:0;">Добавить</button>
             </div>
             <div id="action-modal-items" style="display:flex; flex-direction:column; gap:8px;"></div>
         </div>
-        <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:10px;">
-            <a href="../AI_Skills_And_Macro_Stabilization/index.html" class="icon-btn" style="text-decoration:none; font-size:0.74rem;">📈 Нобелевский Центр ↗</a>
-            <button class="modal-btn confirm" onclick="closeActionModal()">Готово</button>
+        <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:10px; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <a href="12_IT_Products/index.html" class="icon-btn" style="text-decoration:none; font-size:0.72rem; min-height:34px;">🚀 12 Mini Apps ↗</a>
+                <a href="Traffic/index.html" class="icon-btn" style="text-decoration:none; font-size:0.72rem; min-height:34px;">🚦 Трафик ↗</a>
+            </div>
+            <button class="modal-btn confirm" onclick="closeActionModal()" style="max-width:130px;">Готово</button>
         </div>
     </div>
 </div>
@@ -1713,11 +1814,19 @@
             appUrl: "Traffic/index.html",
             appLabel: "💡 Открыть Единую Схему Синтеза (Gartner AI + Profitroom + DFY) ↗",
             desc: "Интеллектуальное ядро системы (Gartner Predicts 2026 / ThoughtSpot): автономные AI-агенты, встроенная аналитика принятия решений и архитектура единого мозга CRM"
+        },
+        "12 IT Продуктов (Короче Капитан)": {
+            icon: "🚀",
+            worked: true,
+            client: false,
+            appUrl: "12_IT_Products/index.html",
+            appLabel: "🚀 Открыть Фабрику 12 Mini Apps + Игровой Прототип ↗",
+            desc: "Челлендж 12 IT-продуктов за 12 месяцев (itscap.blog / @its_capitan «Короче, капитан»): быстрый запуск Telegram Mini Apps за 14–21 день, виральный loop и игровой прототип Space Words"
         }
     };
 
     const ALL_LAPTOP_FOLDERS = [
-        "Traffic", "Thought/Мысль", "AI Skills & Nobel Stabilization",
+        "12 IT Продуктов (Короче Капитан)", "Traffic", "Thought/Мысль", "AI Skills & Nobel Stabilization",
         "Позновалка", "GlobalFilms (Filmtools)", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
         "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
         "Belgrade_Sales_Kit", "Belgrade_Demo_Sites", "Beyondyourfood.com", "UpworkVault",
@@ -1734,9 +1843,19 @@
 
     const ACTION_PLAN_STEPS = [
         {
+            id: "step-today-0",
+            day: "today",
+            order: "Сегодня · Приоритет №1",
+            project: "12 IT Продуктов (Короче Капитан)",
+            title: "Запустить Mini App #1 по методологии «Короче, капитан» (12 IT-продуктов за 12 мес)",
+            desc: "По разбору задачи #97 (itscap.blog / @its_capitan): не пилить долгие сайты, а выпустить за 7 дней первый микро-продукт в Telegram WebApp с 1 главной функцией и реферальным бонусом за приглашение друга.",
+            cmd: "Сформировать MVP-спецификацию и код первого Telegram Mini App по методологии Короче Капитан",
+            doneDefault: false
+        },
+        {
             id: "step-today-1",
             day: "today",
-            order: "Сегодня · Очередь №1",
+            order: "Сегодня · Очередь №2",
             project: "Unity Inc",
             title: "Упаковать воронку Global Plus по модели JoinTECH (Андрей Беловолов)",
             desc: "Внедрить на globalplus.tech и в КП 3-шаговую воронку: 1) Бесплатный 40-мин разбор узких мест -> 2) Платный «Инженерный аудит 6 узлов бизнеса» (от 50 000 ₽ / $900) -> 3) Пакеты внедрения по 6 отраслям.",
@@ -1746,7 +1865,7 @@
         {
             id: "step-today-2",
             day: "today",
-            order: "Сегодня · Очередь №2",
+            order: "Сегодня · Очередь №3",
             project: "Позновалка",
             title: "Запустить «Навигатор Telegram-канала» в 2 клика + 5 экспертных постов",
             desc: "По примеру @belovolov_andrey: собрать единое закрепленное меню-навигатор по нашим кейсам и услугам и выпустить первые 5 постов без воды про потери на стыках CRM и мобильных сайтах.",
@@ -1756,7 +1875,7 @@
         {
             id: "step-today-3",
             day: "today",
-            order: "Сегодня · Очередь №3",
+            order: "Сегодня · Очередь №4",
             project: "Alberta",
             title: "Alberta Shirani: Финализировать PDF Лид-магнит и быстрый Mini App вместо длинного бота",
             desc: "Убрать сложные кнопочные лабиринты (которые режут конверсию на 20%). Сделать выдачу PDF-гайда за 2 касания + авто-прогрев к консультации.",
@@ -1766,7 +1885,7 @@
         {
             id: "step-today-4",
             day: "today",
-            order: "Сегодня · Очередь №4",
+            order: "Сегодня · Очередь №5",
             project: "Alex ChopChop",
             title: "Alex ChopChop: Спроектировать QR-механику возврата клиентов (+35% LTV)",
             desc: "Вместо прямых скидок в лоб: QR-код в барбершопе -> переход в Telegram Mini App с бонусом на следующую стрижку -> авто-напоминание через 21 день.",
@@ -1816,6 +1935,13 @@
     ];
 
     const STUDIED_IMPROVEMENTS = [
+        {
+            issue: "#97",
+            source: "Челлендж «12 IT-продуктов за 12 месяцев» (itscap.blog / @its_capitan «Короче, капитан»)",
+            learned: "Попытка строить один «идеальный стартап» полгода — главная причина слива бюджета. Побеждает конвейер: 1 месяц = 1 Telegram Mini App с 1 ключевой функцией (MVP за 14–21 день), встроенной виральностью (бонус за друга) и быстрой проверкой платежеспособности за 72 часа.",
+            improve: "Создана отдельная папка «12 IT Продуктов (Короче Капитан)» и интерактивный модуль 12_IT_Products/index.html с игровым прототипом Space Words и планом запуска 4 Mini Apps для нашей экосистемы (Alberta, Урал/Global Plus, Доминикана, ИИ-Тренажер).",
+            projects: ["12 IT Продуктов (Короче Капитан)", "Alberta", "Unity Inc", "Белый Доминикана", "Позновалка"]
+        },
         {
             issue: "#89–#96",
             source: "Exponential Traffic (DFY Pay-on-Results) + Profitroom (Hotel Booking 360) + ThoughtSpot/Gartner 2026",
@@ -1868,6 +1994,7 @@
     ];
 
     const EVOLVED_INSTINCTS = [
+        { id: "itscap-12-miniapps-challenge", conf: 98, domain: "Продуктовая Фабрика", title: "Конвейер 12 IT-продуктов за 12 месяцев (@its_capitan)", rule: "1 продукт = 1 ключевая функция в Telegram Mini App -> сборка через ИИ за 14–21 день -> реферальная петля внутри продукта -> решение о масштабировании за 72 часа." },
         { id: "exponential-profitroom-dfy-synergy", conf: 97, domain: "Трафик & Монетизация", title: "Связка Exponential Traffic (DFY) + Profitroom + Gartner AI", rule: "Вход без ретейнера (клиент платит только ad spend) -> конверсия через прямые бронирования/Mini App (Profitroom) -> управление через автономных AI-агентов (ThoughtSpot/Gartner)." },
         { id: "jointech-engineering-funnel", conf: 96, domain: "Бизнес-модель", title: "Воронка Инженерного Аудита (JoinTECH)", rule: "Бесплатный 40-мин разбор -> Платный аудит 6 узлов -> Внедрение на чистом коде и Mini Apps" },
         { id: "telegram-miniapp-over-labyrinths", conf: 95, domain: "UX & Конверсия", title: "Telegram Mini Apps вместо кнопочных лабиринтов", rule: "Заменять 10-шаговых ботов на визуальный Web UI в 2 клика и Навигатор канала" },
@@ -1882,6 +2009,20 @@
     ];
 
     const FALLBACK_KB = [
+        {
+            id: "kb-97-itscap",
+            issue: 97,
+            category: "Проект: 12 IT Продуктов (Короче Капитан)",
+            title: "Челлендж «12 IT-продуктов за 12 месяцев» (itscap.blog / @its_capitan) — Фабрика Telegram Mini Apps",
+            source_url: "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads",
+            secondary_url: "https://t.me/its_capitan",
+            summary: "Методология быстрого запуска микро-продуктов: 1 месяц = 1 Telegram Mini App с одной главной функцией (Time-to-Market 14–21 день). Встроенная виральность (+бонус за приглашение друга), монетизация через трипвайр 490 ₽ / Telegram Stars / B2B-лиды и фильтрация гипотез за 72 часа.",
+            action_items: [
+                "Открыть интерактивный модуль 12_IT_Products/index.html с прототипом игры Space Words",
+                "Запустить Mini App #1 (Диагностика за 90 сек для Alberta Shirani с трипвайром 490 ₽)",
+                "Запустить Mini App #2 (Калькулятор потерь трафика и сметы для Урал / Global Plus)"
+            ]
+        },
         {
             id: "kb-90-95-96",
             issue: 96,
@@ -1986,6 +2127,9 @@
         if (!s) return "Позновалка";
         const low = s.toLowerCase();
         const stripped = low.replace(/[\\/*?:"<>|]/g, "").trim();
+        if (low === "23616818868" || low.includes("12_it_products") || low.includes("12 it продуктов") || low.includes("короче капитан") || low.includes("itscap")) {
+            return "12 IT Продуктов (Короче Капитан)";
+        }
         if (low === "thoughtмысль" || low === "thought/мысль" || stripped === "thoughtмысль") {
             return "Thought/Мысль";
         }
@@ -2082,26 +2226,49 @@
 
     function parseIssueProject(title) {
         const raw = String(title || "").trim();
-        if (raw.includes("|") && raw.includes("PROJ:")) {
-            const parts = raw.split("|");
-            const cmd = parts[0].replace(/^CMD:\s*/i, "").trim();
-            const projPart = parts.slice(1).join("|");
-            const project = canonicalProjectName(projPart.replace(/^\s*PROJ:\s*/i, "").trim() || "Позновалка");
+        let project = "Позновалка";
+        let cmd = raw.replace(/^CMD:\s*/i, "").trim();
+
+        if (/itscap\.blog|challenge_12_it_products/i.test(raw)) {
+            const parts = raw.split(/\|\s*PROJ:\s*/i);
+            cmd = parts[0].replace(/^CMD:\s*/i, "").trim();
+            return { project: "12 IT Продуктов (Короче Капитан)", cmd };
+        }
+
+        if (/\|\s*PROJ:\s*/i.test(raw)) {
+            const parts = raw.split(/\|\s*PROJ:\s*/i);
+            cmd = parts[0].replace(/^CMD:\s*/i, "").trim();
+            const projRaw = parts.slice(1).join(" ").trim();
+            project = canonicalProjectName(projRaw || "Позновалка");
             return { project, cmd };
         }
         const m = raw.match(/^\[(.*?)\]\s*(.*)$/);
         if (m) {
             return { project: canonicalProjectName(m[1].trim()), cmd: m[2].trim() };
         }
-        return { project: "Позновалка", cmd: raw.replace(/^CMD:\s*/i, "").trim() };
+        return { project, cmd };
     }
 
     function switchTab(tabId, btnEl) {
         document.querySelectorAll(".tab-view").forEach(el => el.classList.remove("active"));
-        document.getElementById("tab-" + tabId).classList.add("active");
+        const targetTab = document.getElementById("tab-" + tabId);
+        if (targetTab) targetTab.classList.add("active");
         document.querySelectorAll(".b-tab").forEach(el => el.classList.remove("active"));
-        if (btnEl) btnEl.classList.add("active");
+        if (btnEl) {
+            btnEl.classList.add("active");
+        } else {
+            const matchBtn = document.getElementById("nav-tab-" + tabId);
+            if (matchBtn) matchBtn.classList.add("active");
+        }
         closeMobileWorkspace();
+        syncActionAlertsUI();
+    }
+
+    function openWaitingActionsTab() {
+        closeActionModal();
+        const planNavBtn = document.getElementById("nav-tab-plan");
+        switchTab("plan", planNavBtn);
+        setPlanSubView("autonomy");
     }
 
     function openMobileWorkspace() {
@@ -2132,15 +2299,21 @@
 
     function setPlanSubView(view, btn) {
         planSubView = view;
-        document.querySelectorAll("#plan-sub-filters .chip").forEach(c => c.classList.remove("active"));
+        document.querySelectorAll("#plan-sub-filters .chip").forEach(c => {
+            if (btn) {
+                c.classList.remove("active");
+            } else {
+                c.classList.toggle("active", c.getAttribute("data-view") === view);
+            }
+        });
         if (btn) btn.classList.add("active");
         renderPlanView();
     }
 
     function setCrmStatusFilter(flt, btn) {
         crmStatusFilter = flt;
-        btn.parentElement.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
-        btn.classList.add("active");
+        document.querySelectorAll("#tab-tasks .chip").forEach(c => c.classList.remove("active"));
+        if (btn) btn.classList.add("active");
         renderCrmTasks();
     }
 
@@ -2170,10 +2343,12 @@
 
         const allNamesSet = new Set();
         folderList.forEach(f => {
-            if (f) allNamesSet.add(canonicalProjectName(f));
+            const cf = canonicalProjectName(f);
+            if (cf && cf !== "23616818868") allNamesSet.add(cf);
         });
         Object.keys(stats).forEach(k => {
-            if (k && k !== "Other") allNamesSet.add(canonicalProjectName(k));
+            const ck = canonicalProjectName(k);
+            if (ck && ck !== "Other" && ck !== "23616818868") allNamesSet.add(ck);
         });
         Object.keys(PROJECT_META).forEach(k => allNamesSet.add(canonicalProjectName(k)));
 
@@ -2187,6 +2362,8 @@
         allNames.sort((a, b) => {
             if (a === "Позновалка") return -1;
             if (b === "Позновалка") return 1;
+            if (a === "12 IT Продуктов (Короче Капитан)") return -1;
+            if (b === "12 IT Продуктов (Короче Капитан)") return 1;
             const ta = stats[a] ? stats[a].total : 0;
             const tb = stats[b] ? stats[b].total : 0;
             if (tb !== ta) return tb - ta;
@@ -2253,9 +2430,9 @@
             const tomorrowSteps = ACTION_PLAN_STEPS.filter(s => s.day === "tomorrow");
 
             let html = '<div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; line-height: 1.42;">' +
-                '🤖 <b>Сформировано системой самообучения (SelfEvolvingSwarm v3.0):</b> Очередь выстроена по максимальной отдаче денег и времени на основе разбора задач #47–#96.' +
+                '🤖 <b>Сформировано системой самообучения (SelfEvolvingSwarm v3.1):</b> Очередь выстроена по максимальной отдаче денег и времени на основе разбора задач #47–#97.' +
                 '</div>' +
-                '<div class="section-divider"><span>☀️ ЧТО ДЕЛАЕМ СЕГОДНЯ (ПО ОЧЕРЕДИ)</span><span>4 шага</span></div>';
+                '<div class="section-divider"><span>☀️ ЧТО ДЕЛАЕМ СЕГОДНЯ (ПО ОЧЕРЕДИ)</span><span>' + todaySteps.length + ' шагов</span></div>';
 
             todaySteps.forEach(s => {
                 const checked = isStepChecked(s.id, s.doneDefault);
@@ -2278,7 +2455,7 @@
                 '</div>';
             });
 
-            html += '<div class="section-divider" style="margin-top:6px;"><span>🌅 ЧТО БУДЕМ ДЕЛАТЬ ЗАВТРА (СЛЕДУЮЩАЯ ОЧЕРЕДЬ)</span><span>4 шага</span></div>';
+            html += '<div class="section-divider" style="margin-top:6px;"><span>🌅 ЧТО БУДЕМ ДЕЛАТЬ ЗАВТРА (СЛЕДУЮЩАЯ ОЧЕРЕДЬ)</span><span>' + tomorrowSteps.length + ' шага</span></div>';
 
             tomorrowSteps.forEach(s => {
                 const checked = isStepChecked(s.id, s.doneDefault);
@@ -2307,7 +2484,7 @@
 
         if (planSubView === "improvements") {
             let html = '<div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; line-height: 1.42;">' +
-                '🔍 <b>Список изученных задач (#47–#96):</b> Что именно агент понял из вашей Базы Знаний и какие улучшения внедряются в наши папки.' +
+                '🔍 <b>Список изученных задач (#47–#97):</b> Что именно агент понял из вашей Базы Знаний и какие улучшения внедряются в наши папки.' +
                 '</div>';
             STUDIED_IMPROVEMENTS.forEach(item => {
                 const projButtons = item.projects.map(p => {
@@ -2332,7 +2509,7 @@
 
         if (planSubView === "instincts") {
             let html = '<div style="background: rgba(59, 130, 246, 0.14); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:8px;">' +
-                '<div style="font-size:0.84rem; font-weight:700; color:var(--accent);">🧬 Память самообучения (Continuous Learning v3.0)</div>' +
+                '<div style="font-size:0.84rem; font-weight:700; color:var(--accent);">🧬 Память самообучения (Continuous Learning v3.1)</div>' +
                 '<div style="font-size:0.77rem; color:var(--text-dim); line-height:1.4;">Система автоматически превращает разобранные задачи, ссылки из NotebookLM и успешные кейсы в постоянные правила работы агента (instincts.json).</div>' +
                 '<button class="icon-btn primary" onclick="runPlanStep(\'Позновалка\', \'EVOLVE\')">⚡ Запустить новый цикл самообучения (EVOLVE)</button>' +
                 '</div>';
@@ -2352,18 +2529,80 @@
         }
 
         if (planSubView === "autonomy") {
-            let html = '<div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 12px; font-size: 0.8rem; line-height: 1.45;">' +
-                '<div style="font-weight:700; color:#10b981; font-size:0.88rem; margin-bottom:4px;">⚡ Матрица Планирования: ИИ Автономно vs Человек</div>' +
-                '<div style="color:var(--text-dim);">Четкое разделение: что система выполняет на 100% самостоятельно, а где требуется ваше решение или участие.</div>' +
-                '</div>';
+            const openIssues = allIssues.filter(i => i.state === "open");
+            const pendingHuman = HUMAN_ACTIONS_LIST.filter(a => !a.done).length;
 
-            html += '<div class="section-divider"><span>🤖 1. ВЫПОЛНЯЕТСЯ АВТОНОМНО (ИИ САМ)</span><span>7 направлений</span></div>';
+            let html = '<div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(239, 68, 68, 0.10)); border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 12px; padding: 12px; font-size: 0.8rem; line-height: 1.45; display:flex; flex-direction:column; gap:8px;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                    '<div style="font-weight:800; color:#fbbf24; font-size:0.9rem;">🚨 Центр Ожидания Действий (Человек + Очередь ИИ)</div>' +
+                    '<span class="badge" style="background:rgba(245,158,11,0.2); color:#fbbf24;">Ожидает вас: ' + pendingHuman + ' · В очереди ИИ: ' + openIssues.length + '</span>' +
+                '</div>' +
+                '<div style="color:var(--text-dim);">Отмечайте галочкой выполненные шаги или добавляйте новое действие. Состояние мгновенно синхронизируется с верхней панелью предупреждений.</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                    '<input type="text" id="plan-custom-human-action" class="search-input" placeholder="➕ Добавить действие для себя или контроль..." style="flex:1; min-width:170px;">' +
+                    '<button class="mini-btn accent" onclick="addCustomHumanAction(\'plan-custom-human-action\')">Добавить</button>' +
+                '</div>' +
+            '</div>';
+
+            html += '<div class="section-divider"><span>👤 1. ОЖИДАЕТСЯ ОТ ВАС (ЧЕЛОВЕК)</span><span>Осталось: ' + pendingHuman + ' из ' + HUMAN_ACTIONS_LIST.length + '</span></div>';
+
+            HUMAN_ACTIONS_LIST.forEach(item => {
+                const sp = escapeHtml(item.proj).replace(/'/g, "\\'");
+                const prepCmd = escapeHtml("PLAN_ACTIONS: Подготовить все шаблоны и инструкции для шага: " + item.title).replace(/'/g, "\\'");
+                html += '<div class="plan-card" style="border-left: 3px solid ' + (item.done ? '#10b981' : item.color) + '; opacity:' + (item.done ? '0.68' : '1') + ';">' +
+                    '<div class="plan-step-header">' +
+                        '<span class="badge" style="background:rgba(245,158,11,0.18); color:' + (item.done ? '#10b981' : item.color) + ';">' + escapeHtml(item.badge) + ' · ' + escapeHtml(item.who) + '</span>' +
+                        '<span class="crm-project-tag" onclick="selectProject(\'' + sp + '\')">📁 ' + escapeHtml(item.proj) + '</span>' +
+                    '</div>' +
+                    '<label class="plan-check-row">' +
+                        '<input type="checkbox" ' + (item.done ? 'checked' : '') + ' onchange="toggleHumanAction(\'' + item.id + '\', this.checked)">' +
+                        '<span style="' + (item.done ? 'text-decoration:line-through; color:var(--text-dim);' : '') + '">' + escapeHtml(item.title) + '</span>' +
+                    '</label>' +
+                    '<div class="plan-desc">' + escapeHtml(item.desc) + '</div>' +
+                    '<div class="plan-footer">' +
+                        '<button class="mini-btn accent" onclick="runPlanStep(\'' + sp + '\', \'' + prepCmd + '\')">🤖 Поручить подготовку ИИ</button>' +
+                        '<button class="mini-btn" style="border-color:#f59e0b; color:#fbbf24;" onclick="selectProject(\'' + sp + '\')">Открыть папку →</button>' +
+                    '</div>' +
+                '</div>';
+            });
+
+            html += '<div class="section-divider" style="margin-top:8px;"><span>⏳ 2. ОЧЕРЕДЬ ИИ (ЗАДАЧИ В ОБРАБОТКЕ СЕЙЧАС)</span><span>' + openIssues.length + ' в очереди</span></div>';
+
+            if (openIssues.length === 0) {
+                html += '<div class="plan-card" style="border-left: 3px solid #10b981;">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">' +
+                        '<div>' +
+                            '<div style="font-size:0.86rem; font-weight:700; color:#10b981;">✅ Очередь ИИ пуста — все отправленные задачи (включая #97) разобраны!</div>' +
+                            '<div class="plan-desc">Фоновый воркер laptop_worker.py дежурит 24/7. Любая новая ссылка или команда обрабатывается за 10–15 секунд.</div>' +
+                        '</div>' +
+                        '<button class="mini-btn accent" onclick="refreshAllData(true)">🔄 Проверить сейчас</button>' +
+                    '</div>' +
+                '</div>';
+            } else {
+                openIssues.forEach(iss => {
+                    const parsed = parseIssueProject(iss.title);
+                    const sp = escapeHtml(parsed.project).replace(/'/g, "\\'");
+                    html += '<div class="plan-card" style="border-left: 3px solid var(--warning);">' +
+                        '<div class="plan-step-header">' +
+                            '<span class="badge running">⏳ Задача #' + iss.number + ' в работе</span>' +
+                            '<span class="crm-project-tag" onclick="selectProject(\'' + sp + '\')">📁 ' + escapeHtml(parsed.project) + '</span>' +
+                        '</div>' +
+                        '<div style="font-size:0.86rem; font-weight:700;">' + linkifyText(parsed.cmd) + '</div>' +
+                        '<div class="plan-footer">' +
+                            '<button class="mini-btn accent" onclick="selectProject(\'' + sp + '\')">Перейти к задаче →</button>' +
+                        '</div>' +
+                    '</div>';
+                });
+            }
+
+            html += '<div class="section-divider" style="margin-top:8px;"><span>🤖 3. ВЫПОЛНЯЕТСЯ АВТОНОМНО (ИИ 24/7)</span><span>8 направлений</span></div>';
 
             const autoItems = [
-                { title: "Слушатель и CRM 24/7", desc: "Фоновый процесс непрерывно слушает задачи, скрапит ссылки (Jina AI / Telegram / YouTube), упаковывает конспекты и сохраняет в Базу Знаний.", icon: "🔄", tag: "Инфраструктура", proj: "Позновалка", cmd: "STATUS" },
-                { title: "Управление каталогами (101 папка)", desc: "Распознавание всех проектов, мгновенное создание новых папок на ПК прямо со смартфона и синхронизация с веткой data.", icon: "📁", tag: "Каталог", proj: "Позновалка", cmd: "FILES" },
+                { title: "Фабрика 12 Mini Apps (Короче, капитан)", desc: "Автоматическая генерация HTML5/Telegram WebApp прототипов, реферальной механики и лендингов за 1 вечер.", icon: "🚀", tag: "Mini Apps", proj: "12 IT Продуктов (Короче Капитан)", cmd: "STATUS" },
+                { title: "Слушатель и CRM 24/7 + Авто-создание папок", desc: "Фоновый процесс непрерывно слушает задачи, скрапит ссылки (Jina AI / Telegram / YouTube) и сам создает новые папки по тексту задачи.", icon: "🔄", tag: "Инфраструктура", proj: "Позновалка", cmd: "STATUS" },
+                { title: "Управление каталогами (102 папки)", desc: "Распознавание всех проектов, мгновенное создание новых папок на ПК прямо со смартфона и синхронизация с веткой data.", icon: "📁", tag: "Каталог", proj: "Позновалка", cmd: "FILES" },
                 { title: "Упаковка офферов и сайтов (Дима Урал)", desc: "15 готовых отраслевых сайтов-шаблонов и персональные коммерческие предложения для заводов и строителей Свердловской области.", icon: "🏗️", tag: "Продажи", proj: "Дима Верхняя Синичиха Алапаевск", cmd: "MARKETING" },
-                { title: "База компаний и КП (Белый Доминикана)", desc: "108 оцифрованных компаний и 216 готовых КП в Лас-Терренас, воронка Fast_Cash_Priority.", icon: "🌴", tag: "Лидогенерация", proj: "Белый Доминикана", cmd: "STATUS" },
+                { title: "База компаний и КП (Белый Доминикана)", desc: "108 оцифрованных компаний и 216 готовых КП в Лас-Терренас, воронка Fast_Cash_Priority + модель Profitroom.", icon: "🌴", tag: "Лидогенерация", proj: "Белый Доминикана", cmd: "STATUS" },
                 { title: "Telegram-навигатор и посты (JoinTECH / Unity)", desc: "Генерация структуры Telegram Mini App в 2 клика + 5 экспертных постов без воды.", icon: "🤝", tag: "Воронка", proj: "Unity Inc", cmd: "DOCS" },
                 { title: "Рефакторинг KHL-бота (Юра)", desc: "Консолидация версий v1–v13 в чистый production-сервис khl_live_service_v14.py с авторестартом.", icon: "🏒", tag: "DevOps", proj: "Юра", cmd: "AUDIT_CODE" },
                 { title: "Самообучение роя (Continuous Learning)", desc: "Фиксация инстинктов, оценка качества по 5 осям, автогенерация правил работы агента.", icon: "🧬", tag: "Self-Evolve", proj: "Позновалка", cmd: "EVOLVE" }
@@ -2386,31 +2625,6 @@
                 '</div>';
             });
 
-            html += '<div class="section-divider" style="margin-top:10px;"><span>👤 2. ТРЕБУЕТСЯ ПОМОЩЬ / РЕШЕНИЕ ЧЕЛОВЕКА</span><span>5 пунктов</span></div>';
-
-            const humanItems = [
-                { title: "Эквайринг Alberta Shirani (490 ₽)", desc: "Ввести API-ключи платежного шлюза (ЮKassa / Prodamus / CryptoBot) в Telegram-бот для приема оплаты за трипвайр.", icon: "💳", proj: "Alberta", action: "Указать ключи" },
-                { title: "Отправка 10 КП директорам (Дима Урал)", desc: "Отправить первые 10 персонализированных КП с реального корпоративного ящика / WhatsApp по готовым контактам.", icon: "✉️", proj: "Дима Верхняя Синичиха Алапаевск", action: "Сделать рассылку" },
-                { title: "WhatsApp-аутрич Доминикана", desc: "Написать 5 ключевым контактам из Fast_Cash_Priority.html в Лас-Терренас по готовым скриптам.", icon: "📲", proj: "Белый Доминикана", action: "Отправить сообщения" },
-                { title: "GitHub Security Token", desc: "Выпустить Fine-Grained токен в GitHub Settings (только репозиторий remote-agents-control) и отозвать старый classic токен.", icon: "🔑", proj: "GitHub_Control_Panel", action: "Обновить токен" },
-                { title: "Авторизация в YouTube на ноутбуке", desc: "Войти в Google-аккаунт в Chrome/Edge на ноутбуке, чтобы обходить проверку бота при скачивании субтитров yt-dlp.", icon: "📺", proj: "Позновалка", action: "Войти в аккаунт" }
-            ];
-
-            humanItems.forEach(item => {
-                const sp = escapeHtml(item.proj).replace(/'/g, "\\'");
-                html += '<div class="plan-card" style="border-left: 3px solid #f59e0b;">' +
-                    '<div class="plan-step-header">' +
-                        '<span class="badge" style="background:rgba(245,158,11,0.18); color:#f59e0b;">' + item.icon + ' Нужен человек</span>' +
-                        '<span class="crm-project-tag" onclick="selectProject(\'' + sp + '\')">📁 ' + escapeHtml(item.proj) + '</span>' +
-                    '</div>' +
-                    '<div style="font-size:0.88rem; font-weight:700;">' + escapeHtml(item.title) + '</div>' +
-                    '<div class="plan-desc">' + escapeHtml(item.desc) + '</div>' +
-                    '<div class="plan-footer">' +
-                        '<button class="mini-btn" style="border-color:#f59e0b; color:#f59e0b;" onclick="selectProject(\'' + sp + '\')">Открыть проект (' + escapeHtml(item.action) + ') →</button>' +
-                    '</div>' +
-                '</div>';
-            });
-
             container.innerHTML = html;
             return;
         }
@@ -2420,8 +2634,8 @@
             let html = '<div style="background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.35); border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:10px;">' +
                 '<div style="font-size:0.88rem; font-weight:700; color:#eab308;">⏰ Система Напоминаний и Таймлайн Контроля</div>' +
                 '<div style="font-size:0.77rem; color:var(--text-dim); line-height:1.4;">Автоматические контрольные точки системы + возможность быстро поставить собственное напоминание прямо с телефона.</div>' +
-                '<div style="display:flex; gap:8px;">' +
-                    '<input type="text" id="custom-reminder-input" class="search-input" placeholder="Напомнить: например, проверить рассылку в 15:00..." style="flex:1;">' +
+                '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
+                    '<input type="text" id="custom-reminder-input" class="search-input" placeholder="Напомнить: например, проверить рассылку в 15:00..." style="flex:1; min-width:180px;">' +
                     '<button class="icon-btn primary" onclick="submitCustomReminder()" style="white-space:nowrap; padding:0 14px;">➕ Добавить</button>' +
                 '</div>' +
                 '</div>';
@@ -2468,7 +2682,7 @@
 
         if (planSubView === "report") {
             let html = '<div style="background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:8px;">' +
-                '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
                     '<div style="font-size:0.88rem; font-weight:700; color:var(--accent);">📋 Сводный Отчёт о Работе Системы</div>' +
                     '<button class="mini-btn accent" onclick="runPlanStep(\'Позновалка\', \'REPORT\')">🔄 Запросить у ноутбука</button>' +
                 '</div>' +
@@ -2484,7 +2698,7 @@
                     '</div>' +
                     '<div style="background:var(--bg-card); padding:8px; border-radius:8px; border:1px solid var(--border);">' +
                         '<div style="color:var(--text-dim);">Инстинктов самообучения</div>' +
-                        '<div style="font-size:1.15rem; font-weight:800; color:#10b981;">13 инстинктов</div>' +
+                        '<div style="font-size:1.15rem; font-weight:800; color:#10b981;">14 инстинктов</div>' +
                     '</div>' +
                     '<div style="background:var(--bg-card); padding:8px; border-radius:8px; border:1px solid var(--border);">' +
                         '<div style="color:var(--text-dim);">CRM-задач в облаке</div>' +
@@ -2500,6 +2714,7 @@
             html += '<div class="plan-card">' +
                 '<div style="font-size:0.88rem; font-weight:700; margin-bottom:6px;">🚀 Ключевые Проекты: Итоги и Следующие Шаги</div>' +
                 '<div style="font-size:0.79rem; line-height:1.5; color:var(--text-dim);">' +
+                    '• <b style="color:var(--text-main);">12 IT Продуктов (Короче Капитан):</b> Создана новая папка и интерактивный модуль 12_IT_Products/index.html по задаче #97 (itscap.blog / @its_capitan).<br>' +
                     '• <b style="color:var(--text-main);">Traffic & Thought/Мысль:</b> Соединена связка Exponential Traffic (DFY Pay-on-Results) + Profitroom (Hotel Booking 360) + Gartner Intelligent Apps.<br>' +
                     '• <b style="color:var(--text-main);">Alberta Shirani:</b> Готовность 85%. Сайты V1/V2, 900 кадров WebP Canvas скролла, 9 промптов VEO, Telegram-бот. Блокер: ключи эквайринга (ЮKassa/Prodamus/CryptoBot) на 490 ₽.<br>' +
                     '• <b style="color:var(--text-main);">Дима Урал:</b> Готовность 90%. 15 отраслевых сайтов-шаблонов, динамические КП для заводов. Блокер: отправка первых 10 КП.<br>' +
@@ -2507,7 +2722,7 @@
                     '• <b style="color:var(--text-main);">Юра (KHL Live Bot):</b> Сервис khl_live_service_v14.py работает стабильно.' +
                 '</div>' +
                 '<div class="plan-footer" style="margin-top:10px;">' +
-                    '<button class="mini-btn accent" onclick="setPlanSubView(\'autonomy\')">⚡ Открыть Матрицу Действий</button>' +
+                    '<button class="mini-btn accent" onclick="setPlanSubView(\'autonomy\')">🚨 Открыть Ожидание Действий</button>' +
                     '<button class="mini-btn" onclick="setPlanSubView(\'reminders\')">⏰ Настроить Напоминания</button>' +
                 '</div>' +
             '</div>';
@@ -2573,12 +2788,43 @@
             else closedCnt++;
         });
 
+        const pendingHuman = HUMAN_ACTIONS_LIST.filter(a => !a.done).length;
         document.getElementById("cnt-all").innerText = allIssues.length;
         document.getElementById("cnt-open").innerText = openCnt;
         document.getElementById("cnt-closed").innerText = closedCnt;
+        const waitEl = document.getElementById("cnt-waiting-human");
+        if (waitEl) waitEl.innerText = pendingHuman + openCnt;
         document.getElementById("m-tasks").innerText = allIssues.length;
 
         let html = "";
+
+        if (crmStatusFilter === "waiting_action") {
+            html += '<div style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.4); border-radius:12px; padding:10px 12px; font-size:0.78rem; color:var(--text-main);">' +
+                '🚨 <b>Ожидание действий:</b> здесь собраны все пункты, где требуется ваше личное решение (' + pendingHuman + '), а также задачи в активной очереди ИИ (' + openCnt + ').' +
+            '</div>';
+
+            HUMAN_ACTIONS_LIST.forEach(item => {
+                if (q && !(item.title.toLowerCase().includes(q) || item.proj.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q))) return;
+                const safeProj = escapeHtml(item.proj).replace(/'/g, "\\'");
+                const prepCmd = escapeHtml("PLAN_ACTIONS: Подготовить материалы по шагу: " + item.title).replace(/'/g, "\\'");
+                html += '<div class="crm-task-card" style="border-left: 3px solid ' + (item.done ? '#10b981' : item.color) + '; opacity:' + (item.done ? '0.68' : '1') + ';">' +
+                    '<div class="crm-task-top tabular">' +
+                        '<span class="crm-project-tag" onclick="selectProject(\'' + safeProj + '\')">🚨 ' + escapeHtml(item.badge) + ' · 📁 ' + escapeHtml(item.proj) + '</span>' +
+                        '<label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-size:0.75rem;" onclick="event.stopPropagation()">' +
+                            '<input type="checkbox" ' + (item.done ? 'checked' : '') + ' onchange="toggleHumanAction(\'' + item.id + '\', this.checked)">' +
+                            '<span>' + (item.done ? '✅ Выполнено' : 'Ожидает вас') + '</span>' +
+                        '</label>' +
+                    '</div>' +
+                    '<div class="crm-task-title">' + escapeHtml(item.title) + '</div>' +
+                    '<div class="crm-task-snippet" style="-webkit-line-clamp:3;">' + escapeHtml(item.desc) + '</div>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">' +
+                        '<button class="mini-btn accent" onclick="event.stopPropagation(); runPlanStep(\'' + safeProj + '\', \'' + prepCmd + '\')">🤖 Поручить подготовку ИИ</button>' +
+                        '<button class="mini-btn" onclick="event.stopPropagation(); selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
+                    '</div>' +
+                '</div>';
+            });
+        }
+
         allIssues.forEach(iss => {
             const parsed = parseIssueProject(iss.title);
             const project = parsed.project;
@@ -2586,6 +2832,7 @@
             const comments = commentsByIssue[iss.number] || [];
             const lastReply = comments.length > 0 ? comments[comments.length - 1].body : (iss.body || "");
 
+            if (crmStatusFilter === "waiting_action" && iss.state !== "open" && !/PLAN_ACTIONS|Действие человека/i.test(cmd)) return;
             if (crmStatusFilter === "open" && iss.state !== "open") return;
             if (crmStatusFilter === "closed" && iss.state === "open") return;
             if (crmStatusFilter === "links" && !/https?:\/\//i.test(cmd + " " + lastReply)) return;
@@ -2596,8 +2843,8 @@
 
             const dateStr = new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
             const statusBadge = iss.state === "open"
-                ? '<span class="badge running">⏳ В очереди / Обработка</span>'
-                : '<span class="badge done">✅ Сохранено и разобрано</span>';
+                ? '<span class="badge running">⏳ В очереди ИИ</span>'
+                : '<span class="badge done">✅ Выполнено</span>';
             const safeProj = escapeHtml(project).replace(/'/g, "\\'");
 
             html += '<div class="crm-task-card" onclick="selectProject(\'' + safeProj + '\')">' +
@@ -2609,6 +2856,15 @@
                 (lastReply ? '<div class="crm-task-snippet">' + escapeHtml(lastReply.replace(/[#*`]/g, '')) + '</div>' : '') +
             '</div>';
         });
+
+        if (crmStatusFilter === "open" && openCnt === 0 && !html) {
+            html = '<div style="text-align:center; color:var(--text-dim); padding:24px; background:var(--bg-card); border-radius:14px; border:1px solid var(--border);">' +
+                '<div style="font-size:1.6rem; margin-bottom:6px;">✅</div>' +
+                '<div style="font-weight:700; color:var(--text-main); margin-bottom:4px;">Очередь ИИ пуста — все задачи разобраны!</div>' +
+                '<div style="font-size:0.78rem; margin-bottom:10px;">Чтобы посмотреть действия, ожидающие вашего участия, нажмите фильтр «🚨 Ожидание действий».</div>' +
+                '<button class="mini-btn accent" onclick="setCrmStatusFilter(\'waiting_action\', document.getElementById(\'flt-waiting-action\'))">🚨 Показать Ожидание действий (' + pendingHuman + ')</button>' +
+            '</div>';
+        }
 
         container.innerHTML = html || '<div style="text-align:center; color:var(--text-dim); padding:24px;">Задач по фильтру нет</div>';
     }
@@ -2791,35 +3047,55 @@
         showToast("📋 Скопировано в буфер обмена!");
     }
 
-    const HUMAN_ACTIONS_LIST = [
+    const DEFAULT_HUMAN_ACTIONS = [
+        {
+            id: "act-12it-bot",
+            proj: "12 IT Продуктов (Короче Капитан)",
+            badge: "Новый проект #97",
+            color: "#f59e0b",
+            title: "🚀 12 IT Продуктов: Создать токен бота в @BotFather для Mini App #1",
+            desc: "ИИ уже собрал игровой прототип Space Words и план 4 Mini Apps. Требуется: создать бота в @BotFather (30 сек) и выбрать, какой из 4 Mini Apps запускаем первым.",
+            who: "Власлав (1 клик)",
+            done: false
+        },
         {
             id: "act-alberta",
             proj: "Alberta",
-            badge: "Критично",
+            badge: "Критично · Выручка",
             color: "var(--danger)",
-            title: "💎 Alberta Shirani: Предоставить доступы / API-ключи",
-            desc: "ИИ создал сайты V1/V2, 900 кадров скролла и воронку. Требуется: предоставить пароли к хостингу, токен Telegram бота и утвердить палитру.",
+            title: "💎 Alberta Shirani: API-ключи эквайринга (490 ₽) и токен бота",
+            desc: "ИИ создал сайты V1/V2, 900 кадров скролла и воронку. Требуется: вставить ключи ЮKassa / Prodamus / CryptoBot и утвердить финальный вариант сайта.",
             who: "Власлав лично",
             done: false
         },
         {
             id: "act-ural",
             proj: "Дима Верхняя Синичиха Алапаевск",
-            badge: "Выручка",
+            badge: "Выручка B2B",
             color: "var(--danger)",
-            title: "🪨 Урал Гранит: Отправить КП и согласовать предоплату",
-            desc: "КП и расчёт сметы полностью собраны. Требуется: отправить PDF Диме и согласовать аванс 120 000 ₽ по телефону.",
-            who: "Власлав (звонок)",
+            title: "🪨 Дима Урал: Отправить первые 10 КП директорам заводов",
+            desc: "15 отраслевых сайтов и КП полностью собраны. Требуется: отправить PDF/ссылки первым 10 контактам и согласовать звонок.",
+            who: "Власлав / Дима",
             done: false
         },
         {
             id: "act-dominica",
             proj: "Белый Доминикана",
-            badge: "Лиды",
+            badge: "Лиды + Profitroom",
             color: "var(--warning)",
-            title: "🌴 Белый Доминикана: Привязать номер WhatsApp",
-            desc: "Мобильный лендинг и квиз готовы к трафику. Требуется: указать реальный номер WhatsApp менеджера для лидов.",
+            title: "🌴 Белый Доминикана: Привязать WhatsApp и написать 5 отелям",
+            desc: "Оцифровано 108 компаний и калькулятор прямых бронирований Profitroom. Требуется: указать рабочий WhatsApp и отправить 5 первых сообщений.",
             who: "Власлав (настройка)",
+            done: false
+        },
+        {
+            id: "act-traffic-dfy",
+            proj: "Traffic",
+            badge: "Оффер DFY",
+            color: "var(--accent)",
+            title: "🚦 Traffic (DFY Pay-on-Results): Утвердить % комиссии со сделок",
+            desc: "Калькулятор DFY-трафика (Exponential + Profitroom) готов. Требуется: утвердить базовую ставку (% с продаж или фикс за лид) для первых 3 клиентов.",
+            who: "Власлав (решение)",
             done: false
         },
         {
@@ -2827,12 +3103,67 @@
             proj: "Позновалка",
             badge: "Самообучение",
             color: "var(--accent)",
-            title: "🎥 Google NotebookLM / YouTube: Авторизация аккаунта",
-            desc: "Для бесперебойного парсинга видео и генерации аудио-обзоров требуется авторизовать аккаунт Google в браузере.",
+            title: "🎥 Google NotebookLM / YouTube: Авторизация аккаунта на ПК",
+            desc: "Для бесперебойного парсинга видео и генерации аудио-обзоров требуется авторизовать аккаунт Google в браузере ноутбука.",
             who: "Власлав (1 клик)",
             done: false
         }
     ];
+
+    let HUMAN_ACTIONS_LIST = [];
+    try {
+        const savedActions = JSON.parse(localStorage.getItem("crm_human_actions_v3") || "null");
+        if (Array.isArray(savedActions) && savedActions.length > 0) {
+            const byId = new Map(savedActions.map(a => [a.id, a]));
+            DEFAULT_HUMAN_ACTIONS.forEach(def => {
+                if (!byId.has(def.id)) savedActions.unshift(def);
+            });
+            HUMAN_ACTIONS_LIST = savedActions;
+        } else {
+            HUMAN_ACTIONS_LIST = DEFAULT_HUMAN_ACTIONS.map(x => ({ ...x }));
+        }
+    } catch (e) {
+        HUMAN_ACTIONS_LIST = DEFAULT_HUMAN_ACTIONS.map(x => ({ ...x }));
+    }
+
+    function saveHumanActionsState() {
+        try {
+            localStorage.setItem("crm_human_actions_v3", JSON.stringify(HUMAN_ACTIONS_LIST));
+        } catch (e) {}
+    }
+
+    function syncActionAlertsUI() {
+        const pendingHuman = HUMAN_ACTIONS_LIST.filter(a => !a.done).length;
+        const openAiTasks = allIssues.filter(i => i.state === "open").length;
+
+        const topCnt = document.getElementById("topbar-action-cnt");
+        if (topCnt) topCnt.innerText = pendingHuman;
+
+        const waitChipCnt = document.getElementById("cnt-waiting-human");
+        if (waitChipCnt) waitChipCnt.innerText = pendingHuman + openAiTasks;
+
+        const strip = document.getElementById("human-action-strip");
+        const titleEl = document.getElementById("strip-title-text");
+        const subEl = document.getElementById("strip-sub-text");
+        if (strip && titleEl && subEl) {
+            if (pendingHuman === 0 && openAiTasks === 0) {
+                strip.style.background = "linear-gradient(90deg, rgba(16, 185, 129, 0.16), rgba(59, 130, 246, 0.14))";
+                strip.style.borderBottomColor = "rgba(16, 185, 129, 0.4)";
+                titleEl.style.color = "#34d399";
+                titleEl.innerText = "✅ Все обязательные действия выполнены · Очередь ИИ чиста";
+                subEl.innerText = "Нажмите, чтобы открыть панель контроля или добавить новое поручение";
+            } else {
+                strip.style.background = "linear-gradient(90deg, rgba(245, 158, 11, 0.22), rgba(239, 68, 68, 0.18))";
+                strip.style.borderBottomColor = "rgba(245, 158, 11, 0.45)";
+                titleEl.style.color = "#fbbf24";
+                titleEl.innerText = "🚨 Ожидание действий: " + pendingHuman + " от вас · ⏳ " + openAiTasks + " в очереди ИИ";
+                const firstPending = HUMAN_ACTIONS_LIST.find(a => !a.done);
+                subEl.innerText = firstPending
+                    ? ("Ближайшее: " + firstPending.title + " (Нажмите для управления)")
+                    : "В очереди ИИ выполняются задачи — нажмите для просмотра";
+            }
+        }
+    }
 
     function openActionModal() {
         const m = document.getElementById("action-modal");
@@ -2849,41 +3180,110 @@
     function renderActionModalItems() {
         const container = document.getElementById("action-modal-items");
         if (!container) return;
-        
-        let pending = 0;
-        let html = "";
+
+        const openAiIssues = allIssues.filter(i => i.state === "open");
+        const pendingHuman = HUMAN_ACTIONS_LIST.filter(a => !a.done).length;
+
+        let html = '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; padding-bottom:4px;">' +
+            '<span style="font-size:0.76rem; font-weight:800; color:#fbbf24; text-transform:uppercase;">👤 1. Ожидает вашего решения (' + pendingHuman + ' из ' + HUMAN_ACTIONS_LIST.length + ')</span>' +
+            '<button class="mini-btn" onclick="resetHumanActions()">🔄 Сбросить галочки</button>' +
+        '</div>';
+
         HUMAN_ACTIONS_LIST.forEach(item => {
-            if (!item.done) pending++;
             const safeProj = escapeHtml(item.proj).replace(/'/g, "\\'");
-            html += '<div style="background:var(--bg-panel); border:1px solid var(--border); border-radius:12px; padding:10px 12px; border-left:3px solid ' + item.color + '; display:flex; flex-direction:column; gap:6px;">' +
-                '<div style="display:flex; justify-content:space-between; align-items:center;">' +
-                    '<span style="font-size:0.68rem; font-weight:800; color:' + item.color + '; text-transform:uppercase;">' + item.badge + ' · ' + escapeHtml(item.proj) + '</span>' +
-                    '<label style="display:flex; align-items:center; gap:6px; font-size:0.75rem; cursor:pointer; color:var(--text-dim);">' +
-                        '<input type="checkbox" ' + (item.done ? 'checked' : '') + ' onchange="toggleHumanAction(\'' + item.id + '\', this.checked)">' +
-                        '<span>' + (item.done ? 'Выполнено' : 'Сделано') + '</span>' +
+            const prepCmd = escapeHtml("PLAN_ACTIONS: Подготовить все материалы для шага: " + item.title).replace(/'/g, "\\'");
+            html += '<div style="background:var(--bg-panel); border:1px solid var(--border); border-radius:12px; padding:10px 12px; border-left:3px solid ' + (item.done ? '#10b981' : item.color) + '; opacity:' + (item.done ? '0.68' : '1') + '; display:flex; flex-direction:column; gap:6px;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                    '<span style="font-size:0.68rem; font-weight:800; color:' + (item.done ? '#10b981' : item.color) + '; text-transform:uppercase;">' + escapeHtml(item.badge) + ' · ' + escapeHtml(item.proj) + '</span>' +
+                    '<label style="display:flex; align-items:center; gap:6px; font-size:0.76rem; cursor:pointer; color:var(--text-main); font-weight:600;">' +
+                        '<input type="checkbox" style="width:17px; height:17px; accent-color:#10b981;" ' + (item.done ? 'checked' : '') + ' onchange="toggleHumanAction(\'' + item.id + '\', this.checked)">' +
+                        '<span>' + (item.done ? '✅ Выполнено' : 'Отметить готовым') + '</span>' +
                     '</label>' +
                 '</div>' +
-                '<div style="font-size:0.86rem; font-weight:700; color:var(--text-main);">' + item.title + '</div>' +
-                '<div style="font-size:0.77rem; color:var(--text-dim); line-height:1.4;">' + escapeHtml(item.desc) + '</div>' +
-                '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">' +
-                    '<span style="font-size:0.72rem; color:var(--text-dim);">👤 Ответственный: <b>' + item.who + '</b></span>' +
-                    '<button class="mini-btn" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Открыть папку ➔</button>' +
+                '<div style="font-size:0.86rem; font-weight:700; color:var(--text-main); ' + (item.done ? 'text-decoration:line-through;' : '') + '">' + escapeHtml(item.title) + '</div>' +
+                '<div style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">' + escapeHtml(item.desc) + '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-top:4px;">' +
+                    '<span style="font-size:0.71rem; color:var(--text-dim);">👤 <b>' + escapeHtml(item.who) + '</b></span>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                        '<button class="mini-btn accent" onclick="closeActionModal(); runPlanStep(\'' + safeProj + '\', \'' + prepCmd + '\')">🤖 Поручить ИИ</button>' +
+                        '<button class="mini-btn" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Открыть папку ➔</button>' +
+                    '</div>' +
                 '</div>' +
             '</div>';
         });
 
+        html += '<div style="font-size:0.76rem; font-weight:800; color:var(--accent); text-transform:uppercase; margin-top:8px;">⏳ 2. Задачи в очереди ИИ (' + openAiIssues.length + ')</div>';
+        if (openAiIssues.length === 0) {
+            html += '<div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.35); border-radius:12px; padding:10px 12px; font-size:0.78rem; color:#34d399;">' +
+                '✅ Все отправленные задачи (включая #97 по челленджу 12 IT-продуктов) обработаны и сохранены в папках!' +
+            '</div>';
+        } else {
+            openAiIssues.forEach(iss => {
+                const parsed = parseIssueProject(iss.title);
+                const safeProj = escapeHtml(parsed.project).replace(/'/g, "\\'");
+                html += '<div style="background:var(--bg-panel); border:1px solid rgba(245,158,11,0.4); border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                    '<div style="flex:1; min-width:180px;">' +
+                        '<div style="font-size:0.7rem; color:#fbbf24; font-weight:700;">⏳ Задача #' + iss.number + ' · ' + escapeHtml(parsed.project) + '</div>' +
+                        '<div style="font-size:0.8rem; font-weight:600; color:var(--text-main);">' + escapeHtml(parsed.cmd) + '</div>' +
+                    '</div>' +
+                    '<button class="mini-btn accent" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Открыть ➔</button>' +
+                '</div>';
+            });
+        }
+
         container.innerHTML = html;
-        const topCnt = document.getElementById("topbar-action-cnt");
-        if (topCnt) topCnt.innerText = pending;
+        syncActionAlertsUI();
     }
 
     function toggleHumanAction(id, isChecked) {
         const item = HUMAN_ACTIONS_LIST.find(a => a.id === id);
         if (item) {
-            item.done = isChecked;
+            item.done = Boolean(isChecked);
+            saveHumanActionsState();
             renderActionModalItems();
-            showToast(isChecked ? "✅ Действие отмечено выполненным!" : "⏳ Действие возвращено в работу.");
+            if (planSubView === "autonomy") renderPlanView();
+            if (crmStatusFilter === "waiting_action") renderCrmTasks();
+            syncActionAlertsUI();
+            showToast(isChecked ? "✅ Действие отмечено выполненным!" : "⏳ Действие возвращено в список ожидания.");
         }
+    }
+
+    function addCustomHumanAction(inputId) {
+        const inp = document.getElementById(inputId || "custom-human-action-input");
+        if (!inp) return;
+        const val = inp.value.trim();
+        if (!val) {
+            showToast("⚠️ Введите описание действия!");
+            return;
+        }
+        const newAct = {
+            id: "act-custom-" + Date.now(),
+            proj: currentProject || "Позновалка",
+            badge: "Личный контроль",
+            color: "#f59e0b",
+            title: "📌 " + val,
+            desc: "Добавлено вручную через панель Ожидания действий (папка: " + (currentProject || "Позновалка") + ").",
+            who: "Власлав",
+            done: false
+        };
+        HUMAN_ACTIONS_LIST.unshift(newAct);
+        saveHumanActionsState();
+        inp.value = "";
+        renderActionModalItems();
+        if (planSubView === "autonomy") renderPlanView();
+        if (crmStatusFilter === "waiting_action") renderCrmTasks();
+        syncActionAlertsUI();
+        showToast("➕ Действие добавлено в список ожидания!");
+    }
+
+    function resetHumanActions() {
+        HUMAN_ACTIONS_LIST.forEach(a => { a.done = false; });
+        saveHumanActionsState();
+        renderActionModalItems();
+        if (planSubView === "autonomy") renderPlanView();
+        if (crmStatusFilter === "waiting_action") renderCrmTasks();
+        syncActionAlertsUI();
+        showToast("🔄 Все пункты возвращены в активный режим");
     }
 
     async function sendTaskFollowUp(issueNumber, project) {
@@ -3174,7 +3574,12 @@
 
             const kbObj = await readRepoJson("crm_data.json");
             if (kbObj && kbObj.json && Array.isArray(kbObj.json.knowledge_base) && kbObj.json.knowledge_base.length > 0) {
-                kbItems = kbObj.json.knowledge_base;
+                const remoteKb = kbObj.json.knowledge_base;
+                const existingIds = new Set(remoteKb.map(x => x.id));
+                FALLBACK_KB.forEach(fb => {
+                    if (!existingIds.has(fb.id)) remoteKb.unshift(fb);
+                });
+                kbItems = remoteKb;
                 localStorage.setItem("crm_kb_cache", JSON.stringify(kbItems.slice(0, 50)));
             }
         } catch (e) {
@@ -3216,6 +3621,7 @@
         renderCrmTasks();
         renderKnowledgeBase();
         renderWorkspaceFeed();
+        syncActionAlertsUI();
     }
 
     async function refreshAllData(manual) {
@@ -3229,6 +3635,7 @@
     renderCrmTasks();
     renderKnowledgeBase();
     renderWorkspaceFeed();
+    syncActionAlertsUI();
     refreshAllData(false);
     setInterval(() => refreshAllData(false), 12000);
 </script>
