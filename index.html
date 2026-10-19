@@ -1349,8 +1349,13 @@
 
     <!-- INSTANT SAVE BAR (WORKS 24/7 EVEN IF LAPTOP IS OFFLINE) -->
     <div class="quick-save-banner">
-        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="🔗 Ссылка или «изучи и создай новую папку» (работает 24/7)..." onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
+        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="🔗 Ссылка, вопрос или «изучи и сохрани» (умная маршрутизация 24/7)..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
         <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
+    </div>
+    <!-- LIVE SMART ROUTE & INTERCONNECTION PREVIEW -->
+    <div id="quick-save-route-preview" style="display:none; padding:6px 14px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-bottom:1px solid var(--border); color:var(--text-main); font-weight:600; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
+        <span id="quick-save-route-text"></span>
+        <span id="quick-save-route-domain" style="opacity:0.8; font-size:0.7rem;"></span>
     </div>
 
     <!-- ACTION REQUIRED & WAITING ALERT STRIP -->
@@ -1499,8 +1504,9 @@
                     <button class="q-pill" onclick="sendTask('MARKETING')">📈 Воронка и трафик</button>
                     <button class="q-pill" onclick="sendTask('FULL_AUDIT')">🔍 Полный аудит</button>
                 </div>
+                <div id="ws-route-preview" style="display:none; padding:5px 12px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-radius:8px; margin-bottom:6px; color:var(--text-main); font-weight:600;"></div>
                 <div class="composer-row">
-                    <input type="text" class="composer-input" id="cmd-input" placeholder="Ссылка, сайт или задача для папки..." onkeypress="if(event.key==='Enter') submitCustomInput()">
+                    <input type="text" class="composer-input" id="cmd-input" placeholder="Ссылка, сайт или задача для папки..." oninput="updateWsRoutePreview(this.value)" onkeypress="if(event.key==='Enter') submitCustomInput()">
                     <button class="send-btn" id="ws-send-btn" onclick="submitCustomInput()">Отправить</button>
                 </div>
             </div>
@@ -1822,6 +1828,12 @@
             appUrl: "12_IT_Products/index.html",
             appLabel: "🚀 Открыть Фабрику 12 Mini Apps + Игровой Прототип ↗",
             desc: "Челлендж 12 IT-продуктов за 12 месяцев (itscap.blog / @its_capitan «Короче, капитан»): быстрый запуск Telegram Mini Apps за 14–21 день, виральный loop и игровой прототип Space Words"
+        },
+        "Дима Верхняя Синичиха Алапаевск": {
+            icon: "🏭",
+            worked: true,
+            client: true,
+            desc: "Завод ЗКСК, щебень, гранит, бетон: 15 адаптированных сайтов-шаблонов, коммерческие предложения и оптовые B2B продажи (Агент: B2B Industrial & Factory Sales Lead)"
         }
     };
 
@@ -2198,8 +2210,99 @@
     }
 
     function linkifyText(str) {
-        const escaped = escapeHtml(str);
-        return escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+        if (!str) return "";
+        let s = escapeHtml(str);
+        // Linkify URLs
+        s = s.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">$1</a>');
+        // Bold
+        s = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Inline code
+        s = s.replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,0.08); padding:1px 5px; border-radius:4px; font-size:0.85em; color:var(--accent);">$1</code>');
+        // Headers h3
+        s = s.replace(/^###\s+(.*)$/gm, '<div class="rich-h3" style="font-size:0.92rem; font-weight:700; margin:10px 0 4px; color:var(--text-main);">$1</div>');
+        // Headers h4
+        s = s.replace(/^####\s+(.*)$/gm, '<div style="font-size:0.85rem; font-weight:700; margin:7px 0 2px; color:var(--text-main);">$1</div>');
+        // Horizontal rule
+        s = s.replace(/^---$/gm, '<hr style="border:none; border-top:1px solid var(--border); margin:10px 0;">');
+        // Bullet points
+        s = s.replace(/^[•\-\*]\s+(.*)$/gm, '<div style="margin-left:6px; display:flex; gap:6px; margin-bottom:2px;"><span style="color:var(--accent);">•</span><span>$1</span></div>');
+        return s;
+    }
+
+    function detectSmartRoute(text) {
+        if (!text) return { project: "Позновалка", agent: "Swarm Knowledge & Media Extraction Agent", domain: "05_Медиа & Контент", related: ["12 IT Продуктов", "Traffic"] };
+        const low = text.toLowerCase();
+        
+        if (/alberta|shirani|альберт|veo|kinfolk|tripwire|900 кадр|скролл|lumiere|лумиер/.test(low)) {
+            return { project: "Alberta", agent: "Alberta Creative & Kinfolk Director", domain: "05_Медиа (VEO 3.1 & Kinfolk)", related: ["Traffic", "Позновалка", "GlobalFilms (Filmtools)"] };
+        }
+        if (/12 it|12it|капитан|короче капитан|space words|mini app|tma|челлендж|stars|itscap|звезды/.test(low)) {
+            return { project: "12 IT Продуктов (Короче Капитан)", agent: "Telegram Mini Apps & Micro-SaaS Architect", domain: "02_Продукты (Telegram Mini Apps)", related: ["Позновалка", "Traffic"] };
+        }
+        if (/дима|верхняя синичиха|алапаевск|зкск|щебень|гранит|карьер|завод|новак|кп по граниту|бетон/.test(low)) {
+            return { project: "Дима Верхняя Синичиха Алапаевск", agent: "B2B Industrial & Factory Sales Lead", domain: "04_Клиенты (B2B Опт & Заводы)", related: ["Unity Inc", "Traffic"] };
+        }
+        if (/доминикан|белый|las terrenas|терренас|виллы|отели|profitroom|ota|аренда вилл/.test(low)) {
+            return { project: "Белый Доминикана", agent: "Hospitality & Direct Booking Specialist", domain: "04_Клиенты (Прямые бронирования)", related: ["Traffic", "Unity Inc"] };
+        }
+        if (/трафик|traffic|лидогенерац|pay-on-results|dfy|cold email|рассылк|лиды|оффер|лид-магнит/.test(low)) {
+            return { project: "Traffic", agent: "Performance Marketing & Cold Outreach Lead", domain: "03_Маркетинг (DFY Pay-on-Results)", related: ["Alberta", "Дима Верхняя Синичиха"] };
+        }
+        if (/filmtools|filmtool|фильмтулс|globalfilm|кино|вызывн|кпп|съемочн|сценари|мосфильм/.test(low)) {
+            return { project: "GlobalFilms (Filmtools)", agent: "Filmtools Production & Engineering Lead", domain: "02_Продукты (Next.js Кинопроизводство)", related: ["12 IT Продуктов", "Позновалка"] };
+        }
+        if (/юра|кхл|хоккей|khl|ставк|коэффициент|тотал|фора|fonbet|букмекер/.test(low)) {
+            return { project: "Юра", agent: "Quantitative Sports & Odds Analyst", domain: "08_Спортивная Аналитика (Live KHL)", related: ["Позновалка"] };
+        }
+        if (/unity|global plus|globalplus|jointech|similarweb|агентств|b2b аудит|беловолов/.test(low)) {
+            return { project: "Unity Inc", agent: "Enterprise Solutions Architect", domain: "01_Стратегия & B2B Агентство", related: ["Дима Верхняя Синичиха", "Traffic"] };
+        }
+        if (/nobel|нобель|нобелевск|stabilization|стабилизац|макроэконом|30 навыков|dan martell/.test(low)) {
+            return { project: "AI Skills & Nobel Stabilization", agent: "Macroeconomic Risk & Skills Orchestrator", domain: "06_AI Инструменты (Hall & Woodford 2026)", related: ["Позновалка", "Traffic"] };
+        }
+        if (/chopchop|чопчоп|барбер|стрижк|салон красоты/.test(low)) {
+            return { project: "Alex ChopChop", agent: "Retail & Local Services Growth Lead", domain: "04_Клиенты (LTV & Рекуррент)", related: ["Traffic"] };
+        }
+        if (/тенториум|tentorium|татьян|пчел|прополис/.test(low)) {
+            return { project: "Татьяна tentorium.ru", agent: "E-Commerce & Recurring Order Specialist", domain: "04_Клиенты (E-Commerce воронка)", related: ["Traffic"] };
+        }
+        if (/трансфер|егор|такси|минивэн|аэропорт/.test(low)) {
+            return { project: "Егор Трансфер", agent: "Logistics & Instant Booking Dispatcher", domain: "04_Клиенты (Telegram диспетчер)", related: ["Traffic"] };
+        }
+        if (/брус|дом из бруса|строительств|сруб|питер/.test(low)) {
+            return { project: "Alex Brus Питер", agent: "Construction Quiz & Lead Qualifier", domain: "04_Клиенты (Квиз-калькулятор)", related: ["Дима Верхняя Синичиха"] };
+        }
+        if (/создай.*папк|новую папку/.test(low)) {
+            return { project: "Новый_Проект", agent: "Autonomous Project Bootstrapper", domain: "06_AI Автоматизация (Новая папка)", related: ["Позновалка"] };
+        }
+        return { project: "Позновалка", agent: "Swarm Knowledge & Media Extraction Agent", domain: "05_Медиа & База Знаний CRM", related: ["12 IT Продуктов", "Alberta", "Traffic"] };
+    }
+
+    function updateQuickSavePreview(val) {
+        const preview = document.getElementById("quick-save-route-preview");
+        if (!preview) return;
+        val = (val || "").trim();
+        if (val.length < 3) {
+            preview.style.display = "none";
+            return;
+        }
+        const r = detectSmartRoute(val);
+        preview.style.display = "flex";
+        document.getElementById("quick-save-route-text").innerHTML = "🎯 Маршрут: <strong>" + escapeHtml(r.project) + "</strong> · 🤖 Агент: <em>" + escapeHtml(r.agent) + "</em>";
+        document.getElementById("quick-save-route-domain").innerHTML = "🔗 " + escapeHtml(r.domain) + " ➔ [" + r.related.map(escapeHtml).join(", ") + "]";
+    }
+
+    function updateWsRoutePreview(val) {
+        const preview = document.getElementById("ws-route-preview");
+        if (!preview) return;
+        val = (val || "").trim();
+        if (val.length < 3) {
+            preview.style.display = "none";
+            return;
+        }
+        const r = detectSmartRoute(val);
+        preview.style.display = "block";
+        preview.innerHTML = "🎯 Определена папка: <strong>" + escapeHtml(r.project) + "</strong> (Агент: " + escapeHtml(r.agent) + ") · 🔗 Домен: " + escapeHtml(r.domain);
     }
 
     function extractChoices(text) {
@@ -3013,14 +3116,32 @@
                 '</div>' +
             '</div>';
 
+            // Извлечение связанных проектов для быстрых кнопок перехода
+            let relatedBadgesHtml = "";
+            const matchedRel = [];
+            const allKnown = ["12 IT Продуктов (Короче Капитан)", "Traffic", "Alberta", "Дима Верхняя Синичиха Алапаевск", "Белый Доминикана", "GlobalFilms (Filmtools)", "Юра", "Unity Inc", "AI Skills & Nobel Stabilization", "Позновалка"];
+            for (const rName of allKnown) {
+                const shortWord = rName.split(" ")[0];
+                if (rName !== project && (cleanReply.includes(rName) || (shortWord.length > 3 && cleanReply.includes(shortWord)))) {
+                    matchedRel.push(rName);
+                }
+            }
+            if (matchedRel.length > 0) {
+                relatedBadgesHtml = '<div style="margin-top:6px; padding:6px 8px; background:rgba(168,85,247,0.08); border:1px solid rgba(168,85,247,0.25); border-radius:8px; display:flex; align-items:center; gap:5px; flex-wrap:wrap; font-size:0.72rem; color:var(--text-main);">' +
+                    '<span style="font-weight:700; color:#a855f7;">🔗 Взаимосвязь в системе:</span>' +
+                    matchedRel.slice(0, 4).map(r => '<button class="mini-btn" style="padding:2px 7px; font-size:0.7rem; border-color:rgba(168,85,247,0.4);" onclick="selectProject(\'' + escapeHtml(r).replace(/'/g, "\\'") + '\')">' + escapeHtml(r) + ' ➔</button>').join("") +
+                '</div>';
+            }
+
             html += '<div class="task-card ' + (isOpen ? 'running' : 'done') + '">' +
                 '<div class="task-meta tabular">' +
-                    '<span>Задача #' + iss.number + ' · ' + timeStr + '</span>' +
+                    '<span>Задача #' + iss.number + ' · ' + timeStr + ' · 📁 ' + escapeHtml(project) + '</span>' +
                     '<span class="badge ' + (isOpen ? 'running' : 'done') + '">' + (isOpen ? '☁️ В облачной очереди' : '✅ Выполнено') + '</span>' +
                 '</div>' +
                 '<div class="task-cmd">' + linkifyText(cmd) + '</div>' +
                 '<div class="task-reply ' + (isLong ? 'collapsed' : '') + '" id="' + replyId + '">' + linkifyText(cleanReply) + '</div>' +
                 choicesHtml +
+                relatedBadgesHtml +
                 proposalsHtml +
                 dialogueBoxHtml +
                 '<div class="reply-controls">' +
@@ -3395,8 +3516,14 @@
         btn.disabled = true;
         btn.innerText = "⏳...";
         inp.value = "";
+        const preview = document.getElementById("quick-save-route-preview");
+        if (preview) preview.style.display = "none";
 
-        await sendTaskToProject("Позновалка", val, true);
+        const route = detectSmartRoute(val);
+        const targetProject = route.project;
+        showToast("🎯 Агент «" + route.agent + "» сохраняет в «" + targetProject + "»...");
+
+        await sendTaskToProject(targetProject, val, true);
         btn.disabled = false;
         btn.innerText = "📥 Сохранить";
     }
@@ -3456,7 +3583,17 @@
         const val = inp.value.trim();
         if (!val) return;
         inp.value = "";
-        sendTaskToProject(currentProject, val, false);
+        const preview = document.getElementById("ws-route-preview");
+        if (preview) preview.style.display = "none";
+
+        const route = detectSmartRoute(val);
+        let target = currentProject;
+        if (route.project !== "Позновалка" && route.project !== currentProject) {
+            target = route.project;
+            selectProject(target);
+            showToast("🎯 Переключено в папку «" + target + "» (Агент: " + route.agent + ")");
+        }
+        sendTaskToProject(target, val, false);
     }
 
     function promptNewFolder() {
