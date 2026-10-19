@@ -1,18 +1,26 @@
 {
-  "updated_at": "2026-10-19T17:17:13.167Z",
+  "updated_at": "2026-10-19 11:17:55",
   "version": "10.0",
   "knowledge_base": [
     {
-      "id": "kb-1792430231941",
-      "issue": 103,
+      "id": "kb-20261019_111755",
+      "issue": "Auto",
       "category": "Проект: Позновалка",
-      "title": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео и создай для на",
+      "title": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео ",
       "source_url": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy",
       "secondary_url": "",
       "date": "19.10.2026",
-      "summary": "Title: Nischa Shah: They’re Lying To You About Buying a House! My 652510 Rule Built $200K Passive Income!\n• URL Source: https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy\n• Back [![Image 6](https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy)](https://youtu.be/ \"YouTube Home\")\n• Search with your voice\n• [](https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy)\n• [Sign in](https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fis%253Ds-V7foF6lqFoaocy%2526v%253DNxTsA72O5x0%2526feature%253Dyoutu.be&hl=en&ec=65620)\n• [![Image 7](https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy)](https://youtu.be/ \"YouTube Home\")\n• [](https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy)",
+      "summary": "Четкий ответ по существу задачи  \nВидео «NxTsA72O5x0» (Dan Martell) — практическое руководство по созданию высокоэффективной воронки продаж для цифровых продуктов и услуг. Ключевые моменты:\n\n| Этап | Что делается | Как это выглядит в видео |\n|------|--------------|--------------------------|\n| 1. Привлечение | Использовать короткие, целевые видео‑объявления (TikTok, YouTube Shorts) + таргетинг по интересам/поведению.",
+      "agent": "Swarm Knowledge & Media Extraction Agent",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Alberta",
+        "Traffic"
+      ],
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
+        "Сохранено в Note_20261019_111755.md",
+        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
       ]
     },
     {
@@ -394,158 +402,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 38,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:36:29.210468"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 46,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:40:56.086384"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 27,
-      "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.103016"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 25,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:36:29.214505"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 42,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:40:56.088417"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.99,
-      "domain": "content-pipeline",
-      "evidence_count": 33,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:40:56.089175"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.99,
-      "domain": "marketing",
-      "evidence_count": 17,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-19T10:08:14.533136"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.99,
-      "domain": "agent-behavior",
-      "evidence_count": 39,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:40:56.091218"
-    },
-    {
-      "id": "task-custom-request",
-      "trigger": "when processing 'custom-request' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.99,
-      "domain": "operations",
-      "evidence_count": 19,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-19T10:40:53.437651"
-    },
-    {
-      "id": "task-status",
-      "trigger": "when processing 'status' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.65,
-      "domain": "operations",
-      "evidence_count": 2,
-      "scope": "project:Рязань",
-      "last_updated": "2026-10-18T14:12:58.030905"
-    },
-    {
-      "id": "task-next_steps",
-      "trigger": "when processing 'next_steps' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Traffic",
-      "last_updated": "2026-10-18T18:48:36.564744"
-    },
-    {
-      "id": "task-evolve",
-      "trigger": "when processing 'evolve' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Traffic",
-      "last_updated": "2026-10-18T18:48:51.580911"
-    },
-    {
-      "id": "task-plan_actions",
-      "trigger": "when processing 'plan_actions' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-19T10:08:11.948290"
     }
   ]
 }
