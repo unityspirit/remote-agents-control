@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-10-19 11:34:33",
+  "updated_at": "2026-10-19 11:34:37",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261019_113436",
+      "issue": "Auto",
+      "category": "Проект: Позновалка",
+      "title": "Где информация которую ты узнал? используй NotebookLM для изучения видео для сбора знаний для с",
+      "source_url": "",
+      "secondary_url": "",
+      "date": "19.10.2026",
+      "summary": "1. Четкий ответ по существу задачи  \nИнформация, которую я использовал, пришла из следующих источников, которые находятся в папке C:\\Users\\Vlaslav\\Downloads\\Позновалка и в базе знаний, созданной системой NotebookLM:\n\n| Источник | Что было изучено | Где хранится результат |\n|----------|------------------|------------------------|\n| AI_Analysis_History.md | Анализ ссылок TikTok и Reddit, описание воронки JoinTECH, реко",
+      "agent": "Swarm Knowledge & Media Extraction Agent",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Alberta",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261019_113436.md",
+        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
+      ]
+    },
     {
       "id": "kb-20261019_113433",
       "issue": "Auto",
