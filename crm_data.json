@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T01:01:03.659435+00:00",
+  "updated_at": "2026-10-19T01:03:14.939542+00:00",
   "version": "9.0",
   "knowledge_base": [
     {
@@ -320,9 +320,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 33,
+      "evidence_count": 34,
       "scope": "global",
-      "last_updated": "2026-10-18T18:48:54.374085"
+      "last_updated": "2026-10-18T19:03:14.034323"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -400,9 +400,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 26,
+      "evidence_count": 27,
       "scope": "global",
-      "last_updated": "2026-10-18T18:48:54.389169"
+      "last_updated": "2026-10-18T19:03:14.034859"
     },
     {
       "id": "task-custom-request",
