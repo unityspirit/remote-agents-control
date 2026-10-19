@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Skills & Macroeconomic Stabilization Suite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: rgba(18, 26, 44, 0.85);
+            --bg-card-hover: rgba(26, 38, 64, 0.95);
+            --border: rgba(148, 163, 184, 0.16);
+            --border-highlight: rgba(56, 189, 248, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-cyan: #38bdf8;
+            --accent-blue: #3b82f6;
+            --accent-indigo: #6366f1;
+            --accent-purple: #a855f7;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 16px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 85%, rgba(168, 85, 247, 0.08) 0%, transparent 45%);
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        /* Top Header */
+        header {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .header-title-box h1 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 30%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-title-box p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-muted);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-warning {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: #fbbf24;
+        }
+
+        .btn-warning:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        /* Action Alert Banner */
+        .alert-banner {
+            background: linear-gradient(90deg, rgba(244, 63, 94, 0.15), rgba(245, 158, 11, 0.15));
+            border: 1px solid rgba(244, 63, 94, 0.35);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(244, 63, 94, 0.15);
+        }
+
+        .alert-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-badge {
+            background: var(--accent-rose);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.04); }
+        }
+
+        .alert-text {
+            font-size: 0.88rem;
+            color: #fecdd3;
+        }
+
+        .alert-text strong {
+            color: #fff;
+        }
+
+        /* Navigation Tabs */
+        .tab-bar {
+            display: flex;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.7);
+            padding: 6px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 170px;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-highlight);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-pane {
+            display: none;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .tab-pane.active {
+            display: flex;
+        }
+
+        /* Section Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            backdrop-filter: blur(12px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-header h2 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+        }
+
+        /* 30 SKILLS SECTION */
+        .skills-filter {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .filter-chip {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background: rgba(56, 189, 248, 0.18);
+            border-color: var(--accent-cyan);
+            color: #fff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .skill-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        .skill-card.selected {
+            border-color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.12);
+        }
+
+        .skill-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-cmd {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+        }
+
+        .skill-category {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dim);
+            font-weight: 700;
+        }
+
+        .skill-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .skill-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .skill-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 8px;
+            border-radius: 6px;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            max-height: 70px;
+            overflow-y: auto;
+        }
+
+        /* Playground */
+        .playground-box {
+            background: rgba(10, 15, 29, 0.8);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .playground-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-cyan);
+        }
+
+        .playground-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-size: 0.85rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .playground-input:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .playground-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* NOBEL STABILIZATION ENGINE */
+        .macro-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .macro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-container {
+            background: rgba(10, 15, 30, 0.9);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            position: relative;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        canvas#stabilizationChart {
+            width: 100%;
+            height: 300px;
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            font-size: 0.78rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .controls-panel {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .control-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .control-label span {
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        input[type="range"] {
+            accent-color: var(--accent-cyan);
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .kpi-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .kpi-val {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .kpi-title {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .theory-box {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .theory-card h3 {
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theory-card p {
+            color: var(--text-muted);
+        }
+
+        .theory-card code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: var(--accent-cyan);
+        }
+
+        /* HUMAN ACTION CHECKLIST */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 14px;
+        }
+
+        .action-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .action-card.pending {
+            border-left: 4px solid var(--accent-rose);
+        }
+
+        .action-card.resolved {
+            border-left: 4px solid var(--accent-emerald);
+            opacity: 0.7;
+        }
+
+        .action-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .action-badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .badge-urgent {
+            background: rgba(244, 63, 94, 0.2);
+            color: #f43f5e;
+            border: 1px solid rgba(244, 63, 94, 0.4);
+        }
+
+        .badge-medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .badge-done {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .action-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 4px;
+        }
+
+        .action-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .action-meta {
+            font-size: 0.74rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 10px;
+        }
+
+        .checkbox-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .checkbox-label input {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--accent-emerald);
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-cyan);
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1000;
+            animation: slide-up 0.25s ease;
+        }
+
+        @keyframes slide-up {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-title-box">
+            <h1>⚡ AI Skills & Nobel Stabilization Suite</h1>
+            <p>Dan Martell 30 AI Skills + Hall & Woodford 2026 Microeconomic Stabilization Engine</p>
+        </div>
+        <div class="header-nav">
+            <a href="../GitHub_Control_Panel/index.html" class="btn">
+                🏢 Виртуальный Офис CRM
+            </a>
+            <button class="btn btn-warning" onclick="switchTab('tab-actions')">
+                🚨 Требуется действие: <span id="header-action-cnt">4</span>
+            </button>
+            <button class="btn btn-primary" onclick="exportFullReport()">
+                📑 Экспорт отчёта
+            </button>
+        </div>
+    </header>
+
+    <!-- Prominent Human-In-The-Loop Banner -->
+    <div class="alert-banner">
+        <div class="alert-content">
+            <span class="alert-badge">Action Required</span>
+            <div class="alert-text">
+                <strong>Внимание, Власлав!</strong> ИИ выполнил всю автономную работу. Сейчас требуется <strong>4 конкретных действия человека</strong> для запуска монетизации и клиентских воронок.
+            </div>
+        </div>
+        <button class="btn btn-warning" onclick="switchTab('tab-actions')">
+            Смотреть список действий ➔
+        </button>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('tab-skills')">
+            🧠 30 ИИ-Навыков (Dan Martell)
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-macro')">
+            📈 Нобелевская Стабилизация (2026)
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-actions')">
+            🚨 Действия человека (<span id="tab-action-cnt">4</span>)
+        </button>
+    </div>
+
+    <!-- TAB 1: 30 SKILLS COMMAND CENTER -->
+    <div id="tab-skills" class="tab-pane active">
+        <div class="card">
+            <div class="card-header">
+                <h2>⚡ Центр 30 ИИ-Скиллов (Dan Martell Command Deck)</h2>
+                <div class="skills-filter" id="skills-filter-container">
+                    <button class="filter-chip active" onclick="filterSkills('all')">Все (30)</button>
+                    <button class="filter-chip" onclick="filterSkills('strategic')">Стратегия & CEO</button>
+                    <button class="filter-chip" onclick="filterSkills('content')">Контент & Виральность</button>
+                    <button class="filter-chip" onclick="filterSkills('analysis')">Анализ & Обучение</button>
+                    <button class="filter-chip" onclick="filterSkills('code')">Код & Разработка</button>
+                    <button class="filter-chip" onclick="filterSkills('ops')">Операционка & Текст</button>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid" id="skills-grid"></div>
+
+            <!-- Interactive Playground -->
+            <div class="playground-box">
+                <div class="playground-title">
+                    <span>🚀 Интерактивный запуск скилла в CRM & Antigravity:</span>
+                    <span id="active-skill-pill" class="skill-cmd">/ceo</span>
+                </div>
+                <textarea id="playground-text" class="playground-input" placeholder="Введите ваш текст или задачу для обработки выбранным ИИ-навыком..."></textarea>
+                <div class="playground-actions">
+                    <button class="btn" onclick="copySkillPrompt()">📋 Скопировать директиву</button>
+                    <button class="btn btn-primary" onclick="sendToVirtualOffice()">🚀 Отправить в Виртуальный Офис</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: NOBEL STABILIZATION ENGINE -->
+    <div id="tab-macro" class="tab-pane">
+        <div class="card">
+            <div class="card-header">
+                <h2>📈 Нобелевская модель стабилизации (Robert E. Hall & Michael Woodford 2026)</h2>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">
+                    Микроэкономические основы макроэкономической стабилизации для бизнеса и ИИ-агентства
+                </span>
+            </div>
+
+            <div class="macro-grid">
+                <!-- Interactive Canvas Simulation Chart -->
+                <div class="chart-container">
+                    <canvas id="stabilizationChart"></canvas>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background:#f43f5e;"></div>
+                            <span>Нестабилизированная выручка (Хаос / Feast & Famine)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background:#38bdf8;"></div>
+                            <span>Стабилизированный рост (Hall & Woodford Engine)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background:#10b981;"></div>
+                            <span>Постоянный доход / Tripwire Floor (Гарантия)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Controls & KPI -->
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <div class="control-label">
+                            Tripwire Floor (Hall Smoothing):
+                            <span id="val-floor">40%</span>
+                        </div>
+                        <input type="range" id="param-floor" min="0" max="100" value="40" oninput="updateSim()">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            Woodford Rules (Авто-подписки):
+                            <span id="val-retainers">65%</span>
+                        </div>
+                        <input type="range" id="param-retainers" min="0" max="100" value="65" oninput="updateSim()">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            Непрерывный AI-аутрич (0-лаг):
+                            <span id="val-outreach">80%</span>
+                        </div>
+                        <input type="range" id="param-outreach" min="0" max="100" value="80" oninput="updateSim()">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            Демпфер волатильности (Шок-фильтр):
+                            <span id="val-dampener">75%</span>
+                        </div>
+                        <input type="range" id="param-dampener" min="0" max="100" value="75" oninput="updateSim()">
+                    </div>
+
+                    <div class="kpi-row">
+                        <div class="kpi-card">
+                            <div class="kpi-val" id="kpi-smooth">-74%</div>
+                            <div class="kpi-title">Снижение волатильности</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val" id="kpi-predict">92%</div>
+                            <div class="kpi-title">Предсказуемость</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val" id="kpi-floor">380k ₽</div>
+                            <div class="kpi-title">Нижний пол кассы</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val" id="kpi-runway">14 мес</div>
+                            <div class="kpi-title">Безопасный Runway</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theory Breakdown -->
+            <div class="theory-box" style="margin-top: 18px;">
+                <div class="theory-card">
+                    <h3>🏛️ 1. Модель Роберта Холла (Robert E. Hall)</h3>
+                    <p>
+                        <strong>Теория сглаживания потребления (Euler Equation):</strong> Холл математически доказал, что рациональные агенты сглаживают расходы во времени, финансируя временные провалы через постоянный базовый доход.
+                    </p>
+                    <p style="margin-top: 6px;">
+                        <strong>Применение в нашей системе:</strong> Tripwire-продукты (аудиты за 50 000 ₽ / $900) и автоматические ежемесячные подписки (LTV) отсекают кассовые разрывы между крупными контрактами.
+                    </p>
+                </div>
+                <div class="theory-card">
+                    <h3>📐 2. Модель Майкла Вудфорда (Michael Woodford)</h3>
+                    <p>
+                        <strong>Правила монетарной политики и Forward Guidance:</strong> Вудфорд показал, что стабильность достигается не разовыми интервенциями, а прозрачными <em>правилами ожиданий</em> (Rules rather than discretion).
+                    </p>
+                    <p style="margin-top: 6px;">
+                        <strong>Применение в нашей системе:</strong> Фиксированные регламенты ценообразования, четкие SLA в КП и прозрачный роадмап убирают трение при повторных сделках.
+                    </p>
+                </div>
+                <div class="theory-card">
+                    <h3>🤖 3. ИИ-стабилизаторы против кассовых разрывов</h3>
+                    <p>
+                        В традиционном агентстве пока идет разработка, маркетинг простаивает — возникает цикл «пир во время чумы / голод».
+                    </p>
+                    <p style="margin-top: 6px;">
+                        Наш <code>laptop_worker</code> и автономные агенты работают 24/7, непрерывно сканируя базу знаний, готовя вызывные листы Filmtools и прогревая лидов, обеспечивая нулевую фазовую задержку.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: HUMAN IN THE LOOP ACTIONS -->
+    <div id="tab-actions" class="tab-pane">
+        <div class="card">
+            <div class="card-header">
+                <h2>🚨 Матрица ответственности: Где строго требуется действие Власлава</h2>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                    ИИ подготовил 100% артефактов. Требуется физическое утверждение или личный контакт.
+                </div>
+            </div>
+
+            <div class="actions-grid" id="actions-grid"></div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast-msg"></div>
+
+<script>
+    // 30 AI SKILLS DATA (DAN MARTELL)
+    const SKILLS_DATA = [
+        { cmd: "/human", cat: "content", title: "Humanize Text", desc: "Убирает роботизированность, клише и 'ИИ-акцент', делая текст живым и разговорным.", prompt: "Rewrite the text to sound completely natural, authentic, human, and conversational. Eliminate clichés, corporate buzzwords, and AI phrasing." },
+        { cmd: "/expert", cat: "strategic", title: "Domain Expert", desc: "Анализирует задачу с позиции признанного мирового эксперта высшего уровня.", prompt: "Adopt the persona of a world-class domain expert in this specific industry with 20+ years of track record. Provide deep, non-obvious, rigorous insight." },
+        { cmd: "/ceo", cat: "strategic", title: "Executive Decision", desc: "Оценивает проект с точки зрения ROI, рисков, аллокации ресурсов и EBITDA.", prompt: "Analyze this proposal as the CEO and Board Chairman. Focus purely on ROI, capital allocation, unit economics, strategic leverage, and asymmetric downside risks." },
+        { cmd: "/viral", cat: "content", title: "Viral Hook Architect", desc: "Формирует захватывающие заголовки, хуки и структуру удержания внимания.", prompt: "Transform this topic into a viral hook framework. Write 5 high-converting headline hooks (curiosity gap, contrarian, data-backed) designed to maximize reach and retention." },
+        { cmd: "/seo", cat: "content", title: "Search Intent Master", desc: "Оптимизирует контент под поисковые алгоритмы, семантическое ядро и сниппеты.", prompt: "Optimize this copy for top-tier search engine indexing and intent matching. Embed LSI keywords, structured FAQs, and schema-friendly hierarchy." },
+        { cmd: "/critic", cat: "strategic", title: "Adversarial Stress Test", desc: "Ищет скрытые уязвимости, слабые аргументы и точки отказа продукта.", prompt: "Perform an adversarial stress test and red-team critique. Tear apart weak logic, uncover blind spots, and identify where customers or investors will push back." },
+        { cmd: "/teacher", cat: "analysis", title: "Socratic Educator", desc: "Объясняет сложнейшие концепции через систему наводящих вопросов и примеров.", prompt: "Act as an elite teacher. Break down this difficult concept step-by-step using scaffolding, illustrative analogies, and comprehension checks." },
+        { cmd: "/eli5", cat: "analysis", title: "Explain Like I'm 5", desc: "Предельно простое объяснение фундаментальной сути без заумного жаргона.", prompt: "Explain this concept so simply that a 5-year-old child could grasp the core mental model instantly. Zero technical jargon allowed." },
+        { cmd: "/brief", cat: "ops", title: "Executive Briefing", desc: "Сжимает сотни страниц в 3-пунктовое резюме для принятия мгновенного решения.", prompt: "Synthesize this into a 1-page executive brief: 1) Core Problem, 2) The Solution, 3) 3 Critical Decision Options with immediate trade-offs." },
+        { cmd: "/strategy", cat: "strategic", title: "Good Strategy Blueprint", desc: "Диагноз проблемы, руководящая политика и когерентный набор действий (Rumelt).", prompt: "Apply Richard Rumelt's 'Good Strategy/Bad Strategy' kernel: 1) Precise diagnosis of the obstacle, 2) Guiding policy, 3) Coherent focused actions." },
+        { cmd: "/copywriter", cat: "content", title: "Direct Response Copy", desc: "Пишет продающие тексты в стиле Гари Хэлберта, Юджина Шварца и Огилви.", prompt: "Write direct-response marketing copy targeting high-intent buyers. Leverage Schwartz's 5 stages of awareness, visceral emotional drivers, and a risk-free CTA." },
+        { cmd: "/research", cat: "analysis", title: "Deep Fact Synthesis", desc: "Собирает доказательную базу, цифры, академические ссылки и бенчмарки.", prompt: "Conduct exhaustive research analysis. Unpack verifiable data points, historical benchmarks, industry metrics, and cite underlying principles." },
+        { cmd: "/brainstorm", cat: "content", title: "Lateral Ideation", desc: "Генерирует 20 нестандартных идей на стыке разных отраслей и дисциплин.", prompt: "Generate 20 radical, lateral, high-variance ideas to solve this challenge. Combine principles from biology, game theory, fintech, and consumer psychology." },
+        { cmd: "/promptengineer", cat: "code", title: "Meta-Prompt Optimizer", desc: "Превращает сырой запрос в идеальный production-промпт с XML-тегами.", prompt: "Act as a Lead AI Prompt Engineer. Refactor this prompt into an optimal Claude/GPT-4 system prompt with XML delimiters, role constraints, and few-shot examples." },
+        { cmd: "/summarize", cat: "analysis", title: "Dense Extraction", desc: "Выжимка ключевых тезисов, цифр и договоренностей без потери нюансов.", prompt: "Extract the core value density. Summarize all actionable findings into a high-signal bulleted digest with zero filler." },
+        { cmd: "/translate", cat: "ops", title: "Nuanced Localization", desc: "Перевод с учетом культурного контекста, идиом и профессионального сленга.", prompt: "Translate this content preserving tone, emotional cadence, idiomatic subtleties, and target-market cultural nuances." },
+        { cmd: "/improve", cat: "ops", title: "Polishing & Elevation", desc: "Повышает плотность мысли, улучшает ритм предложений и ясность изложения.", prompt: "Elevate this draft. Improve sentence rhythm, tighten prose, eliminate wordiness, and heighten impact while preserving original voice." },
+        { cmd: "/simplify", cat: "ops", title: "Occam's Razor", desc: "Убирает избыточные усложнения, оставляя только работающую суть.", prompt: "Apply Occam's Razor. Strip away all unnecessary moving parts, simplify the workflow, and make the execution foolproof." },
+        { cmd: "/expand", cat: "content", title: "Deep Elaboration", desc: "Разворачивает краткий тезис в подробную главу с кейсами и аргументами.", prompt: "Expand this outline into a comprehensive, authoritative breakdown packed with concrete case studies, counter-arguments, and implementation nuance." },
+        { cmd: "/compare", cat: "analysis", title: "Trade-Off Matrix", desc: "Сравнивает альтернативы по цене, скорости, надежности и архитектуре.", prompt: "Create a rigorous comparative trade-off matrix. Evaluate options across cost, speed, maintainability, architectural debt, and vendor risk." },
+        { cmd: "/list", cat: "ops", title: "Actionable Checklist", desc: "Превращает хаотичный текст в строгий чек-лист шагов с приоритетами.", prompt: "Convert this into an actionable, prioritized execution checklist with clear completion criteria and responsible roles." },
+        { cmd: "/table", cat: "ops", title: "Structured Markdown Table", desc: "Организует данные в удобную, читаемую таблицу со всеми метриками.", prompt: "Structure these findings into a clean, comprehensive Markdown table with explicit headers, sorting, and comparison columns." },
+        { cmd: "/outline", cat: "ops", title: "Hierarchical Architecture", desc: "Строит логический скелет документа от корневой идеи до деталей.", prompt: "Construct a clean, hierarchical outline showing parent-child relationships, narrative flow, and logical progression." },
+        { cmd: "/code", cat: "code", title: "Production Clean Code", desc: "Пишет чистый, типизированный, модульный код с обработкой ошибок.", prompt: "Write production-ready, modular, strongly-typed code following Clean Architecture, strict error boundaries, and zero extraneous dependencies." },
+        { cmd: "/debug", cat: "code", title: "Root Cause Debugger", desc: "Выявляет истинную причину бага (race conditions, memory leaks, types).", prompt: "Perform deep root-cause analysis on this error. Trace execution path, diagnose memory/async leaks, and provide the exact minimal surgical diff." },
+        { cmd: "/explain code", cat: "code", title: "Code Mentor", desc: "Построчно разбирает работу алгоритма и архитектурные решения.", prompt: "Explain this code line-by-line: data structures, algorithmic complexity (Big O), side effects, and why specific design patterns were chosen." },
+        { cmd: "/email", cat: "ops", title: "High-Response Cold Email", desc: "Составляет лаконичные письма с открываемостью 60%+ и фокусом на выгоду.", prompt: "Draft a high-conversion 4-sentence B2B email. Hook -> Observable Pain Point -> Concrete Value Proposition -> Low-friction Call-to-Action." },
+        { cmd: "/coverletter", cat: "ops", title: "Winning Pitch", desc: "Формулирует персонализированное предложение под проект заказчика.", prompt: "Write a high-conviction proposal pitch directly addressing the client's stated constraints, demonstrating immediate domain mastery." },
+        { cmd: "/interview", cat: "strategic", title: "Grill-Me Simulation", desc: "Проводит жесткое собеседование или допрос гипотезы перед релизом.", prompt: "Interrogate me aggressively on this business strategy. Ask 5 sharp, uncomfortable questions that will expose whether this idea will survive market scrutiny." },
+        { cmd: "/motivate", cat: "content", title: "High-Agency Rally", desc: "Заряжает энергией, фокусирует на результате и устраняет прокрастинацию.", prompt: "Deliver a high-agency, stoic motivational directive. Clear away self-doubt, re-anchor on primary mission objectives, and demand immediate forward execution." }
+    ];
+
+    // HUMAN REQUIRED ACTIONS DATA
+    const ACTIONS_DATA = [
+        {
+            id: "act-alberta",
+            proj: "Alberta",
+            badge: "Критично",
+            badgeCls: "badge-urgent",
+            title: "💎 Alberta Shirani: Предоставить доступы / API-ключи",
+            desc: "ИИ создал сайты V1/V2, 900 кадров скролла и Telegram-воронку. Требуется: 1) Предоставить доступы к хостингу/домену, 2) Загрузить ключ Telegram бота для рассылки PDF-гайда, 3) Финально утвердить палитру 900 кадров WebP.",
+            who: "Власлав лично",
+            done: false
+        },
+        {
+            id: "act-ural",
+            proj: "Дима Верхняя Синичиха Алапаевск",
+            badge: "Выручка",
+            badgeCls: "badge-urgent",
+            title: "🪨 Урал Гранит: Отправить КП и согласовать предоплату",
+            desc: "Презентация и коммерческое предложение полностью собраны ИИ. Требуется: 1) Отправить PDF Диме, 2) Провести 15-минутный созвон по согласованию условий аванса (120 000 ₽).",
+            who: "Власлав лично (звонок)",
+            done: false
+        },
+        {
+            id: "act-dominica",
+            proj: "Белый Доминикана",
+            badge: "Лиды",
+            badgeCls: "badge-medium",
+            title: "🌴 Белый Доминикана: Привязать рабочий WhatsApp",
+            desc: "Мобильная посадочная страница и квиз готовы. Требуется: 1) Вставить реальный номер телефона/WhatsApp местного менеджера в Доминикане для переадресации входящих заявок.",
+            who: "Власлав (настройка номера)",
+            done: false
+        },
+        {
+            id: "act-youtube",
+            proj: "Позновалка",
+            badge: "Самообучение",
+            badgeCls: "badge-medium",
+            title: "🎥 Google NotebookLM / YouTube: Авторизация аккаунта",
+            desc: "Для скачивания длинных видео с YouTube без ограничений и авто-генерации подкастов NotebookLM требуется один раз нажать «Авторизовать Google аккаунт» в браузере.",
+            who: "Власлав (1 клик OAuth)",
+            done: false
+        }
+    ];
+
+    let currentSkill = SKILLS_DATA[2]; // Default /ceo
+    let currentCategory = "all";
+
+    function init() {
+        renderSkills();
+        renderActions();
+        initChart();
+        updateSim();
+    }
+
+    // Tabs
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+        const targetPane = document.getElementById(tabId);
+        if (targetPane) targetPane.classList.add('active');
+
+        const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+        if (activeBtn) activeBtn.classList.add('active');
+
+        if (tabId === 'tab-macro') {
+            setTimeout(drawChart, 100);
+        }
+    }
+
+    // Skills Render
+    function renderSkills() {
+        const grid = document.getElementById('skills-grid');
+        grid.innerHTML = '';
+
+        const filtered = SKILLS_DATA.filter(s => {
+            if (currentCategory === 'all') return true;
+            return s.cat === currentCategory;
+        });
+
+        filtered.forEach(s => {
+            const isSel = s.cmd === currentSkill.cmd;
+            const card = document.createElement('div');
+            card.className = `skill-card ${isSel ? 'selected' : ''}`;
+            card.onclick = () => selectSkill(s);
+            card.innerHTML = `
+                <div class="skill-top">
+                    <span class="skill-cmd">${s.cmd}</span>
+                    <span class="skill-category">${s.cat}</span>
+                </div>
+                <div class="skill-title">${s.title}</div>
+                <div class="skill-desc">${s.desc}</div>
+                <div class="skill-prompt">${s.prompt}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function filterSkills(cat) {
+        currentCategory = cat;
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        event.target.classList.add('active');
+        renderSkills();
+    }
+
+    function selectSkill(skill) {
+        currentSkill = skill;
+        document.getElementById('active-skill-pill').innerText = skill.cmd;
+        renderSkills();
+        showToast(`Выбран навык: ${skill.cmd} (${skill.title})`);
+    }
+
+    function copySkillPrompt() {
+        const customText = document.getElementById('playground-text').value.trim();
+        const full = `${currentSkill.prompt}\n\nTask:\n${customText || "[Вставьте ваш контекст]"}`;
+        navigator.clipboard.writeText(full).then(() => {
+            showToast("📋 Директива скопирована в буфер обмена!");
+        });
+    }
+
+    function sendToVirtualOffice() {
+        const customText = document.getElementById('playground-text').value.trim();
+        if (!customText) {
+            alert("Пожалуйста, напишите задачу или текст в поле ввода!");
+            return;
+        }
+        const cmdToSend = `CMD: ${currentSkill.cmd} ${customText} PROJ: Unity Inc`;
+        // Save to localStorage so Virtual Office can prefill or execute
+        localStorage.setItem("ecc_pending_command", cmdToSend);
+        showToast("🚀 Задача сохранена! Переходим в Виртуальный Офис...");
+        setTimeout(() => {
+            window.location.href = "../GitHub_Control_Panel/index.html?quick_cmd=" + encodeURIComponent(cmdToSend);
+        }, 600);
+    }
+
+    // Actions Render
+    function renderActions() {
+        const grid = document.getElementById('actions-grid');
+        grid.innerHTML = '';
+
+        let pendingCount = 0;
+        ACTIONS_DATA.forEach(act => {
+            if (!act.done) pendingCount++;
+
+            const card = document.createElement('div');
+            card.className = `action-card ${act.done ? 'resolved' : 'pending'}`;
+            card.innerHTML = `
+                <div>
+                    <div class="action-header">
+                        <span class="action-badge ${act.done ? 'badge-done' : act.badgeCls}">${act.done ? '✅ Выполнено' : act.badge}</span>
+                        <span style="font-size:0.74rem; color:var(--text-dim); font-weight:700;">${act.proj}</span>
+                    </div>
+                    <div class="action-title">${act.title}</div>
+                    <div class="action-desc" style="margin-top:6px;">${act.desc}</div>
+                </div>
+                <div class="action-footer">
+                    <label class="checkbox-label">
+                        <input type="checkbox" ${act.done ? 'checked' : ''} onchange="toggleAction('${act.id}', this.checked)">
+                        <span>${act.done ? 'Выполнено' : 'Отметить выполненным'}</span>
+                    </label>
+                    <a href="../GitHub_Control_Panel/index.html" class="btn" style="padding:4px 10px; font-size:0.75rem;">В проект ➔</a>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        document.getElementById('header-action-cnt').innerText = pendingCount;
+        document.getElementById('tab-action-cnt').innerText = pendingCount;
+    }
+
+    function toggleAction(id, isChecked) {
+        const act = ACTIONS_DATA.find(a => a.id === id);
+        if (act) {
+            act.done = isChecked;
+            renderActions();
+            showToast(isChecked ? `✅ Отмечено как выполненное: ${act.proj}` : `⏳ Возвращено в работу: ${act.proj}`);
+        }
+    }
+
+    // Simulation Chart
+    let chartCanvas, ctx;
+
+    function initChart() {
+        chartCanvas = document.getElementById('stabilizationChart');
+        if (!chartCanvas) return;
+        ctx = chartCanvas.getContext('2d');
+        resizeCanvas();
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            drawChart();
+        });
+    }
+
+    function resizeCanvas() {
+        if (!chartCanvas) return;
+        const rect = chartCanvas.parentElement.getBoundingClientRect();
+        chartCanvas.width = rect.width - 32;
+        chartCanvas.height = 300;
+    }
+
+    function updateSim() {
+        const floorVal = parseInt(document.getElementById('param-floor').value);
+        const retVal = parseInt(document.getElementById('param-retainers').value);
+        const outVal = parseInt(document.getElementById('param-outreach').value);
+        const dampVal = parseInt(document.getElementById('param-dampener').value);
+
+        document.getElementById('val-floor').innerText = floorVal + '%';
+        document.getElementById('val-retainers').innerText = retVal + '%';
+        document.getElementById('val-outreach').innerText = outVal + '%';
+        document.getElementById('val-dampener').innerText = dampVal + '%';
+
+        // Calculate KPIs
+        const smoothScore = Math.min(96, Math.round(35 + (floorVal * 0.25) + (retVal * 0.2) + (dampVal * 0.2)));
+        const predictScore = Math.min(99, Math.round(40 + (retVal * 0.3) + (outVal * 0.25)));
+        const baseFloor = Math.round(150 + floorVal * 4.5);
+        const safeRunway = Math.round(4 + (floorVal * 0.08) + (retVal * 0.05));
+
+        document.getElementById('kpi-smooth').innerText = `-${smoothScore}%`;
+        document.getElementById('kpi-predict').innerText = `${predictScore}%`;
+        document.getElementById('kpi-floor').innerText = `${baseFloor}k ₽`;
+        document.getElementById('kpi-runway').innerText = `${safeRunway} мес`;
+
+        drawChart();
+    }
+
+    function drawChart() {
+        if (!chartCanvas || !ctx) return;
+        const w = chartCanvas.width;
+        const h = chartCanvas.height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        const floorVal = parseInt(document.getElementById('param-floor').value) / 100;
+        const retVal = parseInt(document.getElementById('param-retainers').value) / 100;
+        const dampVal = parseInt(document.getElementById('param-dampener').value) / 100;
+
+        // Draw Grid Lines
+        ctx.strokeStyle = "rgba(148, 163, 184, 0.1)";
+        ctx.lineWidth = 1;
+        for (let y = 30; y < h - 30; y += 45) {
+            ctx.beginPath();
+            ctx.moveTo(30, y);
+            ctx.lineTo(w - 20, y);
+            ctx.stroke();
+        }
+
+        // Timeline: 12 months
+        const points = 12;
+        const stepX = (w - 70) / (points - 1);
+
+        // Raw volatile income (feast or famine)
+        const rawVolatile = [220, 80, 410, 60, 50, 480, 90, 70, 520, 110, 80, 590];
+
+        // Draw Floor line (Hall Permanent Floor)
+        const floorY = h - 50 - (floorVal * 100);
+        ctx.strokeStyle = "rgba(16, 185, 129, 0.6)";
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(30, floorY);
+        ctx.lineTo(w - 20, floorY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // 1. Plot Unstabilized Raw Revenue (Red Line)
+        ctx.strokeStyle = "#f43f5e";
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        rawVolatile.forEach((val, i) => {
+            const x = 35 + i * stepX;
+            const y = h - 40 - (val / 650) * (h - 80);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // 2. Plot Stabilized Revenue (Cyan Line - Hall & Woodford)
+        ctx.strokeStyle = "#38bdf8";
+        ctx.lineWidth = 3.5;
+        ctx.beginPath();
+
+        let prev = 220;
+        rawVolatile.forEach((val, i) => {
+            const x = 35 + i * stepX;
+            // Smooth algorithm blending moving average + permanent floor + retainer base
+            const baseline = 200 + (floorVal * 120) + (i * 22);
+            const blended = baseline * (0.6 + retVal * 0.4) + (val * (1 - dampVal * 0.7) * 0.2);
+            const finalVal = Math.max(blended, baseline * 0.9);
+            const y = h - 40 - (finalVal / 650) * (h - 80);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Dots on stabilized
+        ctx.fillStyle = "#38bdf8";
+        rawVolatile.forEach((val, i) => {
+            const x = 35 + i * stepX;
+            const baseline = 200 + (floorVal * 120) + (i * 22);
+            const blended = baseline * (0.6 + retVal * 0.4) + (val * (1 - dampVal * 0.7) * 0.2);
+            const finalVal = Math.max(blended, baseline * 0.9);
+            const y = h - 40 - (finalVal / 650) * (h - 80);
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    }
+
+    function exportFullReport() {
+        const report = `# AI Skills & Nobel Stabilization Suite Report
+Дата генерации: ${new Date().toLocaleString('ru-RU')}
+
+## 1. 30 ИИ-навыков (Dan Martell)
+Все 30 командных ролей интегрированы в laptop_worker.py и доступны через слэш-команды (/ceo, /viral, /critic, /strategy и др.).
+
+## 2. Макроэкономическая стабилизация (Robert E. Hall & Michael Woodford)
+- Сглаживание волатильности: ${document.getElementById('kpi-smooth').innerText}
+- Нижний гарантированный пол кассы: ${document.getElementById('kpi-floor').innerText}
+- Безопасный Runway: ${document.getElementById('kpi-runway').innerText}
+- Предсказуемость поступлений: ${document.getElementById('kpi-predict').innerText}
+
+## 3. Матрица действий человека (Строго требуется действие Власлава):
+${ACTIONS_DATA.map(a => `- [${a.done ? 'x' : ' '}] ${a.title} (${a.who})`).join('\n')}
+`;
+        const blob = new Blob([report], { type: 'text/markdown;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Stabilization_Report_${new Date().toISOString().slice(0,10)}.md`;
+        a.click();
+        showToast("📑 Полный отчёт успешно экспортирован!");
+    }
+
+    function showToast(msg) {
+        const t = document.getElementById('toast-msg');
+        t.innerText = msg;
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 3000);
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>
