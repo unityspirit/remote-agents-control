@@ -1443,11 +1443,30 @@
                 <div class="search-bar">
                     <input type="text" class="search-input" id="project-search" placeholder="🔍 Найти папку (12 IT Продуктов, Traffic, Alberta...)" oninput="renderProjects()">
                 </div>
-                <div class="filter-row" id="project-cat-filters">
-                    <button class="chip active" onclick="setProjectFilter('worked', this)">🔥 Работали ранее (<span id="cnt-worked" class="tabular">25</span>)</button>
-                    <button class="chip" onclick="setProjectFilter('all', this)">📂 Все папки (<span id="cnt-folders" class="tabular">48</span>)</button>
-                    <button class="chip" onclick="setProjectFilter('clients', this)">🤝 Клиенты и B2B</button>
+                <div class="filter-row" id="project-cat-filters" style="overflow-x:auto; flex-wrap:nowrap; padding-bottom:6px; -webkit-overflow-scrolling:touch;">
+                    <button class="chip active" onclick="setProjectFilter('worked', this)">⭐ Активные (<span id="cnt-worked" class="tabular">30</span>)</button>
+                    <button class="chip" onclick="setProjectFilter('products', this)">🚀 IT & Воронки</button>
+                    <button class="chip" onclick="setProjectFilter('media', this)">🎬 Кино & Медиа</button>
+                    <button class="chip" onclick="setProjectFilter('clients', this)">🏭 B2B Клиенты</button>
+                    <button class="chip" onclick="setProjectFilter('automation', this)">⚙️ Роботы & Live</button>
+                    <button class="chip" onclick="setProjectFilter('knowledge', this)">🧠 База Знаний</button>
+                    <button class="chip" onclick="setProjectFilter('all', this)">📂 Все (<span id="cnt-folders" class="tabular">48</span>)</button>
                 </div>
+
+                <!-- 24/7 INTERACTIVE WEB APPS QUICK LAUNCH -->
+                <div style="background:linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.14)); border:1px solid rgba(59,130,246,0.35); border-radius:14px; padding:10px 12px; margin-bottom:8px;">
+                    <div style="font-size:0.7rem; font-weight:800; color:var(--accent); text-transform:uppercase; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+                        <span>⚡ Веб-модули 24/7 (с телефона):</span>
+                        <span style="font-size:0.65rem; color:var(--text-dim); background:var(--bg-main); padding:2px 6px; border-radius:6px;">Онлайн без ПК</span>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                        <a href="globalfilms/index.html" class="icon-btn" style="text-decoration:none; font-size:0.73rem; padding:7px 8px; justify-content:center; background:var(--bg-card); border-color:rgba(139,92,246,0.45); color:var(--text-main); font-weight:700;">🎬 Filmtools</a>
+                        <a href="12_IT_Products/index.html" class="icon-btn" style="text-decoration:none; font-size:0.73rem; padding:7px 8px; justify-content:center; background:var(--bg-card); border-color:rgba(59,130,246,0.45); color:var(--text-main); font-weight:700;">🚀 12 Mini Apps</a>
+                        <a href="Traffic/index.html" class="icon-btn" style="text-decoration:none; font-size:0.73rem; padding:7px 8px; justify-content:center; background:var(--bg-card); border-color:rgba(16,185,129,0.45); color:var(--text-main); font-weight:700;">🚦 Traffic & DFY</a>
+                        <a href="AI_Skills_And_Macro_Stabilization/index.html" class="icon-btn" style="text-decoration:none; font-size:0.73rem; padding:7px 8px; justify-content:center; background:var(--bg-card); border-color:rgba(245,158,11,0.45); color:var(--text-main); font-weight:700;">📈 30 Навыков</a>
+                    </div>
+                </div>
+
                 <button class="add-folder-banner-btn" onclick="openNewFolderModal()">➕ Создать новую папку на ПК</button>
                 <div id="projects-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
@@ -1511,9 +1530,82 @@
                 <div class="project-card" style="cursor:default;">
                     <div class="p-card-name">⚡ Интерактивные модули Виртуального Офиса</div>
                     <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+                        <a href="globalfilms/index.html" class="kb-link">🎬 GlobalFilms (Filmtools) — Кинопроизводство для Светланы ↗</a>
                         <a href="12_IT_Products/index.html" class="kb-link">🚀 12 IT Продуктов (Короче Капитан) — Конвейер Mini Apps + Игра ↗</a>
                         <a href="Traffic/index.html" class="kb-link">🚦 Traffic & Thought/Мысль — Калькулятор DFY + Profitroom ↗</a>
                         <a href="AI_Skills_And_Macro_Stabilization/index.html" class="kb-link">📈 30 Навыков ИИ + Нобелевская Стабилизация 2026 ↗</a>
+                    </div>
+                </div>
+
+                <!-- 🗺️ INTERACTIVE ECOSYSTEM MAP -->
+                <div class="project-card" style="cursor:default; border-left: 3px solid var(--accent);">
+                    <div class="p-card-name" style="display:flex; justify-content:space-between; align-items:center;">
+                        <span>🗺️ Интерактивная Карта Связей Проектов</span>
+                        <span class="badge" style="background:var(--accent-soft); color:var(--accent);">6 Кластеров</span>
+                    </div>
+                    <div style="font-size:0.75rem; color:var(--text-dim); line-height:1.45; margin-top:4px;">
+                        Нажмите на любой проект, чтобы мгновенно открыть его папку и задачи:
+                    </div>
+                    
+                    <div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+                        <div style="background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:8px 10px;">
+                            <div style="font-size:0.72rem; font-weight:800; color:#3b82f6; text-transform:uppercase;">👑 1. Холдинг & Агентство</div>
+                            <div style="font-size:0.71rem; color:var(--text-dim); margin-bottom:5px;">Юридическое лицо и контрактное окно для клиентов:</div>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                <button class="mini-btn" onclick="selectProject('Unity Inc')">🤝 Unity Inc</button>
+                                <button class="mini-btn" onclick="selectProject('True 1 Team')">🚀 True 1 Team</button>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:8px 10px;">
+                            <div style="font-size:0.72rem; font-weight:800; color:#8b5cf6; text-transform:uppercase;">🧠 2. Интеллект, Знания & R&D</div>
+                            <div style="font-size:0.71rem; color:var(--text-dim); margin-bottom:5px;">Анализ YouTube через NotebookLM, стратегия Gartner 2026 и антикризис:</div>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                <button class="mini-btn" onclick="selectProject('Позновалка')">🧠 Позновалка</button>
+                                <button class="mini-btn" onclick="selectProject('Thought/Мысль')">💡 Thought/Мысль</button>
+                                <button class="mini-btn" onclick="selectProject('AI Skills & Nobel Stabilization')">📈 AI Skills & Nobel</button>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:8px 10px;">
+                            <div style="font-size:0.72rem; font-weight:800; color:#10b981; text-transform:uppercase;">🚦 3. Трафик, Воронки & Mini Apps</div>
+                            <div style="font-size:0.71rem; color:var(--text-dim); margin-bottom:5px;">Генерация входящего потока без предоплат (Pay-on-Results):</div>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                <button class="mini-btn" onclick="selectProject('Traffic')">🚦 Traffic (DFY + Profitroom)</button>
+                                <button class="mini-btn" onclick="selectProject('12 IT Продуктов (Короче Капитан)')">🚀 12 IT Продуктов</button>
+                                <button class="mini-btn" onclick="selectProject('UpworkVault')">💼 UpworkVault</button>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:8px 10px;">
+                            <div style="font-size:0.72rem; font-weight:800; color:#ec4899; text-transform:uppercase;">🎬 4. Кино, Видео & Упаковка</div>
+                            <div style="font-size:0.71rem; color:var(--text-dim); margin-bottom:5px;">Кинопроизводство для Светланы и 900 кадров скролла:</div>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                <button class="mini-btn" onclick="selectProject('GlobalFilms (Filmtools)')">🎬 GlobalFilms (Filmtools)</button>
+                                <button class="mini-btn" onclick="selectProject('Alberta')">💎 Alberta Shirani</button>
+                                <button class="mini-btn" onclick="selectProject('Beyondyourfood.com')">🌿 Beyondyourfood</button>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:8px 10px;">
+                            <div style="font-size:0.72rem; font-weight:800; color:#f59e0b; text-transform:uppercase;">🏭 5. B2B Клиенты & Высокие Чеки</div>
+                            <div style="font-size:0.71rem; color:var(--text-dim); margin-bottom:5px;">Реальный сектор: заводы, стройка, аренда, услуги:</div>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                <button class="mini-btn" onclick="selectProject('Дима Верхняя Синичиха Алапаевск')">🪨 Дима (Завод ЗКСК)</button>
+                                <button class="mini-btn" onclick="selectProject('Alex Brus Питер')">🏗️ Дом брус СПб</button>
+                                <button class="mini-btn" onclick="selectProject('Belgrade_Sales_Kit')">🇷🇸 Белград</button>
+                                <button class="mini-btn" onclick="selectProject('Белый Доминикана')">🌴 Доминикана</button>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:8px 10px;">
+                            <div style="font-size:0.72rem; font-weight:800; color:#06b6d4; text-transform:uppercase;">⚙️ 6. Квант-Алгоритмы & Автономный Доход</div>
+                            <div style="font-size:0.71rem; color:var(--text-dim); margin-bottom:5px;">Фоновые демоны и математический арбитраж:</div>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                <button class="mini-btn" onclick="selectProject('Юра')">🏒 Юра (KHL Live Odds v14)</button>
+                                <button class="mini-btn" onclick="selectProject('Poker')">♠️ Poker Algorithms</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1568,11 +1660,13 @@
             <div class="ws-footer">
                 <div class="quick-pills">
                     <button class="q-pill" onclick="sendTask('STATUS')">📊 Статус папки</button>
-                    <button class="q-pill" onclick="sendTask('NEXT_STEPS')">🎯 Что делать дальше</button>
                     <button class="q-pill" onclick="sendTask('PLAN_ACTIONS')">🚨 Где нужен человек?</button>
+                    <button class="q-pill" onclick="sendTask('/strategy')">💡 /strategy Стратегия</button>
+                    <button class="q-pill" onclick="sendTask('/expert')">🔍 /expert Экспертный разбор</button>
+                    <button class="q-pill" onclick="sendTask('NEXT_STEPS')">🎯 Что делать дальше</button>
+                    <button class="q-pill" onclick="sendTask('LAUNCH_FILMTOOLS')">🎬 Запустить Filmtools</button>
                     <button class="q-pill" onclick="sendTask('EVOLVE')">🧬 Самообучение EVOLVE</button>
                     <button class="q-pill" onclick="sendTask('MARKETING')">📈 Воронка и трафик</button>
-                    <button class="q-pill" onclick="sendTask('FULL_AUDIT')">🔍 Полный аудит</button>
                 </div>
                 <div id="ws-route-preview" style="display:none; padding:5px 12px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-radius:8px; margin-bottom:6px; color:var(--text-main); font-weight:600;"></div>
                 <div class="composer-row">
@@ -1718,150 +1812,175 @@
         "Позновалка": {
             icon: "🧠",
             worked: true,
+            category: "knowledge",
             client: false,
             desc: "Центр самообучения и База Знаний CRM: сюда сохраняются все новые сайты, ссылки, видео YouTube и статьи"
         },
         "Alberta": {
             icon: "💎",
             worked: true,
+            category: "media",
             client: true,
             desc: "Alberta Shirani: сайты V1/V2, 9 промптов Google VEO 3.1, 900 кадров WebP скролла, PDF гайд и Telegram-воронка"
         },
         "Alex ChopChop": {
             icon: "💈",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Сеть/барбершоп: архитектурный аудит, оптимизация, исследование NotebookLM и система возврата клиентов (LTV)"
         },
         "Татьяна tentorium.ru": {
             icon: "🐝",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Каталог и воронка продаж Тенториум: автоматизация повторных заказов и работа с клиентской базой"
         },
         "Егор Трансфер": {
             icon: "🚐",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Сервис трансфера: быстрый заказ в 2 клика со смартфона и автоматическая передача заявок в Telegram"
         },
         "Белый Доминикана": {
             icon: "🌴",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Услуги, туризм и недвижимость в Доминикане: мобильная упаковка и лидогенерация"
         },
         "Alex Brus Питер": {
             icon: "🏗️",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Строительство домов из бруса в СПб: квиз-калькулятор сметы и прогрев через Telegram"
         },
         "Unity Inc": {
             icon: "🤝",
             worked: true,
+            category: "products",
             client: false,
             desc: "Unity Spirit Partners (unityspiritpartners.com) и Global Plus (globalplus.tech) — B2B партнерство и ИИ-агентство"
         },
         "True 1 Team": {
             icon: "🚀",
             worked: true,
+            category: "products",
             client: false,
             desc: "Командная разработка, AI-агентство Global Plus и продуктовая воронка"
         },
         "Belgrade_Sales_Kit": {
             icon: "🇷🇸",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Коммерческие предложения и пакеты продаж ИИ/CRM-услуг для бизнеса в Белграде"
         },
         "Belgrade_Demo_Sites": {
             icon: "🌐",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Демо-сайты на чистом коде для презентации клиентам в Белграде"
         },
         "Beyondyourfood.com": {
             icon: "🌿",
             worked: true,
+            category: "media",
             client: true,
             desc: "Международный wellness/нутрициологический проект: сайт и контент-воронка"
         },
         "UpworkVault": {
             icon: "💼",
             worked: true,
+            category: "products",
             client: false,
             desc: "База кейсов, портфолио и ИИ-автоматизация откликов на международные заказы Upwork"
         },
         "Костя": {
             icon: "👤",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Клиентский проект Кости — задачи и материалы на ноутбуке"
         },
         "Юра": {
             icon: "👤",
             worked: true,
+            category: "automation",
             client: true,
             desc: "Клиентский проект Юры — разработка и автоматизация"
         },
         "Светлана Notion": {
             icon: "📝",
             worked: true,
+            category: "media",
             client: true,
             desc: "Архитектура рабочего пространства и баз данных в Notion для Светланы"
         },
         "8 слайдов карусель Белорусия": {
             icon: "🇧🇾",
             worked: true,
+            category: "media",
             client: true,
             desc: "Генерация 8-слайдовых экспертных каруселей и контента (проект Беларусь)"
         },
         "package": {
             icon: "📦",
             worked: true,
+            category: "knowledge",
             client: false,
             desc: "Сборка пакетов, зависимостей и проверенные модули системы"
         },
         "antigravity": {
             icon: "🤖",
             worked: true,
+            category: "knowledge",
             client: false,
             desc: "Ядро автономных агентов Antigravity, MCP-серверы и кастомные скиллы"
         },
         "ai-memory-workspace": {
             icon: "🧬",
             worked: true,
+            category: "knowledge",
             client: false,
             desc: "Долговременная память ИИ-агентов, графы знаний и контекст сессий"
         },
         "Poker": {
             icon: "♠️",
             worked: true,
+            category: "automation",
             client: false,
             desc: "Аналитический проект и алгоритмы Poker"
         },
         "Test Video Load": {
             icon: "🎬",
             worked: true,
+            category: "media",
             client: false,
             desc: "Тестирование быстрой загрузки видео-скролла и WebP-анимаций"
         },
         "Карта Пятигорск 43 21а_files": {
             icon: "🗺️",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Гео-данные и локальные материалы по объекту в Пятигорске"
         },
         "Рязань": {
             icon: "🏙️",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Проекты по Рязани (включая подпроект Страйк и локальные конфигурации)"
         },
         "GlobalFilms (Filmtools)": {
             icon: "🎬",
             worked: true,
+            category: "media",
             client: false,
             appUrl: "globalfilms/index.html",
             appLabel: "🎬 Открыть систему GlobalFilms (Filmtools) ↗",
@@ -1870,6 +1989,7 @@
         "AI Skills & Nobel Stabilization": {
             icon: "📈",
             worked: true,
+            category: "automation",
             client: false,
             appUrl: "AI_Skills_And_Macro_Stabilization/index.html",
             appLabel: "📈 Открыть Интерактивный Центр (30 Навыков + Нобель 2026) ↗",
@@ -1878,6 +1998,7 @@
         "Traffic": {
             icon: "🚦",
             worked: true,
+            category: "products",
             client: false,
             appUrl: "Traffic/index.html",
             appLabel: "🚦 Открыть Интерактивный Калькулятор DFY-Трафика (Exponential + Profitroom) ↗",
@@ -1886,6 +2007,7 @@
         "Thought/Мысль": {
             icon: "💡",
             worked: true,
+            category: "products",
             client: false,
             appUrl: "Traffic/index.html",
             appLabel: "💡 Открыть Единую Схему Синтеза (Gartner AI + Profitroom + DFY) ↗",
@@ -1894,6 +2016,7 @@
         "12 IT Продуктов (Короче Капитан)": {
             icon: "🚀",
             worked: true,
+            category: "products",
             client: false,
             appUrl: "12_IT_Products/index.html",
             appLabel: "🚀 Открыть Фабрику 12 Mini Apps + Игровой Прототип ↗",
@@ -1902,6 +2025,7 @@
         "Дима Верхняя Синичиха Алапаевск": {
             icon: "🏭",
             worked: true,
+            category: "clients",
             client: true,
             desc: "Завод ЗКСК, щебень, гранит, бетон: 15 адаптированных сайтов-шаблонов, коммерческие предложения и оптовые B2B продажи (Агент: B2B Industrial & Factory Sales Lead)"
         }
@@ -2708,8 +2832,13 @@
             const isWorked = st.total > 0 || meta.worked;
             const isClient = Boolean(meta.client);
 
+            const cat = meta.category || (isClient ? "clients" : "products");
             if (projectFilter === "worked" && !isWorked) return;
-            if (projectFilter === "clients" && !isClient) return;
+            if (projectFilter === "clients" && !isClient && cat !== "clients") return;
+            if (projectFilter === "products" && cat !== "products") return;
+            if (projectFilter === "media" && cat !== "media") return;
+            if (projectFilter === "automation" && cat !== "automation") return;
+            if (projectFilter === "knowledge" && cat !== "knowledge") return;
 
             const hay = (name + " " + (meta.desc || "") + " " + (st.lastCmd || "")).toLowerCase();
             if (q && !hay.includes(q)) return;
@@ -3412,6 +3541,16 @@
 
     const DEFAULT_HUMAN_ACTIONS = [
         {
+            id: "act-globalfilms",
+            proj: "GlobalFilms (Filmtools)",
+            badge: "Кинопродакшн",
+            color: "#8b5cf6",
+            title: "🎬 GlobalFilms (Filmtools): Утвердить вызывной лист и синхронизацию с Notion",
+            desc: "Платформа Filmtools развернута онлайн 24/7. Требуется: утвердить вызывной лист смены #15 и нажать «Синхронизировать базу актеров из Notion Светланы».",
+            who: "Власлав & Светлана",
+            done: false
+        },
+        {
             id: "act-12it-bot",
             proj: "12 IT Продуктов (Короче Капитан)",
             badge: "Новый проект #97",
@@ -3506,24 +3645,30 @@
         if (waitChipCnt) waitChipCnt.innerText = pendingHuman + openAiTasks;
 
         const strip = document.getElementById("human-action-strip");
-        const titleEl = document.getElementById("strip-title-text");
-        const subEl = document.getElementById("strip-sub-text");
+        const titleEl = document.getElementById("strip-badge-label");
+        const subEl = document.getElementById("strip-dynamic-text");
+        const planActionsCnt = document.getElementById("plan-chip-actions-cnt");
+        if (planActionsCnt) planActionsCnt.innerText = pendingHuman;
+
+        const crmWaitingCnt = document.getElementById("cnt-waiting-actions");
+        if (crmWaitingCnt) crmWaitingCnt.innerText = pendingHuman;
+
         if (strip && titleEl && subEl) {
             if (pendingHuman === 0 && openAiTasks === 0) {
                 strip.style.background = "linear-gradient(90deg, rgba(16, 185, 129, 0.16), rgba(59, 130, 246, 0.14))";
                 strip.style.borderBottomColor = "rgba(16, 185, 129, 0.4)";
-                titleEl.style.color = "#34d399";
-                titleEl.innerText = "✅ Все обязательные действия выполнены · Очередь ИИ чиста";
-                subEl.innerText = "Нажмите, чтобы открыть панель контроля или добавить новое поручение";
+                titleEl.style.background = "#10b981";
+                titleEl.innerText = "✅ ВСЕ ДЕЙСТВИЯ ВЫПОЛНЕНЫ";
+                subEl.innerHTML = "Очередь чиста · Все проекты под контролем автономных агентов";
             } else {
                 strip.style.background = "linear-gradient(90deg, rgba(245, 158, 11, 0.22), rgba(239, 68, 68, 0.18))";
                 strip.style.borderBottomColor = "rgba(245, 158, 11, 0.45)";
-                titleEl.style.color = "#fbbf24";
-                titleEl.innerText = "🚨 Ожидание действий: " + pendingHuman + " от вас · ⏳ " + openAiTasks + " в очереди ИИ";
+                titleEl.style.background = "#ef4444";
+                titleEl.innerText = "🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ (" + pendingHuman + ")";
                 const firstPending = HUMAN_ACTIONS_LIST.find(a => !a.done);
-                subEl.innerText = firstPending
-                    ? ("Ближайшее: " + firstPending.title + " (Нажмите для управления)")
-                    : "В очереди ИИ выполняются задачи — нажмите для просмотра";
+                subEl.innerHTML = firstPending
+                    ? ("Ожидает решения: <strong>" + escapeHtml(firstPending.proj) + "</strong> — " + escapeHtml(firstPending.title.replace(/^[^\wа-яА-ЯёЁ]+/, '')))
+                    : ("В очереди ИИ: <strong>" + openAiTasks + " задач</strong> — нажмите для управления");
             }
         }
     }
