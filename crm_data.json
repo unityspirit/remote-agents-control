@@ -1,57 +1,46 @@
 {
-  "updated_at": "2026-10-19T16:36:02.295Z",
-  "version": "9.0",
+  "updated_at": "2026-10-19 10:36:23",
+  "version": "10.0",
   "knowledge_base": [
     {
-      "id": "kb-1792427761367",
-      "issue": 101,
+      "id": "kb-20261019_103623",
+      "issue": "Auto",
       "category": "Проект: Позновалка",
-      "title": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&utm_term=&utm_cam",
+      "title": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&ut",
       "source_url": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&utm_term=&utm_campaign=RP_PMAX_Google_Prospecting_MOFU_Reg-T1T2_EMEA_EU_EN_All_23736473219&utm_content=_m_&hsa_acc=1706531352&hsa_cam=23736473219&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23736483581",
       "secondary_url": "",
       "date": "19.10.2026",
-      "summary": "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
+      "summary": "Четкий ответ по существу задачи  \nСсылка — страница регистрации рекламного аккаунта Reddit (промокод PPC500). Она представляет собой пошаговый процесс создания рекламного кабинета:  \n1. Регистрация/авторизация – ввод email и пароля.  \n2. Создание рекламной кампании – выбор цели (просмотры, клики, конверсии), бюджет, таргетинг.  \n3. Выбор формата объявлений – видео, карусель, изображение, текст.  \n4. Оплата – подключе",
       "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
-      ]
-    },
-    {
-      "id": "kb-1792426103881",
-      "issue": 100,
-      "category": "Проект: Позновалка",
-      "title": "[Ответ к #99] /strategy",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
-      "action_items": [
-        "Сохранено в облако GitHub CRM и папку Позновалка"
+        "Сохранено в Note_20261019_103623.md"
       ]
     },
     {
       "id": "kb-20261018_212907",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://getstarted.tiktok.com/grow-your-business-gb?lang=en&creative=Vertical-Q3-Healthcare&att",
-      "source_url": "https://getstarted.tiktok.com/grow-your-business-gb?lang=en&creative=Vertical-Q3-Healthcare&attr_source=google&attr_medium=pmax-ad&attr_campaign_id=24132963734&funnel=Prospecting&targeting=all&no_parent_redirect=1&gad_source=2&gad_campaignid=24127418532",
+      "issue": 98,
+      "category": "Проект: Позновалка & Traffic",
+      "title": "TikTok Grow Your Business (Vertical-Q3-Healthcare + Google PMax Prospecting Funnel)",
+      "source_url": "https://getstarted.tiktok.com/grow-your-business-gb?lang=en&creative=Vertical-Q3-Healthcare&attr_source=google&attr_medium=pmax-ad&attr_campaign_id=24132963734&funnel=Prospecting",
       "secondary_url": "",
       "date": "18.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСсылка — страница TikTok “Get Started” (Grow Your Business) представляет собой продвинутую маркетинговую воронку:\n\n| Этап | Что делается | Как это выглядит на странице |\n|------|--------------|------------------------------|\n| Таргетинг | Показ объявлений только пользователям, интересующимся бизнес‑услугами (vertical‑video, healthcare, etc.). | В URL видны параметры creative, attr",
+      "summary": "Разбор связки кросс-канального трафика (Google Performance Max -> TikTok Business Landing): 1) Вертикальный отраслевой оффер (Vertical-Q3-Healthcare) бьет точно в боль ниши; 2) Одноэкранный мобильный лендинг с видео-доказательством и мгновенным бонусом при регистрации; 3) Применение у нас: связка вертикальных Reels/TikTok роликов (0 ₽/мес конвейер) + посадочные по 6 отраслям (Медицина/Alberta, Отели/Доминикана, B2B/Урал) с переходом в Telegram Mini App за 2 клика.",
       "action_items": [
-        "Сохранено в Note_20261018_212907.md"
+        "Внедрить отраслевые вертикальные лендинги (Healthcare/Alberta, Отели, Производство) по шаблону TikTok Grow Your Business",
+        "Связать вертикальные видео-креативы с нашими Telegram Mini Apps и DFY-калькулятором трафика"
       ]
     },
     {
       "id": "kb-20261018_205426",
-      "issue": "Auto",
-      "category": "Проект: 23616818868",
-      "title": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid",
-      "source_url": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065370&aid=799060508631&kid=&kw=&nw=ytis&dv=m&mt=&pl=youtube.com&utm_source=youtube_ads&utm_medium=cpc&utm_campaign=nimb&utm_content=189059065370",
-      "secondary_url": "",
+      "issue": 97,
+      "category": "Проект: 12 IT Продуктов (Короче Капитан)",
+      "title": "Челлендж «12 IT-продуктов за 12 месяцев» (itscap.blog / @its_capitan «Короче, капитан»)",
+      "source_url": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads",
+      "secondary_url": "https://t.me/its_capitan",
       "date": "18.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nВы запросили разбор содержимого блога‑челленджа  \nhttps://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads  \nи интеграцию его выводов в три наших проекта: Global Plus, Unity Spirit Partners и Позновалка.  \nЧеллендж представляет собой 12‑месечный план запуска IT‑продуктов с акцентом на Google Ads как канале привлечения. В нём описаны:\n\n| Месяц | Продукт | Ключев",
+      "summary": "Методология быстрого запуска микро-продуктов: 1 месяц = 1 Telegram Mini App с одной главной функцией (Time-to-Market 14–21 день). Встроенная виральность (+бонус за приглашение друга), монетизация через трипвайр 490 ₽ / Telegram Stars / B2B-лиды и фильтрация гипотез за 72 часа.",
       "action_items": [
-        "Сохранено в Note_20261018_205426.md"
+        "Создана папка «12 IT Продуктов (Короче Капитан)» и интерактивный модуль 12_IT_Products/index.html",
+        "Протестировать игровой прототип Space Words и выбрать первый из 4 Mini Apps для релиза"
       ]
     },
     {
@@ -379,158 +368,6 @@
       "price_rub": "от 200 000 ₽",
       "price_usd": "$3,000+",
       "status": "Флагман"
-    }
-  ],
-  "instincts": [
-    {
-      "id": "jointech-engineering-funnel",
-      "trigger": "при упаковке и продаже услуг Global Plus, Unity Inc и клиентских проектов",
-      "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
-      "confidence": 0.99,
-      "domain": "business-model",
-      "evidence_count": 36,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:08:14.529096"
-    },
-    {
-      "id": "telegram-miniapp-over-labyrinths",
-      "trigger": "при разработке Telegram-ботов и воронок для клиентов (Егор Трансфер, Alberta, Alex ChopChop)",
-      "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
-      "confidence": 0.99,
-      "domain": "ux-conversion",
-      "evidence_count": 43,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:08:42.799949"
-    },
-    {
-      "id": "dan-martell-ai-leverage-matrix",
-      "trigger": "при распределении очереди задач по приоритетам ($35K -> $100K -> $1M+)",
-      "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
-      "confidence": 0.99,
-      "domain": "ai-strategy",
-      "evidence_count": 27,
-      "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.103016"
-    },
-    {
-      "id": "ltv-qr-retention-without-discounts",
-      "trigger": "при настройке повторных продаж для клиник, барбершопов (Alex ChopChop), салонов (Alberta) и доставки",
-      "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
-      "confidence": 0.99,
-      "domain": "retention",
-      "evidence_count": 23,
-      "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.104226"
-    },
-    {
-      "id": "similarweb-free-traffic-system",
-      "trigger": "при привлечении бесплатного трафика на globalplus.tech, unityspiritpartners.com и клиентские сайты",
-      "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
-      "confidence": 0.99,
-      "domain": "traffic-seo",
-      "evidence_count": 41,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:08:42.802823"
-    },
-    {
-      "id": "zero-cost-unlimited-content-factory",
-      "trigger": "при генерации Reels/Shorts и экспертных постов из папки Позновалка",
-      "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
-      "confidence": 0.99,
-      "domain": "content-pipeline",
-      "evidence_count": 30,
-      "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.106496"
-    },
-    {
-      "id": "gartner-2026-intelligent-crm",
-      "trigger": "при развитии мобильного интерфейса Виртуального Офиса",
-      "action": "Объединять папки проектов, историю задач, базу знаний и план действий в едином мобильном окне (Intelligent Application), чтобы устранить потерю 33% времени на поиск информации",
-      "confidence": 0.91,
-      "domain": "architecture",
-      "evidence_count": 10,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "laptop-24x7-selfhosting-s3",
-      "trigger": "при работе ноутбука в режиме круглосуточного сервера и хранилища (Habr #1093840)",
-      "action": "Держать лимит заряда батареи 60-80%, хранить метаданные JSON/SQLite на внутреннем NVMe SSD, использовать SetThreadExecutionState против сна",
-      "confidence": 0.94,
-      "domain": "infrastructure",
-      "evidence_count": 14,
-      "scope": "global",
-      "last_updated": "2026-10-15T18:00:00"
-    },
-    {
-      "id": "alberta-funnel-voice",
-      "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
-      "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.99,
-      "domain": "marketing",
-      "evidence_count": 17,
-      "scope": "project:Alberta",
-      "last_updated": "2026-10-19T10:08:14.533136"
-    },
-    {
-      "id": "autonomous-task-resolution",
-      "trigger": "при поступлении любых запросов с мобильного офиса",
-      "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
-      "confidence": 0.99,
-      "domain": "agent-behavior",
-      "evidence_count": 36,
-      "scope": "global",
-      "last_updated": "2026-10-19T10:08:42.804077"
-    },
-    {
-      "id": "task-custom-request",
-      "trigger": "when processing 'custom-request' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.99,
-      "domain": "operations",
-      "evidence_count": 17,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-19T10:08:40.080568"
-    },
-    {
-      "id": "task-status",
-      "trigger": "when processing 'status' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.65,
-      "domain": "operations",
-      "evidence_count": 2,
-      "scope": "project:Рязань",
-      "last_updated": "2026-10-18T14:12:58.030905"
-    },
-    {
-      "id": "task-next_steps",
-      "trigger": "when processing 'next_steps' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Traffic",
-      "last_updated": "2026-10-18T18:48:36.564744"
-    },
-    {
-      "id": "task-evolve",
-      "trigger": "when processing 'evolve' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Traffic",
-      "last_updated": "2026-10-18T18:48:51.580911"
-    },
-    {
-      "id": "task-plan_actions",
-      "trigger": "when processing 'plan_actions' tasks",
-      "action": "Executed autonomously with report and choices",
-      "confidence": 0.6,
-      "domain": "operations",
-      "evidence_count": 1,
-      "scope": "project:Позновалка",
-      "last_updated": "2026-10-19T10:08:11.948290"
     }
   ]
 }
