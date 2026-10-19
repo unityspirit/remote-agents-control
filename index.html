@@ -1686,24 +1686,38 @@
             icon: "🎬",
             worked: true,
             client: false,
+            appUrl: "http://localhost:3000",
+            appLabel: "🎬 Открыть GlobalFilms (Filmtools) ↗",
             desc: "GlobalFilms — кинопроизводство, вызывные листы, съемочный график КПП, сценарии, актеры и смета бюджета (аналог Filmtools на Next.js 16)"
         },
         "AI Skills & Nobel Stabilization": {
             icon: "📈",
             worked: true,
             client: false,
+            appUrl: "AI_Skills_And_Macro_Stabilization/index.html",
+            appLabel: "📈 Открыть Интерактивный Центр (30 Навыков + Нобель 2026) ↗",
             desc: "30 ИИ-навыков (Dan Martell) + Макроэкономическая стабилизация (Нобелевская премия 2026 Hall & Woodford): интерактивный симулятор, сглаживание волатильности и трекер действий человека"
         },
-        "AI_Skills_And_Macro_Stabilization": {
-            icon: "📈",
+        "Traffic": {
+            icon: "🚦",
             worked: true,
             client: false,
-            desc: "30 ИИ-навыков (Dan Martell) + Макроэкономическая стабилизация (Нобелевская премия 2026 Hall & Woodford): интерактивный симулятор, сглаживание волатильности и трекер действий человека"
+            appUrl: "Traffic/index.html",
+            appLabel: "🚦 Открыть Интерактивный Калькулятор DFY-Трафика (Exponential + Profitroom) ↗",
+            desc: "Система Performance-трафика и Pay-on-Results: модель Exponential Traffic (DFY лидогенерация с оплатой за результат) + Profitroom (автоматизация прямых бронирований и LTV для отелей и курортов)"
+        },
+        "Thought/Мысль": {
+            icon: "💡",
+            worked: true,
+            client: false,
+            appUrl: "Traffic/index.html",
+            appLabel: "💡 Открыть Единую Схему Синтеза (Gartner AI + Profitroom + DFY) ↗",
+            desc: "Интеллектуальное ядро системы (Gartner Predicts 2026 / ThoughtSpot): автономные AI-агенты, встроенная аналитика принятия решений и архитектура единого мозга CRM"
         }
     };
 
     const ALL_LAPTOP_FOLDERS = [
-        "AI Skills & Nobel Stabilization", "AI_Skills_And_Macro_Stabilization",
+        "Traffic", "Thought/Мысль", "AI Skills & Nobel Stabilization",
         "Позновалка", "GlobalFilms (Filmtools)", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
         "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
         "Belgrade_Sales_Kit", "Belgrade_Demo_Sites", "Beyondyourfood.com", "UpworkVault",
@@ -1803,6 +1817,13 @@
 
     const STUDIED_IMPROVEMENTS = [
         {
+            issue: "#89–#96",
+            source: "Exponential Traffic (DFY Pay-on-Results) + Profitroom (Hotel Booking 360) + ThoughtSpot/Gartner 2026",
+            learned: "Три элемента единой масштабируемой системы: 1) Оффер Exponential Traffic — DFY-лидогенерация без фиксированного ретейнера (клиент оплачивает только рекламный бюджет $1.5k–$3k, агентство берет % с закрытых сделок или фикс за квалифицированного клиента); 2) Ядро конверсии Profitroom — прямое бронирование и маркетинг-автоматизация для отелей/курортов без комиссий OTA (Booking.com) с ростом LTV; 3) Мозг системы Gartner Intelligent Applications 2026 — автономные AI-агенты внутри CRM, которые сами анализируют трафик, дожимают лиды и исключают потерю 33% времени.",
+            improve: "Соединяем все 3 звена в единый конвейер в папках Traffic и Thought/Мысль: 1) Запускаем DFY Pay-on-Results оффер для отелей (Доминикана, Белград, РФ) и B2B-клиентов; 2) Ставим нашу AI-воронку прямого бронирования и возврата гостей (по модели Profitroom + JoinTECH); 3) Управляем всем через интеллектуальное ядро Виртуального Офиса (Gartner 2026).",
+            projects: ["Traffic", "Thought/Мысль", "Белый Доминикана", "Unity Inc", "Alberta"]
+        },
+        {
             issue: "#72",
             source: "Андрей Беловолов (@belovolov_andrey) & сайт join-tech.ru",
             learned: "Собственники не покупают «просто сайт» или «просто CRM» — они покупают устранение дыр на стыках, где сгорает 30% рекламного бюджета и 35% первичных клиентов.",
@@ -1831,11 +1852,11 @@
             projects: ["Позновалка", "8 слайдов карусель Белорусия", "Beyondyourfood.com"]
         },
         {
-            issue: "#69",
+            issue: "#69 и #94",
             source: "Gartner Predicts 2026: Intelligent Applications (ThoughtSpot)",
             learned: "Более 33% времени уходит на поиск информации по разным папкам и чатам. Будущее за приложениями со встроенным ИИ-агентом и единым окном управления.",
-            improve: "Все 46 папок ноутбука, все 72 задачи, база знаний и план на Сегодня/Завтра сведены в единую мобильную панель, работающую даже при выключенном ПК.",
-            projects: ["GitHub_Control_Panel", "ai-memory-workspace"]
+            improve: "Все папки ноутбука, все задачи, база знаний и план на Сегодня/Завтра сведены в единую мобильную панель, работающую даже при выключенном ПК.",
+            projects: ["Thought/Мысль", "GitHub_Control_Panel", "ai-memory-workspace"]
         },
         {
             issue: "#68",
@@ -1847,6 +1868,7 @@
     ];
 
     const EVOLVED_INSTINCTS = [
+        { id: "exponential-profitroom-dfy-synergy", conf: 97, domain: "Трафик & Монетизация", title: "Связка Exponential Traffic (DFY) + Profitroom + Gartner AI", rule: "Вход без ретейнера (клиент платит только ad spend) -> конверсия через прямые бронирования/Mini App (Profitroom) -> управление через автономных AI-агентов (ThoughtSpot/Gartner)." },
         { id: "jointech-engineering-funnel", conf: 96, domain: "Бизнес-модель", title: "Воронка Инженерного Аудита (JoinTECH)", rule: "Бесплатный 40-мин разбор -> Платный аудит 6 узлов -> Внедрение на чистом коде и Mini Apps" },
         { id: "telegram-miniapp-over-labyrinths", conf: 95, domain: "UX & Конверсия", title: "Telegram Mini Apps вместо кнопочных лабиринтов", rule: "Заменять 10-шаговых ботов на визуальный Web UI в 2 клика и Навигатор канала" },
         { id: "dan-martell-ai-leverage-matrix", conf: 95, domain: "AI-Стратегия", title: "Матрица рычага ИИ ($35K → $100K → $1M+)", rule: "Авто-конспект ссылок -> Авто-контент и ответ за 30 сек -> Собственная мобильная CRM" },
@@ -1854,12 +1876,26 @@
         { id: "ltv-qr-retention-loop", conf: 93, domain: "Повторные продажи", title: "Возврат 35% базы через QR + триггеры", rule: "Отказ от скидок 30% в лоб; QR-оцифровка гостя и авто-напоминание через 14–30 дней" },
         { id: "similarweb-free-traffic-system", conf: 92, domain: "Трафик & SEO", title: "Перехват Referrals и SEO на чистом коде", rule: "Снятие реферальных доноров через Similarweb + посадочные под 6 отраслей (<1 сек на мобилках)" },
         { id: "zero-cost-content-factory", conf: 92, domain: "Контент 0 ₽/мес", title: "Локальная фабрика Reels/Shorts без подписок", rule: "Agent Reach + Jina + yt-dlp -> сценарий -> edge-tts -> faster-whisper -> FFmpeg" },
-        { id: "gartner-2026-intelligent-crm", conf: 91, domain: "Архитектура", title: "Intelligent Application (Gartner 2026)", rule: "Единое мобильное окно папок, задач, плана и базы знаний без потери времени на поиск" },
+        { id: "gartner-2026-intelligent-crm", conf: 95, domain: "Архитектура", title: "Intelligent Application (Gartner 2026)", rule: "Единое мобильное окно папок, задач, плана и базы знаний без потери времени на поиск" },
         { id: "alberta-funnel-voice", conf: 90, domain: "Маркетинг", title: "Эстетика Kinfolk & 60 FPS Scroll (Alberta)", rule: "Спокойный премиальный тон, 900 кадров WebP и выдача лид-магнита без трения" },
         { id: "action-matrix-clarity-human-vs-ai", conf: 96, domain: "Управление & CRM", title: "Матрица Автономии: Четкое разделение ИИ vs Человек", rule: "Всегда разделять задачи на 100% автономные для агента и требующие действия человека (финансы, ключи, личная отправка)." }
     ];
 
     const FALLBACK_KB = [
+        {
+            id: "kb-90-95-96",
+            issue: 96,
+            category: "Проект: Traffic & Thought/Мысль",
+            title: "Единая система: Exponential Traffic (DFY) + Profitroom (Hotel Booking 360) + Gartner Intelligent Apps",
+            source_url: "https://exponentialtraffic.com/dfy",
+            secondary_url: "https://profitroom.com/solutions/individual-hotels/",
+            summary: "Полная синергия 3 платформ: 1) Exponential Traffic — привлечение клиентов по модели Pay-on-Results (клиент оплачивает рекламный бюджет $1.5k–$3k, мы берем % с результата); 2) Profitroom — система прямых бронирований и удержания гостей для отелей (Доминикана, Белград, РФ) без 15-20% комиссии Booking.com; 3) ThoughtSpot/Gartner — автономные AI-агенты внутри нашей CRM, управляющие воронкой 24/7.",
+            action_items: [
+                "Внедрить DFY Pay-on-Results оффер в проекты Белый Доминикана, Белград и Global Plus",
+                "Использовать механики Profitroom (прямая бронь + спец-пакеты + авто-возврат гостей) для отелей",
+                "Управлять аналитикой и лидами через ядро Thought/Мысль (Intelligent Applications)"
+            ]
+        },
         {
             id: "kb-81-82",
             issue: 82,
@@ -1945,6 +1981,35 @@
         }
     ];
 
+    function canonicalProjectName(rawName) {
+        const s = String(rawName || "").trim();
+        if (!s) return "Позновалка";
+        const low = s.toLowerCase();
+        const stripped = low.replace(/[\\/*?:"<>|]/g, "").trim();
+        if (low === "thoughtмысль" || low === "thought/мысль" || stripped === "thoughtмысль") {
+            return "Thought/Мысль";
+        }
+        if (low === "ai_skills_and_macro_stabilization" || low === "ai skills & nobel stabilization") {
+            return "AI Skills & Nobel Stabilization";
+        }
+        if (low === "globalfilms" || low === "filmtools" || low === "globalfilms (filmtools)") {
+            return "GlobalFilms (Filmtools)";
+        }
+        if (low === "traffic") {
+            return "Traffic";
+        }
+        return s;
+    }
+
+    function sameProject(a, b) {
+        const ca = canonicalProjectName(a).toLowerCase();
+        const cb = canonicalProjectName(b).toLowerCase();
+        if (ca === cb) return true;
+        const sa = ca.replace(/[\\/*?:"<>|]/g, "").trim();
+        const sb = cb.replace(/[\\/*?:"<>|]/g, "").trim();
+        return Boolean(sa && sa === sb);
+    }
+
     let folderList = [...ALL_LAPTOP_FOLDERS];
     let allIssues = [];
     let commentsByIssue = {};
@@ -1959,12 +2024,19 @@
     // Загружаем локальный кэш, чтобы панель открывалась мгновенно без ожидания сети
     try {
         const cachedKb = JSON.parse(localStorage.getItem('crm_kb_cache') || 'null');
-        if (Array.isArray(cachedKb) && cachedKb.length > 0) kbItems = cachedKb;
+        if (Array.isArray(cachedKb) && cachedKb.length > 0) {
+            const existingIds = new Set(cachedKb.map(x => x.id));
+            FALLBACK_KB.forEach(fb => {
+                if (!existingIds.has(fb.id)) cachedKb.unshift(fb);
+            });
+            kbItems = cachedKb;
+        }
         const cachedIssues = JSON.parse(localStorage.getItem('crm_issues_cache') || 'null');
         if (Array.isArray(cachedIssues) && cachedIssues.length > 0) allIssues = cachedIssues;
         const customFolders = JSON.parse(localStorage.getItem('crm_custom_folders') || '[]');
         if (Array.isArray(customFolders)) {
-            customFolders.forEach(cf => {
+            customFolders.forEach(rawCf => {
+                const cf = canonicalProjectName(rawCf);
                 if (cf && !folderList.includes(cf)) folderList.unshift(cf);
                 if (cf && !PROJECT_META[cf]) {
                     PROJECT_META[cf] = { icon: '🚀', worked: true, client: false, desc: 'Создано через Мобильный Виртуальный Офис CRM' };
@@ -2014,12 +2086,12 @@
             const parts = raw.split("|");
             const cmd = parts[0].replace(/^CMD:\s*/i, "").trim();
             const projPart = parts.slice(1).join("|");
-            const project = projPart.replace(/^\s*PROJ:\s*/i, "").trim() || "Позновалка";
+            const project = canonicalProjectName(projPart.replace(/^\s*PROJ:\s*/i, "").trim() || "Позновалка");
             return { project, cmd };
         }
         const m = raw.match(/^\[(.*?)\]\s*(.*)$/);
         if (m) {
-            return { project: m[1].trim(), cmd: m[2].trim() };
+            return { project: canonicalProjectName(m[1].trim()), cmd: m[2].trim() };
         }
         return { project: "Позновалка", cmd: raw.replace(/^CMD:\s*/i, "").trim() };
     }
@@ -2041,8 +2113,9 @@
     }
 
     function selectProject(name, icon) {
-        currentProject = name;
-        const meta = PROJECT_META[name] || {};
+        const canon = canonicalProjectName(name);
+        currentProject = canon;
+        const meta = PROJECT_META[canon] || {};
         currentIcon = icon || meta.icon || "📁";
         document.getElementById("ws-project-title").innerText = currentIcon + " " + currentProject;
         renderProjects();
@@ -2087,7 +2160,7 @@
         const stats = {};
         allIssues.forEach(iss => {
             const parsed = parseIssueProject(iss.title);
-            const project = parsed.project;
+            const project = canonicalProjectName(parsed.project);
             const cmd = parsed.cmd;
             if (!stats[project]) stats[project] = { total: 0, open: 0, lastCmd: "" };
             stats[project].total++;
@@ -2095,11 +2168,14 @@
             if (!stats[project].lastCmd) stats[project].lastCmd = cmd;
         });
 
-        const allNamesSet = new Set(folderList);
-        Object.keys(stats).forEach(k => {
-            if (k && k !== "Other") allNamesSet.add(k);
+        const allNamesSet = new Set();
+        folderList.forEach(f => {
+            if (f) allNamesSet.add(canonicalProjectName(f));
         });
-        Object.keys(PROJECT_META).forEach(k => allNamesSet.add(k));
+        Object.keys(stats).forEach(k => {
+            if (k && k !== "Other") allNamesSet.add(canonicalProjectName(k));
+        });
+        Object.keys(PROJECT_META).forEach(k => allNamesSet.add(canonicalProjectName(k)));
 
         const allNames = Array.from(allNamesSet);
         const workedNames = allNames.filter(name => (stats[name] && stats[name].total > 0) || (PROJECT_META[name] && PROJECT_META[name].worked));
@@ -2134,7 +2210,7 @@
             if (q && !hay.includes(q)) return;
 
             const icon = meta.icon || (isWorked ? "🔥" : "📁");
-            const isSel = name.toLowerCase() === currentProject.toLowerCase();
+            const isSel = sameProject(name, currentProject);
             const safeName = escapeHtml(name).replace(/'/g, "\\'");
 
             html += '<div class="project-card ' + (isWorked ? 'worked-card ' : '') + (isSel ? 'selected' : '') + '" onclick="selectProject(\'' + safeName + '\', \'' + icon + '\')">' +
@@ -2177,7 +2253,7 @@
             const tomorrowSteps = ACTION_PLAN_STEPS.filter(s => s.day === "tomorrow");
 
             let html = '<div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; line-height: 1.42;">' +
-                '🤖 <b>Сформировано системой самообучения (SelfEvolvingSwarm v3.0):</b> Очередь выстроена по максимальной отдаче денег и времени на основе разбора задач #47–#72.' +
+                '🤖 <b>Сформировано системой самообучения (SelfEvolvingSwarm v3.0):</b> Очередь выстроена по максимальной отдаче денег и времени на основе разбора задач #47–#96.' +
                 '</div>' +
                 '<div class="section-divider"><span>☀️ ЧТО ДЕЛАЕМ СЕГОДНЯ (ПО ОЧЕРЕДИ)</span><span>4 шага</span></div>';
 
@@ -2231,7 +2307,7 @@
 
         if (planSubView === "improvements") {
             let html = '<div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; line-height: 1.42;">' +
-                '🔍 <b>Список изученных задач (#47–#72):</b> Что именно агент понял из вашей Базы Знаний и какие улучшения внедряются в наши папки.' +
+                '🔍 <b>Список изученных задач (#47–#96):</b> Что именно агент понял из вашей Базы Знаний и какие улучшения внедряются в наши папки.' +
                 '</div>';
             STUDIED_IMPROVEMENTS.forEach(item => {
                 const projButtons = item.projects.map(p => {
@@ -2285,7 +2361,7 @@
 
             const autoItems = [
                 { title: "Слушатель и CRM 24/7", desc: "Фоновый процесс непрерывно слушает задачи, скрапит ссылки (Jina AI / Telegram / YouTube), упаковывает конспекты и сохраняет в Базу Знаний.", icon: "🔄", tag: "Инфраструктура", proj: "Позновалка", cmd: "STATUS" },
-                { title: "Управление каталогами (98 папок)", desc: "Распознавание всех проектов, мгновенное создание новых папок на ПК прямо со смартфона и синхронизация с веткой data.", icon: "📁", tag: "Каталог", proj: "Позновалка", cmd: "FILES" },
+                { title: "Управление каталогами (101 папка)", desc: "Распознавание всех проектов, мгновенное создание новых папок на ПК прямо со смартфона и синхронизация с веткой data.", icon: "📁", tag: "Каталог", proj: "Позновалка", cmd: "FILES" },
                 { title: "Упаковка офферов и сайтов (Дима Урал)", desc: "15 готовых отраслевых сайтов-шаблонов и персональные коммерческие предложения для заводов и строителей Свердловской области.", icon: "🏗️", tag: "Продажи", proj: "Дима Верхняя Синичиха Алапаевск", cmd: "MARKETING" },
                 { title: "База компаний и КП (Белый Доминикана)", desc: "108 оцифрованных компаний и 216 готовых КП в Лас-Терренас, воронка Fast_Cash_Priority.", icon: "🌴", tag: "Лидогенерация", proj: "Белый Доминикана", cmd: "STATUS" },
                 { title: "Telegram-навигатор и посты (JoinTECH / Unity)", desc: "Генерация структуры Telegram Mini App в 2 клика + 5 экспертных постов без воды.", icon: "🤝", tag: "Воронка", proj: "Unity Inc", cmd: "DOCS" },
@@ -2408,7 +2484,7 @@
                     '</div>' +
                     '<div style="background:var(--bg-card); padding:8px; border-radius:8px; border:1px solid var(--border);">' +
                         '<div style="color:var(--text-dim);">Инстинктов самообучения</div>' +
-                        '<div style="font-size:1.15rem; font-weight:800; color:#10b981;">10 инстинктов</div>' +
+                        '<div style="font-size:1.15rem; font-weight:800; color:#10b981;">13 инстинктов</div>' +
                     '</div>' +
                     '<div style="background:var(--bg-card); padding:8px; border-radius:8px; border:1px solid var(--border);">' +
                         '<div style="color:var(--text-dim);">CRM-задач в облаке</div>' +
@@ -2424,11 +2500,11 @@
             html += '<div class="plan-card">' +
                 '<div style="font-size:0.88rem; font-weight:700; margin-bottom:6px;">🚀 Ключевые Проекты: Итоги и Следующие Шаги</div>' +
                 '<div style="font-size:0.79rem; line-height:1.5; color:var(--text-dim);">' +
+                    '• <b style="color:var(--text-main);">Traffic & Thought/Мысль:</b> Соединена связка Exponential Traffic (DFY Pay-on-Results) + Profitroom (Hotel Booking 360) + Gartner Intelligent Apps.<br>' +
                     '• <b style="color:var(--text-main);">Alberta Shirani:</b> Готовность 85%. Сайты V1/V2, 900 кадров WebP Canvas скролла, 9 промптов VEO, Telegram-бот. Блокер: ключи эквайринга (ЮKassa/Prodamus/CryptoBot) на 490 ₽.<br>' +
                     '• <b style="color:var(--text-main);">Дима Урал:</b> Готовность 90%. 15 отраслевых сайтов-шаблонов, динамические КП для заводов. Блокер: отправка первых 10 КП.<br>' +
                     '• <b style="color:var(--text-main);">Белый Доминикана:</b> Готовность 95%. Оцифровано 108 компаний и 216 КП в Лас-Терренас. Блокер: WhatsApp-рассылка 5 контактам.<br>' +
-                    '• <b style="color:var(--text-main);">Юра (KHL Live Bot):</b> Сервис khl_live_service_v14.py работает стабильно. Требуется архивация v1–v13.<br>' +
-                    '• <b style="color:var(--text-main);">Global Plus / JoinTECH:</b> Упакована модель инженерного аудита 6 узлов бизнеса и концепт Telegram-навигатора.' +
+                    '• <b style="color:var(--text-main);">Юра (KHL Live Bot):</b> Сервис khl_live_service_v14.py работает стабильно.' +
                 '</div>' +
                 '<div class="plan-footer" style="margin-top:10px;">' +
                     '<button class="mini-btn accent" onclick="setPlanSubView(\'autonomy\')">⚡ Открыть Матрицу Действий</button>' +
@@ -2578,7 +2654,7 @@
         const meta = PROJECT_META[currentProject] || {};
         const projIssues = allIssues.filter(iss => {
             const parsed = parseIssueProject(iss.title);
-            return parsed.project.toLowerCase() === currentProject.toLowerCase();
+            return sameProject(parsed.project, currentProject);
         });
 
         document.getElementById("ws-project-sub").innerText =
@@ -2590,8 +2666,16 @@
             return true;
         });
 
+        let appBannerHtml = "";
+        if (meta.appUrl) {
+            appBannerHtml = '<div style="background:linear-gradient(135deg, rgba(59,130,246,0.18), rgba(139,92,246,0.18)); border:1px solid rgba(59,130,246,0.45); border-radius:14px; padding:12px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">' +
+                '<div style="font-size:0.8rem; color:var(--text-main); font-weight:600;">⚡ В этой папке доступен интерактивный веб-модуль:</div>' +
+                '<a href="' + escapeHtml(meta.appUrl) + '" class="icon-btn primary" style="text-decoration:none; font-size:0.78rem; padding:7px 14px;">' + escapeHtml(meta.appLabel || "Открыть интерактивный модуль ↗") + '</a>' +
+            '</div>';
+        }
+
         if (filtered.length === 0) {
-            feed.innerHTML = '<div style="margin:auto; text-align:center; max-width:330px; color:var(--text-dim); padding:26px 10px;">' +
+            feed.innerHTML = appBannerHtml + '<div style="margin:auto; text-align:center; max-width:330px; color:var(--text-dim); padding:26px 10px;">' +
                 '<div style="font-size:2.3rem; margin-bottom:8px;">' + currentIcon + '</div>' +
                 '<div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Папка «' + escapeHtml(currentProject) + '»</div>' +
                 '<div style="font-size:0.8rem; line-height:1.45; margin-bottom:12px;">' + escapeHtml(meta.desc || "Отправьте ссылку или задачу ниже — всё сохранится в облачной CRM даже если ноутбук выключен.") + '</div>' +
@@ -2600,7 +2684,7 @@
             return;
         }
 
-        let html = "";
+        let html = appBannerHtml;
         filtered.forEach(iss => {
             const parsed = parseIssueProject(iss.title);
             const cmd = parsed.cmd;
@@ -3073,14 +3157,16 @@
             const pObj = await readRepoJson("projects.json");
             if (pObj && pObj.json && Array.isArray(pObj.json.projects)) {
                 pObj.json.projects.forEach(rp => {
-                    const pName = typeof rp === "string" ? rp : (rp && rp.name ? rp.name : "");
+                    const rawName = typeof rp === "string" ? rp : (rp && rp.name ? rp.name : "");
+                    const pName = canonicalProjectName(rawName);
                     if (pName && !folderList.includes(pName)) folderList.push(pName);
                 });
             }
             try {
                 const custom = JSON.parse(localStorage.getItem("crm_custom_folders") || "[]");
                 if (Array.isArray(custom)) {
-                    custom.forEach(cf => {
+                    custom.forEach(rawCf => {
+                        const cf = canonicalProjectName(rawCf);
                         if (cf && !folderList.includes(cf)) folderList.unshift(cf);
                     });
                 }
