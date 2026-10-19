@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-10-19 11:17:55",
+  "updated_at": "2026-10-19 11:17:58",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261019_111758",
+      "issue": "Auto",
+      "category": "Проект: Позновалка",
+      "title": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео ",
+      "source_url": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy",
+      "secondary_url": "",
+      "date": "19.10.2026",
+      "summary": "Четкий ответ по существу задачи  \nВидео «NxTsA72O5x0» (Dan Martell) — практическое руководство по созданию высокоэффективной воронки продаж для цифровых продуктов и услуг. Ключевые моменты:\n\n| Этап | Что делается | Как это выглядит в видео |\n|------|--------------|--------------------------|\n| 1. Привлечение | Использовать короткие, целевые видео‑объявления (TikTok, YouTube Shorts) + таргетинг по интересам/поведению.",
+      "agent": "Swarm Knowledge & Media Extraction Agent",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Alberta",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261019_111758.md",
+        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
+      ]
+    },
     {
       "id": "kb-20261019_111755",
       "issue": "Auto",
