@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-19T16:32:55.920744+00:00",
+  "updated_at": "2026-10-19T16:36:02.295Z",
   "version": "9.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792427761367",
+      "issue": 101,
+      "category": "Проект: Позновалка",
+      "title": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&utm_term=&utm_cam",
+      "source_url": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&utm_term=&utm_campaign=RP_PMAX_Google_Prospecting_MOFU_Reg-T1T2_EMEA_EU_EN_All_23736473219&utm_content=_m_&hsa_acc=1706531352&hsa_cam=23736473219&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23736483581",
+      "secondary_url": "",
+      "date": "19.10.2026",
+      "summary": "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Позновалка"
+      ]
+    },
     {
       "id": "kb-1792426103881",
       "issue": 100,
