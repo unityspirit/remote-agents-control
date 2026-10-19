@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic & Direct Booking Engine — Exponential Traffic + Profitroom + Gartner AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #070b14;
+            --panel: #0f172a;
+            --card: #1e293b;
+            --border: rgba(148, 163, 184, 0.18);
+            --text: #f8fafc;
+            --dim: #94a3b8;
+            --accent: #38bdf8;
+            --emerald: #10b981;
+            --purple: #a855f7;
+            --amber: #f59e0b;
+            --rose: #f43f5e;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .brand {
+            font-weight: 800;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-btn {
+            text-decoration: none;
+            background: rgba(56, 189, 248, 0.14);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 7px 13px;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.14));
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 18px;
+            padding: 22px;
+        }
+        .hero h1 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .hero p {
+            font-size: 0.88rem;
+            color: var(--dim);
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 14px;
+        }
+        .pillar-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .pillar-badge {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 9px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+        .pillar-title {
+            font-size: 1.02rem;
+            font-weight: 800;
+        }
+        .pillar-list {
+            padding-left: 16px;
+            font-size: 0.82rem;
+            color: var(--dim);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .calc-box {
+            background: var(--panel);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 18px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .slider-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.83rem;
+            font-weight: 600;
+        }
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--emerald);
+        }
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .kpi-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .kpi-label {
+            font-size: 0.74rem;
+            color: var(--dim);
+        }
+        .kpi-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">🚦 Папка «Traffic» & «Thought/Мысль» — Единая Архитектура</div>
+        <a href="../index.html" class="back-btn">← Назад в Виртуальный Офис CRM</a>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>🔗 Как соединены Exponential Traffic + Profitroom + Gartner Intelligent Apps</h1>
+            <p>Полная интерактивная схема и калькулятор юнит-экономики по задачам #89–#96 из вашего мобильного Виртуального Офиса.</p>
+        </section>
+
+        <section class="grid-3">
+            <div class="pillar-card" style="border-top: 3px solid var(--emerald);">
+                <span class="pillar-badge" style="background:rgba(16,185,129,0.16); color:var(--emerald);">Звено 1 · Оффер без отказа</span>
+                <div class="pillar-title">🚀 Exponential Traffic (DFY Pay-on-Results)</div>
+                <ul class="pillar-list">
+                    <li><b>Условия входа:</b> $0 фиксированный ретейнер за «попытки». Клиент оплачивает только прямой рекламный бюджет ($1,500–$3,000).</li>
+                    <li><b>Монетизация агентства:</b> 15–25% RevShare с подтверждённой выручки или фикс за каждого квалифицированного клиента.</li>
+                    <li><b>Воронка:</b> Таргет/Reels ➔ Мини-VSL (5 мин) ➔ Скоринг-анкета бюджета ➔ Авто-букинг созвона.</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card" style="border-top: 3px solid var(--accent);">
+                <span class="pillar-badge" style="background:rgba(56,189,248,0.16); color:var(--accent);">Звено 2 · Ядро Конверсии и LTV</span>
+                <div class="pillar-title">🏨 Profitroom (Booking Engine 360 & CRM)</div>
+                <ul class="pillar-list">
+                    <li><b>Прямые бронирования:</b> Захват гостей на сайте/Mini App в 2 клика без 15–25% комиссии Booking.com и агрегаторов.</li>
+                    <li><b>Рост среднего чека (+30% ADR):</b> Авто-допродажа пакетов (SPA, трансфер, экскурсии, VIP) в момент бронирования.</li>
+                    <li><b>Возврат гостей:</b> Дожим брошенных корзин и авто-приглашение на повторный визит через WhatsApp/Telegram.</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card" style="border-top: 3px solid var(--purple);">
+                <span class="pillar-badge" style="background:rgba(168,85,247,0.16); color:var(--purple);">Звено 3 · Интеллектуальный Мозг</span>
+                <div class="pillar-title">💡 ThoughtSpot & Gartner 2026 (Мысль)</div>
+                <ul class="pillar-list">
+                    <li><b>Intelligent Application:</b> Единая мобильная AI-CRM вместо разрозненных чатов (экономия 33% времени команды).</li>
+                    <li><b>Ответ за 30 секунд:</b> Автономный AI-агент квалифицирует лида и фиксирует источник для честного расчёта комиссии DFY.</li>
+                    <li><b>Нобелевская стабилизация:</b> При просадке трафика ИИ автоматически включает триггер по тёплой базе гостей.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="calc-box">
+            <h2 style="font-size:1.08rem; font-weight:800;">🧮 Интерактивный калькулятор дохода по модели DFY (Exponential + Profitroom)</h2>
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>Количество подключенных клиентов (Отели / B2B):</span>
+                    <span id="lbl-clients" style="color:var(--emerald);">5 клиентов</span>
+                </div>
+                <input type="range" id="inp-clients" min="1" max="25" value="5" oninput="recalc()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>Рекламный бюджет 1 клиента в месяц (оплачивает клиент):</span>
+                    <span id="lbl-adspend" style="color:var(--accent);">$2,000 / мес</span>
+                </div>
+                <input type="range" id="inp-adspend" min="500" max="10000" step="500" value="2000" oninput="recalc()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>Средняя окупаемость воронки (ROAS с учётом апсейлов Profitroom):</span>
+                    <span id="lbl-roas" style="color:var(--purple);">5.0x</span>
+                </div>
+                <input type="range" id="inp-roas" min="2" max="10" step="0.5" value="5" oninput="recalc()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>Наша доля Pay-on-Results (RevShare %):</span>
+                    <span id="lbl-revshare" style="color:var(--amber);">20%</span>
+                </div>
+                <input type="range" id="inp-revshare" min="10" max="35" step="5" value="20" oninput="recalc()">
+            </div>
+
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-label">Выручка 1 клиента с воронки</div>
+                    <div class="kpi-val" id="kpi-client-rev" style="color:var(--text);">$10,000</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Экономия отеля на Booking.com (18%)</div>
+                    <div class="kpi-val" id="kpi-ota-save" style="color:var(--accent);">$1,800</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Наш доход с 1 клиента (DFY)</div>
+                    <div class="kpi-val" id="kpi-agency-one" style="color:var(--emerald);">$2,000</div>
+                </div>
+                <div class="kpi-card" style="border-color:rgba(16,185,129,0.5);">
+                    <div class="kpi-label">ИТОГО доход агентства в месяц</div>
+                    <div class="kpi-val" id="kpi-agency-total" style="color:var(--emerald);">$10,000 / мес</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function recalc() {
+            const clients = Number(document.getElementById('inp-clients').value);
+            const adspend = Number(document.getElementById('inp-adspend').value);
+            const roas = Number(document.getElementById('inp-roas').value);
+            const revshare = Number(document.getElementById('inp-revshare').value);
+
+            document.getElementById('lbl-clients').innerText = clients + ' клиент(ов)';
+            document.getElementById('lbl-adspend').innerText = '$' + adspend.toLocaleString() + ' / мес';
+            document.getElementById('lbl-roas').innerText = roas.toFixed(1) + 'x';
+            document.getElementById('lbl-revshare').innerText = revshare + '%';
+
+            const clientRev = Math.round(adspend * roas);
+            const otaSave = Math.round(clientRev * 0.18);
+            const agencyOne = Math.round(clientRev * (revshare / 100));
+            const agencyTotal = agencyOne * clients;
+
+            document.getElementById('kpi-client-rev').innerText = '$' + clientRev.toLocaleString();
+            document.getElementById('kpi-ota-save').innerText = '$' + otaSave.toLocaleString();
+            document.getElementById('kpi-agency-one').innerText = '$' + agencyOne.toLocaleString();
+            document.getElementById('kpi-agency-total').innerText = '$' + agencyTotal.toLocaleString() + ' / мес';
+        }
+        recalc();
+    </script>
+</body>
+</html>
