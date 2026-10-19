@@ -2028,11 +2028,25 @@
             category: "clients",
             client: true,
             desc: "Завод ЗКСК, щебень, гранит, бетон: 15 адаптированных сайтов-шаблонов, коммерческие предложения и оптовые B2B продажи (Агент: B2B Industrial & Factory Sales Lead)"
+        },
+        "Ghost Ghetto Child (Музыка)": {
+            icon: "🎵",
+            worked: true,
+            category: "media",
+            client: true,
+            desc: "Ghost Ghetto Child (@ghostghettochild) — международная дистрибуция треков (Spotify, Apple Music, YouTube Music, VK, Яндекс) и продюсирование"
+        },
+        "Ptg-Law (Юридические услуги)": {
+            icon: "⚖️",
+            worked: true,
+            category: "clients",
+            client: true,
+            desc: "Ptg-Law (Пятигорск) — сервис юридических услуг, бесплатный разбор дел и генерация клиентского потока"
         }
     };
 
     const ALL_LAPTOP_FOLDERS = [
-        "12 IT Продуктов (Короче Капитан)", "Traffic", "Thought/Мысль", "AI Skills & Nobel Stabilization",
+        "Ghost Ghetto Child (Музыка)", "Ptg-Law (Юридические услуги)", "12 IT Продуктов (Короче Капитан)", "Traffic", "Thought/Мысль", "AI Skills & Nobel Stabilization",
         "Позновалка", "GlobalFilms (Filmtools)", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
         "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
         "Belgrade_Sales_Kit", "Belgrade_Demo_Sites", "Beyondyourfood.com", "UpworkVault",
@@ -2347,6 +2361,12 @@
         }
         if (low === "traffic") {
             return "Traffic";
+        }
+        if (low.includes("ghostghettochild") || low.includes("ghost ghetto child") || low.includes("музык")) {
+            return "Ghost Ghetto Child (Музыка)";
+        }
+        if (low.includes("ptg-law") || (low.includes("юрист") && low.includes("пятигорск"))) {
+            return "Ptg-Law (Юридические услуги)";
         }
         return s;
     }
@@ -3488,7 +3508,7 @@
             // Извлечение связанных проектов для быстрых кнопок перехода
             let relatedBadgesHtml = "";
             const matchedRel = [];
-            const allKnown = ["12 IT Продуктов (Короче Капитан)", "Traffic", "Alberta", "Дима Верхняя Синичиха Алапаевск", "Белый Доминикана", "GlobalFilms (Filmtools)", "Юра", "Unity Inc", "AI Skills & Nobel Stabilization", "Позновалка"];
+            const allKnown = ["Ghost Ghetto Child (Музыка)", "Ptg-Law (Юридические услуги)", "12 IT Продуктов (Короче Капитан)", "Traffic", "Alberta", "Дима Верхняя Синичиха Алапаевск", "Белый Доминикана", "GlobalFilms (Filmtools)", "Юра", "Unity Inc", "AI Skills & Nobel Stabilization", "Позновалка"];
             for (const rName of allKnown) {
                 const shortWord = rName.split(" ")[0];
                 if (rName !== project && (cleanReply.includes(rName) || (shortWord.length > 3 && cleanReply.includes(shortWord)))) {
@@ -3540,6 +3560,16 @@
     }
 
     const DEFAULT_HUMAN_ACTIONS = [
+        {
+            id: "act-music",
+            proj: "Ghost Ghetto Child (Музыка)",
+            badge: "Музыкальный релиз",
+            color: "#06b6d4",
+            title: "🎵 Ghost Ghetto Child: Отправить оффер дистрибуции в Telegram",
+            desc: "ИИ подготовил оффер на Spotify/Apple Music и расчет роялти. Требуется: отправить текст артисту @ghostghettochild и согласовать процент.",
+            who: "Власлав (1 мин)",
+            done: false
+        },
         {
             id: "act-globalfilms",
             proj: "GlobalFilms (Filmtools)",
