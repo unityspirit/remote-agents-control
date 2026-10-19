@@ -766,6 +766,158 @@
             color: var(--accent);
         }
 
+        /* AI FOLLOW-UP PROPOSALS & INTERACTIVE DIALOGUE */
+        .task-ai-proposals {
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px dashed rgba(139, 92, 246, 0.35);
+            border-radius: 10px;
+            padding: 9px 11px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .proposals-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #c084fc;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .proposals-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .proposal-chip {
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: var(--text-main);
+            border-radius: 7px;
+            padding: 5px 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.15s;
+        }
+
+        .proposal-chip:hover {
+            background: rgba(139, 92, 246, 0.28);
+            border-color: #c084fc;
+        }
+
+        .task-dialogue-box {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 10px;
+            padding: 9px 11px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .dialogue-header {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dialogue-input-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dialogue-input {
+            flex: 1;
+            height: 34px;
+            padding: 0 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 0.78rem;
+            outline: none;
+        }
+
+        .dialogue-input:focus {
+            border-color: var(--accent);
+        }
+
+        .quick-skill-pills {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .skill-mini-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 2px 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .skill-mini-tag:hover {
+            background: rgba(56, 189, 248, 0.22);
+        }
+
+        /* ACTION REQUIRED BANNER & BADGE */
+        .alert-pill-btn {
+            background: rgba(244, 63, 94, 0.15) !important;
+            border-color: rgba(244, 63, 94, 0.4) !important;
+            color: #fb7185 !important;
+        }
+
+        .human-action-strip {
+            background: linear-gradient(90deg, rgba(244, 63, 94, 0.16), rgba(245, 158, 11, 0.16));
+            border-bottom: 1px solid rgba(244, 63, 94, 0.3);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 0.76rem;
+            cursor: pointer;
+        }
+
+        .strip-badge {
+            background: #f43f5e;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            letter-spacing: 0.04em;
+        }
+
+        .strip-text {
+            color: #fecdd3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        .strip-arrow {
+            color: #fbbf24;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
         .ws-footer {
             background: var(--bg-panel);
             border-top: 1px solid var(--border);
@@ -1103,6 +1255,7 @@
             </div>
         </div>
         <div class="topbar-actions">
+            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Требуется действие">🚨 Действия (<span id="topbar-action-cnt">4</span>)</button>
             <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Тема">☀️</button>
             <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ Папка</button>
             <button class="icon-btn" onclick="refreshAllData(true)" title="Обновить">🔄</button>
@@ -1113,6 +1266,13 @@
     <div class="quick-save-banner">
         <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="🔗 Вставьте сайт, ссылку или мысль в Позновалку (работает даже без ПК)..." onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
         <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
+    </div>
+
+    <!-- ACTION REQUIRED ALERT STRIP -->
+    <div class="human-action-strip" id="human-action-strip" onclick="openActionModal()">
+        <span class="strip-badge">🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ</span>
+        <span class="strip-text">Ожидают вашего решения: <strong>Alberta</strong> (API ключи), <strong>Урал Гранит</strong> (звонок/КП), <strong>Доминикана</strong> (WhatsApp), <strong>YouTube</strong> (Google OAuth).</span>
+        <span class="strip-arrow">Подробнее ➔</span>
     </div>
 
     <div class="main-body">
@@ -1295,6 +1455,26 @@
         <div class="modal-footer">
             <button class="modal-btn cancel" onclick="closeNewFolderModal()">Отмена</button>
             <button class="modal-btn confirm" id="btn-create-folder-confirm" onclick="confirmCreateFolder()">✅ Создать папку</button>
+        </div>
+    </div>
+</div>
+
+<!-- ACTION REQUIRED MODAL -->
+<div id="action-modal" class="modal-overlay" style="display:none;" onclick="if(event.target===this) closeActionModal()">
+    <div class="modal-card" style="max-width: 520px;">
+        <div class="modal-header">
+            <h3>🚨 Где требуется действие человека</h3>
+            <button class="modal-close" onclick="closeActionModal()">✕</button>
+        </div>
+        <div class="modal-body" style="gap:10px;">
+            <div style="font-size:0.77rem; color:var(--text-dim); line-height:1.4;">
+                ИИ завершил 100% автономной работы по всем проектам. Ниже пункты, где физически необходимо ваше участие (Власлав):
+            </div>
+            <div id="action-modal-items" style="display:flex; flex-direction:column; gap:8px;"></div>
+        </div>
+        <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:10px;">
+            <a href="../AI_Skills_And_Macro_Stabilization/index.html" class="icon-btn" style="text-decoration:none; font-size:0.74rem;">📈 Нобелевский Центр ↗</a>
+            <button class="modal-btn confirm" onclick="closeActionModal()">Готово</button>
         </div>
     </div>
 </div>
@@ -1507,10 +1687,23 @@
             worked: true,
             client: false,
             desc: "GlobalFilms — кинопроизводство, вызывные листы, съемочный график КПП, сценарии, актеры и смета бюджета (аналог Filmtools на Next.js 16)"
+        },
+        "AI Skills & Nobel Stabilization": {
+            icon: "📈",
+            worked: true,
+            client: false,
+            desc: "30 ИИ-навыков (Dan Martell) + Макроэкономическая стабилизация (Нобелевская премия 2026 Hall & Woodford): интерактивный симулятор, сглаживание волатильности и трекер действий человека"
+        },
+        "AI_Skills_And_Macro_Stabilization": {
+            icon: "📈",
+            worked: true,
+            client: false,
+            desc: "30 ИИ-навыков (Dan Martell) + Макроэкономическая стабилизация (Нобелевская премия 2026 Hall & Woodford): интерактивный симулятор, сглаживание волатильности и трекер действий человека"
         }
     };
 
     const ALL_LAPTOP_FOLDERS = [
+        "AI Skills & Nobel Stabilization", "AI_Skills_And_Macro_Stabilization",
         "Позновалка", "GlobalFilms (Filmtools)", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
         "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
         "Belgrade_Sales_Kit", "Belgrade_Demo_Sites", "Beyondyourfood.com", "UpworkVault",
@@ -2411,6 +2604,7 @@
         filtered.forEach(iss => {
             const parsed = parseIssueProject(iss.title);
             const cmd = parsed.cmd;
+            const project = parsed.project || currentProject;
             const isOpen = iss.state === "open";
             const comments = commentsByIssue[iss.number] || [];
             const timeStr = new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
@@ -2441,6 +2635,44 @@
                 '</div>';
             }
 
+            // 💡 Предложения по продолжению (ИИ)
+            const safeProj = escapeHtml(project).replace(/'/g, "\\'");
+            const safeCmd = escapeHtml(cmd).replace(/'/g, "\\'");
+            
+            const dynamicProposals = [
+                { label: "⚡ Внедрить в код", cmd: "Внедрить решение в код проекта " + project + ": " + cmd },
+                { label: "🔍 Разбор /expert", cmd: "/expert Глубокий экспертный разбор: " + cmd },
+                { label: "💼 Оценка /ceo", cmd: "/ceo Оцени экономический эффект и риски: " + cmd },
+                { label: "🚨 Действие человека?", cmd: "PLAN_ACTIONS: Где требуется действие человека по задаче: " + cmd }
+            ];
+
+            const proposalsHtml = '<div class="task-ai-proposals">' +
+                '<div class="proposals-title">💡 Предложения по продолжению (ИИ):</div>' +
+                '<div class="proposals-chips">' +
+                    dynamicProposals.map(p => {
+                        const sc = escapeHtml(p.cmd).replace(/'/g, "\\'");
+                        return '<button class="proposal-chip" onclick="sendTask(\'' + sc + '\')">' + escapeHtml(p.label) + '</button>';
+                    }).join("") +
+                '</div>' +
+            '</div>';
+
+            // 💬 Интерактивный ответ / вопрос к задаче
+            const dialogueBoxHtml = '<div class="task-dialogue-box">' +
+                '<div class="dialogue-header">💬 Написать свой ответ / вопрос к этой задаче:</div>' +
+                '<div class="dialogue-input-row">' +
+                    '<input type="text" class="dialogue-input" id="reply-input-' + iss.number + '" placeholder="Напишите ответ или уточнение ИИ (как в чате)..." onkeypress="if(event.key===\'Enter\') sendTaskFollowUp(' + iss.number + ', \'' + safeProj + '\')">' +
+                    '<button class="mini-btn accent" onclick="sendTaskFollowUp(' + iss.number + ', \'' + safeProj + '\')">Ответить ИИ 🚀</button>' +
+                '</div>' +
+                '<div class="quick-skill-pills">' +
+                    '<span class="skill-mini-tag" onclick="insertSkill(' + iss.number + ', \'/ceo\')">/ceo</span>' +
+                    '<span class="skill-mini-tag" onclick="insertSkill(' + iss.number + ', \'/critic\')">/critic</span>' +
+                    '<span class="skill-mini-tag" onclick="insertSkill(' + iss.number + ', \'/viral\')">/viral</span>' +
+                    '<span class="skill-mini-tag" onclick="insertSkill(' + iss.number + ', \'/strategy\')">/strategy</span>' +
+                    '<span class="skill-mini-tag" onclick="insertSkill(' + iss.number + ', \'/human\')">/human</span>' +
+                    '<span class="skill-mini-tag" onclick="insertSkill(' + iss.number + ', \'/simplify\')">/simplify</span>' +
+                '</div>' +
+            '</div>';
+
             html += '<div class="task-card ' + (isOpen ? 'running' : 'done') + '">' +
                 '<div class="task-meta tabular">' +
                     '<span>Задача #' + iss.number + ' · ' + timeStr + '</span>' +
@@ -2449,6 +2681,8 @@
                 '<div class="task-cmd">' + linkifyText(cmd) + '</div>' +
                 '<div class="task-reply ' + (isLong ? 'collapsed' : '') + '" id="' + replyId + '">' + linkifyText(cleanReply) + '</div>' +
                 choicesHtml +
+                proposalsHtml +
+                dialogueBoxHtml +
                 '<div class="reply-controls">' +
                     (isLong ? '<button class="mini-btn" onclick="toggleExpand(\'' + replyId + '\', this)">📖 Развернуть полностью</button>' : '<span></span>') +
                     '<button class="mini-btn" onclick="copyReplyText(' + iss.number + ')">📋 Копировать</button>' +
@@ -2471,6 +2705,145 @@
         if (!el) return;
         navigator.clipboard.writeText(el.innerText);
         showToast("📋 Скопировано в буфер обмена!");
+    }
+
+    const HUMAN_ACTIONS_LIST = [
+        {
+            id: "act-alberta",
+            proj: "Alberta",
+            badge: "Критично",
+            color: "var(--danger)",
+            title: "💎 Alberta Shirani: Предоставить доступы / API-ключи",
+            desc: "ИИ создал сайты V1/V2, 900 кадров скролла и воронку. Требуется: предоставить пароли к хостингу, токен Telegram бота и утвердить палитру.",
+            who: "Власлав лично",
+            done: false
+        },
+        {
+            id: "act-ural",
+            proj: "Дима Верхняя Синичиха Алапаевск",
+            badge: "Выручка",
+            color: "var(--danger)",
+            title: "🪨 Урал Гранит: Отправить КП и согласовать предоплату",
+            desc: "КП и расчёт сметы полностью собраны. Требуется: отправить PDF Диме и согласовать аванс 120 000 ₽ по телефону.",
+            who: "Власлав (звонок)",
+            done: false
+        },
+        {
+            id: "act-dominica",
+            proj: "Белый Доминикана",
+            badge: "Лиды",
+            color: "var(--warning)",
+            title: "🌴 Белый Доминикана: Привязать номер WhatsApp",
+            desc: "Мобильный лендинг и квиз готовы к трафику. Требуется: указать реальный номер WhatsApp менеджера для лидов.",
+            who: "Власлав (настройка)",
+            done: false
+        },
+        {
+            id: "act-youtube",
+            proj: "Позновалка",
+            badge: "Самообучение",
+            color: "var(--accent)",
+            title: "🎥 Google NotebookLM / YouTube: Авторизация аккаунта",
+            desc: "Для бесперебойного парсинга видео и генерации аудио-обзоров требуется авторизовать аккаунт Google в браузере.",
+            who: "Власлав (1 клик)",
+            done: false
+        }
+    ];
+
+    function openActionModal() {
+        const m = document.getElementById("action-modal");
+        if (!m) return;
+        m.style.display = "flex";
+        renderActionModalItems();
+    }
+
+    function closeActionModal() {
+        const m = document.getElementById("action-modal");
+        if (m) m.style.display = "none";
+    }
+
+    function renderActionModalItems() {
+        const container = document.getElementById("action-modal-items");
+        if (!container) return;
+        
+        let pending = 0;
+        let html = "";
+        HUMAN_ACTIONS_LIST.forEach(item => {
+            if (!item.done) pending++;
+            const safeProj = escapeHtml(item.proj).replace(/'/g, "\\'");
+            html += '<div style="background:var(--bg-panel); border:1px solid var(--border); border-radius:12px; padding:10px 12px; border-left:3px solid ' + item.color + '; display:flex; flex-direction:column; gap:6px;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+                    '<span style="font-size:0.68rem; font-weight:800; color:' + item.color + '; text-transform:uppercase;">' + item.badge + ' · ' + escapeHtml(item.proj) + '</span>' +
+                    '<label style="display:flex; align-items:center; gap:6px; font-size:0.75rem; cursor:pointer; color:var(--text-dim);">' +
+                        '<input type="checkbox" ' + (item.done ? 'checked' : '') + ' onchange="toggleHumanAction(\'' + item.id + '\', this.checked)">' +
+                        '<span>' + (item.done ? 'Выполнено' : 'Сделано') + '</span>' +
+                    '</label>' +
+                '</div>' +
+                '<div style="font-size:0.86rem; font-weight:700; color:var(--text-main);">' + item.title + '</div>' +
+                '<div style="font-size:0.77rem; color:var(--text-dim); line-height:1.4;">' + escapeHtml(item.desc) + '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">' +
+                    '<span style="font-size:0.72rem; color:var(--text-dim);">👤 Ответственный: <b>' + item.who + '</b></span>' +
+                    '<button class="mini-btn" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Открыть папку ➔</button>' +
+                '</div>' +
+            '</div>';
+        });
+
+        container.innerHTML = html;
+        const topCnt = document.getElementById("topbar-action-cnt");
+        if (topCnt) topCnt.innerText = pending;
+    }
+
+    function toggleHumanAction(id, isChecked) {
+        const item = HUMAN_ACTIONS_LIST.find(a => a.id === id);
+        if (item) {
+            item.done = isChecked;
+            renderActionModalItems();
+            showToast(isChecked ? "✅ Действие отмечено выполненным!" : "⏳ Действие возвращено в работу.");
+        }
+    }
+
+    async function sendTaskFollowUp(issueNumber, project) {
+        const inputEl = document.getElementById("reply-input-" + issueNumber);
+        if (!inputEl) return;
+        const text = inputEl.value.trim();
+        if (!text) {
+            showToast("⚠️ Напишите ваш ответ или вопрос для ИИ!");
+            return;
+        }
+
+        inputEl.value = "";
+        showToast("🚀 Отправляем ваш ответ ИИ...");
+
+        // Оптимистичное отображение в ленте
+        if (!commentsByIssue[issueNumber]) commentsByIssue[issueNumber] = [];
+        commentsByIssue[issueNumber].push({
+            id: "local-" + Date.now(),
+            body: "💬 **Ваш ответ (Власлав):** " + text + "\n\n_⏳ Запрос передан ИИ на ноутбук, формируется глубокий ответ..._",
+            created_at: new Date().toISOString()
+        });
+        renderWorkspaceFeed();
+
+        // 1. Отправка комментария к задаче
+        try {
+            await ghApi("/issues/" + issueNumber + "/comments", "POST", {
+                body: "💬 **Ответ пользователя (Власлав):**\n" + text
+            }, true);
+        } catch (e) {
+            console.warn("Comment post error:", e);
+        }
+
+        // 2. Постановка задачи в очередь ноутбука
+        const cmdToSend = "[Ответ к #" + issueNumber + "] " + text;
+        await sendTaskToProject(project || currentProject, cmdToSend, false);
+    }
+
+    function insertSkill(issueNumber, skillTag) {
+        const inputEl = document.getElementById("reply-input-" + issueNumber);
+        if (!inputEl) return;
+        if (!inputEl.value.startsWith(skillTag)) {
+            inputEl.value = skillTag + " " + inputEl.value.trim();
+        }
+        inputEl.focus();
     }
 
     // Автономный облачный парсер ссылок прямо с телефона (работает даже при выключенном ноутбуке!)
