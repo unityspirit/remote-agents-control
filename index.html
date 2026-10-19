@@ -712,6 +712,76 @@
             overflow: hidden;
         }
 
+        .task-reply-container {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .task-reply-container.collapsed {
+            max-height: 290px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .task-reply-container.collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, var(--bg-panel));
+            pointer-events: none;
+        }
+
+        .task-section-card {
+            border-radius: 11px;
+            padding: 10px 12px;
+            font-size: 0.81rem;
+            line-height: 1.48;
+        }
+
+        .task-section-card.studied {
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.32);
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .task-section-card.ai {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.32);
+            border-left: 4px solid #3b82f6;
+        }
+
+        .task-section-card.human-action {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            border-left: 4px solid #f59e0b;
+        }
+
+        .task-section-card.human-done {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-left: 4px solid #10b981;
+        }
+
+        .task-section-title {
+            font-weight: 700;
+            font-size: 0.79rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .task-section-body {
+            font-size: 0.80rem;
+            color: var(--text-main);
+            line-height: 1.48;
+            word-break: break-word;
+        }
+
         .choices-box {
             margin-top: 6px;
             display: flex;
@@ -2229,6 +2299,161 @@
         return s;
     }
 
+    const pendingCommentFetches = new Set();
+    async function fetchSingleIssueComments(issueNumber) {
+        if (!issueNumber || pendingCommentFetches.has(issueNumber)) return;
+        if (commentsByIssue[issueNumber] && commentsByIssue[issueNumber].length > 0) return;
+
+        pendingCommentFetches.add(issueNumber);
+        try {
+            const comms = await ghApi("/issues/" + issueNumber + "/comments?per_page=40", "GET", null, true);
+            if (Array.isArray(comms) && comms.length > 0) {
+                commentsByIssue[issueNumber] = comms;
+                try {
+                    localStorage.setItem("crm_comments_map", JSON.stringify(commentsByIssue));
+                } catch (e) {}
+                renderWorkspaceFeed();
+                renderCrmTasks();
+            }
+        } catch (e) {
+            console.warn("fetchSingleIssueComments #" + issueNumber, e);
+        } finally {
+            pendingCommentFetches.delete(issueNumber);
+        }
+    }
+
+    function resolveIssueContent(iss) {
+        if (!iss) return { replyText: "", source: "none" };
+        const comments = commentsByIssue[iss.number] || [];
+        let replyText = "";
+        let source = "none";
+
+        if (comments.length > 0) {
+            replyText = comments.map(c => c.body).join("\n\n---\n\n");
+            source = "comment";
+        } else if (iss.body && (
+            iss.body.includes("### 🧠") || 
+            iss.body.includes("### 🎯") || 
+            iss.body.includes("### 🤖") || 
+            iss.body.includes("### 🚀") || 
+            iss.body.includes("АВТОНОМНЫЙ ОБЛАЧНЫЙ РАЗБОР") || 
+            iss.body.includes("Отчёт с домашнего ноутбука") ||
+            (iss.body.trim().length > 100 && !iss.body.startsWith("Отправлено с мобильного"))
+        )) {
+            replyText = iss.body;
+            source = "body";
+        } else {
+            // Check kbItems cache from crm_data.json
+            const parsed = parseIssueProject(iss.title);
+            const cmdLower = (parsed.cmd || "").toLowerCase();
+            const urls = (iss.title + " " + (iss.body || "")).match(/https?:\/\/[^\s)\]>\"']+/g) || [];
+            
+            let matchKb = null;
+            if (urls.length > 0) {
+                matchKb = kbItems.find(k => k.source_url && urls.some(u => k.source_url.includes(u) || u.includes(k.source_url)));
+            }
+            if (!matchKb && cmdLower.length > 5) {
+                matchKb = kbItems.find(k => {
+                    const kt = (k.title || "").toLowerCase();
+                    return kt.includes(cmdLower.slice(0, 30)) || cmdLower.includes(kt.slice(0, 30));
+                });
+            }
+
+            if (matchKb) {
+                source = "kb";
+                const acts = (matchKb.action_items || []).map(a => "• " + a).join("\n");
+                replyText = "### 🧠 Что изучено агентом:\n" + (matchKb.summary || "Материал сохранен и структурирован в CRM.") + "\n\n" +
+                    (matchKb.agent ? "### 🤖 Что сделано ИИ (Автономно):\n- Ведущий агент: **" + matchKb.agent + "**\n- Папка сохранения: **" + (matchKb.category || parsed.project) + "**\n- Домен: **" + (matchKb.domain || "Экосистема проектов") + "**\n\n" : "") +
+                    "### 🚨 Действие человека (Власлав):\n" + (acts || "• Что требуется: ✅ Не требуется — материал сохранен в Базе Знаний 100% автономно.") + "\n\n" +
+                    (matchKb.source_url ? "**Источник:** " + matchKb.source_url + "\n" : "");
+            } else if (iss.state === "open") {
+                replyText = "⏳ Задача находится в очереди ИИ. Ноутбук обрабатывает её прямо сейчас...";
+                source = "pending";
+            } else {
+                if (iss.comments > 0) {
+                    replyText = "⏳ Загрузка подробного отчёта ИИ из GitHub...";
+                    source = "loading";
+                    fetchSingleIssueComments(iss.number);
+                } else if (iss.body && iss.body.trim().length > 25) {
+                    replyText = iss.body;
+                    source = "body_short";
+                } else {
+                    replyText = "✅ Задача выполнена и зафиксирована в системе.";
+                    source = "fallback";
+                }
+            }
+        }
+
+        return { replyText, source };
+    }
+
+    function formatReportIntoVisualCards(rawText) {
+        if (!rawText) return "";
+        const clean = rawText.replace(/<!--\s*CHOICES:[\s\S]*?-->/g, "").trim();
+
+        // Check if the text contains standard markdown section headings
+        const hasSections = /###\s+(?:🎯|🧠|🤖|🚨|🔗|💡|📁)/.test(clean) || /####\s+📌/.test(clean);
+        if (!hasSections) {
+            return '<div class="task-section-card ai"><div class="task-section-body">' + linkifyText(clean) + '</div></div>';
+        }
+
+        const blocks = clean.split(/(?=###\s+)/g);
+        let outHtml = "";
+
+        blocks.forEach(block => {
+            const trimmed = block.trim();
+            if (!trimmed) return;
+            const firstLine = trimmed.split('\n')[0] || "";
+            const bodyContent = trimmed.substring(firstLine.length).trim();
+
+            if (/###\s*🧠|Ключевые тезисы|выжимка|Изучено/i.test(firstLine)) {
+                const title = firstLine.replace(/^###\s*/, '');
+                outHtml += '<div class="task-section-card studied">' +
+                    '<div class="task-section-title" style="color:#a78bfa;">🧠 ' + escapeHtml(title) + '</div>' +
+                    '<div class="task-section-body">' + linkifyText(bodyContent) + '</div>' +
+                '</div>';
+            } else if (/###\s*🤖|Действие ИИ|Определена папка|Автоматически создана/i.test(firstLine)) {
+                const title = firstLine.replace(/^###\s*/, '');
+                outHtml += '<div class="task-section-card ai">' +
+                    '<div class="task-section-title" style="color:var(--accent);">🤖 ' + escapeHtml(title) + '</div>' +
+                    '<div class="task-section-body">' + linkifyText(bodyContent) + '</div>' +
+                '</div>';
+            } else if (/###\s*🚨|Действие человека/i.test(firstLine)) {
+                const isNone = /не требуется|выполнено 100%|автономно/i.test(bodyContent);
+                const title = firstLine.replace(/^###\s*/, '');
+                if (isNone) {
+                    outHtml += '<div class="task-section-card human-done">' +
+                        '<div class="task-section-title" style="color:#10b981;">✅ Действие человека: Не требуется</div>' +
+                        '<div class="task-section-body">' + linkifyText(bodyContent) + '</div>' +
+                    '</div>';
+                } else {
+                    outHtml += '<div class="task-section-card human-action">' +
+                        '<div class="task-section-title" style="color:#f59e0b;">🚨 ' + escapeHtml(title) + '</div>' +
+                        '<div class="task-section-body" style="font-weight:600;">' + linkifyText(bodyContent) + '</div>' +
+                    '</div>';
+                }
+            } else if (/###\s*🔗|Взаимосвязь/i.test(firstLine)) {
+                const title = firstLine.replace(/^###\s*/, '');
+                outHtml += '<div class="task-section-card" style="background:rgba(168,85,247,0.06); border:1px solid rgba(168,85,247,0.25); border-left:4px solid #a855f7;">' +
+                    '<div class="task-section-title" style="color:#c084fc;">🔗 ' + escapeHtml(title) + '</div>' +
+                    '<div class="task-section-body">' + linkifyText(bodyContent) + '</div>' +
+                '</div>';
+            } else if (/###\s*💡|Что продолжать|Предложения по продолжению/i.test(firstLine)) {
+                const title = firstLine.replace(/^###\s*/, '');
+                outHtml += '<div class="task-section-card" style="background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.25); border-left:4px solid var(--accent);">' +
+                    '<div class="task-section-title" style="color:var(--accent);">💡 ' + escapeHtml(title) + '</div>' +
+                    '<div class="task-section-body">' + linkifyText(bodyContent) + '</div>' +
+                '</div>';
+            } else if (/###\s*🎯\s*Выберите следующий шаг/i.test(firstLine)) {
+                // Handled in choices-box
+            } else {
+                outHtml += '<div class="task-section-card ai"><div class="task-section-body">' + linkifyText(trimmed) + '</div></div>';
+            }
+        });
+
+        return outHtml || '<div class="task-section-card ai"><div class="task-section-body">' + linkifyText(clean) + '</div></div>';
+    }
+
     function detectSmartRoute(text) {
         if (!text) return { project: "Позновалка", agent: "Swarm Knowledge & Media Extraction Agent", domain: "05_Медиа & Контент", related: ["12 IT Продуктов", "Traffic"] };
         const low = text.toLowerCase();
@@ -2932,10 +3157,10 @@
             const parsed = parseIssueProject(iss.title);
             const project = parsed.project;
             const cmd = parsed.cmd;
-            const comments = commentsByIssue[iss.number] || [];
-            const lastReply = comments.length > 0 ? comments[comments.length - 1].body : (iss.body || "");
+            const resolved = resolveIssueContent(iss);
+            const lastReply = resolved.replyText;
 
-            if (crmStatusFilter === "waiting_action" && iss.state !== "open" && !/PLAN_ACTIONS|Действие человека/i.test(cmd)) return;
+            if (crmStatusFilter === "waiting_action" && iss.state !== "open" && !/PLAN_ACTIONS|Действие человека/i.test(cmd + " " + lastReply)) return;
             if (crmStatusFilter === "open" && iss.state !== "open") return;
             if (crmStatusFilter === "closed" && iss.state === "open") return;
             if (crmStatusFilter === "links" && !/https?:\/\//i.test(cmd + " " + lastReply)) return;
@@ -2950,13 +3175,35 @@
                 : '<span class="badge done">✅ Выполнено</span>';
             const safeProj = escapeHtml(project).replace(/'/g, "\\'");
 
+            // Извлечение ключевой сути "Что изучено"
+            let studiedSnippet = "";
+            const mStudied = lastReply.match(/(?:🧠|Ключевые тезисы|Изучено)[^:\n]*:?\s*([\s\S]*?)(?=###|$)/i);
+            if (mStudied && mStudied[1]) {
+                studiedSnippet = mStudied[1].replace(/[#*`•\-\n]+/g, ' ').trim().slice(0, 160);
+            } else if (lastReply.includes("АВТОНОМНЫЙ ОБЛАЧНЫЙ РАЗБОР")) {
+                const mTitle = lastReply.match(/Title:\s*([^\n]+)/i);
+                if (mTitle) studiedSnippet = mTitle[1].trim();
+            }
+
+            // Извлечение статуса "Действие человека"
+            const hasHumanSection = /🚨.*Действие человека/i.test(lastReply);
+            const isHumanNeeded = hasHumanSection && !/не требуется|выполнено 100%|автономно/i.test(lastReply);
+            const actionBadge = isHumanNeeded
+                ? '<span style="color:#f59e0b; font-weight:700; font-size:0.73rem;">🚨 Требуется действие</span>'
+                : '<span style="color:#10b981; font-weight:600; font-size:0.73rem;">✅ Выполнено автономно</span>';
+
             html += '<div class="crm-task-card" onclick="selectProject(\'' + safeProj + '\')">' +
                 '<div class="crm-task-top tabular">' +
                     '<span class="crm-project-tag"># ' + iss.number + ' · 📁 ' + escapeHtml(project) + '</span>' +
                     '<span>' + dateStr + ' ' + statusBadge + '</span>' +
                 '</div>' +
                 '<div class="crm-task-title">' + linkifyText(cmd) + '</div>' +
-                (lastReply ? '<div class="crm-task-snippet">' + escapeHtml(lastReply.replace(/[#*`]/g, '')) + '</div>' : '') +
+                (studiedSnippet ? '<div style="font-size:0.76rem; color:var(--text-main); background:rgba(139,92,246,0.08); border-left:3px solid #8b5cf6; padding:6px 9px; border-radius:6px; margin-top:2px;">🧠 <b>Изучено:</b> ' + escapeHtml(studiedSnippet) + '...</div>' : '') +
+                (lastReply ? '<div class="crm-task-snippet">' + escapeHtml(lastReply.replace(/[#*`]/g, '').slice(0, 220)) + '</div>' : '') +
+                '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px; font-size:0.74rem;">' +
+                    actionBadge +
+                    '<button class="mini-btn" onclick="event.stopPropagation(); selectProject(\'' + safeProj + '\')">Открыть в папке →</button>' +
+                '</div>' +
             '</div>';
         });
 
@@ -3052,21 +3299,14 @@
             const comments = commentsByIssue[iss.number] || [];
             const timeStr = new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
 
-            let replyText = "";
-            if (comments.length > 0) {
-                replyText = comments.map(c => c.body).join("\n\n---\n\n");
-            } else if (iss.body && iss.body.includes("АВТОНОМНЫЙ ОБЛАЧНЫЙ РАЗБОР")) {
-                replyText = iss.body;
-            } else if (!isOpen) {
-                replyText = "✅ Задача выполнена и сохранена в CRM.";
-            } else {
-                replyText = "✅ Материал надежно сохранен в облачной CRM! Как только ноутбук выйдет на связь (или завершится облачный парсинг), здесь появится глубокий разбор.";
-            }
+            const resolved = resolveIssueContent(iss);
+            let replyText = resolved.replyText;
 
             const choices = extractChoices(replyText);
             const cleanReply = replyText.replace(/<!--\s*CHOICES:[\s\S]*?-->/g, "").trim();
-            const isLong = cleanReply.length > 440;
+            const isLong = cleanReply.length > 550;
             const replyId = "reply-box-" + iss.number;
+            const visualCardsHtml = formatReportIntoVisualCards(cleanReply);
 
             let choicesHtml = "";
             if (choices.length > 0) {
@@ -3139,7 +3379,9 @@
                     '<span class="badge ' + (isOpen ? 'running' : 'done') + '">' + (isOpen ? '☁️ В облачной очереди' : '✅ Выполнено') + '</span>' +
                 '</div>' +
                 '<div class="task-cmd">' + linkifyText(cmd) + '</div>' +
-                '<div class="task-reply ' + (isLong ? 'collapsed' : '') + '" id="' + replyId + '">' + linkifyText(cleanReply) + '</div>' +
+                '<div class="task-reply-container ' + (isLong ? 'collapsed' : '') + '" id="' + replyId + '">' +
+                    visualCardsHtml +
+                '</div>' +
                 choicesHtml +
                 relatedBadgesHtml +
                 proposalsHtml +
@@ -3738,16 +3980,19 @@
             }
 
             if (Array.isArray(rawComments)) {
-                const map = {};
                 rawComments.slice().reverse().forEach(c => {
                     const m = String(c.issue_url || "").match(/\/issues\/(\d+)$/);
                     if (m) {
                         const num = Number(m[1]);
-                        if (!map[num]) map[num] = [];
-                        map[num].push(c);
+                        if (!commentsByIssue[num]) commentsByIssue[num] = [];
+                        if (!commentsByIssue[num].some(ex => ex.id === c.id)) {
+                            commentsByIssue[num].push(c);
+                        }
                     }
                 });
-                commentsByIssue = map;
+                try {
+                    localStorage.setItem("crm_comments_map", JSON.stringify(commentsByIssue));
+                } catch (e) {}
             }
         } catch (e) {
             console.warn("Issues sync info:", e);
@@ -3767,6 +4012,12 @@
     }
 
     // Мгновенный старт интерфейса без ожидания ответа от сервера
+    try {
+        const initialComms = JSON.parse(localStorage.getItem("crm_comments_map") || "{}");
+        if (initialComms && typeof initialComms === "object") {
+            commentsByIssue = initialComms;
+        }
+    } catch (e) {}
     renderProjects();
     renderPlanView();
     renderCrmTasks();
