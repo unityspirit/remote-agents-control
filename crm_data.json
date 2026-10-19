@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T16:07:37.541286+00:00",
+  "updated_at": "2026-10-19T16:08:15.581264+00:00",
   "version": "9.0",
   "knowledge_base": [
     {
@@ -362,9 +362,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 35,
+      "evidence_count": 36,
       "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.100669"
+      "last_updated": "2026-10-19T10:08:14.529096"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -372,9 +372,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 41,
+      "evidence_count": 42,
       "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.101780"
+      "last_updated": "2026-10-19T10:08:14.529782"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -402,9 +402,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 39,
+      "evidence_count": 40,
       "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.105320"
+      "last_updated": "2026-10-19T10:08:14.531549"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -440,11 +440,11 @@
       "id": "alberta-funnel-voice",
       "trigger": "при подготовке текстов, промптов VEO 3.1 и сайта для Alberta Shirani",
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 16,
+      "evidence_count": 17,
       "scope": "project:Alberta",
-      "last_updated": "2026-10-18T18:48:54.388823"
+      "last_updated": "2026-10-19T10:08:14.533136"
     },
     {
       "id": "autonomous-task-resolution",
@@ -452,9 +452,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 34,
+      "evidence_count": 35,
       "scope": "global",
-      "last_updated": "2026-10-18T21:29:13.107752"
+      "last_updated": "2026-10-19T10:08:14.534710"
     },
     {
       "id": "task-custom-request",
@@ -495,6 +495,16 @@
       "evidence_count": 1,
       "scope": "project:Traffic",
       "last_updated": "2026-10-18T18:48:51.580911"
+    },
+    {
+      "id": "task-plan_actions",
+      "trigger": "when processing 'plan_actions' tasks",
+      "action": "Executed autonomously with report and choices",
+      "confidence": 0.6,
+      "domain": "operations",
+      "evidence_count": 1,
+      "scope": "project:Позновалка",
+      "last_updated": "2026-10-19T10:08:11.948290"
     }
   ]
 }
