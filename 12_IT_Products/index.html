@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🚀 12 IT Продуктов за 12 Месяцев — Конвейер Mini Apps</title>
+<style>
+  :root {
+    --bg: #080b12;
+    --card: #111726;
+    --card2: #172033;
+    --border: rgba(255,255,255,0.09);
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --purple: #a855f7;
+    --green: #22c55e;
+    --orange: #f59e0b;
+    --red: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+  .top-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(56,189,248,0.12); color: var(--accent);
+    border: 1px solid rgba(56,189,248,0.3); padding: 8px 14px;
+    border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px;
+  }
+  .hero {
+    background: linear-gradient(135deg, rgba(56,189,248,0.14), rgba(168,85,247,0.14));
+    border: 1px solid rgba(56,189,248,0.3);
+    border-radius: 18px; padding: 20px; margin-bottom: 18px;
+  }
+  .badge {
+    display: inline-block; background: rgba(168,85,247,0.2); color: #d8b4fe;
+    border: 1px solid rgba(168,85,247,0.4); font-size: 11px; font-weight: 800;
+    padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; text-transform: uppercase;
+  }
+  h1 { font-size: 21px; font-weight: 800; margin-bottom: 8px; line-height: 1.25; }
+  .sub { font-size: 13.5px; color: var(--muted); }
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 10px; margin-top: 16px;
+  }
+  .kpi {
+    background: rgba(15,23,42,0.75); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px;
+  }
+  .kpi-val { font-size: 20px; font-weight: 800; color: var(--accent); }
+  .kpi-lbl { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .section {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 18px; margin-bottom: 16px;
+  }
+  .section h2 {
+    font-size: 16px; font-weight: 800; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px; color: #fff;
+  }
+  .step-card {
+    background: var(--card2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px; margin-bottom: 10px;
+  }
+  .step-title { font-weight: 700; font-size: 14px; color: var(--accent); margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: #cbd5e1; }
+  .app-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .app-card {
+    background: var(--card2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .app-card h3 { font-size: 15px; margin-bottom: 6px; color: #fff; }
+  .app-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 6px; margin-bottom: 8px;
+    background: rgba(34,197,94,0.15); color: #4ade80; width: fit-content;
+  }
+  .action-alert {
+    background: linear-gradient(135deg, rgba(239,68,68,0.14), rgba(245,158,11,0.12));
+    border: 1px solid rgba(239,68,68,0.4); border-radius: 16px; padding: 16px; margin-bottom: 16px;
+  }
+  .action-alert h2 { color: #fca5a5; font-size: 16px; margin-bottom: 10px; }
+  .check-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: rgba(0,0,0,0.25); padding: 10px 12px; border-radius: 10px;
+    margin-bottom: 8px; font-size: 13px;
+  }
+  .check-row input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+  /* Interactive Mini Game Demo */
+  .game-box {
+    background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 100%);
+    border: 1px solid rgba(168,85,247,0.4); border-radius: 14px;
+    padding: 14px; text-align: center; position: relative; overflow: hidden;
+  }
+  .game-hud {
+    display: flex; justify-content: space-between; font-size: 12px; font-weight: 700;
+    margin-bottom: 10px; color: #c4b5fd;
+  }
+  .word-prompt {
+    font-size: 18px; font-weight: 800; color: #fff; margin: 8px 0 14px;
+    background: rgba(255,255,255,0.07); padding: 10px; border-radius: 10px;
+  }
+  .choices-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .choice-btn {
+    background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.4);
+    color: #fff; font-weight: 700; font-size: 14px; padding: 12px;
+    border-radius: 10px; cursor: pointer; transition: 0.15s;
+  }
+  .choice-btn:active { transform: scale(0.97); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← В Мобильный Офис CRM</a>
+    <span style="font-size:12px;color:var(--muted);">Папка: <b>12 IT Продуктов (Короче Капитан)</b></span>
+  </div>
+
+  <div class="hero">
+    <span class="badge">Задача #97 • Полный разбор и новая папка</span>
+    <h1>🚀 Челлендж: 12 IT-продуктов за 12 месяцев («Короче, капитан»)</h1>
+    <p class="sub">Деконструкция воронки <b>itscap.blog</b> и Telegram-канала <b>@its_capitan</b>: как запускать простые геймифицированные мини-приложения с выручкой от $20,000/мес без сложных стартапов.</p>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-val">32</div><div class="kpi-lbl">Простых приложения в портфеле автора</div></div>
+      <div class="kpi"><div class="kpi-val">400+</div><div class="kpi-lbl">Продуктов запущено в комьюнити</div></div>
+      <div class="kpi"><div class="kpi-val">$20K+</div><div class="kpi-lbl">Целевая выручка ниши для копирования</div></div>
+      <div class="kpi"><div class="kpi-val">48 ч</div><div class="kpi-lbl">Время сборки MVP в нашей системе</div></div>
+    </div>
+  </div>
+
+  <div class="action-alert">
+    <h2>🚨 Требуется действие человека (Власлав)</h2>
+    <label class="check-row">
+      <input type="checkbox" onchange="saveCheck(this, 'cap1')" id="cap1">
+      <span><b>1. Выбрать 1-й Mini App для запуска на этой неделе:</b> (А) Игровой тренажёр слов/терминов в космосе ИЛИ (Б) 60-секундный AI-сканер потерь бизнеса JoinTECH.</span>
+    </label>
+    <label class="check-row">
+      <input type="checkbox" onchange="saveCheck(this, 'cap2')" id="cap2">
+      <span><b>2. Создать бота в @BotFather:</b> получить API-токен для выбранного Mini App (сборка и хостинг на GitHub Pages выполняются ИИ автоматически).</span>
+    </label>
+    <label class="check-row">
+      <input type="checkbox" onchange="saveCheck(this, 'cap3')" id="cap3">
+      <span><b>3. Опционально:</b> открыть воронку автора <a href="https://t.me/its_capitan" target="_blank" style="color:#38bdf8;">@its_capitan</a> / <a href="https://t.me/it_launch_bot" target="_blank" style="color:#38bdf8;">@it_launch_bot</a> для просмотра его креативов Google Ads.</span>
+    </label>
+  </div>
+
+  <div class="section">
+    <h2>🧠 3 Главных принципа методологии «Короче, капитан»</h2>
+    <div class="step-card">
+      <div class="step-title">1. Запрет на «выдумывание из головы» — только валидированные деньги</div>
+      <div class="step-desc">Новички прогорают, потому что придумывают сложные идеи, которые никому не нужны. Правило челленджа: брать только те категории (изучение слов, квизы, простые утилиты, трекеры), где простые приложения конкурентов уже делают от $20,000/мес.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-title">2. Микро-геймификация + Персонализация + Дофамин</div>
+      <div class="step-desc">На примере приложения для запоминания слов из канала @its_capitan:
+        <br>• Космический персонаж летит и уворачивается от слов (разбивка на Топ-50, 100, 300, 1000 слов);
+        <br>• При ошибке — мгновенная голосовая озвучка правильного ответа;
+        <br>• Игрок загружает своё фото и видит <b>своё лицо в скафандре</b> (виральный эффект);
+        <br>• В конце — таблица лидеров (Leaderboard), заставляющая пройти ещё раз.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-title">3. Двухшаговая воронка (Экскурсия → Повторение связки трафика)</div>
+      <div class="step-desc">Трафик с Google Ads (`challenge_12_it_products_in_12_months_dark_v2_google_ads`) ведёт в Telegram-канал, где закреплён 2-шаговый маршрут: 1) Экскурсия по внутрянке приложений; 2) Повторение готовой связки трафика и монетизации в боте.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🎮 Живой прототип механики (Попробуйте прямо с телефона)</h2>
+    <div class="game-box">
+      <div class="game-hud">
+        <span>👨‍🚀 Уровень: Топ-100 слов</span>
+        <span id="score-lbl">⭐ Очки: 0 | 🔥 Серия: 0</span>
+      </div>
+      <div class="word-prompt" id="word-q">🚀 Слово летит: «REVENUE» — выберите перевод:</div>
+      <div class="choices-row" id="game-choices">
+        <button class="choice-btn" onclick="answerGame(true)">💰 Выручка / Доход</button>
+        <button class="choice-btn" onclick="answerGame(false)">📉 Издержки</button>
+      </div>
+      <div id="game-feedback" style="margin-top:10px;font-size:12.5px;color:#4ade80;min-height:20px;"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ Наш конвейер: 4 Mini Apps для запуска в экосистеме Antigravity</h2>
+    <div class="app-grid">
+      <div class="app-card">
+        <div>
+          <span class="app-tag">Продукт #1 • B2C Трафик</span>
+          <h3>👨‍🚀 AI Space Words (Слова в космосе)</h3>
+          <p class="step-desc">Адаптация механики капитана: лицо игрока в скафандре, Топ-50/100/300/1000 слов (английский / испанский / бизнес-сленг), Web Speech API озвучка и таблица лидеров.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div>
+          <span class="app-tag">Продукт #2 • B2B Лид-магнит</span>
+          <h3>⚡ 60-сек Сканер Узлов Бизнеса (JoinTECH)</h3>
+          <p class="step-desc">Геймифицированный калькулятор упущенной прибыли по 6 узлам бизнеса. Выдаёт PDF-план и приводит тёплых B2B-клиентов на внедрение ИИ.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div>
+          <span class="app-tag">Продукт #3 • Киноиндустрия</span>
+          <h3>🎬 КПП & Вызывной Экспресс</h3>
+          <p class="step-desc">Карманное мини-приложение для вторых режиссёров и продюсеров: сборка вызывного листа на смену за 1 минуту с переходом в GlobalFilms.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div>
+          <span class="app-tag">Продукт #4 • Эксперты</span>
+          <h3>💎 Visual Brand DNA (Alberta)</h3>
+          <p class="step-desc">Свайп-игра (механика Tinder) для подбора визуального стиля рилс и нейро-видео VEO 3.1 с трипвайром за 490 ₽.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WORDS = [
+  { w: "REVENUE", ok: "💰 Выручка / Доход", bad: "📉 Издержки" },
+  { w: "RETENTION", ok: "🧲 Удержание пользователей", bad: "🚪 Отток клиентов" },
+  { w: "FUNNEL", ok: "🌪️ Воронка продаж", bad: "📦 Складской учёт" },
+  { w: "TRIPWIRE", ok: "⚡ Недорогой продукт-крючок", bad: "🛑 Блокировка счёта" },
+  { w: "CONVERSION", ok: "🎯 Конверсия в целевое действие", bad: "🔄 Возврат товара" }
+];
+let idx = 0, score = 0, streak = 0;
+function answerGame(correct) {
+  const fb = document.getElementById('game-feedback');
+  if (correct) {
+    score += 10; streak += 1;
+    fb.style.color = '#4ade80';
+    fb.textContent = '✅ Точно! Корабль пролетел дальше (+10 очков)';
+  } else {
+    streak = 0;
+    fb.style.color = '#f87171';
+    fb.textContent = '🔊 Ошибка! Правильный перевод озвучен голосом.';
+  }
+  document.getElementById('score-lbl').textContent = `⭐ Очки: ${score} | 🔥 Серия: ${streak}`;
+  idx = (idx + 1) % WORDS.length;
+  const item = WORDS[idx];
+  document.getElementById('word-q').textContent = `🚀 Слово летит: «${item.w}» — выберите перевод:`;
+  const box = document.getElementById('game-choices');
+  if (idx % 2 === 0) {
+    box.innerHTML = `<button class="choice-btn" onclick="answerGame(true)">${item.ok}</button><button class="choice-btn" onclick="answerGame(false)">${item.bad}</button>`;
+  } else {
+    box.innerHTML = `<button class="choice-btn" onclick="answerGame(false)">${item.bad}</button><button class="choice-btn" onclick="answerGame(true)">${item.ok}</button>`;
+  }
+}
+function saveCheck(el, key) {
+  localStorage.setItem('itscap_' + key, el.checked ? '1' : '0');
+}
+['cap1','cap2','cap3'].forEach(k => {
+  const el = document.getElementById(k);
+  if (el && localStorage.getItem('itscap_' + k) === '1') el.checked = true;
+});
+</script>
+</body>
+</html>
