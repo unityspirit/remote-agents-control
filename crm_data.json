@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-10-20 10:45:18",
+  "updated_at": "2026-10-20 10:45:24",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261020_104524",
+      "issue": "Auto",
+      "category": "Проект: Позновалка",
+      "title": "https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-",
+      "source_url": "https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/ipa-investigator/?cmpid=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&utm_source=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&gad_source=2&gad_campaignid=24357100713",
+      "secondary_url": "",
+      "date": "20.10.2026",
+      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/ipa-investigator/?cmpid=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&utm_source=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&gad_source=2&gad_campaignid=24357100713\n\n 📌 Ключевые тезисы и данные со стра",
+      "agent": "Swarm Knowledge & Media Extraction Agent",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Alberta",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261020_104524.md",
+        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
+      ]
+    },
     {
       "id": "kb-20261020_104518",
       "issue": "Auto",
