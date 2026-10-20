@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-20T20:52:38.542Z",
+  "updated_at": "2026-10-20T21:44:33.202Z",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792532672370",
+      "issue": 122,
+      "category": "Проект: Позновалка",
+      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm",
+      "source_url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
+      "secondary_url": "",
+      "date": "21.10.2026",
+      "summary": "Title: Gartner® Predicts 2026: Intelligent Applications\n• URL Source: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662\n• [![Image 1: ThoughtSpot](https://go.thoughtspot.com/hubfs/pardot-migration-files/thoughtspot_logo_white.svg)](https://www.thoughtspot.com/)\n• Get analyst-backed insights to align your application\n• roadmap with AI, data, and business strategy.\n• ![Image 2](https://media.thoughtspot.com/35707/1772474675-gartner-predicts-intelligent-tn.png)\n• Over a third of digital workers struggle to find the information they need to perform their job at least half the time, highlighting the need for more efficient information-retrieval systems. Is your product part of the problem or the solution?\n• The latest Gartner® Predicts report reveals how intelligent applications and agentic AI will reshape enterprise software through 2030, giving you the strategic planning assumptions you need to align your product and data strategies with tangible business value.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Позновалка"
+      ]
+    },
     {
       "id": "kb-1792529557814",
       "issue": 121,
