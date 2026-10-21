@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-21 08:45:35",
+  "updated_at": "2026-10-21 08:45:41",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261021_084541",
+      "issue": "Auto",
+      "category": "Проект: 12 IT Продуктов (Короче Капитан)",
+      "title": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid",
+      "source_url": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065370&aid=799060508631&kid=&kw=&nw=ytis&dv=m&mt=&pl=youtube.com&utm_source=youtube_ads&utm_medium=cpc&utm_campaign=nimb&utm_content=189059065370|23616818868|799060508631&utm_term=2246&gad_source=2&gad_campaignid=23616818868",
+      "secondary_url": "",
+      "date": "21.10.2026",
+      "summary": "🧠 Автоматический разбор источников для 12 IT Продуктов (Короче Капитан)\n\nПроанализированные ссылки: https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065370&aid=799060508631&kid=&kw=&nw=ytis&dv=m&mt=&pl=youtube.com&utm_source=youtube_ads&utm_medium=cpc&utm_campaign=nimb&utm_content=189059065370|23616818868|799060508631&utm_term=22",
+      "agent": "Telegram Mini Apps & Micro-SaaS Architect",
+      "domain": "[[telegram-боты]]",
+      "related_projects": [
+        "Позновалка",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261021_084541.md",
+        "Ведущий агент: Telegram Mini Apps & Micro-SaaS Architect"
+      ]
+    },
     {
       "id": "kb-20261021_084535",
       "issue": "Auto",
