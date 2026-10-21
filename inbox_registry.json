@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-10-21 09:16:44",
+  "version": "1.0",
+  "system_description": "Единый конвейер обработки входящей информации из Мобильного Офиса с подтверждением и распределением по проектам",
+  "items": [
+    {
+      "id": "inbox-20261021_091622",
+      "timestamp": "2026-10-21 09:16:44",
+      "source_text": "https://t.me/example_channel_bot новая идея для микро-сервиса",
+      "urls": [
+        "https://t.me/example_channel_bot"
+      ],
+      "status": "awaiting_confirmation",
+      "suggested_project": "12 IT Продуктов (Короче Капитан)",
+      "pending_file": "Предложение_20261021_091622_https___t_me_example_channel_b.md",
+      "raw_file": "raw_20261021_091622_https___t_me_example_channel_b.md"
+    }
+  ]
+}
