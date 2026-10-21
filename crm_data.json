@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-10-21 08:44:01",
+  "updated_at": "2026-10-21 08:44:04",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261021_084404",
+      "issue": "Auto",
+      "category": "Проект: Позновалка",
+      "title": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and t",
+      "source_url": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH",
+      "secondary_url": "",
+      "date": "21.10.2026",
+      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH ===\n- ⚠️ Субтитры видео получить не удалось — разбор возможен только по заголовку и автору, не выдумывай содержание.\n- YouTube Видео: «Get Rich with these 5 A",
+      "agent": "Swarm Knowledge & Media Extraction Agent",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Alberta",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261021_084404.md",
+        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
+      ]
+    },
     {
       "id": "kb-20261021_084401",
       "issue": "Auto",
