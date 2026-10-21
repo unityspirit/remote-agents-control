@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-10-21 08:44:34",
+  "updated_at": "2026-10-21 08:44:38",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261021_084438",
+      "issue": "Auto",
+      "category": "Проект: Thought/Мысль",
+      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so",
+      "source_url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
+      "secondary_url": "",
+      "date": "21.10.2026",
+      "summary": "🧠 Автоматический разбор источников для Thought/Мысль\n\nПроанализированные ссылки: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src",
+      "agent": "System Cognitive Architect",
+      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
+      "related_projects": [
+        "Позновалка",
+        "Traffic",
+        "AI Skills & Nobel Stabilization"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261021_084438.md",
+        "Ведущий агент: System Cognitive Architect"
+      ]
+    },
     {
       "id": "kb-20261021_084434",
       "issue": "Auto",
