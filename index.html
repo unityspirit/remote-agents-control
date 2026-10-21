@@ -1419,8 +1419,8 @@
 
     <!-- INSTANT SAVE BAR (WORKS 24/7 EVEN IF LAPTOP IS OFFLINE) -->
     <div class="quick-save-banner">
-        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="🔗 Ссылка, вопрос или «изучи и сохрани» (умная маршрутизация 24/7)..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
-        <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
+        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="📥 Сохранить в Офис (анализ, оффер на подтверждение и распределение 24/7)..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
+        <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 В Триаж</button>
     </div>
     <!-- LIVE SMART ROUTE & INTERCONNECTION PREVIEW -->
     <div id="quick-save-route-preview" style="display:none; padding:6px 14px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-bottom:1px solid var(--border); color:var(--text-main); font-weight:600; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
@@ -1444,6 +1444,7 @@
                     <input type="text" class="search-input" id="project-search" placeholder="🔍 Найти папку (12 IT Продуктов, Traffic, Alberta...)" oninput="renderProjects()">
                 </div>
                 <div class="filter-row" id="project-cat-filters" style="overflow-x:auto; flex-wrap:nowrap; padding-bottom:6px; -webkit-overflow-scrolling:touch;">
+                    <button class="chip" onclick="setProjectFilter('inbox', this)" style="border-color:rgba(139,92,246,0.6); color:#c084fc;">📥 Входящие & Триаж</button>
                     <button class="chip active" onclick="setProjectFilter('worked', this)">⭐ Активные (<span id="cnt-worked" class="tabular">30</span>)</button>
                     <button class="chip" onclick="setProjectFilter('products', this)">🚀 IT & Воронки</button>
                     <button class="chip" onclick="setProjectFilter('media', this)">🎬 Кино & Медиа</button>
@@ -1809,6 +1810,13 @@
 
     // Метаданные всех папок, над которыми ранее работали
     const PROJECT_META = {
+        "Входящие_Офис": {
+            icon: "📥",
+            worked: true,
+            category: "inbox",
+            client: false,
+            desc: "Входящие Офис: Инкубатор, Обработка, Подтверждение и Распределение новых знаний и ссылок по проектам холдинга"
+        },
         "Позновалка": {
             icon: "🧠",
             worked: true,
@@ -2364,7 +2372,10 @@
 
     function canonicalProjectName(rawName) {
         const s = String(rawName || "").trim();
-        if (!s) return "Позновалка";
+        if (!s) return "Входящие_Офис";
+        if (low.includes("входящ") || low.includes("приемн") || low.includes("инкубатор")) {
+            return "Входящие_Офис";
+        }
         const low = s.toLowerCase();
         const stripped = low.replace(/[\\/*?:"<>|]/g, "").trim();
         if (low === "23616818868" || low.includes("12_it_products") || low.includes("12 it продуктов") || low.includes("короче капитан") || low.includes("itscap")) {
@@ -2619,7 +2630,7 @@
     }
 
     function detectSmartRoute(text) {
-        if (!text) return { project: "Позновалка", agent: "Swarm Knowledge & Media Extraction Agent", domain: "05_Медиа & Контент", related: ["12 IT Продуктов", "Traffic"] };
+        if (!text) return { project: "Входящие_Офис", agent: "Triage & Intelligence Distribution Architect", domain: "00_Входящие & Триаж", related: ["12 IT Продуктов", "Traffic", "GlobalFilms", "Alberta"] };
         const low = text.toLowerCase();
         
         if (/alberta|shirani|альберт|veo|kinfolk|tripwire|900 кадр|скролл|lumiere|лумиер/.test(low)) {
@@ -2664,7 +2675,10 @@
         if (/создай.*папк|новую папку/.test(low)) {
             return { project: "Новый_Проект", agent: "Autonomous Project Bootstrapper", domain: "06_AI Автоматизация (Новая папка)", related: ["Позновалка"] };
         }
-        return { project: "Позновалка", agent: "Swarm Knowledge & Media Extraction Agent", domain: "05_Медиа & База Знаний CRM", related: ["12 IT Продуктов", "Alberta", "Traffic"] };
+        if (/входящ|приемн|инкубатор|на подтвержден|распредел/.test(low)) {
+            return { project: "Входящие_Офис", agent: "Triage & Intelligence Distribution Architect", domain: "00_Входящие & Триаж", related: ["12 IT Продуктов", "GlobalFilms", "Alberta", "Traffic"] };
+        }
+        return { project: "Входящие_Офис", agent: "Triage & Intelligence Distribution Architect", domain: "00_Входящие & Триаж", related: ["12 IT Продуктов", "Alberta", "Traffic", "GlobalFilms"] };
     }
 
     function updateQuickSavePreview(val) {
@@ -2879,6 +2893,7 @@
             if (projectFilter === "media" && cat !== "media") return;
             if (projectFilter === "automation" && cat !== "automation") return;
             if (projectFilter === "knowledge" && cat !== "knowledge") return;
+            if (projectFilter === "inbox" && cat !== "inbox" && !name.includes("Входящие")) return;
 
             const hay = (name + " " + (meta.desc || "") + " " + (st.lastCmd || "")).toLowerCase();
             if (q && !hay.includes(q)) return;
