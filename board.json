@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "cards": {
+    "70": {
+      "id": 70,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://youtu.be/Hgd1rxrIYGM?is=9vpq9S1p-C8lo_3K learn what he says and let's make a special folder for you to learn from and continue work as Best One for me!",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://youtu.be/Hgd1rxrIYGM?is=9vpq9S1p-C8lo_3K"
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "YouTube требует вход в Google; субтитры недоступны"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #70»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "74": {
+      "id": 74,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn and dothe",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_"
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "YouTube требует вход в Google; субтитры недоступны"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "84": {
+      "id": 84,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://youtube.com/shorts/hRdxDtdz6RA?is=GJ9t98y5nuWZTIx4 30 skills 4 you to install!",
+      "project": "antigravity",
+      "kind": "link",
+      "urls": [
+        "https://youtube.com/shorts/hRdxDtdz6RA?is=GJ9t98y5nuWZTIx4"
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "YouTube требует вход в Google; субтитры недоступны"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #84»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "102": {
+      "id": 102,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h изучи и примени инструменты и создай план для нас по этим действиям что выгодно для нас и что нам стоит делать",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h"
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "YouTube требует вход в Google; субтитры недоступны"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #102»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "103": {
+      "id": 103,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео и создай для нас пошаговый план действий что нам делать в первую очередь",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy"
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "YouTube требует вход в Google; субтитры недоступны"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #103»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "123": {
+      "id": 123,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and tell me how we make millions of dollars as soon as possible!",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH"
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "YouTube требует вход в Google; субтитры недоступны"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #123»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "47": {
+      "id": 47,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://www.instagram.com/p/DeJ53nTAJOd/?img_index=8&dlrf=MTNybjN6Z3F3aTk3ZA== изучи о чём этот репозиторий!",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://www.instagram.com/p/DeJ53nTAJOd/?img_index=8&dlrf=MTNybjN6Z3F3aTk3ZA=="
+      ],
+      "evidence": {
+        "level": "partial",
+        "reason": "прочитана подпись; содержимое слайдов недоступно"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "67": {
+      "id": 67,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://www.instagram.com/p/DdlzMA8iXG7/?psln=dXFjenR2enBlODU= learn and tell me what repos are they talking about? And how do we implement it to our favor!",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://www.instagram.com/p/DdlzMA8iXG7/?psln=dXFjenR2enBlODU="
+      ],
+      "evidence": {
+        "level": "partial",
+        "reason": "прочитана подпись; содержимое слайдов недоступно"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "71": {
+      "id": 71,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://www.instagram.com/p/DeBnQdxFCbE/?img_index=4&vrfl=MWszbXZpbG9lYzNwZg== now learn from this slides how do we generat unlimited content on my computer!",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://www.instagram.com/p/DeBnQdxFCbE/?img_index=4&vrfl=MWszbXZpbG9lYzNwZg=="
+      ],
+      "evidence": {
+        "level": "partial",
+        "reason": "прочитана подпись; содержимое слайдов недоступно"
+      },
+      "owner": "human",
+      "status": "not_studied",
+      "next": {
+        "who": "human",
+        "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "77": {
+      "id": 77,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "agent",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "https://www.hostinger.com/vps-hosting?utm_source=google&utm_medium=cpc&utm_id=22770842092&utm_campaign=Intent-VAC-DemandGen-VPS|NT:YouTube|LO:Other-EU&utm_term=177325957810&utm_content=803158585661&ga",
+      "project": "Позновалка",
+      "kind": "link",
+      "urls": [
+        "https://www.hostinger.com/vps-hosting?utm_source=google&utm_medium=cpc&utm_id=22770842092&utm_campaign=Intent-VAC-DemandGen-VPS|NT:YouTube|LO:Other-EU&utm_term=177325957810&utm_content=803158585661&gad_source=2&gad_campaignid=22770842092"
+      ],
+      "evidence": {
+        "level": "not_studied",
+        "reason": "timeout при загрузке страницы"
+      },
+      "owner": "agent",
+      "status": "not_studied",
+      "next": {
+        "who": "agent",
+        "what": "Повторить разбор: «🔁 Повторить разбор #77»"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "107": {
+      "id": 107,
+      "created": "2026-10-22 08:18:47",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:47",
+          "from": "gatekeeper",
+          "to": "analyst",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "@sysadminfuture — агент-дайджест группы раз в сутки",
+      "project": "Позновалка",
+      "kind": "task",
+      "urls": [],
+      "evidence": null,
+      "owner": "analyst",
+      "status": "in_progress",
+      "next": {
+        "who": "agent",
+        "what": "Собрать агента-дайджест: 5 пунктов «что важно» + ссылка на источник"
+      },
+      "updated": "2026-10-22 08:18:47"
+    },
+    "109": {
+      "id": 109,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "project_lead",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)",
+      "project": "Ghost Ghetto Child (Музыка)",
+      "kind": "task",
+      "urls": [],
+      "evidence": null,
+      "owner": "project_lead",
+      "status": "in_progress",
+      "next": {
+        "who": "agent",
+        "what": "Подготовить финальный текст оффера для отправки"
+      },
+      "updated": "2026-10-22 08:18:48"
+    },
+    "9001": {
+      "id": 9001,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "🔑 Сменить GitHub-токен (старый был в открытом виде в скриптах; теперь вынесен в .office_secrets.json, но его надо перевыпустить)",
+      "project": "Виртуальный Офис",
+      "kind": "action",
+      "urls": [],
+      "evidence": null,
+      "owner": "human",
+      "status": "blocked_human",
+      "next": {
+        "who": "human",
+        "what": "GitHub → Settings → Developer settings → fine-grained token; записать в .office_secrets.json"
+      },
+      "updated": "2026-10-22 08:18:48"
+    },
+    "9002": {
+      "id": 9002,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "🤖 Создать бота в @BotFather для Mini App #1",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "kind": "action",
+      "urls": [],
+      "evidence": null,
+      "owner": "human",
+      "status": "blocked_human",
+      "next": {
+        "who": "human",
+        "what": "30 секунд: /newbot, прислать токен"
+      },
+      "updated": "2026-10-22 08:18:48"
+    },
+    "9003": {
+      "id": 9003,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "✉️ Отправить 10 КП директорам (Урал)",
+      "project": "Дима Верхняя Синичиха Алапаевск",
+      "kind": "action",
+      "urls": [],
+      "evidence": null,
+      "owner": "human",
+      "status": "blocked_human",
+      "next": {
+        "who": "human",
+        "what": "Отправить письма по готовым шаблонам и базе 62 предприятий"
+      },
+      "updated": "2026-10-22 08:18:48"
+    },
+    "9004": {
+      "id": 9004,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "💬 WhatsApp 5 контактам в Лас-Терренас",
+      "project": "Белый Доминикана",
+      "kind": "action",
+      "urls": [],
+      "evidence": null,
+      "owner": "human",
+      "status": "blocked_human",
+      "next": {
+        "who": "human",
+        "what": "Отправить сообщения по готовому питчу"
+      },
+      "updated": "2026-10-22 08:18:48"
+    },
+    "9005": {
+      "id": 9005,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "💳 Ключи ЮKassa/Prodamus для трипваера 490 ₽",
+      "project": "Alberta",
+      "kind": "action",
+      "urls": [],
+      "evidence": null,
+      "owner": "human",
+      "status": "blocked_human",
+      "next": {
+        "who": "human",
+        "what": "Передать API-ключи боту"
+      },
+      "updated": "2026-10-22 08:18:48"
+    },
+    "9006": {
+      "id": 9006,
+      "created": "2026-10-22 08:18:48",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:18:48",
+          "from": "gatekeeper",
+          "to": "human",
+          "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        }
+      ],
+      "title": "🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "project": "GlobalFilms (Filmtools)",
+      "kind": "action",
+      "urls": [],
+      "evidence": null,
+      "owner": "human",
+      "status": "blocked_human",
+      "next": {
+        "who": "human",
+        "what": "Открыть https://unityspirit.github.io/remote-agents-control/globalfilms/index.html"
+      },
+      "updated": "2026-10-22 08:18:48"
+    }
+  }
+}
