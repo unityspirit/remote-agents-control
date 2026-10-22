@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:22:09.803646+00:00",
+  "updated_at": "2026-10-22T14:22:55.248120+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -1025,9 +1025,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 68,
+      "evidence_count": 69,
       "scope": "global",
-      "last_updated": "2026-10-22T08:22:08.536905"
+      "last_updated": "2026-10-22T08:22:53.549459"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -1035,9 +1035,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 49,
+      "evidence_count": 50,
       "scope": "global",
-      "last_updated": "2026-10-22T08:22:08.538285"
+      "last_updated": "2026-10-22T08:22:53.551396"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -1095,9 +1095,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 35,
+      "evidence_count": 36,
       "scope": "project:Alberta",
-      "last_updated": "2026-10-22T08:22:08.538285"
+      "last_updated": "2026-10-22T08:22:53.552908"
     },
     {
       "id": "autonomous-task-resolution",
@@ -1105,9 +1105,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 64,
+      "evidence_count": 65,
       "scope": "global",
-      "last_updated": "2026-10-22T08:22:08.542316"
+      "last_updated": "2026-10-22T08:22:53.553818"
     },
     {
       "id": "task-custom-request",
