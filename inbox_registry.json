@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-22 08:21:59",
+  "updated_at": "2026-10-22 08:22:44",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-126",
+      "card": 126,
+      "timestamp": "2026-10-22 08:22:44",
+      "source_text": "https://www.hive.fi/?utm_source=google&utm_medium=cpc&utm_campaign=fall2026_pmax&utm_content=unframed&gad_source=2&gad_c",
+      "urls": [
+        "https://www.hive.fi/?utm_source=google&utm_medium=cpc&utm_campaign=fall2026_pmax&utm_content=unframed&gad_source=2&gad_campaignid=24242821405"
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "Личное — обучение и релокация",
+      "pending_file": "Карточка_126_https___www_hive_fi__utm_sou.md",
+      "raw_file": "raw_126_20261022_082213_https___www_hive_fi__utm_sou.md"
+    },
     {
       "id": "card-127",
       "card": 127,
