@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22 17:24:45",
+  "updated": "2026-10-22 17:30:52",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -14,18 +14,6 @@
       "open_cards": [
         9002
       ]
-    },
-    {
-      "folder": "2f446e5b72c3c52b372510cd53353594bc60d693bbc6b27c34fabb589224fa6e (2)",
-      "project": "USP — Поддержка переезда",
-      "state": "active",
-      "files": 26,
-      "size_kb": 524,
-      "last_change": "2026-10-22",
-      "lead_agent": "Relocation Partnerships Lead",
-      "next_who": "human",
-      "next_what": "Определить цель и ответственного.",
-      "open_cards": []
     },
     {
       "folder": "8 слайдов карусель Белорусия",
@@ -212,8 +200,8 @@
       "open_cards": []
     },
     {
-      "folder": "Ptg-law httpsshare.google1vYDQR7nrqiWI7ND9 изучи как они работают и подготовь тоже самое для нас чтоб предоставлять такие же услуги от нашей компании для других юристов компании от нашей компании!",
-      "project": "Ptg-law httpsshare.google1vYDQR7nrqiWI7ND9 изучи как они работают и подготовь тоже самое для нас чтоб предоставлять такие же услуги от нашей компании для других юристов компании от нашей компании!",
+      "folder": "Ptg_Law",
+      "project": "Ptg_Law",
       "state": "active",
       "files": 2,
       "size_kb": 1,
@@ -439,6 +427,42 @@
       "size_kb": 15786,
       "last_change": "2026-10-22",
       "lead_agent": "Trading Bot Analyst",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
+      "folder": "Личное — обучение и релокация",
+      "project": "Личное — обучение и релокация",
+      "state": "active",
+      "files": 1,
+      "size_kb": 0,
+      "last_change": "2026-10-22",
+      "lead_agent": "Personal Growth Advisor",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
+      "folder": "Москвабад",
+      "project": "Москвабад",
+      "state": "empty",
+      "files": 0,
+      "size_kb": 0,
+      "last_change": null,
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
+      "folder": "План для Иностранцев (Relocation)",
+      "project": "План для Иностранцев (Relocation)",
+      "state": "active",
+      "files": 26,
+      "size_kb": 524,
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
