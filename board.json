@@ -514,6 +514,62 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-22 08:21:09"
+    },
+    "127": {
+      "id": 127,
+      "created": "2026-10-22 08:21:27",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:21:27",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-22 08:21:27",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-22 08:21:31",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-22 08:21:59",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 6078
+      },
+      "title": "https://www.pirates-world.de/ study and learn how can we benefit from them!",
+      "urls": [
+        "https://www.pirates-world.de/"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-10-22 08:22:01",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_127_https___www_pirates_world_de.md",
+      "raw_file": "raw_127_20261022_082127_https___www_pirates_world_de.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #127 → …»"
+      }
     }
   }
 }
