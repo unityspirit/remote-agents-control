@@ -482,6 +482,38 @@
         "what": "Открыть https://unityspirit.github.io/remote-agents-control/globalfilms/index.html"
       },
       "updated": "2026-10-22 08:18:48"
+    },
+    "128": {
+      "id": 128,
+      "created": "2026-10-22 08:20:07",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:20:07",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-22 08:21:09",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.com&gad_source=2&gad_campaignid=24276174909 ,что по этому пр",
+      "urls": [
+        "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.com&gad_source=2&gad_campaignid=24276174909"
+      ],
+      "project": "Traffic",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-22 08:21:09"
     }
   }
 }
