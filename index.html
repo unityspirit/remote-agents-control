@@ -1392,6 +1392,144 @@
             color: #fff;
             flex: 1;
         }
+    
+        /* INTERACTIVE TASK CONTROLS & TRIAGE BAR (v17) */
+        .task-action-box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border);
+        }
+        .quick-assign-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 0.74rem;
+        }
+        .assign-hint {
+            color: #93c5fd;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 6px 11px;
+            border-radius: 7px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+        .btn-action:active {
+            transform: scale(0.97);
+        }
+        .btn-action.accent {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+        }
+        .btn-action.primary {
+            background: var(--bg-panel);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        .btn-action.success {
+            background: rgba(16, 185, 129, 0.18);
+            color: #34d399;
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        .btn-action.warning {
+            background: rgba(245, 158, 11, 0.18);
+            color: #fbbf24;
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+        .btn-action.danger {
+            background: rgba(239, 68, 68, 0.18);
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+        .btn-action.ghost {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+            border-color: var(--border);
+        }
+        .btn-action.ghost:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.09);
+        }
+        .task-inline-reply {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .task-inline-input {
+            flex: 1;
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 6px 10px;
+            color: var(--text-main);
+            font-size: 0.74rem;
+            outline: none;
+        }
+        .task-inline-input:focus {
+            border-color: var(--accent);
+        }
+        .chip-select {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            border-radius: 9999px;
+            padding: 5px 10px;
+            font-size: 0.74rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .task-alert-banner {
+            border-radius: 8px;
+            padding: 7px 10px;
+            font-size: 0.73rem;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .task-alert-banner.warning {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #fbbf24;
+        }
+        .task-alert-banner.danger {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #f87171;
+        }
+        .card-ctrl-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
     </style>
 </head>
 <body>
@@ -1446,10 +1584,11 @@
                 <div class="filter-row" id="project-cat-filters" style="overflow-x:auto; flex-wrap:nowrap; padding-bottom:6px; -webkit-overflow-scrolling:touch;">
                     <button class="chip" onclick="setProjectFilter('inbox', this)" style="border-color:rgba(139,92,246,0.6); color:#c084fc;">📥 Входящие & Триаж</button>
                     <button class="chip active" onclick="setProjectFilter('worked', this)">⭐ Активные (<span id="cnt-worked" class="tabular">30</span>)</button>
-                    <button class="chip" onclick="setProjectFilter('products', this)">🚀 IT & Воронки</button>
+                    <button class="chip" onclick="setProjectFilter('products', this)">🚀 Выручка & Трафик</button>
                     <button class="chip" onclick="setProjectFilter('media', this)">🎬 Кино & Медиа</button>
+                    <button class="chip" onclick="setProjectFilter('automation', this)">🤖 ИИ-Агенты & Софт</button>
+                    <button class="chip" onclick="setProjectFilter('relocation', this)">🎓 Обучение & Релокация</button>
                     <button class="chip" onclick="setProjectFilter('clients', this)">🏭 B2B Клиенты</button>
-                    <button class="chip" onclick="setProjectFilter('automation', this)">⚙️ Роботы & Live</button>
                     <button class="chip" onclick="setProjectFilter('knowledge', this)">🧠 База Знаний</button>
                     <button class="chip" onclick="setProjectFilter('all', this)">📂 Все (<span id="cnt-folders" class="tabular">48</span>)</button>
                 </div>
@@ -1490,12 +1629,31 @@
                 <div class="search-bar">
                     <input type="text" class="search-input" id="crm-task-search" placeholder="🔍 Поиск по задачам, папкам и ссылкам..." oninput="renderCrmTasks()">
                 </div>
-                <div class="filter-row" id="crm-task-filters">
-                    <button class="chip active" data-flt="all" onclick="setCrmStatusFilter('all', this)">Все (<span id="cnt-all" class="tabular">0</span>)</button>
-                    <button class="chip" data-flt="waiting_action" onclick="setCrmStatusFilter('waiting_action', this)">🚨 Ожидание действий (<span id="cnt-waiting-actions" class="tabular">5</span>)</button>
-                    <button class="chip" data-flt="open" onclick="setCrmStatusFilter('open', this)">⏳ Очередь ИИ (<span id="cnt-open" class="tabular">0</span>)</button>
-                    <button class="chip" data-flt="closed" onclick="setCrmStatusFilter('closed', this)">✅ Готово (<span id="cnt-closed" class="tabular">0</span>)</button>
+                <div class="filter-row" id="crm-task-filters" style="overflow-x:auto; flex-wrap:nowrap; padding-bottom:6px;">
+                    <button class="chip" data-flt="waiting_action" onclick="setCrmStatusFilter('waiting_action', this)" style="border-color:rgba(245,158,11,0.6); color:#fbbf24;">🚨 Ждёт меня (<span id="cnt-waiting-actions" class="tabular">0</span>)</button>
+                    <button class="chip" data-flt="triage" onclick="setCrmStatusFilter('triage', this)" style="border-color:rgba(59,130,246,0.6); color:#93c5fd;">🧭 Триаж (<span id="cnt-triage" class="tabular">0</span>)</button>
+                    <button class="chip" data-flt="open" onclick="setCrmStatusFilter('open', this)">⏳ В очереди ИИ (<span id="cnt-open" class="tabular">0</span>)</button>
+                    <button class="chip active" data-flt="all" onclick="setCrmStatusFilter('all', this)">📂 Все (<span id="cnt-all" class="tabular">0</span>)</button>
+                    <button class="chip" data-flt="closed" onclick="setCrmStatusFilter('closed', this)">✅ Архив (<span id="cnt-closed" class="tabular">0</span>)</button>
                     <button class="chip" data-flt="links" onclick="setCrmStatusFilter('links', this)">🔗 Ссылки</button>
+                    <select id="crm-proj-filter" class="chip-select" onchange="setCrmProjectFilter(this.value)">
+                        <option value="">📁 Все папки</option>
+                        <option value="Traffic">📈 Traffic (DFY)</option>
+                        <option value="12 IT Продуктов (Короче Капитан)">🚀 12 IT Продуктов</option>
+                        <option value="GlobalFilms (Filmtools)">🎬 GlobalFilms</option>
+                        <option value="Ghost Ghetto Child (Музыка)">🎵 Ghost Ghetto Child</option>
+                        <option value="Grok_xAI_Teammates">🤖 Grok Bot xAI</option>
+                        <option value="Unity Inc">🤝 Unity Inc</option>
+                        <option value="Личное — обучение и релокация">🎓 Обучение & ВНЖ</option>
+                        <option value="План для Иностранцев (Relocation)">🌍 Релокация партнеры</option>
+                        <option value="Дима Верхняя Синичиха Алапаевск">🪨 Дима Урал</option>
+                        <option value="Белый Доминикана">🌴 Белый Доминикана</option>
+                        <option value="КМВ">🏔️ КМВ</option>
+                        <option value="Alberta">💎 Alberta Shirani</option>
+                        <option value="Входящие_Офис">📥 Входящие Офис</option>
+                        <option value="Позновалка">🧠 Позновалка</option>
+                        <option value="Юра">🏒 Юра (КХЛ)</option>
+                    </select>
                 </div>
                 <div id="crm-tasks-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
@@ -1810,6 +1968,62 @@
 
     // Метаданные всех папок, над которыми ранее работали
     const PROJECT_META = {
+        "Grok_xAI_Teammates": {
+            icon: "🤖",
+            worked: true,
+            category: "automation",
+            client: false,
+            lead: "Autonomous AI Teammates Architect",
+            desc: "Автономные ИИ-сотрудники xAI Grok Bot на выделенных облачных машинах ($30–$200/мес)"
+        },
+        "Личное — обучение и релокация": {
+            icon: "🎓",
+            worked: true,
+            category: "relocation",
+            client: false,
+            lead: "Education & Global Mobility Lead",
+            desc: "Hive Helsinki (Ecole 42), бесплатное peer-to-peer обучение, студенческий ВНЖ Финляндии"
+        },
+        "План для Иностранцев (Relocation)": {
+            icon: "🌍",
+            worked: true,
+            category: "relocation",
+            client: true,
+            lead: "Relocation Partnerships Lead",
+            desc: "Международные партнерские программы переезда: Дубай, Канада, Саудовская Аравия"
+        },
+        "Ptg_Law": {
+            icon: "⚖️",
+            worked: true,
+            category: "relocation",
+            client: true,
+            lead: "Legal Tech & B2B Contracts Lead",
+            desc: "Автоматизация юридических договоров, оферт и регламентов для бизнеса"
+        },
+        "КМВ": {
+            icon: "🏔️",
+            worked: true,
+            category: "products",
+            client: true,
+            lead: "Regional Sales Kit Lead",
+            desc: "B2B Sales Kit для производственных компаний и застройщиков КМВ"
+        },
+        "Белорусь": {
+            icon: "🥗",
+            worked: true,
+            category: "media",
+            client: true,
+            lead: "Fitness & Nutrition Web Lead",
+            desc: "Нутрициология, фитнес-воронка, видеоконтент и 8 слайдов карусели"
+        },
+        "SoloMan": {
+            icon: "💼",
+            worked: true,
+            category: "products",
+            client: false,
+            lead: "CRM Architect",
+            desc: "Архитектура CRM-системы холдинга Global Plus / Unity Spirit"
+        },
         "Входящие_Офис": {
             icon: "📥",
             worked: true,
@@ -2373,11 +2587,23 @@
     function canonicalProjectName(rawName) {
         const s = String(rawName || "").trim();
         if (!s) return "Входящие_Офис";
-        if (low.includes("входящ") || low.includes("приемн") || low.includes("инкубатор")) {
-            return "Входящие_Офис";
-        }
         const low = s.toLowerCase();
         const stripped = low.replace(/[\\/*?:"<>|]/g, "").trim();
+        if (low.includes("входящ") || low.includes("приемн") || low.includes("инкубатор") || low.includes("triage")) {
+            return "Входящие_Офис";
+        }
+        if (low.includes("grok") || low.includes("x.ai") || low.includes("xai") || low.includes("соеденения")) {
+            return "Grok_xAI_Teammates";
+        }
+        if (low.includes("hive") || low.includes("хельсинки") || low.includes("финлянд") || low.includes("обучение и релокация") || low.includes("релокация")) {
+            return "Личное — обучение и релокация";
+        }
+        if (low.includes("план для иностран") || low.includes("иностранц") || low.includes("settlement") || low.startsWith("2f446")) {
+            return "План для Иностранцев (Relocation)";
+        }
+        if (low.includes("ptg-law") || low.includes("ptg_law") || (low.includes("юрист") && low.includes("пятигорск"))) {
+            return "Ptg_Law";
+        }
         if (low === "23616818868" || low.includes("12_it_products") || low.includes("12 it продуктов") || low.includes("короче капитан") || low.includes("itscap")) {
             return "12 IT Продуктов (Короче Капитан)";
         }
@@ -2390,14 +2616,32 @@
         if (low === "globalfilms" || low === "filmtools" || low === "globalfilms (filmtools)") {
             return "GlobalFilms (Filmtools)";
         }
-        if (low === "traffic") {
+        if (low === "traffic" || low.includes("exponentialtraffic")) {
             return "Traffic";
         }
         if (low.includes("ghostghettochild") || low.includes("ghost ghetto child") || low.includes("музык")) {
             return "Ghost Ghetto Child (Музыка)";
         }
-        if (low.includes("ptg-law") || (low.includes("юрист") && low.includes("пятигорск"))) {
-            return "Ptg-Law (Юридические услуги)";
+        if (low.includes("дима") || low.includes("верхняя синичиха") || low.includes("алапаевск") || low.includes("зкск") || low.includes("щебень")) {
+            return "Дима Верхняя Синичиха Алапаевск";
+        }
+        if (low.includes("доминикан") || low.includes("белый") || low.includes("las terrenas") || low.includes("profitroom")) {
+            return "Белый Доминикана";
+        }
+        if (low.includes("кмв") || low.includes("пятигорск") || low.includes("кисловодск") || low.includes("ессентук")) {
+            return "КМВ";
+        }
+        if (low.includes("соломан") || low.includes("soloman")) {
+            return "SoloMan";
+        }
+        if (low.includes("белорус") || low.includes("карусель белорус") || low.includes("8 слайдов")) {
+            return "Белорусь";
+        }
+        if (low.includes("позновалк")) {
+            return "Позновалка";
+        }
+        if (low.includes("unity") || low.includes("глобал плюс") || low.includes("global plus") || low.includes("jointech")) {
+            return "Unity Inc";
         }
         return s;
     }
@@ -2892,6 +3136,7 @@
             if (projectFilter === "products" && cat !== "products") return;
             if (projectFilter === "media" && cat !== "media") return;
             if (projectFilter === "automation" && cat !== "automation") return;
+            if (projectFilter === "relocation" && cat !== "relocation") return;
             if (projectFilter === "knowledge" && cat !== "knowledge") return;
             if (projectFilter === "inbox" && cat !== "inbox" && !name.includes("Входящие")) return;
 
@@ -3289,30 +3534,186 @@
         }
     }
 
+    // ========================================================
+    // INTERACTIVE TASK CONTROLS & CRM (v17)
+    // ==========================================
+    let crmProjectFilter = "";
+
+    function setCrmProjectFilter(proj) {
+        crmProjectFilter = proj || "";
+        renderCrmTasks();
+    }
+
+    async function assignProjectToIssue(issueNumber, targetProject) {
+        const iss = allIssues.find(i => i.number === issueNumber);
+        if (!iss) return;
+        const parsed = parseIssueProject(iss.title);
+        const oldCmd = parsed.cmd;
+        const newTitle = "CMD: " + oldCmd + " | PROJ: " + targetProject;
+
+        showToast("🎯 Переносим задачу #" + issueNumber + " в «" + targetProject + "»...");
+
+        // Оптимистичное обновление UI
+        iss.title = newTitle;
+        renderCrmTasks();
+        renderProjects();
+
+        try {
+            await ghApi("/issues/" + issueNumber, "PATCH", { title: newTitle });
+            await ghApi("/issues/" + issueNumber + "/comments", "POST", {
+                body: "🎯 **Власлав распределил задачу в проект:** `" + targetProject + "`\n\n_✅ Задача привязана к ведущему агенту проекта и синхронизирована с рабочей доской._"
+            });
+            showToast("✅ Задача #" + issueNumber + " перенесена в «" + targetProject + "»!");
+        } catch (e) {
+            console.error(e);
+            showToast("⚠️ Ошибка синхронизации: " + e.message);
+        }
+    }
+
+    async function retryIssueScrape(issueNumber) {
+        showToast("🔁 Отправляем повторный разбор #" + issueNumber + " воркеру...");
+        try {
+            await ghApi("/issues/" + issueNumber + "/comments", "POST", {
+                body: "🔁 **Повторить разбор #" + issueNumber + "**\n\n_Запрос с мобильного офиса: повторить глубокий сбор субтитров/текста на ноутбуке._"
+            });
+            await ghApi("/issues/" + issueNumber, "PATCH", { state: "open" });
+            const iss = allIssues.find(i => i.number === issueNumber);
+            if (iss) iss.state = "open";
+            renderCrmTasks();
+            showToast("🚀 Задача #" + issueNumber + " возвращена в очередь ИИ!");
+        } catch (e) {
+            console.error(e);
+            showToast("⚠️ Ошибка: " + e.message);
+        }
+    }
+
+    async function toggleIssueState(issueNumber, currentState) {
+        const newState = currentState === "open" ? "closed" : "open";
+        showToast(newState === "closed" ? "✅ Закрываем задачу #" + issueNumber + "..." : "⏳ Возвращаем задачу #" + issueNumber + " в работу...");
+
+        const iss = allIssues.find(i => i.number === issueNumber);
+        if (iss) iss.state = newState;
+        renderCrmTasks();
+
+        try {
+            await ghApi("/issues/" + issueNumber, "PATCH", { state: newState });
+            await ghApi("/issues/" + issueNumber + "/comments", "POST", {
+                body: newState === "closed"
+                    ? "✅ **Задача завершена пользователем (Власлав)** в Мобильном Офисе."
+                    : "⏳ **Задача возвращена в работу пользователем (Власлав)**."
+            });
+            showToast(newState === "closed" ? "✅ Задача #" + issueNumber + " закрыта!" : "⏳ Задача #" + issueNumber + " в очереди!");
+        } catch (e) {
+            console.error(e);
+            showToast("⚠️ Ошибка: " + e.message);
+        }
+    }
+
+    async function sendCrmTaskReply(issueNumber, project) {
+        const inputEl = document.getElementById("crm-reply-" + issueNumber);
+        if (!inputEl) return;
+        const text = inputEl.value.trim();
+        if (!text) {
+            showToast("⚠️ Введите поручение или ответ ИИ!");
+            return;
+        }
+
+        inputEl.value = "";
+        showToast("🚀 Отправляем ответ агентам...");
+
+        try {
+            await ghApi("/issues/" + issueNumber + "/comments", "POST", {
+                body: "💬 **Ответ / Поручение Власлава к задаче #" + issueNumber + ":**\n\n" + text + "\n\n_⏳ Принято мобильным офисом, передано агентам в работу._"
+            });
+            // Reopen if closed so worker picks it up
+            await ghApi("/issues/" + issueNumber, "PATCH", { state: "open" });
+            const iss = allIssues.find(i => i.number === issueNumber);
+            if (iss) iss.state = "open";
+            renderCrmTasks();
+            showToast("🚀 Ответ передан ИИ-агентам по задаче #" + issueNumber + "!");
+        } catch (e) {
+            console.error(e);
+            showToast("⚠️ Ошибка отправки: " + e.message);
+        }
+    }
+
+    function promptChangeProject(issueNumber, currentProj) {
+        const available = [
+            "Traffic",
+            "12 IT Продуктов (Короче Капитан)",
+            "GlobalFilms (Filmtools)",
+            "Ghost Ghetto Child (Музыка)",
+            "Grok_xAI_Teammates",
+            "Unity Inc",
+            "Личное — обучение и релокация",
+            "План для Иностранцев (Relocation)",
+            "Дима Верхняя Синичиха Алапаевск",
+            "Белый Доминикана",
+            "КМВ",
+            "Alberta",
+            "Позновалка",
+            "Входящие_Офис"
+        ];
+        const choice = prompt("Выберите номер или введите проект для задачи #" + issueNumber + ":\n\n" + available.map((p, idx) => (idx + 1) + ". " + p).join("\n"), currentProj);
+        if (!choice) return;
+        let chosenProj = choice.trim();
+        const num = parseInt(chosenProj);
+        if (!isNaN(num) && num >= 1 && num <= available.length) {
+            chosenProj = available[num - 1];
+        }
+        assignProjectToIssue(issueNumber, canonicalProjectName(chosenProj));
+    }
+
+    function copyIssueDigest(issueNumber) {
+        const iss = allIssues.find(i => i.number === issueNumber);
+        if (!iss) return;
+        const parsed = parseIssueProject(iss.title);
+        const resolved = resolveIssueContent(iss);
+        const textToCopy = "📌 Задача #" + issueNumber + " (" + parsed.project + "):\n" + parsed.cmd + "\n\n" + (resolved.replyText || "").slice(0, 1500);
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showToast("📋 Скопировано в буфер обмена!");
+        }).catch(() => {
+            showToast("⚠️ Не удалось скопировать");
+        });
+    }
+
     function renderCrmTasks() {
         const container = document.getElementById("crm-tasks-container");
         const q = (document.getElementById("crm-task-search").value || "").toLowerCase().trim();
 
         let openCnt = 0;
         let closedCnt = 0;
+        let triageCnt = 0;
+
         allIssues.forEach(i => {
             if (i.state === "open") openCnt++;
             else closedCnt++;
+            const parsed = parseIssueProject(i.title);
+            const canon = canonicalProjectName(parsed.project);
+            if (canon === "Входящие_Офис" || i.number >= 125) {
+                triageCnt++;
+            }
         });
 
         const pendingHuman = HUMAN_ACTIONS_LIST.filter(a => !a.done).length;
         document.getElementById("cnt-all").innerText = allIssues.length;
         document.getElementById("cnt-open").innerText = openCnt;
         document.getElementById("cnt-closed").innerText = closedCnt;
-        const waitEl = document.getElementById("cnt-waiting-human");
-        if (waitEl) waitEl.innerText = pendingHuman + openCnt;
+        
+        const triageEl = document.getElementById("cnt-triage");
+        if (triageEl) triageEl.innerText = triageCnt;
+
+        const waitEl = document.getElementById("cnt-waiting-actions");
+        if (waitEl) waitEl.innerText = pendingHuman;
+
         document.getElementById("m-tasks").innerText = allIssues.length;
 
         let html = "";
 
-        if (crmStatusFilter === "waiting_action") {
-            html += '<div style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.4); border-radius:12px; padding:10px 12px; font-size:0.78rem; color:var(--text-main);">' +
-                '🚨 <b>Ожидание действий:</b> здесь собраны все пункты, где требуется ваше личное решение (' + pendingHuman + '), а также задачи в активной очереди ИИ (' + openCnt + ').' +
+        // Секция личных действий Власлава (при фильтре waiting_action или поиске)
+        if (crmStatusFilter === "waiting_action" || (!crmStatusFilter && pendingHuman > 0)) {
+            html += '<div style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.4); border-radius:12px; padding:10px 12px; font-size:0.78rem; color:var(--text-main); margin-bottom:4px;">' +
+                '🚨 <b>Личные действия Власлава:</b> шаги с максимальной отдачей денег и времени (' + pendingHuman + '). Отмечайте галочкой по мере выполнения!' +
             '</div>';
 
             HUMAN_ACTIONS_LIST.forEach(item => {
@@ -3329,27 +3730,31 @@
                     '</div>' +
                     '<div class="crm-task-title">' + escapeHtml(item.title) + '</div>' +
                     '<div class="crm-task-snippet" style="-webkit-line-clamp:3;">' + escapeHtml(item.desc) + '</div>' +
-                    '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">' +
-                        '<button class="mini-btn accent" onclick="event.stopPropagation(); runPlanStep(\'' + safeProj + '\', \'' + prepCmd + '\')">🤖 Поручить подготовку ИИ</button>' +
-                        '<button class="mini-btn" onclick="event.stopPropagation(); selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;">' +
+                        '<button class="btn-action accent" onclick="event.stopPropagation(); runPlanStep(\'' + safeProj + '\', \'' + prepCmd + '\')">🤖 Поручить подготовку ИИ</button>' +
+                        '<button class="btn-action ghost" onclick="event.stopPropagation(); selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
                     '</div>' +
                 '</div>';
             });
         }
 
+        // Фильтрация и рендеринг задач GitHub
         allIssues.forEach(iss => {
             const parsed = parseIssueProject(iss.title);
-            const project = parsed.project;
+            const project = canonicalProjectName(parsed.project);
             const cmd = parsed.cmd;
             const resolved = resolveIssueContent(iss);
             const lastReply = resolved.replyText;
 
+            // Фильтры
             if (crmStatusFilter === "waiting_action" && iss.state !== "open" && !/PLAN_ACTIONS|Действие человека/i.test(cmd + " " + lastReply)) return;
+            if (crmStatusFilter === "triage" && project !== "Входящие_Офис" && iss.number < 125) return;
             if (crmStatusFilter === "open" && iss.state !== "open") return;
             if (crmStatusFilter === "closed" && iss.state === "open") return;
             if (crmStatusFilter === "links" && !/https?:\/\//i.test(cmd + " " + lastReply)) return;
+            if (crmProjectFilter && project !== crmProjectFilter) return;
 
-            if (q && !(cmd.toLowerCase().includes(q) || project.toLowerCase().includes(q) || lastReply.toLowerCase().includes(q))) {
+            if (q && !(cmd.toLowerCase().includes(q) || project.toLowerCase().includes(q) || lastReply.toLowerCase().includes(q) || String(iss.number).includes(q))) {
                 return;
             }
 
@@ -3358,8 +3763,13 @@
                 ? '<span class="badge running">⏳ В очереди ИИ</span>'
                 : '<span class="badge done">✅ Выполнено</span>';
             const safeProj = escapeHtml(project).replace(/'/g, "\\'");
+            const safeCmd = escapeHtml(cmd).replace(/'/g, "\\'");
 
-            // Извлечение ключевой сути "Что изучено"
+            // Ведущий агент
+            const meta = PROJECT_META[project] || {};
+            const leadAgent = meta.lead || "Autonomous Agent";
+
+            // Суть разбора
             let studiedSnippet = "";
             const mStudied = lastReply.match(/(?:🧠|Ключевые тезисы|Изучено)[^:\n]*:?\s*([\s\S]*?)(?=###|$)/i);
             if (mStudied && mStudied[1]) {
@@ -3369,24 +3779,77 @@
                 if (mTitle) studiedSnippet = mTitle[1].trim();
             }
 
-            // Извлечение статуса "Действие человека"
-            const hasHumanSection = /🚨.*Действие человека/i.test(lastReply);
-            const isHumanNeeded = hasHumanSection && !/не требуется|выполнено 100%|автономно/i.test(lastReply);
-            const actionBadge = isHumanNeeded
-                ? '<span style="color:#f59e0b; font-weight:700; font-size:0.73rem;">🚨 Требуется действие</span>'
-                : '<span style="color:#10b981; font-weight:600; font-size:0.73rem;">✅ Выполнено автономно</span>';
+            // Ошибки чтения YouTube / субтитров
+            const isScrapeBlocked = /субтитры|не удалось получить|авторизац.*google|sign in/i.test(lastReply);
 
+            // Триаж-панель для нераспределенных карточек
+            let triageBarHtml = "";
+            if (iss.number === 127) {
+                triageBarHtml = '<div class="quick-assign-bar">' +
+                    '<span class="assign-hint">🎯 Куда направить Pirates World (#127):</span>' +
+                    '<button class="btn-action accent" onclick="event.stopPropagation(); assignProjectToIssue(127, \'Unity Inc\')">🚀 В Unity Inc (AI-аудит)</button>' +
+                    '<button class="btn-action primary" onclick="event.stopPropagation(); assignProjectToIssue(127, \'Traffic\')">📈 В Traffic (Воронка)</button>' +
+                    '<button class="btn-action ghost" onclick="event.stopPropagation(); assignProjectToIssue(127, \'Входящие_Офис\')">📥 В Базу знаний</button>' +
+                '</div>';
+            } else if (iss.number === 126) {
+                triageBarHtml = '<div class="quick-assign-bar">' +
+                    '<span class="assign-hint">🎯 Куда направить Hive Helsinki (#126):</span>' +
+                    '<button class="btn-action success" onclick="event.stopPropagation(); assignProjectToIssue(126, \'Личное — обучение и релокация\')">🎓 В Личное (ВНЖ Финляндии)</button>' +
+                    '<button class="btn-action ghost" onclick="event.stopPropagation(); promptChangeProject(126, \'' + safeProj + '\')">📁 Другой проект</button>' +
+                '</div>';
+            } else if (project === "Входящие_Офис" && iss.number >= 120) {
+                triageBarHtml = '<div class="quick-assign-bar">' +
+                    '<span class="assign-hint">📁 Распределить в проект:</span>' +
+                    '<button class="btn-action primary" onclick="event.stopPropagation(); promptChangeProject(' + iss.number + ', \'' + safeProj + '\')">🎯 Назначить проект ▾</button>' +
+                '</div>';
+            }
+
+            // Блок повторного парсинга если субтитры заблокированы
+            let retryBannerHtml = "";
+            if (isScrapeBlocked) {
+                retryBannerHtml = '<div class="task-alert-banner warning">' +
+                    '<span>⚠️ Требуется Google-вход на ноутбуке для субтитров</span>' +
+                    '<button class="btn-action warning" style="margin-left:auto;" onclick="event.stopPropagation(); retryIssueScrape(' + iss.number + ')">🔁 Повторить разбор</button>' +
+                '</div>';
+            }
+
+            // Карточка задачи
             html += '<div class="crm-task-card" onclick="selectProject(\'' + safeProj + '\')">' +
                 '<div class="crm-task-top tabular">' +
-                    '<span class="crm-project-tag"># ' + iss.number + ' · 📁 ' + escapeHtml(project) + '</span>' +
-                    '<span>' + dateStr + ' ' + statusBadge + '</span>' +
+                    '<span class="crm-project-tag">#' + iss.number + ' · 📁 ' + escapeHtml(project) + '</span>' +
+                    '<div style="display:flex; align-items:center; gap:6px;">' +
+                        '<span>' + dateStr + ' ' + statusBadge + '</span>' +
+                        '<button class="btn-action ghost" style="padding:2px 7px; font-size:0.68rem;" onclick="event.stopPropagation(); toggleIssueState(' + iss.number + ', \'' + iss.state + '\')">' + (iss.state === "open" ? "Завершить ✓" : "Открыть ↺") + '</button>' +
+                    '</div>' +
                 '</div>' +
                 '<div class="crm-task-title">' + linkifyText(cmd) + '</div>' +
-                (studiedSnippet ? '<div style="font-size:0.76rem; color:var(--text-main); background:rgba(139,92,246,0.08); border-left:3px solid #8b5cf6; padding:6px 9px; border-radius:6px; margin-top:2px;">🧠 <b>Изучено:</b> ' + escapeHtml(studiedSnippet) + '...</div>' : '') +
-                (lastReply ? '<div class="crm-task-snippet">' + escapeHtml(lastReply.replace(/[#*`]/g, '').slice(0, 220)) + '</div>' : '') +
-                '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px; font-size:0.74rem;">' +
-                    actionBadge +
-                    '<button class="mini-btn" onclick="event.stopPropagation(); selectProject(\'' + safeProj + '\')">Открыть в папке →</button>' +
+                (studiedSnippet ? '<div style="font-size:0.75rem; color:var(--text-main); background:rgba(139,92,246,0.08); border-left:3px solid #8b5cf6; padding:6px 9px; border-radius:6px; margin-top:2px;">🧠 <b>Изучено:</b> ' + escapeHtml(studiedSnippet) + '...</div>' : '') +
+                retryBannerHtml +
+                triageBarHtml +
+                (lastReply ? '<div class="crm-task-snippet" style="-webkit-line-clamp:2;">' + escapeHtml(lastReply.replace(/[#*`]/g, '').slice(0, 200)) + '</div>' : '') +
+                
+                // Пульт интерактивного ответа и управления ИИ
+                '<div class="task-action-box" onclick="event.stopPropagation()">' +
+                    '<div class="task-inline-reply">' +
+                        '<input type="text" class="task-inline-input" id="crm-reply-' + iss.number + '" placeholder="Напишите ответ или поручение ИИ..." onkeypress="if(event.key===\'Enter\') sendCrmTaskReply(' + iss.number + ', \'' + safeProj + '\')">' +
+                        '<button class="btn-action accent" onclick="sendCrmTaskReply(' + iss.number + ', \'' + safeProj + '\')">Отправить 🚀</button>' +
+                    '</div>' +
+                    '<div style="display:flex; gap:5px; flex-wrap:wrap; margin-top:2px;">' +
+                        '<span class="skill-mini-tag" onclick="sendTask(\'Внедрить в проект ' + safeProj + ': задача #' + iss.number + '\')">⚡ Внедрить</span>' +
+                        '<span class="skill-mini-tag" onclick="sendTask(\'Составить оффер и расчет по задаче #' + iss.number + '\')">📄 Оффер</span>' +
+                        '<span class="skill-mini-tag" onclick="sendTask(\'/expert Детальный разбор задачи #' + iss.number + '\')">🔍 /expert</span>' +
+                        '<span class="skill-mini-tag" onclick="sendTask(\'/ceo Оценка экономики задачи #' + iss.number + '\')">💼 /ceo</span>' +
+                    '</div>' +
+                '</div>' +
+
+                // Нижняя панель действий
+                '<div class="card-ctrl-strip" onclick="event.stopPropagation()">' +
+                    '<span style="font-size:0.71rem; color:var(--text-dim);">Ведущий: <b>' + escapeHtml(leadAgent) + '</b></span>' +
+                    '<div style="display:flex; gap:5px;">' +
+                        '<button class="btn-action ghost" onclick="promptChangeProject(' + iss.number + ', \'' + safeProj + '\')">📁 Папка</button>' +
+                        '<button class="btn-action ghost" onclick="copyIssueDigest(' + iss.number + ')">📋 Копировать</button>' +
+                        '<button class="btn-action primary" onclick="selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
+                    '</div>' +
                 '</div>' +
             '</div>';
         });
@@ -3395,12 +3858,12 @@
             html = '<div style="text-align:center; color:var(--text-dim); padding:24px; background:var(--bg-card); border-radius:14px; border:1px solid var(--border);">' +
                 '<div style="font-size:1.6rem; margin-bottom:6px;">✅</div>' +
                 '<div style="font-weight:700; color:var(--text-main); margin-bottom:4px;">Очередь ИИ пуста — все задачи разобраны!</div>' +
-                '<div style="font-size:0.78rem; margin-bottom:10px;">Чтобы посмотреть действия, ожидающие вашего участия, нажмите фильтр «🚨 Ожидание действий».</div>' +
-                '<button class="mini-btn accent" onclick="setCrmStatusFilter(\'waiting_action\', document.getElementById(\'flt-waiting-action\'))">🚨 Показать Ожидание действий (' + pendingHuman + ')</button>' +
+                '<div style="font-size:0.78rem; margin-bottom:10px;">Чтобы посмотреть действия, ожидающие вашего участия, нажмите фильтр «🚨 Ждёт меня».</div>' +
+                '<button class="btn-action accent" onclick="setCrmStatusFilter(\'waiting_action\', document.querySelector(\'[data-flt=waiting_action]\'))">🚨 Показать задачи мне (' + pendingHuman + ')</button>' +
             '</div>';
         }
 
-        container.innerHTML = html || '<div style="text-align:center; color:var(--text-dim); padding:24px;">Задач по фильтру нет</div>';
+        container.innerHTML = html || '<div style="text-align:center; color:var(--text-dim); padding:24px;">Задач по данному фильтру нет</div>';
     }
 
     function renderKnowledgeBase() {
@@ -3491,6 +3954,20 @@
             const isLong = cleanReply.length > 550;
             const replyId = "reply-box-" + iss.number;
             const visualCardsHtml = formatReportIntoVisualCards(cleanReply);
+            let triageBarHtml = "";
+            if (iss.number === 127) {
+                triageBarHtml = '<div class="quick-assign-bar" style="margin-bottom:8px;">' +
+                    '<span class="assign-hint">🎯 Куда направить Pirates World (#127):</span>' +
+                    '<button class="btn-action accent" onclick="assignProjectToIssue(127, \'Unity Inc\')">🚀 В Unity Inc (AI-аудит)</button>' +
+                    '<button class="btn-action primary" onclick="assignProjectToIssue(127, \'Traffic\')">📈 В Traffic (Воронка)</button>' +
+                    '<button class="btn-action ghost" onclick="assignProjectToIssue(127, \'Входящие_Офис\')">📥 В Базу знаний</button>' +
+                '</div>';
+            } else if (iss.number === 126) {
+                triageBarHtml = '<div class="quick-assign-bar" style="margin-bottom:8px;">' +
+                    '<span class="assign-hint">🎯 Куда направить Hive Helsinki (#126):</span>' +
+                    '<button class="btn-action success" onclick="assignProjectToIssue(126, \'Личное — обучение и релокация\')">🎓 В Личное (ВНЖ Финляндии)</button>' +
+                '</div>';
+            }
 
             let choicesHtml = "";
             if (choices.length > 0) {
@@ -3595,6 +4072,26 @@
     }
 
     const DEFAULT_HUMAN_ACTIONS = [
+        {
+            id: "act-pirates-127",
+            proj: "Unity Inc",
+            badge: "Триаж #127",
+            color: "#3b82f6",
+            title: "🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+            desc: "Мюнхенская студия ИИ-операций (70+ консультантов, 100+ кейсов). Выберите в 1 клик на карточке: упаковать B2B AI аудит в Unity Inc или воронку в Traffic.",
+            who: "Власлав (1 клик)",
+            done: false
+        },
+        {
+            id: "act-hive-126",
+            proj: "Личное — обучение и релокация",
+            badge: "Триаж #126",
+            color: "#10b981",
+            title: "🎓 Hive Helsinki (#126): Утвердить в Личное (ВНЖ Финляндии)",
+            desc: "Бесплатная peer-to-peer школа программирования. Нажмите «Утвердить» на карточке для запуска дорожной карты поступления и студенческого ВНЖ.",
+            who: "Власлав (1 клик)",
+            done: false
+        },
         {
             id: "act-music",
             proj: "Ghost Ghetto Child (Музыка)",
