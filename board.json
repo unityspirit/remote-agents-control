@@ -570,6 +570,73 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #127 → …»"
       }
+    },
+    "126": {
+      "id": 126,
+      "created": "2026-10-22 08:22:13",
+      "handoffs": [
+        {
+          "t": "2026-10-22 08:22:13",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-22 08:22:13",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-22 08:22:18",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-22 08:22:44",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Личное — обучение и релокация (уверенность high)"
+        },
+        {
+          "t": "2026-10-22 08:22:44",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9169
+      },
+      "title": "https://www.hive.fi/?utm_source=google&utm_medium=cpc&utm_campaign=fall2026_pmax&utm_content=unframed&gad_source=2&gad_campaignid=24242821405 what's the benefits for me if I apply from Russia",
+      "urls": [
+        "https://www.hive.fi/?utm_source=google&utm_medium=cpc&utm_campaign=fall2026_pmax&utm_content=unframed&gad_source=2&gad_campaignid=24242821405"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-10-22 08:22:46",
+      "suggested_project": "Личное — обучение и релокация",
+      "route": {
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Личное — обучение и релокация",
+            30
+          ]
+        ]
+      },
+      "pending_file": "Карточка_126_https___www_hive_fi__utm_sou.md",
+      "raw_file": "raw_126_20261022_082213_https___www_hive_fi__utm_sou.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #126 → Личное — обучение и релокация» или выбрать другой проект"
+      }
     }
   }
 }
