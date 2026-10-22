@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22 17:35:38",
+  "updated": "2026-10-22 17:40:40",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -154,10 +154,10 @@
     {
       "folder": "HipOP",
       "project": "HipOP",
-      "state": "empty",
-      "files": 0,
-      "size_kb": 0,
-      "last_change": null,
+      "state": "active",
+      "files": 1,
+      "size_kb": 17,
+      "last_change": "2026-10-22",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
