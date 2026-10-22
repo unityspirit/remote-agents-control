@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22 08:19:37",
+  "updated": "2026-10-22 08:24:39",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -252,8 +252,8 @@
       "project": "Traffic",
       "state": "active",
       "files": 3,
-      "size_kb": 29,
-      "last_change": "2026-10-18",
+      "size_kb": 34,
+      "last_change": "2026-10-22",
       "lead_agent": "Performance Marketing & Cold Outreach Lead",
       "next_who": "human",
       "next_what": "Выбрать нишу и бюджет для тестовой кампании.",
@@ -423,9 +423,9 @@
       "folder": "Позновалка",
       "project": "Позновалка",
       "state": "active",
-      "files": 56,
-      "size_kb": 446,
-      "last_change": "2026-10-21",
+      "files": 60,
+      "size_kb": 467,
+      "last_change": "2026-10-22",
       "lead_agent": "Swarm Knowledge & Media Extraction Agent",
       "next_who": "agent",
       "next_what": "Единая база знаний: перепрогнать нечитанные материалы (YouTube) после входа в Google.",
@@ -500,6 +500,18 @@
       "lead_agent": "Quantitative Sports & Odds Analyst",
       "next_who": "agent",
       "next_what": "KHL Live v15 работает 24/7; следить за логом.",
+      "open_cards": []
+    },
+    {
+      "folder": "соеденения",
+      "project": "соеденения",
+      "state": "active",
+      "files": 2,
+      "size_kb": 9,
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
       "open_cards": []
     }
   ]
