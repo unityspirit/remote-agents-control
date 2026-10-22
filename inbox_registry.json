@@ -1,28 +1,19 @@
 {
-  "updated_at": "2026-10-21 09:16:50",
+  "updated_at": "2026-10-22 08:21:59",
   "version": "1.0",
-  "system_description": "Единый конвейер обработки входящей информации из Мобильного Офиса с подтверждением и распределением по проектам",
   "items": [
     {
-      "id": "inbox-20261021_091650",
-      "status": "distributed",
-      "approved_at": "2026-10-21 09:16:50",
-      "target_project": "12 IT Продуктов (Короче Капитан)",
-      "target_folder": "C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)",
-      "source_cmd": "✅ Утверждаю: Направить в 12 IT Продуктов (Короче Капитан)",
-      "approved_file": "Утверждено_20261021_091650_12_IT_Продуктов__Короче_Капита.md"
-    },
-    {
-      "id": "inbox-20261021_091622",
-      "timestamp": "2026-10-21 09:16:44",
-      "source_text": "https://t.me/example_channel_bot новая идея для микро-сервиса",
+      "id": "card-127",
+      "card": 127,
+      "timestamp": "2026-10-22 08:21:59",
+      "source_text": "https://www.pirates-world.de/ study and learn how can we benefit from them!",
       "urls": [
-        "https://t.me/example_channel_bot"
+        "https://www.pirates-world.de/"
       ],
-      "status": "awaiting_confirmation",
-      "suggested_project": "12 IT Продуктов (Короче Капитан)",
-      "pending_file": "Предложение_20261021_091622_https___t_me_example_channel_b.md",
-      "raw_file": "raw_20261021_091622_https___t_me_example_channel_b.md"
+      "status": "need_project",
+      "suggested_project": null,
+      "pending_file": "Карточка_127_https___www_pirates_world_de.md",
+      "raw_file": "raw_127_20261022_082127_https___www_pirates_world_de.md"
     }
   ]
 }
