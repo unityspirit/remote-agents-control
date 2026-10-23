@@ -1348,6 +1348,18 @@
           "from": "gatekeeper",
           "to": "gatekeeper",
           "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:45:36",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:45:54",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
         }
       ],
       "evidence": null,
@@ -1358,7 +1370,58 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "failed",
-      "updated": "2026-10-23 16:44:56",
+      "updated": "2026-10-23 16:45:54",
+      "next": {
+        "who": "agent",
+        "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
+      }
+    },
+    "132": {
+      "id": 132,
+      "created": "2026-10-23 16:46:01",
+      "handoffs": [
+        {
+          "t": "2026-10-23 16:46:01",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-23 16:46:58",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:48:00",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:49:20",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:50:38",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        }
+      ],
+      "evidence": null,
+      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B клиентам",
+      "urls": [
+        "https://www.altahq.com/lp/ai-calling-agent"
+      ],
+      "project": "Unity Inc",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "failed",
+      "updated": "2026-10-23 16:50:38",
       "next": {
         "who": "agent",
         "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
