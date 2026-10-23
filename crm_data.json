@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-23 17:35:36",
+  "updated_at": "2026-10-23 17:36:12",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261023_173612",
+      "issue": "Auto",
+      "category": "Проект: Unity Inc",
+      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
+      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
+      "secondary_url": "",
+      "date": "23.10.2026",
+      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
+      "agent": "Enterprise Solutions Architect",
+      "domain": "[[web-агентство-globalplus-unityspirit]]",
+      "related_projects": [
+        "Дима Верхняя Синичиха Алапаевск",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261023_173612.md",
+        "Ведущий агент: Enterprise Solutions Architect"
+      ]
+    },
     {
       "id": "kb-20261023_173536",
       "issue": "Auto",
