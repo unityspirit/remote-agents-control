@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22 18:56:40",
+  "updated": "2026-10-22 18:59:21",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -132,7 +132,7 @@
       "project": "GitHub_Control_Panel",
       "state": "active",
       "files": 4,
-      "size_kb": 515,
+      "size_kb": 537,
       "last_change": "2026-10-22",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -146,7 +146,7 @@
       "files": 3,
       "size_kb": 9,
       "last_change": "2026-10-22",
-      "lead_agent": "Autonomous Project Agent",
+      "lead_agent": "Autonomous AI Teammates Architect",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
@@ -156,7 +156,7 @@
       "project": "HipOP",
       "state": "active",
       "files": 16,
-      "size_kb": 4178,
+      "size_kb": 4200,
       "last_change": "2026-10-22",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -206,7 +206,7 @@
       "files": 2,
       "size_kb": 1,
       "last_change": "2026-10-22",
-      "lead_agent": "Autonomous Project Agent",
+      "lead_agent": "Legal Tech & B2B Contracts Lead",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
@@ -438,7 +438,7 @@
       "files": 1,
       "size_kb": 0,
       "last_change": "2026-10-22",
-      "lead_agent": "Personal Growth Advisor",
+      "lead_agent": "Education & Global Mobility Lead",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
@@ -447,8 +447,8 @@
       "folder": "Москвабад",
       "project": "Москвабад",
       "state": "active",
-      "files": 19,
-      "size_kb": 1027,
+      "files": 22,
+      "size_kb": 1082,
       "last_change": "2026-10-22",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -457,12 +457,12 @@
     },
     {
       "folder": "План для Иностранцев (Relocation)",
-      "project": "План для Иностранцев (Relocation)",
+      "project": "USP — Поддержка переезда",
       "state": "active",
       "files": 26,
       "size_kb": 524,
       "last_change": "2026-10-22",
-      "lead_agent": "Autonomous Project Agent",
+      "lead_agent": "Relocation Partnerships Lead",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
