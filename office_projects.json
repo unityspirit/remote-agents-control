@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23 17:06:37",
+  "updated": "2026-10-23 17:11:36",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -300,7 +300,7 @@
       "project": "Unity Inc",
       "state": "active",
       "files": 10,
-      "size_kb": 282838,
+      "size_kb": 282875,
       "last_change": "2026-10-23",
       "lead_agent": "Enterprise Solutions Architect",
       "next_who": "human",
@@ -471,8 +471,8 @@
       "folder": "Позновалка",
       "project": "Позновалка",
       "state": "active",
-      "files": 81,
-      "size_kb": 569,
+      "files": 90,
+      "size_kb": 621,
       "last_change": "2026-10-23",
       "lead_agent": "Swarm Knowledge & Media Extraction Agent",
       "next_who": "agent",
