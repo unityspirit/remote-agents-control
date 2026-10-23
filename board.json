@@ -725,6 +725,127 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #129»"
       }
+    },
+    "130": {
+      "id": 130,
+      "created": "2026-10-23 16:25:13",
+      "handoffs": [
+        {
+          "t": "2026-10-23 16:25:13",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-23 16:25:46",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:26:02",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:26:17",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:26:33",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:26:49",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:27:04",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:27:20",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:27:35",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:27:50",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:28:06",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:28:22",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:28:37",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:28:52",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:29:04",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:29:19",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:29:34",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        }
+      ],
+      "evidence": null,
+      "title": "PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+      "urls": [],
+      "project": "Traffic",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "failed",
+      "updated": "2026-10-23 16:29:34",
+      "next": {
+        "who": "agent",
+        "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
+      }
     }
   }
 }
