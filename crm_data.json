@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-23 17:12:26",
+  "updated_at": "2026-10-23 17:13:12",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261023_171312",
+      "issue": "Auto",
+      "category": "Проект: Unity Inc",
+      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
+      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
+      "secondary_url": "",
+      "date": "23.10.2026",
+      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
+      "agent": "Enterprise Solutions Architect",
+      "domain": "[[web-агентство-globalplus-unityspirit]]",
+      "related_projects": [
+        "Дима Верхняя Синичиха Алапаевск",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261023_171312.md",
+        "Ведущий агент: Enterprise Solutions Architect"
+      ]
+    },
     {
       "id": "kb-20261023_171226",
       "issue": "Auto",
