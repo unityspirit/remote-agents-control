@@ -1505,6 +1505,60 @@
           "from": "gatekeeper",
           "to": "gatekeeper",
           "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:08:02",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:08:28",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:08:53",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:09:16",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:09:38",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:10:19",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:10:42",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:11:06",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:11:29",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
         }
       ],
       "evidence": null,
@@ -1517,7 +1571,7 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "failed",
-      "updated": "2026-10-23 17:06:27",
+      "updated": "2026-10-23 17:11:29",
       "next": {
         "who": "agent",
         "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
