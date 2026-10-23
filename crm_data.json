@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-23 16:59:59",
+  "updated_at": "2026-10-23 17:00:23",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261023_170023",
+      "issue": "Auto",
+      "category": "Проект: Unity Inc",
+      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
+      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
+      "secondary_url": "",
+      "date": "23.10.2026",
+      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
+      "agent": "Enterprise Solutions Architect",
+      "domain": "[[web-агентство-globalplus-unityspirit]]",
+      "related_projects": [
+        "Дима Верхняя Синичиха Алапаевск",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261023_170023.md",
+        "Ведущий агент: Enterprise Solutions Architect"
+      ]
+    },
     {
       "id": "kb-20261023_165959",
       "issue": "Auto",
