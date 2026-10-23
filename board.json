@@ -1763,6 +1763,42 @@
           "from": "gatekeeper",
           "to": "gatekeeper",
           "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:40:44",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:41:17",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:41:59",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:42:47",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:43:20",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 17:44:20",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
         }
       ],
       "evidence": null,
@@ -1775,7 +1811,7 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "failed",
-      "updated": "2026-10-23 17:39:41",
+      "updated": "2026-10-23 17:44:20",
       "next": {
         "who": "agent",
         "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
