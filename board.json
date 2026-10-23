@@ -669,6 +669,62 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-22 08:24:06"
+    },
+    "129": {
+      "id": 129,
+      "created": "2026-10-23 16:07:19",
+      "handoffs": [
+        {
+          "t": "2026-10-23 16:07:19",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-23 16:07:19",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-23 16:07:45",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: not_studied (источник не открылся: не удалось получить)"
+        },
+        {
+          "t": "2026-10-23 16:07:45",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "not_studied",
+        "reason": "источник не открылся: не удалось получить",
+        "chars": 162
+      },
+      "title": "https://lnkd.in/p/dTrMf8as learn and tell why is it good for me vladislavtundas LinkedIn",
+      "urls": [
+        "https://lnkd.in/p/dTrMf8as"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-23 16:08:15",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_129_https___lnkd_in_p_dTrMf8as_l.md",
+      "raw_file": "raw_129_20261023_160719_https___lnkd_in_p_dTrMf8as_l.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #129»"
+      }
     }
   }
 }
