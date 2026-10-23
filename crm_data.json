@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-23 16:52:57",
+  "updated_at": "2026-10-23 16:54:21",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261023_165421",
+      "issue": "Auto",
+      "category": "Проект: Unity Inc",
+      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
+      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
+      "secondary_url": "",
+      "date": "23.10.2026",
+      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- (Не удалось получить полный текст https://www.altahq.com/lp/ai-calling-agent: <urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>)\n\n---\n📂 Мате",
+      "agent": "Enterprise Solutions Architect",
+      "domain": "[[web-агентство-globalplus-unityspirit]]",
+      "related_projects": [
+        "Дима Верхняя Синичиха Алапаевск",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261023_165421.md",
+        "Ведущий агент: Enterprise Solutions Architect"
+      ]
+    },
     {
       "id": "kb-20261023_165256",
       "issue": "Auto",
