@@ -1155,6 +1155,162 @@
           "from": "gatekeeper",
           "to": "gatekeeper",
           "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:40:08",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:40:18",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:40:28",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:40:39",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:40:49",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:40:59",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:41:10",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:41:20",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:41:30",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:41:39",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:41:49",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:41:59",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:42:09",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:42:19",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:42:29",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:42:39",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:42:48",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:42:58",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:43:09",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:43:18",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:43:28",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:43:39",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:43:49",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:44:01",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:44:11",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:44:25",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
         }
       ],
       "evidence": null,
@@ -1165,7 +1321,44 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "failed",
-      "updated": "2026-10-23 16:39:46",
+      "updated": "2026-10-23 16:44:25",
+      "next": {
+        "who": "agent",
+        "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
+      }
+    },
+    "131": {
+      "id": 131,
+      "created": "2026-10-23 16:44:32",
+      "handoffs": [
+        {
+          "t": "2026-10-23 16:44:32",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-23 16:44:42",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 16:44:56",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "❌ Ошибка обработки"
+        }
+      ],
+      "evidence": null,
+      "title": "PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+      "urls": [],
+      "project": "Traffic",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "failed",
+      "updated": "2026-10-23 16:44:56",
       "next": {
         "who": "agent",
         "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
