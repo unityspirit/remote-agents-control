@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-24T22:26:55.061749+00:00",
+  "updated_at": "2026-10-24T22:32:31.833Z",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-1792881151188",
+      "issue": 137,
+      "category": "Проект: Входящие_Офис",
+      "title": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our nee",
+      "source_url": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ",
+      "secondary_url": "",
+      "date": "25.10.2026",
+      "summary": "URL Source: https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ\n• Warning: Target URL returned error 401: Unauthorized\n• All the most important things in AI in a week—in a minute. 6. Codex, Claude Code, OpenCode, and Pi work side by side, each in its own worktree, and everything can be controlled from your phone. 5. Google's new model writes up to a million tokens per response and outperforms GPT-6 Astra in key benchmarks. 4. Self-learning skills for Claude Code: they monitor your sessions, write skills themselves, merge duplicates, and remove unnecessary ones. 3. OpenAI launched agents that are always running: their own cloud computer, 4,000+ applications, 24/7. 2. A tool that runs Claude Code through free providers like DeepSeek and Kimi or through models on your computer. Same terminal, zero costs. 1. China has opened the world's best open model: a trillion parameters, only 42 billion are active, and it's free. Write the AI ​​in the comments - I'll send you links to all six in a private message.\n• Audio tracks for some languages were automatically generated. [Learn more](https://support.google.com/youtube/answer/15569972?hl=en)",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    },
     {
       "id": "kb-1792875793369",
       "issue": 136,
