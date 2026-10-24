@@ -2072,6 +2072,62 @@
         "who": "human",
         "what": "«✅ Утверждаю #135 → Unity Inc» или выбрать другой проект"
       }
+    },
+    "136": {
+      "id": 136,
+      "created": "2026-10-24 15:03:16",
+      "handoffs": [
+        {
+          "t": "2026-10-24 15:03:16",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-24 15:03:16",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-24 15:03:33",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: title_only (известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google))"
+        },
+        {
+          "t": "2026-10-24 15:03:33",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
+        "chars": 298
+      },
+      "title": "https://youtube.com/shorts/mjFc8P5no8o?is=r2zw2yXqiOFp_rE- study and learn how we make money next week for sure I can invest my time to help you.",
+      "urls": [
+        "https://youtube.com/shorts/mjFc8P5no8o?is=r2zw2yXqiOFp_rE-"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-24 15:03:35",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_136_https___youtube_com_shorts_m.md",
+      "raw_file": "raw_136_20261024_150316_https___youtube_com_shorts_m.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #136»"
+      }
     }
   }
 }
