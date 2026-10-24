@@ -2005,6 +2005,73 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-23 19:09:53"
+    },
+    "135": {
+      "id": 135,
+      "created": "2026-10-24 14:58:15",
+      "handoffs": [
+        {
+          "t": "2026-10-24 14:58:15",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-24 14:58:16",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-24 14:58:17",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-24 14:58:43",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Unity Inc (уверенность medium)"
+        },
+        {
+          "t": "2026-10-24 14:58:43",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9048
+      },
+      "title": "https://aituber.app/ learn study and make the same app for me to sell!",
+      "urls": [
+        "https://aituber.app/"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-10-24 14:58:45",
+      "suggested_project": "Unity Inc",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "Unity Inc",
+            10
+          ]
+        ]
+      },
+      "pending_file": "Карточка_135_https___aituber_app__learn_s.md",
+      "raw_file": "raw_135_20261024_145815_https___aituber_app__learn_s.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #135 → Unity Inc» или выбрать другой проект"
+      }
     }
   }
 }
