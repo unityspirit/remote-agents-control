@@ -1913,9 +1913,18 @@
           "from": "gatekeeper",
           "to": "gatekeeper",
           "note": "❌ Ошибка обработки"
+        },
+        {
+          "t": "2026-10-23 18:21:27",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
         }
       ],
-      "evidence": null,
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
       "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B клиентам",
       "urls": [
         "https://www.altahq.com/lp/ai-calling-agent"
@@ -1924,8 +1933,8 @@
       "kind": "link",
       "refers_to": null,
       "owner": "gatekeeper",
-      "status": "failed",
-      "updated": "2026-10-23 18:13:49",
+      "status": "done",
+      "updated": "2026-10-23 18:21:27",
       "next": {
         "who": "agent",
         "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
