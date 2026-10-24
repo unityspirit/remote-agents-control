@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T20:58:09.663Z",
+  "updated_at": "2026-10-24T20:58:53.259761+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -2992,9 +2992,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 135,
+      "evidence_count": 136,
       "scope": "global",
-      "last_updated": "2026-10-23T18:27:34.207929"
+      "last_updated": "2026-10-24T14:58:51.853515"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -3042,9 +3042,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 131,
+      "evidence_count": 132,
       "scope": "global",
-      "last_updated": "2026-10-23T19:10:20.542068"
+      "last_updated": "2026-10-24T14:58:51.855960"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -3082,9 +3082,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 150,
+      "evidence_count": 151,
       "scope": "global",
-      "last_updated": "2026-10-23T19:10:20.542613"
+      "last_updated": "2026-10-24T14:58:51.857298"
     },
     {
       "id": "task-custom-request",
