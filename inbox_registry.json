@@ -1,7 +1,31 @@
 {
-  "updated_at": "2026-10-22 08:22:44",
+  "updated_at": "2026-10-24 14:58:43",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-135",
+      "card": 135,
+      "timestamp": "2026-10-24 14:58:43",
+      "source_text": "https://aituber.app/ learn study and make the same app for me to sell!",
+      "urls": [
+        "https://aituber.app/"
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "Unity Inc",
+      "pending_file": "Карточка_135_https___aituber_app__learn_s.md",
+      "raw_file": "raw_135_20261024_145815_https___aituber_app__learn_s.md"
+    },
+    {
+      "id": "card-129",
+      "card": 129,
+      "status": "not_studied",
+      "source_text": "https://lnkd.in/p/dTrMf8as learn and tell why is it good for me vladislavtundas LinkedIn",
+      "urls": [
+        "https://lnkd.in/p/dTrMf8as"
+      ],
+      "pending_file": "Карточка_129_https___lnkd_in_p_dTrMf8as_l.md",
+      "raw_file": "raw_129_20261023_160719_https___lnkd_in_p_dTrMf8as_l.md"
+    },
     {
       "id": "card-126",
       "card": 126,
