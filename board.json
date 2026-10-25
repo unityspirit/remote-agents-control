@@ -2128,6 +2128,62 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #136»"
       }
+    },
+    "140": {
+      "id": 140,
+      "created": "2026-10-25 08:34:42",
+      "handoffs": [
+        {
+          "t": "2026-10-25 08:34:42",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 08:34:42",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 08:34:46",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-25 08:35:11",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9218
+      },
+      "title": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_content=ds01&gad_source=2&gad_campaignid=24347188520 изучи сай",
+      "urls": [
+        "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_content=ds01&gad_source=2&gad_campaignid=24347188520"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-10-25 08:35:13",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_140_https___univerus_ai_lp_dohod.md",
+      "raw_file": "raw_140_20261025_083442_https___univerus_ai_lp_dohod.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #140 → …»"
+      }
     }
   }
 }
