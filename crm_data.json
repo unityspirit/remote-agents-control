@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T14:34:37.643240+00:00",
+  "updated_at": "2026-10-25T14:35:25.414394+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3064,9 +3064,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 82,
+      "evidence_count": 83,
       "scope": "global",
-      "last_updated": "2026-10-23T18:21:43.450040"
+      "last_updated": "2026-10-25T08:35:24.019062"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -3134,9 +3134,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 152,
+      "evidence_count": 153,
       "scope": "global",
-      "last_updated": "2026-10-24T15:03:41.902520"
+      "last_updated": "2026-10-25T08:35:24.020272"
     },
     {
       "id": "task-custom-request",
