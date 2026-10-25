@@ -2184,6 +2184,62 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #140 → …»"
       }
+    },
+    "139": {
+      "id": 139,
+      "created": "2026-10-25 08:35:28",
+      "handoffs": [
+        {
+          "t": "2026-10-25 08:35:28",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 08:35:28",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 08:35:45",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: title_only (известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google))"
+        },
+        {
+          "t": "2026-10-25 08:35:45",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
+        "chars": 346
+      },
+      "title": "https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference?",
+      "urls": [
+        "https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-25 08:35:47",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_139_https___youtube_com_shorts_E.md",
+      "raw_file": "raw_139_20261025_083528_https___youtube_com_shorts_E.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #139»"
+      }
     }
   }
 }
