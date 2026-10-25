@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-25 08:36:46",
+  "updated_at": "2026-10-25 15:55:35",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-141",
+      "card": 141,
+      "timestamp": "2026-10-25 15:55:35",
+      "source_text": "https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=2041",
+      "urls": [
+        "https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=828897820683&utm_type=demgen&utm_acc=3067916666&gad_source=2&gad_campaignid=24389595055&pivex_attribution_id=160bdb76-9bc5-47bd-8a4e-92f9faff5f5b"
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "AI Skills & Nobel Stabilization",
+      "pending_file": "Карточка_141_https___pivexfunded_com_dyna.md",
+      "raw_file": "raw_141_20261025_155506_https___pivexfunded_com_dyna.md"
+    },
     {
       "id": "card-137",
       "card": 137,
