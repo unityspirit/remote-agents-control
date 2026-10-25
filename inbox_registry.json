@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-24 15:03:33",
+  "updated_at": "2026-10-25 08:35:11",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-140",
+      "card": 140,
+      "timestamp": "2026-10-25 08:35:11",
+      "source_text": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campai",
+      "urls": [
+        "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_content=ds01&gad_source=2&gad_campaignid=24347188520"
+      ],
+      "status": "need_project",
+      "suggested_project": null,
+      "pending_file": "Карточка_140_https___univerus_ai_lp_dohod.md",
+      "raw_file": "raw_140_20261025_083442_https___univerus_ai_lp_dohod.md"
+    },
     {
       "id": "card-136",
       "card": 136,
