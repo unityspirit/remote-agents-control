@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25 16:53:23",
+  "updated": "2026-10-25 16:58:29",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -252,8 +252,8 @@
       "project": "ThoughtМысль",
       "state": "active",
       "files": 3,
-      "size_kb": 14,
-      "last_change": "2026-10-22",
+      "size_kb": 22,
+      "last_change": "2026-10-25",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
@@ -483,9 +483,9 @@
       "folder": "Позновалка",
       "project": "Позновалка",
       "state": "active",
-      "files": 157,
-      "size_kb": 1038,
-      "last_change": "2026-10-23",
+      "files": 159,
+      "size_kb": 1050,
+      "last_change": "2026-10-25",
       "lead_agent": "Swarm Knowledge & Media Extraction Agent",
       "next_who": "agent",
       "next_what": "Единая база знаний: перепрогнать нечитанные материалы (YouTube) после входа в Google.",
