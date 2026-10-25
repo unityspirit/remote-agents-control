@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-10-25 08:35:11",
+  "updated_at": "2026-10-25 08:35:45",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-139",
+      "card": 139,
+      "status": "not_studied",
+      "source_text": "https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference",
+      "urls": [
+        "https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE"
+      ],
+      "pending_file": "Карточка_139_https___youtube_com_shorts_E.md",
+      "raw_file": "raw_139_20261025_083528_https___youtube_com_shorts_E.md"
+    },
     {
       "id": "card-140",
       "card": 140,
