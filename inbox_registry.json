@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-25 17:09:41",
+  "updated_at": "2026-10-25 17:15:04",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-144",
+      "card": 144,
+      "timestamp": "2026-10-25 17:15:04",
+      "source_text": "https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=",
+      "urls": [
+        "https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_term=&gad_source=2&gad_campaignid=23468575625"
+      ],
+      "status": "need_project",
+      "suggested_project": null,
+      "pending_file": "Карточка_144_https___onapsis_com_sap_cybe.md",
+      "raw_file": "raw_144_20261025_171435_https___onapsis_com_sap_cybe.md"
+    },
     {
       "id": "card-143",
       "card": 143,
