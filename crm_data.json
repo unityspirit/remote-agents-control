@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T21:55:04.308Z",
+  "updated_at": "2026-10-25T21:55:44.361271+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3057,9 +3057,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 136,
+      "evidence_count": 137,
       "scope": "global",
-      "last_updated": "2026-10-24T14:58:51.853515"
+      "last_updated": "2026-10-25T15:55:43.052015"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -3147,9 +3147,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 156,
+      "evidence_count": 157,
       "scope": "global",
-      "last_updated": "2026-10-25T08:36:56.076387"
+      "last_updated": "2026-10-25T15:55:43.053775"
     },
     {
       "id": "task-custom-request",
