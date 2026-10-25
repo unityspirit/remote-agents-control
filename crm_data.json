@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T14:36:29.721901+00:00",
+  "updated_at": "2026-10-25T14:36:57.907371+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3094,9 +3094,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 134,
+      "evidence_count": 135,
       "scope": "global",
-      "last_updated": "2026-10-25T08:35:53.455783"
+      "last_updated": "2026-10-25T08:36:56.073598"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -3134,9 +3134,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 155,
+      "evidence_count": 156,
       "scope": "global",
-      "last_updated": "2026-10-25T08:36:28.059869"
+      "last_updated": "2026-10-25T08:36:56.076387"
     },
     {
       "id": "task-custom-request",
