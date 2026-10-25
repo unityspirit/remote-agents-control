@@ -2307,6 +2307,62 @@
         "who": "human",
         "what": "«✅ Утверждаю #138 → Unity Inc» или выбрать другой проект"
       }
+    },
+    "137": {
+      "id": 137,
+      "created": "2026-10-25 08:36:33",
+      "handoffs": [
+        {
+          "t": "2026-10-25 08:36:33",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 08:36:33",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 08:36:46",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: title_only (известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google))"
+        },
+        {
+          "t": "2026-10-25 08:36:46",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
+        "chars": 310
+      },
+      "title": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
+      "urls": [
+        "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-25 08:36:48",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_137_https___youtube_com_shorts_L.md",
+      "raw_file": "raw_137_20261025_083633_https___youtube_com_shorts_L.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #137»"
+      }
     }
   }
 }
