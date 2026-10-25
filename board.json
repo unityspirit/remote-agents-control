@@ -2240,6 +2240,73 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #139»"
       }
+    },
+    "138": {
+      "id": 138,
+      "created": "2026-10-25 08:35:58",
+      "handoffs": [
+        {
+          "t": "2026-10-25 08:35:58",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 08:35:58",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 08:36:07",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-25 08:36:19",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Unity Inc (уверенность medium)"
+        },
+        {
+          "t": "2026-10-25 08:36:19",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 6768
+      },
+      "title": "https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeGIJ47jgk11JTWJ8KVTEJdE4bJ6",
+      "urls": [
+        "https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeGIJ47jgk11JTWJ8KVTEJdE4bJ6Q5iv4h6XzoYegBm5Y4OKUDr6GI594_DFQ_aem_mGFFchZi5vCAuSa6xLHRcQ&utm_medium=paid&utm_source=fb&utm_id=52573831505003&utm_content=52573831937403&utm_term=52573831509203&utm_campaign=52573831505003"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-10-25 08:36:21",
+      "suggested_project": "Unity Inc",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "Unity Inc",
+            10
+          ]
+        ]
+      },
+      "pending_file": "Карточка_138_https___info_fisherinvestmen.md",
+      "raw_file": "raw_138_20261025_083558_https___info_fisherinvestmen.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #138 → Unity Inc» или выбрать другой проект"
+      }
     }
   }
 }
