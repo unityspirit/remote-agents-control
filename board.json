@@ -2518,6 +2518,62 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #143 → …»"
       }
+    },
+    "144": {
+      "id": 144,
+      "created": "2026-10-25 17:14:35",
+      "handoffs": [
+        {
+          "t": "2026-10-25 17:14:35",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 17:14:35",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 17:14:36",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-25 17:15:04",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9210
+      },
+      "title": "https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_term=&gad_source=2&gad_campaignid=23468575625 what are they sel",
+      "urls": [
+        "https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_term=&gad_source=2&gad_campaignid=23468575625"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-10-25 17:15:07",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_144_https___onapsis_com_sap_cybe.md",
+      "raw_file": "raw_144_20261025_171435_https___onapsis_com_sap_cybe.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #144 → …»"
+      }
     }
   }
 }
