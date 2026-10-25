@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-10-25 08:36:19",
+  "updated_at": "2026-10-25 08:36:46",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-137",
+      "card": 137,
+      "status": "not_studied",
+      "source_text": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
+      "urls": [
+        "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ"
+      ],
+      "pending_file": "Карточка_137_https___youtube_com_shorts_L.md",
+      "raw_file": "raw_137_20261025_083633_https___youtube_com_shorts_L.md"
+    },
     {
       "id": "card-138",
       "card": 138,
