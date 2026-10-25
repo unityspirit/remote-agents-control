@@ -2363,6 +2363,73 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #137»"
       }
+    },
+    "141": {
+      "id": 141,
+      "created": "2026-10-25 15:55:06",
+      "handoffs": [
+        {
+          "t": "2026-10-25 15:55:06",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 15:55:06",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 15:55:07",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-25 15:55:34",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: AI Skills & Nobel Stabilization (уверенность medium)"
+        },
+        {
+          "t": "2026-10-25 15:55:34",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9309
+      },
+      "title": "https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=828897820683&utm_type=demgen&utm_acc=3067916666&gad_source=2&gad",
+      "urls": [
+        "https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=828897820683&utm_type=demgen&utm_acc=3067916666&gad_source=2&gad_campaignid=24389595055&pivex_attribution_id=160bdb76-9bc5-47bd-8a4e-92f9faff5f5b"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-10-25 15:55:37",
+      "suggested_project": "AI Skills & Nobel Stabilization",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "AI Skills & Nobel Stabilization",
+            8
+          ]
+        ]
+      },
+      "pending_file": "Карточка_141_https___pivexfunded_com_dyna.md",
+      "raw_file": "raw_141_20261025_155506_https___pivexfunded_com_dyna.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #141 → AI Skills & Nobel Stabilization» или выбрать другой проект"
+      }
     }
   }
 }
