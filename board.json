@@ -2574,6 +2574,33 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #144 → …»"
       }
+    },
+    "145": {
+      "id": 145,
+      "created": "2026-10-25 18:27:08",
+      "handoffs": [
+        {
+          "t": "2026-10-25 18:27:08",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 18:27:13",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "CREATE_FOLDER: СтадиБук",
+      "urls": [],
+      "project": "СтадиБук",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-25 18:27:13"
     }
   }
 }
