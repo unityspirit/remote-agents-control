@@ -2662,6 +2662,62 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #146 → …»"
       }
+    },
+    "149": {
+      "id": 149,
+      "created": "2026-10-26 11:08:41",
+      "handoffs": [
+        {
+          "t": "2026-10-26 11:08:41",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-26 11:08:41",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-26 11:09:13",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: title_only (известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google))"
+        },
+        {
+          "t": "2026-10-26 11:09:13",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
+        "chars": 343
+      },
+      "title": "https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
+      "urls": [
+        "https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-26 11:09:17",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_149_https___youtube_com_shorts_n.md",
+      "raw_file": "raw_149_20261026_110841_https___youtube_com_shorts_n.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #149»"
+      }
     }
   }
 }
