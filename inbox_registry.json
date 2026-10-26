@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-26 11:10:12",
+  "updated_at": "2026-10-26 11:11:17",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-147",
+      "card": 147,
+      "timestamp": "2026-10-26 11:11:17",
+      "source_text": "https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm",
+      "urls": [
+        "https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaignid=24312469597&utm_adsetid=200338473563&utm_adid=826526575099&utm_placement=youtube.com&gad_source=2&gad_campaignid=24312469597"
+      ],
+      "status": "need_project",
+      "suggested_project": null,
+      "pending_file": "Карточка_147_https___www_customaistore_co.md",
+      "raw_file": "raw_147_20261026_111048_https___www_customaistore_co.md"
+    },
     {
       "id": "card-148",
       "card": 148,
