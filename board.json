@@ -2601,6 +2601,67 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-25 18:27:13"
+    },
+    "146": {
+      "id": 146,
+      "created": "2026-10-25 18:30:32",
+      "handoffs": [
+        {
+          "t": "2026-10-25 18:30:32",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-25 18:30:32",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-25 18:30:39",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-25 18:31:04",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9087
+      },
+      "title": "https://delvi.tech/?gad_source=2&gad_campaignid=23878973489 изучи проект научись сделай такой проект прибыльным для меня!",
+      "urls": [
+        "https://delvi.tech/?gad_source=2&gad_campaignid=23878973489"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-10-25 18:31:06",
+      "suggested_project": "Белый Доминикана",
+      "route": {
+        "confidence": "low",
+        "alternatives": [
+          [
+            "Белый Доминикана",
+            6
+          ]
+        ]
+      },
+      "pending_file": "Карточка_146_https___delvi_tech__gad_sour.md",
+      "raw_file": "raw_146_20261025_183032_https___delvi_tech__gad_sour.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #146 → …»"
+      }
     }
   }
 }
