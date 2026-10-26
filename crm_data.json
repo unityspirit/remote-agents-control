@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T00:30:25.439Z",
+  "updated_at": "2026-10-26T00:31:14.665053+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3143,9 +3143,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 161,
+      "evidence_count": 162,
       "scope": "global",
-      "last_updated": "2026-10-25T18:27:20.327555"
+      "last_updated": "2026-10-25T18:31:13.339837"
     },
     {
       "id": "task-custom-request",
