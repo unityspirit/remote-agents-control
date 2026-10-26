@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25 18:24:13",
+  "updated": "2026-10-25 18:29:18",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -483,8 +483,8 @@
       "folder": "Позновалка",
       "project": "Позновалка",
       "state": "active",
-      "files": 159,
-      "size_kb": 1050,
+      "files": 160,
+      "size_kb": 1051,
       "last_change": "2026-10-25",
       "lead_agent": "Swarm Knowledge & Media Extraction Agent",
       "next_who": "agent",
@@ -536,6 +536,18 @@
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Проверить Filmtools со смартфона вместе со Светланой.",
+      "open_cards": []
+    },
+    {
+      "folder": "СтадиБук",
+      "project": "СтадиБук",
+      "state": "active",
+      "files": 2,
+      "size_kb": 1,
+      "last_change": "2026-10-25",
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
       "open_cards": []
     },
     {
