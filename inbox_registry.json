@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-10-28 06:58:37",
+  "updated_at": "2026-10-28 06:59:13",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-153",
+      "card": 153,
+      "status": "not_studied",
+      "source_text": "https://www.instagram.com/intermiamibuzz пример бизнеса в автоматическом режиме",
+      "urls": [
+        "https://www.instagram.com/intermiamibuzz"
+      ],
+      "pending_file": "Карточка_153_https___www_instagram_com_in.md",
+      "raw_file": "raw_153_20261028_065912_https___www_instagram_com_in.md"
+    },
     {
       "id": "card-154",
       "card": 154,
