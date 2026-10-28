@@ -3018,6 +3018,62 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #153»"
       }
+    },
+    "152": {
+      "id": 152,
+      "created": "2026-10-28 06:59:31",
+      "handoffs": [
+        {
+          "t": "2026-10-28 06:59:31",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-28 06:59:31",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-28 06:59:56",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: title_only (известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google))"
+        },
+        {
+          "t": "2026-10-28 06:59:56",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
+        "chars": 315
+      },
+      "title": "What is sharktank https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2 What is he talking about?",
+      "urls": [
+        "https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-28 06:59:59",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_152_What_is_sharktank_https___yo.md",
+      "raw_file": "raw_152_20261028_065931_What_is_sharktank_https___yo.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #152»"
+      }
     }
   }
 }
