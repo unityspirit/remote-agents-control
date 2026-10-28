@@ -161,5 +161,20 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-10-28T21:38:28.580029+00:00"
+  "updated_at": "2026-10-28T22:49:21.955Z",
+  "knowledge_base": [
+    {
+      "id": "kb-1793227761131",
+      "issue": 157,
+      "category": "Проект: Входящие_Офис",
+      "title": "Hope anything app learn about it and let's make the same for us!!!!",
+      "source_url": "",
+      "secondary_url": "",
+      "date": "29.10.2026",
+      "summary": "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    }
+  ]
 }
