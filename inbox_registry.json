@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-10-28 06:59:13",
+  "updated_at": "2026-10-28 06:59:56",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-152",
+      "card": 152,
+      "status": "not_studied",
+      "source_text": "What is sharktank https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2 What is he talking about?",
+      "urls": [
+        "https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2"
+      ],
+      "pending_file": "Карточка_152_What_is_sharktank_https___yo.md",
+      "raw_file": "raw_152_20261028_065931_What_is_sharktank_https___yo.md"
+    },
     {
       "id": "card-153",
       "card": 153,
