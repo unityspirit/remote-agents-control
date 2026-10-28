@@ -2962,6 +2962,62 @@
         "who": "human",
         "what": "«✅ Утверждаю #154 → Личное — обучение и релокация» или выбрать другой проект"
       }
+    },
+    "153": {
+      "id": 153,
+      "created": "2026-10-28 06:59:12",
+      "handoffs": [
+        {
+          "t": "2026-10-28 06:59:12",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-28 06:59:12",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-28 06:59:13",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: not_studied (источник не открылся: не удалось получить)"
+        },
+        {
+          "t": "2026-10-28 06:59:13",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "not_studied",
+        "reason": "источник не открылся: не удалось получить",
+        "chars": 170
+      },
+      "title": "https://www.instagram.com/intermiamibuzz пример бизнеса в автоматическом режиме",
+      "urls": [
+        "https://www.instagram.com/intermiamibuzz"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-10-28 06:59:16",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_153_https___www_instagram_com_in.md",
+      "raw_file": "raw_153_20261028_065912_https___www_instagram_com_in.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #153»"
+      }
     }
   }
 }
