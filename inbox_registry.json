@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-10-28 07:00:38",
+  "updated_at": "2026-10-28 07:01:20",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-150",
+      "card": 150,
+      "timestamp": "2026-10-28 07:01:20",
+      "source_text": "Anthropic выпустила новый ГАЙД по ИИ-агентам — в этот раз рассказали про субагентов и сокращение затрат.  Особенно полез",
+      "urls": [],
+      "status": "need_project",
+      "suggested_project": null,
+      "pending_file": "Карточка_150_Anthropic_выпустила_новый_ГА.md",
+      "raw_file": "raw_150_20261028_070057_Anthropic_выпустила_новый_ГА.md"
+    },
     {
       "id": "card-151",
       "card": 151,
