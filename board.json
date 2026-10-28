@@ -2830,6 +2830,73 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #147 → …»"
       }
+    },
+    "155": {
+      "id": 155,
+      "created": "2026-10-28 06:58:06",
+      "handoffs": [
+        {
+          "t": "2026-10-28 06:58:06",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-28 06:58:06",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-28 06:58:09",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-28 06:58:14",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Grok_xAI_Teammates (уверенность medium)"
+        },
+        {
+          "t": "2026-10-28 06:58:14",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 812
+      },
+      "title": "https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they project",
+      "urls": [
+        "https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA=="
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-10-28 06:58:18",
+      "suggested_project": "Grok_xAI_Teammates",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "Grok_xAI_Teammates",
+            8
+          ]
+        ]
+      },
+      "pending_file": "Карточка_155_https___www_instagram_com_p.md",
+      "raw_file": "raw_155_20261028_065806_https___www_instagram_com_p.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #155 → Grok_xAI_Teammates» или выбрать другой проект"
+      }
     }
   }
 }
