@@ -3182,6 +3182,33 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #150 → …»"
       }
+    },
+    "156": {
+      "id": 156,
+      "created": "2026-10-28 07:51:57",
+      "handoffs": [
+        {
+          "t": "2026-10-28 07:51:57",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-28 07:53:09",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "/strategy",
+      "urls": [],
+      "project": "Позновалка",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-28 07:53:09"
     }
   }
 }
