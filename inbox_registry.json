@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-10-26 11:11:17",
+  "updated_at": "2026-10-28 06:58:14",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-155",
+      "card": 155,
+      "timestamp": "2026-10-28 06:58:14",
+      "source_text": "https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they",
+      "urls": [
+        "https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA=="
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "Grok_xAI_Teammates",
+      "pending_file": "Карточка_155_https___www_instagram_com_p.md",
+      "raw_file": "raw_155_20261028_065806_https___www_instagram_com_p.md"
+    },
     {
       "id": "card-147",
       "card": 147,
