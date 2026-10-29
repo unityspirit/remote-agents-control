@@ -3209,6 +3209,60 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-28 07:53:09"
+    },
+    "157": {
+      "id": 157,
+      "created": "2026-10-29 08:07:14",
+      "handoffs": [
+        {
+          "t": "2026-10-29 08:07:14",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-29 08:07:14",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники и читаю текст"
+        },
+        {
+          "t": "2026-10-29 08:07:14",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-10-29 08:07:31",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 0
+      },
+      "title": "Hope anything app learn about it and let's make the same for us!!!!",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-10-29 08:07:40",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_157_Hope_anything_app_learn_abou.md",
+      "raw_file": "raw_157_20261029_080714_Hope_anything_app_learn_abou.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #157 → …»"
+      }
     }
   }
 }
