@@ -1,8 +1,8 @@
 {
   "id": "/remote-agents-control/",
-  "name": "Unity Spirit — Виртуальный Офис",
-  "short_name": "Unity Office",
-  "description": "Мобильный и десктопный Виртуальный Офис 24/7: папки проектов, ИИ-агенты, Директор Тим, фото-OCR и отчёты работы.",
+  "name": "Global Spirit Group — Виртуальный Офис",
+  "short_name": "Global Spirit Group",
+  "description": "Мобильный и десктопный Виртуальный Офис Global Spirit Group 24/7 для русскоязычных сотрудников: папки проектов, ИИ-агенты, Директор Тим, фото-OCR и отчёты работы.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

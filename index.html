@@ -14,7 +14,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <title>Unity Spirit — Виртуальный Офис v20</title>
+    <title>Global Spirit Group — Виртуальный Офис</title>
     <style>
         :root {
             --bg-main: #090d16;
@@ -1854,7 +1854,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v22.1: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v22.2: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -1862,7 +1862,7 @@
             <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:8px;">
                 <img src="icons/icon-192.png" alt="Unity Spirit Logo" style="width:46px; height:46px; border-radius:12px; box-shadow:0 4px 14px rgba(2,132,199,0.5);">
                 <div style="text-align:left;">
-                    <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc; margin:0;">Unity Spirit — Гостевой Превью-Портал</h2>
+                    <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc; margin:0;">Global Spirit Group — Гостевой Превью-Портал</h2>
                     <div style="font-size:0.75rem; color:#94a3b8;">ИИ-экосистема автономных агентов для бизнеса, маркетинга и монетизации</div>
                 </div>
             </div>
@@ -1922,7 +1922,7 @@
                     <div style="display:flex; gap:8px; align-items:flex-start;">
                         <div style="width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0;">🤖</div>
                         <div style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:10px 12px; font-size:0.79rem; line-height:1.48; color:#f1f5f9; max-width:88%;">
-                            Здравствуйте! Я официальный <b>ИИ-Ассистент Unity Spirit</b> 🚀<br><br>
+                            Здравствуйте! Я официальный <b>ИИ-Ассистент Global Spirit Group</b> 🚀<br><br>
                             Задайте мне любой вопрос в живом режиме (как в ChatGPT):<br>
                             • Как работают <b>7 автономных отделов</b> Генерального Директора Тима<br>
                             • Как запустить ИИ-воронки и привлекать клиентов<br>
@@ -1957,7 +1957,7 @@
         <div class="brand-row">
             <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Unity Office" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Unity 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
             <div class="brand-titles">
-                <h1>Unity Spirit Офис</h1>
+                <h1 id="brand-header-title">Global Spirit Group</h1>
                 <div class="worker-pill">
                     <span class="status-dot" id="worker-dot"></span>
                     <span id="worker-text">Автономный облачный + ПК режим активен</span>
@@ -1965,12 +1965,13 @@
             </div>
         </div>
         <div class="topbar-actions" style="overflow-x:auto;">
-            <button class="icon-btn" style="background:linear-gradient(135deg,rgba(37,99,235,0.26),rgba(124,58,237,0.26)); border-color:rgba(96,165,250,0.6); color:#93c5fd; font-weight:800;" onclick="smartTopbarInstallClick()" id="btn-top-install-app" title="Установить приложение на телефон / ПК или отправить на любое устройство">📲 Приложение <span id="pwa-ready-dot" style="display:none; width:7px; height:7px; border-radius:50%; background:#34d399;"></span></button>
-            <button class="icon-btn" style="display:none; background:rgba(245,158,11,0.18); border-color:rgba(245,158,11,0.55); color:#fbbf24; font-weight:800;" onclick="openSecuredVaultModal()" id="btn-top-secured-vault" title="Секретная папка логинов/паролей, одобрение @unityspiritpartners, назначение папок и 30-дневный контроль">🔒 Сейф & Админ (<span id="topbar-pending-reg-cnt">0</span>)</button>
+            <button class="icon-btn" onclick="toggleLanguage()" id="btn-top-lang-switch" title="Сменить язык / Switch language (RU / EN)" style="background:rgba(99,102,241,0.22); border-color:rgba(129,140,248,0.6); color:#a5b4fc; font-weight:800; cursor:pointer;">🌐 <span id="current-lang-label">RU</span></button>
+            <button class="icon-btn" style="background:linear-gradient(135deg,rgba(37,99,235,0.26),rgba(124,58,237,0.26)); border-color:rgba(96,165,250,0.6); color:#93c5fd; font-weight:800;" onclick="smartTopbarInstallClick()" id="btn-top-install-app" title="Установить приложение на телефон / ПК или отправить на любое устройство">📲 <span id="lbl-top-app">Приложение</span> <span id="pwa-ready-dot" style="display:none; width:7px; height:7px; border-radius:50%; background:#34d399;"></span></button>
+            <button class="icon-btn" style="display:none; background:rgba(245,158,11,0.18); border-color:rgba(245,158,11,0.55); color:#fbbf24; font-weight:800;" onclick="openSecuredVaultModal()" id="btn-top-secured-vault" title="Секретная папка логинов/паролей, одобрение @unityspiritpartners, назначение папок и 30-дневный контроль">🔒 <span id="lbl-top-vault">Сейф & Админ</span> (<span id="topbar-pending-reg-cnt">0</span>)</button>
             <button class="icon-btn" style="display:none; font-weight:700;" onclick="openUserProfileMenu()" id="btn-top-user-chip" title="Профиль / GTA-Досье">👤</button>
-            <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report" title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 Отчёт работы (<span id="topbar-work-cnt">150</span>)</button>
-            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Предупреждения и ожидание действий">🚨 Действия (<span id="topbar-action-cnt">5</span>)</button>
-            <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ Папка</button>
+            <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report" title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 <span id="lbl-top-report">Отчёт работы</span> (<span id="topbar-work-cnt">150</span>)</button>
+            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Предупреждения и ожидание действий">🚨 <span id="lbl-top-actions">Действия</span> (<span id="topbar-action-cnt">5</span>)</button>
+            <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ <span id="lbl-top-folder">Папка</span></button>
             <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Тема">☀️</button>
             <button class="icon-btn" onclick="refreshAllData(true)" title="Обновить">🔄</button>
         </div>
@@ -2608,7 +2609,7 @@
         <div style="text-align:center;">
             <h2 style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
                 Unity Spirit — Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.1</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.2</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -2647,7 +2648,7 @@
 
                 <!-- GUEST PREVIEW MODE BUTTON (LIVE AI DEMO & SHOWCASE WITHOUT PRIVATE DATA) -->
         <div style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.4); border-radius:13px; padding:10px 12px; margin-top:4px; text-align:center;">
-            <button type="button" class="btn-action accent" onclick="enterGuestPreviewMode()" style="width:100%; justify-content:center; padding:10px 14px; font-weight:900; font-size:0.83rem; background:linear-gradient(135deg,#0284c7,#38bdf8); color:#090d16;">
+            <button type="button" class="btn-action accent" onclick="enterGuestPreviewMode()" id="btn-guest-preview-enter" style="width:100%; justify-content:center; padding:10px 14px; font-weight:900; font-size:0.83rem; background:linear-gradient(135deg,#0284c7,#38bdf8); color:#090d16;">
                 👀 Войти как Гость (Live Превью & ИИ-Чат) →
             </button>
             <div style="font-size:0.71rem; color:#94a3b8; margin-top:5px; line-height:1.4;">
@@ -2875,13 +2876,13 @@
     // Auto purge older PWA caches if code version bumped
     (function() {
         try {
-            const currentVer = "22.1";
+            const currentVer = "22.2";
             const storedVer = localStorage.getItem("unity_app_code_version");
             if (storedVer !== currentVer) {
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v22.1")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v22.2")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -7233,7 +7234,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v22.1 active");
+                            console.log("Service Worker v22.2 active");
                         }
                     });
                 }
@@ -7570,10 +7571,10 @@
 
     
     // =========================================================================
-    // === v22.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v22.2: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v22.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v22.2: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -7864,6 +7865,83 @@ async function submitGuestPortalChatMessage() {
 }
 
 
+    
+    // =========================================================================
+    // === v22.2: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // =========================================================================
+    var currentOfficeLang = "ru";
+    try {
+        currentOfficeLang = localStorage.getItem("unity_office_lang") || "ru";
+    } catch(e) {}
+
+    const I18N_DICT = {
+        ru: {
+            brand_title: "Global Spirit Group",
+            worker_status: "Автономный облачный + ПК режим активен",
+            btn_app: "Приложение",
+            btn_vault: "Сейф & Админ",
+            btn_report: "Отчёт работы",
+            btn_actions: "Действия",
+            btn_folder: "Папка",
+            btn_lang: "RU",
+            toast_lang: "Язык переключён на Русский 🇷🇺",
+            guest_portal_title: "Global Spirit Group — Гостевой Превью-Портал",
+            guest_portal_sub: "ИИ-экосистема автономных агентов для бизнеса, маркетинга и монетизации (для русскоязычных сотрудников)",
+            guest_chat_placeholder: "Спросите что угодно у ИИ-ассистента...",
+            tab_register: "⚡ Быстрая регистрация",
+            tab_login: "🔐 Вход",
+            btn_guest_enter: "👀 Войти как Гость (Live Превью & ИИ-Чат) →"
+        },
+        en: {
+            brand_title: "Global Spirit Group",
+            worker_status: "Autonomous Cloud + PC Mode Active",
+            btn_app: "App",
+            btn_vault: "Vault & Admin",
+            btn_report: "Work Report",
+            btn_actions: "Actions",
+            btn_folder: "Folder",
+            btn_lang: "EN",
+            toast_lang: "Language switched to English 🇬🇧",
+            guest_portal_title: "Global Spirit Group — Guest Preview Portal",
+            guest_portal_sub: "AI ecosystem of autonomous agents for business, marketing & monetization (for Russian-speaking & global team)",
+            guest_chat_placeholder: "Ask anything to AI Assistant...",
+            tab_register: "⚡ Express Registration",
+            tab_login: "🔐 Login",
+            btn_guest_enter: "👀 Enter as Guest (Live Preview & AI Chat) →"
+        }
+    };
+
+    function applyOfficeLanguage(lang) {
+        currentOfficeLang = lang || currentOfficeLang || "ru";
+        try { localStorage.setItem("unity_office_lang", currentOfficeLang); } catch(e) {}
+        const d = I18N_DICT[currentOfficeLang] || I18N_DICT.ru;
+
+        const el = (id) => document.getElementById(id);
+        if (el("brand-header-title")) el("brand-header-title").innerText = d.brand_title;
+        if (el("worker-text")) el("worker-text").innerText = d.worker_status;
+        if (el("lbl-top-app")) el("lbl-top-app").innerText = d.btn_app;
+        if (el("lbl-top-vault")) el("lbl-top-vault").innerText = d.btn_vault;
+        if (el("lbl-top-report")) el("lbl-top-report").innerText = d.btn_report;
+        if (el("lbl-top-actions")) el("lbl-top-actions").innerText = d.btn_actions;
+        if (el("lbl-top-folder")) el("lbl-top-folder").innerText = d.btn_folder;
+        if (el("current-lang-label")) el("current-lang-label").innerText = d.btn_lang;
+
+        if (el("guest-portal-header-title")) el("guest-portal-header-title").innerText = d.guest_portal_title;
+        if (el("guest-portal-header-sub")) el("guest-portal-header-sub").innerText = d.guest_portal_sub;
+        if (el("guest-portal-chat-input")) el("guest-portal-chat-input").placeholder = d.guest_chat_placeholder;
+
+        if (el("auth-tab-btn-register")) el("auth-tab-btn-register").innerText = d.tab_register;
+        if (el("auth-tab-btn-login")) el("auth-tab-btn-login").innerText = d.tab_login;
+        if (el("btn-guest-preview-enter")) el("btn-guest-preview-enter").innerText = d.btn_guest_enter;
+    }
+
+    function toggleLanguage() {
+        const nextLang = (currentOfficeLang === "ru") ? "en" : "ru";
+        applyOfficeLanguage(nextLang);
+        showToast(I18N_DICT[nextLang].toast_lang);
+    }
+
+
     function enterPendingWaitingRoom(userObj) {
         document.body.classList.add("auth-locked");
         const gate = document.getElementById("auth-gate-overlay");
@@ -7952,6 +8030,7 @@ async function submitGuestPortalChatMessage() {
     }
 
     async function initAuthGateV20() {
+        applyOfficeLanguage(currentOfficeLang);
         // Auto-enter Guest Preview Mode if requested via URL (?guest=1 or ?preview=1)
         if (location.search.includes("guest=1") || location.search.includes("preview=1")) {
             enterGuestPreviewMode();
@@ -8046,7 +8125,7 @@ async function submitGuestPortalChatMessage() {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.1</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.2</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9906,7 +9985,7 @@ async function submitGuestPortalChatMessage() {
 </script>
 
 <!-- ========================================================================= -->
-<!-- === v22.1: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
+<!-- === v22.2: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" style="display:flex; align-items:center; gap:8px; position:fixed; bottom:76px; right:16px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:11px 18px; font-weight:900; font-size:0.84rem; box-shadow:0 8px 24px rgba(2,132,199,0.5); cursor:pointer;">
     <span style="font-size:1.15rem;">🤖</span>
