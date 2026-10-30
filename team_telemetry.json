@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-30T09:50:22.098Z",
+  "updated_at": "2026-10-30T09:52:00.235Z",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -20,7 +20,7 @@
         "why_diagnosis": "Начальный этап адаптации: данных мало, требуется контроль первых задач в назначенных папках."
       },
       "metrics": {
-        "total_active_sec": 15,
+        "total_active_sec": 60,
         "total_requests": 0,
         "idle_stall_count": 0,
         "nudges_shown": 0,
@@ -28,11 +28,11 @@
         "photos_sent": 0,
         "tim_requests": 0,
         "today_date": "2026-10-30",
-        "today_active_sec": 15,
+        "today_active_sec": 60,
         "today_requests": 0,
         "first_seen": "2026-10-30T07:37:23.269Z",
         "online_state": "active",
-        "last_seen": "2026-10-30T09:49:33.225Z",
+        "last_seen": "2026-10-30T09:52:33.223Z",
         "current_project": "Позновалка"
       }
     },
