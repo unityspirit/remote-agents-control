@@ -40,18 +40,18 @@
       "full_name": "E2E Temp Member",
       "telegram": "",
       "role": "member",
-      "status": "pending",
+      "status": "approved",
       "salt_hex": "abababababababababababababababab",
       "pbkdf2_hash": "6b42bc649a1f3f4dedf6dfb0a140342665a1804ef732e5c070077c4c3488de29",
       "iterations": 120000,
       "assigned_projects": [],
       "gta_completed": false,
       "gta_archetype": "",
-      "created_at": "2026-10-30T04:52:07.846098+00:00",
+      "created_at": "",
       "approved_at": "",
-      "owner_action_stamp": "",
+      "owner_action_stamp": "rst-ok-1793336024",
       "pending_reset": null
     }
   ],
-  "updated_at": "2026-10-30T04:53:40.245772+00:00"
+  "updated_at": "2026-10-30T04:53:44.822536+00:00"
 }
