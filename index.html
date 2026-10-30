@@ -1871,8 +1871,18 @@
             </div>
         </div>
 
+        <!-- Subtab Switcher: Quiz & AI vs Interface Surfing -->
+        <div style="display:flex; justify-content:center; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
+            <button type="button" class="mini-btn active" id="btn-guest-tab-quiz" onclick="switchGuestPortalSubTab('quiz')" style="padding:8px 16px; font-weight:800; font-size:0.82rem; border-radius:999px; background:#0284c7; color:#fff;">
+                🎯 Опросник по интересам & Живой ИИ-Чат
+            </button>
+            <button type="button" class="mini-btn" id="btn-guest-tab-surf" onclick="switchGuestPortalSubTab('surf')" style="padding:8px 16px; font-weight:800; font-size:0.82rem; border-radius:999px;">
+                👀 Серфинг интерфейса офиса (Live Превью)
+            </button>
+        </div>
+
         <!-- 2-COLUMN GRID: ОПРОСНИК ПО ИНТЕРЕСАМ + ЖИВОЙ ИИ-АССИСТЕНТ -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:14px; align-items:start;">
+        <div id="guest-portal-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:14px; align-items:start;">
             
             <!-- CARD 1: ОПРОСНИК ПО ИНТЕРЕСАМ -->
             <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:12px; box-shadow:0 8px 24px rgba(0,0,0,0.25);">
@@ -1955,7 +1965,7 @@
     <!-- TOP BAR -->
     <header class="topbar">
         <div class="brand-row">
-            <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Global Spirit Group" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Unity 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+            <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Global Spirit Group" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Global Spirit Group 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
             <div class="brand-titles">
                 <h1 id="brand-header-title">Global Spirit Group</h1>
                 <div class="worker-pill">
@@ -2609,7 +2619,7 @@
         <div style="text-align:center;">
             <h2 style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
                 Global Spirit Group — Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.3</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.5</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -2634,7 +2644,7 @@
             <div style="margin-top:5px; color:#cbd5e1;">
                 1️⃣ Нажмите меню <b>три точки (⋮)</b> в правом верхнем углу браузера.<br>
                 2️⃣ Выберите пункт <b>«Установить приложение»</b> (или <b>«Добавить на главный экран»</b>).<br>
-                ✨ Значок Unity Office появится на рабочем столе телефона как отдельное приложение!
+                ✨ Значок Global Spirit Group появится на рабочем столе телефона как отдельное приложение!
             </div>
             <div id="gate-android-tg-box" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.2);">
                 <div style="color:#fde68a; font-size:0.73rem; margin-bottom:5px;">
@@ -2698,14 +2708,23 @@
                 <div style="font-weight:900; font-size:0.92rem; color:#fde68a; margin-top:3px;">Аккаунт создан · Ожидание подтверждения</div>
                 <div id="pending-user-summary" style="font-size:0.76rem; color:#e2e8f0; margin-top:5px; line-height:1.45;"></div>
                 <div style="font-size:0.72rem; color:#94a3b8; margin-top:6px;">
-                    🔄 Авто-проверка каждые 5 сек: как только <b>@unityspiritpartners</b> одобрит вас, офис откроется автоматически без повторного ввода пароля!
+                    🔄 Авто-проверка каждые 5 сек: как только <b>@unityspiritpartners</b> одобрит вас, офис откроется автоматически!
                 </div>
             </div>
-            <a id="btn-pending-tg-link" href="https://t.me/unitybussinessbot" target="_blank" rel="noopener" class="modal-btn confirm" style="text-decoration:none; text-align:center; padding:12px; font-weight:900; background:linear-gradient(135deg,#0284c7,#10b981); display:block;">
-                🤖 Отправить подтверждение через @unitybussinessbot
+            <!-- PRIMARY: DIRECT 1-TAP SEND TO OWNER TELEGRAM -->
+            <a id="btn-pending-tg-direct" href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" class="modal-btn confirm" style="text-decoration:none; text-align:center; padding:13px; font-weight:900; font-size:0.88rem; background:linear-gradient(135deg,#0284c7,#2563eb); color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 4px 15px rgba(2,132,199,0.4);">
+                ✈️ Отправить заявку в Telegram @unityspiritpartners →
             </a>
-            <div style="text-align:center; font-size:0.72rem; color:#94a3b8; margin-top:-3px;">
-                или напрямую: <a id="btn-pending-tg-direct" href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; text-decoration:underline; font-weight:700;">@unityspiritpartners</a>
+            <!-- SECONDARY: TELEGRAM BOT LINK -->
+            <a id="btn-pending-tg-link" href="https://t.me/unitybussinessbot" target="_blank" rel="noopener" class="btn-action ghost" style="text-decoration:none; justify-content:center; font-size:0.78rem;">
+                🤖 Или отправить через бота @unitybussinessbot
+            </a>
+            <!-- TRANSITION TO BROWSING / QUIZ / LIVE AI CHAT WHILE PENDING -->
+            <button type="button" class="btn-action accent" onclick="enterPreviewBrowsingWhilePending()" style="width:100%; justify-content:center; padding:11px 14px; font-weight:900; font-size:0.84rem; background:linear-gradient(135deg,#10b981,#0284c7); color:#fff; margin-top:4px;">
+                👀 Перейти к серфингу по офису, квизу и ИИ-ассистенту →
+            </button>
+            <div style="font-size:0.71rem; color:#94a3b8; text-align:center; line-height:1.4;">
+                Пока заявка ожидает подтверждения, вам доступен квиз, живой ИИ-чат и серфинг по структуре офиса. Полный доступ откроется сразу после одобрения!
             </div>
             <div style="display:flex; gap:6px;">
                 <button class="btn-action ghost" style="flex:1; justify-content:center;" onclick="checkPendingApprovalNow(true)">🔄 Проверить статус</button>
@@ -2796,7 +2815,7 @@
                 <button class="btn-action success" onclick="shareAppToAnyDevice()" style="justify-content:center; font-weight:800;">📤 Отправить / Share</button>
                 <button class="btn-action primary" onclick="copyInstallLink()" style="justify-content:center; font-weight:800;">📋 Копировать ссылку</button>
                 <a class="btn-action ghost" href="https://t.me/share/url?url=https%3A%2F%2Funityspirit.github.io%2Fremote-agents-control%2F%3Finstall%3D1&text=%F0%9F%93%B2%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20Unity%20Spirit%20Virtual%20Office" target="_blank" rel="noopener" style="text-decoration:none; justify-content:center;">✈️ В Telegram</a>
-                <a class="btn-action ghost" href="https://wa.me/?text=%F0%9F%93%B2%20Unity%20Spirit%20Virtual%20Office%3A%20https%3A%2F%2Funityspirit.github.io%2Fremote-agents-control%2F%3Finstall%3D1" target="_blank" rel="noopener" style="text-decoration:none; justify-content:center;">💬 В WhatsApp</a>
+                <a class="btn-action ghost" href="https://wa.me/?text=%F0%9F%93%B2%20Global%20Spirit%20Group%20Virtual%20Office%3A%20https%3A%2F%2Funityspirit.github.io%2Fremote-agents-control%2F%3Finstall%3D1" target="_blank" rel="noopener" style="text-decoration:none; justify-content:center;">💬 В WhatsApp</a>
             </div>
 
             <div style="display:flex; flex-direction:column; align-items:center; gap:5px; padding-top:4px;">
@@ -2811,7 +2830,7 @@
 <div id="gta-onboarding-modal" class="modal-overlay" style="display:none; z-index:24000;" onclick="if(event.target===this) closeGtaOnboardingModal()">
     <div class="modal-card gta-modal-card">
         <div class="modal-header">
-            <h3 style="color:#fbbf24; letter-spacing:0.03em;">🕶️ GTA: UNITY SYNDICATE — ТЕСТ И ПОДБОР ПРОЕКТОВ</h3>
+            <h3 style="color:#fbbf24; letter-spacing:0.03em;">🕶️ GTA: GLOBAL SPIRIT SYNDICATE — ТЕСТ И ПОДБОР ПРОЕКТОВ</h3>
             <button class="modal-close" onclick="closeGtaOnboardingModal()">✕</button>
         </div>
         <div class="modal-body" id="gta-modal-body" style="gap:10px; max-height:76dvh;"></div>
@@ -3040,7 +3059,7 @@
             category: "products",
             client: false,
             lead: "CRM Architect",
-            desc: "Архитектура CRM-системы холдинга Global Plus / Unity Spirit"
+            desc: "Архитектура CRM-системы холдинга Global Plus / Global Spirit Group"
         },
         "Входящие_Офис": {
             icon: "📥",
@@ -3103,7 +3122,7 @@
             worked: true,
             category: "products",
             client: false,
-            desc: "Unity Spirit Partners (unityspiritpartners.com) и Global Plus (globalplus.tech) — B2B партнерство и ИИ-агентство"
+            desc: "Global Spirit Group (unityspiritpartners.com) и Global Plus (globalplus.tech) — B2B партнерство и ИИ-агентство"
         },
         "True 1 Team": {
             icon: "🚀",
@@ -3559,7 +3578,7 @@
             id: "kb-67",
             issue: 67,
             category: "Маркетинг & Трафик",
-            title: "Similarweb + Система бесплатного трафика (Global Plus & Unity Spirit)",
+            title: "Similarweb + Система бесплатного трафика (Global Plus & Global Spirit Group)",
             source_url: "https://www.similarweb.com/ru/",
             summary: "Анализ реферальных доноров (Referrals) и топ-страниц конкурентов через Similarweb. Быстрые SEO-посадочные на чистом коде (<1 сек на смартфонах) + экспертные Reels/Shorts без затрат на рекламу.",
             action_items: [
@@ -7292,7 +7311,7 @@
     window.addEventListener("appinstalled", () => {
         deferredPwaPrompt = null;
         syncGateInstallRowVisibility();
-        showToast("📲 Приложение Unity Office установлено!");
+        showToast("📲 Приложение Global Spirit Group установлено!");
     });
 
     function isStandaloneInstalledApp() {
@@ -7559,6 +7578,38 @@
                 const pend = usersArr.filter(u => u.status === "pending" || (u.pending_reset && u.pending_reset.code)).length;
                 const cntEl = document.getElementById("topbar-pending-reg-cnt");
                 if (cntEl) cntEl.innerText = String(pend);
+
+                // Owner instant approval banner directly on top of the office
+                const pendingUsers = usersArr.filter(u => u.status === "pending");
+                let ownerBanner = document.getElementById("owner-pending-approval-banner");
+                if (pendingUsers.length > 0) {
+                    if (!ownerBanner) {
+                        ownerBanner = document.createElement("div");
+                        ownerBanner.id = "owner-pending-approval-banner";
+                        ownerBanner.style.cssText = "background:linear-gradient(135deg,rgba(180,83,9,0.95),rgba(185,28,28,0.95)); border-bottom:2px solid #f59e0b; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; color:#fff; z-index:99998; box-shadow:0 4px 18px rgba(0,0,0,0.4);";
+                        document.body.insertBefore(ownerBanner, document.body.firstChild);
+                    }
+                    const firstP = pendingUsers[0];
+                    const pLog = escapeHtml(firstP.login).replace(/'/g, "\\'");
+                    const pCode = escapeHtml(firstP.id || "REQ");
+                    ownerBanner.innerHTML = 
+                        '<div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">' +
+                            '<span style="font-size:1.3rem;">👑</span>' +
+                            '<div>' +
+                                '<span style="font-weight:900; font-size:0.86rem; color:#fef08a;">Новая заявка на доступ: <code>' + escapeHtml(firstP.login) + '</code> (' + pCode + ')</span>' +
+                                (firstP.telegram ? (' <span style="font-size:0.75rem; color:#e2e8f0;">TG: <b>' + escapeHtml(firstP.telegram) + '</b></span>') : '') +
+                                (pendingUsers.length > 1 ? (' <span class="badge" style="background:#fbbf24; color:#090d16; font-weight:800;">+' + (pendingUsers.length - 1) + ' ещё</span>') : '') +
+                            '</div>' +
+                        '</div>' +
+                        '<div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">' +
+                            '<button class="mini-btn accent" onclick="adminSetUserStatus(\'' + pLog + '\', \'approved\')" style="padding:6px 14px; font-weight:900; background:#10b981; color:#090d16; font-size:0.82rem; border-radius:8px;">✅ Одобрить доступ в 1 клик</button>' +
+                            '<button class="mini-btn" onclick="adminSetUserStatus(\'' + pLog + '\', \'rejected\')" style="padding:6px 10px; color:#fca5a5;">🚫 Отклонить</button>' +
+                            '<button class="mini-btn" onclick="openSecuredVaultModal(\'approvals\')" style="padding:6px 12px; font-weight:700;">🔒 Все заявки (' + pendingUsers.length + ') →</button>' +
+                        '</div>';
+                    ownerBanner.style.display = "flex";
+                } else if (ownerBanner) {
+                    ownerBanner.style.display = "none";
+                }
             } else {
                 vaultBtn.style.display = "none";
             }
@@ -8136,22 +8187,107 @@ function sendQuickGuestPromptPortal(txt) {
                 (userObj.id ? " · Код: <code>" + escapeHtml(userObj.id) + "</code>" : "") +
                 "<br>Офис закрыт до подтверждения владельцем <b>@" + UNITY_OWNER_TG + "</b>.";
         }
+        const cleanId = String(userObj.id || "REQ").replace(/[^a-zA-Z0-9_]/g, "");
         const tgBtn = document.getElementById("btn-pending-tg-link");
         if (tgBtn) {
-            const cleanId = String(userObj.id || "REQ").replace(/[^a-zA-Z0-9_]/g, "");
             tgBtn.href = "https://t.me/unitybussinessbot?start=auth_" + cleanId;
         }
         const tgDirect = document.getElementById("btn-pending-tg-direct");
+                const tgLines = [
+            "Здравствуйте! Прошу подтвердить мой доступ в Виртуальный Офис Global Spirit Group:",
+            userObj.id ? ("• Код заявки: " + userObj.id) : "",
+            "• Логин: " + userObj.login,
+            userObj.full_name ? ("• Имя/TG: " + userObj.full_name) : "",
+            "Ожидаю вашего одобрения."
+        ].filter(Boolean).join(String.fromCharCode(10));
+        const tgText = encodeURIComponent(tgLines);
+        const tgDirectUrl = "https://t.me/" + UNITY_OWNER_TG + "?text=" + tgText;
         if (tgDirect) {
-            const tgText = encodeURIComponent(
-                "Здравствуйте! Прошу подтвердить мой доступ в Виртуальный Офис Global Spirit Group.\n" +
-                (userObj.id ? ("Код заявки: " + userObj.id + "\n") : "") +
-                "Логин: " + userObj.login + "\n" +
-                (userObj.full_name ? ("Имя/TG: " + userObj.full_name) : "")
-            );
-            tgDirect.href = "https://t.me/unityspiritpartners?text=" + tgText;
+            tgDirect.href = tgDirectUrl;
         }
+
         startPendingApprovalWatcher(normalizeAuthLogin(userObj.login));
+
+        // Auto-attempt opening direct Telegram send in new window
+        setTimeout(() => {
+            try { window.open(tgDirectUrl, "_blank"); } catch (e) {}
+        }, 400);
+
+        // Auto-transition to preview browsing after 3 seconds so the user is never stuck
+        setTimeout(() => {
+            const currentTab = document.querySelector("#auth-panel-pending");
+            if (currentTab && currentTab.style.display !== "none" && !document.body.classList.contains("guest-preview-mode")) {
+                enterPreviewBrowsingWhilePending();
+            }
+        }, 3200);
+    }
+
+    function enterPreviewBrowsingWhilePending() {
+        const savedPend = JSON.parse(localStorage.getItem("unity_office_pending_session_v21") || "null");
+        const gate = document.getElementById("auth-gate-overlay");
+        if (gate) gate.style.display = "none";
+        document.body.classList.remove("auth-locked");
+        document.body.classList.add("guest-preview-mode");
+
+        let sticky = document.getElementById("pending-approval-sticky-bar");
+        if (!sticky) {
+            sticky = document.createElement("div");
+            sticky.id = "pending-approval-sticky-bar";
+            sticky.style.cssText = "position:sticky; top:0; z-index:99999; background:linear-gradient(135deg,rgba(15,23,42,0.97),rgba(30,58,138,0.97)); border-bottom:1px solid rgba(56,189,248,0.45); backdrop-filter:blur(10px); padding:8px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; box-shadow:0 4px 15px rgba(0,0,0,0.4);";
+            document.body.insertBefore(sticky, document.body.firstChild);
+        }
+        const code = (savedPend && savedPend.id) ? savedPend.id : "REQ";
+        const log = (savedPend && savedPend.login) ? savedPend.login : "Новый участник";
+        const tgLink = "https://t.me/" + UNITY_OWNER_TG + "?text=" + encodeURIComponent(
+            "Здравствуйте! Заявка " + code + " (" + log + ") ожидает подтверждения в Виртуальный Офис Global Spirit Group."
+        );
+
+        sticky.innerHTML =
+            '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                '<span style="font-size:1.1rem;">⏳</span>' +
+                '<div>' +
+                    '<span style="font-weight:900; color:#fde68a; font-size:0.79rem;">Заявка <code style="background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:5px; color:#38bdf8;">' + escapeHtml(code) + '</code> (' + escapeHtml(log) + ')</span> ' +
+                    '<span style="font-size:0.72rem; color:#cbd5e1;">— ожидает одобрения @' + UNITY_OWNER_TG + '. Доступен серфинг по интерфейсу, квиз и живой ИИ-чат.</span>' +
+                '</div>' +
+            '</div>' +
+            '<div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">' +
+                '<a href="' + tgLink + '" target="_blank" rel="noopener" class="mini-btn" style="background:#0284c7; color:#fff; font-weight:800; text-decoration:none; padding:4px 10px;">✈️ Написать @' + UNITY_OWNER_TG + '</a>' +
+                '<button class="mini-btn" onclick="checkPendingApprovalNow(true)" style="font-weight:700;">🔄 Проверить статус</button>' +
+                '<button class="mini-btn" onclick="openAuthGateFromGuest()" style="color:#94a3b8;">🔐 Войти под другим</button>' +
+            '</div>';
+        sticky.style.display = "flex";
+
+        const gView = document.getElementById("guest-portal-view");
+        if (gView) gView.style.display = "block";
+        renderGuestQuizStep();
+        if (savedPend && savedPend.login) {
+            startPendingApprovalWatcher(normalizeAuthLogin(savedPend.login));
+        }
+        showToast("👀 Ознакомительный режим: вам открыт квиз, живой ИИ-чат и серфинг по интерфейсу!");
+    }
+
+    function switchGuestPortalSubTab(tabName) {
+        const qBtn = document.getElementById("btn-guest-tab-quiz");
+        const sBtn = document.getElementById("btn-guest-tab-surf");
+        const grid = document.getElementById("guest-portal-grid");
+        const ws = document.querySelector(".workspace-pane");
+        const sb = document.querySelector(".nav-pane");
+        const mainBody = document.querySelector(".main-body");
+
+        if (tabName === "surf") {
+            if (qBtn) { qBtn.classList.remove("active"); qBtn.style.background = ""; qBtn.style.color = ""; }
+            if (sBtn) { sBtn.classList.add("active"); sBtn.style.background = "#0284c7"; sBtn.style.color = "#fff"; }
+            if (grid) grid.style.display = "none";
+            if (mainBody) mainBody.style.display = "flex";
+            if (ws) ws.style.display = "flex";
+            if (sb) sb.style.display = "flex";
+            showToast("👀 Серфинг интерфейса: изучайте разделы, проекты и структуру офиса!");
+        } else {
+            if (sBtn) { sBtn.classList.remove("active"); sBtn.style.background = ""; sBtn.style.color = ""; }
+            if (qBtn) { qBtn.classList.add("active"); qBtn.style.background = "#0284c7"; qBtn.style.color = "#fff"; }
+            if (grid) grid.style.display = "grid";
+            if (mainBody && document.body.classList.contains("guest-preview-mode")) mainBody.style.display = "none";
+        }
     }
 
     function startPendingApprovalWatcher(loginNorm) {
@@ -8170,6 +8306,14 @@ function sendQuickGuestPromptPortal(txt) {
             const liveUser = (reg.users || []).find(u => normalizeAuthLogin(u.login) === lg);
             if (!liveUser) return;
             if (liveUser.status === "approved") {
+                if (pendingApprovalTimer) clearInterval(pendingApprovalTimer);
+                const sticky = document.getElementById("pending-approval-sticky-bar");
+                if (sticky) sticky.style.display = "none";
+                document.body.classList.remove("guest-preview-mode");
+                const gView = document.getElementById("guest-portal-view");
+                if (gView) gView.style.display = "none";
+                localStorage.removeItem("unity_office_pending_session_v21");
+
                 await fetchTeamTelemetryFresh();
                 const memTele = (teamTelemetryCache.members || {})[liveUser.login] || {};
                 if (memTele.gta_profile && memTele.gta_profile.completed_at) {
@@ -8177,18 +8321,20 @@ function sendQuickGuestPromptPortal(txt) {
                     liveUser.gta_archetype = memTele.gta_profile.archetype || liveUser.gta_archetype;
                 }
                 unlockOfficeWithUser(liveUser, false);
-                showToast("🎉 Доступ подтверждён @" + UNITY_OWNER_TG + "! Добро пожаловать!");
+                showToast("🎉 Доступ подтверждён @" + UNITY_OWNER_TG + "! Офис разблокирован.");
                 return;
             }
             if (liveUser.status === "rejected" || liveUser.status === "replaced") {
                 if (pendingApprovalTimer) clearInterval(pendingApprovalTimer);
+                const sticky = document.getElementById("pending-approval-sticky-bar");
+                if (sticky) sticky.style.display = "none";
                 localStorage.removeItem("unity_office_pending_session_v21");
                 switchAuthGateTab("login");
                 showAuthFeedback("🚫 Заявка отклонена администратором @" + UNITY_OWNER_TG + ".", "error");
                 return;
             }
             if (manualClick) {
-                showToast("⏳ Пока ожидает подтверждения от @" + UNITY_OWNER_TG + "...");
+                showToast("⏳ Заявка пока ожидает подтверждения от @" + UNITY_OWNER_TG + "...");
             }
         } catch (e) {}
     }
@@ -8298,7 +8444,7 @@ function sendQuickGuestPromptPortal(txt) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.3</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.5</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -8801,7 +8947,7 @@ function sendQuickGuestPromptPortal(txt) {
         document.body.appendChild(a);
         a.click();
         a.remove();
-        showToast("📥 Установщик Unity_Office_App_Installer.html скачан — его можно переслать на любое устройство!");
+        showToast("📥 Установщик Global_Spirit_Group_Installer.html скачан — его можно переслать на любое устройство!");
     }
 
     function downloadDesktopShortcutUrl() {
@@ -8881,7 +9027,7 @@ function sendQuickGuestPromptPortal(txt) {
         {
             id: "q1_skill",
             title: "МИССИЯ 1/7 · ТВОЙ ГЛАВНЫЙ СТВОЛ НА РАЙОНЕ",
-            bossQuote: "«В Синдикате Unity Spirit каждый отвечает за свой сектор. В чём твоя реальная суперсила, за которую рынок платит кэш?»",
+            bossQuote: "«В Синдикате Global Spirit Group каждый отвечает за свой сектор. В чём твоя реальная суперсила, за которую рынок платит кэш?»",
             options: [
                 { label: "⚡ Код, ИИ-боты, Telegram Mini Apps и быстрая сборка MVP (Вайбкодинг)", track: "tech_vibe" },
                 { label: "💼 Переговоры, выход на директоров заводов/компаний и закрытие крупных B2B сделок", track: "b2b_sales" },

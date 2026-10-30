@@ -1,4 +1,4 @@
-const CACHE_NAME = 'unity-office-pwa-v22.3';
+const CACHE_NAME = 'global-spirit-group-pwa-v22.5';
 const APP_SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
