@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30 03:40:14",
+  "updated": "2026-10-30 03:44:22",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 11,
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-10-30 00:09:20"
+      "tasks_completed": 12,
+      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-10-30 03:44:17"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 9,
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-10-30 00:09:20"
+      "tasks_completed": 10,
+      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-10-30 03:44:17"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 7,
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-10-30 00:09:20"
+      "tasks_completed": 8,
+      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-10-30 03:44:17"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 10,
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-10-30 00:09:20"
+      "tasks_completed": 11,
+      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-10-30 03:44:17"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 23,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 15,
+      "tasks_completed": 16,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 15,
+      "tasks_completed": 16,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-30 03:40:14"
+      "updated_at": "2026-10-30 03:44:22"
     }
   },
   "daemons": {
@@ -216,7 +216,7 @@
       "name": "KHL Auto-Learning (khl_auto_learning_service.py)",
       "emoji": "🧬",
       "project": "Юра",
-      "status": "standby",
+      "status": "online",
       "detail": "Автообучение и калибровка вероятностной модели КХЛ"
     },
     "channel_watcher": {
@@ -238,14 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 1,
+      "calls_total": 2,
       "calls_by_provider": {
-        "deterministic_local_engine": 1
+        "deterministic_local_engine": 1,
+        "cloud_test_gateway": 1
       },
-      "last_provider": "deterministic_local_engine",
-      "last_model": "structured-v18",
-      "last_call_at": "2026-10-30T06:09:16.689442+00:00",
-      "errors_count": 2
+      "last_provider": "cloud_test_gateway",
+      "last_model": "openai-gateway",
+      "last_call_at": "2026-10-30T09:44:17.348796+00:00",
+      "errors_count": 3
     }
   },
   "statuses": {
