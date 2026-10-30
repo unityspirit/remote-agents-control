@@ -1,4 +1,4 @@
-const CACHE_NAME = 'unity-office-pwa-v21.0';
+const CACHE_NAME = 'unity-office-pwa-v21.1';
 const APP_SHELL = [
   './',
   './index.html',
@@ -35,7 +35,8 @@ self.addEventListener('fetch', (event) => {
     url.origin !== self.location.origin ||
     url.hostname === '127.0.0.1' ||
     url.hostname === 'localhost' ||
-    url.hostname.includes('github')
+    url.hostname === 'api.github.com' ||
+    url.hostname === 'raw.githubusercontent.com'
   ) {
     return;
   }

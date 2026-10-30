@@ -99,6 +99,15 @@
     <div class="ios-tip" id="ios-tip">
       🍏 <b>На iPhone / iPad:</b> нажмите внизу Safari <b>«Поделиться ⬆️» → «На экран Домой ➕»</b>, затем откройте иконку с экрана телефона.
     </div>
+    <div id="android-tip" style="display:none; text-align:left; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.5); border-radius:14px; padding:12px; font-size:0.79rem; line-height:1.5; color:#e2e8f0;">
+      🤖 <b>Установка на Android:</b><br>
+      1️⃣ Нажмите меню <b>три точки (⋮)</b> в правом верхнем углу браузера.<br>
+      2️⃣ Выберите пункт <b>«Установить приложение»</b> (или <b>«Добавить на главный экран»</b>).<br>
+      3️⃣ Нажмите <b>«Установить»</b> — 3D-иконка появится на рабочем столе телефона!<br>
+      <div id="android-tg-link-box" style="display:none; margin-top:8px; padding-top:6px; border-top:1px dashed rgba(255,255,255,0.2);">
+        <a href="intent://unityspirit.github.io/remote-agents-control/?install=1#Intent;scheme=https;package=com.android.chrome;end" style="color:#34d399; font-weight:800; display:inline-block;">🌐 Открыть прямо в Google Chrome →</a>
+      </div>
+    </div>
     <div style="display:flex; gap:8px; flex-wrap:wrap;">
       <a class="btn-sec" href="https://unityspirit.github.io/remote-agents-control/?install=1">⚡ Быстрая регистрация →</a>
       <button class="btn-sec" onclick="shareApp()">📤 Отправить ссылку</button>
@@ -116,11 +125,29 @@
   if (/iPhone|iPad|iPod/i.test(navigator.userAgent || '')) {
     document.getElementById('ios-tip').style.display = 'block';
   }
+  if (/Android/i.test(navigator.userAgent || '')) {
+    const at = document.getElementById('android-tip');
+    if (at) at.style.display = 'block';
+    if (/Telegram|wv|FBAN|Instagram/i.test(navigator.userAgent || '')) {
+      const tb = document.getElementById('android-tg-link-box');
+      if (tb) tb.style.display = 'block';
+    }
+  }
   async function installAndOpen() {
     if (deferredPrompt) {
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice.catch(() => null);
-      deferredPrompt = null;
+      try {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice && choice.outcome === 'accepted') {
+          deferredPrompt = null;
+          return;
+        }
+      } catch (e) {}
+    }
+    const ua = navigator.userAgent || '';
+    if (/Android/i.test(ua) && /Telegram|wv|FBAN|Instagram/i.test(ua)) {
+      window.location.href = 'intent://unityspirit.github.io/remote-agents-control/?install=1#Intent;scheme=https;package=com.android.chrome;end';
+      return;
     }
     window.location.href = 'https://unityspirit.github.io/remote-agents-control/?install=1';
   }

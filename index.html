@@ -2503,6 +2503,22 @@
         <div id="gate-ios-inline-tip" style="display:none; background:rgba(37,99,235,0.14); border:1px solid rgba(96,165,250,0.45); border-radius:11px; padding:8px 10px; font-size:0.74rem; color:#e2e8f0; line-height:1.45;">
             🍏 <b>iPhone / iPad:</b> нажмите внизу Safari <b>«Поделиться ⬆️» → «На экран Домой ➕»</b> (или <a href="javascript:void(0)" onclick="downloadIosWebClipProfile()" style="color:#60a5fa; font-weight:800;">скачайте 3D-иконку в 1 тап</a>).
         </div>
+        <div id="gate-android-inline-tip" style="display:none; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.55); border-radius:12px; padding:10px 12px; font-size:0.77rem; color:#e2e8f0; line-height:1.5;">
+            <div style="font-weight:900; color:#6ee7b7;">🤖 Установка приложения на Android (2 простых шага):</div>
+            <div style="margin-top:5px; color:#cbd5e1;">
+                1️⃣ Нажмите меню <b>три точки (⋮)</b> в правом верхнем углу браузера.<br>
+                2️⃣ Выберите пункт <b>«Установить приложение»</b> (или <b>«Добавить на главный экран»</b>).<br>
+                ✨ Значок Unity Office появится на рабочем столе телефона как отдельное приложение!
+            </div>
+            <div id="gate-android-tg-box" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.2);">
+                <div style="color:#fde68a; font-size:0.73rem; margin-bottom:5px;">
+                    ✈️ <i>Если вы открыли ссылку через Telegram:</i>
+                </div>
+                <button type="button" class="btn-action accent" onclick="openInAndroidChrome()" style="width:100%; padding:9px 12px; font-size:0.8rem; font-weight:900; justify-content:center; background:linear-gradient(135deg,#0284c7,#10b981);">
+                    🌐 Открыть прямо в Google Chrome →
+                </button>
+            </div>
+        </div>
 
         <div class="auth-tabs-row" id="auth-main-tabs-row">
             <button class="auth-tab-btn active" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Быстрая регистрация</button>
@@ -2608,6 +2624,20 @@
             <button class="btn-action accent" onclick="triggerNativePwaInstall()" style="width:100%; padding:12px; font-size:0.9rem; font-weight:900; background:linear-gradient(135deg,#2563eb,#7c3aed);">
                 ⚡ Установить приложение на это устройство
             </button>
+
+            <div id="android-step-guide-box" style="display:none; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.55); border-radius:12px; padding:10px 12px; font-size:0.76rem; line-height:1.5;">
+                <div style="font-weight:900; color:#6ee7b7;">🤖 Установка на Android (в 2 шага):</div>
+                <div style="margin-top:5px; color:#cbd5e1;">
+                    1️⃣ В браузере (Chrome / Samsung / Яндекс) нажмите <b>три точки (⋮)</b> в правом верхнем углу.<br>
+                    2️⃣ Выберите <b>«Установить приложение»</b> (или <b>«Добавить на главный экран»</b>).<br>
+                    3️⃣ Нажмите <b>«Установить»</b> — 3D-иконка появится на рабочем столе и среди приложений телефона!
+                </div>
+                <div id="modal-android-tg-box" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.2);">
+                    <button type="button" class="btn-action accent" onclick="openInAndroidChrome()" style="width:100%; padding:9px 12px; font-size:0.78rem; font-weight:900; justify-content:center; background:linear-gradient(135deg,#0284c7,#10b981);">
+                        🌐 Открыть прямо в Google Chrome для установки
+                    </button>
+                </div>
+            </div>
 
             <div id="ios-step-guide-box" style="background:var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:9px 11px; font-size:0.75rem; line-height:1.45;">
                 🍏 <b>Установка на iPhone / iPad:</b><br>
@@ -7013,9 +7043,27 @@
 
     // Register PWA Service Worker & Capture Native Install Prompt
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("./sw.js").catch(() => {});
-        });
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+    }
+
+    function isAndroidDevice() {
+        return /Android/i.test(navigator.userAgent || "");
+    }
+
+    function isInAppBrowser() {
+        const ua = navigator.userAgent || "";
+        return /Telegram|Line|FB_IAB|FBAN|FBAV|Instagram|MicroMessenger|wv/i.test(ua) || Boolean(window.TelegramWebviewProxy);
+    }
+
+    function openInAndroidChrome() {
+        const targetUrl = "https://unityspirit.github.io/remote-agents-control/?install=1";
+        const chromeIntent = "intent://unityspirit.github.io/remote-agents-control/?install=1#Intent;scheme=https;package=com.android.chrome;end";
+        try {
+            window.location.href = chromeIntent;
+            setTimeout(() => { window.location.href = targetUrl; }, 1400);
+        } catch (e) {
+            window.location.href = targetUrl;
+        }
     }
     let pendingApprovalTimer = null;
     let userArchivesCache = { version: "21.0", users: {} };
@@ -7036,6 +7084,14 @@
         const gBtn = document.getElementById("btn-direct-install-gate");
         if (gBtn) gBtn.innerText = "⚡ Установить приложение в 1 касание";
         syncGateInstallRowVisibility();
+        if (/Android/i.test(navigator.userAgent || "")) {
+            const aTip = document.getElementById("gate-android-inline-tip");
+            if (aTip && isInAppBrowser()) {
+                aTip.style.display = "block";
+                const tgGate = document.getElementById("gate-android-tg-box");
+                if (tgGate) tgGate.style.display = "block";
+            }
+        }
     });
     window.addEventListener("appinstalled", () => {
         deferredPwaPrompt = null;
@@ -7836,30 +7892,59 @@
     // =========================================================================
 
     async function directOneClickInstall() {
-        if (deferredPwaPrompt) {
-            deferredPwaPrompt.prompt();
-            const choice = await deferredPwaPrompt.userChoice.catch(() => null);
-            if (choice && choice.outcome === "accepted") {
-                deferredPwaPrompt = null;
-                syncGateInstallRowVisibility();
-                showToast("📲 Установка приложения запущена!");
-            }
-            return;
-        }
-        const ua = navigator.userAgent || "";
-        if (/iPhone|iPad|iPod/i.test(ua)) {
-            const tip = document.getElementById("gate-ios-inline-tip");
-            if (tip && document.body.classList.contains("auth-locked")) {
-                tip.style.display = "block";
-            }
-            downloadIosWebClipProfile();
-            return;
-        }
         if (isStandaloneInstalledApp()) {
             showToast("✅ Приложение уже установлено на этом устройстве!");
             syncGateInstallRowVisibility();
             return;
         }
+
+        // 1. Native PWA prompt if available
+        if (deferredPwaPrompt) {
+            try {
+                deferredPwaPrompt.prompt();
+                const choice = await deferredPwaPrompt.userChoice;
+                if (choice && choice.outcome === "accepted") {
+                    deferredPwaPrompt = null;
+                    syncGateInstallRowVisibility();
+                    showToast("📲 Установка приложения запущена!");
+                    return;
+                }
+            } catch (e) {}
+        }
+
+        const ua = navigator.userAgent || "";
+
+        // 2. iOS handling (Safari)
+        if (/iPhone|iPad|iPod/i.test(ua)) {
+            const tip = document.getElementById("gate-ios-inline-tip");
+            if (tip && document.body.classList.contains("auth-locked")) {
+                tip.style.display = "block";
+                tip.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+            showToast("🍏 В Safari нажмите «Поделиться ⬆️» → «На экран Домой ➕»");
+            downloadIosWebClipProfile();
+            return;
+        }
+
+        // 3. Android handling (Chrome, Samsung Internet, Telegram, etc.)
+        if (/Android/i.test(ua)) {
+            const aTip = document.getElementById("gate-android-inline-tip");
+            if (aTip) {
+                aTip.style.display = "block";
+                aTip.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+            if (isInAppBrowser()) {
+                const tgBox = document.getElementById("gate-android-tg-box");
+                if (tgBox) tgBox.style.display = "block";
+                showToast("🌐 Открываем страницу в Google Chrome...");
+                openInAndroidChrome();
+                return;
+            }
+            showToast("🤖 Нажмите меню ⋮ (три точки) вверху браузера → «Установить приложение»!");
+            return;
+        }
+
+        // 4. Desktop / Other (Windows / Mac)
         downloadPortableInstallerFile();
     }
 
@@ -7877,14 +7962,28 @@
         m.style.display = "flex";
         const ua = navigator.userAgent || "";
         const isIOS = /iPhone|iPad|iPod/i.test(ua);
+        const isAnd = /Android/i.test(ua);
         const hintEl = document.getElementById("install-device-detected-box");
+        const aBox = document.getElementById("android-step-guide-box");
+        const iBox = document.getElementById("ios-step-guide-box");
+
+        if (aBox) aBox.style.display = isAnd ? "block" : "none";
+        if (iBox) iBox.style.display = isIOS ? "block" : "none";
+
+        if (isAnd && isInAppBrowser()) {
+            const tgM = document.getElementById("modal-android-tg-box");
+            if (tgM) tgM.style.display = "block";
+        }
+
         if (hintEl) {
             if (isStandaloneInstalledApp()) {
-                hintEl.innerHTML = "✅ <b>Приложение уже установлено на этом устройстве!</b> Вы можете скачать файл-установщик или отправить его на любой другой телефон ниже.";
+                hintEl.innerHTML = "✅ <b>Приложение уже установлено на этом устройстве!</b>";
             } else if (deferredPwaPrompt) {
-                hintEl.innerHTML = "🟢 <b>Устройство готово к мгновенной установке!</b> Нажмите кнопку «⚡ Установить приложение в 1 клик» ниже.";
+                hintEl.innerHTML = "🟢 <b>Устройство готово к быстрой установке!</b> Нажмите кнопку «⚡ Установить приложение» ниже.";
             } else if (isIOS) {
-                hintEl.innerHTML = "🍏 <b>Обнаружен iPhone / iPad:</b> нажмите кнопку <b>«Поделиться ⬆️»</b> внизу Safari и выберите <b>«На экран Домой ➕»</b> (или скачайте профиль иконки iOS ниже).";
+                hintEl.innerHTML = "🍏 <b>Обнаружен iPhone / iPad:</b> нажмите кнопку <b>«Поделиться ⬆️»</b> внизу Safari и выберите <b>«На экран Домой ➕»</b>.";
+            } else if (isAnd) {
+                hintEl.innerHTML = "🤖 <b>Обнаружен Android:</b> нажмите меню браузера <b>три точки (⋮)</b> вверху справа → <b>«Установить приложение»</b> (или нажмите кнопку ниже).";
             } else {
                 hintEl.innerHTML = "💻 <b>Установка на телефон или ПК:</b> нажмите «⚡ Установить» (или значок 📲 справа в адресной строке Chrome/Edge) либо отсканируйте QR-код камерой телефона.";
             }
@@ -7898,13 +7997,15 @@
 
     async function triggerNativePwaInstall() {
         if (deferredPwaPrompt) {
-            deferredPwaPrompt.prompt();
-            const choice = await deferredPwaPrompt.userChoice.catch(() => null);
-            if (choice && choice.outcome === "accepted") {
-                deferredPwaPrompt = null;
-                showToast("✅ Установка приложения запущена!");
-            }
-            return;
+            try {
+                deferredPwaPrompt.prompt();
+                const choice = await deferredPwaPrompt.userChoice.catch(() => null);
+                if (choice && choice.outcome === "accepted") {
+                    deferredPwaPrompt = null;
+                    showToast("✅ Установка приложения запущена!");
+                    return;
+                }
+            } catch (e) {}
         }
         const ua = navigator.userAgent || "";
         if (/iPhone|iPad|iPod/i.test(ua)) {
@@ -7914,6 +8015,20 @@
                 iosBox.style.display = "block";
                 iosBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
             }
+            return;
+        }
+        if (/Android/i.test(ua)) {
+            const aBox = document.getElementById("android-step-guide-box");
+            if (aBox) {
+                aBox.style.display = "block";
+                aBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+            if (isInAppBrowser()) {
+                showToast("🌐 Открываем страницу в Google Chrome...");
+                openInAndroidChrome();
+                return;
+            }
+            showToast("🤖 Нажмите меню ⋮ (три точки) вверху браузера → «Установить приложение»!");
             return;
         }
         if (isStandaloneInstalledApp()) {
