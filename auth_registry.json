@@ -62,16 +62,14 @@
       "salt_hex": "869ad9ff00e74eb488593fea322bb66a",
       "pbkdf2_hash": "8187c7a25d7b440367cb55f29bc6d5c592e0849f2f3225d2c200024ba9a90ca6",
       "iterations": 120000,
-      "rsa_envelope": {
-        "ek": "uzb8bp0vuEjock0XuPObHV3VSc1CU4Q9jDeIiXxWAH5i1yEetdkNd7UR0/U5yPiFGQ+7VIIGpUx6fCW101w7yyC77TJQagixJ6X/JdddxTwh79Pu7EMAJXkuxlX/sfcG+iXguUGqiegyx26GTko3K+g7EszDAWmUpAgeHGq67MGUBT17jswIVXhKKJ9xZoSBhBM5ZLT84CAmSFnANBHKtW0g3MH7LbNmET5BzS6lvJJEoT5Q21dAoN0wrSKRVmiploz5SM5g+OHc8WD9gti/ydx8zNxvDW68DcJF3C2GFvgLKfDrs8HBGX1q4eUftFtHPLvPxYyBzAEeKO3iP5UCMw==",
-        "iv": "qPt4VTCqt8uautDI",
-        "ct": "neSo6RzY3ceYSHAHXUaQv9a4NOHz8/WSuqTKZN2N7fqd2XAYw0eavnAR7vihALPPV+vVE4WJONr4m2l9lEiFXPLUhYx962A/HDoosJGxT/HfQEnkfSXgmvEffNr+uptpOAo4E9NZwkRL5vYN/q6xjGXMeinHz5PUOi74iaT3845gZDgX37IBfXKK6Hk1DA9XnB388lQfXQ=="
-      },
       "assigned_projects": [],
       "gta_completed": false,
       "gta_archetype": "",
-      "created_at": "2026-10-30T05:36:47.209Z"
+      "created_at": "2026-10-30T05:36:47.209Z",
+      "approved_at": "",
+      "owner_action_stamp": "",
+      "pending_reset": null
     }
   ],
-  "updated_at": "2026-10-30T05:36:47.209Z"
+  "updated_at": "2026-10-30T05:37:25.964628+00:00"
 }
