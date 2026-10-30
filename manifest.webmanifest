@@ -1,0 +1,67 @@
+{
+  "id": "/remote-agents-control/",
+  "name": "Unity Spirit — Виртуальный Офис",
+  "short_name": "Unity Office",
+  "description": "Мобильный и десктопный Виртуальный Офис 24/7: папки проектов, ИИ-агенты, Директор Тим, фото-OCR и отчёты работы.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "lang": "ru",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "icons/favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Директор Тим",
+      "short_name": "Тим",
+      "url": "./index.html?tab=tim",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Отчёты работы",
+      "short_name": "Отчёты",
+      "url": "./index.html?tab=reports",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Папки проектов",
+      "short_name": "Папки",
+      "url": "./index.html?tab=projects",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

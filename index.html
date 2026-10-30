@@ -6,7 +6,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#090d16">
-    <title>Виртуальный Офис CRM v10.0</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Unity Office">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <title>Unity Spirit — Виртуальный Офис v20</title>
     <style>
         :root {
             --bg-main: #090d16;
@@ -1686,24 +1691,163 @@
             gap: 7px;
         }
 
+
+        /* === v20.5: PWA, AUTH GATE, GTA SYNDICATE HUD, SECURED VAULT & ANTI-STALL === */
+        body.auth-locked .app-shell {
+            display: none !important;
+        }
+        .auth-gate-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 25000;
+            background: radial-gradient(circle at top, #172554 0%, #090d16 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            overflow-y: auto;
+        }
+        .auth-gate-card {
+            width: 100%;
+            max-width: 470px;
+            max-height: 94dvh;
+            overflow-y: auto;
+            background: rgba(17, 24, 39, 0.96);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 22px;
+            padding: 20px 18px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.72);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .auth-3d-hero-logo {
+            width: 88px;
+            height: 88px;
+            border-radius: 22px;
+            margin: 0 auto;
+            object-fit: cover;
+            border: 2px solid rgba(96, 165, 250, 0.55);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+        }
+        .auth-tabs-row {
+            display: flex;
+            gap: 6px;
+            background: #090d16;
+            padding: 5px;
+            border-radius: 13px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .auth-tab-btn {
+            flex: 1;
+            padding: 8px 6px;
+            border-radius: 9px;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .auth-tab-btn.active {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+        }
+        .gta-modal-card {
+            background: linear-gradient(160deg, #0b0f19 0%, #141b2d 100%);
+            border: 2px solid rgba(245, 158, 11, 0.65);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85), 0 0 32px rgba(245, 158, 11, 0.18);
+            max-width: 580px;
+        }
+        .gta-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.09);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .gta-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f59e0b, #10b981);
+            transition: width 0.25s ease;
+        }
+        .gta-boss-box {
+            background: rgba(245, 158, 11, 0.11);
+            border-left: 4px solid #f59e0b;
+            border-radius: 11px;
+            padding: 11px 13px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.45;
+            color: #fef3c7;
+        }
+        .gta-option-btn {
+            width: 100%;
+            text-align: left;
+            padding: 11px 13px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(22, 31, 51, 0.92);
+            color: #f8fafc;
+            font-size: 0.81rem;
+            font-weight: 700;
+            line-height: 1.38;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            transition: all 0.15s ease;
+        }
+        .gta-option-btn:hover, .gta-option-btn:active {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.16);
+            transform: translateX(3px);
+        }
+        .gta-opt-num {
+            color: #fbbf24;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        .anti-stall-drawer {
+            position: fixed;
+            left: 12px;
+            right: 12px;
+            bottom: calc(68px + var(--safe-bottom));
+            z-index: 9500;
+            max-width: 560px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #111827, #1e1b4b);
+            border: 1px solid rgba(245, 158, 11, 0.6);
+            border-left: 4px solid #f59e0b;
+            border-radius: 16px;
+            padding: 12px 14px;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.65);
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+        }
+
     </style>
 </head>
-<body>
+<body class="auth-locked">
 
 <div class="app-shell">
     <!-- TOP BAR -->
     <header class="topbar">
         <div class="brand-row">
-            <div class="brand-logo">🏢</div>
+            <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Unity Office" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Unity 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
             <div class="brand-titles">
-                <h1>Виртуальный Офис CRM v10</h1>
+                <h1>Unity Spirit Офис</h1>
                 <div class="worker-pill">
                     <span class="status-dot" id="worker-dot"></span>
                     <span id="worker-text">Автономный облачный + ПК режим активен</span>
                 </div>
             </div>
         </div>
-        <div class="topbar-actions">
+        <div class="topbar-actions" style="overflow-x:auto;">
+            <button class="icon-btn" style="background:linear-gradient(135deg,rgba(37,99,235,0.26),rgba(124,58,237,0.26)); border-color:rgba(96,165,250,0.6); color:#93c5fd; font-weight:800;" onclick="openInstallAppModal()" id="btn-top-install-app" title="Установить приложение на телефон / ПК или отправить на любое устройство">📲 Приложение <span id="pwa-ready-dot" style="display:none; width:7px; height:7px; border-radius:50%; background:#34d399;"></span></button>
+            <button class="icon-btn" style="display:none; background:rgba(245,158,11,0.18); border-color:rgba(245,158,11,0.55); color:#fbbf24; font-weight:800;" onclick="openSecuredVaultModal()" id="btn-top-secured-vault" title="Секретная папка логинов/паролей, одобрение @unityspiritpartners, назначение папок и 30-дневный контроль">🔒 Сейф & Админ (<span id="topbar-pending-reg-cnt">0</span>)</button>
+            <button class="icon-btn" style="display:none; font-weight:700;" onclick="openUserProfileMenu()" id="btn-top-user-chip" title="Профиль / GTA-Досье">👤</button>
             <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report" title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 Отчёт работы (<span id="topbar-work-cnt">150</span>)</button>
             <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Предупреждения и ожидание действий">🚨 Действия (<span id="topbar-action-cnt">5</span>)</button>
             <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ Папка</button>
@@ -2336,6 +2480,162 @@
     </div>
 </div>
 
+
+<!-- v20.5: FULL-SCREEN LOGIN & REGISTRATION GATE (@unityspiritpartners APPROVAL) -->
+<div id="auth-gate-overlay" class="auth-gate-overlay">
+    <div class="auth-gate-card">
+        <img src="icons/icon-512.png" alt="Unity Spirit 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
+        <div style="text-align:center;">
+            <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc;">Unity Spirit — Виртуальный Офис</h2>
+            <div id="auth-gate-status" style="font-size:0.76rem; color:#94a3b8; margin-top:3px; line-height:1.4;">
+                🔄 Проверка доверенного компьютера и сессии доступа...
+            </div>
+        </div>
+
+        <button class="btn-action accent" onclick="openInstallAppModal()" style="width:100%; padding:10px 14px; font-size:0.82rem; font-weight:800; background:linear-gradient(135deg,#0284c7,#7c3aed);">
+            📲 Установить приложение на телефон / Отправить на устройство
+        </button>
+
+        <div class="auth-tabs-row">
+            <button class="auth-tab-btn active" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Вход</button>
+            <button class="auth-tab-btn" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">📝 Регистрация</button>
+            <button class="auth-tab-btn" id="auth-tab-btn-family9" onclick="switchAuthGateTab('family9')">🧬 Сброс (9/9)</button>
+        </div>
+
+        <div id="auth-feedback-box" style="display:none; padding:10px 12px; border-radius:12px; border:1px solid; font-size:0.77rem; line-height:1.45;"></div>
+
+        <!-- PANEL 1: LOGIN -->
+        <div id="auth-panel-login" style="display:flex; flex-direction:column; gap:9px;">
+            <input type="text" id="auth-login-user" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Логин или Email" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+            <input type="password" id="auth-login-pass" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Пароль" autocomplete="current-password" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+            <button class="modal-btn confirm" id="btn-auth-login-submit" onclick="submitAuthLogin()" style="padding:12px; font-size:0.9rem; font-weight:800;">🔐 Войти в Виртуальный Офис</button>
+            <div style="font-size:0.73rem; color:#94a3b8; text-align:center; line-height:1.4;">
+                Нет аккаунта? Нажмите <b>«📝 Регистрация»</b> — вход активируется после одобрения сообщения в Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:700;">@unityspiritpartners</a>.
+            </div>
+        </div>
+
+        <!-- PANEL 2: REGISTRATION -->
+        <div id="auth-panel-register" style="display:none; flex-direction:column; gap:8px;">
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.35); border-radius:10px; padding:8px 10px; line-height:1.4;">
+                Зарегистрироваться может любой участник. После отправки формы напишите <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a> — после одобрения вам откроется система и стартовый <b>GTA-опросник проектов</b>!
+            </div>
+            <input type="text" id="reg-fullname" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваше Имя и Фамилия *">
+            <input type="text" id="reg-login" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Логин или Email для входа *" autocomplete="username">
+            <input type="text" id="reg-telegram" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваш Telegram (@username) *">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                <input type="password" id="reg-pass1" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Пароль (от 6 симв.) *" autocomplete="new-password">
+                <input type="password" id="reg-pass2" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Повтор пароля *" autocomplete="new-password">
+            </div>
+            <input type="text" id="reg-note" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Чем хотите заниматься / ваши сильные стороны">
+            <button class="modal-btn confirm" id="btn-auth-reg-submit" onclick="submitAuthRegistration()" style="padding:11px; font-weight:800; background:linear-gradient(135deg,#10b981,#2563eb);">📝 Зарегистрироваться и запросить одобрение</button>
+        </div>
+
+        <!-- PANEL 3: OWNER 9 FAMILY RELATIVE NAMES RECOVERY & RESET -->
+        <div id="auth-panel-family9" style="display:none; flex-direction:column; gap:8px;">
+            <div style="font-size:0.73rem; color:#fde68a; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.4); border-radius:10px; padding:8px 10px; line-height:1.4;">
+                🧬 <b>Экстренный доступ Владельца к Секретному Сейфу и сброс пароля:</b> требуется точное совпадение <b>всех 9 имён ваших родственников (9/9)</b>. На вашем компьютере с <code>unityspiritteam@gmail.com</code> вход выполняется автоматически.
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:5px;">
+                <input type="text" id="gate-fam9-1" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #1"><input type="text" id="gate-fam9-2" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #2"><input type="text" id="gate-fam9-3" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #3"><input type="text" id="gate-fam9-4" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #4"><input type="text" id="gate-fam9-5" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #5"><input type="text" id="gate-fam9-6" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #6"><input type="text" id="gate-fam9-7" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #7"><input type="text" id="gate-fam9-8" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #8"><input type="text" id="gate-fam9-9" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #9">
+            </div>
+            <input type="password" id="gate-fam9-newpass" class="modal-input" style="height:39px; background:#090d16; color:#f8fafc;" placeholder="Новый пароль владельца (необязательно, если только вход)">
+            <button class="modal-btn confirm" onclick="submitGateFamily9UnlockAndReset()" style="padding:11px; font-weight:800; background:linear-gradient(135deg,#8b5cf6,#2563eb);">🧬 Подтвердить 9/9 родственников и открыть Сейф</button>
+        </div>
+    </div>
+</div>
+
+<!-- v20.5: INSTALL, DOWNLOAD & SEND APP TO ANY DEVICE MODAL -->
+<div id="install-app-modal" class="modal-overlay" style="display:none; z-index:26000;" onclick="if(event.target===this) closeInstallAppModal()">
+    <div class="modal-card" style="max-width:480px;">
+        <div class="modal-header">
+            <h3>📲 Установка и отправка приложения</h3>
+            <button class="modal-close" onclick="closeInstallAppModal()">✕</button>
+        </div>
+        <div class="modal-body" style="gap:10px;">
+            <div style="display:flex; align-items:center; gap:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:10px 12px;">
+                <img src="icons/icon-192.png" alt="3D App Logo" style="width:62px; height:62px; border-radius:16px; object-fit:cover; border:1px solid rgba(96,165,250,0.5); flex-shrink:0;">
+                <div>
+                    <div style="font-weight:900; font-size:0.94rem;">Unity Spirit — Виртуальный Офис</div>
+                    <div style="font-size:0.74rem; color:var(--text-dim); margin-top:2px;">Полноэкранное приложение для iPhone, Android, Windows и Mac (3D Глобус & Самолёты)</div>
+                </div>
+            </div>
+
+            <div id="install-device-detected-box" style="background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.35); border-radius:11px; padding:9px 11px; font-size:0.76rem; line-height:1.45;"></div>
+
+            <button class="btn-action accent" onclick="triggerNativePwaInstall()" style="width:100%; padding:12px; font-size:0.9rem; font-weight:900; background:linear-gradient(135deg,#2563eb,#7c3aed);">
+                ⚡ Установить приложение на это устройство
+            </button>
+
+            <div id="ios-step-guide-box" style="background:var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:9px 11px; font-size:0.75rem; line-height:1.45;">
+                🍏 <b>Установка на iPhone / iPad:</b><br>
+                1) В Safari нажмите кнопку <b>«Поделиться ⬆️»</b> на нижней панели (или скачайте профиль иконки ниже).<br>
+                2) Выберите <b>«На экран Домой ➕»</b> → <b>«Добавить»</b>.
+            </div>
+
+            <div style="font-size:0.74rem; font-weight:800; color:var(--text-dim); text-transform:uppercase;">📥 Скачать файл установки для хранения и пересылки:</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                <button class="btn-action ghost" onclick="downloadPortableInstallerFile()" style="justify-content:center; font-weight:700;">📥 Файл-установщик (.html)</button>
+                <button class="btn-action ghost" onclick="downloadIosWebClipProfile()" style="justify-content:center; font-weight:700;">🍏 Профиль iPhone</button>
+                <button class="btn-action ghost" onclick="downloadDesktopShortcutUrl()" style="grid-column:span 2; justify-content:center; font-weight:700;">💻 Скачать ярлык на рабочий стол ПК (.url)</button>
+            </div>
+
+            <div style="font-size:0.74rem; font-weight:800; color:var(--text-dim); text-transform:uppercase;">📤 Отправить приложение на любой телефон или ПК:</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                <button class="btn-action success" onclick="shareAppToAnyDevice()" style="justify-content:center; font-weight:800;">📤 Отправить / Share</button>
+                <button class="btn-action primary" onclick="copyInstallLink()" style="justify-content:center; font-weight:800;">📋 Копировать ссылку</button>
+                <a class="btn-action ghost" href="https://t.me/share/url?url=https%3A%2F%2Funityspirit.github.io%2Fremote-agents-control%2F%3Finstall%3D1&text=%F0%9F%93%B2%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20Unity%20Spirit%20Virtual%20Office" target="_blank" rel="noopener" style="text-decoration:none; justify-content:center;">✈️ В Telegram</a>
+                <a class="btn-action ghost" href="https://wa.me/?text=%F0%9F%93%B2%20Unity%20Spirit%20Virtual%20Office%3A%20https%3A%2F%2Funityspirit.github.io%2Fremote-agents-control%2F%3Finstall%3D1" target="_blank" rel="noopener" style="text-decoration:none; justify-content:center;">💬 В WhatsApp</a>
+            </div>
+
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px; padding-top:4px;">
+                <div style="background:#ffffff; padding:8px; border-radius:14px; display:inline-block; box-shadow:0 4px 16px rgba(0,0,0,0.3);"><svg xmlns="http://www.w3.org/2000/svg" width="148" height="148" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h37v37h-37z"/><path class="qrline" stroke="#0f172a" d="M2 2.5h7m2 0h5m3 0h7m2 0h7m-33 1h1m5 0h1m2 0h4m1 0h4m2 0h1m5 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h4m2 0h2m2 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h3m1 0h3m2 0h3m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m2 0h5m2 0h1m1 0h1m5 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m2 0h2m1 0h3m2 0h4m-23 1h1m1 0h5m3 0h1m1 0h3m2 0h1m1 0h1m2 0h2m2 0h5m-29 1h1m4 0h1m3 0h2m1 0h1m1 0h2m1 0h2m1 0h2m2 0h2m1 0h2m1 0h1m-32 1h1m1 0h2m1 0h3m1 0h3m2 0h2m1 0h1m3 0h1m1 0h2m2 0h1m1 0h2m-32 1h1m1 0h1m1 0h2m1 0h4m1 0h1m1 0h2m3 0h4m2 0h2m1 0h4m-32 1h1m1 0h1m2 0h2m2 0h1m1 0h2m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m1 0h2m-33 1h2m5 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h2m-32 1h1m1 0h1m2 0h3m6 0h1m5 0h1m3 0h2m2 0h1m1 0h1m-31 1h2m2 0h1m1 0h1m2 0h2m1 0h4m1 0h1m1 0h2m1 0h5m1 0h2m-28 1h1m2 0h1m2 0h2m3 0h1m2 0h1m1 0h1m2 0h1m2 0h1m1 0h3m2 0h1m-31 1h3m2 0h4m1 0h1m3 0h4m3 0h1m1 0h3m1 0h2m1 0h1m-32 1h2m3 0h1m1 0h2m5 0h1m1 0h1m4 0h1m2 0h1m1 0h2m1 0h2m-31 1h5m3 0h6m1 0h1m1 0h1m1 0h2m2 0h2m1 0h5m-32 1h4m1 0h3m2 0h1m2 0h1m3 0h1m4 0h2m1 0h1m1 0h3m1 0h1m-32 1h3m1 0h1m3 0h2m2 0h1m3 0h2m1 0h2m1 0h2m2 0h1m2 0h2m1 0h1m-33 1h1m2 0h2m1 0h5m1 0h1m2 0h2m1 0h1m1 0h2m2 0h2m4 0h2m-32 1h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m2 0h5m2 0h1m2 0h3m1 0h1m-33 1h1m2 0h1m2 0h7m1 0h2m1 0h1m1 0h2m1 0h1m1 0h5m2 0h2m-25 1h4m1 0h1m5 0h4m1 0h1m3 0h1m1 0h1m1 0h1m-33 1h7m2 0h2m2 0h1m1 0h1m1 0h2m1 0h5m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h1m4 0h2m6 0h1m1 0h2m3 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h6m-30 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h4m2 0h1m2 0h5m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m7 0h1m2 0h2m1 0h2m-31 1h1m5 0h1m2 0h3m2 0h3m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m-31 1h7m1 0h4m1 0h1m1 0h1m1 0h1m4 0h3m1 0h2m3 0h1"/></g></svg></div>
+                <span style="font-size:0.71rem; color:var(--text-dim);">Наведите камеру любого телефона — откроется установка</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- v20.5: GTA SYNDICATE ONBOARDING QUESTIONNAIRE & PROJECT MATCHER -->
+<div id="gta-onboarding-modal" class="modal-overlay" style="display:none; z-index:24000;" onclick="if(event.target===this) closeGtaOnboardingModal()">
+    <div class="modal-card gta-modal-card">
+        <div class="modal-header">
+            <h3 style="color:#fbbf24; letter-spacing:0.03em;">🕶️ GTA: UNITY SYNDICATE — ТЕСТ И ПОДБОР ПРОЕКТОВ</h3>
+            <button class="modal-close" onclick="closeGtaOnboardingModal()">✕</button>
+        </div>
+        <div class="modal-body" id="gta-modal-body" style="gap:10px; max-height:76dvh;"></div>
+    </div>
+</div>
+
+<!-- v20.5: OWNER SECURED VAULT, APPROVALS, FOLDER ASSIGNMENT & 30-DAY AUDIT -->
+<div id="secured-vault-modal" class="modal-overlay" style="display:none; z-index:24500;" onclick="if(event.target===this) closeSecuredVaultModal()">
+    <div class="modal-card" style="max-width:680px;">
+        <div class="modal-header">
+            <h3>🔒 Секретная Папка & Управление Командой</h3>
+            <div style="display:flex; gap:6px; align-items:center;">
+                <button class="mini-btn" style="color:#f87171;" onclick="closeSecuredVaultModal(); logoutUnityOffice();" title="Выйти из сессии">🚪 Выйти</button>
+                <button class="modal-close" onclick="closeSecuredVaultModal()">✕</button>
+            </div>
+        </div>
+        <div class="filter-row" style="padding:0; flex-wrap:wrap; gap:5px;">
+            <button class="chip active" id="vault-tab-approvals" onclick="setVaultSubTab('approvals')">🔐 Логины, Пароли & Одобрение</button>
+            <button class="chip" id="vault-tab-folders" onclick="setVaultSubTab('folders')">📁 Назначить Папки</button>
+            <button class="chip" id="vault-tab-telemetry" onclick="setVaultSubTab('telemetry')">⏱️ Время, Запросы & 30д Замена</button>
+            <button class="chip" id="vault-tab-family9" onclick="setVaultSubTab('family9')">🧬 9 Родственников (Сброс)</button>
+        </div>
+        <div class="modal-body" id="secured-vault-body" style="gap:10px; max-height:72dvh;"></div>
+    </div>
+</div>
+
+<!-- v20.5: PROACTIVE ANTI-STALL ENGAGEMENT DRAWER -->
+<div id="anti-stall-banner" class="anti-stall-drawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+        <span style="font-size:0.81rem; font-weight:900; color:#fbbf24;">⚡ Нужен импульс? Выбери быстрый вариант взаимодействия:</span>
+        <button class="mini-btn" onclick="hideAntiStallBanner()">✕ Позже</button>
+    </div>
+    <div style="font-size:0.74rem; color:#cbd5e1;">Система заметила паузу — нажми любой вариант ниже, и ИИ-агенты сразу помогут продвинуть проект:</div>
+    <div id="anti-stall-options" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+</div>
+
 <script>
     // Встроенная авторизация (работает с любого телефона без ввода токена!)
     const ACTIVE_TOKEN = String.fromCharCode(103,104,112,95,90,120,87,53,97,57,52,121,53,53,115,117,108,66,51,113,84,70,108,71,74,88,103,80,112,122,78,68,86,66,48,57,52,88,68,70);
@@ -2368,6 +2668,15 @@
         }
         const options = { method, headers };
         if (body) {
+            if (method === 'POST' && path === '/issues' && typeof currentAuthUser !== 'undefined' && currentAuthUser) {
+                const actorTag = '\n\n<!-- ACTOR: ' + currentAuthUser.login + ' | ' + (currentAuthUser.full_name || '') + ' -->';
+                if (typeof body.body === 'string' && !body.body.includes('<!-- ACTOR:')) {
+                    body.body += actorTag;
+                }
+                if (typeof recordTeamRequestTelemetry === 'function' && !String(body.title || '').includes('AUTH_SYNC')) {
+                    try { recordTeamRequestTelemetry(body); } catch (e) {}
+                }
+            }
             options.body = JSON.stringify(body);
             headers['Content-Type'] = 'application/json';
         }
@@ -3497,6 +3806,18 @@
 
     function selectProject(name, icon) {
         const canon = canonicalProjectName(name);
+        if (canon === "Secured_Users_Vault") {
+            if (typeof openSecuredVaultModal === "function") openSecuredVaultModal();
+            return;
+        }
+        if (typeof canCurrentUserAccessProject === "function" && !canCurrentUserAccessProject(canon)) {
+            showToast("🔒 Эта папка не входит в ваш список назначенных проектов. Запросите доступ у администратора.");
+            return;
+        }
+        if (typeof getCurrentMemberTeleSlot === "function") {
+            const sl = getCurrentMemberTeleSlot();
+            if (sl && sl.metrics) { sl.metrics.current_project = canon; }
+        }
         currentProject = canon;
         const meta = PROJECT_META[canon] || {};
         currentIcon = icon || meta.icon || "📁";
@@ -3590,7 +3911,22 @@
         });
 
         let html = "";
+        if (typeof currentAuthUser !== "undefined" && currentAuthUser && currentAuthUser.role !== "owner") {
+            const myAssigned = (typeof getUserAssignedProjects === "function") ? getUserAssignedProjects().filter(p => p !== "*") : [];
+            html += '<div style="background:linear-gradient(135deg,rgba(245,158,11,0.16),rgba(16,185,129,0.14)); border:1px solid rgba(245,158,11,0.45); border-radius:13px; padding:10px 12px; margin-bottom:4px; display:flex; flex-direction:column; gap:6px;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">' +
+                    '<span style="font-size:0.78rem; font-weight:900; color:#fbbf24;">' + escapeHtml(currentAuthUser.gta_archetype || "🕶️ Участник команды") + '</span>' +
+                    '<div style="display:flex; gap:5px;">' +
+                        '<button class="mini-btn accent" onclick="openGtaOnboardingModal(true)">🕶️ Моё GTA-Досье & Новые проекты</button>' +
+                        '<button class="mini-btn" style="color:#f87171;" onclick="logoutUnityOffice()">🚪</button>' +
+                    '</div>' +
+                '</div>' +
+                '<div style="font-size:0.73rem; color:var(--text-dim);">Ваши активные проекты: <b style="color:#34d399;">' + escapeHtml(myAssigned.length ? myAssigned.join(", ") : "Все доступные папки") + '</b></div>' +
+            '</div>';
+        }
         allNames.forEach(name => {
+            if (name === "Secured_Users_Vault") return;
+            if (typeof canCurrentUserAccessProject === "function" && !canCurrentUserAccessProject(name)) return;
             const meta = PROJECT_META[name] || {};
             const st = stats[name] || { total: 0, open: 0, lastCmd: "" };
             const isWorked = st.total > 0 || meta.worked;
@@ -6551,6 +6887,1892 @@
     renderWorkReportsTab();
     populateGlobalStudyFolders();
     syncActionAlertsUI();
+    // =========================================================================
+    // === v20.5: PWA INSTALLER, AUTH GATE (@unityspiritpartners), SECURED   ===
+    // === VAULT (9 FAMILY RELATIVES + TRUSTED PC), GTA ONBOARDING & 30D HR  ===
+    // =========================================================================
+
+    const UNITY_OWNER_EMAIL = "unityspiritteam@gmail.com";
+    const UNITY_OWNER_TG = "unityspiritpartners";
+    const UNITY_APP_URL = "https://unityspirit.github.io/remote-agents-control/";
+    const LOCAL_TRUST_API = "http://127.0.0.1:18799";
+    const EMBEDDED_VAULT_PUBKEY_SPKI_B64 = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx9NGO3o0wblsEueBza4vy5JlP7FyGHYCYu8MjJEEsmZCyHAg+0g8kY+7Xh2u9oBApksvaR19epwBOW9tKmTcj+sZ9/iDZFQETRyzF0dEOfwsmPLlnp6T9h+sCSpi77E1gksqrlkAQu2GrwsqRsUv4Oxz+0fowge00kxJ7QiJP/WfRswT2cprW5x9KD6bEeHdNB5BK6iH86kHlfqy+60iyOat9Ia8ExuJzAtnczwkIrJl13NPnsFf9Jkv0bkCj323T1ItbRjCr51WVYIK3fy1AjQ/87IBmEPwKPPpkIzMW+y5PBoIFJTeDSGcM36Bifp9UHAiQM/PQ/lOv5HasYO1jQIDAQAB";
+
+    let deferredPwaPrompt = null;
+    let currentAuthUser = null; // { id, login, full_name, telegram, role, status, assigned_projects, gta_completed, gta_archetype, trusted_pc }
+    let authRegistryCache = null;
+    let teamTelemetryCache = { version: "20.5", members: {} };
+    let unlockedVaultData = null; // populated ONLY via 127.0.0.1 trusted PC or 9/9 family relatives AES-256-GCM unlock
+    let vaultSubTab = "approvals";
+    let lastUserInteractionTs = Date.now();
+    let lastUserRequestTs = Date.now();
+    let sessionActiveSeconds = 0;
+    let antiStallDismissedAt = 0;
+    let telemetryFlushTimer = null;
+
+    // Register PWA Service Worker & Capture Native Install Prompt
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./sw.js").catch(() => {});
+        });
+    }
+    window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPwaPrompt = e;
+        const badge = document.getElementById("pwa-ready-dot");
+        if (badge) badge.style.display = "inline-block";
+    });
+    window.addEventListener("appinstalled", () => {
+        deferredPwaPrompt = null;
+        showToast("📲 Приложение Unity Office установлено на главный экран!");
+    });
+
+    function isStandaloneInstalledApp() {
+        return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    }
+
+    function normalizeAuthLogin(s) {
+        return String(s || "").trim().toLowerCase();
+    }
+
+    function normalizeRelativeNameJs(s) {
+        return String(s || "").trim().toLowerCase().replace(/ё/g, "е").replace(/\s+/g, " ");
+    }
+
+    function bufToHex(buffer) {
+        return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    function hexToBytes(hex) {
+        const clean = String(hex || "").trim();
+        const out = new Uint8Array(clean.length / 2);
+        for (let i = 0; i < out.length; i++) {
+            out[i] = parseInt(clean.substr(i * 2, 2), 16);
+        }
+        return out;
+    }
+
+    function bytesToB64(bytes) {
+        let bin = "";
+        const arr = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+        for (let i = 0; i < arr.length; i++) bin += String.fromCharCode(arr[i]);
+        return btoa(bin);
+    }
+
+    function b64ToBytes(b64) {
+        const bin = atob(String(b64 || "").replace(/\s+/g, ""));
+        const out = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+        return out;
+    }
+
+    async function pbkdf2HexJs(secretStr, saltHex, iterations) {
+        const enc = new TextEncoder();
+        const baseKey = await crypto.subtle.importKey("raw", enc.encode(secretStr), "PBKDF2", false, ["deriveBits"]);
+        const bits = await crypto.subtle.deriveBits(
+            { name: "PBKDF2", salt: hexToBytes(saltHex), iterations: iterations, hash: "SHA-256" },
+            baseKey,
+            256
+        );
+        return bufToHex(bits);
+    }
+
+    async function encryptCredentialsForOwnerVault(payloadObj) {
+        const spkiB64 = (authRegistryCache && authRegistryCache.public_key_spki_b64) || EMBEDDED_VAULT_PUBKEY_SPKI_B64;
+        if (!spkiB64 || spkiB64.includes("__VAULT_PUBKEY")) return null;
+        const pubKey = await crypto.subtle.importKey(
+            "spki",
+            b64ToBytes(spkiB64),
+            { name: "RSA-OAEP", hash: "SHA-256" },
+            false,
+            ["encrypt"]
+        );
+        const aesKeyBytes = crypto.getRandomValues(new Uint8Array(32));
+        const iv = crypto.getRandomValues(new Uint8Array(12));
+        const aesKey = await crypto.subtle.importKey("raw", aesKeyBytes, "AES-GCM", false, ["encrypt"]);
+        const encoded = new TextEncoder().encode(JSON.stringify(payloadObj));
+        const ctBuf = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, aesKey, encoded);
+        const ekBuf = await crypto.subtle.encrypt({ name: "RSA-OAEP" }, pubKey, aesKeyBytes);
+        return {
+            ek: bytesToB64(ekBuf),
+            iv: bytesToB64(iv),
+            ct: bytesToB64(ctBuf)
+        };
+    }
+
+    async function writeDataBranchJson(filePath, jsonObj, commitMsg) {
+        let existingSha = null;
+        try {
+            const cur = await ghApi("/contents/" + filePath + "?ref=data", "GET", null, true);
+            if (cur && cur.sha) existingSha = cur.sha;
+        } catch (e) {}
+        const rawStr = JSON.stringify(jsonObj, null, 2);
+        const b64Content = btoa(unescape(encodeURIComponent(rawStr)));
+        const payload = {
+            message: commitMsg || ("Sync " + filePath),
+            content: b64Content,
+            branch: "data"
+        };
+        if (existingSha) payload.sha = existingSha;
+        return await ghApi("/contents/" + filePath, "PUT", payload, true);
+    }
+
+    async function fetchAuthRegistryFresh() {
+        try {
+            const res = await readRepoJson("auth_registry.json");
+            if (res && res.json) {
+                authRegistryCache = res.json;
+                return authRegistryCache;
+            }
+        } catch (e) {}
+        return authRegistryCache || { users: [], family9: { configured: false } };
+    }
+
+    async function fetchTeamTelemetryFresh() {
+        try {
+            const res = await readRepoJson("team_telemetry.json");
+            if (res && res.json && typeof res.json.members === "object") {
+                teamTelemetryCache = res.json;
+                return teamTelemetryCache;
+            }
+        } catch (e) {}
+        return teamTelemetryCache;
+    }
+
+    function isUserAuthenticated() {
+        return Boolean(currentAuthUser && currentAuthUser.status === "approved");
+    }
+
+    function isOwnerSession() {
+        return Boolean(isUserAuthenticated() && currentAuthUser.role === "owner");
+    }
+
+    function getUserAssignedProjects() {
+        if (!currentAuthUser || currentAuthUser.role === "owner") return ["*"];
+        const arr = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
+        if (arr.includes("*")) return ["*"];
+        return arr;
+    }
+
+    function canCurrentUserAccessProject(projName) {
+        if (projName === "Secured_Users_Vault") return false;
+        if (!currentAuthUser || currentAuthUser.role === "owner") return true;
+        const assigned = getUserAssignedProjects();
+        if (assigned.includes("*")) return true;
+        if (assigned.length === 0) return true; // right before GTA test finishes
+        if (projName === "Позновалка" || projName === "Входящие_Офис") return true;
+        return assigned.some(ap => sameProject(ap, projName));
+    }
+
+    // 1. Check Local Trusted Owner Computer (unityspiritteam@gmail.com via 127.0.0.1:18799)
+    async function checkLocalOwnerComputerTrust() {
+        try {
+            const ctrl = new AbortController();
+            const t = setTimeout(() => ctrl.abort(), 1300);
+            const r = await fetch(LOCAL_TRUST_API + "/api/owner-trust", { signal: ctrl.signal, cache: "no-store" });
+            clearTimeout(t);
+            if (!r.ok) return null;
+            const d = await r.json();
+            if (d && d.ok && d.trusted_computer && normalizeAuthLogin(d.owner_email) === UNITY_OWNER_EMAIL) {
+                return d;
+            }
+        } catch (e) {}
+        return null;
+    }
+
+    function unlockOfficeWithUser(userObj, viaTrustedPc) {
+        currentAuthUser = {
+            id: userObj.id || "usr",
+            login: normalizeAuthLogin(userObj.login),
+            full_name: userObj.full_name || userObj.login,
+            telegram: userObj.telegram || "",
+            role: userObj.role || "member",
+            status: "approved",
+            assigned_projects: Array.isArray(userObj.assigned_projects) ? userObj.assigned_projects : (userObj.role === "owner" ? ["*"] : []),
+            gta_completed: Boolean(userObj.gta_completed || userObj.role === "owner"),
+            gta_archetype: userObj.gta_archetype || (userObj.role === "owner" ? "👑 Босс Синдиката" : ""),
+            trusted_pc: Boolean(viaTrustedPc)
+        };
+        try {
+            localStorage.setItem("unity_office_auth_session_v20", JSON.stringify({
+                login: currentAuthUser.login,
+                saved_at: Date.now(),
+                trusted_pc: Boolean(viaTrustedPc)
+            }));
+        } catch (e) {}
+
+        document.body.classList.remove("auth-locked");
+        const gate = document.getElementById("auth-gate-overlay");
+        if (gate) gate.style.display = "none";
+
+        updateTopbarAuthUI();
+        renderProjects();
+        populateGlobalStudyFolders();
+        startTeamActivityHeartbeat();
+
+        // Launch GTA Syndicate Onboarding automatically for newly approved members!
+        if (!currentAuthUser.gta_completed && currentAuthUser.role !== "owner") {
+            setTimeout(() => openGtaOnboardingModal(false), 350);
+        }
+
+        // Auto-open Install Modal if arrived via ?install=1 link
+        if (location.search.includes("install=1") && !isStandaloneInstalledApp()) {
+            setTimeout(() => openInstallAppModal(), 600);
+        }
+    }
+
+    function updateTopbarAuthUI() {
+        const vaultBtn = document.getElementById("btn-top-secured-vault");
+        const userBtn = document.getElementById("btn-top-user-chip");
+        if (vaultBtn) {
+            if (isOwnerSession()) {
+                vaultBtn.style.display = "inline-flex";
+                const pend = ((authRegistryCache && authRegistryCache.users) || []).filter(u => u.status === "pending").length;
+                const cntEl = document.getElementById("topbar-pending-reg-cnt");
+                if (cntEl) cntEl.innerText = String(pend);
+            } else {
+                vaultBtn.style.display = "none";
+            }
+        }
+        if (userBtn && currentAuthUser) {
+            const shortName = (currentAuthUser.role === "owner")
+                ? (currentAuthUser.trusted_pc ? "👑 ПК Власлава" : "👑 Власлав")
+                : ("🕶️ " + String(currentAuthUser.full_name || currentAuthUser.login).split(" ")[0]);
+            userBtn.innerHTML = escapeHtml(shortName);
+            userBtn.style.display = "inline-flex";
+        }
+    }
+
+    async function initAuthGateV20() {
+        document.body.classList.add("auth-locked");
+        const gate = document.getElementById("auth-gate-overlay");
+        if (gate) gate.style.display = "flex";
+
+        // Parallel check: Local Trusted Computer (unityspiritteam@gmail.com) + Cloud Auth Registry
+        const [localTrust, reg] = await Promise.all([
+            checkLocalOwnerComputerTrust(),
+            fetchAuthRegistryFresh(),
+            fetchTeamTelemetryFresh()
+        ]);
+
+        if (localTrust && localTrust.trusted_computer) {
+            unlockOfficeWithUser({
+                id: "owner-vlaslav",
+                login: UNITY_OWNER_EMAIL,
+                full_name: "Власлав (Доверенный ПК · " + UNITY_OWNER_EMAIL + ")",
+                telegram: "@" + UNITY_OWNER_TG,
+                role: "owner",
+                status: "approved",
+                assigned_projects: ["*"],
+                gta_completed: true,
+                gta_archetype: "👑 Босс Синдиката"
+            }, true);
+            const pendingN = localTrust.pending_count || ((reg && reg.users) || []).filter(u => u.status === "pending").length;
+            const cntEl = document.getElementById("topbar-pending-reg-cnt");
+            if (cntEl) cntEl.innerText = String(pendingN);
+            return;
+        }
+
+        // Check saved session on phone/browser — verify user is STILL approved in live auth_registry.json!
+        try {
+            const saved = JSON.parse(localStorage.getItem("unity_office_auth_session_v20") || "null");
+            if (saved && saved.login && reg && Array.isArray(reg.users)) {
+                const liveUser = reg.users.find(u => normalizeAuthLogin(u.login) === normalizeAuthLogin(saved.login));
+                if (liveUser && liveUser.status === "approved") {
+                    unlockOfficeWithUser(liveUser, false);
+                    return;
+                } else {
+                    localStorage.removeItem("unity_office_auth_session_v20");
+                }
+            }
+        } catch (e) {}
+
+        // If arrived with ?install=1 even before login, let them see the Install banner cleanly
+        const statusMsg = document.getElementById("auth-gate-status");
+        if (statusMsg) {
+            statusMsg.innerText = "🔒 Вход только для зарегистрированных участников, одобренных @" + UNITY_OWNER_TG;
+        }
+    }
+
+    function switchAuthGateTab(tabName) {
+        ["login", "register", "family9"].forEach(t => {
+            const panel = document.getElementById("auth-panel-" + t);
+            const btn = document.getElementById("auth-tab-btn-" + t);
+            if (panel) panel.style.display = (t === tabName) ? "flex" : "none";
+            if (btn) btn.classList.toggle("active", t === tabName);
+        });
+        const msg = document.getElementById("auth-feedback-box");
+        if (msg) msg.style.display = "none";
+    }
+
+    function showAuthFeedback(htmlMsg, type) {
+        const box = document.getElementById("auth-feedback-box");
+        if (!box) return;
+        box.style.display = "block";
+        box.style.borderColor = type === "error" ? "rgba(239,68,68,0.55)" : (type === "success" ? "rgba(16,185,129,0.55)" : "rgba(245,158,11,0.55)");
+        box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
+        box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
+        box.innerHTML = htmlMsg;
+    }
+
+    async function submitAuthLogin() {
+        const loginVal = normalizeAuthLogin((document.getElementById("auth-login-user") || {}).value);
+        const passVal = String((document.getElementById("auth-login-pass") || {}).value || "").trim();
+        if (!loginVal || !passVal) {
+            showAuthFeedback("⚠️ Введите логин (или Email) и пароль.", "error");
+            return;
+        }
+        const btn = document.getElementById("btn-auth-login-submit");
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Проверка доступа..."; }
+        try {
+            const reg = await fetchAuthRegistryFresh();
+            const user = (reg.users || []).find(u => normalizeAuthLogin(u.login) === loginVal);
+            if (!user) {
+                showAuthFeedback("❌ Аккаунт не найден. Перейдите во вкладку <b>«📝 Регистрация»</b> и отправьте запрос на одобрение <b>@" + UNITY_OWNER_TG + "</b>.", "error");
+                return;
+            }
+            const computed = await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000);
+            if (computed !== user.pbkdf2_hash) {
+                showAuthFeedback("❌ Неверный пароль.", "error");
+                return;
+            }
+            if (user.status === "pending") {
+                const tgMsg = encodeURIComponent("Здравствуйте! Прошу одобрить мой доступ в приложение Unity Spirit Virtual Office.\nЛогин: " + user.login + "\nИмя: " + (user.full_name || ""));
+                showAuthFeedback(
+                    "⏳ <b>Ваша регистрация ожидает одобрения владельцем!</b><br>" +
+                    "Доступ открывает лично <b>@" + UNITY_OWNER_TG + "</b> после вашего сообщения в Telegram:<br>" +
+                    '<a href="https://t.me/' + UNITY_OWNER_TG + '?text=' + tgMsg + '" target="_blank" rel="noopener" class="btn-action accent" style="margin-top:8px; text-decoration:none; display:inline-flex;">✈️ Написать @' + UNITY_OWNER_TG + ' в Telegram</a>',
+                    "warn"
+                );
+                return;
+            }
+            if (user.status === "rejected" || user.status === "replaced") {
+                showAuthFeedback("🚫 Доступ для этого аккаунта закрыт администратором (@" + UNITY_OWNER_TG + ").", "error");
+                return;
+            }
+            await fetchTeamTelemetryFresh();
+            const memTele = (teamTelemetryCache.members || {})[user.login] || {};
+            if (memTele.gta_profile && memTele.gta_profile.completed_at) {
+                user.gta_completed = true;
+                user.gta_archetype = memTele.gta_profile.archetype || user.gta_archetype;
+            }
+            unlockOfficeWithUser(user, false);
+            showToast("✅ Добро пожаловать, " + (user.full_name || user.login) + "!");
+        } catch (e) {
+            showAuthFeedback("⚠️ Ошибка сети при проверке входа: " + escapeHtml(e.message || String(e)), "error");
+        } finally {
+            if (btn) { btn.disabled = false; btn.innerText = "🔐 Войти в Виртуальный Офис"; }
+        }
+    }
+
+    async function submitAuthRegistration() {
+        const fullName = String((document.getElementById("reg-fullname") || {}).value || "").trim();
+        const loginVal = normalizeAuthLogin((document.getElementById("reg-login") || {}).value);
+        let tgVal = String((document.getElementById("reg-telegram") || {}).value || "").trim();
+        const pass1 = String((document.getElementById("reg-pass1") || {}).value || "").trim();
+        const pass2 = String((document.getElementById("reg-pass2") || {}).value || "").trim();
+        const noteVal = String((document.getElementById("reg-note") || {}).value || "").trim();
+
+        if (!fullName || !loginVal || !tgVal || !pass1) {
+            showAuthFeedback("⚠️ Заполните имя, логин/email, ваш Telegram и пароль.", "error");
+            return;
+        }
+        if (pass1.length < 6) {
+            showAuthFeedback("⚠️ Пароль должен быть не короче 6 символов.", "error");
+            return;
+        }
+        if (pass1 !== pass2) {
+            showAuthFeedback("⚠️ Пароли не совпадают.", "error");
+            return;
+        }
+        if (!tgVal.startsWith("@") && !tgVal.startsWith("http")) tgVal = "@" + tgVal;
+
+        const btn = document.getElementById("btn-auth-reg-submit");
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Шифрование и отправка заявки..."; }
+        try {
+            const reg = await fetchAuthRegistryFresh();
+            reg.users = Array.isArray(reg.users) ? reg.users : [];
+            if (reg.users.some(u => normalizeAuthLogin(u.login) === loginVal)) {
+                showAuthFeedback("⚠️ Этот логин/email уже зарегистрирован. Перейдите во вкладку «Вход» или напишите @" + UNITY_OWNER_TG + ".", "warn");
+                return;
+            }
+
+            const saltBytes = crypto.getRandomValues(new Uint8Array(16));
+            const saltHex = bufToHex(saltBytes);
+            const pwdHash = await pbkdf2HexJs(pass1, saltHex, 120000);
+            const rsaEnv = await encryptCredentialsForOwnerVault({
+                login: loginVal,
+                password: pass1,
+                full_name: fullName,
+                telegram: tgVal,
+                note: noteVal,
+                created_at: new Date().toISOString()
+            });
+
+            const reqCode = "REQ-" + String(Date.now()).slice(-6);
+            const newUserEntry = {
+                id: reqCode,
+                login: loginVal,
+                full_name: fullName,
+                telegram: tgVal,
+                role: "member",
+                status: "pending",
+                salt_hex: saltHex,
+                pbkdf2_hash: pwdHash,
+                iterations: 120000,
+                rsa_envelope: rsaEnv,
+                assigned_projects: [],
+                gta_completed: false,
+                gta_archetype: "",
+                note: noteVal,
+                created_at: new Date().toISOString()
+            };
+            reg.users.push(newUserEntry);
+            reg.updated_at = new Date().toISOString();
+            await writeDataBranchJson("auth_registry.json", reg, "New pending registration " + reqCode);
+            authRegistryCache = reg;
+
+            // Trigger worker sync silently so local Secured_Users_Vault decrypts & stores credentials immediately
+            try {
+                await ghApi("/issues", "POST", {
+                    title: "CMD: AUTH_SYNC: Новая заявка на доступ " + reqCode + " (" + fullName + " / " + tgVal + ") | PROJ: Входящие_Офис",
+                    body: "Новая регистрация ожидает одобрения @" + UNITY_OWNER_TG + ".\nКод заявки: `" + reqCode + "`\nИмя: **" + fullName + "**\nЛогин: `" + loginVal + "`\nTelegram: **" + tgVal + "**\nКомментарий: " + (noteVal || "—")
+                }, true);
+            } catch (e) {}
+
+            const tgText = encodeURIComponent(
+                "Здравствуйте! Я зарегистрировался в приложении Unity Spirit Virtual Office.\n" +
+                "Код заявки: " + reqCode + "\n" +
+                "Имя: " + fullName + "\n" +
+                "Логин: " + loginVal + "\n" +
+                "Telegram: " + tgVal + "\n" +
+                "Прошу одобрить доступ!"
+            );
+
+            showAuthFeedback(
+                "✅ <b>Заявка " + escapeHtml(reqCode) + " сохранена!</b><br>" +
+                "Логин и пароль зашифрованы в защищённый сейф администратора.<br>" +
+                "<b>Обязательный шаг:</b> отправьте сообщение <b>@" + UNITY_OWNER_TG + "</b> в Telegram — сразу после его одобрения вы сможете войти и пройти стартовый GTA-тест:<br>" +
+                '<div style="margin-top:9px; display:flex; gap:8px; flex-wrap:wrap;">' +
+                    '<a href="https://t.me/' + UNITY_OWNER_TG + '?text=' + tgText + '" target="_blank" rel="noopener" class="btn-action accent" style="text-decoration:none; padding:9px 14px; font-weight:800;">✈️ Написать @' + UNITY_OWNER_TG + ' для одобрения</a>' +
+                    '<button class="btn-action ghost" onclick="switchAuthGateTab(\'login\')">Перейти ко входу →</button>' +
+                '</div>',
+                "success"
+            );
+        } catch (e) {
+            showAuthFeedback("⚠️ Ошибка отправки заявки: " + escapeHtml(e.message || String(e)), "error");
+        } finally {
+            if (btn) { btn.disabled = false; btn.innerText = "📝 Зарегистрироваться и запросить одобрение"; }
+        }
+    }
+
+    // Verify 9 Family Relative Names in Browser (works 24/7 even when laptop is offline!)
+    async function verifyNineRelativesInBrowser(namesArray) {
+        const reg = await fetchAuthRegistryFresh();
+        const fam = (reg && reg.family9) || {};
+        if (!fam.configured || !Array.isArray(fam.name_hashes) || fam.name_hashes.length !== 9) {
+            return { ok: false, reason: "Ключ из 9 имён родственников ещё не настроен владельцем на доверенном ПК (" + UNITY_OWNER_EMAIL + ")." };
+        }
+        const cleaned = [];
+        (namesArray || []).forEach(n => {
+            const nn = normalizeRelativeNameJs(n);
+            if (nn && !cleaned.includes(nn)) cleaned.push(nn);
+        });
+        if (cleaned.length < 9) {
+            return { ok: false, reason: "Необходимо ввести ровно 9 различных имён родственников (введено уникальных: " + cleaned.length + " из 9)." };
+        }
+        const sorted9 = cleaned.slice(0, 9).sort();
+        const computedHashes = [];
+        for (const nm of sorted9) {
+            computedHashes.push(await pbkdf2HexJs(nm, fam.salt_hex, fam.name_iter || 100000));
+        }
+        computedHashes.sort();
+        const expected = fam.name_hashes.slice().sort();
+        const allMatch = computedHashes.length === 9 && computedHashes.every((h, idx) => h === expected[idx]);
+        if (!allMatch) {
+            return { ok: false, reason: "❌ Проверка не пройдена: все 9 имён родственников должны точно совпадать (9/9)." };
+        }
+        const canonicalJoined = sorted9.join("|");
+        const aesKeyHex = await pbkdf2HexJs(canonicalJoined, fam.vault_salt_hex || fam.salt_hex, fam.vault_iter || 200000);
+        return { ok: true, aesKeyHex: aesKeyHex, sorted9: sorted9 };
+    }
+
+    async function decryptCloudVaultWithFamily9Key(aesKeyHex) {
+        const encRes = await readRepoJson("auth_vault_encrypted.json");
+        if (!encRes || !encRes.json || !encRes.json.ct_b64) return null;
+        const aesKey = await crypto.subtle.importKey("raw", hexToBytes(aesKeyHex), "AES-GCM", false, ["decrypt"]);
+        const plainBuf = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: b64ToBytes(encRes.json.iv_b64) },
+            aesKey,
+            b64ToBytes(encRes.json.ct_b64)
+        );
+        return JSON.parse(new TextDecoder().decode(plainBuf));
+    }
+
+    async function submitGateFamily9UnlockAndReset() {
+        const names = [];
+        for (let i = 1; i <= 9; i++) {
+            const el = document.getElementById("gate-fam9-" + i);
+            if (el) names.push(el.value);
+        }
+        const newOwnerPass = String((document.getElementById("gate-fam9-newpass") || {}).value || "").trim();
+        const res = await verifyNineRelativesInBrowser(names);
+        if (!res.ok) {
+            showAuthFeedback(escapeHtml(res.reason), "error");
+            return;
+        }
+        try {
+            const decVault = await decryptCloudVaultWithFamily9Key(res.aesKeyHex);
+            if (decVault && Array.isArray(decVault.users)) {
+                unlockedVaultData = decVault;
+            }
+        } catch (e) {}
+
+        if (newOwnerPass) {
+            if (newOwnerPass.length < 6) {
+                showAuthFeedback("⚠️ Новый пароль должен быть не короче 6 символов.", "error");
+                return;
+            }
+            const reg = await fetchAuthRegistryFresh();
+            const ownerRec = (reg.users || []).find(u => u.role === "owner" || normalizeAuthLogin(u.login) === UNITY_OWNER_EMAIL);
+            if (ownerRec) {
+                const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+                ownerRec.salt_hex = saltHex;
+                ownerRec.pbkdf2_hash = await pbkdf2HexJs(newOwnerPass, saltHex, 120000);
+                ownerRec.rsa_envelope = await encryptCredentialsForOwnerVault({ login: UNITY_OWNER_EMAIL, password: newOwnerPass });
+                ownerRec.owner_action_stamp = "fam9reset-" + Date.now();
+                await writeDataBranchJson("auth_registry.json", reg, "Owner password reset via 9/9 family verification");
+                authRegistryCache = reg;
+            }
+        }
+
+        unlockOfficeWithUser({
+            id: "owner-vlaslav",
+            login: UNITY_OWNER_EMAIL,
+            full_name: "Власлав (Подтверждено 9/9 родственников)",
+            telegram: "@" + UNITY_OWNER_TG,
+            role: "owner",
+            status: "approved",
+            assigned_projects: ["*"],
+            gta_completed: true,
+            gta_archetype: "👑 Босс Синдиката"
+        }, false);
+        showToast("🧬 9/9 родственников подтверждены! Секретный сейф открыт.");
+        openSecuredVaultModal();
+    }
+
+    function logoutUnityOffice() {
+        flushTeamTelemetryToCloud(true);
+        currentAuthUser = null;
+        unlockedVaultData = null;
+        try { localStorage.removeItem("unity_office_auth_session_v20"); } catch (e) {}
+        document.body.classList.add("auth-locked");
+        const gate = document.getElementById("auth-gate-overlay");
+        if (gate) gate.style.display = "flex";
+        showAuthFeedback("🔒 Вы вышли из аккаунта. Для повторного входа введите логин и пароль.", "warn");
+    }
+
+    function openUserProfileMenu() {
+        if (!currentAuthUser) return;
+        if (isOwnerSession()) {
+            openSecuredVaultModal();
+            return;
+        }
+        openGtaOnboardingModal(true);
+    }
+
+    // =========================================================================
+    // === 📲 PWA INSTALL, DOWNLOAD & SEND TO ANY DEVICE                     ===
+    // =========================================================================
+
+    function openInstallAppModal() {
+        const m = document.getElementById("install-app-modal");
+        if (!m) return;
+        m.style.display = "flex";
+        const ua = navigator.userAgent || "";
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+        const hintEl = document.getElementById("install-device-detected-box");
+        if (hintEl) {
+            if (isStandaloneInstalledApp()) {
+                hintEl.innerHTML = "✅ <b>Приложение уже установлено на этом устройстве!</b> Вы можете скачать файл-установщик или отправить его на любой другой телефон ниже.";
+            } else if (deferredPwaPrompt) {
+                hintEl.innerHTML = "🟢 <b>Устройство готово к мгновенной установке!</b> Нажмите кнопку «⚡ Установить приложение в 1 клик» ниже.";
+            } else if (isIOS) {
+                hintEl.innerHTML = "🍏 <b>Обнаружен iPhone / iPad:</b> нажмите кнопку <b>«Поделиться ⬆️»</b> внизу Safari и выберите <b>«На экран Домой ➕»</b> (или скачайте профиль иконки iOS ниже).";
+            } else {
+                hintEl.innerHTML = "💻 <b>Установка на телефон или ПК:</b> нажмите «⚡ Установить» (или значок 📲 справа в адресной строке Chrome/Edge) либо отсканируйте QR-код камерой телефона.";
+            }
+        }
+    }
+
+    function closeInstallAppModal() {
+        const m = document.getElementById("install-app-modal");
+        if (m) m.style.display = "none";
+    }
+
+    async function triggerNativePwaInstall() {
+        if (deferredPwaPrompt) {
+            deferredPwaPrompt.prompt();
+            const choice = await deferredPwaPrompt.userChoice.catch(() => null);
+            if (choice && choice.outcome === "accepted") {
+                deferredPwaPrompt = null;
+                showToast("✅ Установка приложения запущена!");
+            }
+            return;
+        }
+        const ua = navigator.userAgent || "";
+        if (/iPhone|iPad|iPod/i.test(ua)) {
+            showToast("🍏 В Safari нажмите «Поделиться ⬆️» → «На экран Домой ➕»");
+            const iosBox = document.getElementById("ios-step-guide-box");
+            if (iosBox) {
+                iosBox.style.display = "block";
+                iosBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+            return;
+        }
+        if (isStandaloneInstalledApp()) {
+            showToast("✅ Приложение уже работает в установленном режиме!");
+            return;
+        }
+        downloadPortableInstallerFile();
+    }
+
+    function downloadPortableInstallerFile() {
+        const a = document.createElement("a");
+        a.href = "./Unity_Office_App_Installer.html";
+        a.download = "Unity_Office_App_Installer.html";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        showToast("📥 Установщик Unity_Office_App_Installer.html скачан — его можно переслать на любое устройство!");
+    }
+
+    function downloadDesktopShortcutUrl() {
+        const content = "[InternetShortcut]\r\nURL=" + UNITY_APP_URL + "\r\nIconIndex=0\r\n";
+        const blob = new Blob([content], { type: "application/octet-stream" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "Unity_Spirit_Virtual_Office.url";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        showToast("📥 Ярлык для рабочего стола ПК скачан!");
+    }
+
+    async function downloadIosWebClipProfile() {
+        let iconB64 = "";
+        try {
+            const resp = await fetch("./icons/icon-192.png");
+            const buf = await resp.arrayBuffer();
+            iconB64 = bytesToB64(new Uint8Array(buf));
+        } catch (e) {}
+        const xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+            '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n' +
+            '<plist version="1.0"><dict>\n' +
+            '<key>PayloadContent</key><array><dict>\n' +
+            '<key>FullScreen</key><true/>\n' +
+            '<key>IsRemovable</key><true/>\n' +
+            (iconB64 ? '<key>Icon</key><data>' + iconB64 + '</data>\n' : '') +
+            '<key>Label</key><string>Unity Office</string>\n' +
+            '<key>PayloadDisplayName</key><string>Unity Spirit Virtual Office</string>\n' +
+            '<key>PayloadIdentifier</key><string>com.unityspirit.office.webclip</string>\n' +
+            '<key>PayloadType</key><string>com.apple.webClip.managed</string>\n' +
+            '<key>PayloadUUID</key><string>5EEAB7B0-DAF5-414C-A3A0-2D6062B877FE</string>\n' +
+            '<key>PayloadVersion</key><integer>1</integer>\n' +
+            '<key>URL</key><string>' + UNITY_APP_URL + '</string>\n' +
+            '</dict></array>\n' +
+            '<key>PayloadDisplayName</key><string>Unity Spirit Virtual Office App</string>\n' +
+            '<key>PayloadIdentifier</key><string>com.unityspirit.office.profile</string>\n' +
+            '<key>PayloadType</key><string>Configuration</string>\n' +
+            '<key>PayloadUUID</key><string>11111111-DAF5-414C-A3A0-2D6062B877FE</string>\n' +
+            '<key>PayloadVersion</key><integer>1</integer>\n' +
+            '</dict></plist>';
+        const blob = new Blob([xml], { type: "application/x-apple-aspen-config" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "Unity_Office_iPhone.mobileconfig";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        showToast("🍏 Профиль иконки для iPhone скачан (откройте Настройки → Профиль загружен → Установить)!");
+    }
+
+    async function shareAppToAnyDevice() {
+        const shareUrl = UNITY_APP_URL + "?install=1";
+        const shareText = "📲 Установи приложение Unity Spirit — Виртуальный Офис (вход по регистрации после одобрения @" + UNITY_OWNER_TG + "):";
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: "Unity Spirit — Виртуальный Офис", text: shareText, url: shareUrl });
+                return;
+            } catch (e) {}
+        }
+        copyInstallLink();
+    }
+
+    function copyInstallLink() {
+        const shareUrl = UNITY_APP_URL + "?install=1";
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareUrl).then(() => showToast("📋 Ссылка для установки скопирована!"));
+        }
+    }
+
+    // =========================================================================
+    // === 🕶️ GTA SYNDICATE ONBOARDING QUESTIONNAIRE & PROJECT MATCHER       ===
+    // =========================================================================
+
+    const GTA_SYNDICATE_QUESTIONS = [
+        {
+            id: "q1_skill",
+            title: "МИССИЯ 1/7 · ТВОЙ ГЛАВНЫЙ СТВОЛ НА РАЙОНЕ",
+            bossQuote: "«В Синдикате Unity Spirit каждый отвечает за свой сектор. В чём твоя реальная суперсила, за которую рынок платит кэш?»",
+            options: [
+                { label: "⚡ Код, ИИ-боты, Telegram Mini Apps и быстрая сборка MVP (Вайбкодинг)", track: "tech_vibe" },
+                { label: "💼 Переговоры, выход на директоров заводов/компаний и закрытие крупных B2B сделок", track: "b2b_sales" },
+                { label: "🚀 Трафик, автоворонки, холодный аутрич и массовая генерация лидов", track: "traffic_growth" },
+                { label: "🎬 Видео (VEO 3.1 / Reels), кино, музыкальные релизы, дизайн и упаковка брендов", track: "media_creative" },
+                { label: "🧠 Аналитика, алгоритмы, парсинг баз, международка и поиск прибыльных связок", track: "quant_research" }
+            ]
+        },
+        {
+            id: "q2_first_move",
+            title: "МИССИЯ 2/7 · ВЫСАДКА НА НОВУЮ ТЕРРИТОРИЮ БЕЗ БЮДЖЕТА",
+            bossQuote: "«Представь: тебе дали чистый район и 48 часов до первой выручки без рекламного бюджета. Твой первый ход?»",
+            options: [
+                { label: "🛠️ Соберу полезного TG-бота / сервис за ночь и запущу оплату в Telegram Stars", track: "tech_vibe" },
+                { label: "📞 Возьму готовую базу ЛПР/заводов и отправлю 30 персональных КП с сильным оффером", track: "b2b_sales" },
+                { label: "🔥 Запущу связку Pay-on-Results (оплата за результат) и соберу первых клиентов на лиды", track: "traffic_growth" },
+                { label: "🎥 Сделаю цепляющий шоурил / карусель / демо-лендинг, от которого клиент не откажется", track: "media_creative" },
+                { label: "🔎 Раскопаю конкурентов, спаршу горячий спрос и соберу точную карту денег", track: "quant_research" }
+            ]
+        },
+        {
+            id: "q3_pace",
+            title: "МИССИЯ 3/7 · КАКОЙ СТИЛЬ ИГРЫ ТЕБЯ ЗАЖИГАЕТ?",
+            bossQuote: "«Одни любят короткие дерзкие налёты за 24 часа, другие — брать банки с чеком от $3,000. Как играешь ты?»",
+            options: [
+                { label: "⚡ Быстрые продуктовые спринты (1–3 дня = готовый мини-продукт и тест на живых людях)", track: "tech_vibe" },
+                { label: "🏛️ Охота на крупную рыбу (заводы, застройщики, отели, корпоративные внедрения ИИ)", track: "b2b_sales" },
+                { label: "📈 Построение системного конвейера заявок, который кормит сразу 5 проектов", track: "traffic_growth" },
+                { label: "🌟 Творческий продакшн мирового уровня (кино, артисты, luxury-упаковка)", track: "media_creative" },
+                { label: "⚙️ Автономные 24/7 системы, мониторинг данных и математическое преимущество", track: "quant_research" }
+            ]
+        },
+        {
+            id: "q4_sector",
+            title: "МИССИЯ 4/7 · ВЫБЕРИ СЕКТОР ГОРОДА, ГДЕ ХОЧЕШЬ РУЛИТЬ",
+            bossQuote: "«У нас 55 объектов на карте. Какая индустрия вызывает у тебя настоящий азарт?»",
+            options: [
+                { label: "🤖 Telegram Mini Apps, Micro-SaaS и облачные ИИ-сотрудники", track: "tech_vibe" },
+                { label: "🏭 Реальный сектор B2B: производство, щебень/стройка, юриспруденция, отели и курорты", track: "b2b_sales" },
+                { label: "🚦 Маркетинговое агентство Pay-on-Results, лид-магниты и международный Upwork", track: "traffic_growth" },
+                { label: "🎬 Киноиндустрия (Filmtools), музыкальный лейбл (4 LIFE) и AI-видео VEO", track: "media_creative" },
+                { label: "🌍 Спортивная квант-аналитика (КХЛ Live), релокация за рубеж и R&D базы знаний", track: "quant_research" }
+            ]
+        },
+        {
+            id: "q5_obstacle",
+            title: "МИССИЯ 5/7 · ЕСЛИ ДЕЛО ВСТАЛО НА ПАУЗУ",
+            bossQuote: "«На улице не всегда всё идёт по плану. Если задача упёрлась в стену — как действуешь?»",
+            options: [
+                { label: "💻 Автоматизирую рутину скриптом или переписываю прототип с другого угла", track: "tech_vibe" },
+                { label: "🤝 Меняю оффер, снимаю возражения и выхожу напрямую на того, кто принимает решение", track: "b2b_sales" },
+                { label: "🧪 Тестирую 5 новых заголовков/каналов и смотрю, где прорвёт конверсию", track: "traffic_growth" },
+                { label: "🎨 Усиливаю визуал, историю и подачу, чтобы пробить баннерную слепоту", track: "media_creative" },
+                { label: "📊 Разбираю цифры и факты с ИИ-Директором Тимом, нахожу корень проблемы", track: "quant_research" }
+            ]
+        },
+        {
+            id: "q6_commitment",
+            title: "МИССИЯ 6/7 · ТВОЙ ЕЖЕДНЕВНЫЙ РЕСУРС В СИНДИКАТЕ",
+            bossQuote: "«Система считает реальное время и запросы каждого игрока, а через 30 дней Босс подводит итог. Какой твой честный темп?»",
+            options: [
+                { label: "🔥 Полный газ (5–8+ часов в день) — иду на ключевую роль, процент со сделок и свои проекты", track: "b2b_sales" },
+                { label: "⚡ Ударный фокус (3–5 часов каждый день) — стабильный результат и закрытые спринты", track: "tech_vibe" },
+                { label: "🎯 Точечные снайперские сессии (1–3 часа в день) — чётко по задачам и лидам", track: "traffic_growth" }
+            ]
+        }
+    ];
+
+    const GTA_ARCHETYPES_MAP = {
+        tech_vibe: {
+            archetype: "⚡ Техно-Консильери (Vibe-Coder & Micro-SaaS Boss)",
+            desc: "Ты строишь цифровые автоматы за часы, а не месяцы. Твоя стихия — Telegram Mini Apps, ИИ-агенты и быстрые SaaS с оплатой в Stars.",
+            existingProjects: ["12 IT Продуктов (Короче Капитан)", "Grok_xAI_Teammates", "GlobalFilms (Filmtools)"],
+            newCompanyProjects: [
+                "TMA Навигатор & AI-Парсер Заказов для Telegram-каналов (по модели JoinTECH)",
+                "Конструктор ИИ-Витрин и Ботов за 15 минут с подпиской Pro"
+            ]
+        },
+        b2b_sales: {
+            archetype: "💼 Капо Крупных Сделок (B2B Deal Closer)",
+            desc: "Ты умеешь превращать готовые базы предприятий и демо-сайты в живые контракты с чеком от 50 000 ₽ до $5,000+.",
+            existingProjects: ["Дима Верхняя Синичиха Алапаевск", "Unity Inc", "Белый Доминикана", "Alex Brus Питер"],
+            newCompanyProjects: [
+                "B2B Экспресс-Аудит & Внедрение AI-ФинДира / CRM для производственных компаний",
+                "Международный B2B Sales-Конвейер (Белград / Дубай / Лас-Терренас)"
+            ]
+        },
+        traffic_growth: {
+            archetype: "🚀 Король Трафика (Growth & Funnel Hitman)",
+            desc: "Твоё оружие — офферы, от которых невозможно отказаться, квизы, Pay-on-Results связки и поток горячих заявок.",
+            existingProjects: ["Traffic", "UpworkVault", "Tripwires", "12 IT Продуктов (Короче Капитан)"],
+            newCompanyProjects: [
+                "Агентская воронка DFY Pay-on-Results (% со сделок для локального бизнеса)",
+                "Автономная фабрика лид-магнитов и Telegram-аутрича под ключ"
+            ]
+        },
+        media_creative: {
+            archetype: "🎬 Продюсер Империи (Media, VEO & Music Mogul)",
+            desc: "Ты создаёшь визуал, киносистемы, клипы и релизы, которые выглядят на миллион долларов.",
+            existingProjects: ["GlobalFilms (Filmtools)", "Ghost Ghetto Child (Музыка)", "Alberta", "8 слайдов карусель Белорусия"],
+            newCompanyProjects: [
+                "AI-Продакшн Студия (Google VEO 3.1 ролики + 3D Scroll сайты на экспорт)",
+                "Платформа дистрибуции и промо музыкальных/медиа-релизов под ключ"
+            ]
+        },
+        quant_research: {
+            archetype: "🧠 Архитектор Разведки (AI & Quant Strategist)",
+            desc: "Ты видишь скрытые закономерности, парсишь рынки быстрее конкурентов и превращаешь знания в деньги компании.",
+            existingProjects: ["Юра", "План для Иностранцев (Relocation)", "Позновалка", "AI Skills & Nobel Stabilization"],
+            newCompanyProjects: [
+                "Автономный AI-Скаут Трендов и Ниш с ежедневными коммерческими офферами",
+                "Международный консьерж-сервис релокации и образовательных грантов"
+            ]
+        }
+    };
+
+    let gtaStepIdx = 0;
+    let gtaAnswersDraft = {};
+    let gtaCustomIdeaDraft = "";
+
+    function openGtaOnboardingModal(viewExistingIfDone) {
+        const m = document.getElementById("gta-onboarding-modal");
+        if (!m) return;
+        m.style.display = "flex";
+        const lg = currentAuthUser ? normalizeAuthLogin(currentAuthUser.login) : "";
+        const existingGta = ((teamTelemetryCache.members || {})[lg] || {}).gta_profile;
+        if (viewExistingIfDone && existingGta && existingGta.completed_at) {
+            renderGtaResultScreen(existingGta);
+            return;
+        }
+        gtaStepIdx = 0;
+        gtaAnswersDraft = {};
+        gtaCustomIdeaDraft = "";
+        renderGtaQuestionStep();
+    }
+
+    function closeGtaOnboardingModal() {
+        if (currentAuthUser && !currentAuthUser.gta_completed && currentAuthUser.role !== "owner") {
+            showToast("🕶️ Завершите 7 коротких вопросов Босса, чтобы система открыла ваши проекты!");
+            return;
+        }
+        const m = document.getElementById("gta-onboarding-modal");
+        if (m) m.style.display = "none";
+    }
+
+    function renderGtaQuestionStep() {
+        const body = document.getElementById("gta-modal-body");
+        if (!body) return;
+        const totalSteps = GTA_SYNDICATE_QUESTIONS.length + 1; // +1 for Q7 custom idea
+        const pct = Math.round(((gtaStepIdx + 1) / totalSteps) * 100);
+
+        if (gtaStepIdx < GTA_SYNDICATE_QUESTIONS.length) {
+            const q = GTA_SYNDICATE_QUESTIONS[gtaStepIdx];
+            let optsHtml = q.options.map((opt, idx) =>
+                '<button class="gta-option-btn" onclick="selectGtaOption(' + idx + ')">' +
+                    '<span class="gta-opt-num">[' + (idx + 1) + ']</span>' +
+                    '<span>' + escapeHtml(opt.label) + '</span>' +
+                '</button>'
+            ).join("");
+
+            body.innerHTML =
+                '<div class="gta-progress-wrap">' +
+                    '<div style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:800; color:#fbbf24; margin-bottom:4px;">' +
+                        '<span>🕶️ ' + escapeHtml(q.title) + '</span>' +
+                        '<span>RESPECT ' + pct + '%</span>' +
+                    '</div>' +
+                    '<div class="gta-progress-bar"><div class="gta-progress-fill" style="width:' + pct + '%;"></div></div>' +
+                '</div>' +
+                '<div class="gta-boss-box">' + escapeHtml(q.bossQuote) + '</div>' +
+                '<div style="display:flex; flex-direction:column; gap:8px;">' + optsHtml + '</div>' +
+                (gtaStepIdx > 0 ? '<div style="margin-top:6px;"><button class="mini-btn" onclick="gtaStepIdx--; renderGtaQuestionStep();">← Назад</button></div>' : '');
+            return;
+        }
+
+        // Step 7: Custom Interest / Million-Dollar Mission for the Company
+        body.innerHTML =
+            '<div class="gta-progress-wrap">' +
+                '<div style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:800; color:#fbbf24; margin-bottom:4px;">' +
+                    '<span>🕶️ МИССИЯ 7/7 · ТВОЯ ЛИЧНАЯ ТЕМА ДЛЯ КОМПАНИИ</span>' +
+                    '<span>RESPECT 100%</span>' +
+                '</div>' +
+                '<div class="gta-progress-bar"><div class="gta-progress-fill" style="width:100%;"></div></div>' +
+            '</div>' +
+            '<div class="gta-boss-box">«Финальный вопрос перед выдачей территории. Какая тема, ниша или проект тебе самому наиболее интересны, чтобы развивать их внутри компании и делать результат? Система подберёт и текущие папки, и создаст новое направление под тебя.»</div>' +
+            '<textarea id="gta-custom-idea-input" class="study-textarea" style="min-height:95px; border-color:rgba(245,158,11,0.45);" placeholder="Например: Хочу собирать Telegram-ботов для ресторанов и отелей, либо вести B2B-переговоры с заводами, либо делать AI-видео и YouTube-каналы...">' + escapeHtml(gtaCustomIdeaDraft) + '</textarea>' +
+            '<div style="display:flex; justify-content:space-between; gap:8px; margin-top:8px; flex-wrap:wrap;">' +
+                '<button class="mini-btn" onclick="gtaStepIdx--; renderGtaQuestionStep();">← Назад</button>' +
+                '<button class="btn-action accent" style="background:linear-gradient(135deg,#f59e0b,#10b981); color:#090d16; font-weight:900; padding:10px 18px;" id="btn-gta-finish" onclick="finishGtaOnboarding()">🏆 ПОЛУЧИТЬ РАНГ И ПРОЕКТЫ СИНДИКАТА 🚀</button>' +
+            '</div>';
+    }
+
+    function selectGtaOption(optIdx) {
+        const q = GTA_SYNDICATE_QUESTIONS[gtaStepIdx];
+        if (!q || !q.options[optIdx]) return;
+        gtaAnswersDraft[q.id] = {
+            q: q.title,
+            a: q.options[optIdx].label,
+            track: q.options[optIdx].track
+        };
+        gtaStepIdx++;
+        renderGtaQuestionStep();
+    }
+
+    async function finishGtaOnboarding() {
+        const ideaEl = document.getElementById("gta-custom-idea-input");
+        gtaCustomIdeaDraft = ideaEl ? ideaEl.value.trim() : "";
+
+        const scores = { tech_vibe: 0, b2b_sales: 0, traffic_growth: 0, media_creative: 0, quant_research: 0 };
+        const answerList = [];
+        Object.values(gtaAnswersDraft).forEach(ans => {
+            scores[ans.track] = (scores[ans.track] || 0) + 1;
+            answerList.push({ q: ans.q, a: ans.a, track: ans.track });
+        });
+        if (gtaCustomIdeaDraft) {
+            answerList.push({ q: "МИССИЯ 7/7 · Личный интерес", a: gtaCustomIdeaDraft, track: "custom" });
+            const detected = detectSmartRoute(gtaCustomIdeaDraft);
+            if (/12 IT|Grok/i.test(detected.project)) scores.tech_vibe += 1.5;
+            else if (/Дима|Белый|Brus|Unity/i.test(detected.project)) scores.b2b_sales += 1.5;
+            else if (/Traffic/i.test(detected.project)) scores.traffic_growth += 1.5;
+            else if (/Filmtools|Alberta|Ghost/i.test(detected.project)) scores.media_creative += 1.5;
+        }
+
+        const sortedTracks = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+        const topTrack = sortedTracks[0] || "tech_vibe";
+        const secondTrack = sortedTracks[1] || "traffic_growth";
+        const primaryProfile = GTA_ARCHETYPES_MAP[topTrack];
+        const secondaryProfile = GTA_ARCHETYPES_MAP[secondTrack];
+
+        const matchedExisting = Array.from(new Set([
+            ...primaryProfile.existingProjects.slice(0, 2),
+            ...(secondaryProfile ? secondaryProfile.existingProjects.slice(0, 1) : [])
+        ]));
+
+        // Also detect if their custom text matched a specific existing folder!
+        if (gtaCustomIdeaDraft.length > 4) {
+            const r = detectSmartRoute(gtaCustomIdeaDraft);
+            if (r && r.project && r.project !== "Входящие_Офис" && !matchedExisting.includes(r.project)) {
+                matchedExisting.unshift(r.project);
+            }
+        }
+
+        const suggestedNew = primaryProfile.newCompanyProjects.slice();
+        if (gtaCustomIdeaDraft.length > 5) {
+            suggestedNew.unshift("Проект компании по интересу: " + gtaCustomIdeaDraft.slice(0, 85));
+        }
+
+        const gtaProfile = {
+            completed_at: new Date().toISOString(),
+            top_track: topTrack,
+            archetype: primaryProfile.archetype,
+            archetype_desc: primaryProfile.desc,
+            matched_existing_projects: matchedExisting.slice(0, 4),
+            suggested_new_projects: suggestedNew.slice(0, 3),
+            custom_idea: gtaCustomIdeaDraft || "Готов развивать приоритетные направления Синдиката",
+            answers: answerList
+        };
+
+        const btn = document.getElementById("btn-gta-finish");
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Сохранение GTA-досье и выдача районов..."; }
+
+        try {
+            if (currentAuthUser) {
+                currentAuthUser.gta_completed = true;
+                currentAuthUser.gta_archetype = gtaProfile.archetype;
+                if (currentAuthUser.role !== "owner") {
+                    const prev = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
+                    currentAuthUser.assigned_projects = prev.includes("*")
+                        ? ["*"]
+                        : Array.from(new Set([...prev, ...gtaProfile.matched_existing_projects]));
+                }
+
+                // Update team_telemetry.json + auth_registry.json
+                const lg = normalizeAuthLogin(currentAuthUser.login);
+                await fetchTeamTelemetryFresh();
+                teamTelemetryCache.members = teamTelemetryCache.members || {};
+                teamTelemetryCache.members[lg] = teamTelemetryCache.members[lg] || {};
+                teamTelemetryCache.members[lg].gta_profile = gtaProfile;
+                await flushTeamTelemetryToCloud(true);
+
+                const reg = await fetchAuthRegistryFresh();
+                const uRec = (reg.users || []).find(u => normalizeAuthLogin(u.login) === lg);
+                if (uRec) {
+                    uRec.gta_completed = true;
+                    uRec.gta_archetype = gtaProfile.archetype;
+                    if (uRec.role !== "owner" && !(uRec.assigned_projects || []).includes("*")) {
+                        uRec.assigned_projects = currentAuthUser.assigned_projects;
+                    }
+                    await writeDataBranchJson("auth_registry.json", reg, "GTA onboarding completed: " + lg);
+                    authRegistryCache = reg;
+                }
+                renderProjects();
+                updateTopbarAuthUI();
+            }
+        } catch (e) {}
+
+        renderGtaResultScreen(gtaProfile);
+    }
+
+    function renderGtaResultScreen(gtaProfile) {
+        const body = document.getElementById("gta-modal-body");
+        if (!body) return;
+
+        const existHtml = (gtaProfile.matched_existing_projects || []).map(pName => {
+            const sp = escapeHtml(pName).replace(/'/g, "\\'");
+            const led = (typeof getProjectLedger === "function") ? getProjectLedger(pName) : null;
+            const nextStep = (led && led.continue_first && led.continue_first.title) ? led.continue_first.title : "Изучить штаб папки и запустить первого агента";
+            return '<div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.4); border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                '<div style="flex:1; min-width:190px;">' +
+                    '<div style="font-weight:800; font-size:0.86rem; color:#34d399;">📁 ' + escapeHtml(pName) + '</div>' +
+                    '<div style="font-size:0.74rem; color:var(--text-dim); margin-top:2px;">▶️ Миссия #1: ' + escapeHtml(nextStep) + '</div>' +
+                '</div>' +
+                '<button class="btn-action accent" onclick="document.getElementById(\'gta-onboarding-modal\').style.display=\'none\'; selectProject(\'' + sp + '\')">Открыть проект →</button>' +
+            '</div>';
+        }).join("");
+
+        const newHtml = (gtaProfile.suggested_new_projects || []).map(npTitle => {
+            const safeNp = escapeHtml(npTitle).replace(/'/g, "\\'");
+            return '<div style="background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.4); border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                '<div style="flex:1; min-width:190px; font-weight:700; font-size:0.82rem; color:#fde68a;">✨ ' + escapeHtml(npTitle) + '</div>' +
+                '<button class="mini-btn accent" style="background:#f59e0b; color:#090d16; font-weight:800;" onclick="launchNewInterestProjectForCompany(\'' + safeNp + '\')">🚀 Запустить для компании</button>' +
+            '</div>';
+        }).join("");
+
+        body.innerHTML =
+            '<div style="background:linear-gradient(135deg, rgba(245,158,11,0.22), rgba(16,185,129,0.18)); border:1px solid rgba(245,158,11,0.55); border-radius:16px; padding:14px; text-align:center;">' +
+                '<div style="font-size:0.72rem; font-weight:900; color:#fbbf24; letter-spacing:0.08em;">MISSION PASSED // RESPECT +100</div>' +
+                '<div style="font-size:1.12rem; font-weight:900; color:#fff; margin-top:4px;">' + escapeHtml(gtaProfile.archetype || "🕶️ Агент Синдиката") + '</div>' +
+                '<div style="font-size:0.78rem; color:#e2e8f0; margin-top:6px; line-height:1.45;">' + escapeHtml(gtaProfile.archetype_desc || "") + '</div>' +
+            '</div>' +
+            '<div style="font-size:0.78rem; font-weight:800; color:#34d399; text-transform:uppercase; margin-top:4px;">🔥 1. Начатые проекты компании, подобранные под тебя:</div>' +
+            '<div style="display:flex; flex-direction:column; gap:7px;">' + existHtml + '</div>' +
+            '<div style="font-size:0.78rem; font-weight:800; color:#fbbf24; text-transform:uppercase; margin-top:6px;">🚀 2. Новые проекты по твоим интересам для заработка компании:</div>' +
+            '<div style="display:flex; flex-direction:column; gap:7px;">' + newHtml + '</div>' +
+            '<div style="display:flex; justify-content:space-between; gap:8px; margin-top:10px; flex-wrap:wrap;">' +
+                '<button class="mini-btn" onclick="gtaStepIdx=0; renderGtaQuestionStep();">🔄 Перепройти GTA-тест</button>' +
+                '<button class="btn-action accent" style="padding:9px 18px; font-weight:800;" onclick="document.getElementById(\'gta-onboarding-modal\').style.display=\'none\';">🕶️ Войти в систему и начать работу →</button>' +
+            '</div>';
+    }
+
+    async function launchNewInterestProjectForCompany(ideaTitle) {
+        const cleanFolder = String(ideaTitle || "").replace(/^Проект компании по интересу:\s*/i, "").replace(/[^\wа-яА-ЯёЁ0-9\s()-]/g, "").trim().slice(0, 46) || "Новый Проект Синдиката";
+        const lg = currentAuthUser ? normalizeAuthLogin(currentAuthUser.login) : "";
+        const gta = (((teamTelemetryCache.members || {})[lg] || {}).gta_profile) || {};
+        const notes = "Создано участником: " + (currentAuthUser ? (currentAuthUser.full_name + " (" + lg + ")") : "Участник") +
+            "\nАрхетип GTA: " + (gta.archetype || "") +
+            "\nНаправление по интересам: " + ideaTitle +
+            "\nЛичная идея: " + (gta.custom_idea || "");
+
+        if (currentAuthUser && currentAuthUser.role !== "owner" && !(currentAuthUser.assigned_projects || []).includes("*")) {
+            currentAuthUser.assigned_projects = Array.from(new Set([...(currentAuthUser.assigned_projects || []), cleanFolder]));
+            try {
+                const reg = await fetchAuthRegistryFresh();
+                const uRec = (reg.users || []).find(u => normalizeAuthLogin(u.login) === lg);
+                if (uRec) {
+                    uRec.assigned_projects = currentAuthUser.assigned_projects;
+                    await writeDataBranchJson("auth_registry.json", reg, "Assign new interest project " + cleanFolder);
+                }
+            } catch (e) {}
+        }
+        if (!folderList.includes(cleanFolder)) folderList.unshift(cleanFolder);
+        document.getElementById("gta-onboarding-modal").style.display = "none";
+        showToast("🚀 Запускаем новый проект «" + cleanFolder + "» с Директором Тимом!");
+        await ghApi("/issues", "POST", {
+            title: "CMD: NEW_MEMBER_PROJECT: " + ideaTitle.slice(0, 110) + " | PROJ: " + cleanFolder,
+            body: "### 📝 Текст для изучения:\n" + notes
+        }, true);
+        await refreshAllData(false);
+        selectProject(cleanFolder, "🕶️");
+    }
+
+    // =========================================================================
+    // === ⏱️ EMPLOYEE ACTIVITY TELEMETRY & ⚡ ANTI-STALL PROACTIVE ENGINE    ===
+    // =========================================================================
+
+    ["mousemove", "keydown", "click", "touchstart", "scroll"].forEach(ev => {
+        window.addEventListener(ev, () => { lastUserInteractionTs = Date.now(); }, { passive: true });
+    });
+
+    function getCurrentMemberTeleSlot() {
+        if (!currentAuthUser) return null;
+        const lg = normalizeAuthLogin(currentAuthUser.login);
+        teamTelemetryCache.members = teamTelemetryCache.members || {};
+        if (!teamTelemetryCache.members[lg]) {
+            teamTelemetryCache.members[lg] = { metrics: {}, recent_actions: [], declared_blockers: [] };
+        }
+        const slot = teamTelemetryCache.members[lg];
+        slot.metrics = slot.metrics || {};
+        const todayStr = new Date().toISOString().slice(0, 10);
+        if (slot.metrics.today_date !== todayStr) {
+            slot.metrics.today_date = todayStr;
+            slot.metrics.today_active_sec = 0;
+            slot.metrics.today_requests = 0;
+        }
+        if (!slot.metrics.first_seen) slot.metrics.first_seen = new Date().toISOString();
+        return slot;
+    }
+
+    function recordTeamRequestTelemetry(issuePayload) {
+        lastUserRequestTs = Date.now();
+        lastUserInteractionTs = Date.now();
+        hideAntiStallBanner();
+        const slot = getCurrentMemberTeleSlot();
+        if (!slot) return;
+        const m = slot.metrics;
+        const title = String((issuePayload && issuePayload.title) || "");
+        const body = String((issuePayload && issuePayload.body) || "");
+        const parsed = parseIssueProject(title);
+
+        m.total_requests = (Number(m.total_requests) || 0) + 1;
+        m.today_requests = (Number(m.today_requests) || 0) + 1;
+        if (/TIM:|👑/i.test(title)) m.tim_requests = (Number(m.tim_requests) || 0) + 1;
+        if (/\/uploads\//i.test(body)) m.photos_sent = (Number(m.photos_sent) || 0) + 1;
+        m.last_seen = new Date().toISOString();
+        m.current_project = parsed.project || currentProject;
+        m.online_state = "working";
+        const fw = Array.isArray(m.folders_worked) ? m.folders_worked : [];
+        if (m.current_project && !fw.includes(m.current_project)) fw.push(m.current_project);
+        m.folders_worked = fw.slice(-25);
+
+        slot.recent_actions = Array.isArray(slot.recent_actions) ? slot.recent_actions : [];
+        slot.recent_actions.unshift({
+            ts: new Date().toISOString(),
+            type: "request",
+            project: parsed.project || currentProject,
+            detail: parsed.cmd.slice(0, 120)
+        });
+        slot.recent_actions = slot.recent_actions.slice(0, 35);
+        scheduleTeamTelemetryFlush();
+    }
+
+    function scheduleTeamTelemetryFlush() {
+        if (telemetryFlushTimer) return;
+        telemetryFlushTimer = setTimeout(() => {
+            telemetryFlushTimer = null;
+            flushTeamTelemetryToCloud(false);
+        }, 18000);
+    }
+
+    async function flushTeamTelemetryToCloud(immediate) {
+        if (!currentAuthUser) return;
+        try {
+            const latest = await fetchTeamTelemetryFresh();
+            const lg = normalizeAuthLogin(currentAuthUser.login);
+            const localSlot = (teamTelemetryCache.members || {})[lg];
+            if (!localSlot) return;
+            latest.members = latest.members || {};
+            const remoteSlot = latest.members[lg] || { metrics: {} };
+            const lm = localSlot.metrics || {};
+            const rm = remoteSlot.metrics || {};
+
+            remoteSlot.metrics = Object.assign({}, rm, lm, {
+                total_active_sec: Math.max(Number(rm.total_active_sec) || 0, Number(lm.total_active_sec) || 0),
+                total_requests: Math.max(Number(rm.total_requests) || 0, Number(lm.total_requests) || 0),
+                idle_stall_count: Math.max(Number(rm.idle_stall_count) || 0, Number(lm.idle_stall_count) || 0),
+                nudges_shown: Math.max(Number(rm.nudges_shown) || 0, Number(lm.nudges_shown) || 0),
+                nudges_clicked: Math.max(Number(rm.nudges_clicked) || 0, Number(lm.nudges_clicked) || 0)
+            });
+            if (localSlot.gta_profile) remoteSlot.gta_profile = localSlot.gta_profile;
+            if (Array.isArray(localSlot.recent_actions) && localSlot.recent_actions.length) {
+                remoteSlot.recent_actions = localSlot.recent_actions.slice(0, 35);
+            }
+            if (Array.isArray(localSlot.declared_blockers) && localSlot.declared_blockers.length) {
+                remoteSlot.declared_blockers = localSlot.declared_blockers.slice(-15);
+            }
+            latest.members[lg] = remoteSlot;
+            latest.updated_at = new Date().toISOString();
+            teamTelemetryCache = latest;
+            await writeDataBranchJson("team_telemetry.json", latest, "Telemetry sync: " + lg);
+        } catch (e) {}
+    }
+
+    let heartbeatIntervalId = null;
+    function startTeamActivityHeartbeat() {
+        if (heartbeatIntervalId) clearInterval(heartbeatIntervalId);
+        heartbeatIntervalId = setInterval(() => {
+            if (!isUserAuthenticated()) return;
+            if (document.visibilityState !== "visible") return;
+            const now = Date.now();
+            const slot = getCurrentMemberTeleSlot();
+            if (!slot) return;
+            const m = slot.metrics;
+
+            // Count active seconds if user interacted in last 3 minutes
+            if (now - lastUserInteractionTs < 180000) {
+                sessionActiveSeconds += 15;
+                m.total_active_sec = (Number(m.total_active_sec) || 0) + 15;
+                m.today_active_sec = (Number(m.today_active_sec) || 0) + 15;
+                m.online_state = "active";
+            } else {
+                m.online_state = "slow_idle";
+            }
+            m.last_seen = new Date().toISOString();
+            m.current_project = currentProject;
+
+            // ⚡ Anti-Stall Proactive Detector: if user hasn't sent any request for > 95s (and modal isn't open)
+            const secSinceReq = (now - lastUserRequestTs) / 1000;
+            const secSinceDismiss = (now - antiStallDismissedAt) / 1000;
+            const gtaOpen = (document.getElementById("gta-onboarding-modal") || {}).style?.display === "flex";
+            if (!isOwnerSession() && !gtaOpen && secSinceReq > 95 && secSinceDismiss > 140) {
+                m.idle_stall_count = (Number(m.idle_stall_count) || 0) + 1;
+                showAntiStallProactiveBanner();
+            }
+
+            if (sessionActiveSeconds > 0 && sessionActiveSeconds % 60 === 0) {
+                scheduleTeamTelemetryFlush();
+            }
+        }, 15000);
+    }
+
+    function showAntiStallProactiveBanner() {
+        const banner = document.getElementById("anti-stall-banner");
+        if (!banner || banner.style.display === "flex") return;
+        const slot = getCurrentMemberTeleSlot();
+        if (slot) {
+            slot.metrics.nudges_shown = (Number(slot.metrics.nudges_shown) || 0) + 1;
+            scheduleTeamTelemetryFlush();
+        }
+        const assigned = getUserAssignedProjects().filter(p => p !== "*");
+        const targetProj = assigned[0] || currentProject || "12 IT Продуктов (Короче Капитан)";
+        const led = (typeof getProjectLedger === "function") ? getProjectLedger(targetProj) : null;
+        const nextTitle = (led && led.continue_first && led.continue_first.title) ? led.continue_first.title : ("Продвинуть задачи папки " + targetProj);
+        const nextCmd = (led && led.continue_first && led.continue_first.cmd) ? led.continue_first.cmd : ("NEXT_STEPS: " + targetProj);
+        const sp = escapeHtml(targetProj).replace(/'/g, "\\'");
+        const sc = escapeHtml(nextCmd).replace(/'/g, "\\'");
+
+        const box = document.getElementById("anti-stall-options");
+        if (box) {
+            box.innerHTML =
+                '<button class="btn-action accent" onclick="acceptAntiStallAction(\'' + sp + '\', \'' + sc + '\')">▶️ Шаг №1: ' + escapeHtml(nextTitle.slice(0, 55)) + '</button>' +
+                '<button class="btn-action ghost" style="border-color:rgba(245,158,11,0.5); color:#fbbf24;" onclick="acceptAntiStallAction(\'' + sp + '\', \'TIM: Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут\')">👑 Попросить план у Тима</button>' +
+                '<button class="btn-action ghost" onclick="acceptAntiStallAction(\'' + sp + '\', \'RESEARCH_MORE: Быстрые клиенты и идеи монетизации для ' + sp + '\')">🔎 Найти идеи и лиды</button>' +
+                '<button class="btn-action ghost" onclick="promptStallBlockerReason()">💬 Что мешает / почему пауза?</button>';
+        }
+        banner.style.display = "flex";
+    }
+
+    function hideAntiStallBanner() {
+        antiStallDismissedAt = Date.now();
+        const banner = document.getElementById("anti-stall-banner");
+        if (banner) banner.style.display = "none";
+    }
+
+    function acceptAntiStallAction(proj, cmd) {
+        const slot = getCurrentMemberTeleSlot();
+        if (slot) {
+            slot.metrics.nudges_clicked = (Number(slot.metrics.nudges_clicked) || 0) + 1;
+            scheduleTeamTelemetryFlush();
+        }
+        hideAntiStallBanner();
+        runPlanStep(proj, cmd);
+    }
+
+    async function promptStallBlockerReason() {
+        const reason = prompt("Напишите коротко, что сейчас тормозит работу или какая помощь нужна от Власлава / ИИ:");
+        hideAntiStallBanner();
+        if (!reason || !reason.trim()) return;
+        const slot = getCurrentMemberTeleSlot();
+        if (slot) {
+            slot.metrics.nudges_clicked = (Number(slot.metrics.nudges_clicked) || 0) + 1;
+            slot.declared_blockers = Array.isArray(slot.declared_blockers) ? slot.declared_blockers : [];
+            slot.declared_blockers.push({
+                date: new Date().toLocaleString("ru-RU"),
+                project: currentProject,
+                text: reason.trim()
+            });
+            await flushTeamTelemetryToCloud(true);
+            showToast("✅ Причина зафиксирована для администратора и ИИ-помощника!");
+        }
+    }
+
+    // =========================================================================
+    // === 🔒 OWNER SECURED VAULT, FOLDER ASSIGNMENT & 30-DAY AUDIT CENTER   ===
+    // =========================================================================
+
+    function computeClientSide30DayAudit(u, memberTele) {
+        if (memberTele && memberTele.audit_30d) return memberTele.audit_30d;
+        const startMs = Date.parse(u.approved_at || u.created_at || "") || Date.now();
+        const days = Math.max(1, Math.floor((Date.now() - startMs) / 86400000) + 1);
+        const m = (memberTele && memberTele.metrics) || {};
+        const gta = (memberTele && memberTele.gta_profile) || {};
+        const blockers = (memberTele && memberTele.declared_blockers) || [];
+        const activeMin = Math.round(((Number(m.total_active_sec) || 0) / 60) * 10) / 10;
+        const totalReqs = Number(m.total_requests) || 0;
+        const stalls = Number(m.idle_stall_count) || 0;
+        const nShown = Number(m.nudges_shown) || 0;
+        const nClick = Number(m.nudges_clicked) || 0;
+
+        const reqScore = Math.min(60, Math.round((totalReqs / Math.max(3, days * 2)) * 50));
+        const timeScore = Math.min(30, Math.round((activeMin / Math.max(20, days * 25)) * 30));
+        const kpi = Math.max(0, Math.min(100, reqScore + timeScore + (gta.completed_at ? 10 : 0) - Math.min(20, stalls * 3)));
+
+        let why = "";
+        if (blockers.length) why += "Указал блокер: «" + blockers[blockers.length - 1].text + "». ";
+        if (!gta.completed_at && u.role !== "owner") why += "Не прошёл стартовый GTA-опросник. ";
+        if (activeMin >= 10 && totalReqs === 0) why += "Читает интерфейс, но медлит с запуском задач. ";
+        else if (stalls >= 3 && nClick === 0) why += "Частые паузы простоя без реакции на авто-подсказки. ";
+        else if (totalReqs >= 5) why += "Активно двигает задачи через ИИ-агентов. ";
+        if (!why) why = "Начальный период работы — накапливается статистика.";
+
+        let verdictLabel = "🟡 На контроле (День " + days + "/30 · KPI " + kpi + "/100)";
+        let replaceRec = false;
+        if (u.role === "owner") verdictLabel = "👑 Владелец компании";
+        else if (days >= 30 && (kpi < 35 || totalReqs < 5)) {
+            verdictLabel = "🔴 КАНДИДАТ НА ЗАМЕНУ (30+ дней без продвижения)";
+            replaceRec = true;
+        } else if (kpi >= 65) {
+            verdictLabel = "🏆 Отличное продвижение (KPI " + kpi + "/100)";
+        }
+        return {
+            days_active: days,
+            active_minutes: activeMin,
+            total_requests: totalReqs,
+            today_requests: Number(m.today_requests) || 0,
+            stalls_count: stalls,
+            nudges_shown: nShown,
+            nudges_clicked: nClick,
+            kpi_score: kpi,
+            verdict_label: verdictLabel,
+            replacement_recommended: replaceRec,
+            why_diagnosis: why
+        };
+    }
+
+    async function openSecuredVaultModal(subTab) {
+        if (!isOwnerSession()) {
+            showToast("🔒 Доступ к Секретной Папке разрешён только Владельцу (" + UNITY_OWNER_EMAIL + " или 9/9 родственников)!");
+            return;
+        }
+        if (subTab) vaultSubTab = subTab;
+        const m = document.getElementById("secured-vault-modal");
+        if (!m) return;
+        m.style.display = "flex";
+
+        // Try fetching decrypted local vault from 127.0.0.1:18799 on Vlaslav's trusted computer!
+        try {
+            const ctrl = new AbortController();
+            const t = setTimeout(() => ctrl.abort(), 1400);
+            const r = await fetch(LOCAL_TRUST_API + "/api/secured-vault", { signal: ctrl.signal, cache: "no-store" });
+            clearTimeout(t);
+            if (r.ok) {
+                const d = await r.json();
+                if (d && d.ok) {
+                    unlockedVaultData = d;
+                    if (d.team_telemetry) teamTelemetryCache = d.team_telemetry;
+                }
+            }
+        } catch (e) {}
+
+        await Promise.all([fetchAuthRegistryFresh(), fetchTeamTelemetryFresh()]);
+        renderSecuredVaultModal();
+    }
+
+    function closeSecuredVaultModal() {
+        const m = document.getElementById("secured-vault-modal");
+        if (m) m.style.display = "none";
+    }
+
+    function setVaultSubTab(tabName) {
+        vaultSubTab = tabName;
+        renderSecuredVaultModal();
+    }
+
+    function toggleVaultPwd(pwdId) {
+        const el = document.getElementById(pwdId);
+        if (!el) return;
+        const raw = el.getAttribute("data-pwd") || "";
+        if (!raw) return;
+        el.innerText = (el.innerText === "••••••••") ? raw : "••••••••";
+    }
+
+    function copyVaultPwd(pwdId) {
+        const el = document.getElementById(pwdId);
+        if (!el) return;
+        const raw = el.getAttribute("data-pwd") || "";
+        if (raw && navigator.clipboard) {
+            navigator.clipboard.writeText(raw).then(() => showToast("📋 Пароль скопирован!"));
+        }
+    }
+
+    function renderSecuredVaultModal() {
+        const container = document.getElementById("secured-vault-body");
+        if (!container) return;
+
+        ["approvals", "folders", "telemetry", "family9"].forEach(t => {
+            const b = document.getElementById("vault-tab-" + t);
+            if (b) b.classList.toggle("active", t === vaultSubTab);
+        });
+
+        const regUsers = (authRegistryCache && authRegistryCache.users) || [];
+        const localUsers = (unlockedVaultData && unlockedVaultData.users) || [];
+        const localByLogin = {};
+        localUsers.forEach(u => { localByLogin[normalizeAuthLogin(u.login)] = u; });
+
+        // Merge users so passwords show whenever unlocked via trusted computer or 9/9 family key
+        const mergedUsers = regUsers.map(ru => Object.assign({}, ru, localByLogin[normalizeAuthLogin(ru.login)] || {}));
+        localUsers.forEach(lu => {
+            if (!mergedUsers.some(mu => normalizeAuthLogin(mu.login) === normalizeAuthLogin(lu.login))) {
+                mergedUsers.push(lu);
+            }
+        });
+
+        const famConfigured = Boolean(
+            (unlockedVaultData && unlockedVaultData.family9_configured) ||
+            (authRegistryCache && authRegistryCache.family9 && authRegistryCache.family9.configured)
+        );
+
+        // SUB-TAB 1: APPROVALS & SAVED LOGINS / PASSWORDS
+        if (vaultSubTab === "approvals") {
+            const pendingList = mergedUsers.filter(u => u.status === "pending");
+            let html =
+                '<div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.38); border-radius:12px; padding:10px 12px; font-size:0.76rem; line-height:1.45;">' +
+                    '🔒 <b>Отдельная защищённая папка на ПК:</b> <code>C:\\Users\\Vlaslav\\Downloads\\Secured_Users_Vault</code><br>' +
+                    '👑 <b>Авто-вход на этом ПК:</b> <code>' + UNITY_OWNER_EMAIL + '</code> · <b>Одобрение в Telegram:</b> <code>@' + UNITY_OWNER_TG + '</code><br>' +
+                    (unlockedVaultData
+                        ? '🟢 <b>Сейф расшифрован</b> (видны все сохранённые логины и пароли).'
+                        : '🔐 Вы вне доверенного ПК: для расшифровки открытых паролей введите <b>9 имён родственников</b> во вкладке «🧬 Ключ 9 Родственников».') +
+                '</div>';
+
+            if (!famConfigured) {
+                html += '<div style="background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.5); border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                    '<span style="font-size:0.77rem; color:#fde68a; font-weight:700;">🧬 Задайте ваши 9 имён родственников (9/9) для защиты любого сброса и доступа вне этого ПК!</span>' +
+                    '<button class="mini-btn accent" onclick="setVaultSubTab(\'family9\')">Задать 9 родственников →</button>' +
+                '</div>';
+            }
+
+            html += '<div style="font-size:0.78rem; font-weight:800; color:#fbbf24; text-transform:uppercase; margin-top:4px;">⏳ Ожидают вашего одобрения после сообщения в @' + UNITY_OWNER_TG + ' (' + pendingList.length + '):</div>';
+            if (pendingList.length === 0) {
+                html += '<div style="font-size:0.76rem; color:var(--text-dim); padding:8px 10px; background:var(--bg-card); border-radius:10px;">Новых неодобренных заявок сейчас нет.</div>';
+            } else {
+                pendingList.forEach(u => {
+                    const sl = escapeHtml(u.login).replace(/'/g, "\\'");
+                    const tgClean = String(u.telegram || "").replace(/^@/, "");
+                    html += '<div style="background:var(--bg-card); border:1px solid rgba(245,158,11,0.5); border-left:4px solid #f59e0b; border-radius:12px; padding:10px 12px; display:flex; flex-direction:column; gap:6px;">' +
+                        '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                            '<span style="font-weight:800; font-size:0.85rem;">👤 ' + escapeHtml(u.full_name || u.login) + ' (<code>' + escapeHtml(u.login) + '</code>)</span>' +
+                            '<span class="badge running">⏳ Ждёт одобрения</span>' +
+                        '</div>' +
+                        '<div style="font-size:0.75rem; color:var(--text-dim);">Telegram: <b>' + escapeHtml(u.telegram || "—") + '</b> · Пароль: <code>' + escapeHtml(u.password_plain || "🔒 зашифрован RSA") + '</code></div>' +
+                        (u.note ? '<div style="font-size:0.74rem; color:var(--text-main);">💬 ' + escapeHtml(u.note) + '</div>' : '') +
+                        '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
+                            '<button class="btn-action success" style="font-weight:800;" onclick="adminSetUserStatus(\'' + sl + '\', \'approved\')">✅ Одобрить доступ (откроет GTA-тест)</button>' +
+                            '<button class="btn-action danger" onclick="adminSetUserStatus(\'' + sl + '\', \'rejected\')">🚫 Отклонить</button>' +
+                            (tgClean ? '<a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener" class="btn-action ghost" style="text-decoration:none;">✈️ Открыть TG</a>' : '') +
+                        '</div>' +
+                    '</div>';
+                });
+            }
+
+            html += '<div style="font-size:0.78rem; font-weight:800; color:#60a5fa; text-transform:uppercase; margin-top:6px;">🔐 Все сохранённые логины и пароли (' + mergedUsers.length + '):</div>';
+            mergedUsers.forEach((u, idx) => {
+                const sl = escapeHtml(u.login).replace(/'/g, "\\'");
+                const pwdId = "vault-pwd-" + idx;
+                const rawPwd = u.password_plain || "";
+                const stBadge = u.status === "approved" ? '<span class="badge done">✅ Активен</span>'
+                    : (u.status === "pending" ? '<span class="badge running">⏳ Ждёт</span>' : '<span class="badge" style="color:#f87171;">🚫 Закрыт</span>');
+                html += '<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:10px 12px; display:flex; flex-direction:column; gap:5px;">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<span style="font-weight:800; font-size:0.83rem;">' + (u.role === "owner" ? "👑 " : "👤 ") + escapeHtml(u.full_name || u.login) + '</span>' +
+                        stBadge +
+                    '</div>' +
+                    '<div style="font-size:0.75rem; color:var(--text-main); display:flex; flex-wrap:wrap; gap:10px; align-items:center;">' +
+                        '<span>Логин: <code>' + escapeHtml(u.login) + '</code></span>' +
+                        '<span>Пароль: <code id="' + pwdId + '" data-pwd="' + escapeHtml(rawPwd) + '">' + (rawPwd ? "••••••••" : "🔒 (откройте с ПК или 9/9 имён)") + '</code></span>' +
+                        (rawPwd ? '<button class="mini-btn" onclick="toggleVaultPwd(\'' + pwdId + '\')">👁️ Показать</button>' : '') +
+                        (rawPwd ? '<button class="mini-btn" onclick="copyVaultPwd(\'' + pwdId + '\')">📋</button>' : '') +
+                    '</div>' +
+                    '<div style="font-size:0.72rem; color:var(--text-dim);">TG: ' + escapeHtml(u.telegram || "—") + ' · GTA: <b>' + escapeHtml(u.gta_archetype || "Ещё не прошёл") + '</b></div>' +
+                    (u.role !== "owner" ? (
+                        '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:3px;">' +
+                            (u.status !== "approved" ? '<button class="mini-btn accent" onclick="adminSetUserStatus(\'' + sl + '\', \'approved\')">✅ Одобрить</button>' : '<button class="mini-btn" style="color:#f87171;" onclick="adminSetUserStatus(\'' + sl + '\', \'rejected\')">🚫 Отозвать доступ</button>') +
+                            '<button class="mini-btn" onclick="setVaultSubTab(\'folders\')">📁 Назначить папки →</button>' +
+                            '<button class="mini-btn" onclick="setVaultSubTab(\'family9\'); document.getElementById(\'reset9-target-login\') && (document.getElementById(\'reset9-target-login\').value=\'' + sl + '\');">🔑 Сброс (9/9)</button>' +
+                        '</div>'
+                    ) : '') +
+                '</div>';
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        // SUB-TAB 2: PER-USER FOLDER & PROJECT ASSIGNMENT
+        if (vaultSubTab === "folders") {
+            const allFolderOpts = Array.from(new Set([...Object.keys(PROJECT_META), ...folderList.map(canonicalProjectName)]))
+                .filter(f => f && f !== "Secured_Users_Vault")
+                .sort((a, b) => a.localeCompare(b, "ru"));
+
+            const teamMembers = mergedUsers.filter(u => u.role !== "owner");
+            let html = '<div style="font-size:0.76rem; color:var(--text-dim); line-height:1.45;">📁 Здесь вы как администратор можете <b>добавить любую существующую папку</b> сотруднику, <b>создать под него новый проект</b> или открыть доступ ко всем папкам.</div>';
+            if (teamMembers.length === 0) {
+                html += '<div style="padding:14px; background:var(--bg-card); border-radius:12px; font-size:0.79rem; color:var(--text-dim);">Пока нет зарегистрированных участников (кроме вас). Когда новый человек зарегистрируется, вы сможете назначать ему любые папки здесь.</div>';
+            }
+            teamMembers.forEach((u, idx) => {
+                const sl = escapeHtml(u.login).replace(/'/g, "\\'");
+                const assigned = Array.isArray(u.assigned_projects) ? u.assigned_projects : [];
+                const hasAll = assigned.includes("*");
+                const chipsHtml = hasAll
+                    ? '<span class="badge done">🌐 Доступ ко всем папкам компании</span>'
+                    : (assigned.length
+                        ? assigned.map(p => {
+                            const sp = escapeHtml(p).replace(/'/g, "\\'");
+                            return '<span class="badge" style="background:rgba(59,130,246,0.16); color:#93c5fd; display:inline-flex; align-items:center; gap:5px;">📁 ' + escapeHtml(p) +
+                                ' <button onclick="adminRemoveProjectFromUser(\'' + sl + '\', \'' + sp + '\')" style="background:none;border:none;color:#f87171;cursor:pointer;font-weight:900;">✕</button></span>';
+                        }).join(" ")
+                        : '<span style="font-size:0.73rem; color:var(--text-muted);">Авто-подбор после GTA-опросника</span>');
+
+                const selId = "adm-add-proj-" + idx;
+                const newInpId = "adm-new-proj-" + idx;
+                const opts = allFolderOpts.map(f => '<option value="' + escapeHtml(f) + '">' + escapeHtml(f) + '</option>').join("");
+
+                html += '<div style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #3b82f6; border-radius:12px; padding:11px 12px; display:flex; flex-direction:column; gap:8px;">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<span style="font-weight:800; font-size:0.85rem;">👤 ' + escapeHtml(u.full_name || u.login) + ' (<code>' + escapeHtml(u.login) + '</code>)</span>' +
+                        '<span style="font-size:0.72rem; color:#fbbf24; font-weight:700;">' + escapeHtml(u.gta_archetype || "GTA-тест ожидается") + '</span>' +
+                    '</div>' +
+                    '<div style="display:flex; gap:5px; flex-wrap:wrap;">' + chipsHtml + '</div>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">' +
+                        '<select id="' + selId + '" class="chip-select" style="flex:1; min-width:170px;">' + opts + '</select>' +
+                        '<button class="btn-action accent" onclick="adminAddProjectToUser(\'' + sl + '\', document.getElementById(\'' + selId + '\').value, false)">➕ Добавить папку</button>' +
+                        '<button class="mini-btn" onclick="adminToggleAllProjectsForUser(\'' + sl + '\', ' + (!hasAll) + ')">' + (hasAll ? '🎯 Ограничить списком' : '🌐 Дать все папки') + '</button>' +
+                    '</div>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                        '<input type="text" id="' + newInpId + '" class="task-inline-input" placeholder="✨ Или создать новую папку/проект для сотрудника...">' +
+                        '<button class="btn-action success" onclick="adminAddProjectToUser(\'' + sl + '\', document.getElementById(\'' + newInpId + '\').value, true)">✨ Создать и назначить</button>' +
+                    '</div>' +
+                '</div>';
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        // SUB-TAB 3: LIVE ACTIVITY TELEMETRY & 30-DAY MONTHLY AUDIT / REPLACEMENT
+        if (vaultSubTab === "telemetry") {
+            let html = '<div style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.35); border-radius:12px; padding:10px 12px; font-size:0.76rem; line-height:1.45;">' +
+                '⏱️ <b>Живой контроль команды и 30-дневный анализ:</b> система фиксирует активное время в офисе, количество запросов, паузы простоя (когда человеку автоматически предлагаются варианты действий), ответы GTA-теста и формирует вывод: <b>почему так работает</b> и стоит ли <b>заменить через 30 дней</b>.' +
+            '</div>';
+
+            mergedUsers.forEach(u => {
+                const lg = normalizeAuthLogin(u.login);
+                const mTele = (teamTelemetryCache.members || {})[lg] || {};
+                const met = mTele.metrics || {};
+                const gta = mTele.gta_profile || {};
+                const audit = computeClientSide30DayAudit(u, mTele);
+                const recent = (mTele.recent_actions || []).slice(0, 6);
+                const sl = escapeHtml(u.login).replace(/'/g, "\\'");
+
+                const borderCol = audit.replacement_recommended ? "#ef4444" : (audit.kpi_score >= 65 ? "#10b981" : "#f59e0b");
+                html += '<div style="background:var(--bg-card); border:1px solid var(--border); border-left:4px solid ' + borderCol + '; border-radius:12px; padding:11px 12px; display:flex; flex-direction:column; gap:7px;">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<span style="font-weight:800; font-size:0.86rem;">' + (u.role === "owner" ? "👑 " : "🕶️ ") + escapeHtml(u.full_name || u.login) + ' (<code>' + escapeHtml(lg) + '</code>)</span>' +
+                        '<span class="badge" style="font-weight:800; color:' + borderCol + ';">' + escapeHtml(audit.verdict_label) + '</span>' +
+                    '</div>' +
+                    '<div class="briefing-kpi-row tabular">' +
+                        '<span class="briefing-kpi-pill">⏱️ Время: ' + audit.active_minutes + ' мин</span>' +
+                        '<span class="briefing-kpi-pill">🚀 Запросов: ' + audit.total_requests + ' (сегодня: ' + audit.today_requests + ')</span>' +
+                        '<span class="briefing-kpi-pill">📅 День: ' + audit.days_active + ' / 30</span>' +
+                        '<span class="briefing-kpi-pill">⚡ Пауз/Подсказок: ' + audit.stalls_count + ' (' + audit.nudges_clicked + '/' + audit.nudges_shown + ')</span>' +
+                        '<span class="briefing-kpi-pill">📁 Сейчас: ' + escapeHtml(met.current_project || "—") + '</span>' +
+                    '</div>' +
+                    '<div style="background:var(--bg-main); border:1px solid var(--border); border-radius:9px; padding:8px 10px; font-size:0.75rem; line-height:1.4;">' +
+                        '<b style="color:#fbbf24;">🔍 Почему так работает:</b> ' + escapeHtml(audit.why_diagnosis) +
+                    '</div>' +
+                    (gta.completed_at ? (
+                        '<details style="font-size:0.74rem; color:var(--text-dim);">' +
+                            '<summary style="cursor:pointer; font-weight:700; color:#34d399;">🕶️ Открыть GTA-Досье и ответы (' + escapeHtml(gta.archetype || "") + ')</summary>' +
+                            '<div style="margin-top:6px; padding:8px; background:var(--bg-main); border-radius:8px; display:flex; flex-direction:column; gap:4px;">' +
+                                '<div><b>Подобранные папки:</b> ' + escapeHtml((gta.matched_existing_projects || []).join(", ")) + '</div>' +
+                                '<div><b>Личная идея:</b> ' + escapeHtml(gta.custom_idea || "—") + '</div>' +
+                                (gta.answers || []).map(a => '<div>• <i>' + escapeHtml(a.q) + ':</i> ' + escapeHtml(a.a) + '</div>').join("") +
+                            '</div>' +
+                        '</details>'
+                    ) : '') +
+                    (recent.length ? (
+                        '<details style="font-size:0.73rem; color:var(--text-dim);">' +
+                            '<summary style="cursor:pointer; font-weight:700; color:#93c5fd;">📜 Последние действия в системе (' + recent.length + ')</summary>' +
+                            '<div style="margin-top:5px; display:flex; flex-direction:column; gap:3px;">' +
+                                recent.map(r => '<div>• <code>' + escapeHtml(String(r.ts || "").slice(11, 19)) + '</code> [' + escapeHtml(r.project || "") + '] ' + escapeHtml(r.detail || "") + '</div>').join("") +
+                            '</div>' +
+                        '</details>'
+                    ) : '') +
+                    (u.role !== "owner" ? (
+                        '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:3px;">' +
+                            '<button class="btn-action accent" onclick="closeSecuredVaultModal(); runPlanStep(\'Входящие_Офис\', \'MEMBER_AUDIT_30D: ' + sl + '\')">🧠 Глубокий 30-дн. ИИ-Анализ</button>' +
+                            '<button class="btn-action ghost" onclick="setVaultSubTab(\'folders\')">🔄 Сменить проект</button>' +
+                            '<button class="btn-action danger" onclick="adminReplaceSlowMember(\'' + sl + '\')">🚫 Заменить сотрудника (закрыть доступ)</button>' +
+                        '</div>'
+                    ) : '') +
+                '</div>';
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        // SUB-TAB 4: 9 FAMILY RELATIVE NAMES ENROLLMENT & RESET GATE (9/9 MATCH)
+        let inputs9 = "";
+        for (let i = 1; i <= 9; i++) {
+            inputs9 += '<input type="text" id="vault-fam9-' + i + '" class="modal-input" style="height:38px; font-size:0.81rem;" placeholder="Родственник #' + i + ' (имя / фамилия)">';
+        }
+        container.innerHTML =
+            '<div style="background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.45); border-radius:12px; padding:10px 12px; font-size:0.76rem; line-height:1.45;">' +
+                '🧬 <b>Защита 9 Родственников (9/9 совпадений):</b><br>' +
+                '• ' + (famConfigured ? '✅ <b>Ключ из 9 имён активирован!</b> Любой сброс паролей или открытие Сейфа с другого устройства требует точного совпадения всех 9 имён.' : '⚠️ <b>Первичная настройка:</b> введите 9 имён ваших родственников ниже. Они хешируются (PBKDF2-SHA256) и шифруют облачный сейф (AES-256-GCM) — в открытом виде имена нигде не хранятся!') +
+            '</div>' +
+            '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(175px, 1fr)); gap:6px;">' + inputs9 + '</div>' +
+            (!famConfigured ? (
+                '<button class="btn-action accent" style="padding:10px; font-weight:800;" onclick="ownerEnrollNineRelatives()">🛡️ Сохранить 9 имён родственников как мастер-ключ (9/9)</button>'
+            ) : (
+                '<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:10px 12px; display:flex; flex-direction:column; gap:8px; margin-top:4px;">' +
+                    '<div style="font-size:0.78rem; font-weight:800; color:#fbbf24;">🔑 Сброс любого пароля / расшифровка сейфа (требуются все 9/9 имён выше):</div>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                        '<input type="text" id="reset9-target-login" class="task-inline-input" value="' + escapeHtml(UNITY_OWNER_EMAIL) + '" placeholder="Логин аккаунта для сброса">' +
+                        '<input type="password" id="reset9-new-password" class="task-inline-input" placeholder="Новый пароль (от 6 симв.)">' +
+                        '<button class="btn-action warning" style="font-weight:800;" onclick="ownerResetAccountViaNineRelatives()">🔑 Проверить 9/9 и сбросить</button>' +
+                    '</div>' +
+                '</div>'
+            ));
+    }
+
+    async function adminSetUserStatus(loginVal, newStatus) {
+        if (!isOwnerSession()) return;
+        try {
+            // 1. Update local trusted computer vault immediately if connected
+            try {
+                await fetch(LOCAL_TRUST_API + "/api/approve-user", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ login: loginVal, status: newStatus })
+                });
+            } catch (e) {}
+
+            // 2. Also update cloud auth_registry.json so mobile approval works 24/7 even when PC is off!
+            const reg = await fetchAuthRegistryFresh();
+            const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+            if (u) {
+                u.status = newStatus;
+                if (newStatus === "approved" && !u.approved_at) u.approved_at = new Date().toISOString();
+                u.owner_action_stamp = "own-" + Date.now();
+                await writeDataBranchJson("auth_registry.json", reg, "Owner status " + newStatus + " for " + loginVal);
+                authRegistryCache = reg;
+            }
+            updateTopbarAuthUI();
+            await openSecuredVaultModal(vaultSubTab);
+            showToast(newStatus === "approved" ? "✅ Доступ одобрен для " + loginVal + "!" : "🚫 Статус обновлён: " + newStatus);
+        } catch (e) {
+            showToast("⚠️ Ошибка обновления статуса: " + e.message);
+        }
+    }
+
+    async function adminAddProjectToUser(loginVal, projName, createNewOnDisk) {
+        if (!isOwnerSession()) return;
+        const cleanP = String(projName || "").trim();
+        if (!cleanP || cleanP === "Secured_Users_Vault") {
+            showToast("⚠️ Укажите название папки/проекта!");
+            return;
+        }
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+        if (!u) return;
+        const cur = (Array.isArray(u.assigned_projects) ? u.assigned_projects : []).filter(x => x !== "*");
+        if (!cur.includes(cleanP)) cur.push(cleanP);
+        u.assigned_projects = cur;
+        u.owner_action_stamp = "proj-" + Date.now();
+
+        try {
+            await fetch(LOCAL_TRUST_API + "/api/assign-projects", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ login: loginVal, projects: cur, create_on_disk: Boolean(createNewOnDisk) })
+            });
+        } catch (e) {}
+
+        await writeDataBranchJson("auth_registry.json", reg, "Assign project " + cleanP + " to " + loginVal);
+        authRegistryCache = reg;
+        if (createNewOnDisk && !folderList.includes(cleanP)) {
+            folderList.unshift(cleanP);
+            try {
+                await ghApi("/issues", "POST", {
+                    title: "CMD: CREATE_FOLDER: " + cleanP + " | PROJ: " + cleanP,
+                    body: "Администратор Власлав создал и назначил проект `" + cleanP + "` участнику `" + loginVal + "`."
+                }, true);
+            } catch (e) {}
+        }
+        await openSecuredVaultModal("folders");
+        showToast("📁 Папка «" + cleanP + "» назначена сотруднику " + loginVal + "!");
+    }
+
+    async function adminRemoveProjectFromUser(loginVal, projName) {
+        if (!isOwnerSession()) return;
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+        if (!u) return;
+        u.assigned_projects = (u.assigned_projects || []).filter(p => p !== projName);
+        u.owner_action_stamp = "projrem-" + Date.now();
+        try {
+            await fetch(LOCAL_TRUST_API + "/api/assign-projects", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ login: loginVal, projects: u.assigned_projects })
+            });
+        } catch (e) {}
+        await writeDataBranchJson("auth_registry.json", reg, "Unassign project from " + loginVal);
+        authRegistryCache = reg;
+        await openSecuredVaultModal("folders");
+    }
+
+    async function adminToggleAllProjectsForUser(loginVal, enableAll) {
+        if (!isOwnerSession()) return;
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+        if (!u) return;
+        u.assigned_projects = enableAll ? ["*"] : [];
+        u.owner_action_stamp = "projall-" + Date.now();
+        try {
+            await fetch(LOCAL_TRUST_API + "/api/assign-projects", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ login: loginVal, projects: u.assigned_projects })
+            });
+        } catch (e) {}
+        await writeDataBranchJson("auth_registry.json", reg, "Toggle all folders for " + loginVal);
+        authRegistryCache = reg;
+        await openSecuredVaultModal("folders");
+    }
+
+    async function adminReplaceSlowMember(loginVal) {
+        if (!isOwnerSession()) return;
+        if (!confirm("Заменить сотрудника " + loginVal + "? Его доступ будет немедленно закрыт, статистика заархивирована в Secured_Users_Vault, а папки возвращены компании.")) return;
+        await adminSetUserStatus(loginVal, "replaced");
+        showToast("🔄 Доступ " + loginVal + " закрыт, слот освобождён для замены!");
+    }
+
+    async function ownerEnrollNineRelatives() {
+        const names = [];
+        for (let i = 1; i <= 9; i++) {
+            const el = document.getElementById("vault-fam9-" + i);
+            if (el) names.push(el.value);
+        }
+        const cleaned = [];
+        names.forEach(n => {
+            const nn = normalizeRelativeNameJs(n);
+            if (nn && !cleaned.includes(nn)) cleaned.push(nn);
+        });
+        if (cleaned.length !== 9) {
+            showToast("⚠️ Введите ровно 9 уникальных имён ваших родственников (сейчас уникальных: " + cleaned.length + ")!");
+            return;
+        }
+        try {
+            const r = await fetch(LOCAL_TRUST_API + "/api/enroll-family9", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ names: cleaned })
+            });
+            if (r.ok) {
+                const d = await r.json();
+                if (d.ok) {
+                    await fetchAuthRegistryFresh();
+                    await openSecuredVaultModal("family9");
+                    showToast("🧬 Защита из 9 имён родственников (9/9) активирована!");
+                    return;
+                }
+            }
+        } catch (e) {}
+
+        // Cloud fallback enrollment if Owner is configuring directly
+        const sorted9 = cleaned.slice().sort();
+        const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+        const vaultSaltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+        const hashes9 = [];
+        for (const nm of sorted9) hashes9.push(await pbkdf2HexJs(nm, saltHex, 100000));
+        hashes9.sort();
+        const reg = await fetchAuthRegistryFresh();
+        reg.family9 = {
+            configured: true,
+            required_count: 9,
+            salt_hex: saltHex,
+            vault_salt_hex: vaultSaltHex,
+            name_iter: 100000,
+            vault_iter: 200000,
+            name_hashes: hashes9
+        };
+        await writeDataBranchJson("auth_registry.json", reg, "Enroll 9 family relatives security hashes");
+        authRegistryCache = reg;
+        await openSecuredVaultModal("family9");
+        showToast("🧬 Защита из 9 имён родственников (9/9) сохранена!");
+    }
+
+    async function ownerResetAccountViaNineRelatives() {
+        const names = [];
+        for (let i = 1; i <= 9; i++) {
+            const el = document.getElementById("vault-fam9-" + i);
+            if (el) names.push(el.value);
+        }
+        const targetLogin = normalizeAuthLogin((document.getElementById("reset9-target-login") || {}).value || UNITY_OWNER_EMAIL);
+        const newPass = String((document.getElementById("reset9-new-password") || {}).value || "").trim();
+
+        const ver = await verifyNineRelativesInBrowser(names);
+        if (!ver.ok) {
+            showToast(ver.reason);
+            return;
+        }
+        try {
+            const dec = await decryptCloudVaultWithFamily9Key(ver.aesKeyHex);
+            if (dec) unlockedVaultData = dec;
+        } catch (e) {}
+
+        if (!newPass) {
+            await openSecuredVaultModal("approvals");
+            showToast("🧬 9/9 родственников совпали! Сейф расшифрован.");
+            return;
+        }
+        if (newPass.length < 6) {
+            showToast("⚠️ Новый пароль должен содержать минимум 6 символов!");
+            return;
+        }
+
+        try {
+            const r = await fetch(LOCAL_TRUST_API + "/api/reset-with-family9", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ names: names, target_login: targetLogin, new_password: newPass })
+            });
+            if (r.ok) {
+                const d = await r.json();
+                if (d.ok) {
+                    showToast("✅ " + d.message);
+                    await openSecuredVaultModal("approvals");
+                    return;
+                }
+            }
+        } catch (e) {}
+
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === targetLogin);
+        if (!u) {
+            showToast("❌ Пользователь " + targetLogin + " не найден.");
+            return;
+        }
+        const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+        u.salt_hex = saltHex;
+        u.pbkdf2_hash = await pbkdf2HexJs(newPass, saltHex, 120000);
+        u.rsa_envelope = await encryptCredentialsForOwnerVault({ login: targetLogin, password: newPass });
+        u.owner_action_stamp = "reset9-" + Date.now();
+        await writeDataBranchJson("auth_registry.json", reg, "Password reset via 9/9 family verification: " + targetLogin);
+        authRegistryCache = reg;
+        showToast("✅ Пароль для " + targetLogin + " сброшен (подтверждено 9/9 родственников)!");
+        await openSecuredVaultModal("approvals");
+    }
+
+    initAuthGateV20();
     refreshAllData(false);
     setInterval(() => refreshAllData(false), 12000);
 </script>
