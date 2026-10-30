@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 23:31:37",
+  "updated": "2026-10-29 23:36:52",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -114,6 +114,18 @@
       "open_cards": []
     },
     {
+      "folder": "Georgis1",
+      "project": "Georgis1",
+      "state": "empty",
+      "files": 0,
+      "size_kb": 0,
+      "last_change": null,
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
       "folder": "Ghost Ghetto Child (Музыка)",
       "project": "Ghost Ghetto Child (Музыка)",
       "state": "active",
@@ -132,7 +144,7 @@
       "project": "GitHub_Control_Panel",
       "state": "active",
       "files": 14,
-      "size_kb": 2441,
+      "size_kb": 2445,
       "last_change": "2026-10-29",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
