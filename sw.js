@@ -1,4 +1,4 @@
-const CACHE_NAME = 'global-spirit-group-pwa-v22.7';
+const CACHE_NAME = 'global-spirit-group-pwa-v22.8';
 const APP_SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
