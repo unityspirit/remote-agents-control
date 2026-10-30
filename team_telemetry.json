@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-30T07:53:28.693Z",
+  "updated_at": "2026-10-30T07:53:33.309Z",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -67,33 +67,33 @@
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 0.2,
-        "active_hours": 0,
+        "active_minutes": 0.8,
+        "active_hours": 0.01,
         "total_requests": 0,
         "today_requests": 0,
-        "stalls_count": 1,
+        "stalls_count": 3,
         "nudges_shown": 0,
         "nudges_clicked": 0,
         "kpi_score": 0,
         "verdict": "coach",
         "verdict_label": "🟡 НА КОНТРОЛЕ (День 1/30 · KPI 0/100)",
         "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
+        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия. Часто медлит (3 пауз простоя) и игнорирует авто-подсказки системы — низкая вовлечённость или отвлечение."
       },
       "metrics": {
-        "total_active_sec": 105,
+        "total_active_sec": 45,
         "total_requests": 0,
-        "idle_stall_count": 12,
+        "idle_stall_count": 3,
         "nudges_shown": 0,
         "nudges_clicked": 0,
         "photos_sent": 0,
         "tim_requests": 0,
         "today_date": "2026-10-30",
-        "today_active_sec": 105,
+        "today_active_sec": 45,
         "today_requests": 0,
         "first_seen": "2026-10-30T06:42:12.018Z",
-        "online_state": "slow_idle",
-        "last_seen": "2026-10-30T07:53:27.002Z",
+        "online_state": "active",
+        "last_seen": "2026-10-30T07:51:12.019Z",
         "current_project": "Позновалка"
       }
     }
