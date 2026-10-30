@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 21:17:56",
+  "updated": "2026-10-29 21:22:58",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -495,8 +495,8 @@
       "folder": "Позновалка",
       "project": "Позновалка",
       "state": "active",
-      "files": 165,
-      "size_kb": 1093,
+      "files": 167,
+      "size_kb": 1101,
       "last_change": "2026-10-29",
       "lead_agent": "Swarm Knowledge & Media Extraction Agent",
       "next_who": "agent",
@@ -543,7 +543,7 @@
       "project": "Светлана Notion",
       "state": "active",
       "files": 46,
-      "size_kb": 466,
+      "size_kb": 471,
       "last_change": "2026-10-29",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
