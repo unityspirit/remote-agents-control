@@ -6932,7 +6932,7 @@
     }
 
     function normalizeAuthLogin(s) {
-        return String(s || "").trim().toLowerCase();
+        return String(s || "").replace(/['"\\<>`\r\n]/g, "").trim().toLowerCase();
     }
 
     function normalizeRelativeNameJs(s) {
