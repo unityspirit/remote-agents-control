@@ -3357,6 +3357,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-29 21:19:12"
+    },
+    "161": {
+      "id": 161,
+      "created": "2026-10-29 23:37:19",
+      "handoffs": [
+        {
+          "t": "2026-10-29 23:37:19",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-29 23:37:28",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-607209 (@true1team / @true1team)",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-29 23:37:28"
     }
   }
 }
