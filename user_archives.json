@@ -1,5 +1,27 @@
 {
   "version": "21.0",
-  "users": {},
-  "updated_at": "2026-10-30T04:51:58.259569+00:00"
+  "users": {
+    "true1team": {
+      "login": "true1team",
+      "full_name": "@true1team",
+      "items": [
+        {
+          "id": "iss-162",
+          "ts": "2026-10-30T06:04:36.012Z",
+          "login": "true1team",
+          "full_name": "@true1team",
+          "issue_number": 162,
+          "project": "Дима Верхняя Синичиха Алапаевск",
+          "kind": "agent_request",
+          "title": "TIM: Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
+          "study_text": "",
+          "urls": [],
+          "image_urls": []
+        }
+      ],
+      "total_count": 1,
+      "last_saved_at": "2026-10-30T06:04:36.013Z"
+    }
+  },
+  "updated_at": "2026-10-30T06:04:36.013Z"
 }
