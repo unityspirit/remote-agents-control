@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 20:11:21",
+  "updated": "2026-10-29 20:12:22",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 22,
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-10-29 20:11:20"
+      "last_task": "Изучено фото (1 шт.): 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 20:11:57"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 22,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 11,
+      "tasks_completed": 12,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 11,
+      "tasks_completed": 12,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     }
   },
   "daemons": {
@@ -238,12 +238,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 0,
-      "calls_by_provider": {},
-      "last_provider": "auto_standby",
-      "last_model": "auto",
-      "last_call_at": null,
-      "errors_count": 0
+      "calls_total": 1,
+      "calls_by_provider": {
+        "deterministic_local_engine": 1
+      },
+      "last_provider": "deterministic_local_engine",
+      "last_model": "structured-v18",
+      "last_call_at": "2026-10-30T02:12:10.500286+00:00",
+      "errors_count": 1
     }
   },
   "statuses": {
