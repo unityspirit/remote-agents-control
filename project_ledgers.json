@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30 03:40:21",
+  "updated": "2026-10-30 03:44:26",
   "projects_count": 55,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2470,16 +2470,16 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-10-29",
+      "last_change": "2026-10-30",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 1,
+        "completed_works": 3,
         "open_tasks": 23,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2515,6 +2515,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-163",
+          "issue_number": 163,
+          "date": "2026-10-30 03:44:17",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#163 TIM: найди проекты в папке Костя и отправь мне в телеграм @true1team",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261030_034357",
+          "issue_number": 163,
+          "date": "2026-10-30 03:43:57",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
+          "summary": "Собрать список проектов из папки Костя, оценить их потенциал и отправить в Telegram @true1team. Приоритетные проекты (≥$10k/мес) будут выделены для дальнейшего развития, остальные – в резерв. В итоге получаем 3–5 проектов, из которых 2–3 мо",
+          "human_action": "Подтвердить доступ к папке Костя и предоставить токен Telegram‑бота для отправки сообщений.",
+          "status": "done"
+        },
         {
           "id": "card-161",
           "issue_number": 161,
@@ -2689,28 +2713,6 @@
           "agent": "🧑 Власлав",
           "title": "#137 https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
           "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #137»",
-          "status": "not_studied"
-        },
-        {
-          "id": "card-138",
-          "issue_number": 138,
-          "date": "2026-10-25 08:36:21",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#138 https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #138 → Unity Inc» или выбрать другой проект",
-          "status": "awaiting_approval"
-        },
-        {
-          "id": "card-139",
-          "issue_number": 139,
-          "date": "2026-10-25 08:35:47",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#139 https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference?",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #139»",
           "status": "not_studied"
         }
       ]
