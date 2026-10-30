@@ -1,0 +1,3572 @@
+{
+  "updated": "2026-10-29 20:01:25",
+  "projects_count": 54,
+  "ledgers": {
+    "12 IT Продуктов (Короче Капитан)": {
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "folder": "12 IT Продуктов (Короче Капитан)",
+      "state": "active",
+      "last_change": "2026-10-29",
+      "lead_agent": "Telegram Mini Apps & Micro-SaaS Architect",
+      "priority_score": 98,
+      "revenue_potential": "Быстрый B2C/B2B доход: Micro-SaaS за 24ч + подписки Telegram Stars (690–1 990 ₽/мес)",
+      "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
+      "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
+      "counts": {
+        "completed_works": 7,
+        "open_tasks": 1,
+        "tim_reports": 5,
+        "saved_photos": 0,
+        "files_on_disk": 11,
+        "size_kb": 89,
+        "ai_analyses": 2,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Собрать и запустить Micro-SaaS #1 (Парсер заказов в TG + Навигатор канала с оплатой Stars)",
+        "cmd": "TIM: Собери боевой MVP продукта #1 в 12 IT Продуктов (Парсер лидов/заказов в Telegram + Навигатор канала с оплатой Stars) и дай чек-лист релиза на сегодня"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План релиза)",
+          "cmd": "TIM: Координируй запуск первого доходного Mini App в 12 IT Продуктов"
+        },
+        {
+          "key": "vibe_coder",
+          "label": "⚡ Вайбкодер (HANDOFF + MVP 24ч)",
+          "cmd": "TIM: Вайбкодер — сформируй HANDOFF.md, структуру бота и оплату Stars для Mini App #1"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Воронка трафика)",
+          "cmd": "MARKETING: Воронка привлечения первых 100 платящих подписчиков в Mini App"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Архитектура TMA)",
+          "cmd": "ARCH: Техническая ревизия и готовность кода 12 IT Продуктов"
+        }
+      ],
+      "research_topic": "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars кейсы выручки",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-7",
+          "date": "21.10.2026 08:45",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-158",
+          "issue_number": 158,
+          "date": "2026-10-29 18:53:31",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#158 TIM: Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261029_185306",
+          "issue_number": 158,
+          "date": "2026-10-29 18:53:06",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📈 Маркетолог & Трафик, ⚡ Вайбкодер & Micro-SaaS, 💻 Главный Разработчик",
+          "title": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Маркетолог & Трафик, Вайбкодер & Micro-SaaS, Главный Разработчик) в рамках проекта «12 IT Продуктов (Короче Капитан)». Сформирована прикладная связка монетизации, воронки привле",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «12 IT Продуктов (Короче Капитан)».",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261029_185032",
+          "issue_number": 157,
+          "date": "2026-10-29 18:50:32",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик, ⚡ Вайбкодер & Micro-SaaS, 🤝 B2B Продажи & Офферы, 🎬 Креативный Продюсер & Медиа, 🔎 Аналитик & Разведчик",
+          "title": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+          "summary": "Проверены все 16 задач (#142–#157), выделены 4 схемы заработка (AI-Магазин CPA #147+#157, B2B AI-ФинДир & Кибер-Аудит #143+#144, TMA Древо Рода #154, КХЛ Медиа + QC Бот #146+#153).",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261025_161533",
+          "issue_number": 141,
+          "date": "2026-10-25 16:15:33",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "💻 Главный Разработчик, 🔎 Аналитик & Разведчик",
+          "title": "Разбор Pivex Funded: как устроен бэкенд проп-трейдинговой платформы (Match-Trader) и как на этом заработать",
+          "summary": "Тим скоординировал 2 отделов (Главный Разработчик, Аналитик & Разведчик) для проекта 12 IT Продуктов (Короче Капитан).",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "tim-1792722263",
+          "issue_number": null,
+          "date": "2026-10-22 20:24:23",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, ⚡ Вайбкодер & Micro-SaaS",
+          "title": "ПЛАН_МОНЕТИЗАЦИИ_VIBECODING_2026",
+          "summary": "Мастер-отчёт Директора Тима для проекта 12 IT Продуктов (Короче Капитан).",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261022_202215",
+          "issue_number": null,
+          "date": "2026-10-22 20:22:15",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "💻 Главный Разработчик, 📈 Маркетолог & Трафик, 🔎 Аналитик & Разведчик, ⚡ Вайбкодер & Micro-SaaS, 📊 Стратег",
+          "title": "Тим, изучи канал https://t.me/vibecodings (Станислав Быстрицкий), внедри его инструменты вайбкодинга и составь мастер-план монетизации для х",
+          "summary": "Тим скоординировал 5 отделов (Главный Разработчик, Маркетолог & Трафик, Аналитик & Разведчик, Вайбкодер & Micro-SaaS, Стратег) для проекта 12 IT Продуктов (Короче Капитан).",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "card-9002",
+          "issue_number": 9002,
+          "date": "2026-10-22 08:18:48",
+          "project": "12 IT Продуктов (Короче Капитан)",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#9002 🤖 Создать бота в @BotFather для Mini App #1",
+          "summary": "🧑 Ждёт вашего действия · Далее: 30 секунд: /newbot, прислать токен",
+          "status": "blocked_human"
+        }
+      ]
+    },
+    "8 слайдов карусель Белорусия": {
+      "project": "8 слайдов карусель Белорусия",
+      "folder": "8 слайдов карусель Белорусия",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «8 слайдов карусель Белорусия» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «8 слайдов карусель Белорусия»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 9,
+        "size_kb": 19248,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «8 слайдов карусель Белорусия»",
+        "cmd": "TIM: Изучи текущее состояние папки «8 слайдов карусель Белорусия», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «8 слайдов карусель Белорусия»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту 8 слайдов карусель Белорусия"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов 8 слайдов карусель Белорусия"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для 8 слайдов карусель Белорусия"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по 8 слайдов карусель Белорусия"
+        }
+      ],
+      "research_topic": "8 слайдов карусель Белорусия рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "AI Skills & Nobel Stabilization": {
+      "project": "AI Skills & Nobel Stabilization",
+      "folder": "AI Skills & Nobel Stabilization",
+      "state": "active",
+      "last_change": null,
+      "lead_agent": "Macroeconomic Risk & Skills Orchestrator",
+      "priority_score": 68,
+      "revenue_potential": "Сглаживание волатильности бизнес-выручки и системное применение 30 ИИ-навыков для устранения рутины.",
+      "why_first": "Математическое моделирование денежных потоков и активация специализированных агентных скиллов.",
+      "human_action": "Выбрать текущий сценарий макро-стабилизации (агрессивный рост vs защита ликвидности).",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Математическое моделирование денежных потоков и активация специализированных агентных скиллов.",
+        "cmd": "TIM: Изучи текущее состояние папки «AI Skills & Nobel Stabilization», оцени потенциал заработка и выполни первоочередной шаг: Математическое моделирование денежных потоков и активация специализированных агентных скиллов."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту AI Skills & Nobel Stabilization"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов AI Skills & Nobel Stabilization"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для AI Skills & Nobel Stabilization"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по AI Skills & Nobel Stabilization"
+        }
+      ],
+      "research_topic": "AI Skills & Nobel Stabilization рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "AI_Skills_And_Macro_Stabilization": {
+      "project": "AI_Skills_And_Macro_Stabilization",
+      "folder": "AI_Skills_And_Macro_Stabilization",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «AI_Skills_And_Macro_Stabilization» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «AI_Skills_And_Macro_Stabilization»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 67,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «AI_Skills_And_Macro_Stabilization»",
+        "cmd": "TIM: Изучи текущее состояние папки «AI_Skills_And_Macro_Stabilization», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «AI_Skills_And_Macro_Stabilization»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту AI_Skills_And_Macro_Stabilization"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов AI_Skills_And_Macro_Stabilization"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для AI_Skills_And_Macro_Stabilization"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по AI_Skills_And_Macro_Stabilization"
+        }
+      ],
+      "research_topic": "AI_Skills_And_Macro_Stabilization рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Alberta": {
+      "project": "Alberta",
+      "folder": "Alberta",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Alberta Creative & Kinfolk Director",
+      "priority_score": 83,
+      "revenue_potential": "Премиальный AI-контент + воронка лидогенерации и клубной подписки Alberta Shirani",
+      "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
+      "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 1,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1,
+        "size_kb": 1,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Упаковать PDF лид-магнит и сценарий Telegram-бота воронки Alberta Shirani",
+        "cmd": "TIM: Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta"
+      },
+      "recommended_agents": [
+        {
+          "key": "creative_producer",
+          "label": "🎬 Продюсер (VEO 3.1 видео-пайплайн)",
+          "cmd": "NEXT_STEPS: План генерации видео Google VEO 3.1 и финализации сайта Alberta"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Tripwire + Лид-магнит)",
+          "cmd": "MARKETING: Воронка Tripwire и выдачи PDF-гайда за контакт в Telegram"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Canvas Scroll 60fps)",
+          "cmd": "AUDIT_CODE: Проверить код и скорость сайта Alberta"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (Полный разбор)",
+          "cmd": "TIM: Собери план запуска и монетизации воронки Alberta Shirani на эту неделю"
+        }
+      ],
+      "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-9005",
+          "issue_number": 9005,
+          "date": "2026-10-22 08:18:48",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#9005 💳 Ключи ЮKassa/Prodamus для трипваера 490 ₽",
+          "summary": "🧑 Ждёт вашего действия · Далее: Передать API-ключи боту",
+          "status": "blocked_human"
+        }
+      ]
+    },
+    "Alex Brus Питер": {
+      "project": "Alex Brus Питер",
+      "folder": "Alex Brus Питер",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Construction Quiz & Lead Qualifier",
+      "priority_score": 68,
+      "revenue_potential": "Квиз-калькулятор сметы загородного дома с прогревом лидов и передачей в отдел продаж.",
+      "why_first": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
+      "human_action": "Сверить актуальные расценки за кубометр бруса для калькулятора сметы.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1889,
+        "size_kb": 199935,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
+        "cmd": "TIM: Изучи текущее состояние папки «Alex Brus Питер», оцени потенциал заработка и выполни первоочередной шаг: Расчет динамической сметы, сбор контактных данных и квалификация лидов."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Alex Brus Питер"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Alex Brus Питер"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Alex Brus Питер"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Alex Brus Питер"
+        }
+      ],
+      "research_topic": "Alex Brus Питер рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Alex ChopChop": {
+      "project": "Alex ChopChop",
+      "folder": "Alex ChopChop",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Retail & Local Services Growth Lead",
+      "priority_score": 68,
+      "revenue_potential": "LTV-маркетинг, возврат спящих клиентов и автоматизированная запись через мессенджеры.",
+      "why_first": "Пустая папка: нужна ли — уточнить цель или удалить.",
+      "human_action": "Согласовать дату запуска рассылки по спящей базе постоянных клиентов.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1,
+        "size_kb": 1,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Пустая папка: нужна ли — уточнить цель или удалить.",
+        "cmd": "TIM: Изучи текущее состояние папки «Alex ChopChop», оцени потенциал заработка и выполни первоочередной шаг: Пустая папка: нужна ли — уточнить цель или удалить."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Alex ChopChop"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Alex ChopChop"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Alex ChopChop"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Alex ChopChop"
+        }
+      ],
+      "research_topic": "Alex ChopChop рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Alviole": {
+      "project": "Alviole",
+      "folder": "Alviole",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Enterprise Outreach Lead",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «Alviole» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Проверить статус и актуальность.",
+      "human_action": "Решить: продолжать ли аутрич.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 4,
+        "size_kb": 32,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Проверить статус и актуальность.",
+        "cmd": "TIM: Изучи текущее состояние папки «Alviole», оцени потенциал заработка и выполни первоочередной шаг: Проверить статус и актуальность."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Alviole"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Alviole"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Alviole"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Alviole"
+        }
+      ],
+      "research_topic": "Alviole рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Beyondyourfood.com": {
+      "project": "Beyondyourfood.com",
+      "folder": "Beyondyourfood.com",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Beyondyourfood.com» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Пустая папка: нужна ли — уточнить цель или удалить.",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Пустая папка: нужна ли — уточнить цель или удалить.",
+        "cmd": "TIM: Изучи текущее состояние папки «Beyondyourfood.com», оцени потенциал заработка и выполни первоочередной шаг: Пустая папка: нужна ли — уточнить цель или удалить."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Beyondyourfood.com"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Beyondyourfood.com"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Beyondyourfood.com"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Beyondyourfood.com"
+        }
+      ],
+      "research_topic": "Beyondyourfood.com рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Funnydog": {
+      "project": "Funnydog",
+      "folder": "Funnydog",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Funnydog» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Funnydog»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 5,
+        "size_kb": 146755,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Funnydog»",
+        "cmd": "TIM: Изучи текущее состояние папки «Funnydog», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Funnydog»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Funnydog"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Funnydog"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Funnydog"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Funnydog"
+        }
+      ],
+      "research_topic": "Funnydog рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Ghost Ghetto Child (Музыка)": {
+      "project": "Ghost Ghetto Child (Музыка)",
+      "folder": "Ghost Ghetto Child (Музыка)",
+      "state": "active",
+      "last_change": "2026-10-23",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 89,
+      "revenue_potential": "Дистрибуция командного альбома 4 LIFE + медиа-пакет (фикс или прозрачная доля роялти)",
+      "why_first": "Вскрыта ошибка старого шаблонного оффера: это рэп-коллектив Р. П. ГОСТ / La Dagon Sector Inc. (лейбл 100PRO), готовящий альбом 4 LIFE и клип «Так закалялась сталь».",
+      "human_action": "Переписать оффер по реальным постам (альбом 4 LIFE) и свести условия оплаты к одному варианту.",
+      "counts": {
+        "completed_works": 1,
+        "open_tasks": 1,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 4,
+        "size_kb": 13,
+        "ai_analyses": 1,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Финализировать реальный оффер под релиз альбома 4 LIFE, клип и эфиры VTRNK Radio",
+        "cmd": "TIM: Напиши чистовой персонализированный оффер для коллектива Р. П. ГОСТ / Ghost Ghetto Child под релиз альбома 4 LIFE и клипа «Так закалялась сталь» с единым прозрачным условием оплаты"
+      },
+      "recommended_agents": [
+        {
+          "key": "creative_producer",
+          "label": "🎬 Медиа-Продюсер (План релиза 4 LIFE)",
+          "cmd": "TIM: Креативный Продюсер — составь промо-кампанию альбома 4 LIFE и клипа «Так закалялась сталь»"
+        },
+        {
+          "key": "sales_closer",
+          "label": "🤝 Продажи (Чистовой оффер артистам)",
+          "cmd": "TIM: Сформируй единое КП без противоречий для Ghost Ghetto Child / La Dagon Sector"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Пресейвы и Shorts)",
+          "cmd": "MARKETING: Воронка пресейвов альбома 4 LIFE на стримингах через Shorts/TG"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (Сводный план)",
+          "cmd": "STATUS: Проверить материалы в папке Ghost Ghetto Child (Музыка)"
+        }
+      ],
+      "research_topic": "продвижение независимого хип-хоп альбома пресейвы дистрибуция стриминги Россия 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-109",
+          "issue_number": 109,
+          "date": "2026-10-22 08:18:48",
+          "project": "Ghost Ghetto Child (Музыка)",
+          "type": "board_card",
+          "agent": "🎯 Ведущий агент проекта",
+          "title": "#109 Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)",
+          "summary": "🛠 В работе у агента · Далее: Подготовить финальный текст оффера для отправки",
+          "status": "in_progress"
+        },
+        {
+          "id": "hist-1",
+          "date": "19.10.2026 14:20",
+          "project": "Ghost Ghetto Child (Музыка)",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "PLAN_ACTIONS: Влаславу — Отправить готовый оффер артисту @ghostghettochild в Telegram",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        }
+      ]
+    },
+    "GitHub_Control_Panel": {
+      "project": "GitHub_Control_Panel",
+      "folder": "GitHub_Control_Panel",
+      "state": "active",
+      "last_change": "2026-10-29",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «GitHub_Control_Panel» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «GitHub_Control_Panel»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 4,
+        "size_kb": 556,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «GitHub_Control_Panel»",
+        "cmd": "TIM: Изучи текущее состояние папки «GitHub_Control_Panel», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «GitHub_Control_Panel»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту GitHub_Control_Panel"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов GitHub_Control_Panel"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для GitHub_Control_Panel"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по GitHub_Control_Panel"
+        }
+      ],
+      "research_topic": "GitHub_Control_Panel рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "GlobalFilms (Filmtools)": {
+      "project": "GlobalFilms (Filmtools)",
+      "folder": "GlobalFilms (Filmtools)",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Filmtools Production & Engineering Lead",
+      "priority_score": 87,
+      "revenue_potential": "SaaS для кинопродакшенов + автоматизация съёмочных смен и вызывных листов Светланы",
+      "why_first": "Платформа на Next.js 16 уже собрана на ноутбуке (вызывные листы, КПП, сценарии, бюджет) — готова к мобильному тесту со Светланой и коммерческой упаковке.",
+      "human_action": "Утвердить состав съемочной группы и внести актуальные тайминги ближайшей смены.",
+      "counts": {
+        "completed_works": 1,
+        "open_tasks": 1,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 1,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Запустить Filmtools и подготовить чек-лист полевого теста со Светланой со смартфона",
+        "cmd": "TIM: Подготовь сценарий мобильного демо-теста GlobalFilms (Filmtools) для Светланы и план упаковки сервиса в платный SaaS для продакшн-студий"
+      },
+      "recommended_agents": [
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Запуск Filmtools)",
+          "cmd": "LAUNCH_FILMTOOLS: Запустить сервис GlobalFilms (Filmtools)"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (SaaS монетизация)",
+          "cmd": "TIM: Разработай модель подписки Filmtools для киногрупп и продакшенов"
+        },
+        {
+          "key": "creative_producer",
+          "label": "🎬 Продюсер (КПП и Вызывные)",
+          "cmd": "NEXT_STEPS: Первоочередные улучшения вызывных листов и КПП"
+        },
+        {
+          "key": "vibe_coder",
+          "label": "⚡ Вайбкодер (TG-уведомления смен)",
+          "cmd": "TIM: Вайбкодер — спроектируй Telegram-бота рассылки вызывных листов актёрам из Filmtools"
+        }
+      ],
+      "research_topic": "облачные сервисы планирования киносъемок вызывные листы КПП аналоги Yamdu StudioBinder",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-9006",
+          "issue_number": 9006,
+          "date": "2026-10-22 08:18:48",
+          "project": "GlobalFilms (Filmtools)",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#9006 🎬 Проверить Filmtools со смартфона (с Светланой)",
+          "summary": "🧑 Ждёт вашего действия · Далее: Открыть https://unityspirit.github.io/remote-agents-control/globalfilms/index.html",
+          "status": "blocked_human"
+        },
+        {
+          "id": "hist-1",
+          "date": "19.10.2026 12:32",
+          "project": "GlobalFilms (Filmtools)",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "Разбор и запуск платформы кинопроизводства для Светланы (GlobalFilms / Filmtools)",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        }
+      ]
+    },
+    "Grok_xAI_Teammates": {
+      "project": "Grok_xAI_Teammates",
+      "folder": "Grok_xAI_Teammates",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous AI Teammates Architect",
+      "priority_score": 68,
+      "revenue_potential": "Запуск постоянных облачных ИИ-сотрудников ($30–$200/мес) с выделенными браузерными сессиями и доступом к CRM.",
+      "why_first": "Архитектура интеграции облачных агентов xAI, маршрутизация задач и веб-скрейпинг.",
+      "human_action": "Определить бюджет и ключевые задачи для первого облачного ИИ-сотрудника.",
+      "counts": {
+        "completed_works": 2,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 9,
+        "ai_analyses": 2,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Архитектура интеграции облачных агентов xAI, маршрутизация задач и веб-скрейпинг.",
+        "cmd": "TIM: Изучи текущее состояние папки «Grok_xAI_Teammates», оцени потенциал заработка и выполни первоочередной шаг: Архитектура интеграции облачных агентов xAI, маршрутизация задач и веб-скрейпинг."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Grok_xAI_Teammates"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Grok_xAI_Teammates"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Grok_xAI_Teammates"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Grok_xAI_Teammates"
+        }
+      ],
+      "research_topic": "Grok_xAI_Teammates рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-1",
+          "date": "22.10.2026 08:23",
+          "project": "Grok_xAI_Teammates",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxconv_demandgen&utm_content=828009486204&cc_gcl",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-125",
+          "issue_number": 125,
+          "date": "2026-10-22 08:24:06",
+          "project": "Grok_xAI_Teammates",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#125 https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxconv_demandgen&utm_content=828009486204&cc_gcl",
+          "summary": "✅ Готово",
+          "status": "done"
+        }
+      ]
+    },
+    "HipOP": {
+      "project": "HipOP",
+      "folder": "HipOP",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «HipOP» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «HipOP»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 17,
+        "size_kb": 4235,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «HipOP»",
+        "cmd": "TIM: Изучи текущее состояние папки «HipOP», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «HipOP»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту HipOP"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов HipOP"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для HipOP"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по HipOP"
+        }
+      ],
+      "research_topic": "HipOP рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Learn & Implement": {
+      "project": "Learn & Implement",
+      "folder": "Learn & Implement",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Learn & Implement» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Learn & Implement»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 14,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Learn & Implement»",
+        "cmd": "TIM: Изучи текущее состояние папки «Learn & Implement», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Learn & Implement»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Learn & Implement"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Learn & Implement"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Learn & Implement"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Learn & Implement"
+        }
+      ],
+      "research_topic": "Learn & Implement рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "NTYouTube": {
+      "project": "NTYouTube",
+      "folder": "NTYouTube",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «NTYouTube» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «NTYouTube»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 2,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «NTYouTube»",
+        "cmd": "TIM: Изучи текущее состояние папки «NTYouTube», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «NTYouTube»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту NTYouTube"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов NTYouTube"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для NTYouTube"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по NTYouTube"
+        }
+      ],
+      "research_topic": "NTYouTube рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Poker": {
+      "project": "Poker",
+      "folder": "Poker",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Poker AI Analyst",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «Poker» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Оценить состояние кода.",
+      "human_action": "Решить, нужен ли проект.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 11,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Оценить состояние кода.",
+        "cmd": "TIM: Изучи текущее состояние папки «Poker», оцени потенциал заработка и выполни первоочередной шаг: Оценить состояние кода."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Poker"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Poker"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Poker"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Poker"
+        }
+      ],
+      "research_topic": "Poker рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Ptg_Law": {
+      "project": "Ptg_Law",
+      "folder": "Ptg_Law",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Legal Tech & B2B Contracts Lead",
+      "priority_score": 68,
+      "revenue_potential": "Шаблонизация и автоматическая генерация юридических договоров, оферт и регламентов для клиентов холдинга.",
+      "why_first": "Оцифровка юридических документов и связка с формами лидогенерации.",
+      "human_action": "Утвердить перечень договоров и оферт для автоматической генерации.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 2,
+        "size_kb": 1,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Оцифровка юридических документов и связка с формами лидогенерации.",
+        "cmd": "TIM: Изучи текущее состояние папки «Ptg_Law», оцени потенциал заработка и выполни первоочередной шаг: Оцифровка юридических документов и связка с формами лидогенерации."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Ptg_Law"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Ptg_Law"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Ptg_Law"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Ptg_Law"
+        }
+      ],
+      "research_topic": "Ptg_Law рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "SoloMan": {
+      "project": "SoloMan",
+      "folder": "SoloMan",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "CRM Architect",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «SoloMan» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Есть только ТЗ: решить, строить CRM или нет.",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 7,
+        "size_kb": 182,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Есть только ТЗ: решить, строить CRM или нет.",
+        "cmd": "TIM: Изучи текущее состояние папки «SoloMan», оцени потенциал заработка и выполни первоочередной шаг: Есть только ТЗ: решить, строить CRM или нет."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту SoloMan"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов SoloMan"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для SoloMan"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по SoloMan"
+        }
+      ],
+      "research_topic": "SoloMan рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "SoloMan CRM": {
+      "project": "SoloMan CRM",
+      "folder": "SoloMan",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "CRM Architect",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «SoloMan CRM» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Оценить MVP по ТЗ и срок.",
+      "human_action": "Решить: строить CRM по ТЗ или взять готовое.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 7,
+        "size_kb": 182,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Оценить MVP по ТЗ и срок.",
+        "cmd": "TIM: Изучи текущее состояние папки «SoloMan CRM», оцени потенциал заработка и выполни первоочередной шаг: Оценить MVP по ТЗ и срок."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту SoloMan CRM"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов SoloMan CRM"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для SoloMan CRM"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по SoloMan CRM"
+        }
+      ],
+      "research_topic": "SoloMan CRM рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Study Screeshots": {
+      "project": "Study Screeshots",
+      "folder": "Study Screeshots",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Study Screeshots» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Study Screeshots»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 2,
+        "size_kb": 281,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Study Screeshots»",
+        "cmd": "TIM: Изучи текущее состояние папки «Study Screeshots», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Study Screeshots»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Study Screeshots"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Study Screeshots"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Study Screeshots"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Study Screeshots"
+        }
+      ],
+      "research_topic": "Study Screeshots рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Study Work Done": {
+      "project": "Study Work Done",
+      "folder": "Study Work Done",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Study Work Done» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Пустая папка: удалить или назначить цель.",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Пустая папка: удалить или назначить цель.",
+        "cmd": "TIM: Изучи текущее состояние папки «Study Work Done», оцени потенциал заработка и выполни первоочередной шаг: Пустая папка: удалить или назначить цель."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Study Work Done"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Study Work Done"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Study Work Done"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Study Work Done"
+        }
+      ],
+      "research_topic": "Study Work Done рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Thought/Мысль": {
+      "project": "Thought/Мысль",
+      "folder": "Thought/Мысль",
+      "state": "active",
+      "last_change": "25.10.2026",
+      "lead_agent": "System Cognitive Architect",
+      "priority_score": 68,
+      "revenue_potential": "Интеллектуальное ядро принятия решений, аккумулирующее инсайты Gartner и аналитику.",
+      "why_first": "Синтез данных между всеми узлами системы, аналитика рычагов роста и отчетность.",
+      "human_action": "Утвердить приоритетные стратегические направления на текущий квартал.",
+      "counts": {
+        "completed_works": 4,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 4,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Синтез данных между всеми узлами системы, аналитика рычагов роста и отчетность.",
+        "cmd": "TIM: Изучи текущее состояние папки «Thought/Мысль», оцени потенциал заработка и выполни первоочередной шаг: Синтез данных между всеми узлами системы, аналитика рычагов роста и отчетность."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Thought/Мысль"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Thought/Мысль"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Thought/Мысль"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Thought/Мысль"
+        }
+      ],
+      "research_topic": "Thought/Мысль рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-1",
+          "date": "25.10.2026 16:56",
+          "project": "Thought/Мысль",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-142",
+          "issue_number": 142,
+          "date": "2026-10-25 16:56:21",
+          "project": "Thought/Мысль",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#142 https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+          "summary": "✅ Готово",
+          "status": "done"
+        }
+      ]
+    },
+    "ThoughtМысль": {
+      "project": "ThoughtМысль",
+      "folder": "ThoughtМысль",
+      "state": "active",
+      "last_change": "2026-10-25",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «ThoughtМысль» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «ThoughtМысль»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 4,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 22,
+        "ai_analyses": 4,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «ThoughtМысль»",
+        "cmd": "TIM: Изучи текущее состояние папки «ThoughtМысль», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «ThoughtМысль»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту ThoughtМысль"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов ThoughtМысль"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для ThoughtМысль"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по ThoughtМысль"
+        }
+      ],
+      "research_topic": "ThoughtМысль рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-0",
+          "date": "25.10.2026 16:56",
+          "project": "ThoughtМысль",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        }
+      ]
+    },
+    "Traffic": {
+      "project": "Traffic",
+      "folder": "Traffic",
+      "state": "active",
+      "last_change": "2026-10-25",
+      "lead_agent": "Performance Marketing & Cold Outreach Lead",
+      "priority_score": 94,
+      "revenue_potential": "Масштабируемый доход Pay-on-Results + CPA: поток заявок для своих проектов и клиентов",
+      "why_first": "Единый двигатель продаж всего холдинга: связка автоворонок, холодного аутрича и коротких Reels/Shorts питает лидами B2B сайты, Доминикану и Micro-SaaS.",
+      "human_action": "Выбрать приоритетную нишу для холодного аутрича и утвердить оффер с гарантией.",
+      "counts": {
+        "completed_works": 9,
+        "open_tasks": 0,
+        "tim_reports": 2,
+        "saved_photos": 0,
+        "files_on_disk": 6,
+        "size_kb": 71,
+        "ai_analyses": 7,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Запустить связку Pay-on-Results аутрича + автоворонку лид-магнита на первую нишу",
+        "cmd": "TIM: Запусти боевую связку Traffic (оффер Pay-on-Results + скрипт аутрича + воронка в Telegram) для получения первых 15 B2B лидов за 72 часа"
+      },
+      "recommended_agents": [
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Pay-on-Results связка)",
+          "cmd": "TIM: Маркетолог — собери оффер Pay-on-Results и 3-шаговую автоворонку трафика"
+        },
+        {
+          "key": "sales_closer",
+          "label": "🤝 Продажи (Холодные письма ЛПР)",
+          "cmd": "/email Напиши серию из 3 холодных B2B писем с высокой конверсией для продажи лидогенерации"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План трафика)",
+          "cmd": "TIM: Распредели бюджет 0₽ (органика + аутрич + CPA) для генерации первых оплат"
+        },
+        {
+          "key": "creative_producer",
+          "label": "🎬 Продюсер (3 хука для Reels/Shorts)",
+          "cmd": "/viral Создай 5 виральных хуков Reels/Shorts для привлечения B2B клиентов"
+        }
+      ],
+      "research_topic": "B2B лидогенерация Pay on Results холодный аутрич Telegram конверсионные связки 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-7",
+          "date": "23.10.2026 19:09",
+          "project": "Traffic",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "[Ответ к #131] /ceo",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-8",
+          "date": "23.10.2026 19:06",
+          "project": "Traffic",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "REPORT: Полный отчёт по проектам",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-9",
+          "date": "23.10.2026 18:25",
+          "project": "Traffic",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-10",
+          "date": "22.10.2026 08:21",
+          "project": "Traffic",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261025_153816",
+          "issue_number": null,
+          "date": "2026-10-25 15:38:16",
+          "project": "Traffic",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Отчет_Tim_20261025_153816_Аудит_Автономных_Задач_И_Новые_Запросы",
+          "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "card-133",
+          "issue_number": 133,
+          "date": "2026-10-23 19:09:53",
+          "project": "Traffic",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#133 [Ответ к #131] /ceo",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-134",
+          "issue_number": 134,
+          "date": "2026-10-23 19:07:15",
+          "project": "Traffic",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#134 REPORT: Полный отчёт по проектам",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-130",
+          "issue_number": 130,
+          "date": "2026-10-23 18:26:11",
+          "project": "Traffic",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#130 PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+          "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
+          "status": "done"
+        },
+        {
+          "id": "card-131",
+          "issue_number": 131,
+          "date": "2026-10-23 18:23:28",
+          "project": "Traffic",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#131 PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+          "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
+          "status": "done"
+        },
+        {
+          "id": "tim-1792716593",
+          "issue_number": null,
+          "date": "2026-10-22 18:49:53",
+          "project": "Traffic",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "README",
+          "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "card-128",
+          "issue_number": 128,
+          "date": "2026-10-22 08:21:09",
+          "project": "Traffic",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#128 https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.",
+          "summary": "✅ Готово",
+          "status": "done"
+        }
+      ]
+    },
+    "Tripwires": {
+      "project": "Tripwires",
+      "folder": "Tripwires",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Tripwire Product Lead",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «Tripwires» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Выбрать один лид-магнит для запуска.",
+      "human_action": "Выбрать 1 лид-магнит для запуска.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 13,
+        "size_kb": 59,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Выбрать один лид-магнит для запуска.",
+        "cmd": "TIM: Изучи текущее состояние папки «Tripwires», оцени потенциал заработка и выполни первоочередной шаг: Выбрать один лид-магнит для запуска."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Tripwires"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Tripwires"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Tripwires"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Tripwires"
+        }
+      ],
+      "research_topic": "Tripwires рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "True 1 Team": {
+      "project": "True 1 Team",
+      "folder": "True 1 Team",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «True 1 Team» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «True 1 Team»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 5074,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «True 1 Team»",
+        "cmd": "TIM: Изучи текущее состояние папки «True 1 Team», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «True 1 Team»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту True 1 Team"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов True 1 Team"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для True 1 Team"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по True 1 Team"
+        }
+      ],
+      "research_topic": "True 1 Team рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "USP — Поддержка переезда": {
+      "project": "USP — Поддержка переезда",
+      "folder": "План для Иностранцев (Relocation)",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Relocation Partnerships Lead",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «USP — Поддержка переезда» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Подготовить письма партнёрам из готовых баз.",
+      "human_action": "Выбрать страну для первого партнёрского аутрича.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 26,
+        "size_kb": 524,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Подготовить письма партнёрам из готовых баз.",
+        "cmd": "TIM: Изучи текущее состояние папки «USP — Поддержка переезда», оцени потенциал заработка и выполни первоочередной шаг: Подготовить письма партнёрам из готовых баз."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту USP — Поддержка переезда"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов USP — Поддержка переезда"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для USP — Поддержка переезда"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по USP — Поддержка переезда"
+        }
+      ],
+      "research_topic": "USP — Поддержка переезда рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "План для Иностранцев (Relocation)": {
+      "project": "План для Иностранцев (Relocation)",
+      "folder": "План для Иностранцев (Relocation)",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Relocation Partnerships Lead",
+      "priority_score": 68,
+      "revenue_potential": "Партнерские программы релокации, образовательные и инвестиционные миграционные каналы (Канада, Дубай, Саудия).",
+      "why_first": "Подготовка пакетов предложений партнерам из готовых баз и рассылка.",
+      "human_action": "Выбрать целевую страну для первого B2B партнерского аутрича.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 26,
+        "size_kb": 524,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Подготовка пакетов предложений партнерам из готовых баз и рассылка.",
+        "cmd": "TIM: Изучи текущее состояние папки «План для Иностранцев (Relocation)», оцени потенциал заработка и выполни первоочередной шаг: Подготовка пакетов предложений партнерам из готовых баз и рассылка."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту План для Иностранцев (Relocation)"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов План для Иностранцев (Relocation)"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для План для Иностранцев (Relocation)"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по План для Иностранцев (Relocation)"
+        }
+      ],
+      "research_topic": "План для Иностранцев (Relocation) рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Unity Inc": {
+      "project": "Unity Inc",
+      "folder": "Unity Inc",
+      "state": "active",
+      "last_change": "2026-10-23",
+      "lead_agent": "Enterprise Solutions Architect",
+      "priority_score": 92,
+      "revenue_potential": "Enterprise AI-аудиты и внедрение автоматизации: чеки $1,000 – $3,500 (50–250 тыс. ₽)",
+      "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
+      "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
+      "counts": {
+        "completed_works": 92,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 10,
+        "size_kb": 283168,
+        "ai_analyses": 92,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Упаковать 40-минутный B2B AI-Аудит Global Plus + оффер навигатора и автоматизации",
+        "cmd": "TIM: Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (B2B Оффер Global Plus)",
+          "cmd": "TIM: Сформируй B2B пакет AI-автоматизации и кибербезопасности для Unity Inc"
+        },
+        {
+          "key": "sales_closer",
+          "label": "🤝 Продажи (Скрипт 40-мин аудита)",
+          "cmd": "TIM: Отдел Продаж — составь чек-лист проведения 40-минутного продающего аудита с ЛПР"
+        },
+        {
+          "key": "strategist",
+          "label": "📊 Стратег (Линейка тарифов)",
+          "cmd": "/ceo Рассчитай 3 тарифа внедрения AI-агентов для B2B клиентов Unity Inc"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Статус сайтов)",
+          "cmd": "STATUS: Проверить готовность файлов и презентаций Unity Inc"
+        }
+      ],
+      "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-1",
+          "date": "23.10.2026 18:20",
+          "project": "Unity Inc",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-132",
+          "issue_number": 132,
+          "date": "2026-10-23 18:21:27",
+          "project": "Unity Inc",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#132 /ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
+          "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
+          "status": "done"
+        }
+      ]
+    },
+    "antigravity": {
+      "project": "antigravity",
+      "folder": "antigravity",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «antigravity» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «antigravity»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 1,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «antigravity»",
+        "cmd": "TIM: Изучи текущее состояние папки «antigravity», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «antigravity»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту antigravity"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов antigravity"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для antigravity"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по antigravity"
+        }
+      ],
+      "research_topic": "antigravity рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-84",
+          "issue_number": 84,
+          "date": "2026-10-22 08:18:47",
+          "project": "antigravity",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#84 https://youtube.com/shorts/hRdxDtdz6RA?is=GJ9t98y5nuWZTIx4 30 skills 4 you to install!",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #84»",
+          "status": "not_studied"
+        }
+      ]
+    },
+    "i&D белорусь": {
+      "project": "i&D белорусь",
+      "folder": "i&D белорусь",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «i&D белорусь» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «i&D белорусь»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 63158,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «i&D белорусь»",
+        "cmd": "TIM: Изучи текущее состояние папки «i&D белорусь», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «i&D белорусь»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту i&D белорусь"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов i&D белорусь"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для i&D белорусь"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по i&D белорусь"
+        }
+      ],
+      "research_topic": "i&D белорусь рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Автономная_База_Знаний_Каналов": {
+      "project": "Автономная_База_Знаний_Каналов",
+      "folder": "Автономная_База_Знаний_Каналов",
+      "state": "active",
+      "last_change": "2026-10-29",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 79,
+      "revenue_potential": "Постоянный приток свежих связок из @vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey",
+      "why_first": "Фоновый монитор каждые 45 минут разбирает новые посты каналов и находит идеи Micro-SaaS, инфоповоды кибербезопасности и конкурентные фичи.",
+      "human_action": "Определить цель и ответственного.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 6,
+        "size_kb": 32,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Собрать свежую выжимку монетизируемых идей из всех подключённых Telegram-каналов",
+        "cmd": "TIM: Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе"
+      },
+      "recommended_agents": [
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Сводка каналов)",
+          "cmd": "STATUS: Проверить свежие разборы каналов в Автономная_База_Знаний_Каналов"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (ТОП-3 связки)",
+          "cmd": "TIM: Выбери самые прибыльные инструменты из изученных TG-каналов для внедрения"
+        },
+        {
+          "key": "vibe_coder",
+          "label": "⚡ Вайбкодер (Клон лучшей фичи)",
+          "cmd": "TIM: Вайбкодер — упакуй сервис навигатора TG-каналов (по кейсу JoinTECH) как наш мини-продукт"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Дайджест Global Plus)",
+          "cmd": "TIM: Маркетолог — собери 3 экспертных поста для Global Plus по фактам @sysadminfuture"
+        }
+      ],
+      "research_topic": "тренды Telegram Mini Apps и AI автоматизации бизнеса Россия октябрь 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Автошкола": {
+      "project": "Автошкола",
+      "folder": "Автошкола",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Автошкола» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Автошкола»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 66971,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Автошкола»",
+        "cmd": "TIM: Изучи текущее состояние папки «Автошкола», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Автошкола»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Автошкола"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Автошкола"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Автошкола"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Автошкола"
+        }
+      ],
+      "research_topic": "Автошкола рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Белорусь": {
+      "project": "Белорусь",
+      "folder": "Белорусь",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Fitness & Nutrition Web Lead",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «Белорусь» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Довести сайт до публикации, подготовить контент и лид-форму.",
+      "human_action": "Утвердить версию сайта и сгенерировать видео VEO по готовым промптам.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3987,
+        "size_kb": 620500,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Довести сайт до публикации, подготовить контент и лид-форму.",
+        "cmd": "TIM: Изучи текущее состояние папки «Белорусь», оцени потенциал заработка и выполни первоочередной шаг: Довести сайт до публикации, подготовить контент и лид-форму."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Белорусь"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Белорусь"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Белорусь"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Белорусь"
+        }
+      ],
+      "research_topic": "Белорусь рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Белый Доминикана": {
+      "project": "Белый Доминикана",
+      "folder": "Белый Доминикана",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Hospitality & Direct Booking Specialist",
+      "priority_score": 85,
+      "revenue_potential": "Экономия 18% комиссии Booking/Airbnb + комиссия/фикс с прямых бронирований вилл Las Terrenas",
+      "why_first": "Готова концепция прямого бронирования вилл (Profitroom + WhatsApp): владельцы вилл в Лас-Терренас теряют 15–18% на OTA и охотно идут на прямые заявки.",
+      "human_action": "Подтвердить номер WhatsApp / CRM для прямого приема бронирований от туристов.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 1,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 2083,
+        "size_kb": 304514,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Подготовить WhatsApp-оффер для 5 владельцев вилл/апарт-отелей в Лас-Терренас",
+        "cmd": "TIM: Напиши готовые WhatsApp-сообщения на русском, английском и испанском для 5 владельцев вилл в Las Terrenas (прямые бронирования 0% комиссии OTA)"
+      },
+      "recommended_agents": [
+        {
+          "key": "sales_closer",
+          "label": "🤝 Продажи (WhatsApp скрипт виллам)",
+          "cmd": "TIM: Подготовь WhatsApp аутрич владельцам вилл Las Terrenas с расчётом экономии 18% OTA"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Трафик туристов)",
+          "cmd": "MARKETING: Воронка привлечения туристов на прямую аренду вилл в Доминикане"
+        },
+        {
+          "key": "vibe_coder",
+          "label": "⚡ Вайбкодер (Калькулятор брони)",
+          "cmd": "TIM: Вайбкодер — собери виджет прямого расчёта брони виллы с переходом в WhatsApp"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План сделки)",
+          "cmd": "NEXT_STEPS: Следующие шаги по проекту Белый Доминикана"
+        }
+      ],
+      "research_topic": "Las Terrenas Dominican Republic luxury villa rentals direct booking market 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-9004",
+          "issue_number": 9004,
+          "date": "2026-10-22 08:18:48",
+          "project": "Белый Доминикана",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#9004 💬 WhatsApp 5 контактам в Лас-Терренас",
+          "summary": "🧑 Ждёт вашего действия · Далее: Отправить сообщения по готовому питчу",
+          "status": "blocked_human"
+        }
+      ]
+    },
+    "Визуализированый Транспорт": {
+      "project": "Визуализированый Транспорт",
+      "folder": "Визуализированый Транспорт",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Визуализированый Транспорт» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Визуализированый Транспорт»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 5,
+        "size_kb": 412,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Визуализированый Транспорт»",
+        "cmd": "TIM: Изучи текущее состояние папки «Визуализированый Транспорт», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Визуализированый Транспорт»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Визуализированый Транспорт"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Визуализированый Транспорт"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Визуализированый Транспорт"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Визуализированый Транспорт"
+        }
+      ],
+      "research_topic": "Визуализированый Транспорт рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Виртуальный Офис": {
+      "project": "Виртуальный Офис",
+      "folder": "Виртуальный Офис",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Виртуальный Офис» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Виртуальный Офис»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 1,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Виртуальный Офис»",
+        "cmd": "TIM: Изучи текущее состояние папки «Виртуальный Офис», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Виртуальный Офис»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Виртуальный Офис"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Виртуальный Офис"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Виртуальный Офис"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Виртуальный Офис"
+        }
+      ],
+      "research_topic": "Виртуальный Офис рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-9001",
+          "issue_number": 9001,
+          "date": "2026-10-22 08:18:48",
+          "project": "Виртуальный Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#9001 🔑 Сменить GitHub-токен (старый был в открытом виде в скриптах; теперь вынесен в .office_secrets.json, но его надо перевыпустить)",
+          "summary": "🧑 Ждёт вашего действия · Далее: GitHub → Settings → Developer settings → fine-grained token; записать в .office_secrets.json",
+          "status": "blocked_human"
+        }
+      ]
+    },
+    "Входящие_Офис": {
+      "project": "Входящие_Офис",
+      "folder": "Входящие_Офис",
+      "state": "active",
+      "last_change": "2026-10-29",
+      "lead_agent": "Triage & Intelligence Distribution Architect",
+      "priority_score": 68,
+      "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
+      "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
+      "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 23,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
+        "cmd": "TIM: Изучи текущее состояние папки «Входящие_Офис», оцени потенциал заработка и выполни первоочередной шаг: Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Входящие_Офис"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Входящие_Офис"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Входящие_Офис"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Входящие_Офис"
+        }
+      ],
+      "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-157",
+          "issue_number": 157,
+          "date": "2026-10-29 08:07:40",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#157 Hope anything app learn about it and let's make the same for us!!!!",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #157 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-150",
+          "issue_number": 150,
+          "date": "2026-10-28 07:01:23",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#150 Anthropic выпустила новый ГАЙД по ИИ-агентам — в этот раз рассказали про субагентов и сокращение затрат.  Особенно полезно тем, кто разрабат",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #150 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-151",
+          "issue_number": 151,
+          "date": "2026-10-28 07:00:44",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#151 ⚡️ Сэм Альтман устроил ПОДГОН — OpenAI дропнула модель GPT-6.1 Terra.  Теперь втрое быстрее справляется с задачами на компе, умеет заполнять",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #151 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-152",
+          "issue_number": 152,
+          "date": "2026-10-28 06:59:59",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#152 What is sharktank https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2 What is he talking about?",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #152»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-153",
+          "issue_number": 153,
+          "date": "2026-10-28 06:59:16",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#153 https://www.instagram.com/intermiamibuzz пример бизнеса в автоматическом режиме",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #153»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-154",
+          "issue_number": 154,
+          "date": "2026-10-28 06:58:41",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#154 🌟 Скилл для ИИ соберёт ваше древо до седьмого колена  В сети появился скилл, который строит полное генеалогическое древо по тысячам источник",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #154 → Личное — обучение и релокация» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
+        {
+          "id": "card-155",
+          "issue_number": 155,
+          "date": "2026-10-28 06:58:18",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#155 https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they project",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #155 → Grok_xAI_Teammates» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
+        {
+          "id": "card-147",
+          "issue_number": 147,
+          "date": "2026-10-26 11:11:20",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#147 https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaig",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #147 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-148",
+          "issue_number": 148,
+          "date": "2026-10-26 11:10:16",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#148 https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #148»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-149",
+          "issue_number": 149,
+          "date": "2026-10-26 11:09:17",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#149 https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #149»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-146",
+          "issue_number": 146,
+          "date": "2026-10-25 18:31:06",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#146 https://delvi.tech/?gad_source=2&gad_campaignid=23878973489 изучи проект научись сделай такой проект прибыльным для меня!",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #146 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-144",
+          "issue_number": 144,
+          "date": "2026-10-25 17:15:07",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#144 https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_ter",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #144 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-143",
+          "issue_number": 143,
+          "date": "2026-10-25 17:09:43",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#143 https://www.abacum.ai/?utm_feeditemid=&utm_device=m&utm_term=&utm_source=google&utm_medium=paid-search&utm_campaign=PPC+%7C+Search+%7C+Brand",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #143 → …»",
+          "status": "need_project"
+        },
+        {
+          "id": "card-141",
+          "issue_number": 141,
+          "date": "2026-10-25 15:55:37",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#141 https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=8288",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #141 → AI Skills & Nobel Stabilization» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
+        {
+          "id": "card-137",
+          "issue_number": 137,
+          "date": "2026-10-25 08:36:48",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#137 https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #137»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-138",
+          "issue_number": 138,
+          "date": "2026-10-25 08:36:21",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#138 https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #138 → Unity Inc» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
+        {
+          "id": "card-139",
+          "issue_number": 139,
+          "date": "2026-10-25 08:35:47",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#139 https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference?",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #139»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-140",
+          "issue_number": 140,
+          "date": "2026-10-25 08:35:13",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#140 https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #140 → …»",
+          "status": "need_project"
+        }
+      ]
+    },
+    "Дима Верхняя Синичиха Алапаевск": {
+      "project": "Дима Верхняя Синичиха Алапаевск",
+      "folder": "Дима Верхняя Синичиха Алапаевск",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "B2B Industrial & Factory Sales Lead",
+      "priority_score": 96,
+      "revenue_potential": "Быстрые B2B чеки 50 000 – 250 000 ₽: 62 завода Урала + 15 готовых демо-сайтов ЗКСК",
+      "why_first": "Самый короткий путь к живым B2B-деньгам: уже собрана база 62 предприятий и 15 адаптированных демо-сайтов, остаётся разослать персонализированные КП директорам.",
+      "human_action": "Отправить сгенерированное коммерческое предложение Диме и согласовать условия оплаты.",
+      "counts": {
+        "completed_works": 1,
+        "open_tasks": 1,
+        "tim_reports": 1,
+        "saved_photos": 0,
+        "files_on_disk": 49,
+        "size_kb": 36353,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Подготовить пакет из 10 персональных КП директорам заводов Урала/ЗКСК для отправки сегодня",
+        "cmd": "TIM: Сформируй 10 персонализированных сообщений/КП для директоров заводов Урала (Алапаевск / ЗКСК / щебень) со скриптом закрытия на созвон"
+      },
+      "recommended_agents": [
+        {
+          "key": "sales_closer",
+          "label": "🤝 B2B Продажи (10 КП директорам)",
+          "cmd": "TIM: Отдел B2B Продаж — напиши готовые КП и WhatsApp/Email скрипты для директоров заводов Алапаевск/ЗКСК"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (Сделка с Димой)",
+          "cmd": "TIM: Упакуй коммерческие условия работы с Димой (фикс + % с поставок щебня/ЗКСК)"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Калькулятор логистики)",
+          "cmd": "MARKETING: Лид-магнит калькулятор доставки щебня с карьера для B2B снабженцев"
+        },
+        {
+          "key": "strategist",
+          "label": "📊 Стратег (Unit-экономика)",
+          "cmd": "NEXT_STEPS: Приоритетные шаги монетизации по Алапаевску"
+        }
+      ],
+      "research_topic": "закупки щебня и инертных материалов Урал Свердловская область тендеры строительные компании 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "tim-20261022_185317",
+          "issue_number": null,
+          "date": "2026-10-22 18:53:17",
+          "project": "Дима Верхняя Синичиха Алапаевск",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🤝 B2B Продажи & Офферы, 📊 Стратег, 💻 Главный Разработчик",
+          "title": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
+          "summary": "Тим скоординировал 3 отделов (B2B Продажи & Офферы, Стратег, Главный Разработчик) для проекта Дима Верхняя Синичиха Алапаевск.",
+          "human_action": "",
+          "status": "done"
+        },
+        {
+          "id": "card-9003",
+          "issue_number": 9003,
+          "date": "2026-10-22 08:18:48",
+          "project": "Дима Верхняя Синичиха Алапаевск",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#9003 ✉️ Отправить 10 КП директорам (Урал)",
+          "summary": "🧑 Ждёт вашего действия · Далее: Отправить письма по готовым шаблонам и базе 62 предприятий",
+          "status": "blocked_human"
+        }
+      ]
+    },
+    "Егор Трансфер": {
+      "project": "Егор Трансфер",
+      "folder": "Егор Трансфер",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Logistics & Instant Booking Dispatcher",
+      "priority_score": 68,
+      "revenue_potential": "Мгновенный заказ трансфера в 2 клика со смартфона с диспетчеризацией в Telegram.",
+      "why_first": "Поддержка формы мгновенного заказа и передача структурированных заявок в бота.",
+      "human_action": "Проверить прием уведомлений в Telegram-канале диспетчеров трансфера.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1132,
+        "size_kb": 286761,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Поддержка формы мгновенного заказа и передача структурированных заявок в бота.",
+        "cmd": "TIM: Изучи текущее состояние папки «Егор Трансфер», оцени потенциал заработка и выполни первоочередной шаг: Поддержка формы мгновенного заказа и передача структурированных заявок в бота."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Егор Трансфер"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Егор Трансфер"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Егор Трансфер"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Егор Трансфер"
+        }
+      ],
+      "research_topic": "Егор Трансфер рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "КМВ": {
+      "project": "КМВ",
+      "folder": "КМВ",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Regional Sales Kit Lead",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «КМВ» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «КМВ»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 15,
+        "size_kb": 490,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «КМВ»",
+        "cmd": "TIM: Изучи текущее состояние папки «КМВ», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «КМВ»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту КМВ"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов КМВ"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для КМВ"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по КМВ"
+        }
+      ],
+      "research_topic": "КМВ рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Карусель Белорусь": {
+      "project": "Карусель Белорусь",
+      "folder": "Карусель Белорусь",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Карусель Белорусь» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Карусель Белорусь»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 16377,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Карусель Белорусь»",
+        "cmd": "TIM: Изучи текущее состояние папки «Карусель Белорусь», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Карусель Белорусь»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Карусель Белорусь"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Карусель Белорусь"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Карусель Белорусь"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Карусель Белорусь"
+        }
+      ],
+      "research_topic": "Карусель Белорусь рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Костя": {
+      "project": "Костя",
+      "folder": "Костя",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Trading Bot Analyst",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «Костя» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит бота.",
+      "human_action": "Решить, нужен ли проект.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 52,
+        "size_kb": 15786,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит бота.",
+        "cmd": "TIM: Изучи текущее состояние папки «Костя», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит бота."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Костя"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Костя"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Костя"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Костя"
+        }
+      ],
+      "research_topic": "Костя рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Личное — обучение и релокация": {
+      "project": "Личное — обучение и релокация",
+      "folder": "Личное — обучение и релокация",
+      "state": "active",
+      "last_change": "2026-10-23",
+      "lead_agent": "Education & Global Mobility Lead",
+      "priority_score": 68,
+      "revenue_potential": "Поступление в Hive Helsinki (бесплатное обучение) и получение студенческого ВНЖ Финляндии с правом работы.",
+      "why_first": "Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ.",
+      "human_action": "Пройти 2-часовой онлайн-тест на память и логику на сайте hive.fi.",
+      "counts": {
+        "completed_works": 1,
+        "open_tasks": 0,
+        "tim_reports": 1,
+        "saved_photos": 0,
+        "files_on_disk": 2,
+        "size_kb": 9,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ.",
+        "cmd": "TIM: Изучи текущее состояние папки «Личное — обучение и релокация», оцени потенциал заработка и выполни первоочередной шаг: Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Личное — обучение и релокация"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Личное — обучение и релокация"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Личное — обучение и релокация"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Личное — обучение и релокация"
+        }
+      ],
+      "research_topic": "Личное — обучение и релокация рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "tim-20261023_161241",
+          "issue_number": 129,
+          "date": "2026-10-23 16:12:41",
+          "project": "Личное — обучение и релокация",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 💻 Главный Разработчик, 📊 Стратег, 📈 Маркетолог & Трафик",
+          "title": "Разбор вакансии Digital Marketing Assistant (Remote, AED 5,000/мес) от Jimmy Dante для Vladislav Tundas",
+          "summary": "Тим скоординировал 4 отделов (Аналитик & Разведчик, Главный Разработчик, Стратег, Маркетолог & Трафик) для проекта Личное — обучение и релокация.",
+          "human_action": "",
+          "status": "done"
+        }
+      ]
+    },
+    "Москвабад": {
+      "project": "Москвабад",
+      "folder": "Москвабад",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Москвабад» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Москвабад»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 14,
+        "size_kb": 690,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Москвабад»",
+        "cmd": "TIM: Изучи текущее состояние папки «Москвабад», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Москвабад»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Москвабад"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Москвабад"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Москвабад"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Москвабад"
+        }
+      ],
+      "research_topic": "Москвабад рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Позновалка": {
+      "project": "Позновалка",
+      "folder": "Позновалка",
+      "state": "active",
+      "last_change": "2026-10-28",
+      "lead_agent": "Swarm Knowledge & Media Extraction Agent",
+      "priority_score": 76,
+      "revenue_potential": "Центральный мозг холдинга: превращение сохранённых ссылок, фото и заметок в рабочие продукты",
+      "why_first": "Все ваши фото, заметки и ссылки с телефона стекаются сюда и связываются с боевыми проектами.",
+      "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
+      "counts": {
+        "completed_works": 27,
+        "open_tasks": 10,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 162,
+        "size_kb": 1076,
+        "ai_analyses": 27,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести ревизию сохранённых материалов Позновалки и передать лучшие в боевые папки",
+        "cmd": "TIM: Проведи ревизию последних записей Позновалки и предложи 3 конкретных внедрения в проекты холдинга"
+      },
+      "recommended_agents": [
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Инвентаризация базы)",
+          "cmd": "STATUS: Сводка накопленных материалов в папке Позновалка"
+        },
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План внедрения)",
+          "cmd": "TIM: Выдели самые ценные материалы из Позновалки для монетизации"
+        },
+        {
+          "key": "strategist",
+          "label": "📊 Стратег (Связи проектов)",
+          "cmd": "PLAN_ACTIONS: Матрица применения знаний Позновалки по проектам"
+        }
+      ],
+      "research_topic": "personal knowledge management AI second brain monetization workflows",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-11",
+          "date": "28.10.2026 07:53",
+          "project": "Позновалка",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "/strategy",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-12",
+          "date": "21.10.2026 08:44",
+          "project": "Позновалка",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and tell me how we make millions of dollars as soo",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-156",
+          "issue_number": 156,
+          "date": "2026-10-28 07:53:09",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#156 /strategy",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-123",
+          "issue_number": 123,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#123 https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and tell me how we make millions of dollars as soo",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #123»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-107",
+          "issue_number": 107,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧠 Аналитик",
+          "title": "#107 @sysadminfuture — агент-дайджест группы раз в сутки",
+          "summary": "🛠 В работе у агента · Далее: Собрать агента-дайджест: 5 пунктов «что важно» + ссылка на источник",
+          "status": "in_progress"
+        },
+        {
+          "id": "card-103",
+          "issue_number": 103,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#103 https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео и создай для нас пошаговый план действий что ",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #103»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-102",
+          "issue_number": 102,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#102 https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h изучи и примени инструменты и создай план для нас по этим действиям что выгодно для нас и ч",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #102»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-77",
+          "issue_number": 77,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🤖 agent",
+          "title": "#77 https://www.hostinger.com/vps-hosting?utm_source=google&utm_medium=cpc&utm_id=22770842092&utm_campaign=Intent-VAC-DemandGen-VPS|NT:YouTube|L",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Повторить разбор: «🔁 Повторить разбор #77»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-74",
+          "issue_number": 74,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#74 https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn and dothe",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-71",
+          "issue_number": 71,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#71 https://www.instagram.com/p/DeBnQdxFCbE/?img_index=4&vrfl=MWszbXZpbG9lYzNwZg== now learn from this slides how do we generat unlimited conten",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-70",
+          "issue_number": 70,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#70 https://youtu.be/Hgd1rxrIYGM?is=9vpq9S1p-C8lo_3K learn what he says and let's make a special folder for you to learn from and continue work ",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #70»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-67",
+          "issue_number": 67,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#67 https://www.instagram.com/p/DdlzMA8iXG7/?psln=dXFjenR2enBlODU= learn and tell me what repos are they talking about? And how do we implement ",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-47",
+          "issue_number": 47,
+          "date": "2026-10-22 08:18:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#47 https://www.instagram.com/p/DeJ53nTAJOd/?img_index=8&dlrf=MTNybjN6Z3F3aTk3ZA== изучи о чём этот репозиторий!",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
+          "status": "not_studied"
+        },
+        {
+          "id": "hist-13",
+          "date": "20.10.2026 10:45",
+          "project": "Позновалка",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/ipa-investigator/?cm",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-14",
+          "date": "19.10.2026 14:58",
+          "project": "Позновалка",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://www.astons.com/residency-by-investment/greece/?utm_source=google&utm_medium=cpc&utm_campaign=rez_greece_dgen_eu_en_24092026&utm_cont",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-15",
+          "date": "19.10.2026 14:46",
+          "project": "Позновалка",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "https://bogatushin.com/web_v11/gaigents?utm_source=google&utm_medium=cpc&utm_campaign=24358258691&utm_content=196423618770_828100227048_m_22",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        }
+      ]
+    },
+    "Проект_19_10_1053": {
+      "project": "Проект_19_10_1053",
+      "folder": "Проект_19_10_1053",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Проект_19_10_1053» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Проект_19_10_1053»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 2,
+        "size_kb": 1,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Проект_19_10_1053»",
+        "cmd": "TIM: Изучи текущее состояние папки «Проект_19_10_1053», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Проект_19_10_1053»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Проект_19_10_1053"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Проект_19_10_1053"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Проект_19_10_1053"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Проект_19_10_1053"
+        }
+      ],
+      "research_topic": "Проект_19_10_1053 рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Региональные Sales Kit (Урал / КМВ / Рязань)": {
+      "project": "Региональные Sales Kit (Урал / КМВ / Рязань)",
+      "folder": "КМВ",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Regional Sales Kit Lead",
+      "priority_score": 68,
+      "revenue_potential": "Развитие направления «Региональные Sales Kit (Урал / КМВ / Рязань)» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Собрать шаблон Sales Kit и подготовить следующий регион по образцу Урал/КМВ.",
+      "human_action": "Отправить КП директорам по готовой базе предприятий.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 15,
+        "size_kb": 490,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Собрать шаблон Sales Kit и подготовить следующий регион по образцу Урал/КМВ.",
+        "cmd": "TIM: Изучи текущее состояние папки «Региональные Sales Kit (Урал / КМВ / Рязань)», оцени потенциал заработка и выполни первоочередной шаг: Собрать шаблон Sales Kit и подготовить следующий регион по образцу Урал/КМВ."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Региональные Sales Kit (Урал / КМВ / Рязань)"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Региональные Sales Kit (Урал / КМВ / Рязань)"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Региональные Sales Kit (Урал / КМВ / Рязань)"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Региональные Sales Kit (Урал / КМВ / Рязань)"
+        }
+      ],
+      "research_topic": "Региональные Sales Kit (Урал / КМВ / Рязань) рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Рязань": {
+      "project": "Рязань",
+      "folder": "Рязань",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Regional Sales Kit Lead",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Рязань» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Проект замер с 23.08: решить, оформлять ли как шаблон Sales Kit.",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 12,
+        "size_kb": 87,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Проект замер с 23.08: решить, оформлять ли как шаблон Sales Kit.",
+        "cmd": "TIM: Изучи текущее состояние папки «Рязань», оцени потенциал заработка и выполни первоочередной шаг: Проект замер с 23.08: решить, оформлять ли как шаблон Sales Kit."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Рязань"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Рязань"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Рязань"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Рязань"
+        }
+      ],
+      "research_topic": "Рязань рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Светлана Notion": {
+      "project": "Светлана Notion",
+      "folder": "Светлана Notion",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Светлана Notion» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Проверить Filmtools со смартфона вместе со Светланой.",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 44,
+        "size_kb": 460,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Проверить Filmtools со смартфона вместе со Светланой.",
+        "cmd": "TIM: Изучи текущее состояние папки «Светлана Notion», оцени потенциал заработка и выполни первоочередной шаг: Проверить Filmtools со смартфона вместе со Светланой."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Светлана Notion"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Светлана Notion"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Светлана Notion"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Светлана Notion"
+        }
+      ],
+      "research_topic": "Светлана Notion рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "СтадиБук": {
+      "project": "СтадиБук",
+      "folder": "СтадиБук",
+      "state": "active",
+      "last_change": "2026-10-25",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «СтадиБук» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «СтадиБук»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 1,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 2,
+        "size_kb": 1,
+        "ai_analyses": 1,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «СтадиБук»",
+        "cmd": "TIM: Изучи текущее состояние папки «СтадиБук», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «СтадиБук»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту СтадиБук"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов СтадиБук"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для СтадиБук"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по СтадиБук"
+        }
+      ],
+      "research_topic": "СтадиБук рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "hist-1",
+          "date": "25.10.2026 18:27",
+          "project": "СтадиБук",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "CREATE_FOLDER: СтадиБук",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-145",
+          "issue_number": 145,
+          "date": "2026-10-25 18:27:13",
+          "project": "СтадиБук",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#145 CREATE_FOLDER: СтадиБук",
+          "summary": "✅ Готово",
+          "status": "done"
+        }
+      ]
+    },
+    "Татьяна tentorium.ru": {
+      "project": "Татьяна tentorium.ru",
+      "folder": "Татьяна tentorium.ru",
+      "state": "active",
+      "last_change": "2026-10-22",
+      "lead_agent": "E-Commerce & Recurring Order Specialist",
+      "priority_score": 68,
+      "revenue_potential": "E-commerce воронка повторных заказов и работа с базой постоянных покупателей.",
+      "why_first": "Оптимизация структуры каталога, настройка триггеров повторных покупок и аналитика.",
+      "human_action": "Утвердить обновленный каталог товаров и акционные наборы для рассылки.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 3,
+        "size_kb": 71051,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Оптимизация структуры каталога, настройка триггеров повторных покупок и аналитика.",
+        "cmd": "TIM: Изучи текущее состояние папки «Татьяна tentorium.ru», оцени потенциал заработка и выполни первоочередной шаг: Оптимизация структуры каталога, настройка триггеров повторных покупок и аналитика."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Татьяна tentorium.ru"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Татьяна tentorium.ru"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Татьяна tentorium.ru"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Татьяна tentorium.ru"
+        }
+      ],
+      "research_topic": "Татьяна tentorium.ru рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Юра": {
+      "project": "Юра",
+      "folder": "Юра",
+      "state": "active",
+      "last_change": "2026-10-25",
+      "lead_agent": "Quantitative Sports & Odds Analyst",
+      "priority_score": 81,
+      "revenue_potential": "Алгоритмическая аналитика live-коэффициентов КХЛ 24/7 + платный сигнальный/аналитический канал",
+      "why_first": "На ноутбуке круглосуточно работают `khl_live_service_v17.py` и `khl_auto_learning_service.py` — система сама копит статистику и калибрует вероятности.",
+      "human_action": "Проверить сигнал модели в Telegram и принять решение по открытию позиции.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 99,
+        "size_kb": 877,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Проверить точность сигналов KHL Live v17 и отчёт автообучения модели",
+        "cmd": "STATUS: Проверить статус KHL Live v17, логи сигналов и метрики автообучения в папке Юра"
+      },
+      "recommended_agents": [
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Статус KHL v17)",
+          "cmd": "STATUS: Проверить файлы, логи и свежесть данных KHL Live v17"
+        },
+        {
+          "key": "strategist",
+          "label": "📊 Стратег (Калибровка ROI)",
+          "cmd": "TIM: Проанализируй стратегию управления риском и монетизации аналитического бота КХЛ"
+        },
+        {
+          "key": "vibe_coder",
+          "label": "⚡ Вайбкодер (Дашборд сигналов)",
+          "cmd": "TIM: Вайбкодер — спроектируй компактный дашборд статистики ROI сигналов КХЛ в Telegram"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Проверка багов)",
+          "cmd": "BUGS: Проверить скрипты Юра на ошибки и сетевые таймауты"
+        }
+      ],
+      "research_topic": "live hockey odds Poisson model calibration expected value sports analytics Python",
+      "media_items": [],
+      "work_items": []
+    }
+  }
+}
