@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 20:52:35",
+  "updated": "2026-10-29 20:58:08",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -207,6 +207,18 @@
       "size_kb": 4,
       "last_change": "2026-10-29",
       "lead_agent": "Legal Tech & B2B Contracts Lead",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
+      "folder": "Secured_Users_Vault",
+      "project": "Secured_Users_Vault",
+      "state": "active",
+      "files": 6,
+      "size_kb": 5,
+      "last_change": "2026-10-29",
+      "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
