@@ -1,6 +1,6 @@
 {
   "id": "/remote-agents-control/",
-  "name": "Global Spirit Group — Виртуальный Офис",
+  "name": "Global Spirit Group ★ Виртуальный Офис",
   "short_name": "Global Spirit Group",
   "description": "Мобильный и десктопный Виртуальный Офис Global Spirit Group 24/7 для русскоязычных сотрудников: папки проектов, ИИ-агенты, Директор Тим, фото-OCR и отчёты работы.",
   "start_url": "./index.html",
@@ -58,8 +58,8 @@
   ],
   "shortcuts": [
     {
-      "name": "Директор Тим",
-      "short_name": "Тим",
+      "name": "Global Spirit Group ★ Виртуальный Офис",
+      "short_name": "Global Spirit Group",
       "url": "./index.html?tab=tim",
       "icons": [
         {
@@ -70,8 +70,8 @@
       ]
     },
     {
-      "name": "Отчёты работы",
-      "short_name": "Отчёты",
+      "name": "Global Spirit Group ★ Виртуальный Офис",
+      "short_name": "Global Spirit Group",
       "url": "./index.html?tab=reports",
       "icons": [
         {
@@ -82,8 +82,8 @@
       ]
     },
     {
-      "name": "Папки проектов",
-      "short_name": "Папки",
+      "name": "Global Spirit Group ★ Виртуальный Офис",
+      "short_name": "Global Spirit Group",
       "url": "./index.html?tab=projects",
       "icons": [
         {

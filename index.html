@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<script>
+(function() {
+    try {
+        var v = localStorage.getItem("gsg_app_v22_6_loaded");
+        if (v !== "true") {
+            localStorage.setItem("gsg_app_v22_6_loaded", "true");
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(regs) {
+                    for (var i = 0; i < regs.length; i++) regs[i].unregister();
+                });
+            }
+            if ('caches' in window) {
+                caches.keys().then(function(keys) {
+                    for (var i = 0; i < keys.length; i++) caches.delete(keys[i]);
+                });
+            }
+        }
+    } catch(e) {}
+})();
+</script>
+
     <meta charset="UTF-8">
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -14,7 +35,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <title>Global Spirit Group — Виртуальный Офис</title>
+    <title>Global Spirit Group ★ Виртуальный Офис</title>
     <style>
         :root {
             --bg-main: #090d16;
@@ -1854,7 +1875,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v22.3: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v22.6: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -2618,8 +2639,8 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
-                Global Spirit Group — Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.5</span>
+                Global Spirit Group ★ Виртуальный Офис
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.6</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -2716,8 +2737,8 @@
                 ✈️ Отправить заявку в Telegram @unityspiritpartners →
             </a>
             <!-- SECONDARY: TELEGRAM BOT LINK -->
-            <a id="btn-pending-tg-link" href="https://t.me/unitybussinessbot" target="_blank" rel="noopener" class="btn-action ghost" style="text-decoration:none; justify-content:center; font-size:0.78rem;">
-                🤖 Или отправить через бота @unitybussinessbot
+            <a id="btn-pending-tg-link" href="https://t.me/unitybusinessbot" target="_blank" rel="noopener" class="btn-action ghost" style="text-decoration:none; justify-content:center; font-size:0.78rem;">
+                🤖 Или отправить через бота @unitybusinessbot
             </a>
             <!-- TRANSITION TO BROWSING / QUIZ / LIVE AI CHAT WHILE PENDING -->
             <button type="button" class="btn-action accent" onclick="enterPreviewBrowsingWhilePending()" style="width:100%; justify-content:center; padding:11px 14px; font-weight:900; font-size:0.84rem; background:linear-gradient(135deg,#10b981,#0284c7); color:#fff; margin-top:4px;">
@@ -2772,7 +2793,7 @@
             <div style="display:flex; align-items:center; gap:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:10px 12px;">
                 <img src="icons/icon-192.png" alt="3D App Logo" style="width:62px; height:62px; border-radius:16px; object-fit:cover; border:1px solid rgba(96,165,250,0.5); flex-shrink:0;">
                 <div>
-                    <div style="font-weight:900; font-size:0.94rem;">Global Spirit Group — Виртуальный Офис</div>
+                    <div style="font-weight:900; font-size:0.94rem;">Global Spirit Group ★ Виртуальный Офис</div>
                     <div style="font-size:0.74rem; color:var(--text-dim); margin-top:2px;">Полноэкранное приложение для iPhone, Android, Windows и Mac (3D Глобус & Самолёты)</div>
                 </div>
             </div>
@@ -2890,9 +2911,10 @@
                 const keys = await caches.keys();
                 for (let k of keys) await caches.delete(k);
             }
-            localStorage.removeItem('unity_app_code_version');
+            localStorage.clear();
+            sessionStorage.clear();
         } catch(e) {}
-        window.location.replace('https://unityspirit.github.io/remote-agents-control/?v=21.3&install=1&ts=' + Date.now());
+        window.location.replace(location.origin + location.pathname + '?v=22.6&nocache=' + Date.now());
     };
 
     // Auto purge older PWA caches if code version bumped
@@ -2904,7 +2926,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v22.3")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v22.6")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -7256,7 +7278,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v22.3 active");
+                            console.log("Service Worker v22.6 active");
                         }
                     });
                 }
@@ -7625,10 +7647,10 @@
 
     
     // =========================================================================
-    // === v22.3: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v22.6: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v22.3: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v22.6: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -7797,7 +7819,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v22.3: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v22.6: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -7924,7 +7946,7 @@ function sendQuickGuestPromptPortal(txt) {
             return "🔐 **Как получить полный доступ к Офису:**\n\n" +
                    "1. Нажмите кнопку **«⚡ Быстрая регистрация»** (занимает ровно 5 секунд).\n" +
                    "2. Придумайте логин и пароль — они автоматически зашифруются в защищённый сейф.\n" +
-                   "3. Система выдаст код заявки (например, `REQ-607209`), который отправляется боту **@unitybussinessbot** или напрямую владельцу **@unityspiritpartners**.\n" +
+                   "3. Система выдаст код заявки (например, `REQ-607209`), который отправляется боту **@unitybusinessbot** или напрямую владельцу **@unityspiritpartners**.\n" +
                    "4. После подтверждения вам откроются личные папки, задачи и полный функционал ИИ-офиса!";
         }
 
@@ -8091,7 +8113,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v22.3: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v22.6: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -8190,7 +8212,7 @@ function sendQuickGuestPromptPortal(txt) {
         const cleanId = String(userObj.id || "REQ").replace(/[^a-zA-Z0-9_]/g, "");
         const tgBtn = document.getElementById("btn-pending-tg-link");
         if (tgBtn) {
-            tgBtn.href = "https://t.me/unitybussinessbot?start=auth_" + cleanId;
+            tgBtn.href = "https://t.me/unitybusinessbot?start=auth_" + cleanId;
         }
         const tgDirect = document.getElementById("btn-pending-tg-direct");
                 const tgLines = [
@@ -8444,7 +8466,7 @@ function sendQuickGuestPromptPortal(txt) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.5</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.6</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -8579,6 +8601,7 @@ function sendQuickGuestPromptPortal(txt) {
             } catch (e) {}
 
             // Immediately lock into Pending Waiting Room until @unityspiritpartners confirms!
+            sendTelegramBotNotification(reqCode, loginVal, fullName, tgVal);
             enterPendingWaitingRoom(newUserEntry);
         } catch (e) {
             showAuthFeedback("⚠️ Ошибка регистрации: " + escapeHtml(e.message || String(e)), "error");
@@ -9002,10 +9025,10 @@ function sendQuickGuestPromptPortal(txt) {
 
     async function shareAppToAnyDevice() {
         const shareUrl = UNITY_APP_URL + "?install=1";
-        const shareText = "📲 Установи приложение Global Spirit Group — Виртуальный Офис (вход по регистрации после одобрения @" + UNITY_OWNER_TG + "):";
+        const shareText = "📲 Установи приложение Global Spirit Group ★ Виртуальный Офис (вход по регистрации после одобрения @" + UNITY_OWNER_TG + "):";
         if (navigator.share) {
             try {
-                await navigator.share({ title: "Global Spirit Group — Виртуальный Офис", text: shareText, url: shareUrl });
+                await navigator.share({ title: "Global Spirit Group ★ Виртуальный Офис", text: shareText, url: shareUrl });
                 return;
             } catch (e) {}
         }
@@ -10304,7 +10327,7 @@ function sendQuickGuestPromptPortal(txt) {
 </script>
 
 <!-- ========================================================================= -->
-<!-- === v22.3: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
+<!-- === v22.6: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" style="display:flex; align-items:center; gap:8px; position:fixed; bottom:76px; right:16px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:11px 18px; font-weight:900; font-size:0.84rem; box-shadow:0 8px 24px rgba(2,132,199,0.5); cursor:pointer;">
     <span style="font-size:1.15rem;">🤖</span>

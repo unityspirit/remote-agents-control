@@ -1,4 +1,4 @@
-const CACHE_NAME = 'global-spirit-group-pwa-v22.5';
+const CACHE_NAME = 'global-spirit-group-pwa-v22.6';
 const APP_SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
@@ -37,31 +37,19 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
 
   const url = new URL(req.url);
-  // Never intercept GitHub API, Raw GitHub data, or localhost Owner Trust bridge
+  // NEVER cache HTML or API calls - ALWAYS fetch fresh from network
   if (
+    req.mode === 'navigate' ||
+    url.pathname.endsWith('.html') ||
+    url.pathname.endsWith('/') ||
     url.origin !== self.location.origin ||
     url.hostname === '127.0.0.1' ||
     url.hostname === 'localhost' ||
     url.hostname === 'api.github.com' ||
-    url.hostname === 'raw.githubusercontent.com'
+    url.hostname === 'raw.githubusercontent.com' ||
+    url.hostname === 'api.telegram.org'
   ) {
-    return;
-  }
-
-  // Network-first with NO-STORE for HTML & navigation so code updates load immediately
-  if (req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/') || url.search.includes('install=') || url.search.includes('v=')) {
-    event.respondWith(
-      fetch(req, { cache: 'no-store' })
-        .then((res) => {
-          if (res.ok) {
-            const clone = res.clone();
-            caches.open(CACHE_NAME).then((c) => c.put(req, clone)).catch(() => {});
-          }
-          return res;
-        })
-        .catch(() => caches.match(req).then((r) => r || caches.match('./index.html')))
-    );
-    return;
+    return; // Let browser fetch directly from network without caching
   }
 
   // Stale-while-revalidate for static icons & manifest
