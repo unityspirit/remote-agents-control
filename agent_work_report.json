@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-29 21:17:56",
+  "updated": "2026-10-29 21:19:18",
   "kpis": {
-    "total_completed_works": 153,
+    "total_completed_works": 155,
     "tim_master_reports": 10,
     "active_projects_count": 52,
     "total_saved_photos": 1,
@@ -276,13 +276,13 @@
       "why_first": "Платформа на Next.js 16 уже собрана на ноутбуке (вызывные листы, КПП, сценарии, бюджет) — готова к мобильному тесту со Светланой и коммерческой упаковке.",
       "human_action": "Утвердить состав съемочной группы и внести актуальные тайминги ближайшей смены.",
       "counts": {
-        "completed_works": 1,
+        "completed_works": 3,
         "open_tasks": 1,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 1,
+        "ai_analyses": 3,
         "research_notes": 0
       },
       "continue_first": {
@@ -308,15 +308,14 @@
       ],
       "research_topic": "облачные сервисы планирования киносъемок вызывные листы КПП аналоги Yamdu StudioBinder",
       "last_work": {
-        "id": "card-9006",
-        "issue_number": 9006,
-        "date": "2026-10-22 08:18:48",
+        "id": "hist-2",
+        "date": "29.10.2026 21:19",
         "project": "GlobalFilms (Filmtools)",
-        "type": "board_card",
-        "agent": "🧑 Власлав",
-        "title": "#9006 🎬 Проверить Filmtools со смартфона (с Светланой)",
-        "summary": "🧑 Ждёт вашего действия · Далее: Открыть https://unityspirit.github.io/remote-agents-control/globalfilms/index.html",
-        "status": "blocked_human"
+        "type": "ai_study",
+        "agent": "🧠 ИИ-Аналитик папки",
+        "title": "Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.insta",
+        "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+        "status": "done"
       }
     },
     {
@@ -829,10 +828,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 21:17:53"
+      "updated_at": "2026-10-29 21:19:15"
     },
     {
       "key": "router",
@@ -840,10 +839,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 21:17:53"
+      "updated_at": "2026-10-29 21:19:15"
     },
     {
       "key": "gatekeeper",
@@ -851,10 +850,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 21:17:53"
+      "updated_at": "2026-10-29 21:19:15"
     },
     {
       "key": "researcher",
@@ -862,7 +861,7 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 22,
+      "tasks_completed": 23,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
       "updated_at": "2026-10-29 21:02:05"
@@ -873,10 +872,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 22,
+      "tasks_completed": 23,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 21:17:53"
+      "updated_at": "2026-10-29 21:19:15"
     },
     {
       "key": "scribe",
@@ -884,10 +883,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 12,
+      "tasks_completed": 13,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 21:17:53"
+      "updated_at": "2026-10-29 21:19:15"
     },
     {
       "key": "project_lead",
@@ -895,10 +894,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 12,
+      "tasks_completed": 13,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 21:17:53"
+      "updated_at": "2026-10-29 21:19:15"
     },
     {
       "key": "developer",
@@ -968,6 +967,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-160",
+      "issue_number": 160,
+      "date": "2026-10-29 21:19:12",
+      "project": "GlobalFilms (Filmtools)",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#160 Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.insta",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "tim-20261029_203623",
       "issue_number": null,
