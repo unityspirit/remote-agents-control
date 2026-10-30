@@ -1,0 +1,262 @@
+{
+  "updated": "2026-10-29 18:50:32",
+  "system_agents": {
+    "tim": {
+      "name": "Директор Тим",
+      "emoji": "👑",
+      "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
+      "takes": "поручение Власлава",
+      "gives": "исполнительный отчёт + распределённые ТЗ отделам",
+      "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
+      "state": "online",
+      "tasks_completed": 8,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "strategist": {
+      "name": "Стратег",
+      "emoji": "📊",
+      "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
+      "takes": "цель проекта от Тима",
+      "gives": "модель монетизации и финансовые метрики",
+      "next": "tim",
+      "state": "online",
+      "tasks_completed": 7,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "marketer": {
+      "name": "Маркетолог & Трафик",
+      "emoji": "📈",
+      "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
+      "takes": "оффер от Тима",
+      "gives": "воронка и каналы привлечения клиентов",
+      "next": "tim",
+      "state": "online",
+      "tasks_completed": 5,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "developer": {
+      "name": "Главный Разработчик",
+      "emoji": "💻",
+      "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
+      "takes": "ТЗ от Тима",
+      "gives": "готовый код, интерактивные веб-модули и боты",
+      "next": "tim",
+      "state": "online",
+      "tasks_completed": 7,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "sales_closer": {
+      "name": "B2B Продажи & Офферы",
+      "emoji": "🤝",
+      "role": "B2B Deal Closer: персонализированные коммерческие предложения (КП), скрипты переговоров и базы директоров.",
+      "takes": "оффер от Тима",
+      "gives": "готовые КП и скрипты закрытия сделок",
+      "next": "tim",
+      "state": "online",
+      "tasks_completed": 2,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "creative_producer": {
+      "name": "Креативный Продюсер",
+      "emoji": "🎬",
+      "role": "Media Director: сценарии, Google VEO 3.1 видеопромпты, международная дистрибуция треков и кино Светланы.",
+      "takes": "креативный бриф от Тима",
+      "gives": "раскадровка, видео и музыкальные релизы",
+      "next": "tim",
+      "state": "online",
+      "tasks_completed": 1,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "vibe_coder": {
+      "name": "Вайбкодер & Micro-SaaS",
+      "emoji": "⚡",
+      "role": "AI Fullstack Rapid Prototyper: экспресс-сборка Micro-SaaS, парсеров и Telegram Mini Apps за 24 часа через связку Claude Code + Claude Design (HANDOFF.md), 3D WebGL и Next.js.",
+      "takes": "продукт / ТЗ от Тима",
+      "gives": "работающий Micro-SaaS, TMA бот, лендинг с 3D сценой без техдолга",
+      "next": "tim",
+      "state": "online",
+      "tasks_completed": 3,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "intake": {
+      "name": "Приёмщик",
+      "emoji": "📥",
+      "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
+      "takes": "новый Issue",
+      "gives": "карточка со статусом new",
+      "next": "researcher",
+      "state": "online",
+      "tasks_completed": 51,
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "researcher": {
+      "name": "Разведчик",
+      "emoji": "🔎",
+      "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
+      "takes": "карточку с ссылками",
+      "gives": "уровень доказательств: studied / partial / title_only / not_studied",
+      "next": "router",
+      "state": "online",
+      "tasks_completed": 22,
+      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "router": {
+      "name": "Маршрутизатор",
+      "emoji": "🧭",
+      "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
+      "takes": "карточку с доказательствами",
+      "gives": "проект + уверенность + альтернативы",
+      "next": "analyst",
+      "state": "online",
+      "tasks_completed": 51,
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "analyst": {
+      "name": "Аналитик",
+      "emoji": "🧠",
+      "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
+      "takes": "карточку со статусом studied/partial",
+      "gives": "файл в 02_На_Подтверждении",
+      "next": "human",
+      "state": "online",
+      "tasks_completed": 22,
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "gatekeeper": {
+      "name": "Контролёр",
+      "emoji": "🛡",
+      "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
+      "takes": "готовый ответ",
+      "gives": "финальный статус карточки",
+      "next": "scribe",
+      "state": "online",
+      "tasks_completed": 51,
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "scribe": {
+      "name": "Архивариус",
+      "emoji": "🗂",
+      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
+      "takes": "утверждённую карточку",
+      "gives": "файлы в проекте + обновлённая ДОСКА.md",
+      "next": "project_lead",
+      "state": "online",
+      "tasks_completed": 10,
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "project_lead": {
+      "name": "Ведущий агент проекта",
+      "emoji": "🎯",
+      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
+      "takes": "распределённую карточку",
+      "gives": "выполненные шаги проекта",
+      "next": "human",
+      "state": "online",
+      "tasks_completed": 10,
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    },
+    "human": {
+      "name": "Власлав",
+      "emoji": "🧑",
+      "role": "Единственные ворота: утверждает распределение, даёт доступы/ключи, отправляет письма и сообщения.",
+      "takes": "карточки «Ждёт вас»",
+      "gives": "утверждение / правка проекта / доступ",
+      "next": "scribe",
+      "state": "decision_gate",
+      "tasks_completed": 0,
+      "last_task": "Готов к поручениям",
+      "last_project": "Все проекты",
+      "updated_at": "2026-10-29 18:50:32"
+    }
+  },
+  "daemons": {
+    "laptop_worker": {
+      "name": "Слушатель Офиса (laptop_worker.py v18)",
+      "emoji": "🔄",
+      "project": "Входящие_Офис",
+      "status": "online",
+      "detail": "Слушает облачную очередь GitHub Issues и синхронизирует ветку data 24/7"
+    },
+    "khl_live_service": {
+      "name": "KHL Live Odds v17 (khl_live_service_v17.py)",
+      "emoji": "🏒",
+      "project": "Юра",
+      "status": "online",
+      "detail": "Мониторинг live-коэффициентов КХЛ и отправка сигналов 24/7"
+    },
+    "khl_auto_learning": {
+      "name": "KHL Auto-Learning (khl_auto_learning_service.py)",
+      "emoji": "🧬",
+      "project": "Юра",
+      "status": "online",
+      "detail": "Автообучение и калибровка вероятностной модели КХЛ"
+    },
+    "channel_watcher": {
+      "name": "Монитор TG-каналов (channel_watcher.py)",
+      "emoji": "📡",
+      "project": "Автономная_База_Знаний_Каналов",
+      "status": "scheduled",
+      "detail": "Авто-обход @vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey каждые 45 мин"
+    }
+  },
+  "model_router": {
+    "preferred_provider": "auto",
+    "configured_providers": [
+      "gemini"
+    ],
+    "active_mode": "production_api (gemini)",
+    "vps_ready": true,
+    "cost_architecture": "Anthropic 2026 Tiered Routing (Frontier + Economy + Single-Loop)",
+    "frontier_model": "auto-frontier",
+    "economy_model": "auto-economy",
+    "metrics": {
+      "calls_total": 0,
+      "calls_by_provider": {},
+      "last_provider": "auto_standby",
+      "last_model": "auto",
+      "last_call_at": null,
+      "errors_count": 0
+    }
+  },
+  "statuses": {
+    "new": "🆕 Новый",
+    "researching": "🔎 Изучается",
+    "awaiting_approval": "🧑 Ждёт вашего решения",
+    "not_studied": "⛔ Не изучено — нужна помощь",
+    "need_project": "🧭 Уточните проект",
+    "approved": "👍 Утверждено",
+    "distributed": "📂 Передано в проект",
+    "in_progress": "🛠 В работе у агента",
+    "blocked_human": "🧑 Ждёт вашего действия",
+    "done": "✅ Готово",
+    "failed": "❌ Ошибка обработки"
+  }
+}
