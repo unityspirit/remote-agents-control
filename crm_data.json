@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-29 20:12:10",
+  "updated_at": "2026-10-29 20:12:15",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261029_201215",
+      "issue": "Auto",
+      "category": "Проект: 12 IT Продуктов (Короче Капитан)",
+      "title": "📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
+      "source_url": "",
+      "secondary_url": "",
+      "date": "29.10.2026",
+      "summary": "📷 Сохранение и распознавание прикреплённых фотографий\n\n 📷 Фото 1: photo_159_1.jpg\n- Сохранено в папку: C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)\\_office\\media\\photo_159_1.jpg\n- Облачное превью: ![Фото 1](https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg)\n- Распознанный с фото текст (OCR):\n\nРазмер: 680x180 px\n[ru] Тариф Mini Арр Pro 202",
+      "agent": "Telegram Mini Apps & Micro-SaaS Architect",
+      "domain": "[[telegram-боты]]",
+      "related_projects": [
+        "Позновалка",
+        "Traffic"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261029_201215.md",
+        "Ведущий агент: Telegram Mini Apps & Micro-SaaS Architect"
+      ]
+    },
     {
       "id": "kb-20261029_201210",
       "issue": "Auto",
