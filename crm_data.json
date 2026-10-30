@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-10-29 21:19:03",
+  "updated_at": "2026-10-29 21:19:06",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261029_211906",
+      "issue": "Auto",
+      "category": "Проект: GlobalFilms (Filmtools)",
+      "title": "Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен ч",
+      "source_url": "https://www.instagram.com/quest_ptg/",
+      "secondary_url": "https://taplink.cc/httpswww.instagram.comques",
+      "date": "29.10.2026",
+      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Проект: GlobalFilms (Filmtools)\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Светлана Notion\\globalfilms\n- Всего файлов: ~150, Общий размер: 182.8 МБ\n- Типы файлов: .sst: 57, .meta: 56, .json: 15, .js: 6, : 5, .md: 4\n- Содержимое в корне: .git, .gitignore, .next, AGENTS.md, AI_Analysis_History.md, CLAUDE.md, README.md, _office, components.json, eslint.config.mjs, next-env.d.ts, nex",
+      "agent": "Filmtools Production & Engineering Lead",
+      "domain": "[[дашборды-аналитика]]",
+      "related_projects": [
+        "12 IT Продуктов (Короче Капитан)",
+        "Позновалка"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261029_211906.md",
+        "Ведущий агент: Filmtools Production & Engineering Lead"
+      ]
+    },
     {
       "id": "kb-20261029_211903",
       "issue": "Auto",
