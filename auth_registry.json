@@ -15,6 +15,26 @@
   },
   "users": [
     {
+      "id": "owner-unityspiritpartners",
+      "login": "unityspiritpartners",
+      "full_name": "Vlaslav (Owner — Unity Spirit Partners)",
+      "telegram": "@unityspiritpartners",
+      "role": "owner",
+      "status": "approved",
+      "salt_hex": "9cf23e131e4386bd36f36aa84e56be45",
+      "pbkdf2_hash": "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
+      "iterations": 120000,
+      "assigned_projects": [
+        "*"
+      ],
+      "gta_completed": true,
+      "gta_archetype": "👑 Босс Синдиката",
+      "created_at": "2026-10-30T02:53:39.831954+00:00",
+      "approved_at": "2026-10-30T02:53:39.831954+00:00",
+      "owner_action_stamp": "owner-approved",
+      "pending_reset": null
+    },
+    {
       "id": "owner-vlaslav",
       "login": "unityspiritteam@gmail.com",
       "full_name": "Vlaslav (Owner — Unity Spirit Partners)",
@@ -22,7 +42,7 @@
       "role": "owner",
       "status": "approved",
       "salt_hex": "9cf23e131e4386bd36f36aa84e56be45",
-      "pbkdf2_hash": "acd93085262b62ff70f89b4e4ab1a2c4f05ad06b51b250b7ebdad7c9218d3685",
+      "pbkdf2_hash": "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
       "iterations": 120000,
       "assigned_projects": [
         "*"
