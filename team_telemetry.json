@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-30T16:06:12.688220+00:00",
+  "updated_at": "2026-10-30T16:07:15.291358+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -95,6 +95,24 @@
         "online_state": "active",
         "last_seen": "2026-10-30T09:34:42.174Z",
         "current_project": "Позновалка"
+      }
+    },
+    "aliashirani": {
+      "audit_30d": {
+        "days_active": 1,
+        "days_to_30d_review": 29,
+        "active_minutes": 0.0,
+        "active_hours": 0.0,
+        "total_requests": 0,
+        "today_requests": 0,
+        "stalls_count": 0,
+        "nudges_shown": 0,
+        "nudges_clicked": 0,
+        "kpi_score": 0,
+        "verdict": "coach",
+        "verdict_label": "🟡 НА КОНТРОЛЕ (День 1/30 · KPI 0/100)",
+        "replacement_recommended": false,
+        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       }
     }
   }
