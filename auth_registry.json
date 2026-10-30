@@ -58,7 +58,7 @@
       "full_name": "@true1team",
       "telegram": "@true1team",
       "role": "member",
-      "status": "pending",
+      "status": "approved",
       "salt_hex": "869ad9ff00e74eb488593fea322bb66a",
       "pbkdf2_hash": "8187c7a25d7b440367cb55f29bc6d5c592e0849f2f3225d2c200024ba9a90ca6",
       "iterations": 120000,
@@ -66,10 +66,11 @@
       "gta_completed": false,
       "gta_archetype": "",
       "created_at": "2026-10-30T05:36:47.209Z",
-      "approved_at": "",
+      "approved_at": "2026-10-30T05:52:34.103231+00:00",
       "owner_action_stamp": "",
-      "pending_reset": null
+      "pending_reset": null,
+      "approved_by": "unityspiritpartners"
     }
   ],
-  "updated_at": "2026-10-30T05:52:01.565915+00:00"
+  "updated_at": "2026-10-30T05:52:34.103231+00:00"
 }
