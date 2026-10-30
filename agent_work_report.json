@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-29 20:11:25",
+  "updated": "2026-10-29 20:12:25",
   "kpis": {
-    "total_completed_works": 150,
+    "total_completed_works": 152,
     "tim_master_reports": 9,
     "active_projects_count": 51,
-    "total_saved_photos": 0,
+    "total_saved_photos": 1,
     "awaiting_human_count": 39
   },
   "priority_continuations": [
@@ -17,13 +17,13 @@
       "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
       "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
       "counts": {
-        "completed_works": 7,
+        "completed_works": 9,
         "open_tasks": 1,
         "tim_reports": 5,
-        "saved_photos": 0,
+        "saved_photos": 1,
         "files_on_disk": 12,
         "size_kb": 95,
-        "ai_analyses": 2,
+        "ai_analyses": 4,
         "research_notes": 0
       },
       "continue_first": {
@@ -49,12 +49,12 @@
       ],
       "research_topic": "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars кейсы выручки",
       "last_work": {
-        "id": "hist-7",
-        "date": "21.10.2026 08:45",
+        "id": "hist-8",
+        "date": "29.10.2026 20:12",
         "project": "12 IT Продуктов (Короче Капитан)",
         "type": "ai_study",
         "agent": "🧠 ИИ-Аналитик папки",
-        "title": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065",
+        "title": "📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
         "summary": "Сохранено в память папки (AI_Analysis_History.md)",
         "status": "done"
       }
@@ -817,10 +817,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     {
       "key": "router",
@@ -828,10 +828,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     {
       "key": "gatekeeper",
@@ -839,10 +839,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     {
       "key": "researcher",
@@ -851,9 +851,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 22,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-10-29 20:11:20"
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "last_task": "Изучено фото (1 шт.): 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
+      "updated_at": "2026-10-29 20:11:57"
     },
     {
       "key": "analyst",
@@ -864,7 +864,7 @@
       "tasks_completed": 22,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     {
       "key": "scribe",
@@ -872,10 +872,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 11,
+      "tasks_completed": 12,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     {
       "key": "project_lead",
@@ -883,10 +883,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 11,
+      "tasks_completed": 12,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:11:21"
+      "updated_at": "2026-10-29 20:12:22"
     },
     {
       "key": "developer",
@@ -956,6 +956,29 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-159",
+      "issue_number": 159,
+      "date": "2026-10-29 20:12:19",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#159 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_159_1.jpg",
+      "issue_number": 159,
+      "date": "2026-10-29 20:11:53",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
+      "summary": "Размер: 680x180 px\n[ru] Тариф Mini Арр Pro 2026: 1490 RUB Навигатор канала + Парсер заказов Stars\n[en-US] Taph4) Mini App Pro 2026: 1490 RUB Haamrarop KaHana + napcep 3aKa30B Stars",
+      "image_url": "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg",
+      "status": "done"
+    },
     {
       "id": "card-158",
       "issue_number": 158,
