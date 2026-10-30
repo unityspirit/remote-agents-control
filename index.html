@@ -1686,6 +1686,16 @@
                     </div>
                 </div>
 
+                <div class="project-card" id="live-agents-dashboard-card" style="cursor:default; border-left: 3px solid #10b981;">
+                    <div class="p-card-name" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                        <span>🤖 Живой монитор агентов и фоновых служб (24/7)</span>
+                        <button class="mini-btn accent" onclick="switchTab('tim', document.getElementById('nav-btn-tim'))">👑 Открыть штаб Тима →</button>
+                    </div>
+                    <div id="live-agents-dashboard-container" style="font-size:0.76rem; color:var(--text-dim); margin-top:6px; display:flex; flex-direction:column; gap:6px;">
+                        Загрузка телеметрии агентов из облачной ветки <code>data</code>...
+                    </div>
+                </div>
+
                 <div class="project-card" style="cursor:default;">
                     <div class="p-card-name">⚡ Интерактивные модули Виртуального Офиса</div>
                     <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
@@ -1795,6 +1805,144 @@
                     </div>
                 </div>
             </section>
+            <!-- TAB: DIRECTOR TIM (EXECUTIVE AI SUITE v18.0) -->
+            <section class="tab-view" id="tab-tim">
+                <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(139, 92, 246, 0.16)); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 14px; padding: 14px; margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <div style="width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg, #f59e0b, #8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">👑</div>
+                            <div>
+                                <div style="font-weight:800; font-size:0.95rem; color:#fbbf24;">Тим — Генеральный AI-Директор</div>
+                                <div style="font-size:0.73rem; color:var(--text-dim);">Executive Chief of Staff · Автономно координирует 7 отделов</div>
+                            </div>
+                        </div>
+                        <span class="badge done" id="tim-online-badge" style="background:rgba(16,185,129,0.2); color:#34d399; font-weight:700;">🟢 В сети · Автономно 24/7</span>
+                    </div>
+                    <div style="font-size:0.77rem; color:var(--text-main); line-height:1.45; margin-top:10px;">
+                        Поставьте задачу Тиму — когда локальный сервер (или VPS) подключён, задача автоматически уходит в работу, распределяется по <b>7 профильным отделам</b>, сохраняется в <code>Входящие_Офис/Отчеты_Директора_Tim</code> и отображается прямо здесь.
+                    </div>
+                    <div id="tim-live-telemetry-bar" style="margin-top:10px; padding:8px 10px; border-radius:10px; background:rgba(15,23,42,0.55); border:1px solid rgba(255,255,255,0.08); font-size:0.73rem; color:var(--text-dim); display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center;">
+                        <span>🔄 Проверка связи с локальным воркером и роутером моделей...</span>
+                    </div>
+                </div>
+
+                <!-- TIM INPUT FORM -->
+                <div class="tim-command-card" style="background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:14px; margin-bottom:12px;">
+                    <div style="font-weight:700; font-size:0.85rem; color:var(--text-main); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                        <span>💬 Поручение для Директора Тима:</span>
+                        <select id="tim-target-project" class="chip-select" style="font-size:0.72rem; padding:4px 8px;">
+                            <option value="">🎯 Авто-определение папки</option>
+                            <option value="12 IT Продуктов (Короче Капитан)">🚀 12 IT Продуктов</option>
+                            <option value="Traffic">📈 Traffic (DFY)</option>
+                            <option value="Unity Inc">🤝 Unity Inc (B2B AI & ERP)</option>
+                            <option value="GlobalFilms (Filmtools)">🎬 GlobalFilms</option>
+                            <option value="Ghost Ghetto Child (Музыка)">🎵 Ghost Ghetto Child</option>
+                            <option value="Дима Верхняя Синичиха Алапаевск">🪨 Дима Урал</option>
+                            <option value="Юра">🏒 Юра (KHL & Sports Media)</option>
+                            <option value="Белый Доминикана">🌴 Белый Доминикана</option>
+                            <option value="Grok_xAI_Teammates">🤖 Grok Bot xAI</option>
+                            <option value="Личное — обучение и релокация">🎓 Личное / ВНЖ</option>
+                        </select>
+                    </div>
+                    <textarea id="tim-command-input" rows="3" style="width:100%; background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:10px; color:var(--text-main); font-size:0.82rem; font-family:inherit; outline:none; resize:none;" placeholder="Напишите или надиктуйте задачу Тиму... Например: «Тим, запусти воронку Бесплатный AI-Магазин за 15 минут (#147) + TMA Vibe-билдер (#157) с расчётом CPA и подписки»"></textarea>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
+                        <div style="font-size:0.72rem; color:var(--text-muted);">⚡ Автономное исполнение + сохранение отчёта на диск и в облако</div>
+                        <button class="btn-action accent" style="padding:8px 16px; font-size:0.8rem; font-weight:700;" onclick="submitTimTask()">👑 Поручить Директору Тиму 🚀</button>
+                    </div>
+                </div>
+
+                <!-- QUICK PRESETS -->
+                <div style="margin-bottom:12px;">
+                    <div style="font-size:0.74rem; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">⚡ Быстрые поручения Тиму в 1 клик:</div>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                        <button class="choice-btn" onclick="sendTimPreset('Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro', '12 IT Продуктов (Короче Капитан)')">🛍️ AI-Магазин за 15 мин + Vibe-Builder (#147/#157)</button>
+                        <button class="choice-btn" onclick="sendTimPreset('Тим, упакуй B2B-оффер AI Финансовый Директор (по модели Abacum #143) и Экспресс-Аудит Безопасности CRM/ERP (по модели Onapsis #144)', 'Unity Inc')">💼 B2B AI-ФинДир & Кибер-Аудит (#143/#144)</button>
+                        <button class="choice-btn" onclick="sendTimPreset('Тим, запусти связку Pay-on-Results в Traffic: оффер с гарантией, структура квиза и холодный аутрич', 'Traffic')">📈 Связка Pay-on-Results в Traffic</button>
+                        <button class="choice-btn" onclick="sendTimPreset('Тим, запусти Telegram Mini App Древо Рода AI (#154) с поиском по архивам и оплатой Telegram Stars / 990 ₽', '12 IT Продуктов (Короче Капитан)')">🌳 Mini App «Древо Рода AI» (#154)</button>
+                        <button class="choice-btn" onclick="sendTimPreset('Тим, подготовь единый достоверный оффер релиза альбома 4 LIFE на все площадки для коллектива Р.П. ГОСТ / La Dagon Sector (@ghostghettochild)', 'Ghost Ghetto Child (Музыка)')">🎵 Релиз альбома 4 LIFE (Ghost Ghetto Child)</button>
+                        <button class="choice-btn" onclick="sendTimPreset('Тим, упакуй КП по щебню и AI-контролю качества фото/документов (#146) для директоров заводов Урала', 'Дима Верхняя Синичиха Алапаевск')">🪨 КП директорам заводов (Урал)</button>
+                    </div>
+                </div>
+
+                <!-- SUB-AGENTS DEPARTMENT GRID -->
+                <div style="margin-bottom:14px;">
+                    <div style="font-size:0.74rem; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">🏛️ Живой статус 7 отделов под управлением Тима:</div>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:8px;">
+                        <div class="dept-card" data-dept-key="strategist" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #f59e0b; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">📊 Отдел Стратегии</span>
+                                <span class="badge done" id="dept-badge-strategist" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Бизнес-модели, unit-экономика, маржинальность, риски и окупаемость.</div>
+                            <div id="dept-live-strategist" style="font-size:0.7rem; color:#fbbf24; margin-top:5px; line-height:1.35;">Готов к расчёту unit-экономики</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('стратегу')">Поручить стратегу →</button>
+                        </div>
+                        <div class="dept-card" data-dept-key="marketer" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #3b82f6; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">📈 Отдел Маркетинга & Трафика</span>
+                                <span class="badge done" id="dept-badge-marketer" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Офферы по Шварцу, YouTube/TG Ads, Pay-on-Results воронки, лид-магниты.</div>
+                            <div id="dept-live-marketer" style="font-size:0.7rem; color:#60a5fa; margin-top:5px; line-height:1.35;">Готов к сборке воронок</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('маркетологу')">Поручить маркетологу →</button>
+                        </div>
+                        <div class="dept-card" data-dept-key="developer" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">💻 Отдел Разработки</span>
+                                <span class="badge done" id="dept-badge-developer" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Telegram Mini Apps (Next.js/TMA), платформы Filmtools и KHL Live, БД и VPS API.</div>
+                            <div id="dept-live-developer" style="font-size:0.7rem; color:#34d399; margin-top:5px; line-height:1.35;">Готов к ТЗ и архитектуре</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('разработчику')">Поручить разработчику →</button>
+                        </div>
+                        <div class="dept-card" data-dept-key="sales_closer" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #ec4899; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">🤝 Отдел B2B Продаж</span>
+                                <span class="badge done" id="dept-badge-sales_closer" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Персонализированные КП, скрипты переговоров, базы заводов и закрытие сделок.</div>
+                            <div id="dept-live-sales_closer" style="font-size:0.7rem; color:#f472b6; margin-top:5px; line-height:1.35;">Готов к генерации КП</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('продажнику')">Поручить продажнику →</button>
+                        </div>
+                        <div class="dept-card" data-dept-key="creative_producer" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #8b5cf6; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">🎬 Отдел Медиа & Креатива</span>
+                                <span class="badge done" id="dept-badge-creative_producer" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Google VEO 3.1 сценарии, дистрибуция треков на Spotify/Apple Music, кино Светланы.</div>
+                            <div id="dept-live-creative_producer" style="font-size:0.7rem; color:#c084fc; margin-top:5px; line-height:1.35;">Готов к сценариям и релизам</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('креатору')">Поручить креатору →</button>
+                        </div>
+                        <div class="dept-card" data-dept-key="vibe_coder" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #eab308; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">⚡ Отдел Вайбкодинга & Micro-SaaS</span>
+                                <span class="badge done" id="dept-badge-vibe_coder" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Сборка Micro-SaaS и TMA ботов за 24 часа, Claude Design ➔ HANDOFF.md, 3D WebGL.</div>
+                            <div id="dept-live-vibe_coder" style="font-size:0.7rem; color:#facc15; margin-top:5px; line-height:1.35;">Готов к сборке MVP за 24ч</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('вайбкодеру')">Поручить вайбкодеру →</button>
+                        </div>
+                        <div class="dept-card" data-dept-key="researcher" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #06b6d4; border-radius:10px; padding:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">🔎 Отдел Аналитики & Разведки</span>
+                                <span class="badge done" id="dept-badge-researcher" style="font-size:0.67rem;">🟢 Активен</span>
+                            </div>
+                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Скрейпинг сайтов, YouTube субтитры, мониторинг TG-каналов и бенчмаркинг конкурентов.</div>
+                            <div id="dept-live-researcher" style="font-size:0.7rem; color:#22d3ee; margin-top:5px; line-height:1.35;">Мониторинг источников активен</div>
+                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('аналитику')">Поручить аналитику →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TIM REPORTS ARCHIVE -->
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <div style="font-size:0.74rem; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em;">📂 Выполненные работы и отчёты Директора Тима (<span id="cnt-tim-reports">0</span>):</div>
+                        <button class="mini-btn ghost" onclick="refreshAllData(true)">Синхронизировать 🔄</button>
+                    </div>
+                    <div id="tim-reports-container" style="display:flex; flex-direction:column; gap:10px;"></div>
+                </div>
+            </section>
         </aside>
 
         <!-- RIGHT WORKSPACE (PROJECT CHAT & TASKS) -->
@@ -1833,135 +1981,6 @@
                     <button class="send-btn" id="ws-send-btn" onclick="submitCustomInput()">Отправить</button>
                 </div>
             </div>
-        
-            <!-- TAB: DIRECTOR TIM (EXECUTIVE AI SUITE) -->
-            <section class="tab-view" id="tab-tim">
-                <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(139, 92, 246, 0.16)); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 14px; padding: 14px; margin-bottom: 10px;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                        <div style="display:flex; align-items:center; gap:8px;">
-                            <div style="width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg, #f59e0b, #8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">👑</div>
-                            <div>
-                                <div style="font-weight:800; font-size:0.95rem; color:#fbbf24;">Тим — Генеральный AI-Директор</div>
-                                <div style="font-size:0.73rem; color:var(--text-dim);">Executive Chief of Staff · Координирует 7 отделов компании</div>
-                            </div>
-                        </div>
-                        <span class="badge done" style="background:rgba(16,185,129,0.2); color:#34d399; font-weight:700;">🟢 В сети · 24/7</span>
-                    </div>
-                    <div style="font-size:0.77rem; color:var(--text-main); line-height:1.45; margin-top:10px;">
-                        Поставьте задачу Тиму — он автоматически передаст её <b>стратегу, маркетологу, разработчику, вайбкодеру и отделу продаж</b>, проконтролирует исполнение и сохранит готовый отчёт в папку <code>Входящие_Офис/Отчеты_Директора_Tim</code>.
-                    </div>
-                </div>
-
-                <!-- TIM INPUT FORM -->
-                <div class="tim-command-card" style="background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:14px; margin-bottom:12px;">
-                    <div style="font-weight:700; font-size:0.85rem; color:var(--text-main); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-                        <span>💬 Поручение для Директора Тима:</span>
-                        <select id="tim-target-project" class="chip-select" style="font-size:0.72rem; padding:4px 8px;">
-                            <option value="">🎯 Авто-определение папки</option>
-                            <option value="Traffic">📈 Traffic (DFY)</option>
-                            <option value="12 IT Продуктов (Короче Капитан)">🚀 12 IT Продуктов</option>
-                            <option value="GlobalFilms (Filmtools)">🎬 GlobalFilms</option>
-                            <option value="Ghost Ghetto Child (Музыка)">🎵 Ghost Ghetto Child</option>
-                            <option value="Дима Верхняя Синичиха Алапаевск">🪨 Дима Урал</option>
-                            <option value="Белый Доминикана">🌴 Белый Доминикана</option>
-                            <option value="Grok_xAI_Teammates">🤖 Grok Bot xAI</option>
-                            <option value="Unity Inc">🤝 Unity Inc</option>
-                            <option value="Личное — обучение и релокация">🎓 Личное / ВНЖ</option>
-                        </select>
-                    </div>
-                    <textarea id="tim-command-input" rows="3" style="width:100%; background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:10px; color:var(--text-main); font-size:0.82rem; font-family:inherit; outline:none; resize:none;" placeholder="Напишите или надиктуйте задачу Тиму... Например: «Тим, организуй связку продажи щебня для Димы: пусть маркетолог напишет КП, стратег посчитает маржу, а разработчик соберет быстрый лендинг»"></textarea>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
-                        <div style="font-size:0.72rem; color:var(--text-muted);">⚡ Тим сохраняет отчёт на диск и дублирует в папку проекта</div>
-                        <button class="btn-action accent" style="padding:8px 16px; font-size:0.8rem; font-weight:700;" onclick="submitTimTask()">👑 Поручить Директору Тиму 🚀</button>
-                    </div>
-                </div>
-
-                <!-- QUICK PRESETS -->
-                <div style="margin-bottom:12px;">
-                    <div style="font-size:0.74rem; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">⚡ Быстрые поручения Тиму в 1 клик:</div>
-                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
-                        <button class="choice-btn" onclick="sendTimPreset('Тим, запусти связку Pay-on-Results в Traffic: оффер с гарантией, структура квиза и холодный аутрич', 'Traffic')">📈 Связка Pay-on-Results в Traffic</button>
-                        <button class="choice-btn" onclick="sendTimPreset('Тим, внедри инструменты Vibecoder: запусти AI-парсер заказов с подпиской 690 ₽/мес и пайплайн Claude Design HANDOFF.md для быстрых TMA', '12 IT Продуктов (Короче Капитан)')">⚡ Стек Vibecoder (AI-парсер заказов & 24h TMA)</button>
-                        <button class="choice-btn" onclick="sendTimPreset('Тим, разработай ТЗ и бота для Mini App #1 под Короче Капитан, монетизация Telegram Stars', '12 IT Продуктов (Короче Капитан)')">🚀 Mini App #1 (Stars воронка)</button>
-                        <button class="choice-btn" onclick="sendTimPreset('Тим, подготовь оффер дистрибуции на 150+ площадок для артиста @ghostghettochild и расчет роялти', 'Ghost Ghetto Child (Музыка)')">🎵 Оффер для Ghost Ghetto Child</button>
-                        <button class="choice-btn" onclick="sendTimPreset('Тим, упакуй КП по щебню для 10 директоров заводов и регламент звонков (Дима Урал)', 'Дима Верхняя Синичиха Алапаевск')">🪨 КП директорам заводов (Урал)</button>
-                        <button class="choice-btn" onclick="sendTimPreset('Тим, составь дорожную карту поступления в Hive Helsinki и получения студенческого ВНЖ Финляндии', 'Личное — обучение и релокация')">🎓 Hive Helsinki & ВНЖ Финляндии</button>
-                    </div>
-                </div>
-
-                <!-- SUB-AGENTS DEPARTMENT GRID -->
-                <div style="margin-bottom:14px;">
-                    <div style="font-size:0.74rem; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">🏛️ Подопечные отделы под управлением Тима:</div>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:8px;">
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #f59e0b; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">📊 Отдел Стратегии</span>
-                                <span class="badge" style="font-size:0.68rem;">Chief Strategy Officer</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Бизнес-модели, unit-экономика, маржинальность, риски и окупаемость.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('стратегу')">Поручить стратегу →</button>
-                        </div>
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #3b82f6; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">📈 Отдел Маркетинга & Трафика</span>
-                                <span class="badge" style="font-size:0.68rem;">Performance Lead</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Офферы по Шварцу, YouTube/TG Ads, Pay-on-Results воронки, лид-магниты.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('маркетологу')">Поручить маркетологу →</button>
-                        </div>
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">💻 Отдел Разработки</span>
-                                <span class="badge" style="font-size:0.68rem;">TMA & Fullstack Lead</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Telegram Mini Apps (Next.js/TMA), платформы Filmtools и KHL Live, базы данных, API.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('разработчику')">Поручить разработчику →</button>
-                        </div>
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #ec4899; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">🤝 Отдел B2B Продаж</span>
-                                <span class="badge" style="font-size:0.68rem;">B2B Deal Closer</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Персонализированные КП, скрипты переговоров, базы заводов и закрытие сделок.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('продажнику')">Поручить продажнику →</button>
-                        </div>
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #8b5cf6; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">🎬 Отдел Медиа & Креатива</span>
-                                <span class="badge" style="font-size:0.68rem;">Media & Creative Director</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Google VEO 3.1 сценарии, дистрибуция треков на Spotify/Apple Music, кино Светланы.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('креатору')">Поручить креатору →</button>
-                        </div>
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #eab308; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">⚡ Отдел Вайбкодинга & Micro-SaaS</span>
-                                <span class="badge" style="font-size:0.68rem;">Rapid Prototyper</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Сборка Micro-SaaS, TMA ботов за 24 часа, Claude Design ➔ HANDOFF.md, 3D WebGL и парсеры заказов.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('вайбкодеру')">Поручить вайбкодеру →</button>
-                        </div>
-                        <div class="dept-card" style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #06b6d4; border-radius:10px; padding:10px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:700; font-size:0.82rem; color:var(--text-main);">🔎 Отдел Аналитики & Разведки</span>
-                                <span class="badge" style="font-size:0.68rem;">Data & Market Scout</span>
-                            </div>
-                            <div style="font-size:0.73rem; color:var(--text-dim); margin-top:4px;">Скрейпинг сайтов, YouTube субтитры, бенчмаркинг международных конкурентов.</div>
-                            <button class="mini-btn" style="margin-top:6px;" onclick="promptDepartmentTask('аналитику')">Поручить аналитику →</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TIM REPORTS ARCHIVE -->
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                        <div style="font-size:0.74rem; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em;">📂 Отчёты Директора Тима (<span id="cnt-tim-reports">1</span>):</div>
-                        <button class="mini-btn ghost" onclick="renderTimReportsList()">Обновить 🔄</button>
-                    </div>
-                    <div id="tim-reports-container" style="display:flex; flex-direction:column; gap:8px;"></div>
-                </div>
-            </section>
-
         </main>
     </div>
 
@@ -2866,6 +2885,7 @@
                 } catch (e) {}
                 renderWorkspaceFeed();
                 renderCrmTasks();
+                if (typeof renderTimReportsList === "function") renderTimReportsList();
             }
         } catch (e) {
             console.warn("fetchSingleIssueComments #" + issueNumber, e);
@@ -3140,19 +3160,25 @@
         if (btnEl) {
             btnEl.classList.add("active");
         } else {
-            const matchBtn = document.getElementById("nav-tab-" + tabId);
+            const matchBtn = document.getElementById("nav-btn-" + tabId) || document.getElementById("nav-tab-" + tabId);
             if (matchBtn) matchBtn.classList.add("active");
         }
-        if (tabId === "tim") {
-            renderTimReportsList();
-        }
         closeMobileWorkspace();
+        if (tabId === "tim") {
+            renderAgentsStatus();
+            renderTimReportsList();
+            if (window.innerWidth > 860 && typeof openTimReportInWorkspace === "function") {
+                openTimReportInWorkspace(0, false);
+            }
+        } else if (tabId === "dashboard") {
+            renderAgentsStatus();
+        }
         syncActionAlertsUI();
     }
 
     function openWaitingActionsTab() {
         closeActionModal();
-        const planNavBtn = document.getElementById("nav-tab-plan");
+        const planNavBtn = document.getElementById("nav-btn-plan") || document.getElementById("nav-tab-plan");
         switchTab("plan", planNavBtn);
         setPlanSubView("autonomy");
     }
@@ -4079,45 +4105,259 @@
         }
     }
 
+    let timReportsRegistry = [];
+    let liveAgentsTelemetry = null;
+    let workerStatusTelemetry = null;
+    let combinedTimFeedCache = [];
+    const expandedTimCards = new Set();
+
+    try {
+        timReportsRegistry = JSON.parse(localStorage.getItem("crm_tim_reports_cache") || "[]") || [];
+        liveAgentsTelemetry = JSON.parse(localStorage.getItem("crm_agents_telemetry_cache") || "null");
+    } catch (e) {}
+
+    const DEPT_LABELS_MAP = {
+        strategist: "📊 Стратег",
+        marketer: "📈 Маркетолог",
+        developer: "💻 Разработчик",
+        sales_closer: "🤝 B2B Продажи",
+        creative_producer: "🎬 Медиа & Креатив",
+        vibe_coder: "⚡ Вайбкодер",
+        researcher: "🔎 Разведчик"
+    };
+
+    function buildCombinedTimReports() {
+        const items = [];
+        const seenIssues = new Set();
+        const seenTasks = new Set();
+
+        // 1. Live open/closed GitHub Issues addressed to Tim (highest priority for real-time in-flight status)
+        const timIssues = allIssues.filter(i =>
+            /TIM:|\bТим\b|Директор\s+Тим|👑/i.test(i.title || "") ||
+            (commentsByIssue[i.number] && commentsByIssue[i.number].some(c => /ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ ДИРЕКТОРА ТИМА|передал задачу Директору Тиму/i.test(c.body || "")))
+        );
+
+        timIssues.forEach(iss => {
+            const parsed = parseIssueProject(iss.title);
+            const cleanTask = parsed.cmd.replace(/^TIM:\s*/i, "").replace(/^👑\s*/, "").trim();
+            const resolved = resolveIssueContent(iss);
+            const regMatch = (timReportsRegistry || []).find(r => Number(r.issue_number) === Number(iss.number));
+            const fullMd = (regMatch && regMatch.markdown) ? regMatch.markdown : (resolved.replyText || iss.body || "");
+            const depts = (regMatch && Array.isArray(regMatch.departments)) ? regMatch.departments : [];
+
+            seenIssues.add(Number(iss.number));
+            seenTasks.add(cleanTask.toLowerCase().slice(0, 65));
+
+            items.push({
+                uid: "issue-" + iss.number,
+                issue_number: iss.number,
+                state: iss.state,
+                timestamp: (regMatch && regMatch.timestamp) || (iss.created_at ? new Date(iss.created_at).toLocaleString("ru-RU") : "Недавно"),
+                project: (regMatch && regMatch.project) || parsed.project || "Traffic",
+                task: cleanTask,
+                departments: depts,
+                filename: (regMatch && regMatch.filename) || ("Issue_#" + iss.number),
+                provider: (regMatch && regMatch.provider) || "",
+                summary: (regMatch && regMatch.summary) || "",
+                markdown: fullMd
+            });
+        });
+
+        // 2. Disk-synced reports from tim_reports.json (branch `data`)
+        (timReportsRegistry || []).forEach((rep, idx) => {
+            if (rep.issue_number && seenIssues.has(Number(rep.issue_number))) return;
+            const normT = String(rep.task || "").trim().toLowerCase().slice(0, 65);
+            if (normT && seenTasks.has(normT)) return;
+            if (normT) seenTasks.add(normT);
+
+            items.push({
+                uid: rep.id || ("reg-" + idx),
+                issue_number: rep.issue_number || null,
+                state: "closed",
+                timestamp: rep.timestamp || "Сохранено на диске",
+                project: rep.project || "Входящие_Офис",
+                task: rep.task || rep.filename || "Исполнительный отчёт Тима",
+                departments: Array.isArray(rep.departments) ? rep.departments : [],
+                filename: rep.filename || "",
+                provider: rep.provider || "",
+                summary: rep.summary || "",
+                markdown: rep.markdown || rep.summary || ""
+            });
+        });
+
+        combinedTimFeedCache = items;
+        return items;
+    }
+
+    function toggleTimReportInline(idx) {
+        const item = combinedTimFeedCache[idx];
+        if (!item) return;
+        if (expandedTimCards.has(item.uid)) {
+            expandedTimCards.delete(item.uid);
+        } else {
+            expandedTimCards.add(item.uid);
+        }
+        renderTimReportsList();
+    }
+
+    function openTimReportInWorkspace(idx, openOnMobile) {
+        const items = combinedTimFeedCache.length ? combinedTimFeedCache : buildCombinedTimReports();
+        const item = items[idx];
+        if (!item) return;
+
+        const titleEl = document.getElementById("ws-project-title");
+        const subEl = document.getElementById("ws-project-sub");
+        const feedEl = document.getElementById("ws-feed");
+        if (titleEl) titleEl.innerText = "👑 Отчёт Тима · " + item.project;
+        if (subEl) subEl.innerText = (item.filename ? ("Файл: Отчеты_Директора_Tim/" + item.filename) : ("Задача #" + item.issue_number)) + " · " + item.timestamp;
+
+        if (feedEl) {
+            const deptPills = (item.departments || []).map(d => '<span class="badge" style="background:rgba(245,158,11,0.14); color:#fbbf24;">' + escapeHtml(DEPT_LABELS_MAP[d] || d) + '</span>').join(" ");
+            const sp = escapeHtml(item.project).replace(/'/g, "\\'");
+            feedEl.innerHTML =
+                '<div class="task-card" style="border-left:4px solid #f59e0b;">' +
+                    '<div class="task-header">' +
+                        '<span class="badge ' + (item.state === "open" ? "running" : "done") + '">' + (item.state === "open" ? "⏳ В работе у отделов Тима" : "✅ Выполнено автономно") + '</span>' +
+                        '<span style="font-size:0.75rem; color:var(--text-dim);">' + escapeHtml(item.timestamp) + (item.provider ? ' · 🧠 ' + escapeHtml(item.provider) : '') + '</span>' +
+                    '</div>' +
+                    '<div style="font-weight:800; font-size:0.96rem; color:var(--text-main); margin:6px 0;">👑 ' + escapeHtml(item.task) + '</div>' +
+                    (deptPills ? '<div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px;">' + deptPills + '</div>' : '') +
+                    '<div class="task-section-card ai" style="margin-top:6px;">' +
+                        '<div class="task-section-body" style="white-space:pre-wrap; line-height:1.55;">' + linkifyText(item.markdown || "⏳ Отчёт формируется локальным воркером...") + '</div>' +
+                    '</div>' +
+                    '<div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">' +
+                        '<button class="btn-action accent" onclick="selectProject(\'' + sp + '\')">📁 Перейти в папку «' + escapeHtml(item.project) + '» →</button>' +
+                    '</div>' +
+                '</div>';
+        }
+        if (openOnMobile) {
+            openMobileWorkspace();
+        }
+    }
+
+    function renderAgentsStatus() {
+        // 1. Update Tim telemetry bar & online badge
+        const barEl = document.getElementById("tim-live-telemetry-bar");
+        const badgeEl = document.getElementById("tim-online-badge");
+        let workerOnline = false;
+        let lastSeenText = "нет данных";
+        if (workerStatusTelemetry && workerStatusTelemetry.last_seen) {
+            const mins = Math.round((Date.now() - new Date(workerStatusTelemetry.last_seen).getTime()) / 60000);
+            workerOnline = mins <= 6;
+            lastSeenText = mins <= 1 ? "только что" : (mins + " мин назад");
+        }
+        const routerInfo = (workerStatusTelemetry && workerStatusTelemetry.model_router) || (liveAgentsTelemetry && liveAgentsTelemetry.model_router) || null;
+        const routerLabel = routerInfo ? (routerInfo.active_mode || "VPS-Ready Router") : "Hybrid Cloud Test Gateway (VPS-Ready)";
+        const workerVer = (workerStatusTelemetry && workerStatusTelemetry.worker_version) || "v18.0-vps-ready";
+
+        if (badgeEl) {
+            badgeEl.innerText = workerOnline ? "🟢 Локальный воркер активен · 24/7" : "☁️ Облачный приём (ожидание воркера)";
+            badgeEl.style.color = workerOnline ? "#34d399" : "#60a5fa";
+        }
+        if (barEl) {
+            const totalReps = combinedTimFeedCache.length || (timReportsRegistry ? timReportsRegistry.length : 0);
+            barEl.innerHTML =
+                '<span>' + (workerOnline ? '🟢 <b>Сервер подключён</b> (' + escapeHtml(workerVer) + ', сигнал ' + escapeHtml(lastSeenText) + ')' : '☁️ <b>Облачная очередь активна</b> (задачи выполнятся при связи с воркером)') + '</span>' +
+                '<span>🧠 <b>Модель:</b> ' + escapeHtml(routerLabel) + ' · 📂 <b>Отчётов:</b> ' + totalReps + '</span>';
+        }
+
+        // 2. Update 7 department cards in #tab-tim
+        const sysAgents = (liveAgentsTelemetry && liveAgentsTelemetry.system_agents) || {};
+        Object.keys(DEPT_LABELS_MAP).forEach(deptKey => {
+            const bEl = document.getElementById("dept-badge-" + deptKey);
+            const lEl = document.getElementById("dept-live-" + deptKey);
+            const ag = sysAgents[deptKey];
+            if (!ag) return;
+            const cnt = ag.tasks_completed || 0;
+            const isWorking = ag.state === "working";
+            if (bEl) {
+                bEl.className = "badge " + (isWorking ? "running" : "done");
+                bEl.innerText = isWorking ? "⏳ В работе" : ("🟢 Выполнено: " + cnt);
+            }
+            if (lEl && ag.last_task) {
+                lEl.innerText = "Последняя задача (" + (ag.last_project || "Офис") + "): " + String(ag.last_task).slice(0, 88);
+            }
+        });
+
+        // 3. Update Live Agents & Daemons card in #tab-dashboard ("Офис")
+        const dashEl = document.getElementById("live-agents-dashboard-container");
+        if (dashEl) {
+            const daemons = (liveAgentsTelemetry && liveAgentsTelemetry.daemons) || {};
+            let dHtml = '<div style="font-weight:700; color:var(--text-main); margin-bottom:2px;">⚙️ Фоновые демоны ноутбука / сервера:</div>';
+            const dKeys = Object.keys(daemons);
+            if (dKeys.length === 0) {
+                dHtml += '<div>• 🔄 <b>laptop_worker.py</b> — ' + (workerOnline ? '🟢 Онлайн' : '☁️ Ожидание') + '</div>';
+            } else {
+                dKeys.forEach(k => {
+                    const d = daemons[k];
+                    const iconSt = d.status === "online" ? "🟢 Онлайн" : (d.status === "scheduled" ? "🕒 Авто-расписание" : "⚪ Ожидание");
+                    dHtml += '<div style="padding:6px 8px; background:var(--bg-main); border:1px solid var(--border); border-radius:8px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                        '<div><b>' + escapeHtml((d.emoji || "🤖") + " " + d.name) + '</b><div style="font-size:0.7rem; color:var(--text-dim);">' + escapeHtml(d.detail || "") + '</div></div>' +
+                        '<span class="badge ' + (d.status === "online" ? "done" : "") + '" style="font-size:0.68rem;">' + iconSt + '</span>' +
+                    '</div>';
+                });
+            }
+
+            const pipelineKeys = ["tim", "intake", "researcher", "router", "analyst", "gatekeeper", "scribe"];
+            const pRows = pipelineKeys.filter(k => sysAgents[k]).map(k => {
+                const a = sysAgents[k];
+                return '<span class="badge" style="background:rgba(59,130,246,0.12); color:var(--text-main); font-size:0.7rem;">' +
+                    escapeHtml((a.emoji || "🤖") + " " + a.name) + ': <b>' + (a.tasks_completed || 0) + '</b></span>';
+            }).join(" ");
+
+            if (pRows) {
+                dHtml += '<div style="font-weight:700; color:var(--text-main); margin-top:6px;">🏛️ Конвейер агентов Офиса (обработано задач):</div>' +
+                    '<div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:2px;">' + pRows + '</div>';
+            }
+            dashEl.innerHTML = dHtml;
+        }
+    }
+
     function renderTimReportsList() {
         const container = document.getElementById("tim-reports-container");
         if (!container) return;
 
-        const timIssues = allIssues.filter(i => /TIM|Тим/i.test(i.title) || (commentsByIssue[i.number] && commentsByIssue[i.number].some(c => /Директор.*Тим|ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ/i.test(c.body))));
-
+        const items = buildCombinedTimReports();
         const cntEl = document.getElementById("cnt-tim-reports");
-        if (cntEl) cntEl.innerText = Math.max(timIssues.length, 1);
+        if (cntEl) cntEl.innerText = items.length;
+
+        renderAgentsStatus();
+
+        if (items.length === 0) {
+            container.innerHTML = '<div style="text-align:center; color:var(--text-dim); padding:18px; background:var(--bg-card); border-radius:12px; border:1px solid var(--border); font-size:0.8rem;">Пока нет отчётов — отправьте поручение Директору Тиму выше или нажмите быстрый пресет.</div>';
+            return;
+        }
 
         let html = "";
-        
-        // Базовый мастер-отчет Тима
-        html += '<div class="crm-task-card" style="border-left:3px solid #fbbf24;">' +
-            '<div class="crm-task-top tabular">' +
-                '<span class="crm-project-tag">👑 Мастер-отчёт Тима · 📁 Дима Верхняя Синичиха Алапаевск</span>' +
-                '<span class="badge done">✅ Готов на диске</span>' +
-            '</div>' +
-            '<div class="crm-task-title">👑 Связка продажи щебня для Димы: КП директорам, расчет маржи и быстрый лендинг</div>' +
-            '<div style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;"><b>Задействованы отделы:</b> 🤝 B2B Продажи, 📊 Стратег, 💻 Главный Разработчик.</div>' +
-            '<div class="crm-task-snippet" style="margin-top:4px;">Файл: <code>Входящие_Офис/Отчеты_Директора_Tim/Отчет_Tim_20261022_185317_Тим_организуй_связку_продажи_щебня.md</code></div>' +
-            '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">' +
-                '<span style="font-size:0.72rem; color:#34d399;">⚡ Сделано автономно: 100%</span>' +
-                '<button class="btn-action accent" onclick="selectProject(\'Дима Верхняя Синичиха Алапаевск\')">Открыть в проекте →</button>' +
-            '</div>' +
-        '</div>';
+        items.forEach((item, idx) => {
+            const isOpen = item.state === "open";
+            const isExpanded = expandedTimCards.has(item.uid) || (idx === 0 && items.length > 0 && expandedTimCards.size === 0);
+            const sp = escapeHtml(item.project).replace(/'/g, "\\'");
+            const deptBadges = (item.departments || []).map(d =>
+                '<span class="badge" style="font-size:0.66rem; background:rgba(245,158,11,0.12); color:#fbbf24;">' + escapeHtml(DEPT_LABELS_MAP[d] || d) + '</span>'
+            ).join(" ");
+            const snippetText = (item.summary || item.markdown || "").replace(/[#>*_`\-]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 220);
 
-        timIssues.forEach(iss => {
-            const parsed = parseIssueProject(iss.title);
-            const resolved = resolveIssueContent(iss);
-            html += '<div class="crm-task-card" style="border-left:3px solid #8b5cf6;">' +
+            html += '<div class="crm-task-card" style="border-left:3px solid ' + (isOpen ? '#3b82f6' : '#fbbf24') + ';">' +
                 '<div class="crm-task-top tabular">' +
-                    '<span class="crm-project-tag">👑 Задача #' + iss.number + ' · 📁 ' + escapeHtml(parsed.project) + '</span>' +
-                    '<span class="badge ' + (iss.state === "open" ? "running" : "done") + '">' + (iss.state === "open" ? "⏳ В работе у отделов" : "✅ Отчёт готов") + '</span>' +
+                    '<span class="crm-project-tag">' + (item.issue_number ? ('👑 Задача #' + item.issue_number + ' · ') : '👑 Мастер-отчёт · ') + '📁 ' + escapeHtml(item.project) + '</span>' +
+                    '<span class="badge ' + (isOpen ? 'running' : 'done') + '">' + (isOpen ? '⏳ В работе у отделов' : '✅ Отчёт готов') + '</span>' +
                 '</div>' +
-                '<div class="crm-task-title">' + linkifyText(parsed.cmd) + '</div>' +
-                (resolved.replyText ? '<div class="crm-task-snippet" style="-webkit-line-clamp:2;">' + escapeHtml(resolved.replyText.slice(0, 200)) + '</div>' : '') +
-                '<div style="display:flex; justify-content:flex-end; gap:6px; margin-top:6px;">' +
-                    '<button class="btn-action ghost" onclick="copyIssueDigest(' + iss.number + ')">📋 Копировать</button>' +
-                    '<button class="btn-action primary" onclick="selectProject(\'' + escapeHtml(parsed.project).replace(/'/g, "\\'") + '\')">Открыть в папке →</button>' +
+                '<div class="crm-task-title" style="margin-top:4px;">' + escapeHtml(item.task) + '</div>' +
+                '<div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">🕒 ' + escapeHtml(item.timestamp) + (item.filename ? ' · 📄 <code>' + escapeHtml(item.filename) + '</code>' : '') + '</div>' +
+                (deptBadges ? '<div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">' + deptBadges + '</div>' : '') +
+                (!isExpanded && snippetText ? '<div class="crm-task-snippet" style="margin-top:6px; -webkit-line-clamp:3;">' + escapeHtml(snippetText) + '…</div>' : '') +
+                (isExpanded ? (
+                    '<div style="margin-top:8px; padding:10px; border-radius:10px; background:var(--bg-main); border:1px solid var(--border); font-size:0.78rem; line-height:1.5; max-height:420px; overflow-y:auto; white-space:pre-wrap;">' +
+                        linkifyText(item.markdown || "⏳ Директор Тим и отделы формируют отчёт...") +
+                    '</div>'
+                ) : '') +
+                '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-top:8px;">' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                        '<button class="btn-action ghost" onclick="toggleTimReportInline(' + idx + ')">' + (isExpanded ? '🔼 Свернуть' : '📖 Читать полный отчёт') + '</button>' +
+                        '<button class="btn-action ghost" onclick="openTimReportInWorkspace(' + idx + ', true)">🖥️ В широком окне</button>' +
+                    '</div>' +
+                    '<button class="btn-action accent" onclick="selectProject(\'' + sp + '\')">📁 В папку →</button>' +
                 '</div>' +
             '</div>';
         });
@@ -4884,12 +5124,32 @@
         const txt = document.getElementById("worker-text");
 
         try {
-            const stObj = await readRepoJson("status.json");
+            const [stObj, timObj, agObj] = await Promise.all([
+                readRepoJson("status.json"),
+                readRepoJson("tim_reports.json"),
+                readRepoJson("agents.json")
+            ]);
+            if (stObj && stObj.json) {
+                workerStatusTelemetry = stObj.json;
+            }
+            if (timObj && timObj.json && Array.isArray(timObj.json.reports)) {
+                timReportsRegistry = timObj.json.reports;
+                try {
+                    localStorage.setItem("crm_tim_reports_cache", JSON.stringify(timReportsRegistry.slice(0, 35)));
+                } catch (e) {}
+            }
+            if (agObj && agObj.json) {
+                liveAgentsTelemetry = agObj.json;
+                try {
+                    localStorage.setItem("crm_agents_telemetry_cache", JSON.stringify(liveAgentsTelemetry));
+                } catch (e) {}
+            }
+
             if (stObj && stObj.json && stObj.json.last_seen) {
                 const mins = Math.round((Date.now() - new Date(stObj.json.last_seen).getTime()) / 60000);
                 if (mins <= 5) {
                     dot.className = "status-dot";
-                    txt.innerText = "🟢 Ноутбук на связи + Облако 24/7";
+                    txt.innerText = "🟢 Сервер/Ноутбук на связи + Облако 24/7";
                 } else {
                     dot.className = "status-dot cloud";
                     txt.innerText = "☁️ Автономный облачный режим (сохранение работает 24/7)";
@@ -4898,6 +5158,8 @@
                 dot.className = "status-dot cloud";
                 txt.innerText = "☁️ Автономный облачный режим активен";
             }
+            renderAgentsStatus();
+            renderTimReportsList();
 
             const pObj = await readRepoJson("projects.json");
             if (pObj && pObj.json && Array.isArray(pObj.json.projects)) {
@@ -4969,6 +5231,8 @@
         renderCrmTasks();
         renderKnowledgeBase();
         renderWorkspaceFeed();
+        renderTimReportsList();
+        renderAgentsStatus();
         syncActionAlertsUI();
     }
 
@@ -4989,6 +5253,8 @@
     renderCrmTasks();
     renderKnowledgeBase();
     renderWorkspaceFeed();
+    renderTimReportsList();
+    renderAgentsStatus();
     syncActionAlertsUI();
     refreshAllData(false);
     setInterval(() => refreshAllData(false), 12000);
