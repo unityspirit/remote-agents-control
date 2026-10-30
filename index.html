@@ -1831,11 +1831,127 @@
             gap: 8px;
         }
 
+    
+        /* STRICT VISITOR GUEST ISOLATION: NO COMPANY FOLDERS SHOWN TO GUESTS */
+        body.guest-preview-mode .project-sidebar,
+        body.guest-preview-mode .workspace-pane,
+        body.guest-preview-mode .bottom-nav,
+        body.guest-preview-mode #btn-top-secured-vault,
+        body.guest-preview-mode #btn-top-user-chip,
+        body.guest-preview-mode #btn-top-work-report,
+        body.guest-preview-mode #btn-action-needed,
+        body.guest-preview-mode button[title="Новая папка"] {
+            display: none !important;
+        }
+        body.guest-preview-mode #guest-portal-view {
+            display: block !important;
+        }
+
     </style>
 </head>
 <body class="auth-locked">
 
 <div class="app-shell">
+
+    <!-- ========================================================================= -->
+    <!-- === v22.1: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- ========================================================================= -->
+    <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
+        <!-- Guest Welcome Card -->
+        <div style="background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(139,92,246,0.18)); border:1px solid rgba(56,189,248,0.4); border-radius:18px; padding:18px; margin-bottom:16px; text-align:center;">
+            <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:8px;">
+                <img src="icons/icon-192.png" alt="Unity Spirit Logo" style="width:46px; height:46px; border-radius:12px; box-shadow:0 4px 14px rgba(2,132,199,0.5);">
+                <div style="text-align:left;">
+                    <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc; margin:0;">Unity Spirit — Гостевой Превью-Портал</h2>
+                    <div style="font-size:0.75rem; color:#94a3b8;">ИИ-экосистема автономных агентов для бизнеса, маркетинга и монетизации</div>
+                </div>
+            </div>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.45); border-radius:999px; padding:3px 14px; font-size:0.73rem; color:#6ee7b7; font-weight:800;">
+                <span>🟢 ИИ-Ассистент онлайн (ChatGPT Mode)</span> · <span>🔒 Все внутренние папки компании скрыты</span>
+            </div>
+        </div>
+
+        <!-- 2-COLUMN GRID: ОПРОСНИК ПО ИНТЕРЕСАМ + ЖИВОЙ ИИ-АССИСТЕНТ -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:14px; align-items:start;">
+            
+            <!-- CARD 1: ОПРОСНИК ПО ИНТЕРЕСАМ -->
+            <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:12px; box-shadow:0 8px 24px rgba(0,0,0,0.25);">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:0.96rem; font-weight:900; color:#fbbf24; display:flex; align-items:center; gap:6px;">
+                        🎯 Опросник по интересам
+                    </span>
+                    <span id="guest-quiz-step-badge" class="badge" style="background:rgba(245,158,11,0.2); color:#fbbf24; font-weight:800; font-size:0.72rem;">Шаг 1 из 4</span>
+                </div>
+                <div style="font-size:0.75rem; color:var(--text-dim); line-height:1.45;">
+                    Ответьте на 4 вопроса — система подберёт персональное направление сотрудничества, проекты и зафиксирует ваш запрос у нас в системе.
+                </div>
+
+                <!-- Quiz Interactive Container -->
+                <div id="guest-quiz-content" style="display:flex; flex-direction:column; gap:8px;">
+                    <!-- Injected via JavaScript -->
+                </div>
+
+                <!-- Quiz Result Box (shown on complete) -->
+                <div id="guest-quiz-result-box" style="display:none; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.45); border-radius:14px; padding:14px; flex-direction:column; gap:8px;">
+                    <div style="font-weight:900; font-size:0.88rem; color:#6ee7b7;">✨ Персональный подбор завершён!</div>
+                    <div id="guest-quiz-match-text" style="font-size:0.78rem; color:#f1f5f9; line-height:1.5;"></div>
+                    <div style="font-size:0.72rem; color:#94a3b8; margin-top:2px;">
+                        💾 <i>Ваш профиль интересов зафиксирован в системе Unity Spirit. Зарегистрируйтесь за 5 секунд, чтобы закрепить проект за собой.</i>
+                    </div>
+                    <button class="btn-action accent" onclick="openAuthGateFromGuest()" style="padding:11px; font-weight:900; justify-content:center; background:linear-gradient(135deg,#10b981,#059669); color:#fff; margin-top:6px;">
+                        ⚡ Зарегистрироваться и закрепить проект →
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 2: ЖИВОЙ ИИ-АССИСТЕНТ (CHATGPT MODE) -->
+            <div style="background:var(--bg-card); border:1px solid rgba(56,189,248,0.35); border-radius:16px; display:flex; flex-direction:column; overflow:hidden; min-height:510px; max-height:640px; box-shadow:0 8px 24px rgba(0,0,0,0.3);">
+                <div style="padding:12px 16px; background:linear-gradient(135deg,#0f172a,#1e1b4b); border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center;">
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <div style="width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1.15rem;">🤖</div>
+                        <div>
+                            <div style="font-weight:900; font-size:0.88rem; color:#f8fafc;">Живой ИИ-Ассистент</div>
+                            <div style="font-size:0.69rem; color:#94a3b8;">ChatGPT Mode · Запросы сохраняются</div>
+                        </div>
+                    </div>
+                    <span class="badge done" style="font-size:0.66rem;">🟢 В сети</span>
+                </div>
+
+                <!-- Chat Messages Scroll Container -->
+                <div id="guest-portal-chat-messages" style="flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:10px; background:#070d19;">
+                    <div style="display:flex; gap:8px; align-items:flex-start;">
+                        <div style="width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0;">🤖</div>
+                        <div style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:10px 12px; font-size:0.79rem; line-height:1.48; color:#f1f5f9; max-width:88%;">
+                            Здравствуйте! Я официальный <b>ИИ-Ассистент Unity Spirit</b> 🚀<br><br>
+                            Задайте мне любой вопрос в живом режиме (как в ChatGPT):<br>
+                            • Как работают <b>7 автономных отделов</b> Генерального Директора Тима<br>
+                            • Как запустить ИИ-воронки и привлекать клиентов<br>
+                            • Чем платформа может помочь вашему бизнесу или идее<br><br>
+                            <i>Все вопросы фиксируются в системе у нас, а вы получаете живой разбор прямо сейчас!</i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Starter Pills -->
+                <div style="padding:6px 12px; background:#0a1222; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:5px; overflow-x:auto; white-space:nowrap;">
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Чем ваши ИИ-агенты могут помочь моему бизнесу?')">🛍️ Чем полезен для бизнеса?</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как Директор Тим координирует 7 отделов и выполняет задачи?')">👑 Директор Тим</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как автоматизировать маркетинг и продажи через ИИ?')">📈 Маркетинг и продажи</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как подключить свой проект в платформу?')">🤝 Подключить проект</button>
+                </div>
+
+                <!-- Chat Input Bar -->
+                <div style="padding:9px 12px; background:#0f172a; border-top:1px solid rgba(255,255,255,0.09); display:flex; gap:6px; align-items:center;">
+                    <input type="text" id="guest-portal-chat-input" class="modal-input" style="flex:1; height:38px; background:#070d19; color:#f8fafc; font-size:0.79rem;" placeholder="Спросите что угодно у ИИ-ассистента..." onkeydown="if(event.key==='Enter') submitGuestPortalChatMessage()">
+                    <button type="button" class="btn-action accent" onclick="submitGuestPortalChatMessage()" style="height:38px; padding:0 14px; font-size:1rem; justify-content:center; background:linear-gradient(135deg,#0284c7,#10b981);">
+                        ✈️
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- TOP BAR -->
     <header class="topbar">
         <div class="brand-row">
@@ -2492,7 +2608,7 @@
         <div style="text-align:center;">
             <h2 style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
                 Unity Spirit — Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.0</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.1</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -2584,9 +2700,12 @@
                     🔄 Авто-проверка каждые 5 сек: как только <b>@unityspiritpartners</b> одобрит вас, офис откроется автоматически без повторного ввода пароля!
                 </div>
             </div>
-            <a id="btn-pending-tg-link" href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" class="modal-btn confirm" style="text-decoration:none; text-align:center; padding:12px; font-weight:900; background:linear-gradient(135deg,#0284c7,#10b981); display:block;">
-                ✈️ Отправить запрос @unityspiritpartners в Telegram
+            <a id="btn-pending-tg-link" href="https://t.me/unitybussinessbot" target="_blank" rel="noopener" class="modal-btn confirm" style="text-decoration:none; text-align:center; padding:12px; font-weight:900; background:linear-gradient(135deg,#0284c7,#10b981); display:block;">
+                🤖 Отправить подтверждение через @unitybussinessbot
             </a>
+            <div style="text-align:center; font-size:0.72rem; color:#94a3b8; margin-top:-3px;">
+                или напрямую: <a id="btn-pending-tg-direct" href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; text-decoration:underline; font-weight:700;">@unityspiritpartners</a>
+            </div>
             <div style="display:flex; gap:6px;">
                 <button class="btn-action ghost" style="flex:1; justify-content:center;" onclick="checkPendingApprovalNow(true)">🔄 Проверить статус</button>
                 <button class="btn-action ghost" style="justify-content:center;" onclick="clearPendingWatchAndSwitch('login')">Сменить аккаунт</button>
@@ -2756,13 +2875,13 @@
     // Auto purge older PWA caches if code version bumped
     (function() {
         try {
-            const currentVer = "22.0";
+            const currentVer = "22.1";
             const storedVer = localStorage.getItem("unity_app_code_version");
             if (storedVer !== currentVer) {
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v22.0")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v22.1")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -7114,7 +7233,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v22.0 active");
+                            console.log("Service Worker v22.1 active");
                         }
                     });
                 }
@@ -7410,6 +7529,7 @@
         }
 
         document.body.classList.remove("auth-locked");
+        if (!userObj || !userObj.is_guest) document.body.classList.remove("guest-preview-mode");
         const gate = document.getElementById("auth-gate-overlay");
         if (gate) gate.style.display = "none";
 
@@ -7471,13 +7591,18 @@
         }
         const tgBtn = document.getElementById("btn-pending-tg-link");
         if (tgBtn) {
+            const cleanId = String(userObj.id || "REQ").replace(/[^a-zA-Z0-9_]/g, "");
+            tgBtn.href = "https://t.me/unitybussinessbot?start=auth_" + cleanId;
+        }
+        const tgDirect = document.getElementById("btn-pending-tg-direct");
+        if (tgDirect) {
             const tgText = encodeURIComponent(
                 "Здравствуйте! Прошу подтвердить мой доступ в Виртуальный Офис Unity Spirit.\n" +
                 (userObj.id ? ("Код заявки: " + userObj.id + "\n") : "") +
                 "Логин: " + userObj.login + "\n" +
                 (userObj.full_name ? ("Имя/TG: " + userObj.full_name) : "")
             );
-            tgBtn.href = "https://t.me/" + UNITY_OWNER_TG + "?text=" + tgText;
+            tgDirect.href = "https://t.me/unityspiritpartners?text=" + tgText;
         }
         startPendingApprovalWatcher(normalizeAuthLogin(userObj.login));
     }
@@ -7625,7 +7750,7 @@
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.0</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.1</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9485,7 +9610,7 @@
 </script>
 
 <!-- ========================================================================= -->
-<!-- === v22.0: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
+<!-- === v22.1: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" style="display:flex; align-items:center; gap:8px; position:fixed; bottom:76px; right:16px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:11px 18px; font-weight:900; font-size:0.84rem; box-shadow:0 8px 24px rgba(2,132,199,0.5); cursor:pointer;">
     <span style="font-size:1.15rem;">🤖</span>
