@@ -2718,6 +2718,31 @@
     localStorage.setItem('ecc_gh_token', ACTIVE_TOKEN);
     localStorage.setItem('ecc_gh_repo', ACTIVE_REPO);
 
+    // =========================================================================
+    // === AUTH & VAULT GLOBAL STATE (INITIALIZED AT TOP BEFORE ANY FUNCTIONS) ===
+    // =========================================================================
+    const UNITY_OWNER_EMAIL = "unityspiritteam@gmail.com";
+    const UNITY_OWNER_TG = "unityspiritpartners";
+    const UNITY_APP_URL = "https://unityspirit.github.io/remote-agents-control/";
+    const LOCAL_TRUST_API = "http://127.0.0.1:18799";
+    const EMBEDDED_VAULT_PUBKEY_SPKI_B64 = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx9NGO3o0wblsEueBza4vy5JlP7FyGHYCYu8MjJEEsmZCyHAg+0g8kY+7Xh2u9oBApksvaR19epwBOW9tKmTcj+sZ9/iDZFQETRyzF0dEOfwsmPLlnp6T9h+sCSpi77E1gksqrlkAQu2GrwsqRsUv4Oxz+0fowge00kxJ7QiJP/WfRswT2cprW5x9KD6bEeHdNB5BK6iH86kHlfqy+60iyOat9Ia8ExuJzAtnczwkIrJl13NPnsFf9Jkv0bkCj323T1ItbRjCr51WVYIK3fy1AjQ/87IBmEPwKPPpkIzMW+y5PBoIFJTeDSGcM36Bifp9UHAiQM/PQ/lOv5HasYO1jQIDAQAB";
+
+    var deferredPwaPrompt = null;
+    var currentAuthUser = null;
+    var authRegistryCache = null;
+    var teamTelemetryCache = { version: "20.5", members: {} };
+    var userArchivesCache = { version: "21.0", users: {} };
+    var unlockedVaultData = null;
+    var vaultSubTab = "approvals";
+    var selectedArchiveUserFilter = "all";
+    var pendingApprovalTimer = null;
+    var userResetWatchTimer = null;
+    var lastUserInteractionTs = Date.now();
+    var lastUserRequestTs = Date.now();
+    var sessionActiveSeconds = 0;
+    var antiStallDismissedAt = 0;
+    var telemetryFlushTimer = null;
+
     function toggleTheme() {
         const root = document.documentElement;
         const isLight = root.classList.toggle('light-theme');
@@ -7008,38 +7033,26 @@
             commentsByIssue = initialComms;
         }
     } catch (e) {}
-    renderProjects();
-    renderPlanView();
-    renderCrmTasks();
-    renderKnowledgeBase();
-    renderWorkspaceFeed();
-    renderTimReportsList();
-    renderAgentsStatus();
-    renderWorkReportsTab();
-    populateGlobalStudyFolders();
-    syncActionAlertsUI();
+    try {
+        renderProjects();
+        renderPlanView();
+        renderCrmTasks();
+        renderKnowledgeBase();
+        renderWorkspaceFeed();
+        renderTimReportsList();
+        renderAgentsStatus();
+        renderWorkReportsTab();
+        populateGlobalStudyFolders();
+        syncActionAlertsUI();
+    } catch (e) {
+        console.warn("Initial dashboard render:", e);
+    }
     // =========================================================================
     // === v20.5: PWA INSTALLER, AUTH GATE (@unityspiritpartners), SECURED   ===
     // === VAULT (9 FAMILY RELATIVES + TRUSTED PC), GTA ONBOARDING & 30D HR  ===
     // =========================================================================
 
-    const UNITY_OWNER_EMAIL = "unityspiritteam@gmail.com";
-    const UNITY_OWNER_TG = "unityspiritpartners";
-    const UNITY_APP_URL = "https://unityspirit.github.io/remote-agents-control/";
-    const LOCAL_TRUST_API = "http://127.0.0.1:18799";
-    const EMBEDDED_VAULT_PUBKEY_SPKI_B64 = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx9NGO3o0wblsEueBza4vy5JlP7FyGHYCYu8MjJEEsmZCyHAg+0g8kY+7Xh2u9oBApksvaR19epwBOW9tKmTcj+sZ9/iDZFQETRyzF0dEOfwsmPLlnp6T9h+sCSpi77E1gksqrlkAQu2GrwsqRsUv4Oxz+0fowge00kxJ7QiJP/WfRswT2cprW5x9KD6bEeHdNB5BK6iH86kHlfqy+60iyOat9Ia8ExuJzAtnczwkIrJl13NPnsFf9Jkv0bkCj323T1ItbRjCr51WVYIK3fy1AjQ/87IBmEPwKPPpkIzMW+y5PBoIFJTeDSGcM36Bifp9UHAiQM/PQ/lOv5HasYO1jQIDAQAB";
-
-    let deferredPwaPrompt = null;
-    let currentAuthUser = null; // { id, login, full_name, telegram, role, status, assigned_projects, gta_completed, gta_archetype, trusted_pc }
-    let authRegistryCache = null;
-    let teamTelemetryCache = { version: "20.5", members: {} };
-    let unlockedVaultData = null; // populated ONLY via 127.0.0.1 trusted PC or 9/9 family relatives AES-256-GCM unlock
-    let vaultSubTab = "approvals";
-    let lastUserInteractionTs = Date.now();
-    let lastUserRequestTs = Date.now();
-    let sessionActiveSeconds = 0;
-    let antiStallDismissedAt = 0;
-    let telemetryFlushTimer = null;
+    // Auth and Vault global variables are initialized at the top of script
 
     // Register PWA Service Worker & Capture Native Install Prompt
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
@@ -7065,9 +7078,6 @@
             window.location.href = targetUrl;
         }
     }
-    let pendingApprovalTimer = null;
-    let userArchivesCache = { version: "21.0", users: {} };
-    let selectedArchiveUserFilter = "all";
 
     function syncGateInstallRowVisibility() {
         const row = document.getElementById("gate-install-row");
@@ -7685,7 +7695,6 @@
     }
 
     // Password Recovery for Non-Owner Users ONLY via Confirmation Code sent to @unityspiritpartners
-    let userResetWatchTimer = null;
     async function submitUserResetCodeRequest() {
         const loginVal = normalizeAuthLogin((document.getElementById("ureset-login") || {}).value);
         const newPass = String((document.getElementById("ureset-newpass") || {}).value || "").trim();
