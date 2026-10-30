@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 21:17:56",
+  "updated": "2026-10-29 21:19:18",
   "projects_count": 55,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -792,20 +792,20 @@
       "project": "GlobalFilms (Filmtools)",
       "folder": "GlobalFilms (Filmtools)",
       "state": "active",
-      "last_change": "2026-10-22",
+      "last_change": "29.10.2026",
       "lead_agent": "Filmtools Production & Engineering Lead",
       "priority_score": 87,
       "revenue_potential": "SaaS для кинопродакшенов + автоматизация съёмочных смен и вызывных листов Светланы",
       "why_first": "Платформа на Next.js 16 уже собрана на ноутбуке (вызывные листы, КПП, сценарии, бюджет) — готова к мобильному тесту со Светланой и коммерческой упаковке.",
       "human_action": "Утвердить состав съемочной группы и внести актуальные тайминги ближайшей смены.",
       "counts": {
-        "completed_works": 1,
+        "completed_works": 3,
         "open_tasks": 1,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 1,
+        "ai_analyses": 3,
         "research_notes": 0
       },
       "continue_first": {
@@ -838,6 +838,27 @@
       "media_items": [],
       "work_items": [
         {
+          "id": "hist-2",
+          "date": "29.10.2026 21:19",
+          "project": "GlobalFilms (Filmtools)",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.insta",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-160",
+          "issue_number": 160,
+          "date": "2026-10-29 21:19:12",
+          "project": "GlobalFilms (Filmtools)",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#160 Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.insta",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
           "id": "card-9006",
           "issue_number": 9006,
           "date": "2026-10-22 08:18:48",
@@ -849,7 +870,7 @@
           "status": "blocked_human"
         },
         {
-          "id": "hist-1",
+          "id": "hist-3",
           "date": "19.10.2026 12:32",
           "project": "GlobalFilms (Filmtools)",
           "type": "ai_study",
