@@ -8515,6 +8515,55 @@ function sendQuickGuestPromptPortal(txt) {
         }
     }
 
+        // =========================================================================
+    // === v22.6: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // =========================================================================
+    const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
+    const TG_BOT_NAME = "unitybusinessbot";
+    const OWNER_TG_CHAT_ID = "8538272428"; // Verified owner chat ID for @Unityspiritpartners
+
+    async function sendTelegramBotNotification(reqCode, loginVal, fullName, tgVal) {
+        if (!TG_BOT_TOKEN || !OWNER_TG_CHAT_ID) return;
+        const msg = [
+            "👑 Новая заявка в Global Spirit Group ★ Виртуальный Офис:",
+            "• Код заявки: " + reqCode,
+            "• Логин: " + loginVal,
+            "• Имя/Контакт: " + (fullName || "Пользователь"),
+            (tgVal ? ("• Telegram: " + tgVal) : ""),
+            "Ожидает вашего подтверждения в Офисе."
+        ].filter(Boolean).join(String.fromCharCode(10));
+
+        try {
+            await fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: OWNER_TG_CHAT_ID, text: msg })
+            });
+            console.log("Telegram notification sent to owner chat_id:", OWNER_TG_CHAT_ID);
+        } catch(e) {
+            console.warn("Failed to send telegram bot notification:", e);
+        }
+    }
+
+    async function sendTelegramBotQuizNotification(quizSummary, contactInfo) {
+        if (!TG_BOT_TOKEN || !OWNER_TG_CHAT_ID) return;
+        const msg = [
+            "🎯 Новый ответ на Квиз в Global Spirit Group ★ Превью:",
+            "• Профиль интересов: " + quizSummary,
+            "• Контакт: " + (contactInfo || "Гость без регистрации"),
+            "Запрос зафиксирован в системе."
+        ].filter(Boolean).join(String.fromCharCode(10));
+
+        try {
+            await fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: OWNER_TG_CHAT_ID, text: msg })
+            });
+        } catch(e) {}
+    }
+
+
     async function submitAuthRegistration() {
         const rawLoginInput = String((document.getElementById("reg-login") || {}).value || "").trim();
         const loginVal = normalizeAuthLogin(rawLoginInput);
@@ -8644,6 +8693,20 @@ function sendQuickGuestPromptPortal(txt) {
                 reset_code: resetCode,
                 requested_at: new Date().toISOString()
             });
+            try {
+                const resetMsg = [
+                    "🔑 Запрос на сброс пароля в Global Spirit Group ★ Виртуальный Офис:",
+                    "• Логин: " + loginVal,
+                    "• Код подтверждения: " + resetCode,
+                    "Ожидает вашего подтверждения в Сейфе."
+                ].join(String.fromCharCode(10));
+                fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ chat_id: OWNER_TG_CHAT_ID, text: resetMsg })
+                }).catch(() => {});
+            } catch(e) {}
+
             u.pending_reset = {
                 code: resetCode,
                 requested_at: new Date().toISOString(),
