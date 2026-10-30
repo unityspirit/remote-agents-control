@@ -1693,6 +1693,7 @@
 
 
         /* === v20.5: PWA, AUTH GATE, GTA SYNDICATE HUD, SECURED VAULT & ANTI-STALL === */
+        body.member-nodel .owner-only-ctrl { display: none !important; }
         body.auth-locked .app-shell {
             display: none !important;
         }
@@ -1845,7 +1846,7 @@
             </div>
         </div>
         <div class="topbar-actions" style="overflow-x:auto;">
-            <button class="icon-btn" style="background:linear-gradient(135deg,rgba(37,99,235,0.26),rgba(124,58,237,0.26)); border-color:rgba(96,165,250,0.6); color:#93c5fd; font-weight:800;" onclick="openInstallAppModal()" id="btn-top-install-app" title="Установить приложение на телефон / ПК или отправить на любое устройство">📲 Приложение <span id="pwa-ready-dot" style="display:none; width:7px; height:7px; border-radius:50%; background:#34d399;"></span></button>
+            <button class="icon-btn" style="background:linear-gradient(135deg,rgba(37,99,235,0.26),rgba(124,58,237,0.26)); border-color:rgba(96,165,250,0.6); color:#93c5fd; font-weight:800;" onclick="smartTopbarInstallClick()" id="btn-top-install-app" title="Установить приложение на телефон / ПК или отправить на любое устройство">📲 Приложение <span id="pwa-ready-dot" style="display:none; width:7px; height:7px; border-radius:50%; background:#34d399;"></span></button>
             <button class="icon-btn" style="display:none; background:rgba(245,158,11,0.18); border-color:rgba(245,158,11,0.55); color:#fbbf24; font-weight:800;" onclick="openSecuredVaultModal()" id="btn-top-secured-vault" title="Секретная папка логинов/паролей, одобрение @unityspiritpartners, назначение папок и 30-дневный контроль">🔒 Сейф & Админ (<span id="topbar-pending-reg-cnt">0</span>)</button>
             <button class="icon-btn" style="display:none; font-weight:700;" onclick="openUserProfileMenu()" id="btn-top-user-chip" title="Профиль / GTA-Досье">👤</button>
             <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report" title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 Отчёт работы (<span id="topbar-work-cnt">150</span>)</button>
@@ -2481,65 +2482,107 @@
 </div>
 
 
-<!-- v20.5: FULL-SCREEN LOGIN & REGISTRATION GATE (@unityspiritpartners APPROVAL) -->
+<!-- v21.0: FRICTIONLESS 1-TAP INSTALL, 5-SECOND REGISTRATION & STRICT @unityspiritpartners GATE -->
 <div id="auth-gate-overlay" class="auth-gate-overlay">
     <div class="auth-gate-card">
         <img src="icons/icon-512.png" alt="Unity Spirit 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
-            <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc;">Unity Spirit — Виртуальный Офис</h2>
-            <div id="auth-gate-status" style="font-size:0.76rem; color:#94a3b8; margin-top:3px; line-height:1.4;">
-                🔄 Проверка доверенного компьютера и сессии доступа...
+            <h2 style="font-size:1.16rem; font-weight:900; color:#f8fafc;">Unity Spirit — Виртуальный Офис</h2>
+            <div id="auth-gate-status" style="font-size:0.75rem; color:#94a3b8; margin-top:3px; line-height:1.4;">
+                🔒 Доступ к офису открывается только после подтверждения @unityspiritpartners
             </div>
         </div>
 
-        <button class="btn-action accent" onclick="openInstallAppModal()" style="width:100%; padding:10px 14px; font-size:0.82rem; font-weight:800; background:linear-gradient(135deg,#0284c7,#7c3aed);">
-            📲 Установить приложение на телефон / Отправить на устройство
-        </button>
+        <!-- DIRECT 1-TAP APP INSTALL BAR (NO EXTRA MODALS OR CONFIRMATIONS!) -->
+        <div id="gate-install-row" style="display:flex; gap:6px; align-items:stretch;">
+            <button class="btn-action accent" id="btn-direct-install-gate" onclick="directOneClickInstall()" style="flex:1; padding:11px 13px; font-size:0.84rem; font-weight:900; justify-content:center; background:linear-gradient(135deg,#0284c7,#7c3aed);">
+                📲 Установить приложение в 1 клик
+            </button>
+            <button class="btn-action ghost" onclick="openInstallAppModal()" title="QR-код и отправка на другое устройство" style="padding:0 12px; font-size:0.9rem; font-weight:800;">📤</button>
+        </div>
+        <div id="gate-ios-inline-tip" style="display:none; background:rgba(37,99,235,0.14); border:1px solid rgba(96,165,250,0.45); border-radius:11px; padding:8px 10px; font-size:0.74rem; color:#e2e8f0; line-height:1.45;">
+            🍏 <b>iPhone / iPad:</b> нажмите внизу Safari <b>«Поделиться ⬆️» → «На экран Домой ➕»</b> (или <a href="javascript:void(0)" onclick="downloadIosWebClipProfile()" style="color:#60a5fa; font-weight:800;">скачайте 3D-иконку в 1 тап</a>).
+        </div>
 
-        <div class="auth-tabs-row">
-            <button class="auth-tab-btn active" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Вход</button>
-            <button class="auth-tab-btn" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">📝 Регистрация</button>
-            <button class="auth-tab-btn" id="auth-tab-btn-family9" onclick="switchAuthGateTab('family9')">🧬 Сброс (9/9)</button>
+        <div class="auth-tabs-row" id="auth-main-tabs-row">
+            <button class="auth-tab-btn active" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Быстрая регистрация</button>
+            <button class="auth-tab-btn" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Вход</button>
         </div>
 
         <div id="auth-feedback-box" style="display:none; padding:10px 12px; border-radius:12px; border:1px solid; font-size:0.77rem; line-height:1.45;"></div>
 
-        <!-- PANEL 1: LOGIN -->
-        <div id="auth-panel-login" style="display:flex; flex-direction:column; gap:9px;">
-            <input type="text" id="auth-login-user" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Логин или Email" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthLogin()">
-            <input type="password" id="auth-login-pass" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Пароль" autocomplete="current-password" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+        <!-- PANEL 1: 5-SECOND EXPRESS REGISTRATION (DEFAULT FOR NEW USERS) -->
+        <div id="auth-panel-register" style="display:flex; flex-direction:column; gap:8px;">
+            <input type="text" id="reg-login" class="modal-input" style="height:42px; background:#090d16; color:#f8fafc;" placeholder="Логин (или ваш @Telegram / Email) *" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
+            <div style="position:relative; display:flex; align-items:center;">
+                <input type="password" id="reg-pass1" class="modal-input" style="height:42px; width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Придумайте пароль (от 4 симв.) *" autocomplete="new-password" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
+                <button type="button" onclick="const p=document.getElementById('reg-pass1'); p.type=(p.type==='password'?'text':'password');" style="position:absolute; right:8px; background:none; border:none; color:#94a3b8; cursor:pointer; font-size:1rem;">👁️</button>
+            </div>
+            <input type="text" id="reg-contact" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваше имя и @Telegram (для одобрения)" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
+            <button class="modal-btn confirm" id="btn-auth-reg-submit" onclick="submitAuthRegistration()" style="padding:12px; font-size:0.9rem; font-weight:900; background:linear-gradient(135deg,#10b981,#2563eb);">⚡ Быстрая регистрация →</button>
+            <div style="font-size:0.72rem; color:#94a3b8; text-align:center; line-height:1.38;">
+                Офис откроется <b>только после подтверждения</b> вашей заявки в Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a>.
+            </div>
+        </div>
+
+        <!-- PANEL 2: LOGIN -->
+        <div id="auth-panel-login" style="display:none; flex-direction:column; gap:9px;">
+            <input type="text" id="auth-login-user" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Логин, @Telegram или Email" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+            <div style="position:relative; display:flex; align-items:center;">
+                <input type="password" id="auth-login-pass" class="modal-input" style="width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Пароль" autocomplete="current-password" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+                <button type="button" onclick="const p=document.getElementById('auth-login-pass'); p.type=(p.type==='password'?'text':'password');" style="position:absolute; right:8px; background:none; border:none; color:#94a3b8; cursor:pointer; font-size:1rem;">👁️</button>
+            </div>
             <button class="modal-btn confirm" id="btn-auth-login-submit" onclick="submitAuthLogin()" style="padding:12px; font-size:0.9rem; font-weight:800;">🔐 Войти в Виртуальный Офис</button>
-            <div style="font-size:0.73rem; color:#94a3b8; text-align:center; line-height:1.4;">
-                Нет аккаунта? Нажмите <b>«📝 Регистрация»</b> — вход активируется после одобрения сообщения в Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:700;">@unityspiritpartners</a>.
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; font-size:0.73rem;">
+                <a href="javascript:void(0)" onclick="switchAuthGateTab('user-reset')" style="color:#60a5fa; text-decoration:none; font-weight:700;">🔑 Забыли пароль? Сброс по коду</a>
+                <a href="javascript:void(0)" onclick="switchAuthGateTab('family9')" style="color:#64748b; text-decoration:none; font-size:0.69rem;">👑 Владелец (9/9)</a>
             </div>
         </div>
 
-        <!-- PANEL 2: REGISTRATION -->
-        <div id="auth-panel-register" style="display:none; flex-direction:column; gap:8px;">
-            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.35); border-radius:10px; padding:8px 10px; line-height:1.4;">
-                Зарегистрироваться может любой участник. После отправки формы напишите <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a> — после одобрения вам откроется система и стартовый <b>GTA-опросник проектов</b>!
+        <!-- PANEL 3: WAITING FOR @unityspiritpartners CONFIRMATION (STRICT OFFICE LOCK!) -->
+        <div id="auth-panel-pending" style="display:none; flex-direction:column; gap:10px;">
+            <div style="background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.5); border-radius:14px; padding:13px; text-align:center;">
+                <div style="font-size:1.35rem;">⏳</div>
+                <div style="font-weight:900; font-size:0.92rem; color:#fde68a; margin-top:3px;">Аккаунт создан · Ожидание подтверждения</div>
+                <div id="pending-user-summary" style="font-size:0.76rem; color:#e2e8f0; margin-top:5px; line-height:1.45;"></div>
+                <div style="font-size:0.72rem; color:#94a3b8; margin-top:6px;">
+                    🔄 Авто-проверка каждые 5 сек: как только <b>@unityspiritpartners</b> одобрит вас, офис откроется автоматически без повторного ввода пароля!
+                </div>
             </div>
-            <input type="text" id="reg-fullname" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваше Имя и Фамилия *">
-            <input type="text" id="reg-login" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Логин или Email для входа *" autocomplete="username">
-            <input type="text" id="reg-telegram" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваш Telegram (@username) *">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
-                <input type="password" id="reg-pass1" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Пароль (от 6 симв.) *" autocomplete="new-password">
-                <input type="password" id="reg-pass2" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Повтор пароля *" autocomplete="new-password">
+            <a id="btn-pending-tg-link" href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" class="modal-btn confirm" style="text-decoration:none; text-align:center; padding:12px; font-weight:900; background:linear-gradient(135deg,#0284c7,#10b981); display:block;">
+                ✈️ Отправить запрос @unityspiritpartners в Telegram
+            </a>
+            <div style="display:flex; gap:6px;">
+                <button class="btn-action ghost" style="flex:1; justify-content:center;" onclick="checkPendingApprovalNow(true)">🔄 Проверить статус</button>
+                <button class="btn-action ghost" style="justify-content:center;" onclick="clearPendingWatchAndSwitch('login')">Сменить аккаунт</button>
             </div>
-            <input type="text" id="reg-note" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Чем хотите заниматься / ваши сильные стороны">
-            <button class="modal-btn confirm" id="btn-auth-reg-submit" onclick="submitAuthRegistration()" style="padding:11px; font-weight:800; background:linear-gradient(135deg,#10b981,#2563eb);">📝 Зарегистрироваться и запросить одобрение</button>
         </div>
 
-        <!-- PANEL 3: OWNER 9 FAMILY RELATIVE NAMES RECOVERY & RESET -->
+        <!-- PANEL 4: USER PASSWORD RECOVERY VIA CODE SENT TO @unityspiritpartners -->
+        <div id="auth-panel-user-reset" style="display:none; flex-direction:column; gap:8px;">
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(59,130,246,0.13); border:1px solid rgba(59,130,246,0.38); border-radius:10px; padding:9px 10px; line-height:1.42;">
+                🔑 <b>Восстановление пароля участника:</b> введите ваш логин и новый пароль. Система выдаст <b>код подтверждения</b> — отправьте его в Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a>, и после подтверждения владельцем пароль обновится.
+            </div>
+            <input type="text" id="ureset-login" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваш Логин / @Telegram / Email">
+            <div style="position:relative; display:flex; align-items:center;">
+                <input type="password" id="ureset-newpass" class="modal-input" style="height:40px; width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Новый пароль (от 4 симв.)">
+                <button type="button" onclick="const p=document.getElementById('ureset-newpass'); p.type=(p.type==='password'?'text':'password');" style="position:absolute; right:8px; background:none; border:none; color:#94a3b8; cursor:pointer;">👁️</button>
+            </div>
+            <button class="modal-btn confirm" id="btn-ureset-submit" onclick="submitUserResetCodeRequest()" style="padding:11px; font-weight:800;">🔑 Получить код сброса для @unityspiritpartners</button>
+            <button class="btn-action ghost" style="justify-content:center;" onclick="switchAuthGateTab('login')">← Назад ко входу</button>
+        </div>
+
+        <!-- PANEL 5: OWNER-ONLY 9 FAMILY RELATIVE NAMES RECOVERY (STRICTLY FOR VLASLAV) -->
         <div id="auth-panel-family9" style="display:none; flex-direction:column; gap:8px;">
             <div style="font-size:0.73rem; color:#fde68a; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.4); border-radius:10px; padding:8px 10px; line-height:1.4;">
-                🧬 <b>Экстренный доступ Владельца к Секретному Сейфу и сброс пароля:</b> требуется точное совпадение <b>всех 9 имён ваших родственников (9/9)</b>. На вашем компьютере с <code>unityspiritteam@gmail.com</code> вход выполняется автоматически.
+                👑 <b>Восстановление ТОЛЬКО для Владельца (<code>unityspiritteam@gmail.com</code>):</b> введите все <b>9 имён ваших родственников (9/9)</b>. Для всех остальных участников восстановление работает только по коду через <b>@unityspiritpartners</b>.
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:5px;">
                 <input type="text" id="gate-fam9-1" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #1"><input type="text" id="gate-fam9-2" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #2"><input type="text" id="gate-fam9-3" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #3"><input type="text" id="gate-fam9-4" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #4"><input type="text" id="gate-fam9-5" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #5"><input type="text" id="gate-fam9-6" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #6"><input type="text" id="gate-fam9-7" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #7"><input type="text" id="gate-fam9-8" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #8"><input type="text" id="gate-fam9-9" class="modal-input" style="height:37px; font-size:0.8rem;" placeholder="Родственник #9">
             </div>
-            <input type="password" id="gate-fam9-newpass" class="modal-input" style="height:39px; background:#090d16; color:#f8fafc;" placeholder="Новый пароль владельца (необязательно, если только вход)">
-            <button class="modal-btn confirm" onclick="submitGateFamily9UnlockAndReset()" style="padding:11px; font-weight:800; background:linear-gradient(135deg,#8b5cf6,#2563eb);">🧬 Подтвердить 9/9 родственников и открыть Сейф</button>
+            <input type="password" id="gate-fam9-newpass" class="modal-input" style="height:39px; background:#090d16; color:#f8fafc;" placeholder="Новый пароль Владельца (необязательно, если только вход)">
+            <button class="modal-btn confirm" onclick="submitGateFamily9UnlockAndReset()" style="padding:11px; font-weight:800; background:linear-gradient(135deg,#8b5cf6,#2563eb);">👑 Подтвердить 9/9 родственников и войти</button>
+            <button class="btn-action ghost" style="justify-content:center;" onclick="switchAuthGateTab('login')">← Назад ко входу</button>
         </div>
     </div>
 </div>
@@ -2619,8 +2662,9 @@
         <div class="filter-row" style="padding:0; flex-wrap:wrap; gap:5px;">
             <button class="chip active" id="vault-tab-approvals" onclick="setVaultSubTab('approvals')">🔐 Логины, Пароли & Одобрение</button>
             <button class="chip" id="vault-tab-folders" onclick="setVaultSubTab('folders')">📁 Назначить Папки</button>
-            <button class="chip" id="vault-tab-telemetry" onclick="setVaultSubTab('telemetry')">⏱️ Время, Запросы & 30д Замена</button>
-            <button class="chip" id="vault-tab-family9" onclick="setVaultSubTab('family9')">🧬 9 Родственников (Сброс)</button>
+            <button class="chip" id="vault-tab-telemetry" onclick="setVaultSubTab('telemetry')">⏱️ Время & 30д Замена</button>
+            <button class="chip" id="vault-tab-archives" onclick="setVaultSubTab('archives')">📚 Архивы Пользователей</button>
+            <button class="chip" id="vault-tab-family9" onclick="setVaultSubTab('family9')">👑 9 Родственников (Только Я)</button>
         </div>
         <div class="modal-body" id="secured-vault-body" style="gap:10px; max-height:72dvh;"></div>
     </div>
@@ -2668,6 +2712,15 @@
         }
         const options = { method, headers };
         if (body) {
+            if ((method === 'POST' || method === 'PATCH' || method === 'PUT' || method === 'DELETE') && typeof isUserAuthenticated === 'function' && !isUserAuthenticated()) {
+                const isPreAuthAllowed = (
+                    path.startsWith('/contents/auth_registry.json') ||
+                    (method === 'POST' && path === '/issues' && String((body && body.title) || '').includes('AUTH_SYNC'))
+                );
+                if (!isPreAuthAllowed) {
+                    throw new Error('Доступ к офису открывается только после подтверждения @unityspiritpartners!');
+                }
+            }
             if (method === 'POST' && path === '/issues' && typeof currentAuthUser !== 'undefined' && currentAuthUser) {
                 const actorTag = '\n\n<!-- ACTOR: ' + currentAuthUser.login + ' | ' + (currentAuthUser.full_name || '') + ' -->';
                 if (typeof body.body === 'string' && !body.body.includes('<!-- ACTOR:')) {
@@ -4235,7 +4288,7 @@
                     html += '<div class="plan-card">' +
                         '<div class="plan-step-header">' +
                             '<span class="badge" style="color:var(--accent);">' + escapeHtml(r.time || "Недавно") + '</span>' +
-                            '<button class="mini-btn" onclick="removeReminder(' + idx + ')" style="color:#ef4444; border-color:rgba(239,68,68,0.3);">Удалить</button>' +
+                            '<button class="mini-btn owner-only-ctrl" onclick="removeReminder(' + idx + ')" style="color:#ef4444; border-color:rgba(239,68,68,0.3);">Удалить</button>' +
                         '</div>' +
                         '<div style="font-size:0.88rem; font-weight:600;">' + escapeHtml(r.text) + '</div>' +
                         (r.project ? '<div style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;">📁 Проект: ' + escapeHtml(r.project) + '</div>' : '') +
@@ -4335,6 +4388,10 @@
     }
 
     function removeReminder(idx) {
+        if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+            showToast("🔒 Удаление отключено: все записи сохраняются в истории.");
+            return;
+        }
         const rems = getSavedReminders();
         if (idx >= 0 && idx < rems.length) {
             rems.splice(idx, 1);
@@ -4355,6 +4412,10 @@
     }
 
     async function assignProjectToIssue(issueNumber, targetProject) {
+        if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+            showToast("🔒 Перемещение общих карточек доступно только Владельцу (@unityspiritpartners).");
+            return;
+        }
         const iss = allIssues.find(i => i.number === issueNumber);
         if (!iss) return;
         const parsed = parseIssueProject(iss.title);
@@ -4398,6 +4459,10 @@
     }
 
     async function toggleIssueState(issueNumber, currentState) {
+        if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+            showToast("🔒 Закрытие и удаление карточек отключено: все материалы сохраняются.");
+            return;
+        }
         const newState = currentState === "open" ? "closed" : "open";
         showToast(newState === "closed" ? "✅ Закрываем задачу #" + issueNumber + "..." : "⏳ Возвращаем задачу #" + issueNumber + " в работу...");
 
@@ -4629,7 +4694,7 @@
                     '<span class="crm-project-tag">#' + iss.number + ' · 📁 ' + escapeHtml(project) + '</span>' +
                     '<div style="display:flex; align-items:center; gap:6px;">' +
                         '<span>' + dateStr + ' ' + statusBadge + '</span>' +
-                        '<button class="btn-action ghost" style="padding:2px 7px; font-size:0.68rem;" onclick="event.stopPropagation(); toggleIssueState(' + iss.number + ', \'' + iss.state + '\')">' + (iss.state === "open" ? "Завершить ✓" : "Открыть ↺") + '</button>' +
+                        '<button class="btn-action ghost owner-only-ctrl" style="padding:2px 7px; font-size:0.68rem;" onclick="event.stopPropagation(); toggleIssueState(' + iss.number + ', \'' + iss.state + '\')">' + (iss.state === "open" ? "Завершить ✓" : "Открыть ↺") + '</button>' +
                     '</div>' +
                 '</div>' +
                 '<div class="crm-task-title">' + linkifyText(cmd) + '</div>' +
@@ -4657,7 +4722,7 @@
                 '<div class="card-ctrl-strip" onclick="event.stopPropagation()">' +
                     '<span style="font-size:0.71rem; color:var(--text-dim);">Ведущий: <b>' + escapeHtml(leadAgent) + '</b></span>' +
                     '<div style="display:flex; gap:5px;">' +
-                        '<button class="btn-action ghost" onclick="promptChangeProject(' + iss.number + ', \'' + safeProj + '\')">📁 Папка</button>' +
+                        '<button class="btn-action ghost owner-only-ctrl" onclick="promptChangeProject(' + iss.number + ', \'' + safeProj + '\')">📁 Папка</button>' +
                         '<button class="btn-action ghost" onclick="copyIssueDigest(' + iss.number + ')">📋 Копировать</button>' +
                         '<button class="btn-action primary" onclick="selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
                     '</div>' +
@@ -4720,6 +4785,18 @@
                 allIssues.unshift(created);
                 if (uploadedUrls.length > 0) {
                     await saveUrlToCloudKb("👑 Фото + Поручение Тиму: " + shortHeadline, targetProj, created.number, text.slice(0, 350), uploadedUrls);
+                }
+                if (typeof recordToSeparateUserArchiveCloud === "function") {
+                    recordToSeparateUserArchiveCloud({
+                        id: "iss-" + created.number,
+                        issue_number: created.number,
+                        project: targetProj,
+                        kind: "director_tim",
+                        title: "👑 Тиму: " + shortHeadline,
+                        study_text: text,
+                        urls: (text.match(/https?:\/\/[^\s)\]>]+/g) || []),
+                        image_urls: uploadedUrls
+                    });
                 }
                 showToast("✅ Директор Тим принял задачу #" + created.number + " в работу!");
                 renderCrmTasks();
@@ -5039,7 +5116,7 @@
 
         let html = "";
         kbItems.forEach(item => {
-            const hay = (item.title + " " + (item.category || "") + " " + (item.summary || "") + " " + (item.action_items || []).join(" ")).toLowerCase();
+            const hay = (item.title + " " + (item.category || "") + " " + (item.saved_by_login || "") + " " + (item.saved_by_name || "") + " " + (item.summary || "") + " " + (item.action_items || []).join(" ")).toLowerCase();
             if (q && !hay.includes(q)) return;
 
             const actionsHtml = (item.action_items || []).map(a => '<li>' + escapeHtml(a) + '</li>').join("");
@@ -5051,7 +5128,7 @@
                 }).join("") + '</div>')
                 : '';
             html += '<div class="kb-card">' +
-                '<div class="kb-cat">' + escapeHtml(item.category || "Позновалка") + ' · #' + escapeHtml(item.issue || "Cloud") + '</div>' +
+                '<div class="kb-cat">' + escapeHtml(item.category || "Позновалка") + ' · #' + escapeHtml(item.issue || "Cloud") + (item.saved_by_name ? (' · 👤 ' + escapeHtml(item.saved_by_name)) : '') + '</div>' +
                 '<div class="kb-title">' + linkifyText(item.title) + '</div>' +
                 kbPhotosHtml +
                 '<div class="kb-summary">' + linkifyText(item.summary) + '</div>' +
@@ -5600,9 +5677,13 @@
     async function saveUrlToCloudKb(rawText, project, issueNum, cloudSummary, imageUrls) {
         const urls = (rawText.match(/https?:\/\/[^\s)\]>]+/g) || []).filter(u => !/\/uploads\//i.test(u));
         const imgs = Array.isArray(imageUrls) ? imageUrls : [];
+        const actorLg = (typeof currentAuthUser !== "undefined" && currentAuthUser) ? currentAuthUser.login : "unityspiritteam@gmail.com";
+        const actorFn = (typeof currentAuthUser !== "undefined" && currentAuthUser) ? (currentAuthUser.full_name || currentAuthUser.login) : "Власлав";
         const newEntry = {
             id: "kb-" + Date.now(),
             issue: issueNum || "Cloud",
+            saved_by_login: actorLg,
+            saved_by_name: actorFn,
             category: "Проект: " + project,
             title: rawText.replace(/\s+/g, " ").slice(0, 125),
             source_url: urls[0] || imgs[0] || "",
@@ -5626,7 +5707,10 @@
             const existing = await readRepoJson("crm_data.json");
             const crmObj = (existing && existing.json) ? existing.json : { version: "10.0", knowledge_base: [] };
             if (!Array.isArray(crmObj.knowledge_base)) crmObj.knowledge_base = [];
-            crmObj.knowledge_base.unshift(newEntry);
+            // Append-only union: never drop existing entries!
+            if (!crmObj.knowledge_base.some(x => x && x.id === newEntry.id)) {
+                crmObj.knowledge_base.unshift(newEntry);
+            }
             crmObj.updated_at = new Date().toISOString();
             const contentB64 = btoa(unescape(encodeURIComponent(JSON.stringify(crmObj, null, 2))));
             const body = {
@@ -5693,6 +5777,10 @@
         const opts = options || {};
         const studyText = String(opts.studyText || "").trim();
         const imageUrls = Array.isArray(opts.imageUrls) ? opts.imageUrls : [];
+        if (typeof isOwnerSession === "function" && !isOwnerSession() && /^(?:CLEANUP|DELETE|REMOVE|УДАЛИТЬ|ОЧИСТИТЬ)\b/i.test(String(commandText || "").trim())) {
+            showToast("🔒 Удаление и очистка отключены: вы можете сохранять и исследовать любые материалы без удаления.");
+            return;
+        }
         const cleanHeadline = String(commandText || studyText || "Материал для изучения").replace(/\s+/g, " ").trim().slice(0, 165);
         const title = "CMD: " + (imageUrls.length > 0 && !cleanHeadline.includes("📷") ? ("📷 " + cleanHeadline) : cleanHeadline) + " | PROJ: " + targetProject;
         const allTextForUrls = cleanHeadline + (studyText ? ("\n" + studyText) : "");
@@ -5728,6 +5816,18 @@
                         ? (studyText.slice(0, 420) + (cloudDigest ? ("\n• " + cloudDigest) : ""))
                         : cloudDigest;
                     await saveUrlToCloudKb(cleanHeadline, targetProject, created.number, kbSummary, imageUrls);
+                }
+                if (typeof recordToSeparateUserArchiveCloud === "function") {
+                    recordToSeparateUserArchiveCloud({
+                        id: "iss-" + created.number,
+                        issue_number: created.number,
+                        project: targetProject,
+                        kind: isInstantBar ? "saved_research" : "agent_request",
+                        title: cleanHeadline,
+                        study_text: studyText || cloudDigest || "",
+                        urls: urls,
+                        image_urls: imageUrls
+                    });
                 }
 
                 if (cloudDigest) {
@@ -5991,6 +6091,7 @@
     }
 
     async function refreshAllData(manual) {
+        if (typeof isUserAuthenticated === "function" && !isUserAuthenticated()) return;
         if (manual) showToast("🔄 Синхронизация...");
         await Promise.all([fetchWorkerTelemetry(), fetchIssuesAndComments()]);
     }
@@ -6916,15 +7017,30 @@
             navigator.serviceWorker.register("./sw.js").catch(() => {});
         });
     }
+    let pendingApprovalTimer = null;
+    let userArchivesCache = { version: "21.0", users: {} };
+    let selectedArchiveUserFilter = "all";
+
+    function syncGateInstallRowVisibility() {
+        const row = document.getElementById("gate-install-row");
+        if (row) {
+            row.style.display = isStandaloneInstalledApp() ? "none" : "flex";
+        }
+    }
+
     window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
         deferredPwaPrompt = e;
         const badge = document.getElementById("pwa-ready-dot");
         if (badge) badge.style.display = "inline-block";
+        const gBtn = document.getElementById("btn-direct-install-gate");
+        if (gBtn) gBtn.innerText = "⚡ Установить приложение в 1 касание";
+        syncGateInstallRowVisibility();
     });
     window.addEventListener("appinstalled", () => {
         deferredPwaPrompt = null;
-        showToast("📲 Приложение Unity Office установлено на главный экран!");
+        syncGateInstallRowVisibility();
+        showToast("📲 Приложение Unity Office установлено!");
     });
 
     function isStandaloneInstalledApp() {
@@ -7056,12 +7172,60 @@
 
     function canCurrentUserAccessProject(projName) {
         if (projName === "Secured_Users_Vault") return false;
-        if (!currentAuthUser || currentAuthUser.role === "owner") return true;
+        if (!currentAuthUser) return false;
+        if (currentAuthUser.role === "owner") return true;
+        if (currentAuthUser.status !== "approved") return false;
         const assigned = getUserAssignedProjects();
         if (assigned.includes("*")) return true;
-        if (assigned.length === 0) return true; // right before GTA test finishes
-        if (projName === "Позновалка" || projName === "Входящие_Офис") return true;
+        if (assigned.length === 0) return true;
+        if (projName === "Позновалка" || projName === "Входящие_Офис" || projName === "Автономная_База_Знаний_Каналов") return true;
         return assigned.some(ap => sameProject(ap, projName));
+    }
+
+    async function fetchUserArchivesFresh() {
+        try {
+            const res = await readRepoJson("user_archives.json");
+            if (res && res.json && typeof res.json.users === "object") {
+                userArchivesCache = res.json;
+                return userArchivesCache;
+            }
+        } catch (e) {}
+        return userArchivesCache;
+    }
+
+    async function recordToSeparateUserArchiveCloud(itemObj) {
+        if (!currentAuthUser) return;
+        try {
+            const lg = normalizeAuthLogin(currentAuthUser.login);
+            const fn = currentAuthUser.full_name || lg;
+            const latest = await fetchUserArchivesFresh();
+            latest.users = latest.users || {};
+            const ubox = latest.users[lg] || { login: lg, full_name: fn, items: [] };
+            ubox.full_name = fn;
+            ubox.items = Array.isArray(ubox.items) ? ubox.items : [];
+            const eid = String(itemObj.id || ("arc-" + Date.now()));
+            if (!ubox.items.some(x => x && String(x.id) === eid)) {
+                ubox.items.push({
+                    id: eid,
+                    ts: new Date().toISOString(),
+                    login: lg,
+                    full_name: fn,
+                    issue_number: itemObj.issue_number || null,
+                    project: itemObj.project || currentProject || "Позновалка",
+                    kind: itemObj.kind || "research",
+                    title: String(itemObj.title || "").slice(0, 240),
+                    study_text: String(itemObj.study_text || "").slice(0, 4000),
+                    urls: Array.isArray(itemObj.urls) ? itemObj.urls : [],
+                    image_urls: Array.isArray(itemObj.image_urls) ? itemObj.image_urls : []
+                });
+            }
+            ubox.total_count = ubox.items.length;
+            ubox.last_saved_at = new Date().toISOString();
+            latest.users[lg] = ubox;
+            latest.updated_at = new Date().toISOString();
+            userArchivesCache = latest;
+            await writeDataBranchJson("user_archives.json", latest, "Append user archive: " + lg);
+        } catch (e) {}
     }
 
     // 1. Check Local Trusted Owner Computer (unityspiritteam@gmail.com via 127.0.0.1:18799)
@@ -7081,6 +7245,14 @@
     }
 
     function unlockOfficeWithUser(userObj, viaTrustedPc) {
+        // STRICT LOCK: Never unlock office unless Owner Trusted PC OR confirmed status === "approved"!
+        if (!viaTrustedPc && (!userObj || userObj.status !== "approved")) {
+            return;
+        }
+        if (pendingApprovalTimer) {
+            clearInterval(pendingApprovalTimer);
+            pendingApprovalTimer = null;
+        }
         currentAuthUser = {
             id: userObj.id || "usr",
             login: normalizeAuthLogin(userObj.login),
@@ -7094,12 +7266,19 @@
             trusted_pc: Boolean(viaTrustedPc)
         };
         try {
+            localStorage.removeItem("unity_office_pending_session_v21");
             localStorage.setItem("unity_office_auth_session_v20", JSON.stringify({
                 login: currentAuthUser.login,
                 saved_at: Date.now(),
                 trusted_pc: Boolean(viaTrustedPc)
             }));
         } catch (e) {}
+
+        if (currentAuthUser.role === "owner") {
+            document.body.classList.remove("member-nodel");
+        } else {
+            document.body.classList.add("member-nodel");
+        }
 
         document.body.classList.remove("auth-locked");
         const gate = document.getElementById("auth-gate-overlay");
@@ -7109,15 +7288,11 @@
         renderProjects();
         populateGlobalStudyFolders();
         startTeamActivityHeartbeat();
+        refreshAllData(false);
 
         // Launch GTA Syndicate Onboarding automatically for newly approved members!
         if (!currentAuthUser.gta_completed && currentAuthUser.role !== "owner") {
             setTimeout(() => openGtaOnboardingModal(false), 350);
-        }
-
-        // Auto-open Install Modal if arrived via ?install=1 link
-        if (location.search.includes("install=1") && !isStandaloneInstalledApp()) {
-            setTimeout(() => openInstallAppModal(), 600);
         }
     }
 
@@ -7127,7 +7302,8 @@
         if (vaultBtn) {
             if (isOwnerSession()) {
                 vaultBtn.style.display = "inline-flex";
-                const pend = ((authRegistryCache && authRegistryCache.users) || []).filter(u => u.status === "pending").length;
+                const usersArr = (authRegistryCache && authRegistryCache.users) || [];
+                const pend = usersArr.filter(u => u.status === "pending" || (u.pending_reset && u.pending_reset.code)).length;
                 const cntEl = document.getElementById("topbar-pending-reg-cnt");
                 if (cntEl) cntEl.innerText = String(pend);
             } else {
@@ -7143,12 +7319,94 @@
         }
     }
 
+    function enterPendingWaitingRoom(userObj) {
+        document.body.classList.add("auth-locked");
+        const gate = document.getElementById("auth-gate-overlay");
+        if (gate) gate.style.display = "flex";
+        try {
+            localStorage.setItem("unity_office_pending_session_v21", JSON.stringify({
+                login: normalizeAuthLogin(userObj.login),
+                full_name: userObj.full_name || userObj.login,
+                id: userObj.id || "",
+                telegram: userObj.telegram || ""
+            }));
+        } catch (e) {}
+
+        switchAuthGateTab("pending");
+        const sumEl = document.getElementById("pending-user-summary");
+        if (sumEl) {
+            sumEl.innerHTML =
+                "Логин: <b><code>" + escapeHtml(userObj.login) + "</code></b>" +
+                (userObj.id ? " · Код: <code>" + escapeHtml(userObj.id) + "</code>" : "") +
+                "<br>Офис закрыт до подтверждения владельцем <b>@" + UNITY_OWNER_TG + "</b>.";
+        }
+        const tgBtn = document.getElementById("btn-pending-tg-link");
+        if (tgBtn) {
+            const tgText = encodeURIComponent(
+                "Здравствуйте! Прошу подтвердить мой доступ в Виртуальный Офис Unity Spirit.\n" +
+                (userObj.id ? ("Код заявки: " + userObj.id + "\n") : "") +
+                "Логин: " + userObj.login + "\n" +
+                (userObj.full_name ? ("Имя/TG: " + userObj.full_name) : "")
+            );
+            tgBtn.href = "https://t.me/" + UNITY_OWNER_TG + "?text=" + tgText;
+        }
+        startPendingApprovalWatcher(normalizeAuthLogin(userObj.login));
+    }
+
+    function startPendingApprovalWatcher(loginNorm) {
+        if (pendingApprovalTimer) clearInterval(pendingApprovalTimer);
+        pendingApprovalTimer = setInterval(() => {
+            checkPendingApprovalNow(false, loginNorm);
+        }, 5000);
+    }
+
+    async function checkPendingApprovalNow(manualClick, explicitLogin) {
+        try {
+            const savedPend = JSON.parse(localStorage.getItem("unity_office_pending_session_v21") || "null");
+            const lg = normalizeAuthLogin(explicitLogin || (savedPend && savedPend.login) || "");
+            if (!lg) return;
+            const reg = await fetchAuthRegistryFresh();
+            const liveUser = (reg.users || []).find(u => normalizeAuthLogin(u.login) === lg);
+            if (!liveUser) return;
+            if (liveUser.status === "approved") {
+                await fetchTeamTelemetryFresh();
+                const memTele = (teamTelemetryCache.members || {})[liveUser.login] || {};
+                if (memTele.gta_profile && memTele.gta_profile.completed_at) {
+                    liveUser.gta_completed = true;
+                    liveUser.gta_archetype = memTele.gta_profile.archetype || liveUser.gta_archetype;
+                }
+                unlockOfficeWithUser(liveUser, false);
+                showToast("🎉 Доступ подтверждён @" + UNITY_OWNER_TG + "! Добро пожаловать!");
+                return;
+            }
+            if (liveUser.status === "rejected" || liveUser.status === "replaced") {
+                if (pendingApprovalTimer) clearInterval(pendingApprovalTimer);
+                localStorage.removeItem("unity_office_pending_session_v21");
+                switchAuthGateTab("login");
+                showAuthFeedback("🚫 Заявка отклонена администратором @" + UNITY_OWNER_TG + ".", "error");
+                return;
+            }
+            if (manualClick) {
+                showToast("⏳ Пока ожидает подтверждения от @" + UNITY_OWNER_TG + "...");
+            }
+        } catch (e) {}
+    }
+
+    function clearPendingWatchAndSwitch(tabName) {
+        if (pendingApprovalTimer) {
+            clearInterval(pendingApprovalTimer);
+            pendingApprovalTimer = null;
+        }
+        try { localStorage.removeItem("unity_office_pending_session_v21"); } catch (e) {}
+        switchAuthGateTab(tabName || "login");
+    }
+
     async function initAuthGateV20() {
         document.body.classList.add("auth-locked");
         const gate = document.getElementById("auth-gate-overlay");
         if (gate) gate.style.display = "flex";
+        syncGateInstallRowVisibility();
 
-        // Parallel check: Local Trusted Computer (unityspiritteam@gmail.com) + Cloud Auth Registry
         const [localTrust, reg] = await Promise.all([
             checkLocalOwnerComputerTrust(),
             fetchAuthRegistryFresh(),
@@ -7167,13 +7425,13 @@
                 gta_completed: true,
                 gta_archetype: "👑 Босс Синдиката"
             }, true);
-            const pendingN = localTrust.pending_count || ((reg && reg.users) || []).filter(u => u.status === "pending").length;
+            const pendingN = localTrust.pending_count || ((reg && reg.users) || []).filter(u => u.status === "pending" || (u.pending_reset && u.pending_reset.code)).length;
             const cntEl = document.getElementById("topbar-pending-reg-cnt");
             if (cntEl) cntEl.innerText = String(pendingN);
             return;
         }
 
-        // Check saved session on phone/browser — verify user is STILL approved in live auth_registry.json!
+        // 1. Check saved approved session
         try {
             const saved = JSON.parse(localStorage.getItem("unity_office_auth_session_v20") || "null");
             if (saved && saved.login && reg && Array.isArray(reg.users)) {
@@ -7181,26 +7439,46 @@
                 if (liveUser && liveUser.status === "approved") {
                     unlockOfficeWithUser(liveUser, false);
                     return;
+                } else if (liveUser && liveUser.status === "pending") {
+                    localStorage.removeItem("unity_office_auth_session_v20");
+                    enterPendingWaitingRoom(liveUser);
+                    return;
                 } else {
                     localStorage.removeItem("unity_office_auth_session_v20");
                 }
             }
         } catch (e) {}
 
-        // If arrived with ?install=1 even before login, let them see the Install banner cleanly
-        const statusMsg = document.getElementById("auth-gate-status");
-        if (statusMsg) {
-            statusMsg.innerText = "🔒 Вход только для зарегистрированных участников, одобренных @" + UNITY_OWNER_TG;
-        }
+        // 2. Check saved pending registration waiting for @unityspiritpartners confirmation!
+        try {
+            const savedPend = JSON.parse(localStorage.getItem("unity_office_pending_session_v21") || "null");
+            if (savedPend && savedPend.login && reg && Array.isArray(reg.users)) {
+                const liveUser = reg.users.find(u => normalizeAuthLogin(u.login) === normalizeAuthLogin(savedPend.login));
+                if (liveUser && liveUser.status === "approved") {
+                    unlockOfficeWithUser(liveUser, false);
+                    return;
+                } else if (liveUser && liveUser.status === "pending") {
+                    enterPendingWaitingRoom(liveUser);
+                    return;
+                }
+            }
+        } catch (e) {}
+
+        // Default to fast 5-second registration for new visitors!
+        switchAuthGateTab("register");
     }
 
     function switchAuthGateTab(tabName) {
-        ["login", "register", "family9"].forEach(t => {
+        ["register", "login", "pending", "user-reset", "family9"].forEach(t => {
             const panel = document.getElementById("auth-panel-" + t);
             const btn = document.getElementById("auth-tab-btn-" + t);
             if (panel) panel.style.display = (t === tabName) ? "flex" : "none";
             if (btn) btn.classList.toggle("active", t === tabName);
         });
+        const tabsBar = document.getElementById("auth-main-tabs-row");
+        if (tabsBar) {
+            tabsBar.style.display = (tabName === "register" || tabName === "login") ? "grid" : "none";
+        }
         const msg = document.getElementById("auth-feedback-box");
         if (msg) msg.style.display = "none";
     }
@@ -7219,35 +7497,29 @@
         const loginVal = normalizeAuthLogin((document.getElementById("auth-login-user") || {}).value);
         const passVal = String((document.getElementById("auth-login-pass") || {}).value || "").trim();
         if (!loginVal || !passVal) {
-            showAuthFeedback("⚠️ Введите логин (или Email) и пароль.", "error");
+            showAuthFeedback("⚠️ Введите логин и пароль.", "error");
             return;
         }
         const btn = document.getElementById("btn-auth-login-submit");
-        if (btn) { btn.disabled = true; btn.innerText = "⏳ Проверка доступа..."; }
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Проверка..."; }
         try {
             const reg = await fetchAuthRegistryFresh();
             const user = (reg.users || []).find(u => normalizeAuthLogin(u.login) === loginVal);
             if (!user) {
-                showAuthFeedback("❌ Аккаунт не найден. Перейдите во вкладку <b>«📝 Регистрация»</b> и отправьте запрос на одобрение <b>@" + UNITY_OWNER_TG + "</b>.", "error");
+                showAuthFeedback("❌ Аккаунт не найден — нажмите <b>«⚡ Быстрая регистрация»</b> выше.", "error");
                 return;
             }
             const computed = await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000);
             if (computed !== user.pbkdf2_hash) {
-                showAuthFeedback("❌ Неверный пароль.", "error");
+                showAuthFeedback("❌ Неверный пароль. Для сброса нажмите «🔑 Забыли пароль? Сброс по коду».", "error");
                 return;
             }
             if (user.status === "pending") {
-                const tgMsg = encodeURIComponent("Здравствуйте! Прошу одобрить мой доступ в приложение Unity Spirit Virtual Office.\nЛогин: " + user.login + "\nИмя: " + (user.full_name || ""));
-                showAuthFeedback(
-                    "⏳ <b>Ваша регистрация ожидает одобрения владельцем!</b><br>" +
-                    "Доступ открывает лично <b>@" + UNITY_OWNER_TG + "</b> после вашего сообщения в Telegram:<br>" +
-                    '<a href="https://t.me/' + UNITY_OWNER_TG + '?text=' + tgMsg + '" target="_blank" rel="noopener" class="btn-action accent" style="margin-top:8px; text-decoration:none; display:inline-flex;">✈️ Написать @' + UNITY_OWNER_TG + ' в Telegram</a>',
-                    "warn"
-                );
+                enterPendingWaitingRoom(user);
                 return;
             }
             if (user.status === "rejected" || user.status === "replaced") {
-                showAuthFeedback("🚫 Доступ для этого аккаунта закрыт администратором (@" + UNITY_OWNER_TG + ").", "error");
+                showAuthFeedback("🚫 Доступ закрыт администратором (@" + UNITY_OWNER_TG + ").", "error");
                 return;
             }
             await fetchTeamTelemetryFresh();
@@ -7259,41 +7531,51 @@
             unlockOfficeWithUser(user, false);
             showToast("✅ Добро пожаловать, " + (user.full_name || user.login) + "!");
         } catch (e) {
-            showAuthFeedback("⚠️ Ошибка сети при проверке входа: " + escapeHtml(e.message || String(e)), "error");
+            showAuthFeedback("⚠️ Ошибка сети: " + escapeHtml(e.message || String(e)), "error");
         } finally {
             if (btn) { btn.disabled = false; btn.innerText = "🔐 Войти в Виртуальный Офис"; }
         }
     }
 
     async function submitAuthRegistration() {
-        const fullName = String((document.getElementById("reg-fullname") || {}).value || "").trim();
-        const loginVal = normalizeAuthLogin((document.getElementById("reg-login") || {}).value);
-        let tgVal = String((document.getElementById("reg-telegram") || {}).value || "").trim();
+        const rawLoginInput = String((document.getElementById("reg-login") || {}).value || "").trim();
+        const loginVal = normalizeAuthLogin(rawLoginInput);
         const pass1 = String((document.getElementById("reg-pass1") || {}).value || "").trim();
-        const pass2 = String((document.getElementById("reg-pass2") || {}).value || "").trim();
-        const noteVal = String((document.getElementById("reg-note") || {}).value || "").trim();
+        const contactRaw = String((document.getElementById("reg-contact") || {}).value || "").trim();
 
-        if (!fullName || !loginVal || !tgVal || !pass1) {
-            showAuthFeedback("⚠️ Заполните имя, логин/email, ваш Telegram и пароль.", "error");
+        if (!loginVal || !pass1) {
+            showAuthFeedback("⚠️ Укажите логин (или @Telegram / Email) и пароль.", "error");
             return;
         }
-        if (pass1.length < 6) {
-            showAuthFeedback("⚠️ Пароль должен быть не короче 6 символов.", "error");
+        if (pass1.length < 4) {
+            showAuthFeedback("⚠️ Пароль должен содержать минимум 4 символа.", "error");
             return;
         }
-        if (pass1 !== pass2) {
-            showAuthFeedback("⚠️ Пароли не совпадают.", "error");
-            return;
-        }
-        if (!tgVal.startsWith("@") && !tgVal.startsWith("http")) tgVal = "@" + tgVal;
+
+        // Auto-extract name & telegram cleanly without nagging validation!
+        const tgMatch = (contactRaw + " " + rawLoginInput).match(/@[a-zA-Z0-9_]{3,}/);
+        const tgVal = tgMatch ? tgMatch[0] : (rawLoginInput.startsWith("@") ? rawLoginInput : (contactRaw || loginVal));
+        const fullName = contactRaw ? contactRaw.replace(/@[a-zA-Z0-9_]+/g, "").trim() || contactRaw : rawLoginInput;
 
         const btn = document.getElementById("btn-auth-reg-submit");
-        if (btn) { btn.disabled = true; btn.innerText = "⏳ Шифрование и отправка заявки..."; }
+        if (btn) { btn.disabled = true; btn.innerText = "⚡ Создаём аккаунт..."; }
         try {
             const reg = await fetchAuthRegistryFresh();
             reg.users = Array.isArray(reg.users) ? reg.users : [];
-            if (reg.users.some(u => normalizeAuthLogin(u.login) === loginVal)) {
-                showAuthFeedback("⚠️ Этот логин/email уже зарегистрирован. Перейдите во вкладку «Вход» или напишите @" + UNITY_OWNER_TG + ".", "warn");
+            const existingUser = reg.users.find(u => normalizeAuthLogin(u.login) === loginVal);
+            if (existingUser) {
+                // Smart fast-path: if they typed their existing login & matching password, handle seamlessly!
+                const checkHash = await pbkdf2HexJs(pass1, existingUser.salt_hex, existingUser.iterations || 120000);
+                if (checkHash === existingUser.pbkdf2_hash) {
+                    if (existingUser.status === "approved") {
+                        unlockOfficeWithUser(existingUser, false);
+                        return;
+                    } else if (existingUser.status === "pending") {
+                        enterPendingWaitingRoom(existingUser);
+                        return;
+                    }
+                }
+                showAuthFeedback("⚠️ Этот логин уже занят. Перейдите во вкладку «🔐 Вход» или выберите другой логин.", "warn");
                 return;
             }
 
@@ -7305,7 +7587,6 @@
                 password: pass1,
                 full_name: fullName,
                 telegram: tgVal,
-                note: noteVal,
                 created_at: new Date().toISOString()
             });
 
@@ -7324,45 +7605,114 @@
                 assigned_projects: [],
                 gta_completed: false,
                 gta_archetype: "",
-                note: noteVal,
                 created_at: new Date().toISOString()
             };
             reg.users.push(newUserEntry);
             reg.updated_at = new Date().toISOString();
-            await writeDataBranchJson("auth_registry.json", reg, "New pending registration " + reqCode);
+            await writeDataBranchJson("auth_registry.json", reg, "Express pending registration " + reqCode);
             authRegistryCache = reg;
 
-            // Trigger worker sync silently so local Secured_Users_Vault decrypts & stores credentials immediately
             try {
                 await ghApi("/issues", "POST", {
-                    title: "CMD: AUTH_SYNC: Новая заявка на доступ " + reqCode + " (" + fullName + " / " + tgVal + ") | PROJ: Входящие_Офис",
-                    body: "Новая регистрация ожидает одобрения @" + UNITY_OWNER_TG + ".\nКод заявки: `" + reqCode + "`\nИмя: **" + fullName + "**\nЛогин: `" + loginVal + "`\nTelegram: **" + tgVal + "**\nКомментарий: " + (noteVal || "—")
+                    title: "CMD: AUTH_SYNC: Быстрая заявка " + reqCode + " (" + fullName + " / " + tgVal + ") | PROJ: Входящие_Офис",
+                    body: "Новая регистрация ждёт одобрения @" + UNITY_OWNER_TG + ".\nКод: `" + reqCode + "`\nЛогин: `" + loginVal + "`\nКонтакт: **" + fullName + "** (`" + tgVal + "`)"
                 }, true);
             } catch (e) {}
 
-            const tgText = encodeURIComponent(
-                "Здравствуйте! Я зарегистрировался в приложении Unity Spirit Virtual Office.\n" +
-                "Код заявки: " + reqCode + "\n" +
-                "Имя: " + fullName + "\n" +
-                "Логин: " + loginVal + "\n" +
-                "Telegram: " + tgVal + "\n" +
-                "Прошу одобрить доступ!"
-            );
+            // Immediately lock into Pending Waiting Room until @unityspiritpartners confirms!
+            enterPendingWaitingRoom(newUserEntry);
+        } catch (e) {
+            showAuthFeedback("⚠️ Ошибка регистрации: " + escapeHtml(e.message || String(e)), "error");
+        } finally {
+            if (btn) { btn.disabled = false; btn.innerText = "⚡ Быстрая регистрация →"; }
+        }
+    }
 
+    // Password Recovery for Non-Owner Users ONLY via Confirmation Code sent to @unityspiritpartners
+    let userResetWatchTimer = null;
+    async function submitUserResetCodeRequest() {
+        const loginVal = normalizeAuthLogin((document.getElementById("ureset-login") || {}).value);
+        const newPass = String((document.getElementById("ureset-newpass") || {}).value || "").trim();
+        if (!loginVal || !newPass) {
+            showAuthFeedback("⚠️ Введите ваш логин и новый пароль.", "error");
+            return;
+        }
+        if (newPass.length < 4) {
+            showAuthFeedback("⚠️ Новый пароль должен содержать минимум 4 символа.", "error");
+            return;
+        }
+        if (loginVal === UNITY_OWNER_EMAIL) {
+            showAuthFeedback("👑 Аккаунт Владельца восстанавливается только через 9 имён родственников (кнопка «👑 Владелец (9/9)»).", "warn");
+            return;
+        }
+        const btn = document.getElementById("btn-ureset-submit");
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Генерация кода..."; }
+        try {
+            const reg = await fetchAuthRegistryFresh();
+            const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === loginVal);
+            if (!u || u.role === "owner") {
+                showAuthFeedback("❌ Пользователь с таким логином не найден.", "error");
+                return;
+            }
+            const resetCode = "CODE-" + String(Math.floor(100000 + Math.random() * 900000));
+            const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+            const pwdHash = await pbkdf2HexJs(newPass, saltHex, 120000);
+            const rsaEnv = await encryptCredentialsForOwnerVault({
+                login: loginVal,
+                password: newPass,
+                reset_code: resetCode,
+                requested_at: new Date().toISOString()
+            });
+            u.pending_reset = {
+                code: resetCode,
+                requested_at: new Date().toISOString(),
+                salt_hex: saltHex,
+                pbkdf2_hash: pwdHash,
+                rsa_envelope: rsaEnv
+            };
+            await writeDataBranchJson("auth_registry.json", reg, "Password reset code request " + resetCode + " for " + loginVal);
+            authRegistryCache = reg;
+
+            try {
+                await ghApi("/issues", "POST", {
+                    title: "CMD: AUTH_SYNC: Код сброса пароля " + resetCode + " для " + loginVal + " | PROJ: Входящие_Офис",
+                    body: "Запрос на восстановление пароля по коду `" + resetCode + "` для аккаунта `" + loginVal + "`. Ожидает подтверждения @" + UNITY_OWNER_TG + "."
+                }, true);
+            } catch (e) {}
+
+            const tgMsg = encodeURIComponent(
+                "Здравствуйте! Прошу подтвердить восстановление пароля в Unity Spirit Virtual Office.\n" +
+                "Логин: " + loginVal + "\n" +
+                "Код подтверждения: " + resetCode
+            );
             showAuthFeedback(
-                "✅ <b>Заявка " + escapeHtml(reqCode) + " сохранена!</b><br>" +
-                "Логин и пароль зашифрованы в защищённый сейф администратора.<br>" +
-                "<b>Обязательный шаг:</b> отправьте сообщение <b>@" + UNITY_OWNER_TG + "</b> в Telegram — сразу после его одобрения вы сможете войти и пройти стартовый GTA-тест:<br>" +
-                '<div style="margin-top:9px; display:flex; gap:8px; flex-wrap:wrap;">' +
-                    '<a href="https://t.me/' + UNITY_OWNER_TG + '?text=' + tgText + '" target="_blank" rel="noopener" class="btn-action accent" style="text-decoration:none; padding:9px 14px; font-weight:800;">✈️ Написать @' + UNITY_OWNER_TG + ' для одобрения</a>' +
-                    '<button class="btn-action ghost" onclick="switchAuthGateTab(\'login\')">Перейти ко входу →</button>' +
-                '</div>',
+                "🔑 <b>Ваш код восстановления: <code>" + escapeHtml(resetCode) + "</code></b><br>" +
+                "Отправьте этот код в Telegram <b>@" + UNITY_OWNER_TG + "</b> — сразу после подтверждения владельцем ваш новый пароль активируется автоматически:<br>" +
+                '<a href="https://t.me/' + UNITY_OWNER_TG + '?text=' + tgMsg + '" target="_blank" rel="noopener" class="btn-action accent" style="margin-top:8px; text-decoration:none; display:inline-flex; font-weight:800;">✈️ Отправить код ' + escapeHtml(resetCode) + ' в @' + UNITY_OWNER_TG + '</a>',
                 "success"
             );
+
+            if (userResetWatchTimer) clearInterval(userResetWatchTimer);
+            userResetWatchTimer = setInterval(async () => {
+                try {
+                    const fresh = await fetchAuthRegistryFresh();
+                    const lu = (fresh.users || []).find(x => normalizeAuthLogin(x.login) === loginVal);
+                    if (lu && lu.pbkdf2_hash === pwdHash && !lu.pending_reset) {
+                        clearInterval(userResetWatchTimer);
+                        userResetWatchTimer = null;
+                        if (lu.status === "approved") {
+                            unlockOfficeWithUser(lu, false);
+                            showToast("✅ Код подтверждён @" + UNITY_OWNER_TG + "! Новый пароль активирован.");
+                        } else {
+                            enterPendingWaitingRoom(lu);
+                        }
+                    }
+                } catch (e) {}
+            }, 5000);
         } catch (e) {
-            showAuthFeedback("⚠️ Ошибка отправки заявки: " + escapeHtml(e.message || String(e)), "error");
+            showAuthFeedback("⚠️ Ошибка запроса сброса: " + escapeHtml(e.message || String(e)), "error");
         } finally {
-            if (btn) { btn.disabled = false; btn.innerText = "📝 Зарегистрироваться и запросить одобрение"; }
+            if (btn) { btn.disabled = false; btn.innerText = "🔑 Получить код сброса для @unityspiritpartners"; }
         }
     }
 
@@ -7484,6 +7834,42 @@
     // =========================================================================
     // === 📲 PWA INSTALL, DOWNLOAD & SEND TO ANY DEVICE                     ===
     // =========================================================================
+
+    async function directOneClickInstall() {
+        if (deferredPwaPrompt) {
+            deferredPwaPrompt.prompt();
+            const choice = await deferredPwaPrompt.userChoice.catch(() => null);
+            if (choice && choice.outcome === "accepted") {
+                deferredPwaPrompt = null;
+                syncGateInstallRowVisibility();
+                showToast("📲 Установка приложения запущена!");
+            }
+            return;
+        }
+        const ua = navigator.userAgent || "";
+        if (/iPhone|iPad|iPod/i.test(ua)) {
+            const tip = document.getElementById("gate-ios-inline-tip");
+            if (tip && document.body.classList.contains("auth-locked")) {
+                tip.style.display = "block";
+            }
+            downloadIosWebClipProfile();
+            return;
+        }
+        if (isStandaloneInstalledApp()) {
+            showToast("✅ Приложение уже установлено на этом устройстве!");
+            syncGateInstallRowVisibility();
+            return;
+        }
+        downloadPortableInstallerFile();
+    }
+
+    function smartTopbarInstallClick() {
+        if (deferredPwaPrompt && !isStandaloneInstalledApp()) {
+            directOneClickInstall();
+            return;
+        }
+        openInstallAppModal();
+    }
 
     function openInstallAppModal() {
         const m = document.getElementById("install-app-modal");
@@ -8273,7 +8659,10 @@
             }
         } catch (e) {}
 
-        await Promise.all([fetchAuthRegistryFresh(), fetchTeamTelemetryFresh()]);
+        await Promise.all([fetchAuthRegistryFresh(), fetchTeamTelemetryFresh(), fetchUserArchivesFresh()]);
+        if (unlockedVaultData && unlockedVaultData.user_archives && unlockedVaultData.user_archives.users) {
+            userArchivesCache = unlockedVaultData.user_archives;
+        }
         renderSecuredVaultModal();
     }
 
@@ -8308,7 +8697,7 @@
         const container = document.getElementById("secured-vault-body");
         if (!container) return;
 
-        ["approvals", "folders", "telemetry", "family9"].forEach(t => {
+        ["approvals", "folders", "telemetry", "archives", "family9"].forEach(t => {
             const b = document.getElementById("vault-tab-" + t);
             if (b) b.classList.toggle("active", t === vaultSubTab);
         });
@@ -8348,6 +8737,27 @@
                     '<span style="font-size:0.77rem; color:#fde68a; font-weight:700;">🧬 Задайте ваши 9 имён родственников (9/9) для защиты любого сброса и доступа вне этого ПК!</span>' +
                     '<button class="mini-btn accent" onclick="setVaultSubTab(\'family9\')">Задать 9 родственников →</button>' +
                 '</div>';
+            }
+
+            const resetList = mergedUsers.filter(u => u.role !== "owner" && u.pending_reset && u.pending_reset.code);
+            if (resetList.length > 0) {
+                html += '<div style="font-size:0.78rem; font-weight:800; color:#c084fc; text-transform:uppercase; margin-top:4px;">🔑 Запросы сброса пароля по коду из @' + UNITY_OWNER_TG + ' (' + resetList.length + '):</div>';
+                resetList.forEach(u => {
+                    const sl = escapeHtml(u.login).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+                    const pr = u.pending_reset || {};
+                    const newPlain = u.pending_reset_password_plain || pr.password_plain || "";
+                    html += '<div style="background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.5); border-left:4px solid #a855f7; border-radius:12px; padding:10px 12px; display:flex; flex-direction:column; gap:6px;">' +
+                        '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                            '<span style="font-weight:800; font-size:0.84rem;">👤 ' + escapeHtml(u.full_name || u.login) + ' (<code>' + escapeHtml(u.login) + '</code>)</span>' +
+                            '<span class="badge running" style="background:rgba(168,85,247,0.25); color:#e9d5ff; font-weight:900;">🔑 Код: ' + escapeHtml(pr.code) + '</span>' +
+                        '</div>' +
+                        '<div style="font-size:0.75rem; color:var(--text-dim);">Новый пароль участника: <code>' + escapeHtml(newPlain || "🔒 зашифрован RSA (синхронизируется с ПК)") + '</code></div>' +
+                        '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                            '<button class="btn-action success" style="font-weight:800;" onclick="adminHandleResetCode(\'' + sl + '\', true)">✅ Подтвердить код ' + escapeHtml(pr.code) + ' и обновить пароль</button>' +
+                            '<button class="btn-action danger" onclick="adminHandleResetCode(\'' + sl + '\', false)">🚫 Отклонить</button>' +
+                        '</div>' +
+                    '</div>';
+                });
             }
 
             html += '<div style="font-size:0.78rem; font-weight:800; color:#fbbf24; text-transform:uppercase; margin-top:4px;">⏳ Ожидают вашего одобрения после сообщения в @' + UNITY_OWNER_TG + ' (' + pendingList.length + '):</div>';
@@ -8396,7 +8806,7 @@
                         '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:3px;">' +
                             (u.status !== "approved" ? '<button class="mini-btn accent" onclick="adminSetUserStatus(\'' + sl + '\', \'approved\')">✅ Одобрить</button>' : '<button class="mini-btn" style="color:#f87171;" onclick="adminSetUserStatus(\'' + sl + '\', \'rejected\')">🚫 Отозвать доступ</button>') +
                             '<button class="mini-btn" onclick="setVaultSubTab(\'folders\')">📁 Назначить папки →</button>' +
-                            '<button class="mini-btn" onclick="setVaultSubTab(\'family9\'); document.getElementById(\'reset9-target-login\') && (document.getElementById(\'reset9-target-login\').value=\'' + sl + '\');">🔑 Сброс (9/9)</button>' +
+                            '<button class="mini-btn" onclick="selectedArchiveUserFilter=\'' + sl + '\'; setVaultSubTab(\'archives\');">📚 Архив сохранений →</button>' +
                         '</div>'
                     ) : '') +
                 '</div>';
@@ -8517,7 +8927,70 @@
             return;
         }
 
-        // SUB-TAB 4: 9 FAMILY RELATIVE NAMES ENROLLMENT & RESET GATE (9/9 MATCH)
+        // SUB-TAB: PER-USER SEPARATE RESEARCH & SAVES ARCHIVE (FOR VLASLAV & AI LEARNING)
+        if (vaultSubTab === "archives") {
+            const archUsersObj = (userArchivesCache && userArchivesCache.users) || {};
+            const allLogins = Array.from(new Set([...mergedUsers.map(u => normalizeAuthLogin(u.login)), ...Object.keys(archUsersObj)])).filter(Boolean);
+
+            let filterChips = '<button class="chip ' + (selectedArchiveUserFilter === "all" ? "active" : "") + '" onclick="selectedArchiveUserFilter=\'all\'; renderSecuredVaultModal();">🌐 Все пользователи (' + allLogins.length + ')</button>';
+            allLogins.forEach(lg => {
+                const cnt = ((archUsersObj[lg] && archUsersObj[lg].items) || []).length;
+                const sl = escapeHtml(lg).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+                filterChips += '<button class="chip ' + (selectedArchiveUserFilter === lg ? "active" : "") + '" onclick="selectedArchiveUserFilter=\'' + sl + '\'; renderSecuredVaultModal();">👤 ' + escapeHtml(lg) + ' (' + cnt + ')</button>';
+            });
+
+            let html =
+                '<div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.38); border-radius:12px; padding:10px 12px; font-size:0.76rem; line-height:1.45;">' +
+                    '📚 <b>Раздельные неудаляемые архивы каждого пользователя (для Вас и ИИ):</b><br>' +
+                    '• Участники могут только <b>сохранять, исследовать и использовать</b> систему без права удаления.<br>' +
+                    '• Всё сохранённое каждым человеком пишется отдельно в <code>Secured_Users_Vault\Users_Separate_Archives\&lt;логин&gt;</code> и в базу самообучения <code>Автономная_База_Знаний_Каналов\Архивы_Пользователей_Офиса\&lt;логин&gt;</code>.' +
+                '</div>' +
+                '<div style="display:flex; gap:5px; flex-wrap:wrap;">' + filterChips + '</div>';
+
+            const showLogins = selectedArchiveUserFilter === "all" ? allLogins : allLogins.filter(l => l === selectedArchiveUserFilter);
+            showLogins.forEach(lg => {
+                const uMeta = mergedUsers.find(x => normalizeAuthLogin(x.login) === lg) || { login: lg, full_name: lg };
+                const uBox = archUsersObj[lg] || { items: [] };
+                const items = Array.isArray(uBox.items) ? uBox.items.slice().reverse() : [];
+                const urlsCnt = items.reduce((acc, it) => acc + ((it.urls && it.urls.length) || 0), 0);
+                const photosCnt = items.reduce((acc, it) => acc + ((it.image_urls && it.image_urls.length) || 0), 0);
+                const sl = escapeHtml(lg).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+
+                html += '<div style="background:var(--bg-card); border:1px solid var(--border); border-left:4px solid #10b981; border-radius:12px; padding:11px 12px; display:flex; flex-direction:column; gap:8px;">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<span style="font-weight:800; font-size:0.86rem;">👤 ' + escapeHtml(uMeta.full_name || lg) + ' (<code>' + escapeHtml(lg) + '</code>)</span>' +
+                        '<button class="btn-action accent" onclick="closeSecuredVaultModal(); runPlanStep(\'Автономная_База_Знаний_Каналов\', \'STUDY_USER_ARCHIVE: ' + sl + '\')">🧠 Изучить архив с ИИ</button>' +
+                    '</div>' +
+                    '<div class="briefing-kpi-row tabular">' +
+                        '<span class="briefing-kpi-pill">📥 Записей: ' + items.length + '</span>' +
+                        '<span class="briefing-kpi-pill">🔗 Ссылок: ' + urlsCnt + '</span>' +
+                        '<span class="briefing-kpi-pill">📷 Фото: ' + photosCnt + '</span>' +
+                    '</div>';
+
+                if (items.length === 0) {
+                    html += '<div style="font-size:0.75rem; color:var(--text-dim);">Пока нет сохранённых материалов от этого пользователя.</div>';
+                } else {
+                    html += '<div style="display:flex; flex-direction:column; gap:6px; max-height:260px; overflow-y:auto;">';
+                    items.slice(0, 30).forEach(it => {
+                        html += '<div style="background:var(--bg-main); border:1px solid var(--border); border-radius:9px; padding:8px 10px; font-size:0.74rem; line-height:1.4;">' +
+                            '<div style="display:flex; justify-content:space-between; gap:6px; color:#93c5fd; font-weight:700;">' +
+                                '<span>📁 ' + escapeHtml(it.project || "Позновалка") + (it.issue_number ? ' · #' + it.issue_number : '') + '</span>' +
+                                '<span>' + escapeHtml(String(it.ts || "").slice(0, 16).replace("T", " ")) + '</span>' +
+                            '</div>' +
+                            '<div style="font-weight:700; color:var(--text-main); margin-top:3px;">' + escapeHtml(it.title || "") + '</div>' +
+                            (it.study_text ? '<div style="color:var(--text-dim); margin-top:3px;">' + escapeHtml(String(it.study_text).slice(0, 220)) + '</div>' : '') +
+                            ((it.urls && it.urls.length) ? '<div style="margin-top:3px;"><a href="' + escapeHtml(it.urls[0]) + '" target="_blank" rel="noopener" style="color:#34d399;">🔗 ' + escapeHtml(it.urls[0].slice(0, 65)) + '</a></div>' : '') +
+                        '</div>';
+                    });
+                    html += '</div>';
+                }
+                html += '</div>';
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        // SUB-TAB 4: 9 FAMILY RELATIVE NAMES ENROLLMENT & OWNER-ONLY RESET GATE (9/9 MATCH)
         let inputs9 = "";
         for (let i = 1; i <= 9; i++) {
             inputs9 += '<input type="text" id="vault-fam9-' + i + '" class="modal-input" style="height:38px; font-size:0.81rem;" placeholder="Родственник #' + i + ' (имя / фамилия)">';
@@ -8532,14 +9005,50 @@
                 '<button class="btn-action accent" style="padding:10px; font-weight:800;" onclick="ownerEnrollNineRelatives()">🛡️ Сохранить 9 имён родственников как мастер-ключ (9/9)</button>'
             ) : (
                 '<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:10px 12px; display:flex; flex-direction:column; gap:8px; margin-top:4px;">' +
-                    '<div style="font-size:0.78rem; font-weight:800; color:#fbbf24;">🔑 Сброс любого пароля / расшифровка сейфа (требуются все 9/9 имён выше):</div>' +
+                    '<div style="font-size:0.78rem; font-weight:800; color:#fbbf24;">👑 Сброс пароля Владельца (' + escapeHtml(UNITY_OWNER_EMAIL) + ') / расшифровка сейфа (9/9 имён):</div>' +
                     '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
-                        '<input type="text" id="reset9-target-login" class="task-inline-input" value="' + escapeHtml(UNITY_OWNER_EMAIL) + '" placeholder="Логин аккаунта для сброса">' +
-                        '<input type="password" id="reset9-new-password" class="task-inline-input" placeholder="Новый пароль (от 6 симв.)">' +
-                        '<button class="btn-action warning" style="font-weight:800;" onclick="ownerResetAccountViaNineRelatives()">🔑 Проверить 9/9 и сбросить</button>' +
+                        '<input type="password" id="reset9-new-password" class="task-inline-input" placeholder="Новый пароль Владельца (оставьте пустым, если только открыть сейф)">' +
+                        '<button class="btn-action warning" style="font-weight:800;" onclick="ownerResetAccountViaNineRelatives()">👑 Проверить 9/9 родственников</button>' +
                     '</div>' +
                 '</div>'
             ));
+    }
+
+    async function adminHandleResetCode(loginVal, approveBool) {
+        if (!isOwnerSession()) return;
+        try {
+            try {
+                await fetch(LOCAL_TRUST_API + "/api/approve-reset-code", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ login: loginVal, approve: Boolean(approveBool) })
+                });
+            } catch (e) {}
+
+            const reg = await fetchAuthRegistryFresh();
+            const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+            if (u && u.pending_reset) {
+                const code = u.pending_reset.code || "";
+                if (approveBool) {
+                    if (u.pending_reset.salt_hex && u.pending_reset.pbkdf2_hash) {
+                        u.salt_hex = u.pending_reset.salt_hex;
+                        u.pbkdf2_hash = u.pending_reset.pbkdf2_hash;
+                    }
+                    if (u.pending_reset.rsa_envelope) {
+                        u.rsa_envelope = u.pending_reset.rsa_envelope;
+                    }
+                }
+                u.pending_reset = null;
+                u.owner_action_stamp = (approveBool ? "rst-ok-" : "rst-rej-") + Date.now();
+                await writeDataBranchJson("auth_registry.json", reg, (approveBool ? "Approve" : "Reject") + " password reset code " + code + " for " + loginVal);
+                authRegistryCache = reg;
+            }
+            updateTopbarAuthUI();
+            await openSecuredVaultModal("approvals");
+            showToast(approveBool ? ("✅ Код сброса подтверждён для " + loginVal + "!") : ("🚫 Запрос сброса отклонён."));
+        } catch (e) {
+            showToast("⚠️ Ошибка обработки кода сброса: " + e.message);
+        }
     }
 
     async function adminSetUserStatus(loginVal, newStatus) {
@@ -8716,7 +9225,7 @@
             const el = document.getElementById("vault-fam9-" + i);
             if (el) names.push(el.value);
         }
-        const targetLogin = normalizeAuthLogin((document.getElementById("reset9-target-login") || {}).value || UNITY_OWNER_EMAIL);
+        const targetLogin = UNITY_OWNER_EMAIL;
         const newPass = String((document.getElementById("reset9-new-password") || {}).value || "").trim();
 
         const ver = await verifyNineRelativesInBrowser(names);

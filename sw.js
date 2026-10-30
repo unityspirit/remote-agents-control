@@ -1,4 +1,4 @@
-const CACHE_NAME = 'unity-office-pwa-v20.1';
+const CACHE_NAME = 'unity-office-pwa-v21.0';
 const APP_SHELL = [
   './',
   './index.html',
