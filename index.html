@@ -2715,7 +2715,7 @@
             if ((method === 'POST' || method === 'PATCH' || method === 'PUT' || method === 'DELETE') && typeof isUserAuthenticated === 'function' && !isUserAuthenticated()) {
                 const isPreAuthAllowed = (
                     path.startsWith('/contents/auth_registry.json') ||
-                    (method === 'POST' && path === '/issues' && String((body && body.title) || '').includes('AUTH_SYNC'))
+                    (method === 'POST' && path === '/issues' && /^CMD:\s*AUTH_SYNC:/i.test(String((body && body.title) || '').trim()))
                 );
                 if (!isPreAuthAllowed) {
                     throw new Error('Доступ к офису открывается только после подтверждения @unityspiritpartners!');
