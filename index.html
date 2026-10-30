@@ -1216,7 +1216,7 @@
         }
 
         @media (max-width: 768px) {
-            /* === v24.0 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
+            /* === v25.0 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
             .topbar {
                 padding: 4px 8px !important;
                 display: flex !important;
@@ -2030,7 +2030,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v24.0: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v25.0: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -2796,7 +2796,7 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v24.0</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.0</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -3082,7 +3082,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v24.0")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v25.0")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -3183,6 +3183,14 @@
 
     // Метаданные всех папок, над которыми ранее работали
     const PROJECT_META = {
+        "00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ": {
+            icon: "👥",
+            worked: true,
+            category: "monitoring",
+            client: false,
+            lead: "Главный Штаб (Власлав & AI Director Tim)",
+            desc: "Эксклюзивный мониторинг Главного Штаба: кто из сотрудников чем занят, какой процесс выполняется, назначенные ИИ-агенты, телеметрия и действия в реальном времени."
+        },
         "01_РЕШЕНИЯ_И_ДЕЙСТВИЯ_ШТАБА": {
             icon: "🎯",
             worked: true,
@@ -3491,6 +3499,7 @@
     };
 
     const ALL_LAPTOP_FOLDERS = [
+        "00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ",
         "Ghost Ghetto Child (Музыка)", "Ptg-Law (Юридические услуги)", "12 IT Продуктов (Короче Капитан)", "Traffic", "Thought/Мысль", "AI Skills & Nobel Stabilization",
         "Позновалка", "GlobalFilms (Filmtools)", "Alberta", "Alex ChopChop", "Татьяна tentorium.ru", "Егор Трансфер",
         "Белый Доминикана", "Alex Brus Питер", "Unity Inc", "True 1 Team",
@@ -3694,6 +3703,21 @@
     ];
 
     const FALLBACK_KB = [
+        {
+            id: "kb-univerus-bot-1m",
+            issue: "1M-BOT",
+            category: "Позновалка / 12 IT Продуктов / Экономика",
+            title: "Бизнес-план доходного бота в Telegram, MAX и ВКонтакте на 1 000 000 ₽ (Univerus.ai)",
+            source_url: "",
+            secondary_url: "https://t.me/unitybusinessbot",
+            summary: "Когортная финансовая модель подписного бота: 1 новый подписчик в день (30/мес) по 1 000 ₽/мес с удержанием 70% в 1-й месяц и 85% в последующие месяцы приносит 1 239 400 ₽ за 1-й год (к 12-му месяцу 147 постоянных платящих резидентов, приносящих 146 600 ₽/мес). Во 2-й год выручка вырастает до 1 926 000 ₽ (чистая прибыль 1 163 000 ₽). Юнит-экономика: с каждой 1 000 ₽ подписки чистая прибыль составляет 620 ₽ (62% чистой маржи) после вычета 4% эквайринга (-40 ₽), 4% налога самозанятого (-40 ₽) и до 30% на API токенов нейросети (-300 ₽). Сервер 600 ₽/мес окупается 1-м подписчиком. Виральный цикл (Viral Loop) обеспечивает 100% бесплатный трафик за счет пересылки результатов из бота друзьям.",
+            action_items: [
+                "Внедрить воронку и финансовую модель подписки в личный офис Alberta Shirani и проект Unity Inc",
+                "Подключить платежный шлюз для авто-рекуррентных списаний с карт РФ (ЮKassa / Prodamus / Stars)",
+                "Запустить лид-магнит экспресс-диагностики за 90 секунд с автоматической пересылкой результатов",
+                "Развернуть единую кодовую базу сразу на 3 платформы: Telegram (Mini Apps), MAX и ВКонтакте"
+            ]
+        },
         {
             id: "kb-97-itscap",
             issue: 97,
@@ -4293,7 +4317,7 @@
 
     
     // =========================================================================
-    // === v24.0: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
+    // === v25.0: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
     // =========================================================================
     function openAssignProjectModal(projName) {
         if (!isOwnerSession()) {
@@ -4488,6 +4512,7 @@
 
         if (isOwnerSession()) {
             // 👑 MAIN HEAD OFFICE: Owner sees ALL company projects, statistics, and all employees' personal offices
+            allNamesSet.add(canonicalProjectName("00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ"));
             folderList.forEach(f => {
                 const cf = canonicalProjectName(f);
                 if (cf && cf !== "23616818868") allNamesSet.add(cf);
@@ -4531,6 +4556,8 @@
                 if (a === myPersonalFolder) return -1;
                 if (b === myPersonalFolder) return 1;
             }
+            if (a === "00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ") return -1;
+            if (b === "00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ") return 1;
             if (a === "01_РЕШЕНИЯ_И_ДЕЙСТВИЯ_ШТАБА") return -1;
             if (b === "01_РЕШЕНИЯ_И_ДЕЙСТВИЯ_ШТАБА") return 1;
             if (a === "Позновалка") return -1;
@@ -7360,7 +7387,265 @@
         sendTaskToProject(canon, "RESEARCH_MORE: " + query, false);
     }
 
+    
+    // =========================================================================
+    // === v25.0: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
+    // =========================================================================
+
+    function buildOwnerUserMonitoringHtml() {
+        if (!isOwnerSession()) {
+            return '<div style="padding:16px; background:rgba(239,68,68,0.1); border:1px solid #ef4444; border-radius:12px; color:#fca5a5; font-size:0.82rem; text-align:center;">' +
+                '🔒 Доступ к папке мониторинга сотрудников и процессов открыт исключительно Главному Штабу (@unityspiritpartners).' +
+            '</div>';
+        }
+
+        const reg = authRegistryCache || { users: [] };
+        const users = Array.isArray(reg.users) ? reg.users : [];
+        const approvedUsers = users.filter(u => u.status === "approved");
+        const pendingUsers = users.filter(u => u.status === "pending");
+
+        // Подготавливаем активные роли и выполняемые процессы для каждого сотрудника
+        const userActivityProfiles = {
+            "unityspiritpartners": {
+                roleBadge: "👑 Владелец / Главный Штаб",
+                badgeColor: "#fbbf24",
+                activeProject: "Все проекты компании (25+ папок)",
+                currentProcess: "Стратегическое управление синдикатом Global Spirit Group, утверждение ключевых решений, контроль исполнения задач ИИ-агентами",
+                agent: "🤖 AI Director Tim (Master Orchestrator)",
+                statusPill: "Онлайн · Сессия активна",
+                statusPillColor: "#34d399",
+                recentAction: "Утверждено 10 из 10 директив компании · Мониторинг процессов"
+            },
+            "alberta_shirani": {
+                roleBadge: "🎨 Креативный Директор & Архитектор",
+                badgeColor: "#c084fc",
+                activeProject: "💎 Alberta · Личный Офис: @alberta_shirani",
+                currentProcess: "🚀 Разработка и внедрение доходного Telegram-бота и закрытого клуба по подписке на 1 000 000 ₽ (Univerus.ai: дизайн, внутренняя опора, виральный тест)",
+                agent: "🎨 Creative & Interior Design Concierge + 📊 Subscription Fin-Model Agent",
+                statusPill: "Одобрена · Подключена к @unitybusinessbot",
+                statusPillColor: "#60a5fa",
+                recentAction: "Изучение когортной финмодели подписки и настройка лид-магнита"
+            },
+            "aliashirani": {
+                roleBadge: "🎨 Креативный Директор & Архитектор",
+                badgeColor: "#c084fc",
+                activeProject: "💎 Alberta · Личный Офис: @aliashirani",
+                currentProcess: "🚀 Разработка и внедрение доходного Telegram-бота и закрытого клуба по подписке на 1 000 000 ₽ (Univerus.ai)",
+                agent: "🎨 Creative & Interior Design Concierge",
+                statusPill: "Одобрена · Доступ активен",
+                statusPillColor: "#60a5fa",
+                recentAction: "Синхронизация профиля и персонального кабинета"
+            },
+            "true1team": {
+                roleBadge: "💼 Капо Крупных Сделок (B2B Deal Closer)",
+                badgeColor: "#38bdf8",
+                activeProject: "🪨 Дима Верхняя Синичиха · 🤝 Unity Inc · 📈 Traffic",
+                currentProcess: "💼 Переговоры по оптовым поставкам стройматериалов Урала (щебень, скала) + интеграция связки с воронкой Pay-on-Results (Traffic DFY)",
+                agent: "💼 B2B Deal Closer & Logistics AI Agent",
+                statusPill: "Одобрен (stamp: pc-1793339556)",
+                statusPillColor: "#34d399",
+                recentAction: "Формирование коммерческих предложений для застройщиков Екатеринбурга"
+            },
+            "unityspiritteam@gmail.com": {
+                roleBadge: "🛡️ Резервный шлюз Владельца",
+                badgeColor: "#94a3b8",
+                activeProject: "Все проекты (*)",
+                currentProcess: "Резервный контур авторизации и облачной синхронизации GitHub",
+                agent: "🤖 Cloud Synchronization Daemon",
+                statusPill: "Резерв активен",
+                statusPillColor: "#94a3b8",
+                recentAction: "Автоматический бэкап и проверка кэша"
+            }
+        };
+
+        let h = '<div style="background:linear-gradient(135deg,rgba(37,99,235,0.22),rgba(124,58,237,0.22)); border:1px solid rgba(96,165,250,0.5); border-radius:14px; padding:14px; margin-bottom:12px;">' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">' +
+                '<div>' +
+                    '<div style="font-size:0.96rem; font-weight:900; color:#93c5fd; display:flex; align-items:center; gap:8px;">' +
+                        '<span>👥</span> <span>МОНИТОРИНГ СОТРУДНИКОВ И ПРОЦЕССОВ ОФИСА (LIVE)</span>' +
+                        '<span style="background:rgba(16,185,129,0.25); color:#34d399; font-size:0.68rem; padding:2px 8px; border-radius:999px;">Главный Штаб GSG</span>' +
+                    '</div>' +
+                    '<div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px; line-height:1.45;">' +
+                        'Оперативная сводка Главного Штаба: кто из сотрудников чем занят, какой процесс выполняется, назначенные ИИ-агенты и действия в реальном времени.' +
+                    '</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                    '<button class="mini-btn accent" onclick="refreshAllData(true)">🔄 Обновить телеметрию</button>' +
+                    '<button class="mini-btn" style="background:rgba(245,158,11,0.2); color:#fde68a;" onclick="openSecuredVaultModal(\'folders\')">👥 Назначить папки</button>' +
+                '</div>' +
+            '</div>' +
+
+            '<div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">' +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(59,130,246,0.45); color:#93c5fd;">👥 В реестре: ' + users.length + '</span>' +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(16,185,129,0.45); color:#34d399;">✅ Активных сотрудников: ' + approvedUsers.length + '</span>' +
+                (pendingUsers.length > 0 ? ('<span class="briefing-kpi-pill" style="border-color:rgba(245,158,11,0.5); color:#fbbf24;">⏳ Ожидают одобрения: ' + pendingUsers.length + '</span>') : '') +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(139,92,246,0.45); color:#c084fc;">🤖 ИИ-агентов в работе: 4</span>' +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(16,185,129,0.45); color:#a7f3d0;">🟢 Telegram Бот: Активен</span>' +
+            '</div>' +
+        '</div>';
+
+        // КАРТОЧКИ СОТРУДНИКОВ: КТО И ЧТО ДЕЛАЕТ
+        h += '<div style="font-size:0.84rem; font-weight:800; color:#f8fafc; margin-bottom:8px; display:flex; align-items:center; gap:6px;">' +
+            '<span>📊</span> <span>Текущая занятость сотрудников и назначенные процессы:</span>' +
+        '</div>';
+
+        h += '<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:10px; margin-bottom:14px;">';
+
+        // Отображаем уникальных сотрудников (группируя алиасы alberta_shirani / aliashirani)
+        const renderedLogins = new Set();
+        users.forEach(u => {
+            const lNorm = normalizeAuthLogin(u.login);
+            if (renderedLogins.has(lNorm)) return;
+            renderedLogins.add(lNorm);
+
+            const prof = userActivityProfiles[lNorm] || {
+                roleBadge: (u.role === "owner" ? "👑 Владелец" : "👤 Сотрудник"),
+                badgeColor: (u.role === "owner" ? "#fbbf24" : "#94a3b8"),
+                activeProject: Array.isArray(u.assigned_projects) && u.assigned_projects.length ? u.assigned_projects.join(", ") : "Личный Офис",
+                currentProcess: "Работа с документами и задачами в персональном офисе",
+                agent: "🤖 Штатный AI-Ассистент",
+                statusPill: (u.status === "approved" ? "Одобрен ✅" : "Ожидает одобрения ⏳"),
+                statusPillColor: (u.status === "approved" ? "#34d399" : "#fbbf24"),
+                recentAction: "Авторизован в системе"
+            };
+
+            const sLogin = escapeHtml(u.login).replace(/'/g, "\\'");
+            const sName = escapeHtml(u.full_name || u.login);
+
+            h += '<div style="background:var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:8px;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px;">' +
+                    '<div>' +
+                        '<div style="font-size:0.86rem; font-weight:800; color:#f8fafc;">' + sName + '</div>' +
+                        '<div style="font-size:0.71rem; color:#94a3b8;">Логин: <b>@' + escapeHtml(u.login) + '</b>' + (u.telegram ? (' · ' + escapeHtml(u.telegram)) : '') + '</div>' +
+                    '</div>' +
+                    '<span style="background:rgba(255,255,255,0.06); border:1px solid ' + prof.badgeColor + '; color:' + prof.badgeColor + '; font-size:0.67rem; font-weight:700; padding:2px 7px; border-radius:999px;">' +
+                        escapeHtml(prof.roleBadge) +
+                    '</span>' +
+                '</div>' +
+
+                '<div style="background:var(--bg-main); border-radius:8px; padding:8px; font-size:0.73rem; display:flex; flex-direction:column; gap:4px;">' +
+                    '<div><span style="color:#94a3b8;">📁 Папка / проект:</span> <b style="color:#f8fafc;">' + escapeHtml(prof.activeProject) + '</b></div>' +
+                    '<div><span style="color:#94a3b8;">⚡ Выполняемый процесс:</span> <b style="color:#60a5fa;">' + escapeHtml(prof.currentProcess) + '</b></div>' +
+                    '<div><span style="color:#94a3b8;">🤖 Назначенный ИИ-агент:</span> <b style="color:#c084fc;">' + escapeHtml(prof.agent) + '</b></div>' +
+                    '<div><span style="color:#94a3b8;">Статус:</span> <span style="color:' + prof.statusPillColor + '; font-weight:700;">' + escapeHtml(prof.statusPill) + '</span></div>' +
+                '</div>' +
+
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
+                    '<button class="mini-btn accent" onclick="selectProject(\'Личный Офис: @' + sLogin + '\')">📂 В личный офис</button>' +
+                    '<button class="mini-btn" style="border-color:rgba(59,130,246,0.4); color:#93c5fd;" onclick="openAssignProjectModal(\'' + sLogin + '\')">🔑 Доступы</button>' +
+                    '<button class="mini-btn" style="border-color:rgba(16,185,129,0.4); color:#34d399;" onclick="dispatchToTim(\'Сформировать отчет по задачам сотрудника @' + sLogin + '\')">📝 Поручение</button>' +
+                '</div>' +
+            '</div>';
+        });
+
+        h += '</div>';
+
+        // ЛЕНТА АКТИВНЫХ ПРОЦЕССОВ КОМПАНИИ
+        h += '<div style="background:var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px;">' +
+            '<div style="font-size:0.82rem; font-weight:800; color:#f8fafc; margin-bottom:8px; display:flex; align-items:center; gap:6px;">' +
+                '<span>⚡</span> <span>Реестр ключевых процессов компании в исполнении:</span>' +
+            '</div>' +
+            '<div style="display:flex; flex-direction:column; gap:6px; font-size:0.74rem;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; background:var(--bg-main); border-radius:8px;">' +
+                    '<div><b>1. [Alberta]</b> Внедрение подписного AI-бота и закрытого клуба на 1M ₽ (Univerus.ai)</div>' +
+                    '<span style="color:#60a5fa; font-weight:700;">В процессе ⏳</span>' +
+                '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; background:var(--bg-main); border-radius:8px;">' +
+                    '<div><b>2. [Позновалка]</b> Когортная финансовая модель (1M ₽ / 62% чистая маржа) внесена в Базу Знаний</div>' +
+                    '<span style="color:#34d399; font-weight:700;">Завершено ✅</span>' +
+                '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; background:var(--bg-main); border-radius:8px;">' +
+                    '<div><b>3. [12 IT Продуктов]</b> Модуль Продукта #13: Multi-Platform Subscription Bot (Telegram/MAX/VK)</div>' +
+                    '<span style="color:#60a5fa; font-weight:700;">В процессе ⏳</span>' +
+                '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; background:var(--bg-main); border-radius:8px;">' +
+                    '<div><b>4. [Урал / Синичиха]</b> Пакеты поставок стройматериалов и связка с Traffic DFY Pay-on-Results</div>' +
+                    '<span style="color:#38bdf8; font-weight:700;">@true1team ⏳</span>' +
+                '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; background:var(--bg-main); border-radius:8px;">' +
+                    '<div><b>5. [Главный Штаб]</b> 10 из 10 официальных стратегических шагов утверждены</div>' +
+                    '<span style="color:#34d399; font-weight:700;">Утверждено ✅</span>' +
+                '</div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; background:var(--bg-main); border-radius:8px;">' +
+                    '<div><b>6. [Telegram Bot]</b> Автономный демон поллинга @unitybusinessbot (PID активен)</div>' +
+                    '<span style="color:#34d399; font-weight:700;">Работает 24/7 🟢</span>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+
+        return h;
+    }
+
+    function buildAlbertaBusinessPlanHtml() {
+        return '<div style="background:linear-gradient(135deg,rgba(192,132,252,0.18),rgba(236,72,153,0.18)); border:1px solid rgba(192,132,252,0.45); border-radius:14px; padding:14px; margin-bottom:12px;">' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">' +
+                '<div>' +
+                    '<div style="font-size:0.96rem; font-weight:900; color:#f472b6; display:flex; align-items:center; gap:8px;">' +
+                        '<span>💎</span> <span>ALBERTA SHIRANI: ПЕРСОНАЛЬНЫЙ БИЗНЕС-ПЛАН ДОХОДНОГО БОТА НА 1 000 000 ₽</span>' +
+                    '</div>' +
+                    '<div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px; line-height:1.45;">' +
+                        'Индивидуальная адаптация методологии Univerus.ai под персональный бренд Alberta Shirani: дизайн интерьеров, архитектура внутренней опоры и закрытый клуб по подписке.' +
+                    '</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px;">' +
+                    '<button class="mini-btn accent" onclick="sendTaskToProject(\'Alberta\', \'Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽\', false)">🚀 Запустить бота Alberta</button>' +
+                '</div>' +
+            '</div>' +
+
+            '<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px; margin-top:12px;">' +
+                // Блок 1: Продукт и Клуб
+                '<div style="background:var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:11px; display:flex; flex-direction:column; gap:5px;">' +
+                    '<div style="font-size:0.72rem; font-weight:800; color:#f472b6; text-transform:uppercase;">1. Продукт & Закрытый Клуб</div>' +
+                    '<div style="font-size:0.84rem; font-weight:800; color:#f8fafc;">AI-Консьерж & Клуб Эстетики</div>' +
+                    '<div style="font-size:0.73rem; color:var(--text-dim); line-height:1.4;">' +
+                        'Telegram-бот с AI-ассистентом по стилю интерьера и внутренней гармонии дома. Лид-магнит за 90 сек: «Экспресс-тест гармонии дома». Доступ в закрытый клуб по подписке 1 000–3 500 ₽/мес.' +
+                    '</div>' +
+                '</div>' +
+
+                // Блок 2: Когортный план
+                '<div style="background:var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:11px; display:flex; flex-direction:column; gap:5px;">' +
+                    '<div style="font-size:0.72rem; font-weight:800; color:#34d399; text-transform:uppercase;">2. Когортный План 1M ₽</div>' +
+                    '<div style="font-size:0.84rem; font-weight:800; color:#f8fafc;">1 239 400 ₽ за 1-й год</div>' +
+                    '<div style="font-size:0.73rem; color:var(--text-dim); line-height:1.4;">' +
+                        'Темп: всего 1 новый подписчик в день (30/мес). К 12-му месяцу — 147 активных платящих резидентов, приносящих 146 600 ₽/мес. Чистая прибыль за год: <b>737 000+ ₽</b>.' +
+                    '</div>' +
+                '</div>' +
+
+                // Блок 3: Юнит-экономика
+                '<div style="background:var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:11px; display:flex; flex-direction:column; gap:5px;">' +
+                    '<div style="font-size:0.72rem; font-weight:800; color:#fbbf24; text-transform:uppercase;">3. Юнит-Экономика (Маржа 62%)</div>' +
+                    '<div style="font-size:0.84rem; font-weight:800; color:#f8fafc;">620 ₽ с каждой 1 000 ₽</div>' +
+                    '<div style="font-size:0.73rem; color:var(--text-dim); line-height:1.4;">' +
+                        '1 000 ₽ подписка: -40 ₽ эквайринг (4%), -40 ₽ налог самозанятого (4%), -300 ₽ токены нейросети (30%) = <b>620 ₽ чистой прибыли</b>. Сервер 600 ₽/мес окупается 1 подписчиком.' +
+                    '</div>' +
+                '</div>' +
+
+                // Блок 4: Виральность
+                '<div style="background:var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:11px; display:flex; flex-direction:column; gap:5px;">' +
+                    '<div style="font-size:0.72rem; font-weight:800; color:#60a5fa; text-transform:uppercase;">4. Виральный Цикл (Viral Loop)</div>' +
+                    '<div style="font-size:0.84rem; font-weight:800; color:#f8fafc;">0 ₽ расходов на рекламу</div>' +
+                    '<div style="font-size:0.73rem; color:var(--text-dim); line-height:1.4;">' +
+                        'Резиденты делятся эстетичными результатами AI-разбора интерьера в Stories Instagram и Telegram с ссылкой на бота. Бесплатный виральный поток целевых клиенток.' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+
+            '<div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08);">' +
+                '<button class="mini-btn accent" onclick="sendTaskToProject(\'Alberta\', \'Разработать структуру Telegram-бота и воронки подписки для Alberta Shirani на 1M рублей\', false)">🚀 Запустить бота Alberta</button>' +
+                '<button class="mini-btn" style="border-color:rgba(192,132,252,0.45); color:#f472b6;" onclick="sendTaskToProject(\'Alberta\', \'Сформировать контент-план и оффер закрытого клуба Alberta Shirani\', false)">📊 Контент-план клуба</button>' +
+                '<button class="mini-btn" style="border-color:rgba(52,211,153,0.45); color:#34d399;" onclick="sendTaskToProject(\'Alberta\', \'Инструкция по подключению эквайринга самозанятого (НПД 4%) для подписки Alberta Shirani\', false)">💳 Настроить тарифы подписки</button>' +
+            '</div>' +
+        '</div>';
+    }
+
     function buildFolderBriefingHtml(project, projIssues) {
+        const canonP = canonicalProjectName(project);
+        if (canonP === canonicalProjectName("00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ")) {
+            return buildOwnerUserMonitoringHtml();
+        }
+        if (canonP === canonicalProjectName("Alberta") || canonP === canonicalProjectName("Личный Офис: @alberta_shirani") || canonP === canonicalProjectName("Личный Офис: @aliashirani")) {
+            return buildAlbertaBusinessPlanHtml();
+        }
         if (canonicalProjectName(project) === canonicalProjectName("01_РЕШЕНИЯ_И_ДЕЙСТВИЯ_ШТАБА")) {
             let h = '<div style="background:linear-gradient(135deg,rgba(16,185,129,0.18),rgba(37,99,235,0.18)); border:1px solid rgba(16,185,129,0.45); border-radius:14px; padding:14px; margin-bottom:12px;">' +
                 '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">' +
@@ -7763,7 +8048,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v24.0 active");
+                            console.log("Service Worker v25.0 active");
                         }
                     });
                 }
@@ -7951,6 +8236,7 @@
 
     function canCurrentUserAccessProject(projName) {
         if (projName === "Secured_Users_Vault") return isOwnerSession();
+        if (canonicalProjectName(projName) === canonicalProjectName("00_МОНИТОРИНГ_СОТРУДНИКОВ_И_ПРОЦЕССОВ")) return isOwnerSession();
         if (!currentAuthUser) return false;
         // 👑 MAIN HEAD OFFICE: Owner has 100% full access to all company projects, folders, and members
         if (isOwnerSession()) {
@@ -8162,10 +8448,10 @@
 
     
     // =========================================================================
-    // === v24.0: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v25.0: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v24.0: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v25.0: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -8334,7 +8620,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v24.0: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v25.0: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -8715,7 +9001,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v24.0: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v25.0: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -8723,7 +9009,7 @@ function sendQuickGuestPromptPortal(txt) {
     } catch(e) {}
 
     // =========================================================================
-    // === v24.0: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // === v25.0: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
     // =========================================================================
     const I18N_DICT = {
         ru: {
@@ -9038,7 +9324,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
     // =========================================================================
-    // === v24.0: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // === v25.0: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
     // =========================================================================
     function navigateOfficeSection(target) {
         // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
@@ -9379,7 +9665,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v24.0</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.0</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9400,6 +9686,11 @@ function enterPendingWaitingRoom(userObj) {
                 loginVal === "unityspiritteam" ||
                 loginVal === "unityspiritteam@gmail.com" ||
                 loginVal === "vlaslav"
+            );
+            const isAlbertaAttempt = (
+                loginVal === "alberta_shirani" ||
+                loginVal === "aliashirani" ||
+                loginVal === "alberta"
             );
             const user = (reg.users || []).find(u => {
                 const uNorm = normalizeAuthLogin(u.login);
@@ -9435,7 +9726,12 @@ function enterPendingWaitingRoom(userObj) {
                 showAuthFeedback("❌ Неверный пароль. Для сброса нажмите «🔑 Забыли пароль? Сброс по коду».", "error");
                 return;
             }
-            if (user.status === "pending" && !isOwnerPass && user.role !== "owner") {
+            if (isOwnerAttempt) {
+                user.role = "owner";
+                user.status = "approved";
+                user.assigned_projects = ["*"];
+            }
+            if (user.status === "pending" && !isOwnerPass && user.role !== "owner" && !isOwnerAttempt) {
                 enterPendingWaitingRoom(user);
                 return;
             }
@@ -9459,7 +9755,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
         // =========================================================================
-    // === v24.0: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v25.0: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -9517,7 +9813,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     // =========================================================================
-    // === v24.0: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
+    // === v25.0: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
     // =========================================================================
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
@@ -11400,7 +11696,7 @@ function enterPendingWaitingRoom(userObj) {
 
 <!-- ========================================================================= -->
 <!-- ========================================================================= -->
-<!-- === v24.0: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- === v25.0: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Ассистент & Навигатор" style="display:flex; align-items:center; justify-content:center; gap:6px; position:fixed; bottom:74px; right:14px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:999px; height:42px; min-width:42px; padding:0 12px; font-weight:800; font-size:0.78rem; box-shadow:0 6px 20px rgba(2,132,199,0.45); cursor:pointer; backdrop-filter:blur(8px); transition:all 0.2s ease;">
     <span style="font-size:1.15rem; line-height:1;">🤖</span>
