@@ -1,4 +1,4 @@
-const CACHE_NAME = 'unity-office-pwa-v22.0';
+const CACHE_NAME = 'unity-office-pwa-v22.1';
 const APP_SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
