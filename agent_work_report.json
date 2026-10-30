@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 20:12:25",
+  "updated": "2026-10-29 20:17:07",
   "kpis": {
     "total_completed_works": 152,
     "tim_master_reports": 9,
@@ -21,8 +21,8 @@
         "open_tasks": 1,
         "tim_reports": 5,
         "saved_photos": 1,
-        "files_on_disk": 12,
-        "size_kb": 95,
+        "files_on_disk": 14,
+        "size_kb": 123,
         "ai_analyses": 4,
         "research_notes": 0
       },
@@ -436,8 +436,8 @@
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 100,
-        "size_kb": 879,
+        "files_on_disk": 101,
+        "size_kb": 947,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -520,8 +520,8 @@
         "open_tasks": 10,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 163,
-        "size_kb": 1084,
+        "files_on_disk": 165,
+        "size_kb": 1093,
         "ai_analyses": 27,
         "research_notes": 0
       },
@@ -820,7 +820,7 @@
       "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     {
       "key": "router",
@@ -831,7 +831,7 @@
       "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     {
       "key": "gatekeeper",
@@ -842,7 +842,7 @@
       "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     {
       "key": "researcher",
@@ -851,9 +851,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 22,
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Изучено фото (1 шт.): 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
-      "updated_at": "2026-10-29 20:11:57"
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "updated_at": "2026-10-29 20:17:02"
     },
     {
       "key": "analyst",
@@ -864,7 +864,7 @@
       "tasks_completed": 22,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     {
       "key": "scribe",
@@ -875,7 +875,7 @@
       "tasks_completed": 12,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     {
       "key": "project_lead",
@@ -886,7 +886,7 @@
       "tasks_completed": 12,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     {
       "key": "developer",
