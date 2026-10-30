@@ -4,9 +4,9 @@
 <script>
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v22_6_loaded");
+        var v = localStorage.getItem("gsg_app_v22_7_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v22_6_loaded", "true");
+            localStorage.setItem("gsg_app_v22_7_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -1206,29 +1206,88 @@
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .topbar {
-                padding: 8px 10px;
-                flex-wrap: wrap;
-                gap: 6px;
+                padding: 8px 10px 6px 10px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 6px !important;
+                overflow: visible !important;
+            }
+            .brand-row {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                gap: 8px !important;
+            }
+            .brand-logo {
+                width: 32px !important;
+                height: 32px !important;
+                min-width: 32px !important;
+                border-radius: 8px !important;
+            }
+            .brand-titles {
+                min-width: 0 !important;
+                flex: 1 !important;
+                margin-right: 6px !important;
             }
             .brand-titles h1 {
-                font-size: 0.88rem;
+                font-size: 0.94rem !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                font-weight: 900 !important;
+                color: var(--text-main) !important;
             }
             .worker-pill {
-                font-size: 0.66rem;
+                font-size: 0.64rem !important;
+                padding: 1px 7px !important;
+                max-width: 200px !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                margin-top: 1px !important;
             }
+            /* Clean single-row horizontally scrolling action pill bar - zero overlapping, zero stacking */
             .topbar-actions {
-                width: 100%;
-                justify-content: space-between;
-                gap: 5px;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+                gap: 6px !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                white-space: nowrap !important;
+                padding: 2px 2px 4px 2px !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+                -ms-overflow-style: none !important;
+            }
+            .topbar-actions::-webkit-scrollbar {
+                display: none !important;
             }
             .topbar-actions .icon-btn {
-                flex: 1;
-                justify-content: center;
-                padding: 0 6px;
-                min-height: 34px;
-                font-size: 0.72rem;
+                flex: 0 0 auto !important;
+                min-width: unset !important;
+                height: 32px !important;
+                padding: 0 10px !important;
+                font-size: 0.72rem !important;
+                font-weight: 750 !important;
+                border-radius: 9999px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 5px !important;
+                white-space: nowrap !important;
+                box-sizing: border-box !important;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.2) !important;
             }
             .quick-save-banner {
                 padding: 6px 10px;
@@ -1565,19 +1624,35 @@
             min-width: 0;
         }
         @media (max-width: 440px) {
+            .brand-titles h1 {
+                font-size: 0.88rem !important;
+            }
+            .worker-pill {
+                max-width: 155px !important;
+                font-size: 0.6rem !important;
+            }
             .b-tab {
-                font-size: 0.58rem;
-                padding: 0 1px;
+                font-size: 0.58rem !important;
+                padding: 0 1px !important;
             }
             .b-tab .b-icon {
-                font-size: 1.0rem;
+                font-size: 1.0rem !important;
             }
             .topbar-actions {
-                gap: 4px;
+                gap: 5px !important;
             }
             .topbar-actions .icon-btn {
-                padding: 5px 7px;
-                font-size: 0.7rem;
+                height: 30px !important;
+                padding: 0 8px !important;
+                font-size: 0.7rem !important;
+                gap: 4px !important;
+            }
+            #btn-floating-guest-ai {
+                bottom: 68px !important;
+                right: 12px !important;
+                height: 38px !important;
+                padding: 0 10px !important;
+                font-size: 0.72rem !important;
             }
         }
         .study-drawer-box {
@@ -1875,7 +1950,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v22.6: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v22.7: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -1988,7 +2063,7 @@
         <div class="brand-row">
             <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Global Spirit Group" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Global Spirit Group 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
             <div class="brand-titles">
-                <h1 id="brand-header-title">Global Spirit Group</h1>
+                <h1 id="brand-header-title">Global Spirit Group ★ Виртуальный Офис</h1>
                 <div class="worker-pill">
                     <span class="status-dot" id="worker-dot"></span>
                     <span id="worker-text">Автономный облачный + ПК режим активен</span>
@@ -2287,6 +2362,8 @@
                     <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
                         <a href="https://globalplus.tech" target="_blank" class="kb-link">🚀 globalplus.tech — AI & Tech Agency ↗</a>
                         <a href="https://unityspiritpartners.com" target="_blank" class="kb-link">🤝 unityspiritpartners.com — B2B Партнерство ↗</a>
+                        <a href="https://unityspirit.github.io/alberta-hub/" target="_blank" class="kb-link" style="color:#d4af37; font-weight:700;">👑 unityspirit.github.io/alberta-hub — Бренд-Бук & Бизнес-Хаб Alberta Shirani ↗</a>
+                        <a href="https://unityspirit.github.io/anastasia-hub/" target="_blank" class="kb-link" style="color:#e2c485;">👑 unityspirit.github.io/anastasia-hub — Бизнес-Хаб & Бренд-Бук Анастасия Емельянова ↗</a>
                         <a href="https://unityspirit.github.io/alberta-shirani/" target="_blank" class="kb-link">💎 alberta-shirani — Luxury Haircare ↗</a>
                     </div>
                 </div>
@@ -2638,9 +2715,8 @@
     <div class="auth-gate-card">
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
-            <h2 style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
-                Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.6</span>
+            <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.7</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -2682,7 +2758,7 @@
             <button type="button" class="btn-action accent" onclick="enterGuestPreviewMode()" id="btn-guest-preview-enter" style="width:100%; justify-content:center; padding:10px 14px; font-weight:900; font-size:0.83rem; background:linear-gradient(135deg,#0284c7,#38bdf8); color:#090d16;">
                 👀 Войти как Гость (Live Превью & ИИ-Чат) →
             </button>
-            <div style="font-size:0.71rem; color:#94a3b8; margin-top:5px; line-height:1.4;">
+            <div id="guest-banner-desc" style="font-size:0.71rem; color:#94a3b8; margin-top:5px; line-height:1.4;">
                 Ознакомьтесь с интерфейсом и пообщайтесь с ИИ-ассистентами вживую (без закрытой информации компании)
             </div>
         </div>
@@ -2926,7 +3002,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v22.6")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v22.7")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -3102,7 +3178,7 @@
             worked: true,
             category: "media",
             client: true,
-            desc: "Alberta Shirani: сайты V1/V2, 9 промптов Google VEO 3.1, 900 кадров WebP скролла, PDF гайд и Telegram-воронка"
+            desc: "Alberta Shirani: Официальный Бренд-Бук & Бизнес-Хаб (unityspirit.github.io/alberta-hub), сайты V1/V2, 9 промптов Google VEO 3.1, 900 кадров WebP скролла, воронка Tripwire 490 ₽"
         },
         "Alex ChopChop": {
             icon: "💈",
@@ -7278,7 +7354,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v22.6 active");
+                            console.log("Service Worker v22.7 active");
                         }
                     });
                 }
@@ -7647,10 +7723,10 @@
 
     
     // =========================================================================
-    // === v22.6: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v22.7: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v22.6: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v22.7: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -7819,7 +7895,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v22.6: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v22.7: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -7851,123 +7927,210 @@ function sendQuickGuestPromptPortal(txt) {
         s = s.replace(/\*(.+?)\*/g, "<i>$1</i>");
         s = s.replace(/`([^`]+)`/g, "<code style='background:rgba(255,255,255,0.1); padding:2px 4px; border-radius:4px;'>$1</code>");
         s = s.replace(/\n/g, "<br>");
+        // Unescape interactive navigation buttons [[NAV:target|label]]
+        s = s.replace(/\[\[NAV:([a-z0-9_]+)\|([^\]]+)\]\]/g, function(_, target, label) {
+            return '<button type="button" class="choice-btn" onclick="navigateOfficeSection(\'' + target + '\')" style="margin:5px 4px 2px 0; background:linear-gradient(135deg,#0284c7,#2563eb); color:#fff; font-weight:800; padding:6px 12px; font-size:0.75rem; border-radius:8px; cursor:pointer; border:none; box-shadow:0 2px 8px rgba(2,132,199,0.4); display:inline-flex; align-items:center; gap:5px;">' +
+                   label + ' ➔</button>';
+        });
         return s;
     }
 
     function generateIntelligentAssistantReply(msg) {
         const raw = String(msg || "").trim();
         const m = raw.toLowerCase();
-        const isEn = (currentOfficeLang === "en") || /^[a-zA-Z0-9\s?,.!'-]+$/.test(raw) && !/[а-яёА-ЯЁ]/.test(raw);
+        const isEn = (currentOfficeLang === "en") || (/^[a-zA-Z0-9\s?,.!'-]+$/.test(raw) && !/[а-яёА-ЯЁ]/.test(raw));
 
         // 1. GREETINGS
         if (m.match(/^(привет|здравствуй|хай|добрый|салам|ку|hello|hi|hey|good morning|good afternoon)/i)) {
             if (isEn) {
-                return "👋 **Hello and welcome to Global Spirit Group!**\n\n" +
-                       "I am your dedicated **AI Business Assistant**. Here is what I can help you with right now:\n" +
-                       "• 👑 **General Director Tim** — coordinating 7 autonomous departments (marketing, IT, sales, etc.)\n" +
-                       "• 📈 **Pay-on-Results Lead Gen** — high-converting viral funnels & customer acquisition\n" +
-                       "• 📱 **Telegram Mini Apps & IT Products** — turnkey solutions built for rapid monetization\n" +
-                       "• 🤝 **Partnering & Joining** — claiming projects or integrating your existing business\n\n" +
-                       "Feel free to ask me anything or click one of the quick starter topics below!";
+                return "👋 **Hello and welcome to Global Spirit Group ★ Virtual Office!**\n\n" +
+                       "I am your dedicated **AI Office Assistant & Navigator**. I can answer any questions and instantly navigate you to any section:\n" +
+                       "• 📁 **12 IT Products** — turnkey Telegram Mini Apps\n" +
+                       "• 🚦 **Traffic & Funnels** — pay-on-results client acquisition\n" +
+                       "• 📊 **Work Reports** — status of 150 completed agent tasks\n" +
+                       "• 👑 **General Director Tim** — coordinating 7 autonomous departments\n\n" +
+                       "Tap below to jump directly, or ask me anything:\n" +
+                       "[[NAV:12apps|📁 Open 12 IT Products]] [[NAV:traffic|🚦 Open Traffic & Funnels]] [[NAV:reports|📊 Open Work Reports]] [[NAV:tim|👑 Open Director Tim]]";
             }
-            return "👋 **Здравствуйте! Рад приветствовать вас в Global Spirit Group!**\n\n" +
-                   "Я ваш персональный **ИИ-Ассистент экосистемы**. Я работаю в реальном времени и могу ответить на любые вопросы:\n" +
-                   "• 👑 **Генеральный Директор Тим** — как он управляет 7 автономными отделами и распределяет задачи\n" +
-                   "• 📈 **AI-Маркетинг и Воронки Pay-on-Results** — привлечение клиентов с оплатой за результат\n" +
-                   "• 📱 **Telegram Mini Apps и IT-продукты** — готовые решения под ключ для быстрой монетизации\n" +
-                   "• 🤝 **Партнёрство и проекты** — как развивать проекты компании или подключить свой бизнес\n\n" +
-                   "Задайте мне любой вопрос или выберите готовую тему ниже!";
+            return "👋 **Здравствуйте! Рад приветствовать вас в Global Spirit Group ★ Виртуальный Офис!**\n\n" +
+                   "Я ваш персональный **ИИ-Ассистент и Навигатор экосистемы**. Я помогаю работать с задачами и мгновенно перемещаться по офису:\n" +
+                   "• 📁 **12 IT Продуктов** — готовые Telegram Mini Apps под ключ\n" +
+                   "• 🚦 **Трафик и Воронки** — привлечение клиентов с оплатой за результат\n" +
+                   "• 📊 **Отчёты работы** — 150 выполненных задач агентами\n" +
+                   "• 👑 **Генеральный Директор Тим** — координация 7 автономных отделов\n\n" +
+                   "Нажмите для мгновенного перехода в нужный раздел:\n" +
+                   "[[NAV:12apps|📁 Открыть 12 IT Продуктов]] [[NAV:traffic|🚦 Открыть Трафик и Воронки]] [[NAV:reports|📊 Открыть Отчёт работы]] [[NAV:tim|👑 Написать Директору Тиму]]";
         }
 
-        // 2. CAPABILITIES / WHO ARE YOU
-        if (m.includes("кто ты") || m.includes("что ты умеешь") || m.includes("что ты можешь") || m.includes("чем помочь") || m.includes("функции") || m.includes("who are you") || m.includes("what can you do")) {
-            return "🤖 **Мои ключевые возможности как ИИ-Ассистента Global Spirit Group:**\n\n" +
-                   "1. **Бизнес-разбор и аналитика:** помогу подобрать проект, стратегию продвижения и монетизации.\n" +
-                   "2. **Координация задач с Директором Тимом:** фиксирую запросы и передаю в профильные отделы.\n" +
-                   "3. **Консультации по воронкам:** рассказываю о связках с оплатой за результат (Pay-on-Results).\n" +
-                   "4. **Помощь в регистрации:** рассказываю, как за 5 секунд открыть доступ и закрепить за собой личный кабинет и защищённый сейф.\n\n" +
-                   "💡 Задайте конкретную задачу или вопрос по вашему бизнесу!";
+        // 2. OFFICE NAVIGATION & WHERE TO FIND THINGS
+        if (m.includes("навигац") || m.includes("куда перейт") || m.includes("где что") || m.includes("как ориентир") || m.includes("раздел") || m.includes("меню") || m.includes("navigat") || m.includes("where is") || m.includes("how to find") || m.includes("sections")) {
+            if (isEn) {
+                return "🗺️ **Global Spirit Group Office Map & Quick Navigation:**\n\n" +
+                       "Here are the core sections you can jump to in 1 click:\n" +
+                       "1. **📁 12 IT Products:** turnkey Mini Apps for rapid monetization.\n" +
+                       "2. **🚦 Traffic & Funnels:** paid-by-results traffic acquisition system.\n" +
+                       "3. **📊 Work Reports:** 150 completed milestones and 50 tasks ready for next sprint.\n" +
+                       "4. **👑 General Director Tim:** autonomous task delegation to 7 departments.\n" +
+                       "5. **🚨 Human Decisions:** 5 pending approvals requiring founder attention.\n" +
+                       "6. **📷 Study Studio:** drop text, photos or links for AI research.\n\n" +
+                       "Tap a button below to jump immediately:\n" +
+                       "[[NAV:12apps|📁 12 IT Products]] [[NAV:traffic|🚦 Traffic & Funnels]] [[NAV:reports|📊 Work Reports]] [[NAV:tim|👑 Director Tim]] [[NAV:actions|🚨 5 Decisions]] [[NAV:study|📷 Study Studio]]";
+            }
+            return "🗺️ **Карта Офиса и Мгновенная Навигация:**\n\n" +
+                   "Вот ключевые разделы нашего виртуального офиса, куда можно перейти в 1 клик:\n" +
+                   "1. **📁 12 IT Продуктов:** готовые Telegram Mini Apps для быстрой монетизации.\n" +
+                   "2. **🚦 Трафик и Воронки:** привлечение целевых клиентов с оплатой за результат.\n" +
+                   "3. **📊 Отчёты работы:** 150 решённых задач и 50 приоритетов на продолжение.\n" +
+                   "4. **👑 Генеральный Директор Тим:** постановка задач 7 автономным отделам.\n" +
+                   "5. **🚨 5 Решений Человека:** задачи, ожидающие подтверждения владельца.\n" +
+                   "6. **📷 Студия Изучения:** быстрая отправка фото, заметок и ссылок на анализ.\n\n" +
+                   "Нажмите на нужную кнопку для перехода:\n" +
+                   "[[NAV:12apps|📁 12 IT Продуктов]] [[NAV:traffic|🚦 Трафик и Воронки]] [[NAV:reports|📊 Отчёт (150 задач)]] [[NAV:tim|👑 Директор Тим]] [[NAV:actions|🚨 5 Решений]] [[NAV:study|📷 Студия Фото]]";
         }
 
-        // 3. DIRECTOR TIM & 7 AUTONOMOUS DEPARTMENTS
-        if (m.includes("тим") || m.includes("директор") || m.includes("отдел") || m.includes("руковод") || m.includes("tim") || m.includes("director")) {
-            return "👑 **Генеральный Директор Тим — автономный управляющий экосистемы Global Spirit Group:**\n\n" +
-                   "Тим координирует **7 специализированных отделов**:\n" +
-                   "1. **Отдел Стратегии и Продуктов:** разработка Telegram Mini Apps, SaaS и AI-микросервисов.\n" +
-                   "2. **Отдел Маркетинга и Трафика:** авто-воронки, вирусные Reels/Shorts и Pay-on-Results лидогенерация.\n" +
-                   "3. **Отдел Продаж:** AI-лидогенераторы и доведение клиентов до сделки 24/7.\n" +
-                   "4. **Отдел Фин-аналитики:** прозрачный расчёт юнит-экономики и распределение прибыли.\n" +
-                   "5. **Отдел Безопасности:** сквозное шифрование RSA-4096 персональных сейфов и аудит действий.\n" +
-                   "6. **Отдел Базы Знаний:** самообучение, парсинг полезных каналов и синтез аналитики.\n" +
-                   "7. **Штаб Координации:** автоматический контроль сроков и задач между агентами.\n\n" +
-                   "👉 Зарегистрируйтесь за 5 секунд, чтобы получить прямой доступ к задачам Тима!";
+        // 3. REPORTS (150 COMPLETED TASKS & WHAT TO CONTINUE)
+        if (m.includes("отчет") || m.includes("отчёт") || m.includes("результат") || m.includes("статус") || m.includes("report") || m.includes("progress")) {
+            if (isEn) {
+                return "📊 **Work Reports (150 Tasks Completed):**\n\n" +
+                       "Our AI autonomous agents have logged 150 work milestones across the ecosystem:\n" +
+                       "• ✅ **100 Completed tasks:** infrastructure, security, auth gate, telegram bot alerts, and mini apps scaffolding.\n" +
+                       "• 🔥 **50 Tasks ready for immediate continuation:** viral marketing loops, payment integrations, and CRM funnels.\n\n" +
+                       "Tap below to open the complete Work Ledger:\n" +
+                       "[[NAV:reports|📊 Open Work Reports (150 Tasks)]]";
+            }
+            return "📊 **Отчёт о проделанной работе (150 задач):**\n\n" +
+                   "Автономные ИИ-агенты зафиксировали 150 этапов работы по всей экосистеме:\n" +
+                   "• ✅ **100 Выполненных задач:** облачная инфраструктура, безопасность, PWA-установщик, бот @unitybusinessbot, шаблоны приложений.\n" +
+                   "• 🔥 **50 Задач в приоритете для продолжения:** запуск вирусных воронок, интеграция платежей и CRM-системы.\n\n" +
+                   "Нажмите ниже, чтобы открыть полный реестр отчётов:\n" +
+                   "[[NAV:reports|📊 Открыть Отчёт работы (150 задач)]]";
         }
 
-        // 4. MARKETING, TRAFFIC, FUNNELS
-        if (m.includes("маркетинг") || m.includes("трафик") || m.includes("лид") || m.includes("воронк") || m.includes("клиент") || m.includes("reels") || m.includes("traffic") || m.includes("marketing")) {
-            return "📈 **AI-Маркетинг и Трафик Global Spirit Group:**\n\n" +
-                   "• **Модель Pay-on-Results:** партнёры и клиенты платят за осязаемый результат (лиды, заявки, продажи), а не за пустые обещания.\n" +
-                   "• **Контент-фабрика:** ИИ генерирует сценарии вирусных коротких видео (Reels, Shorts, TikTok) и авто-публикует их.\n" +
-                   "• **Кросс-платформенные воронки:** трафик направляется в Telegram Mini Apps и чат-боты, где конверсия в 3-5 раз выше сайтов.\n\n" +
-                   "💡 Хотите автоматизировать привлечение клиентов в свой бизнес? Пройдите 4 шага опросника!";
+        // 4. 12 IT PRODUCTS / MINI APPS
+        if (m.includes("12") || m.includes("мини") || m.includes("mini app") || m.includes("приложен") || m.includes("продукт") || m.includes("product") || m.includes("app")) {
+            if (isEn) {
+                return "📱 **12 IT Products & Telegram Mini Apps:**\n\n" +
+                       "A ready-made portfolio of scalable Web3/Telegram Mini Apps:\n" +
+                       "• E-commerce store in Telegram with 1-click payments\n" +
+                       "• AI Booking & appointment scheduling assistant\n" +
+                       "• Affiliate referral engine with multi-tier rewards\n" +
+                       "• Lead-magnet quiz funnels with CRM capture\n\n" +
+                       "Tap below to inspect the folder and choose your product:\n" +
+                       "[[NAV:12apps|📁 Open 12 IT Products]]";
+            }
+            return "📱 **12 IT Продуктов и Telegram Mini Apps:**\n\n" +
+                   "Готовый портфель масштабируемых приложений для Telegram и Web:\n" +
+                   "• Интернет-магазин в Telegram с быстрой оплатой\n" +
+                   "• ИИ-ассистент онлайн-записи и бронирования\n" +
+                   "• Реферальная партнёрская система с вознаграждениями\n" +
+                   "• Квиз-воронки для генерации горячих лидов\n\n" +
+                   "Нажмите ниже, чтобы открыть папку и выбрать продукт:\n" +
+                   "[[NAV:12apps|📁 Открыть 12 IT Продуктов]]";
         }
 
-        // 5. IT PRODUCTS & TELEGRAM MINI APPS
-        if (m.includes("it") || m.includes("mini app") || m.includes("разработк") || m.includes("бот") || m.includes("приложени") || m.includes("код") || m.includes("saas") || m.includes("app")) {
-            return "🚀 **IT-Продукты и Telegram Mini Apps:**\n\n" +
-                   "Мы создаём и развиваем линейку из **12 IT-продуктов**:\n" +
-                   "• Полноценные магазины и сервисы внутри Telegram без необходимости скачивать сторонние приложения.\n" +
-                   "• Встроенные платежи, PWA-режим для телефонов и ПК с поддержкой офлайн-работы.\n" +
-                   "• Готовая инфраструктура: бэкенд на Python + облачная синхронизация + ИИ-агенты.\n\n" +
-                   "💻 Хотите запустить своё приложение или разрабатывать готовые решения? Присоединяйтесь!";
+        // 5. TRAFFIC & VIRAL ACQUISITION
+        if (m.includes("трафик") || m.includes("клиент") || m.includes("воронк") || m.includes("лид") || m.includes("traffic") || m.includes("lead") || m.includes("funnel") || m.includes("marketing")) {
+            if (isEn) {
+                return "🚦 **Traffic & Viral Funnels (Pay-on-Results):**\n\n" +
+                       "We generate qualified inbound traffic without paying for wasted clicks:\n" +
+                       "• Targeted short-form video scripts & AI content generation\n" +
+                       "• Telegram viral invitation loops & gamified onboarding\n" +
+                       "• Direct conversion pipelines into sales\n\n" +
+                       "Tap below to open the Traffic command center:\n" +
+                       "[[NAV:traffic|🚦 Open Traffic & Funnels]]";
+            }
+            return "🚦 **Трафик и Воронки (Оплата за Результат):**\n\n" +
+                   "Система привлечения целевых клиентов без переплаты за пустые клики:\n" +
+                   "• Сценарии для вирусных коротких видео и ИИ-генерация контента\n" +
+                   "• Реферальные механики внутри Telegram для органического роста\n" +
+                   "• Прямые конверсионные воронки в продажи и заявки\n\n" +
+                   "Нажмите ниже, чтобы открыть проект по трафику:\n" +
+                   "[[NAV:traffic|🚦 Открыть Трафик и Воронки]]";
         }
 
-        // 6. BUSINESS AUTOMATION & BENEFITS
-        if (m.includes("бизнес") || m.includes("автоматизац") || m.includes("crm") || m.includes("польз") || m.includes("выгод") || m.includes("business")) {
-            return "💼 **Выгода внедрения Global Spirit Group для бизнеса:**\n\n" +
-                   "1. **Сокращение до 80% рутинных затрат:** ИИ берёт на себя первичный триаж, ответы клиентам и оформление документов.\n" +
-                   "2. **Работа 24/7 без выходных:** ни один лид не теряется ночью или в праздники.\n" +
-                   "3. **Прозрачный контроль:** единый дашборд с отчётами работы и статусом всех проектов.\n" +
-                   "4. **Безопасность данных:** персональный сейф паролей и раздельные папки с доступом только владельца.\n\n" +
-                   "👉 Зарегистрируйтесь, чтобы администратор подключил ваш проект в систему!";
+        // 6. DIRECTOR TIM & 7 AUTONOMOUS DEPARTMENTS
+        if (m.includes("тим") || m.includes("директор") || m.includes("поруч") || m.includes("отдел") || m.includes("tim") || m.includes("director") || m.includes("task")) {
+            if (isEn) {
+                return "👑 **General Director Tim & 7 Autonomous Departments:**\n\n" +
+                       "Director Tim coordinates implementation across 7 specialized units:\n" +
+                       "1. IT & Architecture 💻 | 2. Traffic & Marketing 📈 | 3. Sales & Conversion 🤝\n" +
+                       "4. Content & Design 🎨 | 5. Analytics & KPI 📊 | 6. Security & Vault 🔒 | 7. Operations ⚙️\n\n" +
+                       "Tap below to give Director Tim a direct task:\n" +
+                       "[[NAV:tim|👑 Assign Task to Director Tim]]";
+            }
+            return "👑 **Генеральный Директор Тим и 7 Автономных Отделов:**\n\n" +
+                   "Директор Тим распределяет работу между 7 специализированными подразделениями:\n" +
+                   "1. IT и Разработка 💻 | 2. Трафик и Маркетинг 📈 | 3. Продажи и Сделки 🤝\n" +
+                   "4. Контент и Дизайн 🎨 | 5. Аналитика и Финансы 📊 | 6. Безопасность и Сейф 🔒 | 7. Операции ⚙️\n\n" +
+                   "Нажмите ниже, чтобы поставить задачу Директору Тиму:\n" +
+                   "[[NAV:tim|👑 Поставить задачу Директору Тиму]]";
         }
 
-        // 7. PARTNERSHIP, EARNING & PROJECTS
-        if (m.includes("заработ") || m.includes("проект") || m.includes("партнер") || m.includes("доход") || m.includes("деньг") || m.includes("earn") || m.includes("partner")) {
-            return "🤝 **Форматы заработка и партнёрства в Global Spirit Group:**\n\n" +
-                   "1. **Развитие существующих проектов компании:** вы берёте готовое направление (IT, трафик, b2b) и получаете процент от прибыли.\n" +
-                   "2. **Подключение своего бизнеса:** упаковываем ваши услуги в ИИ-воронки и делим дополнительный доход.\n" +
-                   "3. **Совместный запуск нового продукта:** от вас экспертиза или аудитория, от нас — разработка и ИИ-инфраструктура.\n\n" +
-                   "🎯 Зарегистрируйтесь за 5 секунд, чтобы куратор закрепил проект за вами!";
+        // 7. PENDING HUMAN DECISIONS
+        if (m.includes("решен") || m.includes("действ") || m.includes("предупрежд") || m.includes("action") || m.includes("decision") || m.includes("alert")) {
+            if (isEn) {
+                return "🚨 **Human Action Center (5 Pending Decisions):**\n\n" +
+                       "The autonomous agents have prepared materials and are waiting for founder greenlight:\n" +
+                       "1. **12 IT Products:** confirm the first Mini App niche\n" +
+                       "2. **Traffic:** approve target audience segments\n" +
+                       "3. **Alberta Shirani:** confirm API keys & repository access\n" +
+                       "4. **Ural Industrial:** approve commercial proposal template\n" +
+                       "5. **Dominicana:** approve WhatsApp integration channel\n\n" +
+                       "Tap below to review and approve:\n" +
+                       "[[NAV:actions|🚨 Open Human Action Center (5)]]";
+            }
+            return "🚨 **Центр Предупреждений и Решений (5 Ожидающих Задач):**\n\n" +
+                   "ИИ-агенты полностью подготовили материалы и ожидают подтверждения владельца:\n" +
+                   "1. **12 IT Продуктов:** утверждение ниши первого Mini App\n" +
+                   "2. **Traffic:** выбор целевой аудитории для рекламы\n" +
+                   "3. **Alberta Shirani:** подтверждение ключей доступа\n" +
+                   "4. **Урал:** согласование коммерческого предложения\n" +
+                   "5. **Доминикана:** утверждение канала WhatsApp\n\n" +
+                   "Нажмите ниже для мгновенного просмотра и одобрения:\n" +
+                   "[[NAV:actions|🚨 Открыть Центр Решений Человека (5)]]";
         }
 
-        // 8. REGISTRATION & ACCESS
-        if (m.includes("регистрац") || m.includes("доступ") || m.includes("как войти") || m.includes("пароль") || m.includes("код") || m.includes("register") || m.includes("login")) {
-            return "🔐 **Как получить полный доступ к Офису:**\n\n" +
-                   "1. Нажмите кнопку **«⚡ Быстрая регистрация»** (занимает ровно 5 секунд).\n" +
-                   "2. Придумайте логин и пароль — они автоматически зашифруются в защищённый сейф.\n" +
-                   "3. Система выдаст код заявки (например, `REQ-607209`), который отправляется боту **@unitybusinessbot** или напрямую владельцу **@unityspiritpartners**.\n" +
-                   "4. После подтверждения вам откроются личные папки, задачи и полный функционал ИИ-офиса!";
+        // 8. STUDY STUDIO & PHOTOS
+        if (m.includes("фото") || m.includes("скриншот") || m.includes("заметк") || m.includes("сохран") || m.includes("изуч") || m.includes("photo") || m.includes("note") || m.includes("study")) {
+            if (isEn) {
+                return "📷 **Study & Analysis Studio:**\n\n" +
+                       "You can save any photos, screenshots (Ctrl+V), notes, or links directly into the studio. Our vision-capable AI agents will extract text, analyze layout, and suggest implementation tasks.\n\n" +
+                       "Tap below to open Study Studio:\n" +
+                       "[[NAV:study|📷 Open Study Studio]]";
+            }
+            return "📷 **Студия Изучения и Анализа Материалов:**\n\n" +
+                   "Вы можете сохранять любые фотографии, скриншоты (Ctrl+V), идеи и ссылки. Наши ИИ-агенты с компьютерным зрением распознают текст, изучат структуру и сформируют план действий.\n\n" +
+                   "Нажмите ниже, чтобы открыть Студию Изучения:\n" +
+                   "[[NAV:study|📷 Открыть Студию Изучения]]";
         }
 
-        // 9. GENERATIVE PROMPT & BUSINESS HELP (ACTIONABLE ADVICE)
-        if (m.includes("напиши") || m.includes("придумай") || m.includes("составь") || m.includes("план") || m.includes("помоги") || m.includes("идея")) {
-            return "💡 **План решения по вашему запросу:**\n\n" +
-                   "На основе задачи *«" + escapeHtml(raw.slice(0, 70)) + "...»*:\n\n" +
-                   "• **Шаг 1. Анализ аудитории:** выделим ключевую боль клиентов и сформулируем оффер с гарантией результата.\n" +
-                   "• **Шаг 2. Запуск воронки:** упакуем связку в Telegram Mini App или бот с автоматическим квалификатором лидов.\n" +
-                   "• **Шаг 3. Подключение Директора Тима:** настроим ИИ-агентов на приём заявок и подготовку отчётов.\n\n" +
-                   "🚀 Чтобы сохранить эти наработки в ваш персональный проект, зарегистрируйтесь за 5 секунд!";
+        // 9. VAULT & SECURITY
+        if (m.includes("сейф") || m.includes("парол") || m.includes("ключ") || m.includes("админ") || m.includes("vault") || m.includes("password") || m.includes("admin")) {
+            if (isEn) {
+                return "🔒 **Secured Vault & Team Administration:**\n\n" +
+                       "256-bit encrypted credential storage, 30-day employee access approval, folder permission assignment, and Telegram bot security alerts via @unitybusinessbot.\n\n" +
+                       "Tap below to open Secured Vault:\n" +
+                       "[[NAV:vault|🔒 Open Secured Vault & Admin]]";
+            }
+            return "🔒 **Секретный Сейф & Админ-Панель:**\n\n" +
+                   "Хранилище с 256-битным шифрованием: пароли, токены, 30-дневный контроль доступа сотрудников, назначение папок и мгновенные уведомления в Telegram через @unitybusinessbot.\n\n" +
+                   "Нажмите ниже, чтобы открыть Сейф:\n" +
+                   "[[NAV:vault|🔒 Открыть Секретный Сейф & Админ]]";
         }
 
-        // 10. DEFAULT CONTEXTUAL FALLBACK
-        return "✨ **Спасибо за ваш вопрос!**\n\n" +
-               "Я проанализировал ваш запрос: *«" + escapeHtml(raw) + "»*.\n\n" +
-               "В экосистеме **Global Spirit Group** такие задачи решаются связкой автономных агентов и практических воронок монетизации. " +
-               "Ваш запрос зафиксирован в нашей системе у куратора.\n\n" +
-               "🎯 **Что рекомендую сделать прямо сейчас:**\n" +
-               "1. Пройдите 4 простых вопроса опросника слева, чтобы система подобрала точный проект под ваши интересы.\n" +
-               "2. Зарегистрируйтесь за 5 секунд, чтобы сохранить историю диалога и закрепить проект за собой!";
+        // 10. DEFAULT / GENERAL SMART ASSISTANCE
+        if (isEn) {
+            return "🤖 **I'm your Global Spirit Group Assistant!**\n\n" +
+                   "I have recorded your question in our office system. How can I help you proceed right now?\n" +
+                   "• Ask me about our 12 Mini Apps, Pay-on-Results traffic, or Director Tim's 7 departments.\n" +
+                   "• Or tap below to jump directly to any office department:\n" +
+                   "[[NAV:12apps|📁 12 IT Products]] [[NAV:traffic|🚦 Traffic & Funnels]] [[NAV:reports|📊 Work Reports]] [[NAV:tim|👑 Director Tim]] [[NAV:actions|🚨 5 Decisions]]";
+        }
+        return "🤖 **Я зафиксировал ваш вопрос в системе Global Spirit Group!**\n\n" +
+               "Я готов помочь вам с любой задачей по бизнесу, маркетингу или навигации по офису.\n" +
+               "• Спросите о 12 IT Продуктах, трафике с оплатой за результат или координации Директора Тима.\n" +
+               "• Или нажмите кнопку ниже для быстрого перехода в нужный раздел:\n" +
+               "[[NAV:12apps|📁 12 IT Продуктов]] [[NAV:traffic|🚦 Трафик и Воронки]] [[NAV:reports|📊 Отчёт работы (150)]] [[NAV:tim|👑 Директор Тим]] [[NAV:actions|🚨 5 Решений]]";
     }
 
     async function submitGuestChatMessage() {
@@ -8113,16 +8276,20 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v22.6: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v22.7: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
         currentOfficeLang = localStorage.getItem("unity_office_lang") || "ru";
     } catch(e) {}
 
+    // =========================================================================
+    // === v22.7: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // =========================================================================
     const I18N_DICT = {
         ru: {
-            brand_title: "Global Spirit Group",
+            page_title: "Global Spirit Group ★ Виртуальный Офис",
+            brand_title: "Global Spirit Group ★ Виртуальный Офис",
             worker_status: "Автономный облачный + ПК режим активен",
             btn_app: "Приложение",
             btn_vault: "Сейф & Админ",
@@ -8131,15 +8298,89 @@ function sendQuickGuestPromptPortal(txt) {
             btn_folder: "Папка",
             btn_lang: "RU",
             toast_lang: "Язык переключён на Русский 🇷🇺",
-            guest_portal_title: "Global Spirit Group — Гостевой Превью-Портал",
-            guest_portal_sub: "ИИ-экосистема автономных агентов для бизнеса, маркетинга и монетизации (для русскоязычных сотрудников)",
-            guest_chat_placeholder: "Спросите что угодно у ИИ-ассистента...",
+            
+            // Quick save banner
+            quick_save_placeholder: "📥 Вставьте ссылку, текст или фото (Ctrl+V) для изучения...",
+            quick_save_btn: "💾 Сохранить",
+            quick_photo_btn: "📷 Фото",
+            quick_note_btn: "📝 Заметка",
+            
+            // Search
+            search_placeholder: "🔍 Поиск папки (12 IT Продуктов, Traffic, Alberta...)...",
+            
+            // Bottom nav
+            nav_folders: "Папки",
+            nav_tim: "Тим",
+            nav_reports: "Отчёты",
+            nav_plan: "План & ИИ",
+            nav_tasks: "Задачи",
+            nav_kb: "Позновалка",
+            nav_office: "Офис",
+            
+            // Human action strip
+            strip_badge: "🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ (5)",
+            strip_text: "Ожидают решения: <strong>12 IT Продуктов</strong> (выбор Mini App), <strong>Traffic</strong> (ниша), <strong>Alberta</strong> (ключи), <strong>Урал</strong> (КП), <strong>Доминикана</strong> (WhatsApp).",
+            strip_arrow: "Открыть ➔",
+            
+            // Filter chips
+            chip_all: "Все",
+            chip_active: "Активные",
+            chip_archive: "Архив",
+            btn_new_folder: "➕ Новая папка",
+            
+            // Reports filters
+            chip_rep_all: "Все отчёты (150)",
+            chip_rep_cont: "🔥 Что продолжить (50)",
+            chip_rep_done: "✅ Выполнено (100)",
+            
+            // Tim section
+            tim_title: "👑 Генеральный Директор Тим",
+            tim_sub: "Координация 7 автономных отделов и выполнение бизнес-задач",
+            tim_placeholder: "Поставить задачу Директору Тиму...",
+            tim_send_btn: "Отправить задачу ➔",
+            
+            // Study drawer
+            study_drawer_title: "🎨 Студия Изучения и Анализа Материалов",
+            study_drawer_placeholder: "Опишите мысли, вставьте текст, ссылки или прикрепите фото для анализа...",
+            study_drawer_btn: "🚀 Запустить анализ агентами",
+            
+            // Auth gate
+            auth_title: "Global Spirit Group ★ Виртуальный Офис",
+            auth_status: "🔒 Доступ к офису открывается только после подтверждения @unityspiritpartners",
+            auth_install_btn: "📲 Установить приложение в 1 клик",
+            guest_banner_btn: "👀 Войти как Гость (Live Превью & ИИ-Чат) →",
+            guest_banner_desc: "Ознакомьтесь с интерфейсом и пообщайтесь с ИИ-ассистентами вживую (без закрытой информации компании)",
             tab_register: "⚡ Быстрая регистрация",
             tab_login: "🔐 Вход",
-            btn_guest_enter: "👀 Войти как Гость (Live Превью & ИИ-Чат) →"
+            reg_login_ph: "Логин (или ваш @Telegram / Email) *",
+            reg_pass_ph: "Придумайте пароль (от 4 симв.) *",
+            reg_contact_ph: "Ваше имя и @Telegram (для одобрения)",
+            btn_register_submit: "Зарегистрироваться в 1 клик ⚡",
+            login_login_ph: "Ваш логин / @Telegram / Email *",
+            login_pass_ph: "Ваш пароль *",
+            btn_login_submit: "🔐 Войти в рабочий офис",
+            forgot_pass_link: "Забыли пароль? Восстановить через @unitybusinessbot",
+            
+            // AI Assistant
+            floating_ai_title: "ИИ-Ассистент & Навигатор",
+            floating_ai_label: "ИИ-Навигатор",
+            ai_modal_title: "ИИ-Ассистент & Навигатор Офиса",
+            ai_modal_sub: "🟢 В сети · Помощь по офису и навигация",
+            ai_nav_strip_title: "🗺️ Быстрый переход по офису (1 клик):",
+            ai_chat_placeholder: "Спросите что угодно или куда перейти (Enter для отправки)...",
+            ai_starter_1: "🛍️ Чем полезен для бизнеса?",
+            ai_starter_2: "👑 Как работает Директор Тим?",
+            ai_starter_3: "🗺️ Куда перейти в 1 очередь?",
+            ai_starter_4: "📊 Отчёт о работе (150 задач)",
+            ai_welcome_html: "Здравствуйте! Я официальный <b>ИИ-Ассистент & Навигатор Global Spirit Group ★ Виртуальный Офис</b> 🚀<br><br>Вы можете спросить меня о чём угодно в живом режиме или попросить перейти в любой раздел офиса:<br>• 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>• 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>• 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>• 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br><i>Нажмите кнопку в панели навигатора выше или напишите вопрос!</i>",
+            
+            // Modals
+            action_modal_title: "🚨 Центр Предупреждений и Ожидания Действий",
+            new_folder_modal_title: "📁 Новая папка / проект"
         },
         en: {
-            brand_title: "Global Spirit Group",
+            page_title: "Global Spirit Group ★ Virtual Office",
+            brand_title: "Global Spirit Group ★ Virtual Office",
             worker_status: "Autonomous Cloud + PC Mode Active",
             btn_app: "App",
             btn_vault: "Vault & Admin",
@@ -8148,12 +8389,85 @@ function sendQuickGuestPromptPortal(txt) {
             btn_folder: "Folder",
             btn_lang: "EN",
             toast_lang: "Language switched to English 🇬🇧",
-            guest_portal_title: "Global Spirit Group — Guest Preview Portal",
-            guest_portal_sub: "AI ecosystem of autonomous agents for business, marketing & monetization (for Russian-speaking & global team)",
-            guest_chat_placeholder: "Ask anything to AI Assistant...",
+            
+            // Quick save banner
+            quick_save_placeholder: "📥 Paste link, text, or photo (Ctrl+V) to study...",
+            quick_save_btn: "💾 Save",
+            quick_photo_btn: "📷 Photo",
+            quick_note_btn: "📝 Note",
+            
+            // Search
+            search_placeholder: "🔍 Search folder (12 IT Products, Traffic, Alberta...)...",
+            
+            // Bottom nav
+            nav_folders: "Folders",
+            nav_tim: "Tim",
+            nav_reports: "Reports",
+            nav_plan: "Plan & AI",
+            nav_tasks: "Tasks",
+            nav_kb: "Knowledge",
+            nav_office: "Office",
+            
+            // Human action strip
+            strip_badge: "🚨 ACTION REQUIRED (5)",
+            strip_text: "Awaiting decision: <strong>12 IT Products</strong> (select Mini App), <strong>Traffic</strong> (niche), <strong>Alberta</strong> (keys), <strong>Ural</strong> (proposal), <strong>Dominicana</strong> (WhatsApp).",
+            strip_arrow: "Open ➔",
+            
+            // Filter chips
+            chip_all: "All",
+            chip_active: "Active",
+            chip_archive: "Archive",
+            btn_new_folder: "➕ New Folder",
+            
+            // Reports filters
+            chip_rep_all: "All Reports (150)",
+            chip_rep_cont: "🔥 What to Continue (50)",
+            chip_rep_done: "✅ Completed (100)",
+            
+            // Tim section
+            tim_title: "👑 General Director Tim",
+            tim_sub: "Coordinating 7 autonomous departments & executing business tasks",
+            tim_placeholder: "Assign a task to Director Tim...",
+            tim_send_btn: "Send Task ➔",
+            
+            // Study drawer
+            study_drawer_title: "🎨 Study & Material Analysis Studio",
+            study_drawer_placeholder: "Describe ideas, paste text, links or attach photos for analysis...",
+            study_drawer_btn: "🚀 Launch Agent Analysis",
+            
+            // Auth gate
+            auth_title: "Global Spirit Group ★ Virtual Office",
+            auth_status: "🔒 Access opens only after confirmation by @unityspiritpartners",
+            auth_install_btn: "📲 Install Office App in 1-Click",
+            guest_banner_btn: "👀 Enter as Guest (Live Preview & AI Chat) →",
+            guest_banner_desc: "Explore platform interface & test live AI assistants (no private company data)",
             tab_register: "⚡ Express Registration",
             tab_login: "🔐 Login",
-            btn_guest_enter: "👀 Enter as Guest (Live Preview & AI Chat) →"
+            reg_login_ph: "Login (or your @Telegram / Email) *",
+            reg_pass_ph: "Create password (4+ chars) *",
+            reg_contact_ph: "Your Name and @Telegram (for approval)",
+            btn_register_submit: "Register in 1-Click ⚡",
+            login_login_ph: "Your Login / @Telegram / Email *",
+            login_pass_ph: "Your password *",
+            btn_login_submit: "🔐 Log In to Virtual Office",
+            forgot_pass_link: "Forgot password? Reset via @unitybusinessbot",
+            
+            // AI Assistant
+            floating_ai_title: "AI Assistant & Navigator",
+            floating_ai_label: "AI Navigator",
+            ai_modal_title: "Office AI Assistant & Navigator",
+            ai_modal_sub: "🟢 Online · Office help & quick navigation",
+            ai_nav_strip_title: "🗺️ Quick Office Jump (1 click):",
+            ai_chat_placeholder: "Ask anything or where to navigate (Enter to send)...",
+            ai_starter_1: "🛍️ How it helps my business?",
+            ai_starter_2: "👑 How Director Tim coordinates?",
+            ai_starter_3: "🗺️ Where should I start?",
+            ai_starter_4: "📊 Work reports (150 tasks)",
+            ai_welcome_html: "Hello and welcome! I am the official <b>AI Assistant & Navigator for Global Spirit Group ★ Virtual Office</b> 🚀<br><br>Feel free to ask me anything live or jump straight to any office section:<br>• 📁 <b>12 IT Products</b> — turnkey Telegram Mini Apps<br>• 🚦 <b>Traffic & Funnels</b> — pay-on-results client acquisition<br>• 📊 <b>Work Reports</b> — status of 150 completed agent tasks<br>• 👑 <b>Director Tim</b> — delegate tasks to 7 autonomous departments<br><br><i>Tap any button in the navigator above or type your question below!</i>",
+            
+            // Modals
+            action_modal_title: "🚨 Human Actions & Alert Center",
+            new_folder_modal_title: "📁 New Project Folder"
         }
     };
 
@@ -8161,6 +8475,9 @@ function sendQuickGuestPromptPortal(txt) {
         currentOfficeLang = lang || currentOfficeLang || "ru";
         try { localStorage.setItem("unity_office_lang", currentOfficeLang); } catch(e) {}
         const d = I18N_DICT[currentOfficeLang] || I18N_DICT.ru;
+        const isEn = (currentOfficeLang === "en");
+
+        document.title = d.page_title;
 
         const el = (id) => document.getElementById(id);
         if (el("brand-header-title")) el("brand-header-title").innerText = d.brand_title;
@@ -8172,13 +8489,107 @@ function sendQuickGuestPromptPortal(txt) {
         if (el("lbl-top-folder")) el("lbl-top-folder").innerText = d.btn_folder;
         if (el("current-lang-label")) el("current-lang-label").innerText = d.btn_lang;
 
-        if (el("guest-portal-header-title")) el("guest-portal-header-title").innerText = d.guest_portal_title;
-        if (el("guest-portal-header-sub")) el("guest-portal-header-sub").innerText = d.guest_portal_sub;
-        if (el("guest-portal-chat-input")) el("guest-portal-chat-input").placeholder = d.guest_chat_placeholder;
+        // Quick Save Banner
+        if (el("instant-kb-input")) el("instant-kb-input").placeholder = d.quick_save_placeholder;
+        if (el("lbl-quick-save-btn")) el("lbl-quick-save-btn").innerText = d.quick_save_btn;
+        if (el("lbl-quick-photo-btn")) el("lbl-quick-photo-btn").innerText = d.quick_photo_btn;
+        if (el("lbl-quick-note-btn")) el("lbl-quick-note-btn").innerText = d.quick_note_btn;
 
+        // Search
+        if (el("project-search")) el("project-search").placeholder = d.search_placeholder;
+
+        // Bottom Nav tabs
+        const navP = el("nav-btn-projects");
+        if (navP && navP.querySelector("span:last-child")) navP.querySelector("span:last-child").innerText = d.nav_folders;
+        const navT = el("nav-btn-tim");
+        if (navT && navT.querySelector("span:last-child")) navT.querySelector("span:last-child").innerText = d.nav_tim;
+        const navR = el("nav-btn-reports");
+        if (navR && navR.querySelector("span:last-child")) navR.querySelector("span:last-child").innerText = d.nav_reports;
+        const navPl = el("nav-btn-plan");
+        if (navPl && navPl.querySelector("span:last-child")) navPl.querySelector("span:last-child").innerText = d.nav_plan;
+        const navTk = el("nav-btn-tasks");
+        if (navTk && navTk.querySelector("span:last-child")) navTk.querySelector("span:last-child").innerText = d.nav_tasks;
+        const navK = el("nav-btn-kb");
+        if (navK && navK.querySelector("span:last-child")) navK.querySelector("span:last-child").innerText = d.nav_kb;
+        const navD = el("nav-btn-dashboard");
+        if (navD && navD.querySelector("span:last-child")) navD.querySelector("span:last-child").innerText = d.nav_office;
+
+        // Human action strip
+        if (el("strip-badge-label")) el("strip-badge-label").innerText = d.strip_badge;
+        if (el("strip-dynamic-text")) el("strip-dynamic-text").innerHTML = d.strip_text;
+        const stripA = document.querySelector("#human-action-strip .strip-arrow");
+        if (stripA) stripA.innerText = d.strip_arrow;
+
+        // Filter chips in Projects
+        if (el("chip-all")) el("chip-all").innerText = d.chip_all;
+        if (el("chip-active")) el("chip-active").innerText = d.chip_active;
+        if (el("chip-archive")) el("chip-archive").innerText = d.chip_archive;
+        if (el("btn-open-new-folder-chip")) el("btn-open-new-folder-chip").innerText = d.btn_new_folder;
+
+        // Reports sub-filters
+        if (el("chip-rep-all")) el("chip-rep-all").innerText = d.chip_rep_all;
+        if (el("chip-rep-cont")) el("chip-rep-cont").innerText = d.chip_rep_cont;
+        if (el("chip-rep-done")) el("chip-rep-done").innerText = d.chip_rep_done;
+
+        // Tim view
+        if (el("tim-view-title")) el("tim-view-title").innerText = d.tim_title;
+        if (el("tim-view-sub")) el("tim-view-sub").innerText = d.tim_sub;
+        if (el("tim-task-input")) el("tim-task-input").placeholder = d.tim_placeholder;
+        if (el("btn-tim-task-send")) el("btn-tim-task-send").innerText = d.tim_send_btn;
+
+        // Study drawer
+        if (el("study-drawer-title")) el("study-drawer-title").innerText = d.study_drawer_title;
+        if (el("study-drawer-textarea")) el("study-drawer-textarea").placeholder = d.study_drawer_placeholder;
+        if (el("btn-study-drawer-send")) el("btn-study-drawer-send").innerText = d.study_drawer_btn;
+
+        // Auth Gate
+        if (el("auth-gate-title")) el("auth-gate-title").innerText = d.auth_title;
+        if (el("auth-gate-status")) el("auth-gate-status").innerText = d.auth_status;
+        if (el("btn-direct-install-gate")) el("btn-direct-install-gate").innerText = d.auth_install_btn;
+        if (el("btn-guest-preview-enter")) el("btn-guest-preview-enter").innerText = d.guest_banner_btn;
+        if (el("guest-banner-desc")) el("guest-banner-desc").innerText = d.guest_banner_desc;
         if (el("auth-tab-btn-register")) el("auth-tab-btn-register").innerText = d.tab_register;
         if (el("auth-tab-btn-login")) el("auth-tab-btn-login").innerText = d.tab_login;
-        if (el("btn-guest-preview-enter")) el("btn-guest-preview-enter").innerText = d.btn_guest_enter;
+        if (el("reg-login")) el("reg-login").placeholder = d.reg_login_ph;
+        if (el("reg-pass1")) el("reg-pass1").placeholder = d.reg_pass_ph;
+        if (el("reg-contact")) el("reg-contact").placeholder = d.reg_contact_ph;
+        if (el("btn-auth-reg-submit")) el("btn-auth-reg-submit").innerText = d.btn_register_submit;
+        if (el("auth-login-user")) el("auth-login-user").placeholder = d.login_login_ph;
+        if (el("auth-login-pass")) el("auth-login-pass").placeholder = d.login_pass_ph;
+        if (el("btn-auth-login-submit")) el("btn-auth-login-submit").innerText = d.btn_login_submit;
+        if (el("auth-forgot-pass-link")) el("auth-forgot-pass-link").innerText = d.forgot_pass_link;
+
+        // AI Assistant & Navigator
+        if (el("floating-ai-label")) el("floating-ai-label").innerText = d.floating_ai_label;
+        if (el("btn-floating-guest-ai")) el("btn-floating-guest-ai").title = d.floating_ai_title;
+        if (el("ai-modal-header-title")) el("ai-modal-header-title").innerHTML = d.ai_modal_title + ' <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">ChatGPT Mode</span>';
+        if (el("ai-modal-header-sub")) el("ai-modal-header-sub").innerText = d.ai_modal_sub;
+        if (el("ai-nav-strip-label")) el("ai-nav-strip-label").innerText = d.ai_nav_strip_title;
+        if (el("guest-chat-input-text")) el("guest-chat-input-text").placeholder = d.ai_chat_placeholder;
+        if (el("ai-chat-welcome-msg")) el("ai-chat-welcome-msg").innerHTML = d.ai_welcome_html;
+
+        // AI Starter pills
+        if (el("pill-ai-1")) el("pill-ai-1").innerText = d.ai_starter_1;
+        if (el("pill-ai-2")) el("pill-ai-2").innerText = d.ai_starter_2;
+        if (el("pill-ai-3")) el("pill-ai-3").innerText = d.ai_starter_3;
+        if (el("pill-ai-4")) el("pill-ai-4").innerText = d.ai_starter_4;
+
+        // AI Nav strip pills
+        if (el("nav-pill-12apps")) el("nav-pill-12apps").innerText = isEn ? "📁 12 IT Products" : "📁 12 IT Продуктов";
+        if (el("nav-pill-traffic")) el("nav-pill-traffic").innerText = isEn ? "🚦 Traffic & Funnels" : "🚦 Трафик & Воронки";
+        if (el("nav-pill-reports")) el("nav-pill-reports").innerText = isEn ? "📊 Work Reports (150)" : "📊 Отчёт (150 задач)";
+        if (el("nav-pill-tim")) el("nav-pill-tim").innerText = isEn ? "👑 Director Tim" : "👑 Директор Тим";
+        if (el("nav-pill-actions")) el("nav-pill-actions").innerText = isEn ? "🚨 5 Decisions" : "🚨 5 Решений";
+        if (el("nav-pill-tasks")) el("nav-pill-tasks").innerText = isEn ? "📋 Tasks" : "📋 Задачи";
+        if (el("nav-pill-study")) el("nav-pill-study").innerText = isEn ? "📷 Study Studio" : "📷 Студия / Фото";
+        if (el("nav-pill-vault")) el("nav-pill-vault").innerText = isEn ? "🔒 Vault & Admin" : "🔒 Сейф & Админ";
+        if (el("nav-pill-kb")) el("nav-pill-kb").innerText = isEn ? "🧠 Knowledge Base" : "🧠 База Знаний";
+
+        // Modals
+        const aMTitle = document.querySelector("#action-modal .modal-header h3");
+        if (aMTitle) aMTitle.innerText = d.action_modal_title;
+        const nFTitle = document.querySelector("#new-folder-modal .modal-header h3");
+        if (nFTitle) nFTitle.innerText = d.new_folder_modal_title;
     }
 
     function toggleLanguage() {
@@ -8187,8 +8598,70 @@ function sendQuickGuestPromptPortal(txt) {
         showToast(I18N_DICT[nextLang].toast_lang);
     }
 
+    // =========================================================================
+    // === v22.7: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // =========================================================================
+    function navigateOfficeSection(target) {
+        // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
+        if (typeof toggleGuestAiChatModal === "function") {
+            toggleGuestAiChatModal(false);
+        }
 
-    function enterPendingWaitingRoom(userObj) {
+        const isEn = (currentOfficeLang === "en");
+
+        if (target === "projects" || target === "folders") {
+            const btn = document.getElementById("nav-btn-projects");
+            switchTab("projects", btn);
+            showToast(isEn ? "📁 Switched to Project Folders" : "📁 Переход в Папки Проектов");
+        } else if (target === "12apps" || target === "12_products") {
+            const btn = document.getElementById("nav-btn-projects");
+            switchTab("projects", btn);
+            if (typeof selectProject === "function") selectProject("12 IT Продуктов");
+            showToast(isEn ? "🚀 Opened 12 IT Products Mini Apps" : "🚀 Открыт проект 12 IT Продуктов");
+        } else if (target === "traffic") {
+            const btn = document.getElementById("nav-btn-projects");
+            switchTab("projects", btn);
+            if (typeof selectProject === "function") selectProject("Traffic");
+            showToast(isEn ? "🚦 Opened Traffic & Viral Acquisition" : "🚦 Открыт проект Трафик и Воронки");
+        } else if (target === "alberta") {
+            const btn = document.getElementById("nav-btn-projects");
+            switchTab("projects", btn);
+            if (typeof selectProject === "function") selectProject("Alberta");
+            showToast(isEn ? "🇨🇦 Opened Alberta Shirani" : "🇨🇦 Открыт проект Alberta Shirani");
+        } else if (target === "reports") {
+            if (typeof openWorkReportTab === "function") openWorkReportTab();
+            showToast(isEn ? "📊 Opened Work Reports (150 Tasks)" : "📊 Открыт Отчёт о работе (150 задач)");
+        } else if (target === "tim") {
+            const btn = document.getElementById("nav-btn-tim");
+            switchTab("tim", btn);
+            showToast(isEn ? "👑 Opened General Director Tim" : "👑 Открыт Генеральный Директор Тим");
+        } else if (target === "tasks") {
+            const btn = document.getElementById("nav-btn-tasks");
+            switchTab("tasks", btn);
+            showToast(isEn ? "📋 Opened Tasks List" : "📋 Открыт список задач");
+        } else if (target === "kb" || target === "knowledge" || target === "poznovalka") {
+            const btn = document.getElementById("nav-btn-kb");
+            switchTab("kb", btn);
+            showToast(isEn ? "🧠 Opened Knowledge Base" : "🧠 Открыта База Знаний (Познавалка)");
+        } else if (target === "dashboard" || target === "office") {
+            const btn = document.getElementById("nav-btn-dashboard");
+            switchTab("dashboard", btn);
+            showToast(isEn ? "🏢 Opened Office Overview" : "🏢 Открыт Обзор Офиса");
+        } else if (target === "vault") {
+            if (typeof openSecuredVaultModal === "function") openSecuredVaultModal();
+        } else if (target === "actions") {
+            if (typeof openActionModal === "function") openActionModal();
+        } else if (target === "study") {
+            if (typeof toggleGlobalStudyDrawer === "function") toggleGlobalStudyDrawer(true);
+            showToast(isEn ? "📷 Opened Study Studio" : "📷 Открыта Студия Изучения фото и заметок");
+        } else if (target === "app_install") {
+            if (typeof openInstallAppModal === "function") openInstallAppModal();
+        } else if (target === "new_folder") {
+            if (typeof openNewFolderModal === "function") openNewFolderModal();
+        }
+    }
+
+function enterPendingWaitingRoom(userObj) {
         document.body.classList.add("auth-locked");
         const gate = document.getElementById("auth-gate-overlay");
         if (gate) gate.style.display = "flex";
@@ -8466,7 +8939,7 @@ function sendQuickGuestPromptPortal(txt) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.6</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.7</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -8516,7 +8989,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
         // =========================================================================
-    // === v22.6: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v22.7: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -10390,12 +10863,13 @@ function sendQuickGuestPromptPortal(txt) {
 </script>
 
 <!-- ========================================================================= -->
-<!-- === v22.6: LIVE AI ASSISTANT CHAT (CHATGPT MODE FOR GUESTS & MEMBERS) === -->
 <!-- ========================================================================= -->
-<button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" style="display:flex; align-items:center; gap:8px; position:fixed; bottom:76px; right:16px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:11px 18px; font-weight:900; font-size:0.84rem; box-shadow:0 8px 24px rgba(2,132,199,0.5); cursor:pointer;">
-    <span style="font-size:1.15rem;">🤖</span>
-    <span>Live ИИ-Чат</span>
-    <span style="background:rgba(255,255,255,0.25); border-radius:999px; padding:2px 7px; font-size:0.67rem; font-weight:800;">ChatGPT</span>
+<!-- === v22.7: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- ========================================================================= -->
+<button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Ассистент & Навигатор" style="display:flex; align-items:center; justify-content:center; gap:6px; position:fixed; bottom:74px; right:14px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:999px; height:42px; min-width:42px; padding:0 12px; font-weight:800; font-size:0.78rem; box-shadow:0 6px 20px rgba(2,132,199,0.45); cursor:pointer; backdrop-filter:blur(8px); transition:all 0.2s ease;">
+    <span style="font-size:1.15rem; line-height:1;">🤖</span>
+    <span id="floating-ai-label" style="letter-spacing:0.3px;">ИИ-Навигатор</span>
+    <span style="width:7px; height:7px; border-radius:50%; background:#34d399; box-shadow:0 0 6px #34d399;"></span>
 </button>
 
 <div id="guest-ai-chat-modal" class="modal-overlay" style="display:none; z-index:27000;" onclick="if(event.target===this) toggleGuestAiChatModal(false)">
@@ -10405,20 +10879,42 @@ function sendQuickGuestPromptPortal(txt) {
             <div style="display:flex; align-items:center; gap:10px;">
                 <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1.25rem;">🤖</div>
                 <div>
-                    <div style="font-weight:900; font-size:0.92rem; color:#f8fafc; display:flex; align-items:center; gap:6px;">
-                        ИИ-Ассистент Офиса
+                    <div id="ai-modal-header-title" style="font-weight:900; font-size:0.92rem; color:#f8fafc; display:flex; align-items:center; gap:6px;">
+                        ИИ-Ассистент & Навигатор Офиса
                         <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">ChatGPT Mode</span>
                     </div>
-                    <div style="font-size:0.7rem; color:#94a3b8;">🟢 В сети · Вопросы сохраняются в системе для анализа</div>
+                    <div id="ai-modal-header-sub" style="font-size:0.7rem; color:#94a3b8;">🟢 В сети · Помощь по офису и навигация</div>
                 </div>
             </div>
-            <button class="modal-close" onclick="toggleGuestAiChatModal(false)" style="font-size:1.2rem; color:#94a3b8; background:none; border:none; cursor:pointer;">✕</button>
+            <div style="display:flex; align-items:center; gap:6px;">
+                <button type="button" onclick="toggleGuestAiChatModal(false)" title="Свернуть" style="background:rgba(255,255,255,0.08); border:none; border-radius:6px; color:#94a3b8; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem; font-weight:bold;">_</button>
+                <button class="modal-close" onclick="toggleGuestAiChatModal(false)" style="font-size:1.1rem; color:#94a3b8; background:none; border:none; cursor:pointer;">✕</button>
+            </div>
+        </div>
+
+        <!-- Office Fast Navigation Strip -->
+        <div id="ai-office-navigator-bar" style="background:#080e1c; border-bottom:1px solid rgba(56,189,248,0.2); padding:8px 12px; display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.7rem; color:#94a3b8; font-weight:700;">
+                <span id="ai-nav-strip-label">🗺️ Быстрый переход по офису (1 клик):</span>
+                <span style="font-size:0.65rem; color:#38bdf8;">⚡ Мгновенно</span>
+            </div>
+            <div id="ai-nav-pills-row" style="display:flex; gap:6px; overflow-x:auto; white-space:nowrap; padding-bottom:2px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
+                <button type="button" class="choice-btn" id="nav-pill-12apps" onclick="navigateOfficeSection('12apps')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(37,99,235,0.22); border:1px solid rgba(96,165,250,0.5); color:#bfdbfe; font-weight:700;">📁 12 IT Продуктов</button>
+                <button type="button" class="choice-btn" id="nav-pill-traffic" onclick="navigateOfficeSection('traffic')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(16,185,129,0.2); border:1px solid rgba(52,211,153,0.5); color:#a7f3d0; font-weight:700;">🚦 Трафик & Воронки</button>
+                <button type="button" class="choice-btn" id="nav-pill-reports" onclick="navigateOfficeSection('reports')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(245,158,11,0.2); border:1px solid rgba(251,191,36,0.5); color:#fde68a; font-weight:700;">📊 Отчёт (150 задач)</button>
+                <button type="button" class="choice-btn" id="nav-pill-tim" onclick="navigateOfficeSection('tim')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(139,92,246,0.22); border:1px solid rgba(167,139,250,0.5); color:#ddd6fe; font-weight:700;">👑 Директор Тим</button>
+                <button type="button" class="choice-btn" id="nav-pill-actions" onclick="navigateOfficeSection('actions')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(239,68,68,0.22); border:1px solid rgba(248,113,113,0.5); color:#fca5a5; font-weight:700;">🚨 5 Решений</button>
+                <button type="button" class="choice-btn" id="nav-pill-tasks" onclick="navigateOfficeSection('tasks')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(14,165,233,0.2); border:1px solid rgba(56,189,248,0.5); color:#bae6fd; font-weight:700;">📋 Задачи</button>
+                <button type="button" class="choice-btn" id="nav-pill-study" onclick="navigateOfficeSection('study')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(236,72,153,0.2); border:1px solid rgba(244,114,182,0.5); color:#fbcfe8; font-weight:700;">📷 Студия / Фото</button>
+                <button type="button" class="choice-btn" id="nav-pill-vault" onclick="navigateOfficeSection('vault')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(234,179,8,0.2); border:1px solid rgba(250,204,21,0.5); color:#fef08a; font-weight:700;">🔒 Сейф & Админ</button>
+                <button type="button" class="choice-btn" id="nav-pill-kb" onclick="navigateOfficeSection('kb')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(99,102,241,0.2); border:1px solid rgba(129,140,248,0.5); color:#c7d2fe; font-weight:700;">🧠 База Знаний</button>
+            </div>
         </div>
 
         <!-- Chat Info Notice -->
         <div id="guest-chat-notice-bar" style="background:rgba(14,165,233,0.12); border-bottom:1px solid rgba(14,165,233,0.25); padding:8px 14px; font-size:0.73rem; color:#bae6fd; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-            <span>💡 <b>Временная гостевая сессия:</b> ваши вопросы фиксируются в системе. Чтобы закрепить историю за собой:</span>
-            <button onclick="openAuthGateFromGuest()" style="background:#10b981; color:#fff; border:none; border-radius:6px; padding:3px 8px; font-size:0.71rem; font-weight:900; cursor:pointer;">⚡ Зарегистрироваться</button>
+            <span id="ai-chat-notice-text">💡 <b>Временная сессия:</b> ваши вопросы фиксируются в системе. Чтобы закрепить историю за собой:</span>
+            <button onclick="openAuthGateFromGuest()" id="ai-chat-register-btn" style="background:#10b981; color:#fff; border:none; border-radius:6px; padding:3px 8px; font-size:0.71rem; font-weight:900; cursor:pointer;">⚡ Зарегистрироваться</button>
         </div>
 
         <!-- Messages Thread -->
@@ -10426,28 +10922,29 @@ function sendQuickGuestPromptPortal(txt) {
             <!-- Welcome message -->
             <div style="display:flex; gap:10px; align-items:flex-start;">
                 <div style="width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">🤖</div>
-                <div style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:11px 13px; font-size:0.8rem; line-height:1.48; color:#f1f5f9; max-width:85%;">
-                    Здравствуйте! Я официальный <b>ИИ-Ассистент Виртуального Офиса Global Spirit Group</b> 🚀<br><br>
-                    Вы можете спросить меня о чём угодно в живом режиме — как в ChatGPT:<br>
-                    • Как работают <b>7 автономных отделов</b> под управлением Генерального Директора Тима<br>
-                    • Как запустить ИИ-воронки и получать целевых клиентов<br>
-                    • Чем платформа полезна вашему бизнесу или проекту<br><br>
-                    <i>Все ваши вопросы фиксируются в системе у нас, а вы можете протестировать живой интеллект прямо сейчас!</i>
+                <div id="ai-chat-welcome-msg" style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:11px 13px; font-size:0.8rem; line-height:1.48; color:#f1f5f9; max-width:85%;">
+                    Здравствуйте! Я официальный <b>ИИ-Ассистент & Навигатор Global Spirit Group ★ Виртуальный Офис</b> 🚀<br><br>
+                    Вы можете спросить меня о чём угодно в живом режиме или попросить перейти в любой раздел офиса:<br>
+                    • 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>
+                    • 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>
+                    • 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>
+                    • 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br>
+                    <i>Нажмите кнопку в панели навигатора выше или напишите вопрос!</i>
                 </div>
             </div>
         </div>
 
         <!-- Quick Starter Pills -->
-        <div style="padding:6px 14px; background:#0a1222; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:6px; overflow-x:auto; white-space:nowrap;">
-            <button class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Чем этот Виртуальный Офис и ИИ-агенты могут помочь моему бизнесу?')">🛍️ Чем полезен для бизнеса?</button>
-            <button class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Как Директор Тим координирует 7 отделов и выполняет задачи?')">👑 Как работает Директор Тим?</button>
-            <button class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Как автоматизировать привлечение клиентов и маркетинг через ИИ?')">📈 Автоматизация маркетинга</button>
-            <button class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Как стать партнёром или подключить свой проект в платформу?')">🤝 Как подключить свой проект?</button>
+        <div id="ai-chat-starters-row" style="padding:6px 14px; background:#0a1222; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:6px; overflow-x:auto; white-space:nowrap;">
+            <button id="pill-ai-1" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Чем этот Виртуальный Офис и ИИ-агенты могут помочь моему бизнесу?')">🛍️ Чем полезен для бизнеса?</button>
+            <button id="pill-ai-2" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Как Директор Тим координирует 7 отделов и выполняет задачи?')">👑 Как работает Директор Тим?</button>
+            <button id="pill-ai-3" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Помоги с навигацией: куда перейти в первую очередь?')">🗺️ Куда перейти в 1 очередь?</button>
+            <button id="pill-ai-4" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Покажи отчёт о проделанной работе и статус задач')">📊 Отчёт о работе (150 задач)</button>
         </div>
 
         <!-- Input Bar -->
         <div style="padding:10px 14px; background:#0f172a; border-top:1px solid rgba(255,255,255,0.09); display:flex; gap:8px; align-items:center;">
-            <textarea id="guest-chat-input-text" rows="2" style="flex:1; background:#070d19; border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:9px 11px; color:#f8fafc; font-size:0.81rem; font-family:inherit; outline:none; resize:none;" placeholder="Спросите что угодно у ИИ-ассистента (Enter для отправки)..." onkeydown="if(event.key==='Enter' && !event.shiftKey){ event.preventDefault(); submitGuestChatMessage(); }"></textarea>
+            <textarea id="guest-chat-input-text" rows="2" style="flex:1; background:#070d19; border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:9px 11px; color:#f8fafc; font-size:0.81rem; font-family:inherit; outline:none; resize:none;" placeholder="Спросите что угодно или куда перейти (Enter для отправки)..." onkeydown="if(event.key==='Enter' && !event.shiftKey){ event.preventDefault(); submitGuestChatMessage(); }"></textarea>
             <button id="btn-guest-chat-send" onclick="submitGuestChatMessage()" style="background:linear-gradient(135deg,#0284c7,#10b981); color:#fff; border:none; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; cursor:pointer; flex-shrink:0;">
                 ✈️
             </button>
