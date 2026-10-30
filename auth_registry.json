@@ -1,5 +1,5 @@
 {
-  "version": "20.5",
+  "version": "25.0",
   "owner_email_hint": "u***@gmail.com",
   "approver_telegram": "unityspiritpartners",
   "approver_telegram_url": "https://t.me/unityspiritpartners",
@@ -85,7 +85,7 @@
       "pbkdf2_hash": "3082cf2bc49460d9584cf1d93cd92148ca18a1488a9a7f9a186dd6eaf66b648d",
       "iterations": 120000,
       "assigned_projects": [
-        "*"
+        "Alberta"
       ],
       "gta_completed": true,
       "gta_archetype": "🎨 Креативный Директор & Архитектор Внутренней Опоры (Alberta Creative Director)",
@@ -99,8 +99,8 @@
       "login": "unityspiritpartners",
       "full_name": "Vlaslav (Owner — Unity Spirit Partners)",
       "telegram": "@unityspiritpartners",
-      "role": "member",
-      "status": "pending",
+      "role": "owner",
+      "status": "approved",
       "salt_hex": "9cf23e131e4386bd36f36aa84e56be45",
       "pbkdf2_hash": "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
       "iterations": 120000,
@@ -110,10 +110,30 @@
       "gta_completed": true,
       "gta_archetype": "👑 Босс Синдиката",
       "created_at": "2026-10-30T02:53:39.831954+00:00",
-      "approved_at": "",
-      "owner_action_stamp": "",
+      "approved_at": "2026-10-30T02:53:39.831954+00:00",
+      "owner_action_stamp": "owner-master-approved",
+      "pending_reset": null
+    },
+    {
+      "id": "user-alberta-shirani",
+      "login": "alberta_shirani",
+      "full_name": "Alberta Shirani",
+      "telegram": "@Alberta",
+      "role": "member",
+      "status": "approved",
+      "salt_hex": "1a16cf8302a85e82f5d836b67d88846e",
+      "pbkdf2_hash": "3082cf2bc49460d9584cf1d93cd92148ca18a1488a9a7f9a186dd6eaf66b648d",
+      "iterations": 120000,
+      "assigned_projects": [
+        "Alberta"
+      ],
+      "gta_completed": true,
+      "gta_archetype": "🎨 Креативный Директор & Архитектор Внутренней Опоры (Alberta Creative Director)",
+      "created_at": "2026-10-30T16:06:53.876879+00:00",
+      "approved_at": "2026-10-30T16:56:08.577139Z",
+      "owner_action_stamp": "tg-bot-btn-1793400968",
       "pending_reset": null
     }
   ],
-  "updated_at": "2026-10-30T19:45:22.991206+00:00"
+  "updated_at": "2026-10-30T20:00:00.000000+00:00"
 }
