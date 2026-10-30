@@ -3323,6 +3323,40 @@
         "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg"
       ],
       "has_study_notes": true
+    },
+    "160": {
+      "id": 160,
+      "created": "2026-10-29 21:18:23",
+      "handoffs": [
+        {
+          "t": "2026-10-29 21:18:23",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-29 21:19:12",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.instagram.com/quest_ptg/), [Ta",
+      "urls": [
+        "https://www.instagram.com/quest_ptg/",
+        "https://taplink.cc/httpswww.instagram.comques",
+        "https://t.me/Secta_quest_bot"
+      ],
+      "project": "GlobalFilms (Filmtools)",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-29 21:19:12"
     }
   }
 }
