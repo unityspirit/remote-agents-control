@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 23:36:52",
+  "updated": "2026-10-29 23:41:55",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -116,10 +116,10 @@
     {
       "folder": "Georgis1",
       "project": "Georgis1",
-      "state": "empty",
-      "files": 0,
-      "size_kb": 0,
-      "last_change": null,
+      "state": "active",
+      "files": 612,
+      "size_kb": 523399,
+      "last_change": "2026-10-29",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
