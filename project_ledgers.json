@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30 10:09:06",
+  "updated": "2026-10-30 10:14:15",
   "projects_count": 55,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -358,7 +358,7 @@
       "project": "Alberta",
       "folder": "Alberta",
       "state": "active",
-      "last_change": "2026-10-22",
+      "last_change": "2026-10-30",
       "lead_agent": "Alberta Creative & Kinfolk Director",
       "priority_score": 83,
       "revenue_potential": "Премиальный AI-контент + воронка лидогенерации и клубной подписки Alberta Shirani",
@@ -369,8 +369,8 @@
         "open_tasks": 1,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 1,
-        "size_kb": 1,
+        "files_on_disk": 28,
+        "size_kb": 9417,
         "ai_analyses": 0,
         "research_notes": 0
       },
