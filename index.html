@@ -1530,6 +1530,162 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+
+        /* === v19.0: PHOTO + STUDY STUDIO, WORK LEDGER & REPORTS TAB === */
+        .b-tab {
+            min-width: 0;
+        }
+        @media (max-width: 440px) {
+            .b-tab {
+                font-size: 0.58rem;
+                padding: 0 1px;
+            }
+            .b-tab .b-icon {
+                font-size: 1.0rem;
+            }
+            .topbar-actions {
+                gap: 4px;
+            }
+            .topbar-actions .icon-btn {
+                padding: 5px 7px;
+                font-size: 0.7rem;
+            }
+        }
+        .study-drawer-box {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.98));
+            border-bottom: 1px solid rgba(139, 92, 246, 0.4);
+            padding: 10px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .light-theme .study-drawer-box {
+            background: linear-gradient(145deg, #f8fafc, #eef2ff);
+        }
+        .study-textarea {
+            width: 100%;
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 9px 11px;
+            color: var(--text-main);
+            font-size: 0.81rem;
+            font-family: inherit;
+            line-height: 1.45;
+            resize: vertical;
+            min-height: 76px;
+            outline: none;
+        }
+        .study-textarea:focus {
+            border-color: #8b5cf6;
+        }
+        .photo-strip {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .photo-thumb-item {
+            position: relative;
+            width: 62px;
+            height: 62px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.55);
+            background: var(--bg-main);
+            flex-shrink: 0;
+        }
+        .photo-thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-thumb-remove {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(239, 68, 68, 0.92);
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .office-inline-photo {
+            max-width: min(100%, 320px);
+            max-height: 220px;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 92, 246, 0.45);
+            cursor: zoom-in;
+            object-fit: cover;
+            display: inline-block;
+            margin: 6px 6px 6px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .tab-study-quickbar {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.13), rgba(59, 130, 246, 0.11));
+            border: 1px dashed rgba(139, 92, 246, 0.45);
+            border-radius: 12px;
+            padding: 8px 11px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .folder-briefing-card {
+            background: linear-gradient(145deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            border-left: 4px solid #10b981;
+            border-radius: 14px;
+            padding: 13px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .briefing-kpi-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .briefing-kpi-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 9px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        .briefing-next-box {
+            background: rgba(245, 158, 11, 0.11);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 10px;
+            padding: 9px 11px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .priority-rank-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid #10b981;
+            border-radius: 13px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
     </style>
 </head>
 <body>
@@ -1548,6 +1704,7 @@
             </div>
         </div>
         <div class="topbar-actions">
+            <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report" title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 Отчёт работы (<span id="topbar-work-cnt">150</span>)</button>
             <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Предупреждения и ожидание действий">🚨 Действия (<span id="topbar-action-cnt">5</span>)</button>
             <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ Папка</button>
             <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Тема">☀️</button>
@@ -1555,15 +1712,40 @@
         </div>
     </header>
 
-    <!-- INSTANT SAVE BAR (WORKS 24/7 EVEN IF LAPTOP IS OFFLINE) -->
-    <div class="quick-save-banner">
-        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="📥 Сохранить в Офис (анализ, оффер на подтверждение и распределение 24/7)..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
-        <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 В Триаж</button>
+    <!-- INSTANT SAVE + PHOTO & TEXT STUDY BAR (WORKS 24/7 IN EVERY TAB) -->
+    <div class="quick-save-banner" style="flex-wrap:wrap;">
+        <input type="file" id="global-photo-input" accept="image/*" multiple style="display:none;" onchange="handlePhotoFilesSelected('global', this.files); this.value='';">
+        <button class="icon-btn" onclick="triggerPhotoPicker('global', true)" title="Добавить фото / скриншоты для изучения" style="height:38px; padding:0 10px; border-color:rgba(139,92,246,0.55); background:rgba(139,92,246,0.14); color:#c084fc; font-weight:700; flex-shrink:0;">📷 Фото <span id="global-photo-cnt" style="display:none; background:#8b5cf6; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem;">0</span></button>
+        <button class="icon-btn" onclick="toggleGlobalStudyDrawer()" id="btn-global-study-toggle" title="Открыть поле текста и фото для изучения в любой папке" style="height:38px; padding:0 10px; border-color:rgba(59,130,246,0.45); color:#93c5fd; font-weight:700; flex-shrink:0;">📝 Текст+</button>
+        <input type="text" class="quick-save-input" id="instant-kb-input" style="min-width:160px;" placeholder="📥 Сохранить ссылку, фото (Ctrl+V) или текст на изучение..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
+        <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
     </div>
     <!-- LIVE SMART ROUTE & INTERCONNECTION PREVIEW -->
     <div id="quick-save-route-preview" style="display:none; padding:6px 14px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-bottom:1px solid var(--border); color:var(--text-main); font-weight:600; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
         <span id="quick-save-route-text"></span>
         <span id="quick-save-route-domain" style="opacity:0.8; font-size:0.7rem;"></span>
+    </div>
+    <!-- EXPANDABLE MULTI-LINE PHOTO + TEXT STUDY STUDIO (AVAILABLE FROM ANY TAB) -->
+    <div id="global-study-drawer" class="study-drawer-box" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span style="font-size:0.79rem; font-weight:800; color:#c084fc;">📷 + 📝 Сохранение фото и текста для изучения ИИ-агентами</span>
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <select id="global-study-folder" class="chip-select" style="font-size:0.73rem; max-width:230px;"></select>
+                <button class="mini-btn" onclick="toggleGlobalStudyDrawer(false)">✕ Скрыть</button>
+            </div>
+        </div>
+        <textarea id="global-study-textarea" class="study-textarea" placeholder="Напишите или вставьте подробный текст для изучения, идеи, посты, условия сделки... Можно вставить скриншот прямо через Ctrl+V!"></textarea>
+        <div id="global-photo-strip" class="photo-strip" style="display:none;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button class="mini-btn" style="border-color:rgba(139,92,246,0.5); color:#c084fc;" onclick="triggerPhotoPicker('global', false)">📷 Добавить ещё фото</button>
+                <span style="font-size:0.7rem; color:var(--text-dim); align-self:center;">Фото сохраняются в облако 24/7 и в папку проекта (<code>_office/media</code>) с OCR-распознаванием</span>
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button class="btn-action ghost" style="border-color:rgba(245,158,11,0.5); color:#fbbf24; font-weight:700;" onclick="submitGlobalStudyStudio(true)">👑 Изучить с Тимом</button>
+                <button class="btn-action accent" style="padding:7px 14px; font-weight:700;" id="btn-global-study-submit" onclick="submitGlobalStudyStudio(false)">📥 Сохранить и изучить 🚀</button>
+            </div>
+        </div>
     </div>
 
     <!-- ACTION REQUIRED & WAITING ALERT STRIP -->
@@ -1607,6 +1789,13 @@
                     </div>
                 </div>
 
+                <div class="tab-study-quickbar">
+                    <span style="font-size:0.75rem; font-weight:700; color:var(--text-main);">📷 Фото + 📝 Текст на изучение в любую папку:</span>
+                    <div style="display:flex; gap:6px;">
+                        <button class="mini-btn accent" onclick="openStudyStudioForProject(currentProject)">📷 Добавить фото и текст</button>
+                        <button class="mini-btn" style="color:#34d399; border-color:rgba(16,185,129,0.45);" onclick="openWorkReportTab()">📊 Отчёт работ</button>
+                    </div>
+                </div>
                 <button class="add-folder-banner-btn" onclick="openNewFolderModal()">➕ Создать новую папку на ПК</button>
                 <div id="projects-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
@@ -1620,6 +1809,10 @@
                     <button class="chip" data-view="instincts" onclick="setPlanSubView('instincts', this)">🧬 Самообучение (12)</button>
                     <button class="chip" data-view="reminders" onclick="setPlanSubView('reminders', this)">⏰ Напоминания</button>
                     <button class="chip" data-view="report" onclick="setPlanSubView('report', this)">📋 Мастер-Отчёт</button>
+                </div>
+                <div class="tab-study-quickbar">
+                    <span style="font-size:0.75rem; font-weight:700;">📷 Загрузить скриншот / текст для корректировки плана:</span>
+                    <button class="mini-btn accent" onclick="openStudyStudioForProject(currentProject || 'Позновалка')">📷 + 📝 Фото и текст</button>
                 </div>
                 <div id="plan-container" style="display:flex; flex-direction:column; gap:10px;"></div>
             </section>
@@ -1655,6 +1848,10 @@
                         <option value="Юра">🏒 Юра (КХЛ)</option>
                     </select>
                 </div>
+                <div class="tab-study-quickbar">
+                    <span style="font-size:0.75rem; font-weight:700;">📷 Создать задачу с фотографиями и текстом для разбора:</span>
+                    <button class="mini-btn accent" onclick="openStudyStudioForProject(document.getElementById('crm-proj-filter').value || currentProject)">📷 + 📝 Добавить фото и текст</button>
+                </div>
                 <div id="crm-tasks-container" style="display:flex; flex-direction:column; gap:8px;"></div>
             </section>
 
@@ -1662,6 +1859,10 @@
             <section class="tab-view" id="tab-kb">
                 <div style="background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.77rem; line-height: 1.4;">
                     🧠 <b>Автономная База Знаний CRM («Позновалка»)</b>. Работает 24/7 напрямую через облако GitHub + Jina AI даже при выключенном ноутбуке!
+                </div>
+                <div class="tab-study-quickbar" style="margin-top:8px;">
+                    <span style="font-size:0.75rem; font-weight:700;">📷 Сохранить фото, слайды или конспект в Позновалку:</span>
+                    <button class="mini-btn accent" onclick="openStudyStudioForProject('Позновалка')">📷 + 📝 Сохранить фото и текст</button>
                 </div>
                 <div class="search-bar">
                     <input type="text" class="search-input" id="kb-search" placeholder="🔍 Поиск по базе знаний (12 IT Продуктов, Traffic, JoinTECH...)" oninput="renderKnowledgeBase()">
@@ -1686,6 +1887,13 @@
                     </div>
                 </div>
 
+                <div class="tab-study-quickbar">
+                    <span style="font-size:0.75rem; font-weight:700;">📊 Сводка работ агентов + сохранение материалов:</span>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                        <button class="mini-btn" style="color:#34d399; border-color:rgba(16,185,129,0.5);" onclick="openWorkReportTab()">📊 Отчёт работ & Приоритеты</button>
+                        <button class="mini-btn accent" onclick="openStudyStudioForProject('Входящие_Офис')">📷 + 📝 Фото и текст</button>
+                    </div>
+                </div>
                 <div class="project-card" id="live-agents-dashboard-card" style="cursor:default; border-left: 3px solid #10b981;">
                     <div class="p-card-name" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
                         <span>🤖 Живой монитор агентов и фоновых служб (24/7)</span>
@@ -1844,10 +2052,15 @@
                             <option value="Личное — обучение и релокация">🎓 Личное / ВНЖ</option>
                         </select>
                     </div>
-                    <textarea id="tim-command-input" rows="3" style="width:100%; background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:10px; color:var(--text-main); font-size:0.82rem; font-family:inherit; outline:none; resize:none;" placeholder="Напишите или надиктуйте задачу Тиму... Например: «Тим, запусти воронку Бесплатный AI-Магазин за 15 минут (#147) + TMA Vibe-билдер (#157) с расчётом CPA и подписки»"></textarea>
+                    <textarea id="tim-command-input" rows="3" style="width:100%; background:var(--bg-main); border:1px solid var(--border); border-radius:10px; padding:10px; color:var(--text-main); font-size:0.82rem; font-family:inherit; outline:none; resize:vertical;" placeholder="Напишите поручение и текст для изучения Тиму (скриншоты можно вставлять через Ctrl+V)..."></textarea>
+                    <input type="file" id="tim-photo-input" accept="image/*" multiple style="display:none;" onchange="handlePhotoFilesSelected('tim', this.files); this.value='';">
+                    <div id="tim-photo-strip" class="photo-strip" style="display:none; margin-top:6px;"></div>
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
-                        <div style="font-size:0.72rem; color:var(--text-muted);">⚡ Автономное исполнение + сохранение отчёта на диск и в облако</div>
-                        <button class="btn-action accent" style="padding:8px 16px; font-size:0.8rem; font-weight:700;" onclick="submitTimTask()">👑 Поручить Директору Тиму 🚀</button>
+                        <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                            <button class="mini-btn" style="border-color:rgba(139,92,246,0.5); color:#c084fc;" onclick="triggerPhotoPicker('tim', false)">📷 Прикрепить фото <span id="tim-photo-cnt" style="display:none; background:#8b5cf6; color:#fff; border-radius:999px; padding:0 5px; font-size:0.66rem;">0</span></button>
+                            <span style="font-size:0.7rem; color:var(--text-muted);">⚡ Авто-отчёт + OCR фото</span>
+                        </div>
+                        <button class="btn-action accent" style="padding:8px 16px; font-size:0.8rem; font-weight:700;" id="btn-tim-submit" onclick="submitTimTask()">👑 Поручить Директору Тиму 🚀</button>
                     </div>
                 </div>
 
@@ -1943,6 +2156,48 @@
                     <div id="tim-reports-container" style="display:flex; flex-direction:column; gap:10px;"></div>
                 </div>
             </section>
+
+            <!-- TAB 7: AGENT WORK REPORTS, PRIORITY CONTINUATIONS & PER-FOLDER LEDGERS -->
+            <section class="tab-view" id="tab-reports">
+                <div style="background:linear-gradient(135deg, rgba(16,185,129,0.16), rgba(59,130,246,0.15)); border:1px solid rgba(16,185,129,0.45); border-radius:14px; padding:12px 14px; margin-bottom:10px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+                        <div style="font-weight:800; font-size:0.95rem; color:var(--text-main);">📈 Отчёт о проделанной работе агентами & Приоритеты</div>
+                        <div style="display:flex; gap:6px;">
+                            <button class="mini-btn accent" onclick="openStudyStudioForProject(currentProject)">📷 + 📝 Фото и текст</button>
+                            <button class="mini-btn" onclick="refreshAllData(true)">🔄 Обновить</button>
+                        </div>
+                    </div>
+                    <div style="font-size:0.75rem; color:var(--text-dim); margin-top:4px; line-height:1.4;">
+                        Единый учёт всех выполненных задач, мастер-отчётов Тима, изученных фото и ранжированный список проектов, которые стоит продолжить в первую очередь для заработка денег.
+                    </div>
+                    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin-top:10px;">
+                        <div class="metric-box" style="padding:7px 4px;">
+                            <div class="metric-val tabular" id="rep-kpi-works" style="color:#34d399;">150</div>
+                            <div class="metric-lbl">Выполнено</div>
+                        </div>
+                        <div class="metric-box" style="padding:7px 4px;">
+                            <div class="metric-val tabular" id="rep-kpi-tim" style="color:#fbbf24;">9</div>
+                            <div class="metric-lbl">Отчётов Тима</div>
+                        </div>
+                        <div class="metric-box" style="padding:7px 4px;">
+                            <div class="metric-val tabular" id="rep-kpi-folders" style="color:#60a5fa;">51</div>
+                            <div class="metric-lbl">Активных папок</div>
+                        </div>
+                        <div class="metric-box" style="padding:7px 4px;">
+                            <div class="metric-val tabular" id="rep-kpi-photos" style="color:#c084fc;">0</div>
+                            <div class="metric-lbl">Фото изучено</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-row" id="reports-sub-filters" style="margin-bottom:8px;">
+                    <button class="chip active" data-rview="priority" onclick="setReportsSubView('priority', this)" style="border-color:rgba(16,185,129,0.5);">🔥 В 1-ю очередь продолжить</button>
+                    <button class="chip" data-rview="agents" onclick="setReportsSubView('agents', this)">🤖 Отчёт работы агентов</button>
+                    <button class="chip" data-rview="folders" onclick="setReportsSubView('folders', this)">📁 Учёт по папкам</button>
+                </div>
+
+                <div id="reports-tab-container" style="display:flex; flex-direction:column; gap:10px;"></div>
+            </section>
         </aside>
 
         <!-- RIGHT WORKSPACE (PROJECT CHAT & TASKS) -->
@@ -1976,8 +2231,13 @@
                     <button class="q-pill" onclick="sendTask('MARKETING')">📈 Воронка и трафик</button>
                 </div>
                 <div id="ws-route-preview" style="display:none; padding:5px 12px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-radius:8px; margin-bottom:6px; color:var(--text-main); font-weight:600;"></div>
+                <div id="ws-photo-strip" class="photo-strip" style="display:none; margin-bottom:6px;"></div>
+                <textarea id="ws-study-textarea" class="study-textarea" style="display:none; margin-bottom:6px;" placeholder="Подробный текст для изучения в этой папке (идеи, условия, заметки к фото)..."></textarea>
                 <div class="composer-row">
-                    <input type="text" class="composer-input" id="cmd-input" placeholder="Ссылка, сайт или задача для папки..." oninput="updateWsRoutePreview(this.value)" onkeypress="if(event.key==='Enter') submitCustomInput()">
+                    <input type="file" id="ws-photo-input" accept="image/*" multiple style="display:none;" onchange="handlePhotoFilesSelected('ws', this.files); this.value='';">
+                    <button class="icon-btn" onclick="triggerPhotoPicker('ws', false)" title="Добавить фото в эту папку" style="height:44px; padding:0 11px; border-color:rgba(139,92,246,0.55); background:rgba(139,92,246,0.14); color:#c084fc; font-weight:700; flex-shrink:0;">📷 <span id="ws-photo-cnt" style="display:none; font-size:0.72rem;">0</span></button>
+                    <button class="icon-btn" onclick="toggleWsMultiline()" id="btn-ws-multiline" title="Развернуть поле для длинного текста изучения" style="height:44px; padding:0 10px; border-color:rgba(59,130,246,0.45); color:#93c5fd; font-weight:700; flex-shrink:0;">📝</button>
+                    <input type="text" class="composer-input" id="cmd-input" placeholder="Фото (Ctrl+V), текст изучения, ссылка или задача для папки..." oninput="updateWsRoutePreview(this.value)" onkeypress="if(event.key==='Enter') submitCustomInput()">
                     <button class="send-btn" id="ws-send-btn" onclick="submitCustomInput()">Отправить</button>
                 </div>
             </div>
@@ -1993,6 +2253,10 @@
         <button class="b-tab" id="nav-btn-tim" onclick="switchTab('tim', this)" style="color:#fbbf24;">
             <span class="b-icon">👑</span>
             <span>Тим</span>
+        </button>
+        <button class="b-tab" id="nav-btn-reports" onclick="switchTab('reports', this)" style="color:#34d399;">
+            <span class="b-icon">📈</span>
+            <span>Отчёты</span>
         </button>
         <button class="b-tab" id="nav-btn-plan" onclick="switchTab('plan', this)">
             <span class="b-icon">🗓️</span>
@@ -2014,6 +2278,17 @@
 </div>
 
 <div class="toast-msg" id="toast-msg">✅ Сохранено!</div>
+
+<!-- PHOTO ZOOM LIGHTBOX MODAL -->
+<div id="photo-lightbox-modal" class="modal-overlay" style="display:none; z-index:9999; background:rgba(0,0,0,0.88);" onclick="closePhotoLightbox()">
+    <div style="max-width:94vw; max-height:90vh; display:flex; flex-direction:column; align-items:center; gap:10px;" onclick="event.stopPropagation()">
+        <img id="photo-lightbox-img" src="" alt="Фото" style="max-width:92vw; max-height:80vh; border-radius:12px; border:1px solid rgba(255,255,255,0.2); object-fit:contain;">
+        <div style="display:flex; gap:10px;">
+            <a id="photo-lightbox-link" href="#" target="_blank" rel="noopener" class="icon-btn primary" style="text-decoration:none; padding:7px 14px;">↗ Открыть оригинал</a>
+            <button class="icon-btn" onclick="closePhotoLightbox()" style="padding:7px 14px; background:rgba(255,255,255,0.14); color:#fff;">✕ Закрыть</button>
+        </div>
+    </div>
+</div>
 
 <!-- MODAL: CREATE NEW FOLDER -->
 <div id="new-folder-modal" class="modal-overlay" style="display:none;" onclick="if(event.target===this) closeNewFolderModal()">
@@ -2853,8 +3128,30 @@
     function linkifyText(str) {
         if (!str) return "";
         let s = escapeHtml(str);
-        // Linkify URLs
-        s = s.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">$1</a>');
+        // 1. Render Markdown images ![alt](url) as clickable inline photo thumbnails
+        const imgPlaceholders = [];
+        s = s.replace(/!\[([^\]]*)\]\((https?:\/\/[^)\s<]+)\)/g, function(_, alt, url) {
+            const safeUrl = url.replace(/'/g, "%27");
+            const idx = imgPlaceholders.length;
+            imgPlaceholders.push(
+                '<div style="margin:6px 0;"><img src="' + url + '" alt="' + (alt || "Фото") + '" class="office-inline-photo" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + safeUrl + '\')"></div>'
+            );
+            return "%%OFFICE_IMG_" + idx + "%%";
+        });
+        // 2. Linkify remaining URLs (and auto-preview standalone uploaded image URLs)
+        s = s.replace(/(https?:\/\/[^\s<]+)/g, function(url) {
+            const cleanU = url.replace(/[.,;)]+$/, "");
+            const isImg = /\/uploads\/[^\s]+|\.(?:jpg|jpeg|png|webp|gif)(?:\?[^\s]*)?$/i.test(cleanU);
+            if (isImg) {
+                const safeUrl = cleanU.replace(/'/g, "%27");
+                return '<a href="' + cleanU + '" target="_blank" rel="noopener" style="color:#c084fc; text-decoration:underline;">📷 Открыть фото ↗</a>' +
+                    '<div><img src="' + cleanU + '" alt="Фото" class="office-inline-photo" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + safeUrl + '\')"></div>';
+            }
+            return '<a href="' + url + '" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">' + url + '</a>';
+        });
+        imgPlaceholders.forEach(function(tag, idx) {
+            s = s.replace("%%OFFICE_IMG_" + idx + "%%", tag);
+        });
         // Bold
         s = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         // Inline code
@@ -3167,8 +3464,15 @@
         if (tabId === "tim") {
             renderAgentsStatus();
             renderTimReportsList();
+            if (typeof renderWorkReportsTab === "function") renderWorkReportsTab();
+            if (typeof populateGlobalStudyFolders === "function") populateGlobalStudyFolders();
             if (window.innerWidth > 860 && typeof openTimReportInWorkspace === "function") {
                 openTimReportInWorkspace(0, false);
+            }
+        } else if (tabId === "reports") {
+            renderWorkReportsTab();
+            if (window.innerWidth > 860 && typeof openMasterWorkReportInWorkspace === "function") {
+                openMasterWorkReportInWorkspace(false);
             }
         } else if (tabId === "dashboard") {
             renderAgentsStatus();
@@ -3308,17 +3612,25 @@
             const icon = meta.icon || (isWorked ? "🔥" : "📁");
             const isSel = sameProject(name, currentProject);
             const safeName = escapeHtml(name).replace(/'/g, "\\'");
+            const led = (typeof getProjectLedger === "function") ? getProjectLedger(name) : null;
+            const worksCnt = led ? Math.max(led.counts.completed_works || 0, st.total) : st.total;
+            const photosCnt = led ? (led.counts.saved_photos || 0) : 0;
+            const prioScore = led ? (led.priority_score || 0) : 0;
+            const nextHint = (led && led.continue_first && led.continue_first.title) ? led.continue_first.title : "";
 
             html += '<div class="project-card ' + (isWorked ? 'worked-card ' : '') + (isSel ? 'selected' : '') + '" onclick="selectProject(\'' + safeName + '\', \'' + icon + '\')">' +
                 '<div class="p-card-top">' +
                     '<div class="p-card-name">' + icon + ' ' + escapeHtml(name) + '</div>' +
                     '<div class="p-badges tabular">' +
+                        (prioScore >= 88 ? '<span class="badge" style="background:rgba(245,158,11,0.18); color:#fbbf24;">🔥 ТОП</span>' : '') +
                         (st.open > 0 ? '<span class="badge running">⏳ ' + st.open + '</span>' : '') +
-                        (st.total > 0 ? '<span class="badge done">✅ ' + st.total + ' задач</span>' : '<span class="badge">Папка ПК</span>') +
+                        (photosCnt > 0 ? '<span class="badge purple">📷 ' + photosCnt + '</span>' : '') +
+                        (worksCnt > 0 ? '<span class="badge done">✅ ' + worksCnt + ' работ</span>' : '<span class="badge">Папка ПК</span>') +
                     '</div>' +
                 '</div>' +
                 (meta.desc ? '<div class="p-card-desc">' + escapeHtml(meta.desc) + '</div>' : '') +
-                (st.lastCmd ? '<div class="p-card-preview">💬 Последнее: ' + escapeHtml(st.lastCmd) + '</div>' : '') +
+                (nextHint ? '<div class="p-card-preview" style="color:#34d399;">▶️ Продолжить: ' + escapeHtml(nextHint.slice(0, 95)) + '</div>' :
+                    (st.lastCmd ? '<div class="p-card-preview">💬 Последнее: ' + escapeHtml(st.lastCmd) + '</div>' : '')) +
             '</div>';
         });
 
@@ -4036,33 +4348,53 @@
         const inputEl = document.getElementById("tim-command-input");
         const projEl = document.getElementById("tim-target-project");
         if (!inputEl) return;
-        const text = inputEl.value.trim();
-        if (!text) {
-            showToast("⚠️ Напишите поручение для Директора Тима!");
+        const rawText = inputEl.value.trim();
+        const hasPhotos = pendingPhotosByScope.tim && pendingPhotosByScope.tim.length > 0;
+        if (!rawText && !hasPhotos) {
+            showToast("⚠️ Напишите поручение или прикрепите фото для Директора Тима!");
             return;
         }
 
+        const text = rawText || "Изучи прикреплённые фото и подготовь план действий по проекту";
         const chosenProj = projEl ? projEl.value : "";
-        const targetProj = chosenProj ? canonicalProjectName(chosenProj) : "Traffic";
-        const title = "CMD: TIM: " + text + " | PROJ: " + targetProj;
+        const autoRoute = detectSmartRoute(text);
+        const targetProj = chosenProj ? canonicalProjectName(chosenProj) : (autoRoute.project !== "Позновалка" ? autoRoute.project : "Traffic");
+        const shortHeadline = text.replace(/\s+/g, " ").slice(0, 145);
+        const title = "CMD: TIM: " + shortHeadline + " | PROJ: " + targetProj;
 
-        showToast("👑 Передаём задачу Директору Тиму...");
+        const btn = document.getElementById("btn-tim-submit");
+        if (btn) btn.disabled = true;
+        showToast(hasPhotos ? "📷 Загружаем фото в облако и передаём Тиму..." : "👑 Передаём задачу Директору Тиму...");
         inputEl.value = "";
 
         try {
-            const created = await ghApi("/issues", "POST", {
-                title: title,
-                body: "👑 **Поручение Власлава Генеральному Директору Тиму:**\n\n" + text + "\n\n_⏳ Тим координирует отделы (стратег, маркетолог, разработчик, продажи) и сформирует мастер-отчёт в `Входящие_Офис/Отчеты_Директора_Tim`._"
-            });
+            let uploadedUrls = [];
+            if (hasPhotos) {
+                uploadedUrls = await uploadScopePhotosToCloud("tim", targetProj);
+            }
+            let bodyMd = "👑 **Поручение Власлава Генеральному Директору Тиму:**\n\n### 📝 Текст для изучения:\n" + text;
+            if (uploadedUrls.length > 0) {
+                bodyMd += "\n\n### 📷 Прикреплённые фото (" + uploadedUrls.length + "):\n" +
+                    uploadedUrls.map((u, idx) => "![Фото " + (idx + 1) + "](" + u + ")").join("\n");
+            }
+            bodyMd += "\n\n_⏳ Тим координирует отделы (стратег, маркетолог, разработчик, продажи, вайбкодер, разведчик) и сформирует мастер-отчёт в `Входящие_Офис/Отчеты_Директора_Tim`._";
+
+            const created = await ghApi("/issues", "POST", { title: title, body: bodyMd }, true);
             if (created && created.number) {
                 allIssues.unshift(created);
+                if (uploadedUrls.length > 0) {
+                    await saveUrlToCloudKb("👑 Фото + Поручение Тиму: " + shortHeadline, targetProj, created.number, text.slice(0, 350), uploadedUrls);
+                }
                 showToast("✅ Директор Тим принял задачу #" + created.number + " в работу!");
                 renderCrmTasks();
                 renderTimReportsList();
+                renderWorkReportsTab();
             }
         } catch (e) {
             console.error(e);
             showToast("⚠️ Ошибка отправки: " + e.message);
+        } finally {
+            if (btn) btn.disabled = false;
         }
     }
 
@@ -4376,10 +4708,17 @@
 
             const actionsHtml = (item.action_items || []).map(a => '<li>' + escapeHtml(a) + '</li>').join("");
             const safeTitle = escapeHtml(item.title).replace(/'/g, "\\'");
+            const kbPhotosHtml = Array.isArray(item.images) && item.images.length > 0
+                ? ('<div style="display:flex; gap:6px; flex-wrap:wrap; margin:6px 0;">' + item.images.map(u => {
+                    const su = String(u).replace(/'/g, "%27");
+                    return '<img src="' + escapeHtml(u) + '" alt="Фото" class="office-inline-photo" style="max-height:140px;" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + su + '\')">';
+                }).join("") + '</div>')
+                : '';
             html += '<div class="kb-card">' +
                 '<div class="kb-cat">' + escapeHtml(item.category || "Позновалка") + ' · #' + escapeHtml(item.issue || "Cloud") + '</div>' +
                 '<div class="kb-title">' + linkifyText(item.title) + '</div>' +
-                '<div class="kb-summary">' + escapeHtml(item.summary) + '</div>' +
+                kbPhotosHtml +
+                '<div class="kb-summary">' + linkifyText(item.summary) + '</div>' +
                 (actionsHtml ? '<ul class="kb-actions-list">' + actionsHtml + '</ul>' : '') +
                 '<div class="kb-footer">' +
                     '<div style="display:flex; gap:10px; flex-wrap:wrap;">' +
@@ -4426,17 +4765,20 @@
             '</div>';
         }
 
+        const folderBriefingHtml = (typeof buildFolderBriefingHtml === "function")
+            ? buildFolderBriefingHtml(currentProject, projIssues)
+            : "";
+
         if (filtered.length === 0) {
-            feed.innerHTML = appBannerHtml + '<div style="margin:auto; text-align:center; max-width:330px; color:var(--text-dim); padding:26px 10px;">' +
-                '<div style="font-size:2.3rem; margin-bottom:8px;">' + currentIcon + '</div>' +
-                '<div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Папка «' + escapeHtml(currentProject) + '»</div>' +
-                '<div style="font-size:0.8rem; line-height:1.45; margin-bottom:12px;">' + escapeHtml(meta.desc || "Отправьте ссылку или задачу ниже — всё сохранится в облачной CRM даже если ноутбук выключен.") + '</div>' +
-                '<button class="icon-btn primary" onclick="sendTask(\'STATUS\')">📊 Запросить полный статус папки</button>' +
+            feed.innerHTML = appBannerHtml + folderBriefingHtml + '<div style="margin:12px auto; text-align:center; max-width:390px; color:var(--text-dim); padding:18px 10px; background:var(--bg-panel); border:1px dashed var(--border); border-radius:14px;">' +
+                '<div style="font-size:1.8rem; margin-bottom:6px;">' + currentIcon + '</div>' +
+                '<div style="font-weight:700; color:var(--text-main); margin-bottom:4px;">Лента диалогов папки «' + escapeHtml(currentProject) + '»</div>' +
+                '<div style="font-size:0.77rem; line-height:1.45;">Выберите рекомендованного агента выше, нажмите «🔎 Найти больше информации» или добавьте 📷 фото и 📝 текст для изучения.</div>' +
             '</div>';
             return;
         }
 
-        let html = appBannerHtml;
+        let html = appBannerHtml + folderBriefingHtml;
         filtered.forEach(iss => {
             const parsed = parseIssueProject(iss.title);
             const cmd = parsed.cmd;
@@ -4447,12 +4789,13 @@
 
             const resolved = resolveIssueContent(iss);
             let replyText = resolved.replyText;
+            const userUploadsHtml = (typeof extractUserStudyMediaHtml === "function") ? extractUserStudyMediaHtml(iss) : "";
 
             const choices = extractChoices(replyText);
             const cleanReply = replyText.replace(/<!--\s*CHOICES:[\s\S]*?-->/g, "").trim();
             const isLong = cleanReply.length > 550;
             const replyId = "reply-box-" + iss.number;
-            const visualCardsHtml = formatReportIntoVisualCards(cleanReply);
+            const visualCardsHtml = userUploadsHtml + formatReportIntoVisualCards(cleanReply);
             let triageBarHtml = "";
             if (iss.number === 127) {
                 triageBarHtml = '<div class="quick-assign-bar" style="margin-bottom:8px;">' +
@@ -4918,18 +5261,24 @@
         return "";
     }
 
-    async function saveUrlToCloudKb(rawText, project, issueNum, cloudSummary) {
-        const urls = rawText.match(/https?:\/\/[^\s)\]>]+/g) || [];
+    async function saveUrlToCloudKb(rawText, project, issueNum, cloudSummary, imageUrls) {
+        const urls = (rawText.match(/https?:\/\/[^\s)\]>]+/g) || []).filter(u => !/\/uploads\//i.test(u));
+        const imgs = Array.isArray(imageUrls) ? imageUrls : [];
         const newEntry = {
             id: "kb-" + Date.now(),
             issue: issueNum || "Cloud",
             category: "Проект: " + project,
-            title: rawText.slice(0, 110),
-            source_url: urls[0] || "",
+            title: rawText.replace(/\s+/g, " ").slice(0, 125),
+            source_url: urls[0] || imgs[0] || "",
             secondary_url: urls[1] || "",
+            images: imgs,
             date: new Date().toLocaleDateString("ru-RU"),
-            summary: cloudSummary || "Сохранено с телефона в автономном облачном режиме. Доступно в Базе Знаний и очереди ноутбука.",
-            action_items: ["Сохранено в облако GitHub CRM и папку " + project]
+            summary: cloudSummary || "Сохранено в автономном облачном режиме (доступно 24/7 в Базе Знаний и папке проекта).",
+            action_items: [
+                imgs.length > 0
+                    ? ("Сохранено фото (" + imgs.length + " шт.) + текст изучения в папку " + project)
+                    : ("Сохранено в облако GitHub CRM и папку " + project)
+            ]
         };
 
         kbItems.unshift(newEntry);
@@ -4958,31 +5307,60 @@
 
     async function instantSaveToPoznovalka() {
         const inp = document.getElementById("instant-kb-input");
-        const val = inp.value.trim();
-        if (!val) return;
+        const extraEl = document.getElementById("global-study-textarea");
+        const val = inp ? inp.value.trim() : "";
+        const extraNotes = extraEl ? extraEl.value.trim() : "";
+        const hasPhotos = pendingPhotosByScope.global && pendingPhotosByScope.global.length > 0;
+        if (!val && !extraNotes && !hasPhotos) {
+            toggleGlobalStudyDrawer(true);
+            return;
+        }
         const btn = document.getElementById("instant-kb-btn");
-        btn.disabled = true;
-        btn.innerText = "⏳...";
-        inp.value = "";
+        if (btn) {
+            btn.disabled = true;
+            btn.innerText = "⏳...";
+        }
+        if (inp) inp.value = "";
+        if (extraEl) extraEl.value = "";
         const preview = document.getElementById("quick-save-route-preview");
         if (preview) preview.style.display = "none";
 
-        const route = detectSmartRoute(val);
-        const targetProject = route.project;
-        showToast("🎯 Агент «" + route.agent + "» сохраняет в «" + targetProject + "»...");
+        const combinedText = [val, extraNotes].filter(Boolean).join("\n\n");
+        const folderSel = document.getElementById("global-study-folder");
+        const explicitProj = (folderSel && folderSel.value) ? canonicalProjectName(folderSel.value) : "";
+        const route = detectSmartRoute(combinedText || currentProject);
+        const targetProject = explicitProj || route.project;
 
-        await sendTaskToProject(targetProject, val, true);
-        btn.disabled = false;
-        btn.innerText = "📥 Сохранить";
+        let uploadedUrls = [];
+        if (hasPhotos) {
+            uploadedUrls = await uploadScopePhotosToCloud("global", targetProject);
+        }
+        const headline = val || (extraNotes ? extraNotes.split("\n")[0].slice(0, 140) : ("📷 Изучить фото (" + uploadedUrls.length + " шт.) в папке " + targetProject));
+        showToast("🎯 Сохраняем в «" + targetProject + "»...");
+
+        await sendTaskToProject(targetProject, headline, true, {
+            studyText: combinedText,
+            imageUrls: uploadedUrls
+        });
+        if (btn) {
+            btn.disabled = false;
+            btn.innerText = "📥 Сохранить";
+        }
+        toggleGlobalStudyDrawer(false);
     }
 
     async function sendTask(commandText) {
         await sendTaskToProject(currentProject, commandText, false);
     }
 
-    async function sendTaskToProject(targetProject, commandText, isInstantBar) {
-        const title = "CMD: " + commandText + " | PROJ: " + targetProject;
-        const urls = commandText.match(/https?:\/\/[^\s)\]>]+/g) || [];
+    async function sendTaskToProject(targetProject, commandText, isInstantBar, options) {
+        const opts = options || {};
+        const studyText = String(opts.studyText || "").trim();
+        const imageUrls = Array.isArray(opts.imageUrls) ? opts.imageUrls : [];
+        const cleanHeadline = String(commandText || studyText || "Материал для изучения").replace(/\s+/g, " ").trim().slice(0, 165);
+        const title = "CMD: " + (imageUrls.length > 0 && !cleanHeadline.includes("📷") ? ("📷 " + cleanHeadline) : cleanHeadline) + " | PROJ: " + targetProject;
+        const allTextForUrls = cleanHeadline + (studyText ? ("\n" + studyText) : "");
+        const urls = (allTextForUrls.match(/https?:\/\/[^\s)\]>]+/g) || []).filter(u => !imageUrls.includes(u) && !/\/uploads\//i.test(u));
 
         showToast("☁️ Сохраняем в облако CRM...");
 
@@ -4991,7 +5369,14 @@
             cloudDigest = await cloudScrapeUrl(urls[0]);
         }
 
-        let body = "Отправлено с мобильного Виртуального Офиса CRM v10.0\nПапка: " + targetProject + "\nВремя: " + new Date().toLocaleString("ru-RU");
+        let body = "Отправлено с мобильного Виртуального Офиса CRM v19.0\nПапка: " + targetProject + "\nВремя: " + new Date().toLocaleString("ru-RU");
+        if (studyText) {
+            body += "\n\n### 📝 Текст для изучения:\n" + studyText;
+        }
+        if (imageUrls.length > 0) {
+            body += "\n\n### 📷 Прикреплённые фото (" + imageUrls.length + "):\n" +
+                imageUrls.map((u, idx) => "![Фото " + (idx + 1) + "](" + u + ")").join("\n");
+        }
         if (cloudDigest) {
             body += "\n\n---\n### ☁️ АВТОНОМНЫЙ ОБЛАЧНЫЙ РАЗБОР ССЫЛКИ (доступен сразу без ПК):\n• " + cloudDigest;
         }
@@ -5002,46 +5387,69 @@
                 allIssues.unshift(created);
                 localStorage.setItem("crm_issues_cache", JSON.stringify(allIssues.slice(0, 80)));
 
-                if (urls.length > 0 || targetProject === "Позновалка" || isInstantBar) {
-                    await saveUrlToCloudKb(commandText, targetProject, created.number, cloudDigest);
+                if (urls.length > 0 || imageUrls.length > 0 || studyText.length > 0 || targetProject === "Позновалка" || isInstantBar) {
+                    const kbSummary = studyText
+                        ? (studyText.slice(0, 420) + (cloudDigest ? ("\n• " + cloudDigest) : ""))
+                        : cloudDigest;
+                    await saveUrlToCloudKb(cleanHeadline, targetProject, created.number, kbSummary, imageUrls);
                 }
 
-                // Если был облачный конспект ссылки — сразу дублируем его в комментарий задачи
                 if (cloudDigest) {
                     try {
                         await ghApi("/issues/" + created.number + "/comments", "POST", {
-                            body: "### ☁️ Материал сохранен в «Позновалку» (Автономный облачный режим)\n\n**Источник:** " + urls.join(", ") + "\n\n#### 📌 Первичная выжимка со страницы:\n• " + cloudDigest + "\n\n*Ноутбук также проведет глубокий разбор через NotebookLM и локальные плагины при синхронизации.*"
+                            body: "### ☁️ Материал сохранен в «Позновалку» (Автономный облачный режим)\n\n**Источник:** " + urls.join(", ") + "\n\n#### 📌 Первичная выжимка со страницы:\n• " + cloudDigest
                         }, true);
                     } catch (ce) {}
                 }
 
-                showToast("✅ Сохранено в «" + targetProject + "» (Задача #" + created.number + ")!");
+                showToast("✅ Сохранено в «" + targetProject + "» (#" + created.number + ")!");
                 renderProjects();
                 renderCrmTasks();
                 renderWorkspaceFeed();
-                setTimeout(() => refreshAllData(false), 3500);
+                if (typeof renderWorkReportsTab === "function") renderWorkReportsTab();
+                setTimeout(() => refreshAllData(false), 4000);
             }
         } catch (e) {
             alert("Ошибка сохранения: " + e.message);
         }
     }
 
-    function submitCustomInput() {
+    async function submitCustomInput() {
         const inp = document.getElementById("cmd-input");
-        const val = inp.value.trim();
-        if (!val) return;
-        inp.value = "";
+        const multiEl = document.getElementById("ws-study-textarea");
+        const val = inp ? inp.value.trim() : "";
+        const multiVal = (multiEl && multiEl.style.display !== "none") ? multiEl.value.trim() : "";
+        const hasPhotos = pendingPhotosByScope.ws && pendingPhotosByScope.ws.length > 0;
+        if (!val && !multiVal && !hasPhotos) return;
+
+        if (inp) inp.value = "";
+        if (multiEl) {
+            multiEl.value = "";
+            multiEl.style.display = "none";
+        }
         const preview = document.getElementById("ws-route-preview");
         if (preview) preview.style.display = "none";
 
-        const route = detectSmartRoute(val);
+        const combined = [val, multiVal].filter(Boolean).join("\n\n");
         let target = currentProject;
-        if (route.project !== "Позновалка" && route.project !== currentProject) {
-            target = route.project;
-            selectProject(target);
-            showToast("🎯 Переключено в папку «" + target + "» (Агент: " + route.agent + ")");
+        if (!hasPhotos && !multiVal) {
+            const route = detectSmartRoute(val);
+            if (route.project !== "Позновалка" && route.project !== currentProject && /https?:\/\//i.test(val)) {
+                target = route.project;
+                selectProject(target);
+                showToast("🎯 Переключено в папку «" + target + "» (Агент: " + route.agent + ")");
+            }
         }
-        sendTaskToProject(target, val, false);
+
+        let uploadedUrls = [];
+        if (hasPhotos) {
+            uploadedUrls = await uploadScopePhotosToCloud("ws", target);
+        }
+        const headline = val || (multiVal ? multiVal.split("\n")[0].slice(0, 145) : ("Изучить фото (" + uploadedUrls.length + " шт.) и сохранить выводы в папку " + target));
+        await sendTaskToProject(target, headline, false, {
+            studyText: combined,
+            imageUrls: uploadedUrls
+        });
     }
 
     function promptNewFolder() {
@@ -5124,11 +5532,21 @@
         const txt = document.getElementById("worker-text");
 
         try {
-            const [stObj, timObj, agObj] = await Promise.all([
+            const [stObj, timObj, agObj, ledObj, repObj] = await Promise.all([
                 readRepoJson("status.json"),
                 readRepoJson("tim_reports.json"),
-                readRepoJson("agents.json")
+                readRepoJson("agents.json"),
+                readRepoJson("project_ledgers.json"),
+                readRepoJson("agent_work_report.json")
             ]);
+            if (ledObj && ledObj.json && ledObj.json.ledgers) {
+                projectLedgersMap = ledObj.json.ledgers;
+                try { localStorage.setItem("crm_project_ledgers_cache", JSON.stringify(projectLedgersMap)); } catch (e) {}
+            }
+            if (repObj && repObj.json) {
+                agentWorkReportData = repObj.json;
+                try { localStorage.setItem("crm_agent_work_report_cache", JSON.stringify(agentWorkReportData)); } catch (e) {}
+            }
             if (stObj && stObj.json) {
                 workerStatusTelemetry = stObj.json;
             }
@@ -5241,6 +5659,881 @@
         await Promise.all([fetchWorkerTelemetry(), fetchIssuesAndComments()]);
     }
 
+
+    // =========================================================================
+    // v19.0 ENGINE: PHOTO + STUDY STUDIO, PER-FOLDER WORK LEDGER & REPORTS TAB
+    // =========================================================================
+    let projectLedgersMap = {};
+    let agentWorkReportData = null;
+    let reportsSubView = "priority";
+    let reportsAgentFilter = "all";
+    const expandedFolderWorkLogs = new Set();
+    const pendingPhotosByScope = { global: [], ws: [], tim: [], folder: [] };
+
+    try {
+        projectLedgersMap = JSON.parse(localStorage.getItem("crm_project_ledgers_cache") || "{}") || {};
+        agentWorkReportData = JSON.parse(localStorage.getItem("crm_agent_work_report_cache") || "null");
+    } catch (e) {}
+
+    const CLIENT_PROJECT_BLUEPRINTS = {
+        "12 IT Продуктов (Короче Капитан)": {
+            priority_score: 98,
+            revenue_potential: "Micro-SaaS за 24ч + подписки Telegram Stars (690–1 990 ₽/мес)",
+            why_first: "Готов конвейер вайбкодинга (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа.",
+            continue_first: {
+                title: "Собрать и запустить Micro-SaaS #1 (Парсер заказов в TG + Навигатор канала с оплатой Stars)",
+                cmd: "TIM: Собери боевой MVP продукта #1 в 12 IT Продуктов (Парсер лидов/заказов в Telegram + Навигатор канала с оплатой Stars) и дай чек-лист релиза"
+            },
+            recommended_agents: [
+                { label: "👑 Директор Тим", cmd: "TIM: Координируй запуск первого доходного Mini App в 12 IT Продуктов" },
+                { label: "⚡ Вайбкодер (MVP 24ч)", cmd: "TIM: Вайбкодер — сформируй HANDOFF.md, код бота и оплату Stars для Mini App #1" },
+                { label: "📈 Маркетолог (Воронка)", cmd: "MARKETING: Воронка первых 100 платящих подписчиков в Mini App" },
+                { label: "💻 Разработчик (Код)", cmd: "ARCH: Техническая ревизия кода 12 IT Продуктов" }
+            ],
+            research_topic: "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars"
+        },
+        "Дима Верхняя Синичиха Алапаевск": {
+            priority_score: 96,
+            revenue_potential: "Быстрые B2B чеки 50 000 – 250 000 ₽: 62 завода Урала + 15 готовых сайтов ЗКСК",
+            why_first: "Уже собрана база 62 предприятий и 15 демо-сайтов, остаётся отправить персонализированные КП директорам.",
+            continue_first: {
+                title: "Подготовить 10 персональных КП директорам заводов Урала/ЗКСК для отправки сегодня",
+                cmd: "TIM: Сформируй 10 персонализированных сообщений/КП для директоров заводов Урала (Алапаевск / ЗКСК / щебень) со скриптом закрытия"
+            },
+            recommended_agents: [
+                { label: "🤝 B2B Продажи (10 КП)", cmd: "TIM: Отдел B2B Продаж — напиши готовые КП и скрипты для директоров заводов Алапаевск/ЗКСК" },
+                { label: "👑 Директор Тим", cmd: "TIM: Упакуй коммерческие условия сделки с Димой (фикс + % с поставок)" },
+                { label: "📈 Маркетолог", cmd: "MARKETING: Лид-магнит калькулятор доставки щебня с карьера" },
+                { label: "📊 Стратег", cmd: "NEXT_STEPS: Приоритетные шаги монетизации по Алапаевску" }
+            ],
+            research_topic: "закупки щебня и инертных материалов Урал Свердловская область строительные компании"
+        },
+        "Traffic": {
+            priority_score: 94,
+            revenue_potential: "Pay-on-Results + CPA: единый генератор лидов для всех направлений холдинга",
+            why_first: "Питает заявками B2B сайты, Доминикану и Micro-SaaS без раздувания рекламных бюджетов.",
+            continue_first: {
+                title: "Запустить связку Pay-on-Results аутрича + автоворонку лид-магнита на первую нишу",
+                cmd: "TIM: Запусти боевую связку Traffic (оффер Pay-on-Results + скрипт аутрича + воронка в Telegram) для первых 15 B2B лидов"
+            },
+            recommended_agents: [
+                { label: "📈 Маркетолог (Воронка)", cmd: "TIM: Маркетолог — собери оффер Pay-on-Results и 3-шаговую автоворонку трафика" },
+                { label: "🤝 Продажи (Холодные письма)", cmd: "/email Серия из 3 холодных B2B писем для продажи лидогенерации" },
+                { label: "👑 Директор Тим", cmd: "TIM: План генерации первых оплат в проекте Traffic" },
+                { label: "🎬 Продюсер (Хуки Reels)", cmd: "/viral 5 виральных хуков Reels/Shorts для привлечения B2B клиентов" }
+            ],
+            research_topic: "B2B лидогенерация Pay on Results холодный аутрич Telegram конверсионные связки 2026"
+        },
+        "Unity Inc": {
+            priority_score: 92,
+            revenue_potential: "B2B AI-аудиты и внедрение автоматизации (чеки 50 000 – 250 000 ₽)",
+            why_first: "Готова 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов автоматизации -> код) + фактура из @sysadminfuture.",
+            continue_first: {
+                title: "Упаковать 40-минутный B2B AI-Аудит Global Plus + список первых 10 компаний",
+                cmd: "TIM: Упакуй 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список 10 компаний для аутрича"
+            },
+            recommended_agents: [
+                { label: "👑 Директор Тим", cmd: "TIM: Сформируй B2B пакет AI-автоматизации для Unity Inc" },
+                { label: "🤝 Продажи (Чек-лист аудита)", cmd: "TIM: Отдел Продаж — чек-лист 40-минутного продающего аудита с ЛПР" },
+                { label: "📊 Стратег (Тарифы)", cmd: "/ceo Рассчитай 3 тарифа внедрения AI-агентов для B2B клиентов" },
+                { label: "💻 Разработчик", cmd: "STATUS: Проверить готовность файлов Unity Inc" }
+            ],
+            research_topic: "внедрение AI агентов для бизнеса кейсы окупаемости B2B аудит 2026"
+        },
+        "Ghost Ghetto Child (Музыка)": {
+            priority_score: 89,
+            revenue_potential: "Релиз командного альбома 4 LIFE (лейбл 100PRO) + клип и радиоэфиры",
+            why_first: "Нужно отправить переписанный достоверный оффер коллективу Р. П. ГОСТ / La Dagon Sector с единым условием оплаты.",
+            continue_first: {
+                title: "Финализировать чистовой оффер под релиз альбома 4 LIFE и клипа «Так закалялась сталь»",
+                cmd: "TIM: Напиши чистовой оффер для коллектива Р. П. ГОСТ / Ghost Ghetto Child под релиз альбома 4 LIFE с единым прозрачным условием оплаты"
+            },
+            recommended_agents: [
+                { label: "🎬 Медиа-Продюсер", cmd: "TIM: Креативный Продюсер — промо-кампания альбома 4 LIFE и клипа" },
+                { label: "🤝 Продажи (Чистовой оффер)", cmd: "TIM: Единое КП без противоречий для Ghost Ghetto Child" },
+                { label: "📈 Маркетолог (Пресейвы)", cmd: "MARKETING: Воронка пресейвов альбома 4 LIFE" }
+            ],
+            research_topic: "продвижение хип-хоп альбома пресейвы дистрибуция стриминги Россия 2026"
+        }
+    };
+
+    function openPhotoLightbox(url) {
+        const modal = document.getElementById("photo-lightbox-modal");
+        const img = document.getElementById("photo-lightbox-img");
+        const link = document.getElementById("photo-lightbox-link");
+        if (!modal || !img) return;
+        img.src = url;
+        if (link) link.href = url;
+        modal.style.display = "flex";
+    }
+
+    function closePhotoLightbox() {
+        const modal = document.getElementById("photo-lightbox-modal");
+        if (modal) modal.style.display = "none";
+    }
+
+    function populateGlobalStudyFolders(selectedProj) {
+        const sel = document.getElementById("global-study-folder");
+        if (!sel) return;
+        const prev = selectedProj || sel.value || "";
+        const names = Array.from(new Set(["Входящие_Офис", "Позновалка", currentProject, ...folderList.map(canonicalProjectName)])).filter(Boolean);
+        let opts = '<option value="">🎯 Авто-маршрутизация ИИ</option>';
+        names.forEach(n => {
+            const isSel = prev && sameProject(n, prev);
+            opts += '<option value="' + escapeHtml(n) + '"' + (isSel ? " selected" : "") + '>📁 ' + escapeHtml(n) + '</option>';
+        });
+        sel.innerHTML = opts;
+    }
+
+    function toggleGlobalStudyDrawer(forceState) {
+        const dr = document.getElementById("global-study-drawer");
+        if (!dr) return;
+        const nextOpen = (typeof forceState === "boolean") ? forceState : (dr.style.display === "none");
+        dr.style.display = nextOpen ? "flex" : "none";
+        if (nextOpen) {
+            populateGlobalStudyFolders();
+            const ta = document.getElementById("global-study-textarea");
+            if (ta) setTimeout(() => ta.focus(), 60);
+        }
+    }
+
+    function openStudyStudioForProject(projName) {
+        const canon = canonicalProjectName(projName || currentProject || "Входящие_Офис");
+        toggleGlobalStudyDrawer(true);
+        populateGlobalStudyFolders(canon);
+        const sel = document.getElementById("global-study-folder");
+        if (sel) sel.value = canon;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function toggleWsMultiline() {
+        const ta = document.getElementById("ws-study-textarea");
+        if (!ta) return;
+        const openNow = ta.style.display === "none";
+        ta.style.display = openNow ? "block" : "none";
+        if (openNow) ta.focus();
+    }
+
+    function triggerPhotoPicker(scope, autoOpenGlobalDrawer) {
+        if (scope === "global" && autoOpenGlobalDrawer) {
+            toggleGlobalStudyDrawer(true);
+        }
+        const inputMap = {
+            global: "global-photo-input",
+            ws: "ws-photo-input",
+            tim: "tim-photo-input",
+            folder: "folder-photo-input"
+        };
+        const el = document.getElementById(inputMap[scope] || "global-photo-input");
+        if (el) el.click();
+    }
+
+    function compressImageFileToJpeg(file, maxDim, quality) {
+        maxDim = maxDim || 1360;
+        quality = quality || 0.82;
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onerror = () => reject(new Error("Не удалось прочитать файл фото"));
+            reader.onload = e => {
+                const img = new Image();
+                img.onerror = () => reject(new Error("Некорректный формат изображения"));
+                img.onload = () => {
+                    let w = img.width || 800;
+                    let h = img.height || 600;
+                    if (w > maxDim || h > maxDim) {
+                        if (w >= h) {
+                            h = Math.round((h * maxDim) / w);
+                            w = maxDim;
+                        } else {
+                            w = Math.round((w * maxDim) / h);
+                            h = maxDim;
+                        }
+                    }
+                    const canvas = document.createElement("canvas");
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "#ffffff";
+                    ctx.fillRect(0, 0, w, h);
+                    ctx.drawImage(img, 0, 0, w, h);
+                    const dataUrl = canvas.toDataURL("image/jpeg", quality);
+                    const base64 = dataUrl.split(",")[1] || "";
+                    resolve({
+                        id: "ph-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7),
+                        name: file.name || "photo.jpg",
+                        dataUrl: dataUrl,
+                        base64: base64,
+                        width: w,
+                        height: h
+                    });
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    async function handlePhotoFilesSelected(scope, fileList) {
+        if (!fileList || fileList.length === 0) return;
+        if (!pendingPhotosByScope[scope]) pendingPhotosByScope[scope] = [];
+        showToast("📷 Подготовка фото (" + fileList.length + " шт.)...");
+        for (let i = 0; i < fileList.length; i++) {
+            const f = fileList[i];
+            if (!f.type || !f.type.startsWith("image/")) continue;
+            try {
+                const compressed = await compressImageFileToJpeg(f);
+                pendingPhotosByScope[scope].push(compressed);
+            } catch (err) {
+                console.warn("Photo compress warning:", err);
+            }
+        }
+        renderPhotoStrip(scope);
+        showToast("✅ Фото прикреплено (" + pendingPhotosByScope[scope].length + " шт.) — готово к отправке!");
+    }
+
+    function removeQueuedPhoto(scope, photoId) {
+        if (!pendingPhotosByScope[scope]) return;
+        pendingPhotosByScope[scope] = pendingPhotosByScope[scope].filter(p => p.id !== photoId);
+        renderPhotoStrip(scope);
+    }
+
+    function renderPhotoStrip(scope) {
+        const list = pendingPhotosByScope[scope] || [];
+        const stripEl = document.getElementById(scope + "-photo-strip");
+        const cntEl = document.getElementById(scope + "-photo-cnt");
+        if (cntEl) {
+            cntEl.innerText = String(list.length);
+            cntEl.style.display = list.length > 0 ? "inline-block" : "none";
+        }
+        if (!stripEl) return;
+        if (list.length === 0) {
+            stripEl.style.display = "none";
+            stripEl.innerHTML = "";
+            return;
+        }
+        stripEl.style.display = "flex";
+        stripEl.innerHTML = list.map(item =>
+            '<div class="photo-thumb-item" title="' + escapeHtml(item.name) + '">' +
+                '<img src="' + item.dataUrl + '" alt="preview">' +
+                '<button type="button" class="photo-thumb-remove" onclick="removeQueuedPhoto(\'' + scope + '\', \'' + item.id + '\')">✕</button>' +
+            '</div>'
+        ).join("");
+    }
+
+    async function uploadScopePhotosToCloud(scope, targetProject) {
+        const list = (pendingPhotosByScope[scope] || []).slice();
+        if (list.length === 0) return [];
+        const ruMap = {а:"a",б:"b",в:"v",г:"g",д:"d",е:"e",ё:"e",ж:"zh",з:"z",и:"i",й:"y",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"kh",ц:"ts",ч:"ch",ш:"sh",щ:"sch",ъ:"",ы:"y",ь:"",э:"e",ю:"yu",я:"ya"};
+        const slug = String(targetProject || "inbox")
+            .toLowerCase()
+            .split("")
+            .map(ch => (ruMap[ch] !== undefined ? ruMap[ch] : ch))
+            .join("")
+            .replace(/[^a-z0-9_-]+/g, "_")
+            .replace(/^_+|_+$/g, "")
+            .slice(0, 32) || "office";
+        const stamp = Date.now();
+        const urls = [];
+
+        for (let i = 0; i < list.length; i++) {
+            const ph = list[i];
+            const relPath = "uploads/" + slug + "/" + stamp + "_" + (i + 1) + ".jpg";
+            const apiPath = "/contents/" + relPath;
+            const res = await ghApi(apiPath, "PUT", {
+                message: "Upload study photo for " + (targetProject || "Office"),
+                content: ph.base64,
+                branch: "data"
+            }, true);
+            const dlUrl = (res && res.content && res.content.download_url)
+                ? res.content.download_url
+                : ("https://raw.githubusercontent.com/" + ACTIVE_REPO + "/data/" + relPath);
+            urls.push(dlUrl);
+        }
+        pendingPhotosByScope[scope] = [];
+        renderPhotoStrip(scope);
+        return urls;
+    }
+
+    async function submitGlobalStudyStudio(sendToTim) {
+        const inpTop = document.getElementById("instant-kb-input");
+        const ta = document.getElementById("global-study-textarea");
+        const folderSel = document.getElementById("global-study-folder");
+        const topVal = inpTop ? inpTop.value.trim() : "";
+        const studyVal = ta ? ta.value.trim() : "";
+        const hasPhotos = pendingPhotosByScope.global && pendingPhotosByScope.global.length > 0;
+
+        if (!topVal && !studyVal && !hasPhotos) {
+            showToast("⚠️ Добавьте фото или напишите текст для изучения!");
+            return;
+        }
+        const btn = document.getElementById("btn-global-study-submit");
+        if (btn) btn.disabled = true;
+
+        try {
+            const fullNotes = [topVal, studyVal].filter(Boolean).join("\n\n");
+            const chosenProj = (folderSel && folderSel.value) ? canonicalProjectName(folderSel.value) : "";
+            const autoRoute = detectSmartRoute(fullNotes || currentProject);
+            const targetProj = chosenProj || autoRoute.project;
+
+            let uploadedUrls = [];
+            if (hasPhotos) {
+                showToast("📷 Загружаем фото (" + pendingPhotosByScope.global.length + " шт.) в облако...");
+                uploadedUrls = await uploadScopePhotosToCloud("global", targetProj);
+            }
+
+            if (inpTop) inpTop.value = "";
+            if (ta) ta.value = "";
+
+            const baseHeadline = topVal || (studyVal ? studyVal.split("\n")[0].slice(0, 140) : ("Изучить фото (" + uploadedUrls.length + " шт.) для " + targetProj));
+            const finalCmd = sendToTim ? ("TIM: " + baseHeadline) : baseHeadline;
+            await sendTaskToProject(targetProj, finalCmd, true, {
+                studyText: fullNotes,
+                imageUrls: uploadedUrls
+            });
+            toggleGlobalStudyDrawer(false);
+        } finally {
+            if (btn) btn.disabled = false;
+        }
+    }
+
+    async function submitFolderInlineStudy(project) {
+        const canon = canonicalProjectName(project || currentProject);
+        const ta = document.getElementById("folder-study-textarea");
+        const text = ta ? ta.value.trim() : "";
+        const hasPhotos = pendingPhotosByScope.folder && pendingPhotosByScope.folder.length > 0;
+        if (!text && !hasPhotos) {
+            showToast("⚠️ Прикрепите фото или введите текст для изучения в папке!");
+            return;
+        }
+        let uploadedUrls = [];
+        if (hasPhotos) {
+            showToast("📷 Сохраняем фото в папку «" + canon + "»...");
+            uploadedUrls = await uploadScopePhotosToCloud("folder", canon);
+        }
+        if (ta) ta.value = "";
+        const headline = text ? text.split("\n")[0].slice(0, 145) : ("Изучить фото (" + uploadedUrls.length + " шт.) в папке " + canon);
+        await sendTaskToProject(canon, headline, false, {
+            studyText: text,
+            imageUrls: uploadedUrls
+        });
+    }
+
+    // Поддержка вставки скриншотов Ctrl+V в любом текстовом поле Офиса!
+    document.addEventListener("paste", function(ev) {
+        const items = (ev.clipboardData && ev.clipboardData.items) ? ev.clipboardData.items : [];
+        const imgFiles = [];
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type && items[i].type.indexOf("image") !== -1) {
+                const blob = items[i].getAsFile();
+                if (blob) imgFiles.push(blob);
+            }
+        }
+        if (imgFiles.length === 0) return;
+        const activeId = (document.activeElement && document.activeElement.id) || "";
+        let scope = "global";
+        if (activeId === "cmd-input" || activeId === "ws-study-textarea") {
+            scope = "ws";
+        } else if (activeId === "tim-command-input") {
+            scope = "tim";
+        } else if (activeId === "folder-study-textarea") {
+            scope = "folder";
+        } else {
+            toggleGlobalStudyDrawer(true);
+        }
+        handlePhotoFilesSelected(scope, imgFiles);
+    });
+
+    function extractUserStudyMediaHtml(iss) {
+        const body = String((iss && iss.body) || "");
+        if (!body) return "";
+        const userPart = body.split(/\n---\n+📋 \*\*Карточка #|\n---\n+### 📷 Сохранение|\n---\n+# 👑/)[0] || "";
+        const imgMatches = [];
+        const re = /!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)/g;
+        let m;
+        while ((m = re.exec(userPart)) !== null) {
+            if (!imgMatches.includes(m[2])) imgMatches.push(m[2]);
+        }
+        let notesText = "";
+        const notesMatch = userPart.match(/### 📝 Текст для изучения:\n([\s\S]*?)(?:\n### 📷|\n---\n|$)/);
+        if (notesMatch && notesMatch[1].trim()) {
+            notesText = notesMatch[1].trim();
+        }
+        if (imgMatches.length === 0 && !notesText) return "";
+
+        let out = '<div class="task-section-card" style="background:rgba(139,92,246,0.09); border:1px solid rgba(139,92,246,0.35); border-left:4px solid #8b5cf6; margin-bottom:8px;">' +
+            '<div class="task-section-title" style="color:#c084fc;">📷 Сохранённые материалы Власлава для изучения</div>';
+        if (notesText) {
+            out += '<div class="task-section-body" style="margin-bottom:6px;">' + linkifyText(notesText) + '</div>';
+        }
+        if (imgMatches.length > 0) {
+            out += '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
+                imgMatches.map(u => {
+                    const su = u.replace(/'/g, "%27");
+                    return '<img src="' + escapeHtml(u) + '" alt="Фото" class="office-inline-photo" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + su + '\')">';
+                }).join("") +
+            '</div>';
+        }
+        out += '</div>';
+        return out;
+    }
+
+    // -------------------------------------------------------------------------
+    // PER-PROJECT WORK LEDGER & SMART FOLDER BRIEFING PANEL
+    // -------------------------------------------------------------------------
+    function getProjectLedger(projectName) {
+        const canon = canonicalProjectName(projectName || "Позновалка");
+        const cloudLed = projectLedgersMap[canon] || projectLedgersMap[projectName] || null;
+        const bp = CLIENT_PROJECT_BLUEPRINTS[canon] || {};
+        const meta = PROJECT_META[canon] || {};
+
+        const projIssues = allIssues.filter(i => sameProject(parseIssueProject(i.title).project, canon));
+        const closedIssues = projIssues.filter(i => i.state !== "open");
+        const openIssues = projIssues.filter(i => i.state === "open");
+        const projTim = (timReportsRegistry || []).filter(r => sameProject(r.project, canon));
+
+        // Подсчёт фото из Issues + Базы Знаний + облачного реестра
+        const photoUrlsSet = new Set();
+        projIssues.forEach(i => {
+            const b = String(i.body || "");
+            const matches = b.match(/https?:\/\/[^\s)\]"']+\/uploads\/[^\s)\]"']+/g) || [];
+            matches.forEach(u => photoUrlsSet.add(u));
+        });
+        kbItems.forEach(k => {
+            if (k.category && sameProject(k.category.replace("Проект: ", ""), canon) && Array.isArray(k.images)) {
+                k.images.forEach(u => photoUrlsSet.add(u));
+            }
+        });
+        if (cloudLed && Array.isArray(cloudLed.media_items)) {
+            cloudLed.media_items.forEach(m => { if (m.url) photoUrlsSet.add(m.url); });
+        }
+
+        const cloudCounts = (cloudLed && cloudLed.counts) || {};
+        const completedWorks = Math.max(
+            cloudCounts.completed_works || 0,
+            closedIssues.length + projTim.length
+        );
+        const savedPhotos = Math.max(cloudCounts.saved_photos || 0, photoUrlsSet.size);
+
+        // Собираем журнал работ папки
+        const workItems = [];
+        const seenKeys = new Set();
+        if (cloudLed && Array.isArray(cloudLed.work_items)) {
+            cloudLed.work_items.forEach(w => {
+                const k = String(w.issue_number || w.title || "").slice(0, 60);
+                seenKeys.add(k);
+                workItems.push(w);
+            });
+        }
+        projIssues.slice(0, 12).forEach(iss => {
+            if (seenKeys.has(String(iss.number))) return;
+            const p = parseIssueProject(iss.title);
+            workItems.unshift({
+                id: "iss-" + iss.number,
+                issue_number: iss.number,
+                date: iss.created_at ? new Date(iss.created_at).toLocaleDateString("ru-RU") : "Недавно",
+                agent: /TIM:|👑/i.test(iss.title) ? "👑 Директор Тим" : "🤖 ИИ-Агент папки",
+                title: "#" + iss.number + " " + p.cmd.slice(0, 120),
+                summary: iss.state === "open" ? "⏳ Выполняется агентом" : "✅ Выполнено и сохранено в папке",
+                status: iss.state === "open" ? "in_progress" : "done"
+            });
+        });
+
+        const defaultContinue = {
+            title: "Провести аудит материалов и запустить первый денежный шаг по папке «" + canon + "»",
+            cmd: "TIM: Изучи состояние папки «" + canon + "», оцени быстрый путь к деньгам и сформируй план действий отделов"
+        };
+        const defaultAgents = [
+            { label: "👑 Директор Тим (План)", cmd: "TIM: Составь исполнительный план монетизации и первых шагов по проекту " + canon },
+            { label: "🔎 Разведчик (Статус файлов)", cmd: "STATUS: Полный статус и инвентаризация файлов " + canon },
+            { label: "📈 Маркетолог (Воронка)", cmd: "MARKETING: Разработать оффер и воронку привлечения клиентов для " + canon },
+            { label: "⚡ Вайбкодер (MVP 24ч)", cmd: "TIM: Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для " + canon }
+        ];
+
+        return {
+            project: canon,
+            lead_agent: (cloudLed && cloudLed.lead_agent) || "Autonomous Project Agent",
+            priority_score: (cloudLed && cloudLed.priority_score) || bp.priority_score || (meta.worked ? 75 : 58),
+            revenue_potential: (cloudLed && cloudLed.revenue_potential) || bp.revenue_potential || meta.desc || ("Развитие и монетизация проекта «" + canon + "»"),
+            why_first: (cloudLed && cloudLed.why_first) || bp.why_first || ("Папка подключена к Виртуальному Офису — выберите агента или запустите разведку."),
+            counts: {
+                completed_works: completedWorks,
+                open_tasks: openIssues.length,
+                tim_reports: Math.max(cloudCounts.tim_reports || 0, projTim.length),
+                saved_photos: savedPhotos,
+                files_on_disk: cloudCounts.files_on_disk || 0
+            },
+            continue_first: (cloudLed && cloudLed.continue_first) || bp.continue_first || defaultContinue,
+            recommended_agents: (cloudLed && Array.isArray(cloudLed.recommended_agents) && cloudLed.recommended_agents.length > 0)
+                ? cloudLed.recommended_agents
+                : (bp.recommended_agents || defaultAgents),
+            research_topic: (cloudLed && cloudLed.research_topic) || bp.research_topic || (canon + " рынок конкуренты кейсы монетизации 2026"),
+            photo_urls: Array.from(photoUrlsSet).slice(0, 8),
+            work_items: workItems.slice(0, 15)
+        };
+    }
+
+    function toggleFolderWorkLog(project) {
+        const canon = canonicalProjectName(project);
+        if (expandedFolderWorkLogs.has(canon)) {
+            expandedFolderWorkLogs.delete(canon);
+        } else {
+            expandedFolderWorkLogs.add(canon);
+        }
+        renderWorkspaceFeed();
+    }
+
+    function toggleFolderInlineStudyBox() {
+        const box = document.getElementById("folder-inline-study-box");
+        if (!box) return;
+        const show = box.style.display === "none";
+        box.style.display = show ? "flex" : "none";
+        if (show) {
+            const ta = document.getElementById("folder-study-textarea");
+            if (ta) ta.focus();
+        }
+    }
+
+    function findMoreInfoForFolder(project) {
+        const canon = canonicalProjectName(project || currentProject);
+        const inp = document.getElementById("folder-research-input");
+        const led = getProjectLedger(canon);
+        const query = (inp && inp.value.trim()) ? inp.value.trim() : led.research_topic;
+        sendTaskToProject(canon, "RESEARCH_MORE: " + query, false);
+    }
+
+    function buildFolderBriefingHtml(project, projIssues) {
+        const led = getProjectLedger(project);
+        const safeProj = escapeHtml(led.project).replace(/'/g, "\\'");
+        const contCmd = escapeHtml((led.continue_first && led.continue_first.cmd) || ("NEXT_STEPS: " + led.project)).replace(/'/g, "\\'");
+        const isLogOpen = expandedFolderWorkLogs.has(led.project);
+
+        const agentBtns = (led.recommended_agents || []).map(ag => {
+            const sc = escapeHtml(ag.cmd || "").replace(/'/g, "\\'");
+            return '<button class="choice-btn" onclick="sendTaskToProject(\'' + safeProj + '\', \'' + sc + '\', false)">' + escapeHtml(ag.label) + '</button>';
+        }).join("");
+
+        let logHtml = "";
+        if (isLogOpen) {
+            if (led.work_items.length === 0) {
+                logHtml = '<div style="font-size:0.75rem; color:var(--text-dim); padding:8px; background:var(--bg-main); border-radius:8px;">Пока нет завершённых работ агентов в этой папке — запустите шаг ниже.</div>';
+            } else {
+                logHtml = '<div style="display:flex; flex-direction:column; gap:5px; max-height:230px; overflow-y:auto; padding:8px; background:var(--bg-main); border:1px solid var(--border); border-radius:10px;">' +
+                    led.work_items.map(w =>
+                        '<div style="font-size:0.74rem; padding-bottom:5px; border-bottom:1px solid rgba(255,255,255,0.05);">' +
+                            '<div style="display:flex; justify-content:space-between; gap:6px; color:var(--text-dim); font-size:0.69rem;">' +
+                                '<span><b>' + escapeHtml(w.agent || "🤖 Агент") + '</b></span>' +
+                                '<span>' + escapeHtml(w.date || "") + '</span>' +
+                            '</div>' +
+                            '<div style="font-weight:700; color:var(--text-main);">' + escapeHtml(w.title || "") + '</div>' +
+                            (w.summary ? '<div style="color:var(--text-dim); font-size:0.71rem;">' + escapeHtml(w.summary) + '</div>' : '') +
+                        '</div>'
+                    ).join("") +
+                '</div>';
+            }
+        }
+
+        const photosPreviewHtml = led.photo_urls.length > 0
+            ? ('<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">' +
+                '<span style="font-size:0.71rem; color:#c084fc; font-weight:700;">📷 Фото в папке:</span>' +
+                led.photo_urls.map(u => {
+                    const su = u.replace(/'/g, "%27");
+                    return '<img src="' + escapeHtml(u) + '" alt="Фото папки" style="width:44px; height:44px; border-radius:8px; object-fit:cover; cursor:zoom-in; border:1px solid rgba(139,92,246,0.5);" onclick="openPhotoLightbox(\'' + su + '\')">';
+                }).join("") +
+               '</div>')
+            : '';
+
+        return '<div class="folder-briefing-card">' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                '<div>' +
+                    '<div style="font-size:0.84rem; font-weight:800; color:var(--text-main);">📋 Учёт проделанной работы и штаб папки «' + escapeHtml(led.project) + '»</div>' +
+                    '<div style="font-size:0.72rem; color:var(--text-dim);">Ведущий агент: <b>' + escapeHtml(led.lead_agent) + '</b> · 💰 ' + escapeHtml(led.revenue_potential) + '</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                    '<button class="mini-btn" onclick="toggleFolderWorkLog(\'' + safeProj + '\')">' + (isLogOpen ? '🔼 Скрыть журнал' : ('📜 Журнал работ (' + led.work_items.length + ')')) + '</button>' +
+                    '<button class="mini-btn accent" style="border-color:rgba(139,92,246,0.55); color:#c084fc;" onclick="toggleFolderInlineStudyBox()">📷 + 📝 Фото и текст в папку</button>' +
+                '</div>' +
+            '</div>' +
+
+            '<div class="briefing-kpi-row tabular">' +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(16,185,129,0.45); color:#34d399;">✅ Выполнено работ: ' + led.counts.completed_works + '</span>' +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(245,158,11,0.4); color:#fbbf24;">👑 Отчётов Тима: ' + led.counts.tim_reports + '</span>' +
+                '<span class="briefing-kpi-pill" style="border-color:rgba(139,92,246,0.45); color:#c084fc;">📷 Фото изучено: ' + led.counts.saved_photos + '</span>' +
+                (led.counts.files_on_disk > 0 ? '<span class="briefing-kpi-pill">📄 Файлов на ПК: ' + led.counts.files_on_disk + '</span>' : '') +
+                (led.counts.open_tasks > 0 ? '<span class="briefing-kpi-pill" style="color:#60a5fa;">⏳ В работе: ' + led.counts.open_tasks + '</span>' : '') +
+            '</div>' +
+
+            photosPreviewHtml +
+            logHtml +
+
+            // Инлайн-студия сохранения фото и текста прямо в открытую папку
+            '<div id="folder-inline-study-box" style="display:none; flex-direction:column; gap:7px; background:var(--bg-card); border:1px solid rgba(139,92,246,0.45); border-radius:11px; padding:10px;">' +
+                '<div style="font-size:0.76rem; font-weight:800; color:#c084fc;">📷 Сохранить фото и текст для изучения прямо в папку «' + escapeHtml(led.project) + '»</div>' +
+                '<input type="file" id="folder-photo-input" accept="image/*" multiple style="display:none;" onchange="handlePhotoFilesSelected(\'folder\', this.files); this.value=\'\';">' +
+                '<textarea id="folder-study-textarea" class="study-textarea" placeholder="Напишите текст, заметки, условия или вставьте скриншот (Ctrl+V) для изучения агентом этой папки..."></textarea>' +
+                '<div id="folder-photo-strip" class="photo-strip" style="display:none;"></div>' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">' +
+                    '<button class="mini-btn" style="color:#c084fc; border-color:rgba(139,92,246,0.5);" onclick="triggerPhotoPicker(\'folder\', false)">📷 Выбрать фото / скриншоты <span id="folder-photo-cnt" style="display:none; background:#8b5cf6; color:#fff; border-radius:999px; padding:0 5px;">0</span></button>' +
+                    '<button class="btn-action accent" style="font-weight:700; padding:6px 13px;" onclick="submitFolderInlineStudy(\'' + safeProj + '\')">📥 Сохранить в папку и изучить 🚀</button>' +
+                '</div>' +
+            '</div>' +
+
+            // 1. Что стоит продолжить дальше
+            '<div class="briefing-next-box">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                    '<span style="font-size:0.75rem; font-weight:800; color:#fbbf24;">🔥 ЧТО СТОИТ ПРОДОЛЖИТЬ В ЭТОЙ ПАПКЕ (ПРИОРИТЕТ ' + led.priority_score + '/100):</span>' +
+                    '<button class="btn-action accent" style="font-weight:700;" onclick="sendTaskToProject(\'' + safeProj + '\', \'' + contCmd + '\', false)">▶️ Продолжить сейчас</button>' +
+                '</div>' +
+                '<div style="font-size:0.81rem; font-weight:700; color:var(--text-main);">' + escapeHtml((led.continue_first && led.continue_first.title) || "") + '</div>' +
+                '<div style="font-size:0.73rem; color:var(--text-dim); line-height:1.38;">' + escapeHtml(led.why_first) + '</div>' +
+            '</div>' +
+
+            // 2. Каких агентов запустить
+            '<div>' +
+                '<div style="font-size:0.72rem; font-weight:800; color:var(--text-dim); text-transform:uppercase; margin-bottom:5px;">🤖 Каких агентов запустить для этой папки (в 1 клик):</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' + agentBtns + '</div>' +
+            '</div>' +
+
+            // 3. Найти больше информации
+            '<div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap; padding-top:4px; border-top:1px solid rgba(255,255,255,0.06);">' +
+                '<input type="text" id="folder-research-input" class="task-inline-input" style="min-width:180px;" value="' + escapeHtml(led.research_topic) + '" placeholder="🔎 Тема для поиска новой информации в папку...">' +
+                '<button class="mini-btn accent" style="height:32px; font-weight:700;" onclick="findMoreInfoForFolder(\'' + safeProj + '\')">🔎 Найти больше информации</button>' +
+            '</div>' +
+        '</div>';
+    }
+
+    // -------------------------------------------------------------------------
+    // DEDICATED WORK REPORTS & PRIORITY CONTINUATIONS TAB (#tab-reports)
+    // -------------------------------------------------------------------------
+    function openWorkReportTab() {
+        const navBtn = document.getElementById("nav-btn-reports");
+        switchTab("reports", navBtn);
+    }
+
+    function setReportsSubView(view, btn) {
+        reportsSubView = view;
+        document.querySelectorAll("#reports-sub-filters .chip").forEach(c => {
+            c.classList.toggle("active", c.getAttribute("data-rview") === view);
+        });
+        renderWorkReportsTab();
+    }
+
+    function setReportsAgentFilter(agKey) {
+        reportsAgentFilter = agKey;
+        renderWorkReportsTab();
+    }
+
+    function buildUnifiedReportModel() {
+        const rep = agentWorkReportData || {};
+        const kpis = rep.kpis || {};
+        const timItems = buildCombinedTimReports();
+        const closedIssues = allIssues.filter(i => i.state !== "open");
+
+        const totalWorks = Math.max(kpis.total_completed_works || 0, closedIssues.length + timItems.length);
+        const totalTim = Math.max(kpis.tim_master_reports || 0, timItems.length);
+
+        // Считаем фото
+        let localPhotoCnt = 0;
+        allIssues.forEach(i => {
+            const m = String(i.body || "").match(/\/uploads\/[^\s)\]"']+/g);
+            if (m) localPhotoCnt += m.length;
+        });
+        const totalPhotos = Math.max(kpis.total_saved_photos || 0, localPhotoCnt);
+
+        // Приоритетный список продолжения
+        let priorities = Array.isArray(rep.priority_continuations) && rep.priority_continuations.length > 0
+            ? rep.priority_continuations.map(p => getProjectLedger(p.project))
+            : Object.keys(CLIENT_PROJECT_BLUEPRINTS).map(k => getProjectLedger(k));
+        priorities.sort((a, b) => (b.priority_score - a.priority_score) || (b.counts.completed_works - a.counts.completed_works));
+
+        return {
+            totalWorks: totalWorks,
+            totalTim: totalTim,
+            activeFolders: kpis.active_projects_count || folderList.length || 48,
+            totalPhotos: totalPhotos,
+            priorities: priorities,
+            byAgent: Array.isArray(rep.by_agent) ? rep.by_agent : [],
+            recentWorkLog: Array.isArray(rep.recent_work_log) ? rep.recent_work_log : []
+        };
+    }
+
+    function renderWorkReportsTab() {
+        const model = buildUnifiedReportModel();
+        const topCnt = document.getElementById("topbar-work-cnt");
+        if (topCnt) topCnt.innerText = String(model.totalWorks);
+        const elW = document.getElementById("rep-kpi-works");
+        const elT = document.getElementById("rep-kpi-tim");
+        const elF = document.getElementById("rep-kpi-folders");
+        const elP = document.getElementById("rep-kpi-photos");
+        if (elW) elW.innerText = String(model.totalWorks);
+        if (elT) elT.innerText = String(model.totalTim);
+        if (elF) elF.innerText = String(model.activeFolders);
+        if (elP) elP.innerText = String(model.totalPhotos);
+
+        const container = document.getElementById("reports-tab-container");
+        if (!container) return;
+
+        if (reportsSubView === "priority") {
+            let html = '<div style="font-size:0.77rem; font-weight:800; color:#34d399; text-transform:uppercase;">🔥 ТОП проектов — что стоит продолжить в первую очередь:</div>';
+            model.priorities.slice(0, 14).forEach((led, idx) => {
+                const sp = escapeHtml(led.project).replace(/'/g, "\\'");
+                const contCmd = escapeHtml((led.continue_first && led.continue_first.cmd) || ("NEXT_STEPS: " + led.project)).replace(/'/g, "\\'");
+                const resCmd = escapeHtml("RESEARCH_MORE: " + led.research_topic).replace(/'/g, "\\'");
+                const borderCol = idx < 3 ? "#10b981" : (idx < 6 ? "#f59e0b" : "#3b82f6");
+
+                html += '<div class="priority-rank-card" style="border-left-color:' + borderCol + ';">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">' +
+                        '<span style="font-weight:800; font-size:0.86rem; color:var(--text-main);">#' + (idx + 1) + ' · ' + escapeHtml(led.project) + '</span>' +
+                        '<div class="tabular" style="display:flex; gap:5px; flex-wrap:wrap;">' +
+                            '<span class="badge done">Приоритет ' + led.priority_score + '/100</span>' +
+                            '<span class="badge">✅ ' + led.counts.completed_works + ' работ</span>' +
+                            (led.counts.saved_photos > 0 ? '<span class="badge purple">📷 ' + led.counts.saved_photos + '</span>' : '') +
+                        '</div>' +
+                    '</div>' +
+                    '<div style="font-size:0.74rem; color:#34d399; font-weight:700;">💰 ' + escapeHtml(led.revenue_potential) + '</div>' +
+                    '<div style="font-size:0.75rem; color:var(--text-dim); line-height:1.4;">' + escapeHtml(led.why_first) + '</div>' +
+                    '<div style="background:var(--bg-main); border:1px solid var(--border); border-radius:9px; padding:7px 9px; font-size:0.77rem; font-weight:700; color:#fbbf24;">' +
+                        '▶️ Следующий шаг: <span style="color:var(--text-main);">' + escapeHtml((led.continue_first && led.continue_first.title) || "") + '</span>' +
+                    '</div>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
+                        '<button class="btn-action accent" style="font-weight:700;" onclick="runPlanStep(\'' + sp + '\', \'' + contCmd + '\')">▶️ Продолжить в 1 клик</button>' +
+                        '<button class="btn-action ghost" onclick="runPlanStep(\'' + sp + '\', \'' + resCmd + '\')">🔎 Найти инфо</button>' +
+                        '<button class="btn-action ghost" onclick="openStudyStudioForProject(\'' + sp + '\')">📷 Фото+Текст</button>' +
+                        '<button class="btn-action primary" onclick="selectProject(\'' + sp + '\')">📁 Папка →</button>' +
+                    '</div>' +
+                '</div>';
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        if (reportsSubView === "agents") {
+            let html = '<div style="font-size:0.76rem; font-weight:800; color:var(--accent); text-transform:uppercase;">🤖 Сводка выполненной работы по каждому агенту:</div>';
+
+            if (model.byAgent.length > 0) {
+                html += '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:7px;">' +
+                    model.byAgent.map(ag =>
+                        '<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:9px 10px; display:flex; flex-direction:column; gap:4px;">' +
+                            '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+                                '<span style="font-weight:800; font-size:0.81rem;">' + escapeHtml((ag.emoji || "🤖") + " " + ag.name) + '</span>' +
+                                '<span class="badge done tabular">✅ ' + (ag.tasks_completed || 0) + '</span>' +
+                            '</div>' +
+                            '<div style="font-size:0.7rem; color:var(--text-dim);">Папка: <b>' + escapeHtml(ag.last_project || "Все проекты") + '</b></div>' +
+                            '<div style="font-size:0.72rem; color:var(--text-main); line-height:1.35;">' + escapeHtml(String(ag.last_task || "").slice(0, 100)) + '</div>' +
+                        '</div>'
+                    ).join("") +
+                '</div>';
+            }
+
+            // Хронологический журнал проделанных работ агентами (из agent_work_report.json + живых задач)
+            const logItems = [];
+            const seenNums = new Set();
+            allIssues.slice(0, 35).forEach(iss => {
+                const p = parseIssueProject(iss.title);
+                seenNums.add(Number(iss.number));
+                logItems.push({
+                    issue_number: iss.number,
+                    date: iss.created_at ? new Date(iss.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "",
+                    project: p.project,
+                    agent: /TIM:|👑/i.test(iss.title) ? "👑 Директор Тим + отделы" : (PROJECT_SMART_ROUTES.find(r => sameProject(r.project, p.project)) || { agent: "🤖 ИИ-Агент Офиса" }).agent,
+                    title: p.cmd,
+                    state: iss.state
+                });
+            });
+            model.recentWorkLog.forEach(w => {
+                if (w.issue_number && seenNums.has(Number(w.issue_number))) return;
+                logItems.push({
+                    issue_number: w.issue_number,
+                    date: w.date || "",
+                    project: w.project || "Входящие_Офис",
+                    agent: w.agent || "🤖 Агент",
+                    title: w.title || "",
+                    summary: w.summary || "",
+                    state: w.status === "in_progress" ? "open" : "closed"
+                });
+            });
+
+            html += '<div class="section-divider" style="margin-top:6px;"><span>📜 ПОЛНЫЙ ЖУРНАЛ ПРОДЕЛАННОЙ РАБОТЫ АГЕНТАМИ</span><span>' + logItems.length + ' записей</span></div>';
+            logItems.slice(0, 40).forEach(it => {
+                const sp = escapeHtml(it.project).replace(/'/g, "\\'");
+                html += '<div class="crm-task-card" style="border-left:3px solid ' + (it.state === "open" ? "#f59e0b" : "#10b981") + ';">' +
+                    '<div class="crm-task-top tabular">' +
+                        '<span class="crm-project-tag" onclick="selectProject(\'' + sp + '\')">📁 ' + escapeHtml(it.project) + (it.issue_number ? (' · #' + it.issue_number) : '') + '</span>' +
+                        '<span class="badge ' + (it.state === "open" ? "running" : "done") + '">' + (it.state === "open" ? "⏳ В работе" : "✅ Выполнено") + '</span>' +
+                    '</div>' +
+                    '<div style="font-size:0.72rem; color:#60a5fa; font-weight:700; margin-top:2px;">' + escapeHtml(it.agent) + (it.date ? (' · 🕒 ' + escapeHtml(it.date)) : '') + '</div>' +
+                    '<div class="crm-task-title" style="margin-top:3px;">' + escapeHtml(it.title) + '</div>' +
+                    (it.summary ? '<div style="font-size:0.74rem; color:var(--text-dim); margin-top:3px;">' + escapeHtml(it.summary) + '</div>' : '') +
+                    '<div style="display:flex; justify-content:flex-end; gap:6px; margin-top:6px;">' +
+                        '<button class="mini-btn accent" onclick="selectProject(\'' + sp + '\')">Открыть учёт папки →</button>' +
+                    '</div>' +
+                '</div>';
+            });
+            container.innerHTML = html;
+            return;
+        }
+
+        // subView === 'folders': Учёт по всем папкам
+        const allCanon = Array.from(new Set([...Object.keys(CLIENT_PROJECT_BLUEPRINTS), ...folderList.map(canonicalProjectName)])).filter(Boolean);
+        const folderLeds = allCanon.map(n => getProjectLedger(n)).sort((a, b) => (b.counts.completed_works - a.counts.completed_works) || (b.priority_score - a.priority_score));
+
+        let html = '<div style="font-size:0.76rem; font-weight:800; color:#c084fc; text-transform:uppercase;">📁 Ведомость учёта проделанной работы по каждой папке (' + folderLeds.length + '):</div>';
+        folderLeds.forEach(led => {
+            const sp = escapeHtml(led.project).replace(/'/g, "\\'");
+            const contCmd = escapeHtml((led.continue_first && led.continue_first.cmd) || ("STATUS: " + led.project)).replace(/'/g, "\\'");
+            html += '<div class="crm-task-card" onclick="selectProject(\'' + sp + '\')" style="cursor:pointer;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">' +
+                    '<span style="font-weight:800; font-size:0.84rem;">📁 ' + escapeHtml(led.project) + '</span>' +
+                    '<div class="tabular" style="display:flex; gap:4px; flex-wrap:wrap;">' +
+                        '<span class="badge done">✅ ' + led.counts.completed_works + ' работ</span>' +
+                        (led.counts.tim_reports > 0 ? '<span class="badge" style="color:#fbbf24;">👑 ' + led.counts.tim_reports + '</span>' : '') +
+                        (led.counts.saved_photos > 0 ? '<span class="badge purple">📷 ' + led.counts.saved_photos + '</span>' : '') +
+                        (led.counts.files_on_disk > 0 ? '<span class="badge">📄 ' + led.counts.files_on_disk + ' ф.</span>' : '') +
+                    '</div>' +
+                '</div>' +
+                '<div style="font-size:0.73rem; color:var(--text-dim); margin-top:3px;">▶️ Что продолжить: <b style="color:var(--text-main);">' + escapeHtml((led.continue_first && led.continue_first.title) || "") + '</b></div>' +
+                '<div style="display:flex; gap:6px; margin-top:6px;" onclick="event.stopPropagation()">' +
+                    '<button class="mini-btn accent" onclick="runPlanStep(\'' + sp + '\', \'' + contCmd + '\')">▶️ Продолжить</button>' +
+                    '<button class="mini-btn" onclick="openStudyStudioForProject(\'' + sp + '\')">📷 Фото+Текст</button>' +
+                    '<button class="mini-btn" onclick="selectProject(\'' + sp + '\')">Открыть папку →</button>' +
+                '</div>' +
+            '</div>';
+        });
+        container.innerHTML = html;
+    }
+
+    function openMasterWorkReportInWorkspace(openOnMobile) {
+        const model = buildUnifiedReportModel();
+        const titleEl = document.getElementById("ws-project-title");
+        const subEl = document.getElementById("ws-project-sub");
+        const feedEl = document.getElementById("ws-feed");
+        if (titleEl) titleEl.innerText = "📊 Сводный отчёт работы агентов & Приоритеты";
+        if (subEl) subEl.innerText = "Выполнено работ: " + model.totalWorks + " · Мастер-отчётов Тима: " + model.totalTim + " · Изучено фото: " + model.totalPhotos;
+        if (!feedEl) return;
+
+        let html = '<div class="folder-briefing-card" style="border-left-color:#34d399;">' +
+            '<div style="font-size:0.95rem; font-weight:800; color:var(--text-main);">🔥 Что стоит продолжить в первую очередь (Рейтинг по деньгам и готовности)</div>' +
+            '<div style="font-size:0.77rem; color:var(--text-dim);">Нажмите «▶️ Продолжить» на любом проекте, чтобы немедленно запустить профильных агентов, или откройте папку для просмотра её полного журнала работ.</div>';
+
+        model.priorities.slice(0, 6).forEach((led, idx) => {
+            const sp = escapeHtml(led.project).replace(/'/g, "\\'");
+            const contCmd = escapeHtml((led.continue_first && led.continue_first.cmd) || "").replace(/'/g, "\\'");
+            html += '<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">' +
+                '<div style="flex:1; min-width:220px;">' +
+                    '<div style="font-weight:800; font-size:0.86rem;">#' + (idx + 1) + ' · ' + escapeHtml(led.project) + ' <span class="badge done">✅ ' + led.counts.completed_works + ' работ</span></div>' +
+                    '<div style="font-size:0.74rem; color:#34d399; font-weight:600; margin-top:2px;">💰 ' + escapeHtml(led.revenue_potential) + '</div>' +
+                    '<div style="font-size:0.76rem; color:var(--text-main); margin-top:3px;">▶️ ' + escapeHtml((led.continue_first && led.continue_first.title) || "") + '</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                    '<button class="btn-action accent" style="font-weight:700;" onclick="runPlanStep(\'' + sp + '\', \'' + contCmd + '\')">▶️ Продолжить</button>' +
+                    '<button class="btn-action ghost" onclick="selectProject(\'' + sp + '\')">📁 Открыть папку →</button>' +
+                '</div>' +
+            '</div>';
+        });
+        html += '</div>';
+        feedEl.innerHTML = html;
+        if (openOnMobile) openMobileWorkspace();
+    }
+
     // Мгновенный старт интерфейса без ожидания ответа от сервера
     try {
         const initialComms = JSON.parse(localStorage.getItem("crm_comments_map") || "{}");
@@ -5255,6 +6548,8 @@
     renderWorkspaceFeed();
     renderTimReportsList();
     renderAgentsStatus();
+    renderWorkReportsTab();
+    populateGlobalStudyFolders();
     syncActionAlertsUI();
     refreshAllData(false);
     setInterval(() => refreshAllData(false), 12000);
