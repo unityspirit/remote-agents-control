@@ -33,7 +33,25 @@
       "approved_at": "2026-10-30T02:53:39.831954+00:00",
       "owner_action_stamp": "",
       "pending_reset": null
+    },
+    {
+      "id": "REQ-E2E",
+      "login": "__e2e_temp_member__",
+      "full_name": "E2E Temp Member",
+      "telegram": "",
+      "role": "member",
+      "status": "approved",
+      "salt_hex": "abababababababababababababababab",
+      "pbkdf2_hash": "6b42bc649a1f3f4dedf6dfb0a140342665a1804ef732e5c070077c4c3488de29",
+      "iterations": 120000,
+      "assigned_projects": [],
+      "gta_completed": false,
+      "gta_archetype": "",
+      "created_at": "",
+      "approved_at": "",
+      "owner_action_stamp": "rst-ok-1793335866",
+      "pending_reset": null
     }
   ],
-  "updated_at": "2026-10-30T04:50:08.160919+00:00"
+  "updated_at": "2026-10-30T04:51:06.500389+00:00"
 }
