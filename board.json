@@ -3290,6 +3290,39 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-29 18:53:31"
+    },
+    "159": {
+      "id": 159,
+      "created": "2026-10-29 20:11:53",
+      "handoffs": [
+        {
+          "t": "2026-10-29 20:11:53",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-29 20:12:19",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
+      "urls": [
+        "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg"
+      ],
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-29 20:12:19",
+      "image_urls": [
+        "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg"
+      ],
+      "has_study_notes": true
     }
   }
 }
