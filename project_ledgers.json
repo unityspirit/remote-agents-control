@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-29 20:52:36",
-  "projects_count": 54,
+  "updated": "2026-10-29 20:58:09",
+  "projects_count": 55,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
       "project": "12 IT Продуктов (Короче Капитан)",
@@ -1179,6 +1179,56 @@
         }
       ],
       "research_topic": "Ptg_Law рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": []
+    },
+    "Secured_Users_Vault": {
+      "project": "Secured_Users_Vault",
+      "folder": "Secured_Users_Vault",
+      "state": "active",
+      "last_change": "2026-10-29",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Secured_Users_Vault» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Secured_Users_Vault»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 6,
+        "size_kb": 5,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Secured_Users_Vault»",
+        "cmd": "TIM: Изучи текущее состояние папки «Secured_Users_Vault», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Secured_Users_Vault»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Secured_Users_Vault"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Secured_Users_Vault"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Secured_Users_Vault"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Secured_Users_Vault"
+        }
+      ],
+      "research_topic": "Secured_Users_Vault рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": []
     },
