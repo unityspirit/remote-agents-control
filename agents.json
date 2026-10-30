@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 18:52:46",
+  "updated": "2026-10-29 18:53:35",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 8,
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "tasks_completed": 9,
+      "last_task": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
       "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 18:50:32"
+      "updated_at": "2026-10-29 18:53:31"
     },
     "strategist": {
       "name": "Стратег",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 5,
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "tasks_completed": 6,
+      "last_task": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
       "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 18:50:32"
+      "updated_at": "2026-10-29 18:53:31"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 7,
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "tasks_completed": 8,
+      "last_task": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
       "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 18:50:32"
+      "updated_at": "2026-10-29 18:53:31"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -87,10 +87,10 @@
       "gives": "работающий Micro-SaaS, TMA бот, лендинг с 3D сценой без техдолга",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 3,
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
+      "tasks_completed": 4,
+      "last_task": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
       "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 18:50:32"
+      "updated_at": "2026-10-29 18:53:31"
     },
     "intake": {
       "name": "Приёмщик",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 22,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 10,
+      "tasks_completed": 11,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 10,
+      "tasks_completed": 11,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 18:52:46"
+      "updated_at": "2026-10-29 18:53:35"
     }
   },
   "daemons": {
