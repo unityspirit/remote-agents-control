@@ -1,13 +1,13 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-30T09:09:18.947602+00:00",
+  "updated_at": "2026-10-30T09:34:27.231Z",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -40,8 +40,8 @@
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -67,7 +67,7 @@
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 1.0,
+        "active_minutes": 1,
         "active_hours": 0.02,
         "total_requests": 0,
         "today_requests": 0,
@@ -81,19 +81,19 @@
         "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия. Часто медлит (4 пауз простоя) и игнорирует авто-подсказки системы — низкая вовлечённость или отвлечение."
       },
       "metrics": {
-        "total_active_sec": 60,
+        "total_active_sec": 75,
         "total_requests": 0,
-        "idle_stall_count": 4,
+        "idle_stall_count": 5,
         "nudges_shown": 0,
         "nudges_clicked": 0,
         "photos_sent": 0,
         "tim_requests": 0,
         "today_date": "2026-10-30",
-        "today_active_sec": 60,
+        "today_active_sec": 75,
         "today_requests": 0,
         "first_seen": "2026-10-30T06:42:12.018Z",
         "online_state": "active",
-        "last_seen": "2026-10-30T09:05:12.015Z",
+        "last_seen": "2026-10-30T09:34:42.174Z",
         "current_project": "Позновалка"
       }
     }
