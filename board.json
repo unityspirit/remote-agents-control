@@ -3384,6 +3384,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-29 23:37:28"
+    },
+    "162": {
+      "id": 162,
+      "created": "2026-10-30 00:04:45",
+      "handoffs": [
+        {
+          "t": "2026-10-30 00:04:45",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-30 00:09:20",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
+      "urls": [],
+      "project": "Дима Верхняя Синичиха Алапаевск",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-30 00:09:20"
     }
   }
 }
