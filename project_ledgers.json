@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 23:37:34",
+  "updated": "2026-10-29 23:41:55",
   "projects_count": 55,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -669,8 +669,8 @@
     "Georgis1": {
       "project": "Georgis1",
       "folder": "Georgis1",
-      "state": "empty",
-      "last_change": null,
+      "state": "active",
+      "last_change": "2026-10-29",
       "lead_agent": "Autonomous Project Agent",
       "priority_score": 55,
       "revenue_potential": "Развитие направления «Georgis1» в связке с экосистемой Виртуального Офиса.",
@@ -681,8 +681,8 @@
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 0,
-        "size_kb": 0,
+        "files_on_disk": 612,
+        "size_kb": 523399,
         "ai_analyses": 0,
         "research_notes": 0
       },
