@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 23:36:52",
+  "updated": "2026-10-29 23:37:34",
   "projects_count": 55,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2477,7 +2477,7 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 1,
         "open_tasks": 23,
         "tim_reports": 0,
         "saved_photos": 1,
@@ -2515,6 +2515,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-161",
+          "issue_number": 161,
+          "date": "2026-10-29 23:37:28",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#161 AUTH_SYNC: Быстрая заявка REQ-607209 (@true1team / @true1team)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-157",
           "issue_number": 157,
@@ -2701,17 +2712,6 @@
           "title": "#139 https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference?",
           "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #139»",
           "status": "not_studied"
-        },
-        {
-          "id": "card-140",
-          "issue_number": 140,
-          "date": "2026-10-25 08:35:13",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#140 https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #140 → …»",
-          "status": "need_project"
         }
       ]
     },
