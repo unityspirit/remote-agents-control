@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-30T16:23:27.705919+00:00",
+  "updated_at": "2026-10-30T16:24:30.590794+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -122,6 +122,24 @@
         "nudges_clicked": 0,
         "photos_sent": 0,
         "tim_requests": 0
+      }
+    },
+    "unityspiritpartners": {
+      "audit_30d": {
+        "days_active": 1,
+        "days_to_30d_review": 29,
+        "active_minutes": 0.0,
+        "active_hours": 0.0,
+        "total_requests": 0,
+        "today_requests": 0,
+        "stalls_count": 0,
+        "nudges_shown": 0,
+        "nudges_clicked": 0,
+        "kpi_score": 0,
+        "verdict": "coach",
+        "verdict_label": "🟡 НА КОНТРОЛЕ (День 1/30 · KPI 0/100)",
+        "replacement_recommended": false,
+        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       }
     }
   }
