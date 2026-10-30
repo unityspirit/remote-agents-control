@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 20:58:09",
+  "updated": "2026-10-29 21:02:48",
   "kpis": {
     "total_completed_works": 153,
     "tim_master_reports": 10,
@@ -832,7 +832,7 @@
       "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:58:04"
+      "updated_at": "2026-10-29 21:02:39"
     },
     {
       "key": "router",
@@ -843,7 +843,7 @@
       "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:58:04"
+      "updated_at": "2026-10-29 21:02:39"
     },
     {
       "key": "gatekeeper",
@@ -854,7 +854,7 @@
       "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:58:04"
+      "updated_at": "2026-10-29 21:02:39"
     },
     {
       "key": "researcher",
@@ -863,9 +863,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 22,
-      "last_project": "Юра",
-      "last_task": "Подготовка коммерческого MVP сервиса КХЛ инсайтов (Юра): синхронизация с Юрием, правила фильтрации 1 инсайт на период, расчет юнит-экономики и запуск Telegram M",
-      "updated_at": "2026-10-29 20:36:46"
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "updated_at": "2026-10-29 21:02:05"
     },
     {
       "key": "analyst",
@@ -876,7 +876,7 @@
       "tasks_completed": 22,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:58:04"
+      "updated_at": "2026-10-29 21:02:39"
     },
     {
       "key": "scribe",
@@ -887,7 +887,7 @@
       "tasks_completed": 12,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:58:04"
+      "updated_at": "2026-10-29 21:02:39"
     },
     {
       "key": "project_lead",
@@ -898,7 +898,7 @@
       "tasks_completed": 12,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-29 20:58:04"
+      "updated_at": "2026-10-29 21:02:39"
     },
     {
       "key": "developer",
