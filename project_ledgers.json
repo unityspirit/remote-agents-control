@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 20:32:42",
+  "updated": "2026-10-29 20:37:32",
   "projects_count": 54,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3583,12 +3583,12 @@
       "why_first": "На ноутбуке круглосуточно работают `khl_live_service_v17.py` и `khl_auto_learning_service.py` — система сама копит статистику и калибрует вероятности.",
       "human_action": "Проверить сигнал модели в Telegram и принять решение по открытию позиции.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 1,
         "open_tasks": 0,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
-        "files_on_disk": 102,
-        "size_kb": 951,
+        "files_on_disk": 103,
+        "size_kb": 958,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -3620,7 +3620,21 @@
       ],
       "research_topic": "live hockey odds Poisson model calibration expected value sports analytics Python",
       "media_items": [],
-      "work_items": []
+      "work_items": [
+        {
+          "id": "tim-20261029_203623",
+          "issue_number": null,
+          "date": "2026-10-29 20:36:23",
+          "project": "Юра",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
+          "title": "Подготовка коммерческого MVP сервиса КХЛ инсайтов (Юра): синхронизация с Юрием, правила фильтрации 1 инсайт на период, расчет юнит-экономики",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Стратег, Главный Разработчик) в рамках проекта «Юра». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затра",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Юра».",
+          "status": "done"
+        }
+      ]
     }
   }
 }
