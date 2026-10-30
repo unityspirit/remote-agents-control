@@ -7568,6 +7568,302 @@
         }
     }
 
+    
+    // =========================================================================
+    // === v22.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // =========================================================================
+    // =========================================================================
+// === v22.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// =========================================================================
+const GUEST_QUIZ_QUESTIONS = [
+    {
+        q: "Какая ваша главная сфера или цель?",
+        options: [
+            { id: "it", title: "🚀 Запуск и развитие AI/IT-продуктов", desc: "Telegram Mini Apps, SaaS-сервисы, ИИ-инструменты" },
+            { id: "traffic", title: "📈 Трафик, маркетинг и лидогенерация", desc: "Воронки Pay-on-Results, привлечение клиентов за результат" },
+            { id: "b2b", title: "💼 Автоматизация бизнеса и процессов", desc: "Внедрение ИИ-директора, финансовые роботы, кибераудит" },
+            { id: "earn", title: "🤝 Поиск готовых проектов для заработка", desc: "Развивать существующие проекты компании за процент/оплату" }
+        ]
+    },
+    {
+        q: "Какой формат сотрудничества вам ближе?",
+        options: [
+            { id: "ready", title: "👑 Развивать готовые проекты компании", desc: "12 IT Продуктов, Traffic DFY, B2B-контракты" },
+            { id: "own", title: "🛍️ Запустить ИИ-решение под мой бизнес", desc: "Настроить воронки, отделы продаж и ИИ-агентов" },
+            { id: "partner", title: "🛠️ Партнёрство и совместный запуск", desc: "Объединить компетенции и делить прибыль" },
+            { id: "learn", title: "🎓 Обучение на реальных ИИ-конвейерах", desc: "Освоить автономных агентов и зарабатывать на практике" }
+        ]
+    },
+    {
+        q: "Какой опыт и ресурсы у вас есть?",
+        options: [
+            { id: "dev", title: "💻 Разработка / Vibe-кодинг / IT", desc: "Пишу код или создаю решения с ИИ-ассистентами" },
+            { id: "sales", title: "🎯 Маркетинг / Продажи / Переговоры", desc: "Умею привлекать клиентов и закрывать сделки" },
+            { id: "mgmt", title: "💼 Управление / Организация процессов", desc: "Координация команд, контроль качества и сроков" },
+            { id: "start", title: "⚡ Новичок с сильной мотивацией", desc: "Готов быстро вникнуть и действовать по готовым инструкциям" }
+        ]
+    },
+    {
+        q: "Какой результат вы хотите получить в первый месяц?",
+        options: [
+            { id: "money", title: "💵 Первые $1,000 – $5,000 чистой прибыли", desc: "Фокус на быстрых сделках и маржинальных связках" },
+            { id: "mvp", title: "🚀 Запущенный и работающий MVP", desc: "Готовый продукт, протестированный на первых пользователях" },
+            { id: "auto", title: "⚙️ Полностью автономная воронка 24/7", desc: "Система работает без постоянного ручного вмешательства" },
+            { id: "team", title: "🤝 Надёжная команда и сильное окружение", desc: "Доступ к закрытой экосистеме и ресурсам" }
+        ]
+    }
+];
+
+var guestQuizCurrentStep = 0;
+var guestQuizAnswers = [];
+
+function enterGuestPreviewMode() {
+    currentAuthUser = {
+        id: "guest-" + String(Date.now()).slice(-6),
+        login: "Гость (Превью)",
+        full_name: "Посетитель Офиса",
+        role: "guest",
+        status: "preview",
+        is_guest: true,
+        assigned_projects: []
+    };
+    document.body.classList.add("guest-preview-mode");
+    document.body.classList.remove("auth-locked");
+    const gate = document.getElementById("auth-gate-overlay");
+    if (gate) gate.style.display = "none";
+
+    // Strictly hide private company elements
+    const sidebar = document.querySelector(".project-sidebar");
+    if (sidebar) sidebar.style.display = "none";
+    const ws = document.querySelector(".workspace-pane");
+    if (ws) ws.style.display = "none";
+    const bnav = document.querySelector(".bottom-nav");
+    if (bnav) bnav.style.display = "none";
+    const gView = document.getElementById("guest-portal-view");
+    if (gView) gView.style.display = "block";
+
+    renderGuestQuizStep();
+    showToast("👀 Вы в Гостевом Превью-режиме: пройдите опросник и протестируйте ИИ!");
+}
+
+function openAuthGateFromGuest() {
+    document.body.classList.remove("guest-preview-mode");
+    document.body.classList.add("auth-locked");
+    const gView = document.getElementById("guest-portal-view");
+    if (gView) gView.style.display = "none";
+    const gate = document.getElementById("auth-gate-overlay");
+    if (gate) gate.style.display = "flex";
+    switchAuthGateTab("register");
+}
+
+function renderGuestQuizStep() {
+    const container = document.getElementById("guest-quiz-content");
+    const badge = document.getElementById("guest-quiz-step-badge");
+    const resBox = document.getElementById("guest-quiz-result-box");
+    if (!container) return;
+
+    if (guestQuizCurrentStep >= GUEST_QUIZ_QUESTIONS.length) {
+        container.style.display = "none";
+        if (badge) badge.innerText = "✅ Завершено";
+        if (resBox) resBox.style.display = "flex";
+        return;
+    }
+
+    container.style.display = "flex";
+    if (resBox) resBox.style.display = "none";
+    const qData = GUEST_QUIZ_QUESTIONS[guestQuizCurrentStep];
+    if (badge) badge.innerText = "Шаг " + (guestQuizCurrentStep + 1) + " из " + GUEST_QUIZ_QUESTIONS.length;
+
+    let h = '<div style="font-weight:800; font-size:0.86rem; color:#f8fafc; margin-bottom:4px;">' + (guestQuizCurrentStep + 1) + '. ' + escapeHtml(qData.q) + '</div>';
+    qData.options.forEach((opt, optIdx) => {
+        h +=
+            '<button type="button" class="gta-option-btn" style="text-align:left; padding:9px 11px; margin-bottom:2px;" onclick="selectGuestQuizOption(' + optIdx + ')">' +
+                '<span class="gta-opt-num">0' + (optIdx + 1) + '</span>' +
+                '<div style="display:flex; flex-direction:column; gap:2px;">' +
+                    '<div style="font-weight:800; font-size:0.81rem; color:#f8fafc;">' + escapeHtml(opt.title) + '</div>' +
+                    '<div style="font-size:0.71rem; color:#94a3b8;">' + escapeHtml(opt.desc) + '</div>' +
+                '</div>' +
+            '</button>';
+    });
+    container.innerHTML = h;
+}
+
+async function selectGuestQuizOption(optIdx) {
+    const qData = GUEST_QUIZ_QUESTIONS[guestQuizCurrentStep];
+    const chosen = qData.options[optIdx];
+    guestQuizAnswers.push({ q: qData.q, a: chosen.title });
+    guestQuizCurrentStep++;
+
+    if (guestQuizCurrentStep >= GUEST_QUIZ_QUESTIONS.length) {
+        let matchedDirection = "AI-Маркетинг & Pay-on-Results Воронки";
+        const firstA = (guestQuizAnswers[0] || {}).a || "";
+        if (firstA.includes("IT")) matchedDirection = "Разработка Telegram Mini Apps & IT-Продукты";
+        else if (firstA.includes("Автоматизация")) matchedDirection = "B2B AI-Решения & Цифровые Директора";
+        else if (firstA.includes("Поиск готовых")) matchedDirection = "Управление и развитие ключевых проектов компании";
+
+        const matchEl = document.getElementById("guest-quiz-match-text");
+        if (matchEl) {
+            matchEl.innerHTML =
+                "Рекомендуемое направление: <b>«" + escapeHtml(matchedDirection) + "»</b>.<br>" +
+                "Под ваши цели идеально подходит инфраструктура Директора Тима. Ваши ответы зафиксированы.";
+        }
+
+        try {
+            fetch(LOCAL_TRUST_API + "/api/guest-inquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    guest_id: (currentAuthUser && currentAuthUser.id) || "guest_anon",
+                    kind: "guest_quiz",
+                    matched_direction: matchedDirection,
+                    answers: guestQuizAnswers,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(() => {});
+
+            ghApi("/issues", "POST", {
+                title: "CMD: GUEST_LEAD_QUIZ: " + matchedDirection + " | PROJ: Лиды_Гости",
+                body: "### 🎯 Гость прошёл опросник по интересам:\n**Направление:** `" + matchedDirection + "`\n\n" +
+                      guestQuizAnswers.map(a => "• **" + a.q + ":** " + a.a).join("\n") +
+                      "\n\n_⏳ Сессия гостя зафиксирована в системе._"
+            }, true).catch(() => {});
+        } catch(e) {}
+    }
+    renderGuestQuizStep();
+}
+
+function sendQuickGuestPromptPortal(txt) {
+    const inp = document.getElementById("guest-portal-chat-input");
+    if (inp) {
+        inp.value = txt;
+        submitGuestPortalChatMessage();
+    }
+}
+
+function formatChatMarkdown(txt) {
+    if (!txt) return "";
+    let s = escapeHtml(txt);
+    s = s.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+    s = s.replace(/\*(.+?)\*/g, "<i>$1</i>");
+    s = s.replace(/`([^`]+)`/g, "<code style='background:rgba(255,255,255,0.1); padding:2px 4px; border-radius:4px;'>$1</code>");
+    s = s.replace(/\n/g, "<br>");
+    return s;
+}
+
+function generateIntelligentAssistantReply(msg) {
+    const m = (msg || "").toLowerCase();
+    if (m.includes("тим") || m.includes("директор") || m.includes("отдел")) {
+        return "👑 **Генеральный Директор Тим** управляет 7 автономными отделами:\n" +
+               "1. **Отдел Продуктов:** Разработка Telegram Mini Apps и AI-сервисов.\n" +
+               "2. **Отдел Маркетинга:** Запуск вирусных рилс, шортс и Pay-on-Results воронок.\n" +
+               "3. **Отдел Продаж:** AI-лидогенерация и автоматическое доведение до сделки.\n" +
+               "4. **Отдел Финансов:** Прозрачные метрики и расчет доходности.\n" +
+               "5. **Отдел Безопасности:** RSA-защита персональных сейфов и аудит.\n" +
+               "6. **Отдел Знаний:** Самообучение и анализ выполненных задач.\n" +
+               "7. **Штаб Координации:** Автоматическое распределение задач между агентами.\n\n" +
+               "💡 Зарегистрируйтесь, чтобы получить доступ к задачам Тима под ваш проект!";
+    }
+    if (m.includes("маркетинг") || m.includes("трафик") || m.includes("воронк") || m.includes("клиент")) {
+        return "📈 **AI-Маркетинг и Лидогенерация Unity Spirit**:\n" +
+               "• **Модель Pay-on-Results:** вы платите только за реальный результат (заявки, лиды, продажи).\n" +
+               "• **Авто-генерация контента:** нейросети создают сценарии, визуал и тексты под целевую аудиторию.\n" +
+               "• **Кросс-платформенная дистрибуция:** Telegram, Reels, Shorts, Threads.\n\n" +
+               "🚀 Хотите подключить свой бизнес или развивать наши связки? Пройдите опросник слева!";
+    }
+    if (m.includes("бизнес") || m.includes("помоч") || m.includes("чем полезен") || m.includes("польза")) {
+        return "🛍️ **Чем экосистема полезна вашему бизнесу:**\n" +
+               "1. **Экономия до 80% расходов** на персонал за счёт внедрения автономных ИИ-агентов.\n" +
+               "2. **Круглосуточная обработка лидов 24/7** без усталости и человеческого фактора.\n" +
+               "3. **Готовые Telegram Mini Apps:** запуск магазина или сервиса прямо внутри мессенджера.\n" +
+               "4. **Умный дашборд:** прозрачный контроль всех задач и метрик в реальном времени.";
+    }
+    if (m.includes("проект") || m.includes("подключ") || m.includes("заработ")) {
+        return "🤝 **Подключение и заработок в Unity Spirit:**\n" +
+               "• Администратор создаёт для вас персональную папку проекта в защищённой системе.\n" +
+               "• Все ваши наработки, исследования и промпты сохраняются в персональном защищённом сейфе.\n" +
+               "• Вы получаете долю от прибыли или фиксированную оплату за выполнение ключевых этапов.\n\n" +
+               "👉 Зарегистрируйтесь за 5 секунд, чтобы администратор закрепил проект за вами!";
+    }
+    return "✨ Спасибо за ваш вопрос! Я проанализировал ваш запрос:\n\n" +
+           "Платформа **Unity Spirit** объединяет автономных ИИ-агентов, готовые воронки и инструменты масштабирования бизнеса. " +
+           "Все ваши сообщения фиксируются в системе, поэтому куратор свяжется с вами по указанным интересам.\n\n" +
+           "🎯 Рекомендуем пройти 4 вопроса опросника слева или зарегистрироваться для открытия полного доступа!";
+}
+
+async function submitGuestPortalChatMessage() {
+    const inp = document.getElementById("guest-portal-chat-input");
+    const container = document.getElementById("guest-portal-chat-messages");
+    if (!inp || !container) return;
+    const msg = String(inp.value || "").trim();
+    if (!msg) return;
+    inp.value = "";
+
+    // User message bubble
+    const uHtml =
+        '<div style="display:flex; justify-content:flex-end; gap:8px;">' +
+            '<div style="background:linear-gradient(135deg,#0284c7,#2563eb); border-radius:12px; border-top-right-radius:3px; padding:9px 12px; font-size:0.79rem; line-height:1.45; color:#ffffff; max-width:85%; word-break:break-word;">' +
+                escapeHtml(msg) +
+            '</div>' +
+            '<div style="width:26px; height:26px; border-radius:7px; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:0.85rem; flex-shrink:0;">👤</div>' +
+        '</div>';
+    container.insertAdjacentHTML("beforeend", uHtml);
+
+    // Typing indicator
+    const typingId = "p-typing-" + Date.now();
+    container.insertAdjacentHTML("beforeend",
+        '<div id="' + typingId + '" style="display:flex; gap:8px; align-items:flex-start;">' +
+            '<div style="width:26px; height:26px; border-radius:7px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:0.85rem; flex-shrink:0;">🤖</div>' +
+            '<div style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:9px 12px; font-size:0.77rem; color:#94a3b8;">' +
+                '✍️ ИИ-Ассистент думает...' +
+            '</div>' +
+        '</div>'
+    );
+    container.scrollTop = container.scrollHeight;
+
+    let replyText = "";
+    try {
+        const localP = fetch(LOCAL_TRUST_API + "/api/guest-chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg })
+        }).then(r => r.json()).catch(() => null);
+        const timeoutP = new Promise(resolve => setTimeout(() => resolve(null), 2500));
+        const serverRes = await Promise.race([localP, timeoutP]);
+        if (serverRes && serverRes.ok && serverRes.reply) {
+            replyText = serverRes.reply;
+        }
+    } catch(e) {}
+
+    try {
+        ghApi("/issues", "POST", {
+            title: "CMD: GUEST_LEAD: " + msg.slice(0, 90) + " | PROJ: Лиды_Гости",
+            body: "### 👤 Вопрос гостя в чат:\n" + msg + "\n\n_⏳ Запрос зафиксирован в системе._"
+        }, true).catch(() => {});
+    } catch(e) {}
+
+    if (!replyText) {
+        replyText = generateIntelligentAssistantReply(msg);
+    }
+
+    const tEl = document.getElementById(typingId);
+    if (tEl) tEl.remove();
+
+    const aiHtml =
+        '<div style="display:flex; gap:8px; align-items:flex-start;">' +
+            '<div style="width:26px; height:26px; border-radius:7px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:0.85rem; flex-shrink:0;">🤖</div>' +
+            '<div style="background:#111c33; border:1px solid rgba(56,189,248,0.3); border-radius:12px; border-top-left-radius:3px; padding:11px 13px; font-size:0.79rem; line-height:1.48; color:#f1f5f9; max-width:88%;">' +
+                formatChatMarkdown(replyText) +
+                '<div style="margin-top:8px; padding-top:6px; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px; font-size:0.68rem; color:#94a3b8;">' +
+                    '<span>💾 <i>Запрос сохранён у нас</i></span>' +
+                    '<a href="javascript:void(0)" onclick="openAuthGateFromGuest()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">Сохранить в личный кабинет →</a>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    container.insertAdjacentHTML("beforeend", aiHtml);
+    container.scrollTop = container.scrollHeight;
+}
+
+
     function enterPendingWaitingRoom(userObj) {
         document.body.classList.add("auth-locked");
         const gate = document.getElementById("auth-gate-overlay");
