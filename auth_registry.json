@@ -85,15 +85,13 @@
       "pbkdf2_hash": "3082cf2bc49460d9584cf1d93cd92148ca18a1488a9a7f9a186dd6eaf66b648d",
       "iterations": 120000,
       "assigned_projects": [
-        "Alberta",
-        "GlobalFilms (Filmtools)",
-        "Traffic"
+        "*"
       ],
       "gta_completed": true,
       "gta_archetype": "🎨 Креативный Директор & Архитектор Внутренней Опоры (Alberta Creative Director)",
       "created_at": "2026-10-30T16:06:53.876879+00:00",
-      "approved_at": "2026-10-30T16:06:53.876879+00:00",
-      "owner_action_stamp": "pc-1793376413",
+      "approved_at": "2026-10-30T16:56:08.577139Z",
+      "owner_action_stamp": "tg-bot-btn-1793400968",
       "pending_reset": null
     },
     {
