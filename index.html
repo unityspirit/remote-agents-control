@@ -4,9 +4,9 @@
 <script>
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v22_8_loaded");
+        var v = localStorage.getItem("gsg_app_v22_9_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v22_8_loaded", "true");
+            localStorage.setItem("gsg_app_v22_9_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -1950,7 +1950,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v22.8: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v22.9: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -2716,7 +2716,7 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.8</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v22.9</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -3002,7 +3002,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v22.8")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v22.9")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -4203,6 +4203,125 @@
         document.getElementById("workspace-pane").classList.remove("mobile-open");
     }
 
+    
+    // =========================================================================
+    // === v22.9: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
+    // =========================================================================
+    function openAssignProjectModal(projName) {
+        if (!isOwnerSession()) {
+            showToast("🔒 Назначать папки может только Главный Штаб (@unityspiritpartners)");
+            return;
+        }
+        const cleanP = canonicalProjectName(projName);
+        const reg = authRegistryCache || { users: [] };
+        const members = (reg.users || []).filter(u => u.role !== "owner" && u.status === "approved");
+
+        let modal = document.getElementById("admin-assign-proj-modal");
+        if (!modal) {
+            const mHtml = 
+                '<div id="admin-assign-proj-modal" class="modal-overlay" style="display:none; z-index:28000;" onclick="if(event.target===this) this.style.display=\'none\'">' +
+                    '<div class="modal-card" style="max-width:480px; padding:18px;">' +
+                        '<div class="modal-header">' +
+                            '<h3 id="assign-proj-modal-title">👥 Назначение папки сотрудникам</h3>' +
+                            '<button class="modal-close" onclick="document.getElementById(\'admin-assign-proj-modal\').style.display=\'none\'">✕</button>' +
+                        '</div>' +
+                        '<div class="modal-body" id="assign-proj-modal-body" style="gap:10px; margin-top:8px;"></div>' +
+                        '<div style="display:flex; justify-content:flex-end; gap:8px; margin-top:12px;">' +
+                            '<button class="choice-btn" onclick="document.getElementById(\'admin-assign-proj-modal\').style.display=\'none\'">Готово</button>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            document.body.insertAdjacentHTML("beforeend", mHtml);
+            modal = document.getElementById("admin-assign-proj-modal");
+        }
+
+        document.getElementById("assign-proj-modal-title").innerHTML = "👥 Назначить папку: <b>" + escapeHtml(cleanP) + "</b>";
+        
+        let bHtml = '<div style="font-size:0.77rem; color:var(--text-dim); line-height:1.45; margin-bottom:4px;">' +
+            '👑 <b>Главный Штаб:</b> отметьте галочками сотрудников, у которых эта папка появится во внутреннем офисе:' +
+        '</div>';
+
+        if (members.length === 0) {
+            bHtml += '<div style="padding:12px; background:var(--bg-main); border-radius:10px; font-size:0.78rem; color:var(--text-dim); text-align:center;">Нет активных сотрудников. Одобрите заявки в Сейфе или Telegram.</div>';
+        } else {
+            members.forEach(m => {
+                const assigned = Array.isArray(m.assigned_projects) ? m.assigned_projects : [];
+                const isAssigned = assigned.some(p => canonicalProjectName(p) === cleanP || sameProject(p, cleanP));
+                const sLog = escapeHtml(m.login).replace(/'/g, "\\'");
+                const sProj = escapeHtml(cleanP).replace(/'/g, "\\'");
+                bHtml += 
+                    '<div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:9px 12px;">' +
+                        '<div>' +
+                            '<div style="font-size:0.82rem; font-weight:800; color:#f8fafc;">' + escapeHtml(m.full_name || m.login) + '</div>' +
+                            '<div style="font-size:0.71rem; color:#94a3b8;">Логин: @' + escapeHtml(m.login) + (m.telegram ? (' · ' + escapeHtml(m.telegram)) : '') + '</div>' +
+                        '</div>' +
+                        '<label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-size:0.78rem; font-weight:700; color:' + (isAssigned ? '#34d399' : '#94a3b8') + ';">' +
+                            '<input type="checkbox" ' + (isAssigned ? 'checked' : '') + ' onchange="toggleProjectUserAssignment(\'' + sLog + '\', \'' + sProj + '\', this.checked)" style="width:18px; height:18px; cursor:pointer;">' +
+                            '<span>' + (isAssigned ? 'Назначен ✅' : 'Нет доступа') + '</span>' +
+                        '</label>' +
+                    '</div>';
+            });
+        }
+
+        document.getElementById("assign-proj-modal-body").innerHTML = bHtml;
+        modal.style.display = "flex";
+    }
+
+    async function toggleProjectUserAssignment(loginVal, projName, willAssign) {
+        if (!isOwnerSession()) return;
+        const cleanP = canonicalProjectName(projName);
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+        if (!u) return;
+
+        let cur = (Array.isArray(u.assigned_projects) ? u.assigned_projects : []).filter(x => x !== "*");
+        if (willAssign) {
+            if (!cur.some(p => canonicalProjectName(p) === cleanP)) {
+                cur.push(cleanP);
+            }
+        } else {
+            cur = cur.filter(p => canonicalProjectName(p) !== cleanP && !sameProject(p, cleanP));
+        }
+        u.assigned_projects = cur;
+        u.owner_action_stamp = "assign-toggle-" + Date.now();
+
+        for (const repo of [REPO_NAME, "GlobalTeamPartners/remote-agents-control", "unityspirit/remote-agents-control"]) {
+            try {
+                await ghApiPushJson("auth_registry.json", reg, (willAssign ? "Assign " : "Remove ") + cleanP + " for " + loginVal, "data");
+            } catch(e) {}
+        }
+        authRegistryCache = reg;
+        showToast(willAssign ? ("✅ Папка «" + cleanP + "» открыта для @" + loginVal) : ("🔒 Доступ к «" + cleanP + "» закрыт для @" + loginVal));
+        renderProjects();
+        if (currentProject === cleanP) renderWorkspaceFeed();
+    }
+
+    function openMoveMaterialsModal(srcProject) {
+        if (!isOwnerSession()) return;
+        const cleanSrc = canonicalProjectName(srcProject);
+        const reg = authRegistryCache || { users: [] };
+        const members = (reg.users || []).filter(u => u.status === "approved");
+
+        let destOpts = '<option value="">-- Выберите куда переместить / назначить --</option>';
+        destOpts += '<optgroup label="🏢 Папки Проектов">';
+        Object.keys(PROJECT_META).forEach(p => {
+            if (p !== cleanSrc) destOpts += '<option value="proj:' + escapeHtml(p) + '">📁 ' + escapeHtml(p) + '</option>';
+        });
+        destOpts += '</optgroup>';
+        destOpts += '<optgroup label="👤 Личные Офисы Сотрудников">';
+        members.forEach(m => {
+            const mFolder = "Личный Офис: @" + m.login;
+            destOpts += '<option value="user:' + escapeHtml(m.login) + '">👤 ' + escapeHtml(mFolder) + ' (' + escapeHtml(m.full_name || m.login) + ')</option>';
+        });
+        destOpts += '</optgroup>';
+
+        const targetSelect = prompt("Куда переместить / продублировать материалы из «" + cleanSrc + "»?\nВведите логин сотрудника (например: @adevargos или true1team):");
+        if (targetSelect) {
+            const cleanTarget = targetSelect.trim().replace(/^@/, "");
+            toggleProjectUserAssignment(cleanTarget, cleanSrc, true);
+        }
+    }
+
     function selectProject(name, icon) {
         const canon = canonicalProjectName(name);
         if (canon === "Secured_Users_Vault") {
@@ -4288,7 +4407,21 @@
         });
         Object.keys(PROJECT_META).forEach(k => allNamesSet.add(canonicalProjectName(k)));
 
-        const allNames = Array.from(allNamesSet);
+        // Multi-tenant: Every user gets their own personal office folder!
+        if (currentAuthUser && currentAuthUser.login) {
+            allNamesSet.add(canonicalProjectName("Личный Офис: @" + currentAuthUser.login));
+        }
+        // Owner sees all employees' personal office folders
+        if (isOwnerSession() && authRegistryCache && Array.isArray(authRegistryCache.users)) {
+            authRegistryCache.users.forEach(u => {
+                if (u.login) allNamesSet.add(canonicalProjectName("Личный Офис: @" + u.login));
+            });
+        }
+
+        // Filter projects by access permissions (strict isolation for members, full for owner)
+        const allNames = Array.from(allNamesSet).filter(name => {
+            return canCurrentUserAccessProject(name);
+        });
         const workedNames = allNames.filter(name => (stats[name] && stats[name].total > 0) || (PROJECT_META[name] && PROJECT_META[name].worked));
 
         document.getElementById("cnt-worked").innerText = workedNames.length;
@@ -4310,17 +4443,38 @@
         });
 
         let html = "";
-        if (typeof currentAuthUser !== "undefined" && currentAuthUser && currentAuthUser.role !== "owner") {
+        if (isOwnerSession()) {
+            html += '<div style="background:linear-gradient(135deg,rgba(37,99,235,0.22),rgba(124,58,237,0.22)); border:1px solid rgba(96,165,250,0.5); border-radius:14px; padding:11px 14px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                '<div>' +
+                    '<div style="font-size:0.86rem; font-weight:900; color:#93c5fd; display:flex; align-items:center; gap:6px;">' +
+                        '👑 <span>ГЛАВНЫЙ ШТАБ (@unityspiritpartners)</span>' +
+                        '<span style="background:rgba(16,185,129,0.25); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px;">Master Admin</span>' +
+                    '</div>' +
+                    '<div style="font-size:0.72rem; color:#cbd5e1; margin-top:2px;">Полный доступ ко всем задачам, папкам и личным офисам сотрудников. Вы можете назначать и перемещать папки.</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px;">' +
+                    '<button class="mini-btn accent" onclick="openSecuredVaultModal(\'folders\')">👥 Назначить папки</button>' +
+                    '<button class="mini-btn" style="background:rgba(245,158,11,0.2); color:#fde68a;" onclick="openSecuredVaultModal()">🔒 Сейф</button>' +
+                '</div>' +
+            '</div>';
+        } else if (currentAuthUser) {
             const myAssigned = (typeof getUserAssignedProjects === "function") ? getUserAssignedProjects().filter(p => p !== "*") : [];
-            html += '<div style="background:linear-gradient(135deg,rgba(245,158,11,0.16),rgba(16,185,129,0.14)); border:1px solid rgba(245,158,11,0.45); border-radius:13px; padding:10px 12px; margin-bottom:4px; display:flex; flex-direction:column; gap:6px;">' +
+            html += '<div style="background:linear-gradient(135deg,rgba(16,185,129,0.16),rgba(59,130,246,0.14)); border:1px solid rgba(16,185,129,0.4); border-radius:14px; padding:11px 14px; margin-bottom:8px; display:flex; flex-direction:column; gap:6px;">' +
                 '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">' +
-                    '<span style="font-size:0.78rem; font-weight:900; color:#fbbf24;">' + escapeHtml(currentAuthUser.gta_archetype || "🕶️ Участник команды") + '</span>' +
+                    '<div style="font-size:0.84rem; font-weight:800; color:#6ee7b7; display:flex; align-items:center; gap:6px;">' +
+                        '🏢 <span>Внутренний Офис: @' + escapeHtml(currentAuthUser.login) + '</span>' +
+                        '<span style="background:rgba(59,130,246,0.2); color:#93c5fd; font-size:0.65rem; padding:1px 6px; border-radius:999px;">Изолированная среда</span>' +
+                    '</div>' +
                     '<div style="display:flex; gap:5px;">' +
-                        '<button class="mini-btn accent" onclick="openGtaOnboardingModal(true)">🕶️ Моё GTA-Досье & Новые проекты</button>' +
-                        '<button class="mini-btn" style="color:#f87171;" onclick="logoutUnityOffice()">🚪</button>' +
+                        '<button class="mini-btn accent" onclick="toggleGlobalStudyDrawer(true)">📝 Мои заметки</button>' +
+                        '<button class="mini-btn" style="color:#f87171;" onclick="logoutUnityOffice()" title="Выйти">🚪</button>' +
                     '</div>' +
                 '</div>' +
-                '<div style="font-size:0.73rem; color:var(--text-dim);">Ваши активные проекты: <b style="color:#34d399;">' + escapeHtml(myAssigned.length ? myAssigned.join(", ") : "Все доступные папки") + '</b></div>' +
+                '<div style="font-size:0.73rem; color:#cbd5e1;">' +
+                    (myAssigned.length 
+                        ? ('Назначенные вам проекты: <b style="color:#a7f3d0;">' + escapeHtml(myAssigned.join(", ")) + '</b>')
+                        : 'У вас чистый персональный офис. Сохраняйте заметки, файлы и работайте с ИИ-агентами. Доступ к общим проектам компании открывает Главный Штаб.') +
+                '</div>' +
             '</div>';
         }
         allNames.forEach(name => {
@@ -4906,7 +5060,14 @@
         let closedCnt = 0;
         let triageCnt = 0;
 
-        allIssues.forEach(i => {
+        // Strict task isolation: Owner sees all tasks; members see only tasks in their accessible projects
+        const accessibleIssues = allIssues.filter(i => {
+            if (isOwnerSession()) return true;
+            const parsed = parseIssueProject(i.title);
+            return canCurrentUserAccessProject(parsed.project);
+        });
+
+        accessibleIssues.forEach(i => {
             if (i.state === "open") openCnt++;
             else closedCnt++;
             const parsed = parseIssueProject(i.title);
@@ -5524,9 +5685,20 @@
             '</div>';
         }
 
-        const folderBriefingHtml = (typeof buildFolderBriefingHtml === "function")
+        const adminFolderCtrlHtml = isOwnerSession() && currentProject !== 'Secured_Users_Vault'
+            ? ('<div style="background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.38); border-radius:12px; padding:8px 12px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px;">' +
+                '<div style="font-size:0.75rem; color:#bfdbfe; font-weight:700;">' +
+                    '👑 <b>Управление доступом Главного Штаба:</b>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px;">' +
+                    '<button class="mini-btn accent" onclick="openAssignProjectModal(\'' + escapeHtml(currentProject).replace(/'/g, "\\'") + '\')">👥 Назначить сотрудникам</button>' +
+                    '<button class="mini-btn" onclick="openMoveMaterialsModal(\'' + escapeHtml(currentProject).replace(/'/g, "\\'") + '\')">📦 Переместить материалы</button>' +
+                '</div>' +
+               '</div>')
+            : '';
+        const folderBriefingHtml = adminFolderCtrlHtml + ((typeof buildFolderBriefingHtml === "function")
             ? buildFolderBriefingHtml(currentProject, projIssues)
-            : "";
+            : "");
 
         if (filtered.length === 0) {
             feed.innerHTML = appBannerHtml + folderBriefingHtml + '<div style="margin:12px auto; text-align:center; max-width:390px; color:var(--text-dim); padding:18px 10px; background:var(--bg-panel); border:1px dashed var(--border); border-radius:14px;">' +
@@ -7354,7 +7526,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v22.8 active");
+                            console.log("Service Worker v22.9 active");
                         }
                     });
                 }
@@ -7533,22 +7705,47 @@
     }
 
     function getUserAssignedProjects() {
-        if (!currentAuthUser || currentAuthUser.role === "owner") return ["*"];
+        if (!currentAuthUser || currentAuthUser.role === "owner" || currentAuthUser.login === "unityspiritpartners" || currentAuthUser.login === "unityspiritteam@gmail.com") return ["*"];
         const arr = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
         if (arr.includes("*")) return ["*"];
         return arr;
     }
 
     function canCurrentUserAccessProject(projName) {
-        if (projName === "Secured_Users_Vault") return false;
+        if (projName === "Secured_Users_Vault") return isOwnerSession();
         if (!currentAuthUser) return false;
-        if (currentAuthUser.role === "owner") return true;
+        // 👑 MAIN HEAD OFFICE: Owner has 100% full access to all projects, folders and members
+        if (currentAuthUser.role === "owner" || currentAuthUser.login === "unityspiritpartners" || currentAuthUser.login === "unityspiritteam@gmail.com") {
+            return true;
+        }
         if (currentAuthUser.status !== "approved") return false;
+
+        const canon = canonicalProjectName(projName);
+        const myPersonalFolder = canonicalProjectName("Личный Офис: @" + currentAuthUser.login);
+        const myPersonalFolderAlt = canonicalProjectName("Личный Офис: " + currentAuthUser.login);
+
+        // Every member ALWAYS has access to their own personal office folder
+        if (canon === myPersonalFolder || canon === myPersonalFolderAlt) {
+            return true;
+        }
+
+        // STRICT PRIVACY: Members CANNOT access other members' private office folders!
+        if (canon.startsWith("личный офис:") || canon.startsWith("personal office:")) {
+            return false;
+        }
+
+        // Personal Knowledge Base is available
+        if (canon === "Позновалка") return true;
+
+        // Check projects explicitly assigned by Owner
         const assigned = getUserAssignedProjects();
         if (assigned.includes("*")) return true;
-        if (assigned.length === 0) return true;
-        if (projName === "Позновалка" || projName === "Входящие_Офис" || projName === "Автономная_База_Знаний_Каналов") return true;
-        return assigned.some(ap => sameProject(ap, projName));
+        if (assigned.length === 0) {
+            // STRICT ISOLATION: New users with 0 assigned projects see ONLY their personal office!
+            return false;
+        }
+
+        return assigned.some(ap => canonicalProjectName(ap) === canon || sameProject(ap, projName));
     }
 
     async function fetchUserArchivesFresh() {
@@ -7723,10 +7920,10 @@
 
     
     // =========================================================================
-    // === v22.8: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v22.9: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v22.8: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v22.9: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -7895,7 +8092,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v22.8: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v22.9: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -8276,7 +8473,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v22.8: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v22.9: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -8284,7 +8481,7 @@ function sendQuickGuestPromptPortal(txt) {
     } catch(e) {}
 
     // =========================================================================
-    // === v22.8: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // === v22.9: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
     // =========================================================================
     const I18N_DICT = {
         ru: {
@@ -8599,7 +8796,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
     // =========================================================================
-    // === v22.8: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // === v22.9: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
     // =========================================================================
     function navigateOfficeSection(target) {
         // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
@@ -8940,7 +9137,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.8</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v22.9</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9020,7 +9217,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
         // =========================================================================
-    // === v22.8: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v22.9: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -9078,7 +9275,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     // =========================================================================
-    // === v22.8: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
+    // === v22.9: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
     // =========================================================================
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
@@ -10961,7 +11158,7 @@ function enterPendingWaitingRoom(userObj) {
 
 <!-- ========================================================================= -->
 <!-- ========================================================================= -->
-<!-- === v22.8: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- === v22.9: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Ассистент & Навигатор" style="display:flex; align-items:center; justify-content:center; gap:6px; position:fixed; bottom:74px; right:14px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:999px; height:42px; min-width:42px; padding:0 12px; font-weight:800; font-size:0.78rem; box-shadow:0 6px 20px rgba(2,132,199,0.45); cursor:pointer; backdrop-filter:blur(8px); transition:all 0.2s ease;">
     <span style="font-size:1.15rem; line-height:1;">🤖</span>
