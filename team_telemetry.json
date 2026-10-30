@@ -1,19 +1,19 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-30T09:52:00.235Z",
+  "updated_at": "2026-10-30T09:52:52.976655+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 0.2,
-        "active_hours": 0,
+        "active_minutes": 1.0,
+        "active_hours": 0.02,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
         "nudges_shown": 0,
         "nudges_clicked": 0,
-        "kpi_score": 0,
+        "kpi_score": 1,
         "verdict": "owner",
         "verdict_label": "👑 Владелец компании",
         "replacement_recommended": false,
@@ -40,8 +40,8 @@
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 0,
-        "active_hours": 0,
+        "active_minutes": 0.0,
+        "active_hours": 0.0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
