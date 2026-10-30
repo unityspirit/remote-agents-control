@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 21:33:00",
+  "updated": "2026-10-29 21:35:48",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -212,18 +212,6 @@
       "open_cards": []
     },
     {
-      "folder": "Secured_Users_Vault",
-      "project": "Secured_Users_Vault",
-      "state": "active",
-      "files": 8,
-      "size_kb": 7,
-      "last_change": "2026-10-29",
-      "lead_agent": "Autonomous Project Agent",
-      "next_who": "human",
-      "next_what": "Определить цель и ответственного.",
-      "open_cards": []
-    },
-    {
       "folder": "SoloMan",
       "project": "SoloMan CRM",
       "state": "active",
@@ -359,8 +347,8 @@
       "folder": "Белорусь",
       "project": "Белорусь",
       "state": "active",
-      "files": 3994,
-      "size_kb": 625644,
+      "files": 3997,
+      "size_kb": 625718,
       "last_change": "2026-10-29",
       "lead_agent": "Fitness & Nutrition Web Lead",
       "next_who": "human",
