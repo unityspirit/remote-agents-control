@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 20:12:22",
+  "updated": "2026-10-29 20:17:04",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -103,7 +103,7 @@
       "tasks_completed": 53,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 22,
-      "last_task": "Изучено фото (1 шт.): 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 20:11:57"
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "updated_at": "2026-10-29 20:17:02"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 53,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 22,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 53,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 12,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 12,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-10-29 20:12:22"
+      "updated_at": "2026-10-29 20:17:04"
     }
   },
   "daemons": {
@@ -209,7 +209,7 @@
       "name": "KHL Live Odds v17 (khl_live_service_v17.py)",
       "emoji": "🏒",
       "project": "Юра",
-      "status": "online",
+      "status": "standby",
       "detail": "Мониторинг live-коэффициентов КХЛ и отправка сигналов 24/7"
     },
     "khl_auto_learning": {
@@ -238,14 +238,12 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 1,
-      "calls_by_provider": {
-        "deterministic_local_engine": 1
-      },
-      "last_provider": "deterministic_local_engine",
-      "last_model": "structured-v18",
-      "last_call_at": "2026-10-30T02:12:10.500286+00:00",
-      "errors_count": 1
+      "calls_total": 0,
+      "calls_by_provider": {},
+      "last_provider": "auto_standby",
+      "last_model": "auto",
+      "last_call_at": null,
+      "errors_count": 0
     }
   },
   "statuses": {
