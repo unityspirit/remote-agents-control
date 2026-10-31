@@ -1,9 +1,9 @@
 {
-  "updated": "2026-10-30 14:11:48",
+  "updated": "2026-10-31 06:02:06",
   "kpis": {
-    "total_completed_works": 160,
+    "total_completed_works": 162,
     "tim_master_reports": 12,
-    "active_projects_count": 52,
+    "active_projects_count": 53,
     "total_saved_photos": 1,
     "awaiting_human_count": 39
   },
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 57,
+      "tasks_completed": 58,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-30 14:11:47"
+      "updated_at": "2026-10-31 06:02:05"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 57,
+      "tasks_completed": 58,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-30 14:11:47"
+      "updated_at": "2026-10-31 06:02:05"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 57,
+      "tasks_completed": 58,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-30 14:11:47"
+      "updated_at": "2026-10-31 06:02:05"
     },
     {
       "key": "researcher",
@@ -862,7 +862,7 @@
       "tasks_completed": 23,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-10-30 13:56:11"
+      "updated_at": "2026-10-31 06:00:56"
     },
     {
       "key": "analyst",
@@ -873,7 +873,7 @@
       "tasks_completed": 23,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-30 14:11:47"
+      "updated_at": "2026-10-31 06:02:05"
     },
     {
       "key": "scribe",
@@ -881,10 +881,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 16,
+      "tasks_completed": 17,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-30 14:11:47"
+      "updated_at": "2026-10-31 06:02:05"
     },
     {
       "key": "project_lead",
@@ -892,10 +892,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 16,
+      "tasks_completed": 17,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-10-30 14:11:47"
+      "updated_at": "2026-10-31 06:02:05"
     },
     {
       "key": "developer",
@@ -965,6 +965,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-165",
+      "issue_number": 165,
+      "date": "2026-10-31 06:01:59",
+      "project": "Лиды_Гости",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#165 GUEST_LEAD_QUIZ: B2B AI-Решения & Цифровые Директора",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-163",
       "issue_number": 163,
