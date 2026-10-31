@@ -3465,6 +3465,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-31 06:01:59"
+    },
+    "164": {
+      "id": 164,
+      "created": "2026-10-31 06:02:34",
+      "handoffs": [
+        {
+          "t": "2026-10-31 06:02:34",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-31 06:02:45",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-063613 (@maxprofitwork / @maxprofitwork)",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-31 06:02:45"
     }
   }
 }
