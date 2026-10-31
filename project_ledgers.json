@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31 06:02:06",
+  "updated": "2026-10-31 06:02:49",
   "projects_count": 56,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2470,14 +2470,14 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-10-30",
+      "last_change": "2026-10-31",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 3,
+        "completed_works": 4,
         "open_tasks": 23,
         "tim_reports": 1,
         "saved_photos": 1,
@@ -2515,6 +2515,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-164",
+          "issue_number": 164,
+          "date": "2026-10-31 06:02:45",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#164 AUTH_SYNC: Быстрая заявка REQ-063613 (@maxprofitwork / @maxprofitwork)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-163",
           "issue_number": 163,
@@ -2703,17 +2714,6 @@
           "title": "#141 https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=8288",
           "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #141 → AI Skills & Nobel Stabilization» или выбрать другой проект",
           "status": "awaiting_approval"
-        },
-        {
-          "id": "card-137",
-          "issue_number": 137,
-          "date": "2026-10-25 08:36:48",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#137 https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #137»",
-          "status": "not_studied"
         }
       ]
     },
