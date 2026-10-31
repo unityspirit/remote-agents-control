@@ -133,7 +133,27 @@
       "approved_at": "",
       "owner_action_stamp": "",
       "pending_reset": null
+    },
+    {
+      "id": "REQ-063613",
+      "login": "@maxprofitwork",
+      "full_name": "@maxprofitwork",
+      "telegram": "@maxprofitwork",
+      "role": "member",
+      "status": "pending",
+      "salt_hex": "0cc6ee1734657e87d80585974de2104c",
+      "pbkdf2_hash": "0dc701918430829d5ef97ba79cb892abdff16e76a9bd1e3729ceb960488fcc9e",
+      "iterations": 120000,
+      "rsa_envelope": {
+        "ek": "E064cXaC5mMefPHA9IJe4z46soC8mmrGCySG6Aa99zXGMJGDovAI5SWCZbrHO9eBehXkGejmo5qI6eBb1ve8Rlk7YlAnObbYqXC2yEmbDFRcXy98XGwpo8r23FHv2Yl+5jVGya8l3C8/irEFqYcF+LV+VGdh932CXqXdBSWv7vaQQEcQmLu5LLdZHOEiUhNoHwZCzgZVR93FG8u5S89XniX1+1UazBUC8kfZphi3m5ZLfWuD652lgvrZsY4KQon5yHe8xi6CUy9MPcluMcHdf9aZs6mTCIetngJYWzavQ8ALKVhDQ6HqmIgPXZGSwTx/72oO0SEadra7BJ6M4V0Vfg==",
+        "iv": "TnDfQak3QfHeAmVm",
+        "ct": "u2RCM2blBUlQ6QQKAp5h79zhVKqX7Jtg/pggsoxcssUKwSpHbyLYv5eboKMPNfha/z75orsh0RToLAFWk9qqNvVGokYinmXHxWJiFWt3Q/FxOOTNUigCLDNRYchog6SAx8n+0xBQGdAMKVZ9sZuembPAR9DZNHgZkM6FUT+/EbpsP/JmTgIZOpCC8RS1MUyXwVLISk34bp8R/n04RQ=="
+      },
+      "assigned_projects": [],
+      "gta_completed": false,
+      "gta_archetype": "",
+      "created_at": "2026-10-31T09:31:03.613Z"
     }
   ],
-  "updated_at": "2026-10-30T20:15:04.670329+00:00"
+  "updated_at": "2026-10-31T09:31:03.613Z"
 }
