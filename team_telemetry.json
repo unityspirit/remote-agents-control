@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-10-31T12:02:36.738789+00:00",
+  "updated_at": "2026-10-31T12:03:42.474060+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -194,6 +194,15 @@
         "verdict_label": "🟡 НА КОНТРОЛЕ (День 1/30 · KPI 0/100)",
         "replacement_recommended": false,
         "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
+      },
+      "metrics": {
+        "total_active_sec": 0,
+        "total_requests": 0,
+        "idle_stall_count": 0,
+        "nudges_shown": 0,
+        "nudges_clicked": 0,
+        "photos_sent": 0,
+        "tim_requests": 0
       }
     }
   }
