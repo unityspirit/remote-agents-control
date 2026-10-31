@@ -3438,6 +3438,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-10-30 03:44:17"
+    },
+    "165": {
+      "id": 165,
+      "created": "2026-10-31 06:01:14",
+      "handoffs": [
+        {
+          "t": "2026-10-31 06:01:14",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-10-31 06:01:59",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "GUEST_LEAD_QUIZ: B2B AI-Решения & Цифровые Директора",
+      "urls": [],
+      "project": "Лиды_Гости",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-10-31 06:01:59"
     }
   }
 }
