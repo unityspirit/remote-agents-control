@@ -9035,9 +9035,7 @@ function sendQuickGuestPromptPortal(txt) {
             auth_title: "Global Spirit Group ★ Виртуальный Офис",
             auth_status: "🔒 Доступ к офису открывается только после подтверждения @unityspiritpartners",
             auth_install_btn: "📲 Установить приложение в 1 клик",
-            guest_banner_btn: "👀 Войти как Гость (Live Превью & ИИ-Чат) →",
-            guest_banner_desc: "Ознакомьтесь с интерфейсом и пообщайтесь с ИИ-ассистентами вживую (без закрытой информации компании)",
-            tab_register: "⚡ Быстрая регистрация",
+                                    tab_register: "⚡ Быстрая регистрация",
             tab_login: "🔐 Вход",
             reg_login_ph: "Логин (или ваш @Telegram / Email) *",
             reg_pass_ph: "Придумайте пароль (от 4 симв.) *",
@@ -9126,8 +9124,7 @@ function sendQuickGuestPromptPortal(txt) {
             auth_title: "Global Spirit Group ★ Virtual Office",
             auth_status: "🔒 Access opens only after confirmation by @unityspiritpartners",
             auth_install_btn: "📲 Install Office App in 1-Click",
-            guest_banner_btn: "👀 Enter as Guest (Live Preview & AI Chat) →",
-            guest_banner_desc: "Explore platform interface & test live AI assistants (no private company data)",
+                        guest_banner_desc: "Explore platform interface & test live AI assistants (no private company data)",
             tab_register: "⚡ Express Registration",
             tab_login: "🔐 Login",
             reg_login_ph: "Login (or your @Telegram / Email) *",
@@ -9233,9 +9230,7 @@ function sendQuickGuestPromptPortal(txt) {
         if (el("auth-gate-title")) el("auth-gate-title").innerText = d.auth_title;
         if (el("auth-gate-status")) el("auth-gate-status").innerText = d.auth_status;
         if (el("btn-direct-install-gate")) el("btn-direct-install-gate").innerText = d.auth_install_btn;
-        if (el("btn-guest-preview-enter")) el("btn-guest-preview-enter").innerText = d.guest_banner_btn;
-        if (el("guest-banner-desc")) el("guest-banner-desc").innerText = d.guest_banner_desc;
-        if (el("auth-tab-btn-register")) el("auth-tab-btn-register").innerText = d.tab_register;
+                        if (el("auth-tab-btn-register")) el("auth-tab-btn-register").innerText = d.tab_register;
         if (el("auth-tab-btn-login")) el("auth-tab-btn-login").innerText = d.tab_login;
         if (el("reg-login")) el("reg-login").placeholder = d.reg_login_ph;
         if (el("reg-pass1")) el("reg-pass1").placeholder = d.reg_pass_ph;
