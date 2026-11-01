@@ -1216,7 +1216,7 @@
         }
 
         @media (max-width: 768px) {
-            /* === v25.0 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
+            /* === v25.1 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
             .topbar {
                 padding: 4px 8px !important;
                 display: flex !important;
@@ -2030,9 +2030,9 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v25.0: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v25.1: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
-    <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
+    <section id="guest-portal-view" style="display:none !important;" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
         <div style="background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(139,92,246,0.18)); border:1px solid rgba(56,189,248,0.4); border-radius:18px; padding:18px; margin-bottom:16px; text-align:center;">
             <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:8px;">
@@ -2796,7 +2796,7 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.0</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.1</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -2833,15 +2833,7 @@
             </div>
         </div>
 
-                <!-- GUEST PREVIEW MODE BUTTON (LIVE AI DEMO & SHOWCASE WITHOUT PRIVATE DATA) -->
-        <div style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.4); border-radius:13px; padding:10px 12px; margin-top:4px; text-align:center;">
-            <button type="button" class="btn-action accent" onclick="enterGuestPreviewMode()" id="btn-guest-preview-enter" style="width:100%; justify-content:center; padding:10px 14px; font-weight:900; font-size:0.83rem; background:linear-gradient(135deg,#0284c7,#38bdf8); color:#090d16;">
-                👀 Войти как Гость (Live Превью & ИИ-Чат) →
-            </button>
-            <div id="guest-banner-desc" style="font-size:0.71rem; color:#94a3b8; margin-top:5px; line-height:1.4;">
-                Ознакомьтесь с интерфейсом и пообщайтесь с ИИ-ассистентами вживую (без закрытой информации компании)
-            </div>
-        </div>
+                <!-- GUEST PREVIEW REMOVED (STRICT AUTH ONLY) -->
 
         <div class="auth-tabs-row" id="auth-main-tabs-row">
             <button class="auth-tab-btn active" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Быстрая регистрация</button>
@@ -2896,13 +2888,7 @@
             <a id="btn-pending-tg-link" href="https://t.me/unitybusinessbot" target="_blank" rel="noopener" class="btn-action ghost" style="text-decoration:none; justify-content:center; font-size:0.78rem;">
                 🤖 Или отправить через бота @unitybusinessbot
             </a>
-            <!-- TRANSITION TO BROWSING / QUIZ / LIVE AI CHAT WHILE PENDING -->
-            <button type="button" class="btn-action accent" onclick="enterPreviewBrowsingWhilePending()" style="width:100%; justify-content:center; padding:11px 14px; font-weight:900; font-size:0.84rem; background:linear-gradient(135deg,#10b981,#0284c7); color:#fff; margin-top:4px;">
-                👀 Перейти к серфингу по офису, квизу и ИИ-ассистенту →
-            </button>
-            <div style="font-size:0.71rem; color:#94a3b8; text-align:center; line-height:1.4;">
-                Пока заявка ожидает подтверждения, вам доступен квиз, живой ИИ-чат и серфинг по структуре офиса. Полный доступ откроется сразу после одобрения!
-            </div>
+            <!-- PREVIEW BROWSING REMOVED -->
             <div style="display:flex; gap:6px;">
                 <button class="btn-action ghost" style="flex:1; justify-content:center;" onclick="checkPendingApprovalNow(true)">🔄 Проверить статус</button>
                 <button class="btn-action ghost" style="justify-content:center;" onclick="clearPendingWatchAndSwitch('login')">Сменить аккаунт</button>
@@ -3082,7 +3068,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v25.0")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v25.1")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -4317,7 +4303,7 @@
 
     
     // =========================================================================
-    // === v25.0: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
+    // === v25.1: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
     // =========================================================================
     function openAssignProjectModal(projName) {
         if (!isOwnerSession()) {
@@ -7389,7 +7375,7 @@
 
     
     // =========================================================================
-    // === v25.0: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
+    // === v25.1: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
     // =========================================================================
 
     function buildOwnerUserMonitoringHtml() {
@@ -8048,7 +8034,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v25.0 active");
+                            console.log("Service Worker v25.1 active");
                         }
                     });
                 }
@@ -8448,10 +8434,10 @@
 
     
     // =========================================================================
-    // === v25.0: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v25.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v25.0: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v25.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -8496,32 +8482,8 @@ var guestQuizCurrentStep = 0;
 var guestQuizAnswers = [];
 
 function enterGuestPreviewMode() {
-    currentAuthUser = {
-        id: "guest-" + String(Date.now()).slice(-6),
-        login: "Гость (Превью)",
-        full_name: "Посетитель Офиса",
-        role: "guest",
-        status: "preview",
-        is_guest: true,
-        assigned_projects: []
-    };
-    document.body.classList.add("guest-preview-mode");
-    document.body.classList.remove("auth-locked");
-    const gate = document.getElementById("auth-gate-overlay");
-    if (gate) gate.style.display = "none";
-
-    // Strictly hide private company elements
-    const sidebar = document.querySelector(".project-sidebar");
-    if (sidebar) sidebar.style.display = "none";
-    const ws = document.querySelector(".workspace-pane");
-    if (ws) ws.style.display = "none";
-    const bnav = document.querySelector(".bottom-nav");
-    if (bnav) bnav.style.display = "none";
-    const gView = document.getElementById("guest-portal-view");
-    if (gView) gView.style.display = "block";
-
-    renderGuestQuizStep();
-    showToast("👀 Вы в Гостевом Превью-режиме: пройдите опросник и протестируйте ИИ!");
+    showToast("🔒 Доступ в Виртуальный Офис закрыт без регистрации. Пожалуйста, зарегистрируйтесь или войдите.");
+    switchAuthGateTab("register");
 }
 
 function openAuthGateFromGuest() {
@@ -8620,7 +8582,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v25.0: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v25.1: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -9001,7 +8963,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v25.0: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v25.1: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -9009,7 +8971,7 @@ function sendQuickGuestPromptPortal(txt) {
     } catch(e) {}
 
     // =========================================================================
-    // === v25.0: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // === v25.1: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
     // =========================================================================
     const I18N_DICT = {
         ru: {
@@ -9324,7 +9286,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
     // =========================================================================
-    // === v25.0: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // === v25.1: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
     // =========================================================================
     function navigateOfficeSection(target) {
         // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
@@ -9433,57 +9395,11 @@ function enterPendingWaitingRoom(userObj) {
             try { window.open(tgDirectUrl, "_blank"); } catch (e) {}
         }, 400);
 
-        // Auto-transition to preview browsing after 3 seconds so the user is never stuck
-        setTimeout(() => {
-            const currentTab = document.querySelector("#auth-panel-pending");
-            if (currentTab && currentTab.style.display !== "none" && !document.body.classList.contains("guest-preview-mode")) {
-                enterPreviewBrowsingWhilePending();
-            }
-        }, 3200);
+        // Auto-transition to preview removed (strict pending room until approved)
     }
 
     function enterPreviewBrowsingWhilePending() {
-        const savedPend = JSON.parse(localStorage.getItem("unity_office_pending_session_v21") || "null");
-        const gate = document.getElementById("auth-gate-overlay");
-        if (gate) gate.style.display = "none";
-        document.body.classList.remove("auth-locked");
-        document.body.classList.add("guest-preview-mode");
-
-        let sticky = document.getElementById("pending-approval-sticky-bar");
-        if (!sticky) {
-            sticky = document.createElement("div");
-            sticky.id = "pending-approval-sticky-bar";
-            sticky.style.cssText = "position:sticky; top:0; z-index:99999; background:linear-gradient(135deg,rgba(15,23,42,0.97),rgba(30,58,138,0.97)); border-bottom:1px solid rgba(56,189,248,0.45); backdrop-filter:blur(10px); padding:8px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; box-shadow:0 4px 15px rgba(0,0,0,0.4);";
-            document.body.insertBefore(sticky, document.body.firstChild);
-        }
-        const code = (savedPend && savedPend.id) ? savedPend.id : "REQ";
-        const log = (savedPend && savedPend.login) ? savedPend.login : "Новый участник";
-        const tgLink = "https://t.me/" + UNITY_OWNER_TG + "?text=" + encodeURIComponent(
-            "Здравствуйте! Заявка " + code + " (" + log + ") ожидает подтверждения в Виртуальный Офис Global Spirit Group."
-        );
-
-        sticky.innerHTML =
-            '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">' +
-                '<span style="font-size:1.1rem;">⏳</span>' +
-                '<div>' +
-                    '<span style="font-weight:900; color:#fde68a; font-size:0.79rem;">Заявка <code style="background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:5px; color:#38bdf8;">' + escapeHtml(code) + '</code> (' + escapeHtml(log) + ')</span> ' +
-                    '<span style="font-size:0.72rem; color:#cbd5e1;">— ожидает одобрения @' + UNITY_OWNER_TG + '. Доступен серфинг по интерфейсу, квиз и живой ИИ-чат.</span>' +
-                '</div>' +
-            '</div>' +
-            '<div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">' +
-                '<a href="' + tgLink + '" target="_blank" rel="noopener" class="mini-btn" style="background:#0284c7; color:#fff; font-weight:800; text-decoration:none; padding:4px 10px;">✈️ Написать @' + UNITY_OWNER_TG + '</a>' +
-                '<button class="mini-btn" onclick="checkPendingApprovalNow(true)" style="font-weight:700;">🔄 Проверить статус</button>' +
-                '<button class="mini-btn" onclick="openAuthGateFromGuest()" style="color:#94a3b8;">🔐 Войти под другим</button>' +
-            '</div>';
-        sticky.style.display = "flex";
-
-        const gView = document.getElementById("guest-portal-view");
-        if (gView) gView.style.display = "block";
-        renderGuestQuizStep();
-        if (savedPend && savedPend.login) {
-            startPendingApprovalWatcher(normalizeAuthLogin(savedPend.login));
-        }
-        showToast("👀 Ознакомительный режим: вам открыт квиз, живой ИИ-чат и серфинг по интерфейсу!");
+        showToast("⏳ Ваша заявка ожидает подтверждения @unityspiritpartners.");
     }
 
     function switchGuestPortalSubTab(tabName) {
@@ -9572,10 +9488,7 @@ function enterPendingWaitingRoom(userObj) {
         handleUrlAutoApproval();
         applyOfficeLanguage(currentOfficeLang);
         // Auto-enter Guest Preview Mode if requested via URL (?guest=1 or ?preview=1)
-        if (location.search.includes("guest=1") || location.search.includes("preview=1")) {
-            enterGuestPreviewMode();
-            return;
-        }
+        // URL guest/preview bypassed - strict auth required
         document.body.classList.add("auth-locked");
         const gate = document.getElementById("auth-gate-overlay");
         if (gate) gate.style.display = "flex";
@@ -9665,7 +9578,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.0</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.1</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9755,7 +9668,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
         // =========================================================================
-    // === v25.0: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v25.1: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -9813,7 +9726,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     // =========================================================================
-    // === v25.0: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
+    // === v25.1: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
     // =========================================================================
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
@@ -9955,7 +9868,7 @@ function enterPendingWaitingRoom(userObj) {
             } catch (e) {}
 
             // Immediately lock into Pending Waiting Room until @unityspiritpartners confirms!
-            sendTelegramBotNotification(reqCode, loginVal, fullName, tgVal);
+            await sendTelegramBotNotification(reqCode, loginVal, fullName, tgVal);
             enterPendingWaitingRoom(newUserEntry);
         } catch (e) {
             showAuthFeedback("⚠️ Ошибка регистрации: " + escapeHtml(e.message || String(e)), "error");
@@ -11696,7 +11609,7 @@ function enterPendingWaitingRoom(userObj) {
 
 <!-- ========================================================================= -->
 <!-- ========================================================================= -->
-<!-- === v25.0: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- === v25.1: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Ассистент & Навигатор" style="display:flex; align-items:center; justify-content:center; gap:6px; position:fixed; bottom:74px; right:14px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:999px; height:42px; min-width:42px; padding:0 12px; font-weight:800; font-size:0.78rem; box-shadow:0 6px 20px rgba(2,132,199,0.45); cursor:pointer; backdrop-filter:blur(8px); transition:all 0.2s ease;">
     <span style="font-size:1.15rem; line-height:1;">🤖</span>
