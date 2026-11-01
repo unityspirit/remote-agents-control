@@ -1,11 +1,11 @@
 {
   "version": "20.5",
-  "updated_at": "2026-11-01T02:53:24.048494+00:00",
+  "updated_at": "2026-11-01T02:54:28.254959+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
-        "days_active": 2,
-        "days_to_30d_review": 28,
+        "days_active": 3,
+        "days_to_30d_review": 27,
         "active_minutes": 1.0,
         "active_hours": 0.02,
         "total_requests": 0,
@@ -13,7 +13,7 @@
         "stalls_count": 0,
         "nudges_shown": 0,
         "nudges_clicked": 0,
-        "kpi_score": 1,
+        "kpi_score": 0,
         "verdict": "owner",
         "verdict_label": "👑 Владелец компании",
         "replacement_recommended": false,
@@ -126,8 +126,8 @@
     },
     "unityspiritpartners": {
       "audit_30d": {
-        "days_active": 2,
-        "days_to_30d_review": 28,
+        "days_active": 3,
+        "days_to_30d_review": 27,
         "active_minutes": 0.0,
         "active_hours": 0.0,
         "total_requests": 0,
@@ -137,7 +137,7 @@
         "nudges_clicked": 0,
         "kpi_score": 0,
         "verdict": "coach",
-        "verdict_label": "🟡 НА КОНТРОЛЕ (День 2/30 · KPI 0/100)",
+        "verdict_label": "🟡 НА КОНТРОЛЕ (День 3/30 · KPI 0/100)",
         "replacement_recommended": false,
         "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       },
