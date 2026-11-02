@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-02 12:29:48",
+  "updated": "2026-11-02 12:30:57",
   "kpis": {
-    "total_completed_works": 177,
-    "tim_master_reports": 16,
-    "active_projects_count": 53,
+    "total_completed_works": 179,
+    "tim_master_reports": 17,
+    "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 39
   },
@@ -815,10 +815,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 16,
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "updated_at": "2026-11-02 12:26:23"
+      "tasks_completed": 17,
+      "last_project": "Личный Офис: @true1team",
+      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "updated_at": "2026-11-02 12:30:45"
     },
     {
       "key": "intake",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,32 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
+    },
+    {
+      "key": "scribe",
+      "name": "Архивариус",
+      "emoji": "🗂",
+      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
+      "state": "online",
+      "tasks_completed": 26,
+      "last_project": "Все проекты",
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "updated_at": "2026-11-02 12:30:56"
+    },
+    {
+      "key": "project_lead",
+      "name": "Ведущий агент проекта",
+      "emoji": "🎯",
+      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
+      "state": "online",
+      "tasks_completed": 26,
+      "last_project": "Все проекты",
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "updated_at": "2026-11-02 12:30:56"
     },
     {
       "key": "researcher",
@@ -873,29 +895,7 @@
       "tasks_completed": 25,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:29:47"
-    },
-    {
-      "key": "scribe",
-      "name": "Архивариус",
-      "emoji": "🗂",
-      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
-      "state": "online",
-      "tasks_completed": 25,
-      "last_project": "Все проекты",
-      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:29:47"
-    },
-    {
-      "key": "project_lead",
-      "name": "Ведущий агент проекта",
-      "emoji": "🎯",
-      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
-      "state": "online",
-      "tasks_completed": 25,
-      "last_project": "Все проекты",
-      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     {
       "key": "developer",
@@ -903,10 +903,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 15,
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "updated_at": "2026-11-02 12:26:23"
+      "tasks_completed": 16,
+      "last_project": "Личный Офис: @true1team",
+      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "updated_at": "2026-11-02 12:30:45"
     },
     {
       "key": "strategist",
@@ -936,10 +936,10 @@
       "emoji": "⚡",
       "role": "AI Fullstack Rapid Prototyper: экспресс-сборка Micro-SaaS, парсеров и Telegram Mini Apps за 24 часа через связку Claude Code + Claude Design (HANDOFF.md), 3D WebGL и Next.js.",
       "state": "online",
-      "tasks_completed": 5,
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "updated_at": "2026-11-02 12:26:23"
+      "tasks_completed": 6,
+      "last_project": "Личный Офис: @true1team",
+      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "updated_at": "2026-11-02 12:30:45"
     },
     {
       "key": "sales_closer",
@@ -965,6 +965,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-20",
+      "issue_number": 20,
+      "date": "2026-11-02 12:30:45",
+      "project": "Личный Офис: @true1team",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#20 TIM: Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261102_123033",
+      "issue_number": 20,
+      "date": "2026-11-02 12:30:33",
+      "project": "Личный Офис: @true1team",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "⚡ Вайбкодер & Micro-SaaS, 💻 Главный Разработчик",
+      "title": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "summary": "Создать Telegram‑бота «True1 Office» как Micro‑SaaS с подпиской 9,99 $/мес и 10 % комиссии с транзакций по оплате услуг. В течение 24 ч запуска MVP, затем интеграция с CRM и платежными шлюзами. Ожидаем 200 подписчиков в первый месяц → 2 k$ ",
+      "human_action": "Подтвердить бюджет 5 k$ и назначить ответственного за интеграцию с CRM.",
+      "status": "done"
+    },
     {
       "id": "card-21",
       "issue_number": 21,
