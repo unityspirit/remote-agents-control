@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02 12:37:12",
+  "updated": "2026-11-02 12:38:42",
   "kpis": {
-    "total_completed_works": 184,
-    "tim_master_reports": 18,
+    "total_completed_works": 185,
+    "tim_master_reports": 19,
     "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 41
@@ -171,9 +171,9 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 94,
+        "completed_works": 95,
         "open_tasks": 0,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 11,
         "size_kb": 283172,
@@ -203,7 +203,7 @@
       ],
       "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
       "last_work": {
-        "id": "hist-3",
+        "id": "hist-5",
         "date": "23.10.2026 18:20",
         "project": "Unity Inc",
         "type": "ai_study",
@@ -815,10 +815,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 18,
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "updated_at": "2026-11-02 12:33:53"
+      "tasks_completed": 19,
+      "last_project": "Unity Inc",
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "updated_at": "2026-11-02 12:38:26"
     },
     {
       "key": "intake",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     {
       "key": "scribe",
@@ -859,10 +859,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 28,
+      "tasks_completed": 29,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     {
       "key": "project_lead",
@@ -870,10 +870,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 28,
+      "tasks_completed": 29,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     {
       "key": "researcher",
@@ -882,9 +882,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 27,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:16:58"
+      "last_project": "Unity Inc",
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "updated_at": "2026-11-02 12:38:26"
     },
     {
       "key": "analyst",
@@ -895,7 +895,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     {
       "key": "developer",
@@ -925,10 +925,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 13,
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "updated_at": "2026-11-02 12:33:53"
+      "tasks_completed": 14,
+      "last_project": "Unity Inc",
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "updated_at": "2026-11-02 12:38:26"
     },
     {
       "key": "vibe_coder",
@@ -947,10 +947,10 @@
       "emoji": "🤝",
       "role": "B2B Deal Closer: персонализированные коммерческие предложения (КП), скрипты переговоров и базы директоров.",
       "state": "online",
-      "tasks_completed": 2,
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
-      "updated_at": "2026-10-29 18:50:32"
+      "tasks_completed": 3,
+      "last_project": "Unity Inc",
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "updated_at": "2026-11-02 12:38:26"
     },
     {
       "key": "creative_producer",
@@ -965,6 +965,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-15",
+      "issue_number": 15,
+      "date": "2026-11-02 12:38:26",
+      "project": "Unity Inc",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#15 TIM: Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261102_123801",
+      "issue_number": 15,
+      "date": "2026-11-02 12:38:01",
+      "project": "Unity Inc",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📈 Маркетолог & Трафик, 🤝 B2B Продажи & Офферы",
+      "title": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Маркетолог & Трафик, B2B Продажи & Офферы) в рамках проекта «Unity Inc». Сформирована прикладная связка монетизации, воронки привлечения и технической сбор",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Unity Inc».",
+      "status": "done"
+    },
     {
       "id": "card-16",
       "issue_number": 16,
