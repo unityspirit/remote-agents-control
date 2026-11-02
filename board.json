@@ -14198,6 +14198,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:38:26"
+    },
+    "14": {
+      "id": 14,
+      "created": "2026-11-02 12:40:02",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:40:02",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:41:16",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "GUEST_LEAD: Покажи отчёт о проделанной работе и статус задач",
+      "urls": [],
+      "project": "Лиды_Гости",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:41:16"
     }
   }
 }
