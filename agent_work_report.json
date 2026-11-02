@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02 12:01:43",
+  "updated": "2026-11-02 12:17:10",
   "kpis": {
-    "total_completed_works": 167,
-    "tim_master_reports": 14,
+    "total_completed_works": 169,
+    "tim_master_reports": 15,
     "active_projects_count": 53,
     "total_saved_photos": 1,
     "awaiting_human_count": 39
@@ -815,10 +815,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 14,
+      "tasks_completed": 15,
       "last_project": "Входящие_Офис",
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:16:58"
     },
     {
       "key": "intake",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:17:09"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:17:09"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:17:09"
     },
     {
       "key": "researcher",
@@ -859,10 +859,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 24,
+      "tasks_completed": 25,
       "last_project": "Входящие_Офис",
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:16:58"
     },
     {
       "key": "analyst",
@@ -870,10 +870,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 24,
+      "tasks_completed": 25,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:17:09"
     },
     {
       "key": "scribe",
@@ -881,10 +881,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 20,
+      "tasks_completed": 21,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:17:09"
     },
     {
       "key": "project_lead",
@@ -892,10 +892,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 20,
+      "tasks_completed": 21,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:17:09"
     },
     {
       "key": "developer",
@@ -903,10 +903,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 13,
+      "tasks_completed": 14,
       "last_project": "Входящие_Офис",
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:16:58"
     },
     {
       "key": "strategist",
@@ -914,10 +914,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 12,
+      "tasks_completed": 13,
       "last_project": "Входящие_Офис",
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:16:58"
     },
     {
       "key": "marketer",
@@ -925,10 +925,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 10,
+      "tasks_completed": 11,
       "last_project": "Входящие_Офис",
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:16:58"
     },
     {
       "key": "vibe_coder",
@@ -968,7 +968,7 @@
     {
       "id": "card-26",
       "issue_number": 26,
-      "date": "2026-11-02 12:01:05",
+      "date": "2026-11-02 12:16:59",
       "project": "Входящие_Офис",
       "type": "board_card",
       "agent": "🛡 Контролёр",
@@ -977,14 +977,38 @@
       "status": "done"
     },
     {
-      "id": "tim-20261102_120027",
+      "id": "tim-20261102_121613",
       "issue_number": 26,
-      "date": "2026-11-02 12:00:27",
+      "date": "2026-11-02 12:16:13",
       "project": "Входящие_Офис",
       "type": "tim_report",
       "agent": "👑 Директор Тим",
       "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
       "title": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=240105",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
+    {
+      "id": "card-25",
+      "issue_number": 25,
+      "date": "2026-11-02 12:07:47",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#25 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261102_120646",
+      "issue_number": 25,
+      "date": "2026-11-02 12:06:46",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
       "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
       "status": "done"
