@@ -14225,6 +14225,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:41:16"
+    },
+    "13": {
+      "id": 13,
+      "created": "2026-11-02 12:42:45",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:42:45",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:43:12",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:43:12"
     }
   }
 }
