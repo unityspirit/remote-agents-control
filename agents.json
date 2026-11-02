@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:29:47",
+  "updated": "2026-11-02 12:30:56",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 16,
-      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-11-02 12:26:23"
+      "tasks_completed": 17,
+      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "last_project": "Личный Офис: @true1team",
+      "updated_at": "2026-11-02 12:30:45"
     },
     "strategist": {
       "name": "Стратег",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 15,
-      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-11-02 12:26:23"
+      "tasks_completed": 16,
+      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "last_project": "Личный Офис: @true1team",
+      "updated_at": "2026-11-02 12:30:45"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -87,10 +87,10 @@
       "gives": "работающий Micro-SaaS, TMA бот, лендинг с 3D сценой без техдолга",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 5,
-      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-11-02 12:26:23"
+      "tasks_completed": 6,
+      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+      "last_project": "Личный Офис: @true1team",
+      "updated_at": "2026-11-02 12:30:45"
     },
     "intake": {
       "name": "Приёмщик",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 25,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 25,
+      "tasks_completed": 26,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 25,
+      "tasks_completed": 26,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:29:47"
+      "updated_at": "2026-11-02 12:30:56"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 3,
+      "calls_total": 4,
       "calls_by_provider": {
         "deterministic_local_engine": 2,
-        "cloud_test_gateway": 1
+        "cloud_test_gateway": 2
       },
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
-      "last_call_at": "2026-11-02T19:29:25.319608+00:00",
-      "errors_count": 5
+      "last_call_at": "2026-11-02T19:30:45.412139+00:00",
+      "errors_count": 6
     }
   },
   "statuses": {
