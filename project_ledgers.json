@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:43:33",
+  "updated": "2026-11-02 12:46:16",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -378,9 +378,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 2,
+        "completed_works": 4,
         "open_tasks": 1,
-        "tim_reports": 1,
+        "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 28,
         "size_kb": 9418,
@@ -416,6 +416,30 @@
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-12",
+          "issue_number": 12,
+          "date": "2026-11-02 12:45:53",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#12 TIM: Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261102_124527",
+          "issue_number": 12,
+          "date": "2026-11-02 12:45:27",
+          "project": "Alberta",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик",
+          "title": "Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
+          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Стратег, Маркетолог & Трафик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+          "status": "done"
+        },
         {
           "id": "card-13",
           "issue_number": 13,
