@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:30:56",
+  "updated": "2026-11-02 12:32:48",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 69,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,7 +113,7 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 25,
+      "tasks_completed": 26,
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "last_project": "Входящие_Офис",
       "updated_at": "2026-11-02 12:16:58"
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 69,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 25,
+      "tasks_completed": 26,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 69,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 26,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 26,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 4,
+      "calls_total": 5,
       "calls_by_provider": {
         "deterministic_local_engine": 2,
-        "cloud_test_gateway": 2
+        "cloud_test_gateway": 3
       },
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
-      "last_call_at": "2026-11-02T19:30:45.412139+00:00",
-      "errors_count": 6
+      "last_call_at": "2026-11-02T19:32:34.959523+00:00",
+      "errors_count": 7
     }
   },
   "statuses": {
