@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:52:12",
+  "updated": "2026-11-02 12:59:01",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 78,
+      "tasks_completed": 79,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 78,
+      "tasks_completed": 79,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 27,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 78,
+      "tasks_completed": 79,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 34,
+      "tasks_completed": 35,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 34,
+      "tasks_completed": 35,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:52:12"
+      "updated_at": "2026-11-02 12:59:01"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 10,
+      "calls_total": 11,
       "calls_by_provider": {
-        "deterministic_local_engine": 4,
+        "deterministic_local_engine": 5,
         "cloud_test_gateway": 6
       },
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
-      "last_call_at": "2026-11-02T19:50:14.445518+00:00",
-      "errors_count": 16
+      "last_call_at": "2026-11-02T19:57:52.641424+00:00",
+      "errors_count": 17
     }
   },
   "statuses": {
