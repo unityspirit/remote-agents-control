@@ -13846,6 +13846,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:07:47"
+    },
+    "24": {
+      "id": 24,
+      "created": "2026-11-02 12:21:07",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:21:07",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:23:19",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plus без воды",
+      "urls": [],
+      "project": "Unity Inc",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:23:19"
     }
   }
 }
