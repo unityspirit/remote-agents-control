@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:37:12",
+  "updated": "2026-11-02 12:38:42",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -1993,9 +1993,9 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 94,
+        "completed_works": 95,
         "open_tasks": 0,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 11,
         "size_kb": 283172,
@@ -2032,13 +2032,37 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-3",
+          "id": "hist-5",
           "date": "23.10.2026 18:20",
           "project": "Unity Inc",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-15",
+          "issue_number": 15,
+          "date": "2026-11-02 12:38:26",
+          "project": "Unity Inc",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#15 TIM: Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261102_123801",
+          "issue_number": 15,
+          "date": "2026-11-02 12:38:01",
+          "project": "Unity Inc",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📈 Маркетолог & Трафик, 🤝 B2B Продажи & Офферы",
+          "title": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Маркетолог & Трафик, B2B Продажи & Офферы) в рамках проекта «Unity Inc». Сформирована прикладная связка монетизации, воронки привлечения и технической сбор",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Unity Inc».",
           "status": "done"
         },
         {
@@ -2064,7 +2088,7 @@
           "status": "done"
         },
         {
-          "id": "hist-2",
+          "id": "hist-4",
           "date": "02.11.2026 12:22",
           "project": "Unity Inc",
           "type": "ai_study",
