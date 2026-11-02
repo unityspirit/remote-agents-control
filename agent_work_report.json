@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 13:39:19",
+  "updated": "2026-11-02 13:40:24",
   "kpis": {
-    "total_completed_works": 204,
+    "total_completed_works": 205,
     "tim_master_reports": 22,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 86,
+      "tasks_completed": 87,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:39:18"
+      "updated_at": "2026-11-02 13:40:23"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 86,
+      "tasks_completed": 87,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:39:18"
+      "updated_at": "2026-11-02 13:40:23"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 86,
+      "tasks_completed": 87,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:39:18"
+      "updated_at": "2026-11-02 13:40:23"
     },
     {
       "key": "scribe",
@@ -859,10 +859,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 42,
+      "tasks_completed": 43,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:39:18"
+      "updated_at": "2026-11-02 13:40:23"
     },
     {
       "key": "project_lead",
@@ -870,10 +870,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 42,
+      "tasks_completed": 43,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:39:18"
+      "updated_at": "2026-11-02 13:40:23"
     },
     {
       "key": "researcher",
@@ -895,7 +895,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:39:18"
+      "updated_at": "2026-11-02 13:40:23"
     },
     {
       "key": "developer",
@@ -965,6 +965,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-1",
+      "issue_number": 1,
+      "date": "2026-11-02 13:40:19",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#1 AUTH_SYNC: Быстрая заявка REQ-610711 (Plus / @gmail)",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-2",
       "issue_number": 2,
@@ -1701,17 +1712,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#131 PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
-      "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
-      "status": "done"
-    },
-    {
-      "id": "card-132",
-      "issue_number": 132,
-      "date": "2026-10-23 18:21:27",
-      "project": "Unity Inc",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#132 /ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
       "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
       "status": "done"
     }
