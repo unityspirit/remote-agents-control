@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02 12:41:31",
+  "updated": "2026-11-02 12:43:33",
   "kpis": {
-    "total_completed_works": 187,
-    "tim_master_reports": 19,
+    "total_completed_works": 189,
+    "tim_master_reports": 20,
     "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 41
@@ -377,9 +377,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 2,
         "open_tasks": 1,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 28,
         "size_kb": 9418,
@@ -409,15 +409,15 @@
       ],
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "last_work": {
-        "id": "card-9005",
-        "issue_number": 9005,
-        "date": "2026-10-22 08:18:48",
+        "id": "card-13",
+        "issue_number": 13,
+        "date": "2026-11-02 12:43:12",
         "project": "Alberta",
         "type": "board_card",
-        "agent": "🧑 Власлав",
-        "title": "#9005 💳 Ключи ЮKassa/Prodamus для трипваера 490 ₽",
-        "summary": "🧑 Ждёт вашего действия · Далее: Передать API-ключи боту",
-        "status": "blocked_human"
+        "agent": "🛡 Контролёр",
+        "title": "#13 TIM: Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+        "summary": "✅ Готово",
+        "status": "done"
       }
     },
     {
@@ -815,10 +815,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 19,
-      "last_project": "Unity Inc",
-      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
-      "updated_at": "2026-11-02 12:38:26"
+      "tasks_completed": 20,
+      "last_project": "Alberta",
+      "last_task": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "updated_at": "2026-11-02 12:43:11"
     },
     {
       "key": "intake",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 74,
+      "tasks_completed": 75,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:41:31"
+      "updated_at": "2026-11-02 12:43:32"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 74,
+      "tasks_completed": 75,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:41:31"
+      "updated_at": "2026-11-02 12:43:32"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 74,
+      "tasks_completed": 75,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:41:31"
+      "updated_at": "2026-11-02 12:43:32"
     },
     {
       "key": "scribe",
@@ -859,10 +859,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 30,
+      "tasks_completed": 31,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:41:31"
+      "updated_at": "2026-11-02 12:43:32"
     },
     {
       "key": "project_lead",
@@ -870,10 +870,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 30,
+      "tasks_completed": 31,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:41:31"
+      "updated_at": "2026-11-02 12:43:32"
     },
     {
       "key": "researcher",
@@ -895,7 +895,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:41:31"
+      "updated_at": "2026-11-02 12:43:32"
     },
     {
       "key": "developer",
@@ -903,10 +903,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 17,
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "updated_at": "2026-11-02 12:33:53"
+      "tasks_completed": 18,
+      "last_project": "Alberta",
+      "last_task": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "updated_at": "2026-11-02 12:43:11"
     },
     {
       "key": "strategist",
@@ -925,10 +925,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 14,
-      "last_project": "Unity Inc",
-      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
-      "updated_at": "2026-11-02 12:38:26"
+      "tasks_completed": 15,
+      "last_project": "Alberta",
+      "last_task": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "updated_at": "2026-11-02 12:43:11"
     },
     {
       "key": "vibe_coder",
@@ -958,13 +958,37 @@
       "emoji": "🎬",
       "role": "Media Director: сценарии, Google VEO 3.1 видеопромпты, международная дистрибуция треков и кино Светланы.",
       "state": "online",
-      "tasks_completed": 1,
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
-      "updated_at": "2026-10-29 18:50:32"
+      "tasks_completed": 2,
+      "last_project": "Alberta",
+      "last_task": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "updated_at": "2026-11-02 12:43:11"
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-13",
+      "issue_number": 13,
+      "date": "2026-11-02 12:43:12",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#13 TIM: Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261102_124245",
+      "issue_number": 13,
+      "date": "2026-11-02 12:42:45",
+      "project": "Alberta",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📈 Маркетолог & Трафик, 💻 Главный Разработчик, 🎬 Креативный Продюсер & Медиа",
+      "title": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
+      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Маркетолог & Трафик, Главный Разработчик, Креативный Продюсер & Медиа) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической ",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+      "status": "done"
+    },
     {
       "id": "card-14",
       "issue_number": 14,
