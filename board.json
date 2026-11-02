@@ -14076,6 +14076,74 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:33:54"
+    },
+    "17": {
+      "id": 17,
+      "created": "2026-11-02 12:34:42",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:34:42",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:34:44",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-02 12:34:57",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-02 12:35:18",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Unity Inc (уверенность medium)"
+        },
+        {
+          "t": "2026-11-02 12:35:18",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 18795
+      },
+      "title": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+      "urls": [
+        "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+        "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04&utm_id=24354174629&g_net=ytis&g_dev=m&gad_source=2&gad_campaignid=24354174629"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-11-02 12:35:23",
+      "suggested_project": "Unity Inc",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "Unity Inc",
+            10
+          ]
+        ]
+      },
+      "pending_file": "Карточка_17_https___space_gnssacademy_co.md",
+      "raw_file": "raw_17_20261102_123444_https___space_gnssacademy_co.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #17 → Unity Inc» или выбрать другой проект"
+      }
     }
   }
 }
