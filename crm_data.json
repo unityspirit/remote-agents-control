@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 194,
+      "evidence_count": 196,
       "scope": "global",
-      "last_updated": "2026-11-02T13:14:08.018058"
+      "last_updated": "2026-11-02T13:31:56.682155"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 122,
+      "evidence_count": 123,
       "scope": "global",
-      "last_updated": "2026-11-02T13:14:08.023489"
+      "last_updated": "2026-11-02T13:31:56.685469"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 214,
+      "evidence_count": 216,
       "scope": "global",
-      "last_updated": "2026-11-02T13:25:04.293226"
+      "last_updated": "2026-11-02T13:31:56.687496"
     },
     {
       "id": "task-custom-request",
@@ -106,9 +106,9 @@
       "action": "Executed autonomously with report and choices",
       "confidence": 0.99,
       "domain": "operations",
-      "evidence_count": 48,
+      "evidence_count": 49,
       "scope": "project:Позновалка",
-      "last_updated": "2026-11-02T13:10:15.432764"
+      "last_updated": "2026-11-02T13:27:45.767593"
     },
     {
       "id": "task-status",
@@ -161,5 +161,5 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-02T20:25:06.834277+00:00"
+  "updated_at": "2026-11-02T20:32:07.517521+00:00"
 }
