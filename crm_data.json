@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T19:42:36.293356+00:00",
+  "updated_at": "2026-11-02T19:44:57.994723+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3392,9 +3392,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 153,
+      "evidence_count": 154,
       "scope": "global",
-      "last_updated": "2026-11-02T12:39:30.229668"
+      "last_updated": "2026-11-02T12:44:51.104838"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -3402,9 +3402,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 187,
+      "evidence_count": 188,
       "scope": "global",
-      "last_updated": "2026-11-02T12:42:32.833047"
+      "last_updated": "2026-11-02T12:44:51.107114"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -3432,9 +3432,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 117,
+      "evidence_count": 118,
       "scope": "global",
-      "last_updated": "2026-11-02T12:39:30.233226"
+      "last_updated": "2026-11-02T12:44:51.109358"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -3442,9 +3442,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 148,
+      "evidence_count": 149,
       "scope": "global",
-      "last_updated": "2026-11-02T12:39:30.235093"
+      "last_updated": "2026-11-02T12:44:51.112029"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -3472,9 +3472,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 40,
+      "evidence_count": 41,
       "scope": "project:Alberta",
-      "last_updated": "2026-10-29T20:12:43.335267"
+      "last_updated": "2026-11-02T12:44:51.114456"
     },
     {
       "id": "autonomous-task-resolution",
@@ -3482,9 +3482,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 204,
+      "evidence_count": 205,
       "scope": "global",
-      "last_updated": "2026-11-02T12:42:32.838267"
+      "last_updated": "2026-11-02T12:44:51.116706"
     },
     {
       "id": "task-custom-request",
