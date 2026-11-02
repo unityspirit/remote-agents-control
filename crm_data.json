@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 191,
+      "evidence_count": 192,
       "scope": "global",
-      "last_updated": "2026-11-02T12:56:52.437282"
+      "last_updated": "2026-11-02T13:02:21.576482"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 152,
+      "evidence_count": 153,
       "scope": "global",
-      "last_updated": "2026-11-02T12:56:52.439135"
+      "last_updated": "2026-11-02T13:02:21.578913"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 208,
+      "evidence_count": 209,
       "scope": "global",
-      "last_updated": "2026-11-02T12:56:52.442338"
+      "last_updated": "2026-11-02T13:02:21.581128"
     },
     {
       "id": "task-custom-request",
@@ -161,5 +161,5 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-02T19:57:03.585094+00:00"
+  "updated_at": "2026-11-02T20:02:26.858527+00:00"
 }
