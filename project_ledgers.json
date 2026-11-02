@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:29:48",
+  "updated": "2026-11-02 12:30:57",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3235,9 +3235,9 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Личный Офис: @true1team»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 2,
         "open_tasks": 0,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3273,6 +3273,30 @@
       "research_topic": "Личный Офис: @true1team рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-20",
+          "issue_number": 20,
+          "date": "2026-11-02 12:30:45",
+          "project": "Личный Офис: @true1team",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#20 TIM: Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261102_123033",
+          "issue_number": 20,
+          "date": "2026-11-02 12:30:33",
+          "project": "Личный Офис: @true1team",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "⚡ Вайбкодер & Micro-SaaS, 💻 Главный Разработчик",
+          "title": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
+          "summary": "Создать Telegram‑бота «True1 Office» как Micro‑SaaS с подпиской 9,99 $/мес и 10 % комиссии с транзакций по оплате услуг. В течение 24 ч запуска MVP, затем интеграция с CRM и платежными шлюзами. Ожидаем 200 подписчиков в первый месяц → 2 k$ ",
+          "human_action": "Подтвердить бюджет 5 k$ и назначить ответственного за интеграцию с CRM.",
+          "status": "done"
+        },
         {
           "id": "card-167",
           "issue_number": 167,
