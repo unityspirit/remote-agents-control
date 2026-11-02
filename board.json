@@ -14252,6 +14252,60 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:43:12"
+    },
+    "12": {
+      "id": 12,
+      "created": "2026-11-02 12:45:27",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:45:27",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:45:53",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:45:53"
+    },
+    "11": {
+      "id": 11,
+      "created": "2026-11-02 12:48:28",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:48:28",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:48:56",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
+      "urls": [],
+      "project": "Unity Inc",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:48:56"
     }
   }
 }
