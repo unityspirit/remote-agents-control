@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:37:11",
+  "updated": "2026-11-02 12:38:41",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 18,
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-02 12:33:53"
+      "tasks_completed": 19,
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:38:26"
     },
     "strategist": {
       "name": "Стратег",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 13,
-      "last_task": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-02 12:33:53"
+      "tasks_completed": 14,
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:38:26"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -61,10 +61,10 @@
       "gives": "готовые КП и скрипты закрытия сделок",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 2,
-      "last_task": "Полный разбор облачных задач #142–#157, аудит агентов и 4 схемы монетизации",
-      "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 18:50:32"
+      "tasks_completed": 3,
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:38:26"
     },
     "creative_producer": {
       "name": "Креативный Продюсер",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 27,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:16:58"
+      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:38:26"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 27,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 28,
+      "tasks_completed": 29,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 28,
+      "tasks_completed": 29,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:37:11"
+      "updated_at": "2026-11-02 12:38:41"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
       "last_call_at": "2026-11-02T19:36:44.925768+00:00",
-      "errors_count": 10
+      "errors_count": 11
     }
   },
   "statuses": {
