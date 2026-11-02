@@ -1,5 +1,5 @@
 {
-  "version": "20.5",
+  "version": "25.2",
   "owner_email_hint": "u***@gmail.com",
   "approver_telegram": "unityspiritpartners",
   "approver_telegram_url": "https://t.me/unityspiritpartners",
@@ -85,7 +85,7 @@
       "pbkdf2_hash": "3082cf2bc49460d9584cf1d93cd92148ca18a1488a9a7f9a186dd6eaf66b648d",
       "iterations": 120000,
       "assigned_projects": [
-        "*"
+        "Alberta"
       ],
       "gta_completed": true,
       "gta_archetype": "🎨 Креативный Директор & Архитектор Внутренней Опоры (Alberta Creative Director)",
@@ -99,7 +99,7 @@
       "login": "unityspiritpartners",
       "full_name": "Vlaslav (Owner — Unity Spirit Partners)",
       "telegram": "@unityspiritpartners",
-      "role": "member",
+      "role": "owner",
       "status": "approved",
       "salt_hex": "9cf23e131e4386bd36f36aa84e56be45",
       "pbkdf2_hash": "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
@@ -120,7 +120,7 @@
       "full_name": "Alberta Shirani",
       "telegram": "@Alberta",
       "role": "member",
-      "status": "pending",
+      "status": "approved",
       "salt_hex": "1a16cf8302a85e82f5d836b67d88846e",
       "pbkdf2_hash": "3082cf2bc49460d9584cf1d93cd92148ca18a1488a9a7f9a186dd6eaf66b648d",
       "iterations": 120000,
@@ -136,8 +136,8 @@
     },
     {
       "id": "REQ-063613",
-      "login": "@maxprofitwork",
-      "full_name": "@maxprofitwork",
+      "login": "maxprofitwork",
+      "full_name": "Max Profit Work",
       "telegram": "@maxprofitwork",
       "role": "member",
       "status": "pending",
@@ -153,5 +153,5 @@
       "pending_reset": null
     }
   ],
-  "updated_at": "2026-11-02T12:09:09.496559+00:00"
+  "updated_at": "2026-11-02T12:00:00.000000+00:00"
 }
