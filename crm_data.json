@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 192,
+      "evidence_count": 194,
       "scope": "global",
-      "last_updated": "2026-11-02T13:02:21.576482"
+      "last_updated": "2026-11-02T13:14:08.018058"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -36,9 +36,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 81,
+      "evidence_count": 83,
       "scope": "global",
-      "last_updated": "2026-11-02T12:42:32.836042"
+      "last_updated": "2026-11-02T13:14:08.021077"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 121,
+      "evidence_count": 122,
       "scope": "global",
-      "last_updated": "2026-11-02T12:56:52.439135"
+      "last_updated": "2026-11-02T13:14:08.023489"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 210,
+      "evidence_count": 212,
       "scope": "global",
-      "last_updated": "2026-11-02T13:07:30.244779"
+      "last_updated": "2026-11-02T13:14:08.025300"
     },
     {
       "id": "task-custom-request",
@@ -106,9 +106,9 @@
       "action": "Executed autonomously with report and choices",
       "confidence": 0.99,
       "domain": "operations",
-      "evidence_count": 47,
+      "evidence_count": 48,
       "scope": "project:Позновалка",
-      "last_updated": "2026-11-02T12:50:54.647113"
+      "last_updated": "2026-11-02T13:10:15.432764"
     },
     {
       "id": "task-status",
@@ -161,5 +161,5 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-02T20:07:42.003428+00:00"
+  "updated_at": "2026-11-02T20:14:21.084236+00:00"
 }
