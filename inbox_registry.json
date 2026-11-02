@@ -1,7 +1,21 @@
 {
-  "updated_at": "2026-10-29 08:07:31",
+  "updated_at": "2026-11-02 12:32:35",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-19",
+      "card": 19,
+      "timestamp": "2026-11-02 12:32:35",
+      "source_text": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_",
+      "urls": [
+        "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+        "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04&utm_id=24354174629&g_net=ytis&g_dev=m&gad_source=2&gad_campaignid=24354174629"
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "Unity Inc",
+      "pending_file": "Карточка_19_https___space_gnssacademy_co.md",
+      "raw_file": "raw_19_20261102_123141_https___space_gnssacademy_co.md"
+    },
     {
       "id": "card-157",
       "card": 157,
