@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02 12:23:56",
+  "updated": "2026-11-02 12:26:33",
   "kpis": {
-    "total_completed_works": 171,
-    "tim_master_reports": 15,
+    "total_completed_works": 173,
+    "tim_master_reports": 16,
     "active_projects_count": 53,
     "total_saved_photos": 1,
     "awaiting_human_count": 39
@@ -17,9 +17,9 @@
       "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
       "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
       "counts": {
-        "completed_works": 9,
+        "completed_works": 10,
         "open_tasks": 1,
-        "tim_reports": 5,
+        "tim_reports": 6,
         "saved_photos": 1,
         "files_on_disk": 14,
         "size_kb": 123,
@@ -49,7 +49,7 @@
       ],
       "research_topic": "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars кейсы выручки",
       "last_work": {
-        "id": "hist-8",
+        "id": "hist-9",
         "date": "29.10.2026 20:12",
         "project": "12 IT Продуктов (Короче Капитан)",
         "type": "ai_study",
@@ -815,10 +815,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 15,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 16,
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "updated_at": "2026-11-02 12:26:23"
     },
     {
       "key": "intake",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     {
       "key": "researcher",
@@ -873,7 +873,7 @@
       "tasks_completed": 25,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     {
       "key": "scribe",
@@ -881,10 +881,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 22,
+      "tasks_completed": 23,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     {
       "key": "project_lead",
@@ -892,10 +892,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 22,
+      "tasks_completed": 23,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     {
       "key": "developer",
@@ -903,10 +903,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 14,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 15,
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "updated_at": "2026-11-02 12:26:23"
     },
     {
       "key": "strategist",
@@ -914,10 +914,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 13,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 14,
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "updated_at": "2026-11-02 12:26:23"
     },
     {
       "key": "marketer",
@@ -925,10 +925,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 11,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 12,
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "updated_at": "2026-11-02 12:26:23"
     },
     {
       "key": "vibe_coder",
@@ -936,10 +936,10 @@
       "emoji": "⚡",
       "role": "AI Fullstack Rapid Prototyper: экспресс-сборка Micro-SaaS, парсеров и Telegram Mini Apps за 24 часа через связку Claude Code + Claude Design (HANDOFF.md), 3D WebGL и Next.js.",
       "state": "online",
-      "tasks_completed": 4,
+      "tasks_completed": 5,
       "last_project": "12 IT Продуктов (Короче Капитан)",
-      "last_task": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
-      "updated_at": "2026-10-29 18:53:31"
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "updated_at": "2026-11-02 12:26:23"
     },
     {
       "key": "sales_closer",
@@ -965,6 +965,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-23",
+      "issue_number": 23,
+      "date": "2026-11-02 12:26:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#23 TIM: Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261102_122537",
+      "issue_number": 23,
+      "date": "2026-11-02 12:25:37",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, ⚡ Вайбкодер & Micro-SaaS, 💻 Главный Разработчик",
+      "title": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Стратег, Маркетолог & Трафик, Вайбкодер & Micro-SaaS, Главный Разработчик) в рамках проекта «12 IT Продуктов (Короче Капитан)». Сформирована прикладная связка монетизации, ворон",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «12 IT Продуктов (Короче Капитан)».",
+      "status": "done"
+    },
     {
       "id": "card-24",
       "issue_number": 24,
