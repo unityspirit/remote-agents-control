@@ -13873,6 +13873,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:23:19"
+    },
+    "23": {
+      "id": 23,
+      "created": "2026-11-02 12:25:35",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:25:35",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:26:23",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:26:23"
     }
   }
 }
