@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T19:33:26.686957+00:00",
+  "updated_at": "2026-11-02T19:34:36.856297+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3316,9 +3316,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 151,
+      "evidence_count": 152,
       "scope": "global",
-      "last_updated": "2026-11-02T12:33:19.809441"
+      "last_updated": "2026-11-02T12:34:32.994562"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -3326,9 +3326,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 180,
+      "evidence_count": 181,
       "scope": "global",
-      "last_updated": "2026-11-02T12:33:19.811536"
+      "last_updated": "2026-11-02T12:34:32.997040"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -3336,9 +3336,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 90,
+      "evidence_count": 91,
       "scope": "global",
-      "last_updated": "2026-11-02T12:27:08.126286"
+      "last_updated": "2026-11-02T12:34:33.000061"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -3346,9 +3346,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 76,
+      "evidence_count": 77,
       "scope": "global",
-      "last_updated": "2026-11-02T12:30:23.892659"
+      "last_updated": "2026-11-02T12:34:33.002768"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -3356,9 +3356,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 113,
+      "evidence_count": 114,
       "scope": "global",
-      "last_updated": "2026-11-02T12:28:55.095970"
+      "last_updated": "2026-11-02T12:34:33.003969"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -3406,9 +3406,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 197,
+      "evidence_count": 198,
       "scope": "global",
-      "last_updated": "2026-11-02T12:33:19.813051"
+      "last_updated": "2026-11-02T12:34:33.003969"
     },
     {
       "id": "task-custom-request",
