@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 12:35:34",
+  "updated": "2026-11-02 12:37:12",
   "kpis": {
-    "total_completed_works": 181,
+    "total_completed_works": 184,
     "tim_master_reports": 18,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 71,
+      "tasks_completed": 72,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:35:32"
+      "updated_at": "2026-11-02 12:37:11"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 71,
+      "tasks_completed": 72,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:35:32"
+      "updated_at": "2026-11-02 12:37:11"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,32 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 71,
+      "tasks_completed": 72,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:35:32"
+      "updated_at": "2026-11-02 12:37:11"
+    },
+    {
+      "key": "scribe",
+      "name": "Архивариус",
+      "emoji": "🗂",
+      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
+      "state": "online",
+      "tasks_completed": 28,
+      "last_project": "Все проекты",
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "updated_at": "2026-11-02 12:37:11"
+    },
+    {
+      "key": "project_lead",
+      "name": "Ведущий агент проекта",
+      "emoji": "🎯",
+      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
+      "state": "online",
+      "tasks_completed": 28,
+      "last_project": "Все проекты",
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "updated_at": "2026-11-02 12:37:11"
     },
     {
       "key": "researcher",
@@ -873,29 +895,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:35:32"
-    },
-    {
-      "key": "scribe",
-      "name": "Архивариус",
-      "emoji": "🗂",
-      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
-      "state": "online",
-      "tasks_completed": 27,
-      "last_project": "Все проекты",
-      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:35:32"
-    },
-    {
-      "key": "project_lead",
-      "name": "Ведущий агент проекта",
-      "emoji": "🎯",
-      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
-      "state": "online",
-      "tasks_completed": 27,
-      "last_project": "Все проекты",
-      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:35:32"
+      "updated_at": "2026-11-02 12:37:11"
     },
     {
       "key": "developer",
@@ -965,6 +965,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-16",
+      "issue_number": 16,
+      "date": "2026-11-02 12:37:02",
+      "project": "Личный Офис: @true1team",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#16 /expert",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-17",
       "issue_number": 17,
