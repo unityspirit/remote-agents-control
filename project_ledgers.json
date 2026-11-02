@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:49:07",
+  "updated": "2026-11-02 13:11:04",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2041,14 +2041,14 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 96,
+        "completed_works": 99,
         "open_tasks": 0,
         "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 11,
         "size_kb": 283172,
-        "ai_analyses": 94,
-        "research_notes": 0
+        "ai_analyses": 96,
+        "research_notes": 1
       },
       "continue_first": {
         "title": "Упаковать 40-минутный B2B AI-Аудит Global Plus + оффер навигатора и автоматизации",
@@ -2080,13 +2080,46 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-7",
+          "id": "hist-11",
           "date": "23.10.2026 18:20",
           "project": "Unity Inc",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-8",
+          "issue_number": 8,
+          "date": "2026-11-02 13:03:58",
+          "project": "Unity Inc",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#8 AUTH_SYNC: Быстрая заявка REQ-382737 (@globalplusteam / @globalplusteam)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-9",
+          "issue_number": 9,
+          "date": "2026-11-02 12:57:55",
+          "project": "Unity Inc",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#9 NEW_MEMBER_PROJECT: Проект компании по интересу: Фермы контента",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-10",
+          "issue_number": 10,
+          "date": "2026-11-02 12:50:54",
+          "project": "Unity Inc",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#10 RESEARCH_MORE: Фермы контента рынок конкуренты кейсы монетизации 2026",
+          "summary": "✅ Готово",
           "status": "done"
         },
         {
@@ -2160,7 +2193,17 @@
           "status": "done"
         },
         {
-          "id": "hist-6",
+          "id": "hist-9",
+          "date": "02.11.2026 12:50",
+          "project": "Unity Inc",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "RESEARCH_MORE: Фермы контента рынок конкуренты кейсы монетизации 2026",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-10",
           "date": "02.11.2026 12:22",
           "project": "Unity Inc",
           "type": "ai_study",
@@ -3198,13 +3241,13 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Лиды_Гости»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 8,
+        "completed_works": 10,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 8,
+        "ai_analyses": 10,
         "research_notes": 0
       },
       "continue_first": {
@@ -3237,13 +3280,24 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-6",
+          "id": "hist-8",
           "date": "31.10.2026 06:01",
           "project": "Лиды_Гости",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "GUEST_LEAD_QUIZ: B2B AI-Решения & Цифровые Директора",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-7",
+          "issue_number": 7,
+          "date": "2026-11-02 13:10:15",
+          "project": "Лиды_Гости",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#7 GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
+          "summary": "✅ Готово",
           "status": "done"
         },
         {
@@ -3291,7 +3345,17 @@
           "status": "done"
         },
         {
-          "id": "hist-4",
+          "id": "hist-5",
+          "date": "02.11.2026 13:09",
+          "project": "Лиды_Гости",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-6",
           "date": "02.11.2026 12:40",
           "project": "Лиды_Гости",
           "type": "ai_study",
@@ -3301,7 +3365,7 @@
           "status": "done"
         },
         {
-          "id": "hist-5",
+          "id": "hist-7",
           "date": "02.11.2026 12:29",
           "project": "Лиды_Гости",
           "type": "ai_study",
