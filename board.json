@@ -13927,6 +13927,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:28:10"
+    },
+    "21": {
+      "id": 21,
+      "created": "2026-11-02 12:29:04",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:29:04",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:29:37",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
+      "urls": [],
+      "project": "Лиды_Гости",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:29:38"
     }
   }
 }
