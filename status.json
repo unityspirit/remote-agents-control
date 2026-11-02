@@ -1,5 +1,5 @@
 {
-  "last_seen": "2026-11-02T12:56:11.924220+00:00",
+  "last_seen": "2026-11-02T12:57:47.903110+00:00",
   "waiting_for_agent": 0,
   "worker_version": "20.5-pwa-vault-gta-telemetry30d",
   "platform": "win32",
@@ -14,12 +14,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 0,
-      "calls_by_provider": {},
-      "last_provider": "auto_standby",
-      "last_model": "auto",
-      "last_call_at": null,
-      "errors_count": 0
+      "calls_total": 1,
+      "calls_by_provider": {
+        "cloud_test_gateway": 1
+      },
+      "last_provider": "cloud_test_gateway",
+      "last_model": "openai-gateway",
+      "last_call_at": "2026-11-02T12:57:04.538713+00:00",
+      "errors_count": 1
     }
   }
 }
