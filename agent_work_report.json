@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 12:26:33",
+  "updated": "2026-11-02 12:28:20",
   "kpis": {
-    "total_completed_works": 173,
+    "total_completed_works": 175,
     "tim_master_reports": 16,
     "active_projects_count": 53,
     "total_saved_photos": 1,
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 65,
+      "tasks_completed": 66,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:26:32"
+      "updated_at": "2026-11-02 12:28:19"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 65,
+      "tasks_completed": 66,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:26:32"
+      "updated_at": "2026-11-02 12:28:19"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 65,
+      "tasks_completed": 66,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:26:32"
+      "updated_at": "2026-11-02 12:28:19"
     },
     {
       "key": "researcher",
@@ -873,7 +873,7 @@
       "tasks_completed": 25,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:26:32"
+      "updated_at": "2026-11-02 12:28:19"
     },
     {
       "key": "scribe",
@@ -881,10 +881,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 23,
+      "tasks_completed": 24,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:26:32"
+      "updated_at": "2026-11-02 12:28:19"
     },
     {
       "key": "project_lead",
@@ -892,10 +892,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 23,
+      "tasks_completed": 24,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:26:32"
+      "updated_at": "2026-11-02 12:28:19"
     },
     {
       "key": "developer",
@@ -965,6 +965,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-22",
+      "issue_number": 22,
+      "date": "2026-11-02 12:28:10",
+      "project": "Лиды_Гости",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#22 GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-23",
       "issue_number": 23,
