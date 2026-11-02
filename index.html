@@ -8097,7 +8097,7 @@
     }
 
     function normalizeAuthLogin(s) {
-        return String(s || "").replace(/['"\\<>`\r\n]/g, "").trim().toLowerCase();
+        return String(s || "").replace(/['"\\<>`\r\n]/g, "").trim().toLowerCase().replace(/^@+/, "");
     }
 
     function normalizeRelativeNameJs(s) {
