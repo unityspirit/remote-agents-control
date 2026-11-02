@@ -14171,6 +14171,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:37:02"
+    },
+    "15": {
+      "id": 15,
+      "created": "2026-11-02 12:38:01",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:38:01",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:38:26",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
+      "urls": [],
+      "project": "Unity Inc",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:38:26"
     }
   }
 }
