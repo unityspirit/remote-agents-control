@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:23:54",
+  "updated": "2026-11-02 12:26:32",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 15,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 16,
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-11-02 12:26:23"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 13,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 14,
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-11-02 12:26:23"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 11,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 12,
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-11-02 12:26:23"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 14,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:16:58"
+      "tasks_completed": 15,
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
+      "last_project": "12 IT Продуктов (Короче Капитан)",
+      "updated_at": "2026-11-02 12:26:23"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -87,10 +87,10 @@
       "gives": "работающий Micro-SaaS, TMA бот, лендинг с 3D сценой без техдолга",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 4,
-      "last_task": "Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
+      "tasks_completed": 5,
+      "last_task": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
       "last_project": "12 IT Продуктов (Короче Капитан)",
-      "updated_at": "2026-10-29 18:53:31"
+      "updated_at": "2026-11-02 12:26:23"
     },
     "intake": {
       "name": "Приёмщик",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 25,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 22,
+      "tasks_completed": 23,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 22,
+      "tasks_completed": 23,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:23:54"
+      "updated_at": "2026-11-02 12:26:32"
     }
   },
   "daemons": {
@@ -245,7 +245,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-02T19:22:04.148504+00:00",
-      "errors_count": 2
+      "errors_count": 3
     }
   },
   "statuses": {
