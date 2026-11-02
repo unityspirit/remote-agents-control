@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 156,
+      "evidence_count": 157,
       "scope": "global",
-      "last_updated": "2026-11-02T12:49:35.468512"
+      "last_updated": "2026-11-02T12:56:52.434029"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 190,
+      "evidence_count": 191,
       "scope": "global",
-      "last_updated": "2026-11-02T12:49:35.472294"
+      "last_updated": "2026-11-02T12:56:52.437282"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 120,
+      "evidence_count": 121,
       "scope": "global",
-      "last_updated": "2026-11-02T12:49:35.478397"
+      "last_updated": "2026-11-02T12:56:52.439135"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 151,
+      "evidence_count": 152,
       "scope": "global",
-      "last_updated": "2026-11-02T12:49:35.480414"
+      "last_updated": "2026-11-02T12:56:52.439135"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 207,
+      "evidence_count": 208,
       "scope": "global",
-      "last_updated": "2026-11-02T12:49:35.482427"
+      "last_updated": "2026-11-02T12:56:52.442338"
     },
     {
       "id": "task-custom-request",
@@ -106,9 +106,9 @@
       "action": "Executed autonomously with report and choices",
       "confidence": 0.99,
       "domain": "operations",
-      "evidence_count": 46,
+      "evidence_count": 47,
       "scope": "project:Позновалка",
-      "last_updated": "2026-11-02T12:41:16.391435"
+      "last_updated": "2026-11-02T12:50:54.647113"
     },
     {
       "id": "task-status",
@@ -161,5 +161,5 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-02T19:49:37.015357+00:00"
+  "updated_at": "2026-11-02T19:57:03.585094+00:00"
 }
