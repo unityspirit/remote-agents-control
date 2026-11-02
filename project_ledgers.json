@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:35:34",
+  "updated": "2026-11-02 12:37:12",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -1832,13 +1832,13 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «True 1 Team»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 2,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 4,
         "size_kb": 5076,
-        "ai_analyses": 0,
+        "ai_analyses": 2,
         "research_notes": 0
       },
       "continue_first": {
@@ -1869,7 +1869,18 @@
       ],
       "research_topic": "True 1 Team рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
-      "work_items": []
+      "work_items": [
+        {
+          "id": "hist-0",
+          "date": "02.11.2026 12:36",
+          "project": "True 1 Team",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "/expert",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        }
+      ]
     },
     "USP — Поддержка переезда": {
       "project": "USP — Поддержка переезда",
@@ -3259,13 +3270,13 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Личный Офис: @true1team»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 2,
+        "completed_works": 3,
         "open_tasks": 0,
         "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 0,
+        "ai_analyses": 2,
         "research_notes": 0
       },
       "continue_first": {
@@ -3297,6 +3308,17 @@
       "research_topic": "Личный Офис: @true1team рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-16",
+          "issue_number": 16,
+          "date": "2026-11-02 12:37:02",
+          "project": "Личный Офис: @true1team",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#16 /expert",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-20",
           "issue_number": 20,
@@ -3331,6 +3353,16 @@
           "title": "#167 TIM: Изучи состояние папки «Личный Офис: @true1team», оцени быстрый путь к деньгам и сформируй план действий отделов",
           "summary": "❌ Ошибка обработки · Далее: Ошибка обработки: [WinError 267] The directory name is invalid: 'C:\\\\Users\\\\Vlaslav\\\\Downloads\\\\Личный Офис: @true1team'",
           "status": "failed"
+        },
+        {
+          "id": "hist-4",
+          "date": "02.11.2026 12:36",
+          "project": "Личный Офис: @true1team",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "/expert",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
         }
       ]
     },
