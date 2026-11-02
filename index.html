@@ -1216,7 +1216,7 @@
         }
 
         @media (max-width: 768px) {
-            /* === v25.1 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
+            /* === v25.3 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
             .topbar {
                 padding: 4px 8px !important;
                 display: flex !important;
@@ -2030,7 +2030,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v25.1: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v25.3: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none !important;" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -2765,6 +2765,25 @@
     </div>
 </div>
 
+<!-- UNIVERSAL NON-BLOCKING IN-APP MODAL (REPLACES BROWSER PROMPT/ALERT) -->
+<div id="universal-prompt-modal" class="modal-overlay" style="display:none; z-index:26000;" onclick="if(event.target===this) closeUniversalPromptModal()">
+    <div class="modal-card" style="max-width: 480px; width:92%; background:var(--bg-panel); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:0 18px 45px rgba(0,0,0,0.6);">
+        <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <h3 id="universal-prompt-title" style="font-size:0.95rem; font-weight:800; color:var(--text-main); margin:0;">Поручение</h3>
+            <button class="modal-close" onclick="closeUniversalPromptModal()" style="background:none; border:none; color:var(--text-dim); font-size:1.2rem; cursor:pointer; padding:4px;">✕</button>
+        </div>
+        <div id="universal-prompt-subtitle" style="font-size:0.75rem; color:var(--text-dim); margin-bottom:12px; line-height:1.45;"></div>
+        <div id="universal-prompt-body" style="display:flex; flex-direction:column; gap:10px;">
+            <textarea id="universal-prompt-input" rows="3" class="search-input" style="width:100%; box-sizing:border-box; border-radius:10px; font-size:0.82rem; padding:10px; line-height:1.45; resize:vertical; min-height:75px;" placeholder="Введите текст..."></textarea>
+            <select id="universal-prompt-select" class="search-input" style="display:none; width:100%; box-sizing:border-box; border-radius:10px; font-size:0.82rem; padding:9px;"></select>
+        </div>
+        <div class="modal-footer" style="display:flex; justify-content:flex-end; gap:8px; margin-top:14px; border-top:1px solid var(--border); padding-top:12px;">
+            <button class="mini-btn ghost" onclick="closeUniversalPromptModal()" style="padding:7px 14px; font-size:0.78rem;">Отмена</button>
+            <button id="universal-prompt-submit-btn" class="mini-btn accent" onclick="confirmUniversalPrompt()" style="padding:7px 18px; font-size:0.8rem; font-weight:800;">Отправить 🚀</button>
+        </div>
+    </div>
+</div>
+
 <!-- ACTION REQUIRED & WAITING MODAL -->
 <div id="action-modal" class="modal-overlay" style="display:none;" onclick="if(event.target===this) closeActionModal()">
     <div class="modal-card" style="max-width: 540px;">
@@ -2796,7 +2815,7 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.1</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.3</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -3068,7 +3087,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v25.1")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v25.3")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -4303,7 +4322,7 @@
 
     
     // =========================================================================
-    // === v25.1: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
+    // === v25.3: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
     // =========================================================================
     function openAssignProjectModal(projName) {
         if (!isOwnerSession()) {
@@ -4413,11 +4432,20 @@
         });
         destOpts += '</optgroup>';
 
-        const targetSelect = prompt("Куда переместить / продублировать материалы из «" + cleanSrc + "»?\nВведите логин сотрудника (например: @adevargos или true1team):");
-        if (targetSelect) {
-            const cleanTarget = targetSelect.trim().replace(/^@/, "");
-            toggleProjectUserAssignment(cleanTarget, cleanSrc, true);
-        }
+        const destUsers = usersArr.filter(u => u.status === "approved" && u.role !== "owner").map(u => u.login);
+        showOfficePrompt({
+            title: "📦 Назначить папку сотруднику",
+            subtitle: "Выберите логин сотрудника для назначения доступа к «" + cleanSrc + "»:",
+            optionsList: destUsers.length ? destUsers : ["true1team", "alberta_shirani"],
+            placeholder: "Логин сотрудника...",
+            confirmText: "Назначить доступ ✅",
+            onConfirm: (targetSelect) => {
+                if (targetSelect) {
+                    const cleanTarget = targetSelect.trim().replace(/^@/, "");
+                    toggleProjectUserAssignment(cleanTarget, cleanSrc, true);
+                }
+            }
+        });
     }
 
     function selectProject(name, icon) {
@@ -5146,14 +5174,16 @@
             "Позновалка",
             "Входящие_Офис"
         ];
-        const choice = prompt("Выберите номер или введите проект для задачи #" + issueNumber + ":\n\n" + available.map((p, idx) => (idx + 1) + ". " + p).join("\n"), currentProj);
-        if (!choice) return;
-        let chosenProj = choice.trim();
-        const num = parseInt(chosenProj);
-        if (!isNaN(num) && num >= 1 && num <= available.length) {
-            chosenProj = available[num - 1];
-        }
-        assignProjectToIssue(issueNumber, canonicalProjectName(chosenProj));
+        showOfficePrompt({
+            title: "📁 Переместить задачу #" + issueNumber,
+            subtitle: "Выберите целевую папку для задачи:",
+            optionsList: available,
+            value: currentProj,
+            confirmText: "Переместить →",
+            onConfirm: (chosen) => {
+                if (chosen) assignProjectToIssue(issueNumber, canonicalProjectName(chosen));
+            }
+        });
     }
 
     function copyIssueDigest(issueNumber) {
@@ -5450,34 +5480,126 @@
         submitTimTask();
     }
 
-    function promptDepartmentTask(deptName) {
-        const task = prompt("Напишите конкретную задачу для отдела (" + deptName + "):");
-        if (!task || !task.trim()) return;
-        const inputEl = document.getElementById("tim-command-input");
-        if (inputEl) {
-            inputEl.value = "Тим, поручи отделу " + deptName + ": " + task.trim();
-            submitTimTask();
+
+    // =========================================================================
+    // === v25.3: UNIVERSAL NON-BLOCKING IN-APP MODAL (ZERO FREEZE / NO PROMPT) ===
+    // =========================================================================
+    let universalPromptCallback = null;
+
+    function showOfficePrompt(options) {
+        const m = document.getElementById("universal-prompt-modal");
+        const titleEl = document.getElementById("universal-prompt-title");
+        const subEl = document.getElementById("universal-prompt-subtitle");
+        const inpEl = document.getElementById("universal-prompt-input");
+        const selEl = document.getElementById("universal-prompt-select");
+        const btnEl = document.getElementById("universal-prompt-submit-btn");
+        if (!m || !inpEl) return;
+
+        titleEl.innerHTML = options.title || "Действие в офисе";
+        subEl.innerHTML = options.subtitle || "";
+        subEl.style.display = options.subtitle ? "block" : "none";
+        btnEl.innerText = options.confirmText || "Подтвердить 🚀";
+
+        if (Array.isArray(options.optionsList) && options.optionsList.length > 0) {
+            inpEl.style.display = "none";
+            selEl.style.display = "block";
+            selEl.innerHTML = options.optionsList.map(opt => {
+                const isSel = (opt === options.value);
+                return '<option value="' + escapeHtml(opt) + '"' + (isSel ? ' selected' : '') + '>' + escapeHtml(opt) + '</option>';
+            }).join("");
+        } else {
+            selEl.style.display = "none";
+            inpEl.style.display = "block";
+            inpEl.placeholder = options.placeholder || "Напишите поручение или ответ...";
+            inpEl.value = options.value || "";
         }
+
+        universalPromptCallback = options.onConfirm || null;
+        m.style.display = "flex";
+        setTimeout(() => {
+            if (inpEl.style.display !== "none") inpEl.focus();
+        }, 120);
     }
 
-    async function dispatchToTim(issueNumber) {
-        const iss = allIssues.find(i => i.number === issueNumber);
-        if (!iss) return;
-        const parsed = parseIssueProject(iss.title);
+    function closeUniversalPromptModal() {
+        const m = document.getElementById("universal-prompt-modal");
+        if (m) m.style.display = "none";
+        universalPromptCallback = null;
+    }
 
-        showToast("👑 Передаём задачу #" + issueNumber + " Директору Тиму...");
+    async function confirmUniversalPrompt() {
+        const inpEl = document.getElementById("universal-prompt-input");
+        const selEl = document.getElementById("universal-prompt-select");
+        const btnEl = document.getElementById("universal-prompt-submit-btn");
+        const val = (inpEl && inpEl.style.display !== "none") ? inpEl.value.trim() : (selEl ? selEl.value : "");
+        const cb = universalPromptCallback;
+        if (cb) {
+            if (btnEl) btnEl.disabled = true;
+            try {
+                await cb(val);
+            } catch (err) {
+                console.error("Office Prompt Error:", err);
+                showToast("⚠️ Ошибка: " + err.message);
+            } finally {
+                if (btnEl) btnEl.disabled = false;
+            }
+        }
+        closeUniversalPromptModal();
+    }
 
-        try {
-            await ghApi("/issues/" + issueNumber + "/comments", "POST", {
-                body: "👑 **Власлав передал задачу Директору Тиму:**\n\nТим, скоординируй работу отделов (маркетинг, стратегия, разработка, продажи) по этой задаче и сохрани мастер-отчёт в `Входящие_Офис/Отчеты_Директора_Tim`."
-            });
-            await ghApi("/issues/" + issueNumber, "PATCH", { state: "open" });
-            iss.state = "open";
-            renderCrmTasks();
-            showToast("✅ Задача #" + issueNumber + " передана Тиму и возвращена в работу!");
-        } catch (e) {
-            console.error(e);
-            showToast("⚠️ Ошибка: " + e.message);
+    function promptDepartmentTask(deptName) {
+        const titlesMap = {
+            "стратегу": "📊 Отдел Стратегии & Unit-экономики",
+            "маркетологу": "📈 Отдел Маркетинга & Воронок",
+            "разработчику": "💻 Отдел Разработки & TMA Mini Apps",
+            "продажнику": "🤝 Отдел B2B Продаж & Скриптов",
+            "креатору": "🎬 Отдел Медиа & Креатива",
+            "вайбкодеру": "⚡ Отдел Вайбкодинга & Micro-SaaS",
+            "аналитику": "🔎 Отдел Разведки & Аналитики"
+        };
+        const title = titlesMap[deptName] || ("Поручить отделу: " + deptName);
+        const targetProj = currentProject || "Unity Inc";
+        showOfficePrompt({
+            title: title,
+            subtitle: "Поручение будет передано Директору Тиму по текущей папке «<b>" + escapeHtml(targetProj) + "</b>»:",
+            placeholder: "Например: Рассчитай приоритетные шаги монетизации и unit-экономику...",
+            confirmText: "Поручить Тиму 🚀",
+            onConfirm: async (task) => {
+                if (!task || !task.trim()) {
+                    showToast("⚠️ Напишите текст поручения для отдела!");
+                    return;
+                }
+                const cmd = "TIM: Поручи " + deptName + " (" + targetProj + "): " + task.trim();
+                await sendTaskToProject(targetProj, cmd, false);
+            }
+        });
+    }
+
+    async function dispatchToTim(target) {
+        const isNumeric = typeof target === "number" || (!isNaN(parseInt(target)) && String(target).trim().match(/^\d+$/));
+        if (isNumeric) {
+            const issueNumber = parseInt(target);
+            const iss = allIssues.find(i => i.number === issueNumber);
+            if (!iss) {
+                showToast("⚠️ Задача #" + issueNumber + " не найдена");
+                return;
+            }
+            showToast("👑 Передаём задачу #" + issueNumber + " Директору Тиму...");
+            try {
+                await ghApi("/issues/" + issueNumber + "/comments", "POST", {
+                    body: "👑 **Власлав передал задачу Директору Тиму:**\n\nТим, скоординируй работу отделов (маркетинг, стратегия, разработка, продажи) по этой задаче и сохрани мастер-отчёт в `Входящие_Офис/Отчеты_Директора_Tim`."
+                });
+                await ghApi("/issues/" + issueNumber, "PATCH", { state: "open" });
+                iss.state = "open";
+                renderCrmTasks();
+                showToast("✅ Задача #" + issueNumber + " передана Тиму и возвращена в работу!");
+            } catch (e) {
+                console.error(e);
+                showToast("⚠️ Ошибка: " + e.message);
+            }
+        } else {
+            const topic = String(target || "Аудит и координация отделов компании");
+            await sendTaskToProject(currentProject || "01_РЕШЕНИЯ_И_ДЕЙСТВИЯ_ШТАБА", "TIM: " + topic, false);
         }
     }
 
@@ -6508,7 +6630,14 @@
         await sendTaskToProject(currentProject, commandText, false);
     }
 
+    let isSendingTaskInProgress = false;
+
     async function sendTaskToProject(targetProject, commandText, isInstantBar, options) {
+        if (isSendingTaskInProgress) {
+            showToast("⏳ Предыдущая задача ещё отправляется в облако...");
+            return;
+        }
+        isSendingTaskInProgress = true;
         const opts = options || {};
         const studyText = String(opts.studyText || "").trim();
         const imageUrls = Array.isArray(opts.imageUrls) ? opts.imageUrls : [];
@@ -6581,7 +6710,10 @@
                 setTimeout(() => refreshAllData(false), 4000);
             }
         } catch (e) {
-            alert("Ошибка сохранения: " + e.message);
+            console.error("sendTaskToProject error:", e);
+            showToast("⚠️ Ошибка сохранения: " + e.message);
+        } finally {
+            isSendingTaskInProgress = false;
         }
     }
 
@@ -6637,7 +6769,7 @@
                 setTimeout(() => inp.focus(), 120);
             }
         } else {
-            const name = prompt("Введите название новой папки / проекта:");
+            const name = ""; openNewFolderModal();
             if (name && name.trim()) confirmCreateFolderWithName(name.trim(), false);
         }
     }
@@ -6651,7 +6783,7 @@
         const inp = document.getElementById("modal-folder-name");
         const val = inp ? inp.value.trim() : "";
         if (!val) {
-            alert("Пожалуйста, введите название папки");
+            showToast("⚠️ Пожалуйста, введите название папки");
             return;
         }
         const radio = document.querySelector('input[name="folder-type"]:checked');
@@ -7375,7 +7507,7 @@
 
     
     // =========================================================================
-    // === v25.1: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
+    // === v25.3: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
     // =========================================================================
 
     function buildOwnerUserMonitoringHtml() {
@@ -8034,7 +8166,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v25.1 active");
+                            console.log("Service Worker v25.3 active");
                         }
                     });
                 }
@@ -8434,10 +8566,10 @@
 
     
     // =========================================================================
-    // === v25.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v25.3: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v25.1: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v25.3: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -8582,7 +8714,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v25.1: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v25.3: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -8963,7 +9095,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v25.1: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v25.3: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -8971,7 +9103,7 @@ function sendQuickGuestPromptPortal(txt) {
     } catch(e) {}
 
     // =========================================================================
-    // === v25.1: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // === v25.3: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
     // =========================================================================
     const I18N_DICT = {
         ru: {
@@ -9281,7 +9413,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
     // =========================================================================
-    // === v25.1: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // === v25.3: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
     // =========================================================================
     function navigateOfficeSection(target) {
         // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
@@ -9573,7 +9705,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.1</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.3</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9663,7 +9795,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
         // =========================================================================
-    // === v25.1: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v25.3: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -9721,7 +9853,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     // =========================================================================
-    // === v25.1: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
+    // === v25.3: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
     // =========================================================================
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
@@ -10463,11 +10595,7 @@ function enterPendingWaitingRoom(userObj) {
         renderGtaQuestionStep();
     }
 
-    function closeGtaOnboardingModal() {
-        if (currentAuthUser && !currentAuthUser.gta_completed && currentAuthUser.role !== "owner") {
-            showToast("🕶️ Завершите 7 коротких вопросов Босса, чтобы система открыла ваши проекты!");
-            return;
-        }
+    function closeGtaOnboardingModal(force) {
         const m = document.getElementById("gta-onboarding-modal");
         if (m) m.style.display = "none";
     }
@@ -10880,21 +11008,28 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     async function promptStallBlockerReason() {
-        const reason = prompt("Напишите коротко, что сейчас тормозит работу или какая помощь нужна от Власлава / ИИ:");
-        hideAntiStallBanner();
-        if (!reason || !reason.trim()) return;
-        const slot = getCurrentMemberTeleSlot();
-        if (slot) {
-            slot.metrics.nudges_clicked = (Number(slot.metrics.nudges_clicked) || 0) + 1;
-            slot.declared_blockers = Array.isArray(slot.declared_blockers) ? slot.declared_blockers : [];
-            slot.declared_blockers.push({
-                date: new Date().toLocaleString("ru-RU"),
-                project: currentProject,
-                text: reason.trim()
-            });
-            await flushTeamTelemetryToCloud(true);
-            showToast("✅ Причина зафиксирована для администратора и ИИ-помощника!");
-        }
+        showOfficePrompt({
+            title: "💬 Что сейчас мешает работе?",
+            subtitle: "Коротко напишите, какой шаг или вопрос требует помощи от Власлава или ИИ:",
+            placeholder: "Например: Жду ответа от заказчика / Нужна новая база контактов...",
+            confirmText: "Отправить статус 🚀",
+            onConfirm: async (reason) => {
+                hideAntiStallBanner();
+                if (!reason || !reason.trim()) return;
+                const slot = getCurrentMemberTeleSlot();
+                if (slot) {
+                    slot.metrics.nudges_clicked = (Number(slot.metrics.nudges_clicked) || 0) + 1;
+                    slot.declared_blockers = Array.isArray(slot.declared_blockers) ? slot.declared_blockers : [];
+                    slot.declared_blockers.push({
+                        date: new Date().toLocaleString("ru-RU"),
+                        project: currentProject,
+                        text: reason.trim()
+                    });
+                    await flushTeamTelemetryToCloud(true);
+                    showToast("✅ Причина зафиксирована для Главного Штаба!");
+                }
+            }
+        });
     }
 
     // =========================================================================
@@ -11604,7 +11739,7 @@ function enterPendingWaitingRoom(userObj) {
 
 <!-- ========================================================================= -->
 <!-- ========================================================================= -->
-<!-- === v25.1: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- === v25.3: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
 <!-- ========================================================================= -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Ассистент & Навигатор" style="display:flex; align-items:center; justify-content:center; gap:6px; position:fixed; bottom:74px; right:14px; z-index:25000; background:linear-gradient(135deg,#0284c7,#8b5cf6); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:999px; height:42px; min-width:42px; padding:0 12px; font-weight:800; font-size:0.78rem; box-shadow:0 6px 20px rgba(2,132,199,0.45); cursor:pointer; backdrop-filter:blur(8px); transition:all 0.2s ease;">
     <span style="font-size:1.15rem; line-height:1;">🤖</span>
