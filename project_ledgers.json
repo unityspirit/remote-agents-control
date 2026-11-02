@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 05:54:31",
+  "updated": "2026-11-02 05:57:13",
   "projects_count": 56,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2470,16 +2470,16 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-10-31",
+      "last_change": "2026-11-02",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 4,
+        "completed_works": 6,
         "open_tasks": 23,
-        "tim_reports": 1,
+        "tim_reports": 2,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2515,6 +2515,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-166",
+          "issue_number": 166,
+          "date": "2026-11-02 05:57:04",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#166 TIM: Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261102_055650",
+          "issue_number": 166,
+          "date": "2026-11-02 05:56:50",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+          "summary": "Мы автоматизируем напоминания в Telegram, чтобы повысить вовлечённость сотрудников и ускорить выполнение задач. В рамках проекта \"Входящие_Офис\" создаём мини‑бота, который отправит персонализированное сообщение Алеберте о её папке и необход",
+          "human_action": "Подтвердить запуск бота и предоставить доступ к БД с данными о папках.",
+          "status": "done"
+        },
         {
           "id": "card-164",
           "issue_number": 164,
@@ -2692,28 +2716,6 @@
           "title": "#144 https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_ter",
           "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #144 → …»",
           "status": "need_project"
-        },
-        {
-          "id": "card-143",
-          "issue_number": 143,
-          "date": "2026-10-25 17:09:43",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#143 https://www.abacum.ai/?utm_feeditemid=&utm_device=m&utm_term=&utm_source=google&utm_medium=paid-search&utm_campaign=PPC+%7C+Search+%7C+Brand",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #143 → …»",
-          "status": "need_project"
-        },
-        {
-          "id": "card-141",
-          "issue_number": 141,
-          "date": "2026-10-25 15:55:37",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#141 https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=8288",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #141 → AI Skills & Nobel Stabilization» или выбрать другой проект",
-          "status": "awaiting_approval"
         }
       ]
     },
