@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:30:57",
+  "updated": "2026-11-02 12:32:49",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2512,7 +2512,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 11,
-        "open_tasks": 23,
+        "open_tasks": 24,
         "tim_reports": 4,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2549,6 +2549,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-19",
+          "issue_number": 19,
+          "date": "2026-11-02 12:32:39",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #19 → Unity Inc» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
         {
           "id": "card-23",
           "issue_number": 23,
@@ -2742,17 +2753,6 @@
           "agent": "🧑 Власлав",
           "title": "#154 🌟 Скилл для ИИ соберёт ваше древо до седьмого колена  В сети появился скилл, который строит полное генеалогическое древо по тысячам источник",
           "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #154 → Личное — обучение и релокация» или выбрать другой проект",
-          "status": "awaiting_approval"
-        },
-        {
-          "id": "card-155",
-          "issue_number": 155,
-          "date": "2026-10-28 06:58:18",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#155 https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they project",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #155 → Grok_xAI_Teammates» или выбрать другой проект",
           "status": "awaiting_approval"
         }
       ]
