@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 12:17:10",
+  "updated": "2026-11-02 12:23:56",
   "kpis": {
-    "total_completed_works": 169,
+    "total_completed_works": 171,
     "tim_master_reports": 15,
     "active_projects_count": 53,
     "total_saved_photos": 1,
@@ -171,13 +171,13 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 92,
+        "completed_works": 94,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 11,
         "size_kb": 283172,
-        "ai_analyses": 92,
+        "ai_analyses": 94,
         "research_notes": 0
       },
       "continue_first": {
@@ -203,7 +203,7 @@
       ],
       "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
       "last_work": {
-        "id": "hist-1",
+        "id": "hist-3",
         "date": "23.10.2026 18:20",
         "project": "Unity Inc",
         "type": "ai_study",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 63,
+      "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:17:09"
+      "updated_at": "2026-11-02 12:23:54"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 63,
+      "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:17:09"
+      "updated_at": "2026-11-02 12:23:54"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 63,
+      "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:17:09"
+      "updated_at": "2026-11-02 12:23:54"
     },
     {
       "key": "researcher",
@@ -873,7 +873,7 @@
       "tasks_completed": 25,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:17:09"
+      "updated_at": "2026-11-02 12:23:54"
     },
     {
       "key": "scribe",
@@ -881,10 +881,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 21,
+      "tasks_completed": 22,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:17:09"
+      "updated_at": "2026-11-02 12:23:54"
     },
     {
       "key": "project_lead",
@@ -892,10 +892,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 21,
+      "tasks_completed": 22,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:17:09"
+      "updated_at": "2026-11-02 12:23:54"
     },
     {
       "key": "developer",
@@ -965,6 +965,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-24",
+      "issue_number": 24,
+      "date": "2026-11-02 12:23:19",
+      "project": "Unity Inc",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#24 Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plus без воды",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-26",
       "issue_number": 26,
