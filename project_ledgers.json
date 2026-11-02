@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:34:04",
+  "updated": "2026-11-02 12:35:34",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2512,7 +2512,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 11,
-        "open_tasks": 24,
+        "open_tasks": 25,
         "tim_reports": 4,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2549,6 +2549,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-17",
+          "issue_number": 17,
+          "date": "2026-11-02 12:35:23",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#17 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #17 → Unity Inc» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
         {
           "id": "card-19",
           "issue_number": 19,
@@ -2743,17 +2754,6 @@
           "title": "#153 https://www.instagram.com/intermiamibuzz пример бизнеса в автоматическом режиме",
           "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #153»",
           "status": "not_studied"
-        },
-        {
-          "id": "card-154",
-          "issue_number": 154,
-          "date": "2026-10-28 06:58:41",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#154 🌟 Скилл для ИИ соберёт ваше древо до седьмого колена  В сети появился скилл, который строит полное генеалогическое древо по тысячам источник",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #154 → Личное — обучение и релокация» или выбрать другой проект",
-          "status": "awaiting_approval"
         }
       ]
     },
