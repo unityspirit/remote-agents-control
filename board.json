@@ -14306,6 +14306,249 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:48:56"
+    },
+    "10": {
+      "id": 10,
+      "created": "2026-11-02 12:49:40",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:49:40",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:50:54",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "RESEARCH_MORE: Фермы контента рынок конкуренты кейсы монетизации 2026",
+      "urls": [],
+      "project": "Unity Inc",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:50:54"
+    },
+    "9": {
+      "id": 9,
+      "created": "2026-11-02 12:57:20",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:57:20",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:57:55",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "NEW_MEMBER_PROJECT: Проект компании по интересу: Фермы контента",
+      "urls": [],
+      "project": "Unity Inc",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 12:57:55"
+    },
+    "8": {
+      "id": 8,
+      "created": "2026-11-02 13:02:35",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:02:35",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:03:58",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-382737 (@globalplusteam / @globalplusteam)",
+      "urls": [],
+      "project": "Unity Inc",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:03:58"
+    },
+    "7": {
+      "id": 7,
+      "created": "2026-11-02 13:07:51",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:07:51",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:10:15",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
+      "urls": [],
+      "project": "Лиды_Гости",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:10:15"
+    },
+    "6": {
+      "id": 6,
+      "created": "2026-11-02 13:14:30",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:14:30",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:15:33",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-015916 (@codeplz / @codeplz)",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:15:33"
+    },
+    "5": {
+      "id": 5,
+      "created": "2026-11-02 13:20:34",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:20:34",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:21:15",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-388120 (Alberta / Alberta)",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:21:15"
+    },
+    "4": {
+      "id": 4,
+      "created": "2026-11-02 13:25:18",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:25:18",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:27:45",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "GUEST_LEAD_QUIZ: AI-Маркетинг & Pay-on-Results Воронки",
+      "urls": [],
+      "project": "Traffic",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:27:45"
+    },
+    "3": {
+      "id": 3,
+      "created": "2026-11-02 13:32:19",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:32:19",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:33:39",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-652931 (@adevargos / @adevargos)",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:33:39"
+    },
+    "2": {
+      "id": 2,
+      "created": "2026-11-02 13:37:22",
+      "handoffs": [
+        {
+          "t": "2026-11-02 13:37:22",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 13:39:05",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
+      "urls": [],
+      "project": "Лиды_Гости",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-02 13:39:05"
     }
   }
 }
