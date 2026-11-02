@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:38:42",
+  "updated": "2026-11-02 12:41:31",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3126,13 +3126,13 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Лиды_Гости»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 6,
+        "completed_works": 8,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 6,
+        "ai_analyses": 8,
         "research_notes": 0
       },
       "continue_first": {
@@ -3165,13 +3165,24 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-4",
+          "id": "hist-6",
           "date": "31.10.2026 06:01",
           "project": "Лиды_Гости",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "GUEST_LEAD_QUIZ: B2B AI-Решения & Цифровые Директора",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-14",
+          "issue_number": 14,
+          "date": "2026-11-02 12:41:16",
+          "project": "Лиды_Гости",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#14 GUEST_LEAD: Покажи отчёт о проделанной работе и статус задач",
+          "summary": "✅ Готово",
           "status": "done"
         },
         {
@@ -3208,7 +3219,17 @@
           "status": "done"
         },
         {
-          "id": "hist-3",
+          "id": "hist-4",
+          "date": "02.11.2026 12:40",
+          "project": "Лиды_Гости",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "GUEST_LEAD: Покажи отчёт о проделанной работе и статус задач",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-5",
           "date": "02.11.2026 12:29",
           "project": "Лиды_Гости",
           "type": "ai_study",
