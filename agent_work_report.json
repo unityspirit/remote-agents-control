@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-02 12:30:57",
+  "updated": "2026-11-02 12:32:49",
   "kpis": {
     "total_completed_works": 179,
     "tim_master_reports": 17,
     "active_projects_count": 54,
     "total_saved_photos": 1,
-    "awaiting_human_count": 39
+    "awaiting_human_count": 40
   },
   "priority_continuations": [
     {
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     {
       "key": "gatekeeper",
@@ -848,32 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:30:56"
-    },
-    {
-      "key": "scribe",
-      "name": "Архивариус",
-      "emoji": "🗂",
-      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
-      "state": "online",
-      "tasks_completed": 26,
-      "last_project": "Все проекты",
-      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:30:56"
-    },
-    {
-      "key": "project_lead",
-      "name": "Ведущий агент проекта",
-      "emoji": "🎯",
-      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
-      "state": "online",
-      "tasks_completed": 26,
-      "last_project": "Все проекты",
-      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
     },
     {
       "key": "researcher",
@@ -881,7 +859,7 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 25,
+      "tasks_completed": 26,
       "last_project": "Входящие_Офис",
       "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "updated_at": "2026-11-02 12:16:58"
@@ -892,10 +870,32 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 25,
+      "tasks_completed": 26,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:30:56"
+      "updated_at": "2026-11-02 12:32:48"
+    },
+    {
+      "key": "scribe",
+      "name": "Архивариус",
+      "emoji": "🗂",
+      "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
+      "state": "online",
+      "tasks_completed": 26,
+      "last_project": "Все проекты",
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "updated_at": "2026-11-02 12:32:48"
+    },
+    {
+      "key": "project_lead",
+      "name": "Ведущий агент проекта",
+      "emoji": "🎯",
+      "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
+      "state": "online",
+      "tasks_completed": 26,
+      "last_project": "Все проекты",
+      "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
+      "updated_at": "2026-11-02 12:32:48"
     },
     {
       "key": "developer",
@@ -965,6 +965,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-19",
+      "issue_number": 19,
+      "date": "2026-11-02 12:32:39",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #19 → Unity Inc» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
     {
       "id": "card-20",
       "issue_number": 20,
