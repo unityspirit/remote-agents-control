@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:17:10",
+  "updated": "2026-11-02 12:23:56",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -1969,13 +1969,13 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 92,
+        "completed_works": 94,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 11,
         "size_kb": 283172,
-        "ai_analyses": 92,
+        "ai_analyses": 94,
         "research_notes": 0
       },
       "continue_first": {
@@ -2008,13 +2008,24 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-1",
+          "id": "hist-3",
           "date": "23.10.2026 18:20",
           "project": "Unity Inc",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-24",
+          "issue_number": 24,
+          "date": "2026-11-02 12:23:19",
+          "project": "Unity Inc",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#24 Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plus без воды",
+          "summary": "✅ Готово",
           "status": "done"
         },
         {
@@ -2026,6 +2037,16 @@
           "agent": "🛡 Контролёр",
           "title": "#132 /ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
           "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
+          "status": "done"
+        },
+        {
+          "id": "hist-2",
+          "date": "02.11.2026 12:22",
+          "project": "Unity Inc",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plus без воды",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
           "status": "done"
         }
       ]
