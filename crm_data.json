@@ -86,9 +86,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 42,
+      "evidence_count": 43,
       "scope": "project:Alberta",
-      "last_updated": "2026-11-02T12:48:11.153880"
+      "last_updated": "2026-11-02T13:25:04.290870"
     },
     {
       "id": "autonomous-task-resolution",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 213,
+      "evidence_count": 214,
       "scope": "global",
-      "last_updated": "2026-11-02T13:20:00.112599"
+      "last_updated": "2026-11-02T13:25:04.293226"
     },
     {
       "id": "task-custom-request",
@@ -161,5 +161,5 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-02T20:20:15.949337+00:00"
+  "updated_at": "2026-11-02T20:25:06.834277+00:00"
 }
