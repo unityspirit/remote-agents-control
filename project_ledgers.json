@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 11:41:39",
+  "updated": "2026-11-02 12:09:28",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2477,9 +2477,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 6,
+        "completed_works": 10,
         "open_tasks": 23,
-        "tim_reports": 2,
+        "tim_reports": 4,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2515,6 +2515,54 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-25",
+          "issue_number": 25,
+          "date": "2026-11-02 12:07:47",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#25 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261102_120646",
+          "issue_number": 25,
+          "date": "2026-11-02 12:06:46",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
+        {
+          "id": "card-26",
+          "issue_number": 26,
+          "date": "2026-11-02 12:01:05",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#26 TIM: https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=2",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261102_120027",
+          "issue_number": 26,
+          "date": "2026-11-02 12:00:27",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=240105",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-166",
           "issue_number": 166,
@@ -2671,50 +2719,6 @@
           "agent": "🧑 Власлав",
           "title": "#147 https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaig",
           "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #147 → …»",
-          "status": "need_project"
-        },
-        {
-          "id": "card-148",
-          "issue_number": 148,
-          "date": "2026-10-26 11:10:16",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#148 https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #148»",
-          "status": "not_studied"
-        },
-        {
-          "id": "card-149",
-          "issue_number": 149,
-          "date": "2026-10-26 11:09:17",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#149 https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #149»",
-          "status": "not_studied"
-        },
-        {
-          "id": "card-146",
-          "issue_number": 146,
-          "date": "2026-10-25 18:31:06",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#146 https://delvi.tech/?gad_source=2&gad_campaignid=23878973489 изучи проект научись сделай такой проект прибыльным для меня!",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #146 → …»",
-          "status": "need_project"
-        },
-        {
-          "id": "card-144",
-          "issue_number": 144,
-          "date": "2026-10-25 17:15:07",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#144 https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_ter",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #144 → …»",
           "status": "need_project"
         }
       ]
