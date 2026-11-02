@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02 05:54:31",
+  "updated": "2026-11-02 05:57:13",
   "kpis": {
-    "total_completed_works": 163,
-    "tim_master_reports": 12,
+    "total_completed_works": 165,
+    "tim_master_reports": 13,
     "active_projects_count": 53,
     "total_saved_photos": 1,
     "awaiting_human_count": 39
@@ -815,10 +815,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 12,
+      "tasks_completed": 13,
       "last_project": "Входящие_Офис",
-      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
-      "updated_at": "2026-10-30 03:44:17"
+      "last_task": "Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+      "updated_at": "2026-11-02 05:57:04"
     },
     {
       "key": "intake",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 59,
+      "tasks_completed": 60,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 05:54:28"
+      "updated_at": "2026-11-02 05:57:12"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 59,
+      "tasks_completed": 60,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 05:54:28"
+      "updated_at": "2026-11-02 05:57:12"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 59,
+      "tasks_completed": 60,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 05:54:28"
+      "updated_at": "2026-11-02 05:57:12"
     },
     {
       "key": "researcher",
@@ -873,7 +873,7 @@
       "tasks_completed": 23,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 05:54:28"
+      "updated_at": "2026-11-02 05:57:12"
     },
     {
       "key": "scribe",
@@ -881,10 +881,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 18,
+      "tasks_completed": 19,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 05:54:28"
+      "updated_at": "2026-11-02 05:57:12"
     },
     {
       "key": "project_lead",
@@ -892,10 +892,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 18,
+      "tasks_completed": 19,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 05:54:28"
+      "updated_at": "2026-11-02 05:57:12"
     },
     {
       "key": "developer",
@@ -903,10 +903,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 11,
+      "tasks_completed": 12,
       "last_project": "Входящие_Офис",
-      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
-      "updated_at": "2026-10-30 03:44:17"
+      "last_task": "Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+      "updated_at": "2026-11-02 05:57:04"
     },
     {
       "key": "strategist",
@@ -914,10 +914,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 10,
+      "tasks_completed": 11,
       "last_project": "Входящие_Офис",
-      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
-      "updated_at": "2026-10-30 03:44:17"
+      "last_task": "Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+      "updated_at": "2026-11-02 05:57:04"
     },
     {
       "key": "marketer",
@@ -925,10 +925,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 8,
+      "tasks_completed": 9,
       "last_project": "Входящие_Офис",
-      "last_task": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
-      "updated_at": "2026-10-30 03:44:17"
+      "last_task": "Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+      "updated_at": "2026-11-02 05:57:04"
     },
     {
       "key": "vibe_coder",
@@ -965,6 +965,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-166",
+      "issue_number": 166,
+      "date": "2026-11-02 05:57:04",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#166 TIM: Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261102_055650",
+      "issue_number": 166,
+      "date": "2026-11-02 05:56:50",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "Отправь Алеберте @aliashirani в телеграм ей напоминание о её папке и что продолжить",
+      "summary": "Мы автоматизируем напоминания в Telegram, чтобы повысить вовлечённость сотрудников и ускорить выполнение задач. В рамках проекта \"Входящие_Офис\" создаём мини‑бота, который отправит персонализированное сообщение Алеберте о её папке и необход",
+      "human_action": "Подтвердить запуск бота и предоставить доступ к БД с данными о папках.",
+      "status": "done"
+    },
     {
       "id": "card-164",
       "issue_number": 164,
