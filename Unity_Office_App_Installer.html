@@ -157,7 +157,7 @@
       navigator.share({ title: 'Global Spirit Group ★ Виртуальный Офис', url: url }).catch(() => {});
     } else if (navigator.clipboard) {
       navigator.clipboard.writeText(url);
-      alert('Ссылка скопирована: ' + url);
+      showToast('📋 Ссылка скопирована в буфер: ' + url);
     }
   }
 </script>
