@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 12:59:02",
+  "updated": "2026-11-02 13:16:19",
   "kpis": {
-    "total_completed_works": 195,
+    "total_completed_works": 198,
     "tim_master_reports": 22,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -203,7 +203,7 @@
       ],
       "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
       "last_work": {
-        "id": "hist-10",
+        "id": "hist-11",
         "date": "23.10.2026 18:20",
         "project": "Unity Inc",
         "type": "ai_study",
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 79,
+      "tasks_completed": 82,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:59:01"
+      "updated_at": "2026-11-02 13:16:18"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 79,
+      "tasks_completed": 82,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:59:01"
+      "updated_at": "2026-11-02 13:16:18"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 79,
+      "tasks_completed": 82,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:59:01"
+      "updated_at": "2026-11-02 13:16:18"
     },
     {
       "key": "scribe",
@@ -859,10 +859,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 35,
+      "tasks_completed": 38,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:59:01"
+      "updated_at": "2026-11-02 13:16:18"
     },
     {
       "key": "project_lead",
@@ -870,10 +870,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 35,
+      "tasks_completed": 38,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:59:01"
+      "updated_at": "2026-11-02 13:16:18"
     },
     {
       "key": "researcher",
@@ -895,7 +895,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 12:59:01"
+      "updated_at": "2026-11-02 13:16:18"
     },
     {
       "key": "developer",
@@ -965,6 +965,39 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-6",
+      "issue_number": 6,
+      "date": "2026-11-02 13:15:33",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#6 AUTH_SYNC: Быстрая заявка REQ-015916 (@codeplz / @codeplz)",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "card-7",
+      "issue_number": 7,
+      "date": "2026-11-02 13:10:15",
+      "project": "Лиды_Гости",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#7 GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "card-8",
+      "issue_number": 8,
+      "date": "2026-11-02 13:03:58",
+      "project": "Unity Inc",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#8 AUTH_SYNC: Быстрая заявка REQ-382737 (@globalplusteam / @globalplusteam)",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-9",
       "issue_number": 9,
@@ -1689,41 +1722,6 @@
       "summary": "Тим скоординировал 3 отделов (B2B Продажи & Офферы, Стратег, Главный Разработчик) для проекта Дима Верхняя Синичиха Алапаевск.",
       "human_action": "",
       "status": "done"
-    },
-    {
-      "id": "tim-1792716593",
-      "issue_number": null,
-      "date": "2026-10-22 18:49:53",
-      "project": "Traffic",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "README",
-      "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
-      "human_action": "",
-      "status": "done"
-    },
-    {
-      "id": "card-125",
-      "issue_number": 125,
-      "date": "2026-10-22 08:24:06",
-      "project": "Grok_xAI_Teammates",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#125 https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxconv_demandgen&utm_content=828009486204&cc_gcl",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-126",
-      "issue_number": 126,
-      "date": "2026-10-22 08:22:46",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#126 https://www.hive.fi/?utm_source=google&utm_medium=cpc&utm_campaign=fall2026_pmax&utm_content=unframed&gad_source=2&gad_campaignid=2424282140",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #126 → Личное — обучение и релокация» или выбрать другой проект",
-      "status": "awaiting_approval"
     }
   ]
 }
