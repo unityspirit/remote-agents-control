@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:09:27",
+  "updated": "2026-11-02 12:17:09",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -10,9 +10,9 @@
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
       "tasks_completed": 15,
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
+      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:07:46"
+      "updated_at": "2026-11-02 12:16:58"
     },
     "strategist": {
       "name": "Стратег",
@@ -23,9 +23,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 13,
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
+      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:07:46"
+      "updated_at": "2026-11-02 12:16:58"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -36,9 +36,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 11,
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
+      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:07:46"
+      "updated_at": "2026-11-02 12:16:58"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -49,9 +49,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 14,
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
+      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:07:46"
+      "updated_at": "2026-11-02 12:16:58"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 63,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 25,
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
+      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:07:46"
+      "updated_at": "2026-11-02 12:16:58"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 63,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 25,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 63,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 21,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 21,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:09:27"
+      "updated_at": "2026-11-02 12:17:09"
     }
   },
   "daemons": {
@@ -243,7 +243,7 @@
       "last_provider": "auto_standby",
       "last_model": "auto",
       "last_call_at": null,
-      "errors_count": 2
+      "errors_count": 1
     }
   },
   "statuses": {
