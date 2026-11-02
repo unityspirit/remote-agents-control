@@ -13981,6 +13981,74 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 12:30:45"
+    },
+    "19": {
+      "id": 19,
+      "created": "2026-11-02 12:31:40",
+      "handoffs": [
+        {
+          "t": "2026-11-02 12:31:40",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-02 12:31:41",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-02 12:32:14",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: partial (часть источника недоступна: не удалось получить)"
+        },
+        {
+          "t": "2026-11-02 12:32:34",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Unity Inc (уверенность medium)"
+        },
+        {
+          "t": "2026-11-02 12:32:34",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "partial",
+        "reason": "часть источника недоступна: не удалось получить",
+        "chars": 10158
+      },
+      "title": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+      "urls": [
+        "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+        "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04&utm_id=24354174629&g_net=ytis&g_dev=m&gad_source=2&gad_campaignid=24354174629"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-11-02 12:32:39",
+      "suggested_project": "Unity Inc",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "Unity Inc",
+            10
+          ]
+        ]
+      },
+      "pending_file": "Карточка_19_https___space_gnssacademy_co.md",
+      "raw_file": "raw_19_20261102_123141_https___space_gnssacademy_co.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #19 → Unity Inc» или выбрать другой проект"
+      }
     }
   }
 }
