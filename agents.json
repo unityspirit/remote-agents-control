@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:46:15",
+  "updated": "2026-11-02 12:49:06",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 21,
-      "last_task": "Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-02 12:45:53"
+      "tasks_completed": 22,
+      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:48:56"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 16,
-      "last_task": "Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-02 12:45:53"
+      "tasks_completed": 17,
+      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:48:56"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 16,
-      "last_task": "Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-02 12:45:53"
+      "tasks_completed": 17,
+      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:48:56"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 18,
-      "last_task": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-02 12:43:11"
+      "tasks_completed": 19,
+      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
+      "last_project": "Unity Inc",
+      "updated_at": "2026-11-02 12:48:56"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 27,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 32,
+      "tasks_completed": 33,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 32,
+      "tasks_completed": 33,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:46:15"
+      "updated_at": "2026-11-02 12:49:06"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
       "last_call_at": "2026-11-02T19:40:32.075314+00:00",
-      "errors_count": 14
+      "errors_count": 15
     }
   },
   "statuses": {
