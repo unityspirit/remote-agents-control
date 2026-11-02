@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 13:16:19",
+  "updated": "2026-11-02 13:28:39",
   "kpis": {
-    "total_completed_works": 198,
+    "total_completed_works": 201,
     "tim_master_reports": 22,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -120,13 +120,13 @@
       "why_first": "Единый двигатель продаж всего холдинга: связка автоворонок, холодного аутрича и коротких Reels/Shorts питает лидами B2B сайты, Доминикану и Micro-SaaS.",
       "human_action": "Выбрать приоритетную нишу для холодного аутрича и утвердить оффер с гарантией.",
       "counts": {
-        "completed_works": 9,
+        "completed_works": 11,
         "open_tasks": 0,
         "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 7,
         "size_kb": 76,
-        "ai_analyses": 7,
+        "ai_analyses": 9,
         "research_notes": 0
       },
       "continue_first": {
@@ -152,7 +152,7 @@
       ],
       "research_topic": "B2B лидогенерация Pay on Results холодный аутрич Telegram конверсионные связки 2026",
       "last_work": {
-        "id": "hist-7",
+        "id": "hist-9",
         "date": "23.10.2026 19:09",
         "project": "Traffic",
         "type": "ai_study",
@@ -377,7 +377,7 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 4,
+        "completed_works": 5,
         "open_tasks": 1,
         "tim_reports": 2,
         "saved_photos": 0,
@@ -409,13 +409,13 @@
       ],
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "last_work": {
-        "id": "card-12",
-        "issue_number": 12,
-        "date": "2026-11-02 12:45:53",
+        "id": "card-5",
+        "issue_number": 5,
+        "date": "2026-11-02 13:21:15",
         "project": "Alberta",
         "type": "board_card",
         "agent": "🛡 Контролёр",
-        "title": "#12 TIM: Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
+        "title": "#5 AUTH_SYNC: Быстрая заявка REQ-388120 (Alberta / Alberta)",
         "summary": "✅ Готово",
         "status": "done"
       }
@@ -826,10 +826,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 82,
+      "tasks_completed": 84,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:16:18"
+      "updated_at": "2026-11-02 13:28:38"
     },
     {
       "key": "router",
@@ -837,10 +837,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 82,
+      "tasks_completed": 84,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:16:18"
+      "updated_at": "2026-11-02 13:28:38"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +848,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 82,
+      "tasks_completed": 84,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:16:18"
+      "updated_at": "2026-11-02 13:28:38"
     },
     {
       "key": "scribe",
@@ -859,10 +859,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 38,
+      "tasks_completed": 40,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:16:18"
+      "updated_at": "2026-11-02 13:28:38"
     },
     {
       "key": "project_lead",
@@ -870,10 +870,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 38,
+      "tasks_completed": 40,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:16:18"
+      "updated_at": "2026-11-02 13:28:38"
     },
     {
       "key": "researcher",
@@ -895,7 +895,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 13:16:18"
+      "updated_at": "2026-11-02 13:28:38"
     },
     {
       "key": "developer",
@@ -965,6 +965,28 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-4",
+      "issue_number": 4,
+      "date": "2026-11-02 13:27:45",
+      "project": "Traffic",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#4 GUEST_LEAD_QUIZ: AI-Маркетинг & Pay-on-Results Воронки",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "card-5",
+      "issue_number": 5,
+      "date": "2026-11-02 13:21:15",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#5 AUTH_SYNC: Быстрая заявка REQ-388120 (Alberta / Alberta)",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-6",
       "issue_number": 6,
@@ -1694,32 +1716,6 @@
       "departments": "📊 Стратег, ⚡ Вайбкодер & Micro-SaaS",
       "title": "ПЛАН_МОНЕТИЗАЦИИ_VIBECODING_2026",
       "summary": "Мастер-отчёт Директора Тима для проекта 12 IT Продуктов (Короче Капитан).",
-      "human_action": "",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261022_202215",
-      "issue_number": null,
-      "date": "2026-10-22 20:22:15",
-      "project": "12 IT Продуктов (Короче Капитан)",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "💻 Главный Разработчик, 📈 Маркетолог & Трафик, 🔎 Аналитик & Разведчик, ⚡ Вайбкодер & Micro-SaaS, 📊 Стратег",
-      "title": "Тим, изучи канал https://t.me/vibecodings (Станислав Быстрицкий), внедри его инструменты вайбкодинга и составь мастер-план монетизации для х",
-      "summary": "Тим скоординировал 5 отделов (Главный Разработчик, Маркетолог & Трафик, Аналитик & Разведчик, Вайбкодер & Micro-SaaS, Стратег) для проекта 12 IT Продуктов (Короче Капитан).",
-      "human_action": "",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261022_185317",
-      "issue_number": null,
-      "date": "2026-10-22 18:53:17",
-      "project": "Дима Верхняя Синичиха Алапаевск",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🤝 B2B Продажи & Офферы, 📊 Стратег, 💻 Главный Разработчик",
-      "title": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "summary": "Тим скоординировал 3 отделов (B2B Продажи & Офферы, Стратег, Главный Разработчик) для проекта Дима Верхняя Синичиха Алапаевск.",
       "human_action": "",
       "status": "done"
     }
