@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 12:01:43",
+  "updated": "2026-11-02 12:09:27",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 14,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
+      "tasks_completed": 15,
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:07:46"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 12,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
+      "tasks_completed": 13,
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:07:46"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 10,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
+      "tasks_completed": 11,
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:07:46"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 13,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
+      "tasks_completed": 14,
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:07:46"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 24,
-      "last_task": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=24010572905",
+      "tasks_completed": 25,
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-02 12:01:05"
+      "updated_at": "2026-11-02 12:07:46"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 24,
+      "tasks_completed": 25,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 20,
+      "tasks_completed": 21,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 20,
+      "tasks_completed": 21,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-02 12:01:43"
+      "updated_at": "2026-11-02 12:09:27"
     }
   },
   "daemons": {
@@ -243,7 +243,7 @@
       "last_provider": "auto_standby",
       "last_model": "auto",
       "last_call_at": null,
-      "errors_count": 1
+      "errors_count": 2
     }
   },
   "statuses": {
