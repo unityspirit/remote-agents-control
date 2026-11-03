@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 11:55:15",
+  "updated": "2026-11-03 11:57:46",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 23,
-      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "last_project": "Татьяна tentorium.ru",
-      "updated_at": "2026-11-03 11:54:18"
+      "tasks_completed": 24,
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-03 11:57:28"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 18,
-      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "last_project": "Татьяна tentorium.ru",
-      "updated_at": "2026-11-03 11:54:18"
+      "tasks_completed": 19,
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-03 11:57:28"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 17,
-      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
-      "last_project": "Unity Inc",
-      "updated_at": "2026-11-02 12:48:56"
+      "tasks_completed": 18,
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-03 11:57:28"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 20,
-      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "last_project": "Татьяна tentorium.ru",
-      "updated_at": "2026-11-03 11:54:18"
+      "tasks_completed": 21,
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-03 11:57:28"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 27,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 15,
+      "calls_total": 16,
       "calls_by_provider": {
         "deterministic_local_engine": 8,
-        "cloud_test_gateway": 7
+        "cloud_test_gateway": 8
       },
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
-      "last_call_at": "2026-11-03T18:54:18.612554+00:00",
-      "errors_count": 21
+      "last_call_at": "2026-11-03T18:57:28.762920+00:00",
+      "errors_count": 22
     }
   },
   "statuses": {
