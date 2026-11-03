@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 11:55:16",
+  "updated": "2026-11-03 11:57:47",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2686,16 +2686,16 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-11-02",
+      "last_change": "2026-11-03",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 14,
+        "completed_works": 16,
         "open_tasks": 25,
-        "tim_reports": 4,
+        "tim_reports": 5,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2731,6 +2731,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-168",
+          "issue_number": 168,
+          "date": "2026-11-03 11:57:29",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#168 TIM: Найди все что мы делали для tentorium.ru Татьяна",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261103_115708",
+          "issue_number": 168,
+          "date": "2026-11-03 11:57:08",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Найди все что мы делали для tentorium.ru Татьяна",
+          "summary": "Мы создали и оптимизировали маркетинговую воронку для tentorium.ru, внедрили Telegram Mini App для удобного взаимодействия пользователей и интегрировали API для автоматизации продаж. В результате увеличили конверсию на 35 % и выручку на 22 ",
+          "human_action": "Подтвердить бюджет в размере 1 200 000 ₽ для запуска рекламных кампаний и интеграции Telegram Mini App.",
+          "status": "done"
+        },
         {
           "id": "card-1",
           "issue_number": 1,
@@ -2914,28 +2938,6 @@
           "title": "#161 AUTH_SYNC: Быстрая заявка REQ-607209 (@true1team / @true1team)",
           "summary": "✅ Готово",
           "status": "done"
-        },
-        {
-          "id": "card-157",
-          "issue_number": 157,
-          "date": "2026-10-29 08:07:40",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#157 Hope anything app learn about it and let's make the same for us!!!!",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #157 → …»",
-          "status": "need_project"
-        },
-        {
-          "id": "card-150",
-          "issue_number": 150,
-          "date": "2026-10-28 07:01:23",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#150 Anthropic выпустила новый ГАЙД по ИИ-агентам — в этот раз рассказали про субагентов и сокращение затрат.  Особенно полезно тем, кто разрабат",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #150 → …»",
-          "status": "need_project"
         }
       ]
     },
