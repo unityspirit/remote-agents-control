@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 15:32:40",
+  "updated": "2026-11-03 16:00:00",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -876,7 +876,7 @@
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 17,
-        "size_kb": 2648,
+        "size_kb": 2649,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -2693,7 +2693,7 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 16,
+        "completed_works": 18,
         "open_tasks": 25,
         "tim_reports": 5,
         "saved_photos": 1,
@@ -2731,6 +2731,28 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-30",
+          "issue_number": 30,
+          "date": "2026-11-03 15:52:11",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#30 AUTH_SYNC: Быстрая заявка REQ-506276 (Tatianaknyazeva777 / Tatianaknyazeva777)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-31",
+          "issue_number": 31,
+          "date": "2026-11-03 15:45:07",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#31 AUTH_SYNC: Быстрая заявка REQ-657806 (@tatianaknyazeva777 / @tatianaknyazeva777)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-168",
           "issue_number": 168,
@@ -2912,30 +2934,6 @@
           "type": "board_card",
           "agent": "🛡 Контролёр",
           "title": "#163 TIM: найди проекты в папке Костя и отправь мне в телеграм @true1team",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261030_034357",
-          "issue_number": 163,
-          "date": "2026-10-30 03:43:57",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
-          "summary": "Собрать список проектов из папки Костя, оценить их потенциал и отправить в Telegram @true1team. Приоритетные проекты (≥$10k/мес) будут выделены для дальнейшего развития, остальные – в резерв. В итоге получаем 3–5 проектов, из которых 2–3 мо",
-          "human_action": "Подтвердить доступ к папке Костя и предоставить токен Telegram‑бота для отправки сообщений.",
-          "status": "done"
-        },
-        {
-          "id": "card-161",
-          "issue_number": 161,
-          "date": "2026-10-29 23:37:28",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#161 AUTH_SYNC: Быстрая заявка REQ-607209 (@true1team / @true1team)",
           "summary": "✅ Готово",
           "status": "done"
         }
