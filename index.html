@@ -1216,7 +1216,7 @@
         }
 
         @media (max-width: 768px) {
-            /* === v25.4 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
+            /* === v25.5 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
             .topbar {
                 padding: 4px 8px !important;
                 display: flex !important;
@@ -2006,7 +2006,7 @@
         }
 
     
-/* v25.4: Sleek Side-Docked AI Navigator ("Выглядывает сбоку когда требуется") */
+/* v25.5: Sleek Side-Docked AI Navigator ("Выглядывает сбоку когда требуется") */
 #btn-floating-guest-ai {
     position: fixed !important;
     right: 0 !important;
@@ -2052,7 +2052,7 @@
     box-shadow: 0 0 8px #34d399 !important;
 }
 
-/* v25.4: Slide-Over AI Side Drawer (Never blocks center screen) */
+/* v25.5: Slide-Over AI Side Drawer (Never blocks center screen) */
 #guest-ai-chat-modal {
     position: fixed !important;
     top: 0 !important;
@@ -2100,7 +2100,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v25.4: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v25.5: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none !important;" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -2296,8 +2296,8 @@
                     <button class="chip" onclick="setProjectFilter('all', this)">📂 Все (<span id="cnt-folders" class="tabular">48</span>)</button>
                 </div>
 
-                <!-- 24/7 INTERACTIVE WEB APPS QUICK LAUNCH -->
-                <div style="background:linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.14)); border:1px solid rgba(59,130,246,0.35); border-radius:14px; padding:10px 12px; margin-bottom:8px;">
+                <!-- 24/7 INTERACTIVE WEB APPS QUICK LAUNCH (RESTRICTED: FULL ACCESS ONLY) -->
+                <div id="quick-web-apps-box" style="display:none; background:linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.14)); border:1px solid rgba(59,130,246,0.35); border-radius:14px; padding:10px 12px; margin-bottom:8px;">
                     <div style="font-size:0.7rem; font-weight:800; color:var(--accent); text-transform:uppercase; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
                         <span>⚡ Веб-модули 24/7 (с телефона):</span>
                         <span style="font-size:0.65rem; color:var(--text-dim); background:var(--bg-main); padding:2px 6px; border-radius:6px;">Онлайн без ПК</span>
@@ -2885,7 +2885,7 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.4</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.5</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -3157,7 +3157,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v25.4")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v25.5")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -4392,7 +4392,7 @@
 
     
     // =========================================================================
-    // === v25.4: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
+    // === v25.5: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
     // =========================================================================
     function openAssignProjectModal(projName) {
         if (!isOwnerSession()) {
@@ -4578,6 +4578,10 @@
     }
 
     function renderProjects() {
+        const webAppsBox = document.getElementById("quick-web-apps-box");
+        if (webAppsBox) {
+            webAppsBox.style.display = (typeof isFullAccessSession === "function" && isFullAccessSession()) ? "block" : "none";
+        }
         const container = document.getElementById("projects-container");
         const q = (document.getElementById("project-search").value || "").toLowerCase().trim();
 
@@ -5552,7 +5556,7 @@
 
 
     // =========================================================================
-    // === v25.4: UNIVERSAL NON-BLOCKING IN-APP MODAL (ZERO FREEZE / NO PROMPT) ===
+    // === v25.5: UNIVERSAL NON-BLOCKING IN-APP MODAL (ZERO FREEZE / NO PROMPT) ===
     // =========================================================================
     let universalPromptCallback = null;
 
@@ -7577,7 +7581,7 @@
 
     
     // =========================================================================
-    // === v25.4: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
+    // === v25.5: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
     // =========================================================================
 
     function buildOwnerUserMonitoringHtml() {
@@ -8236,7 +8240,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v25.4 active");
+                            console.log("Service Worker v25.5 active");
                         }
                     });
                 }
@@ -8410,8 +8414,18 @@
         return Boolean(currentAuthUser && currentAuthUser.status === "approved");
     }
 
+    function isFullAccessSession() {
+        if (!isUserAuthenticated()) return false;
+        if (currentAuthUser.role === "owner" || currentAuthUser.role === "admin") return true;
+        const l = (currentAuthUser.login || "").toLowerCase().replace(/^@/, "");
+        if (l === "unityspiritpartners" || l === "unityspiritteam" || l === "unityspiritteam@gmail.com" || l === "true1team") return true;
+        const arr = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
+        if (arr.includes("*")) return true;
+        return false;
+    }
+
     function isOwnerSession() {
-        return Boolean(isUserAuthenticated() && currentAuthUser.role === "owner");
+        return isFullAccessSession();
     }
 
         function getUserAssignedProjects() {
@@ -8636,10 +8650,10 @@
 
     
     // =========================================================================
-    // === v25.4: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v25.5: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v25.4: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v25.5: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -8784,7 +8798,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v25.4: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v25.5: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -9273,7 +9287,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v25.4: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v25.5: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -9281,7 +9295,7 @@ function sendQuickGuestPromptPortal(txt) {
     } catch(e) {}
 
     // =========================================================================
-    // === v25.4: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // === v25.5: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
     // =========================================================================
     const I18N_DICT = {
         ru: {
@@ -9591,7 +9605,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
     // =========================================================================
-    // === v25.4: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // === v25.5: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
     // =========================================================================
     function navigateOfficeSection(target) {
         // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
@@ -9883,7 +9897,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.4</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.5</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -9973,7 +9987,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
         // =========================================================================
-    // === v25.4: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v25.5: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -10031,7 +10045,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     // =========================================================================
-    // === v25.4: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
+    // === v25.5: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
     // =========================================================================
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
@@ -11917,9 +11931,9 @@ function enterPendingWaitingRoom(userObj) {
 
 <!-- ========================================================================= -->
 <!-- ========================================================================= -->
-<!-- === v25.4: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- === v25.5: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
 <!-- ========================================================================= -->
-<!-- v25.4: SLEEK SIDE-DOCK PEEKING AI NAVIGATOR & ASSISTANT -->
+<!-- v25.5: SLEEK SIDE-DOCK PEEKING AI NAVIGATOR & ASSISTANT -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Навигатор & Ассистент (нажмите, чтобы открыть панель сбоку)">
     <span class="ai-side-peek-icon">🤖</span>
     <span class="ai-side-peek-dot"></span>
