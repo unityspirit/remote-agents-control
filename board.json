@@ -14657,6 +14657,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-03 15:45:07"
+    },
+    "30": {
+      "id": 30,
+      "created": "2026-11-03 15:49:57",
+      "handoffs": [
+        {
+          "t": "2026-11-03 15:49:57",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-03 15:52:11",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "AUTH_SYNC: Быстрая заявка REQ-506276 (Tatianaknyazeva777 / Tatianaknyazeva777)",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-03 15:52:11"
     }
   }
 }
