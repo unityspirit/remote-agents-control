@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02 14:03:21",
+  "updated": "2026-11-03 11:55:16",
   "kpis": {
-    "total_completed_works": 205,
-    "tim_master_reports": 22,
+    "total_completed_works": 207,
+    "tim_master_reports": 23,
     "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 41
@@ -670,6 +670,58 @@
       }
     },
     {
+      "project": "Татьяна tentorium.ru",
+      "folder": "Татьяна tentorium.ru",
+      "lead_agent": "E-Commerce & Recurring Order Specialist",
+      "priority_score": 68,
+      "revenue_potential": "E-commerce воронка повторных заказов и работа с базой постоянных покупателей.",
+      "why_first": "Оптимизация структуры каталога, настройка триггеров повторных покупок и аналитика.",
+      "human_action": "Утвердить обновленный каталог товаров и акционные наборы для рассылки.",
+      "counts": {
+        "completed_works": 2,
+        "open_tasks": 0,
+        "tim_reports": 1,
+        "saved_photos": 0,
+        "files_on_disk": 4,
+        "size_kb": 71054,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Оптимизация структуры каталога, настройка триггеров повторных покупок и аналитика.",
+        "cmd": "TIM: Изучи текущее состояние папки «Татьяна tentorium.ru», оцени потенциал заработка и выполни первоочередной шаг: Оптимизация структуры каталога, настройка триггеров повторных покупок и аналитика."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Татьяна tentorium.ru"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Татьяна tentorium.ru"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Татьяна tentorium.ru"
+        }
+      ],
+      "research_topic": "Татьяна tentorium.ru рынок конкуренты кейсы монетизации 2026",
+      "last_work": {
+        "id": "card-169",
+        "issue_number": 169,
+        "date": "2026-11-03 11:54:18",
+        "project": "Татьяна tentorium.ru",
+        "type": "board_card",
+        "agent": "🛡 Контролёр",
+        "title": "#169 TIM: Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+        "summary": "✅ Готово",
+        "status": "done"
+      }
+    },
+    {
       "project": "Личное — обучение и релокация",
       "folder": "Личное — обучение и релокация",
       "lead_agent": "Education & Global Mobility Lead",
@@ -764,48 +816,6 @@
       ],
       "research_topic": "AI Skills & Nobel Stabilization рынок конкуренты кейсы монетизации 2026",
       "last_work": null
-    },
-    {
-      "project": "Alex Brus Питер",
-      "folder": "Alex Brus Питер",
-      "lead_agent": "Construction Quiz & Lead Qualifier",
-      "priority_score": 68,
-      "revenue_potential": "Квиз-калькулятор сметы загородного дома с прогревом лидов и передачей в отдел продаж.",
-      "why_first": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
-      "human_action": "Сверить актуальные расценки за кубометр бруса для калькулятора сметы.",
-      "counts": {
-        "completed_works": 0,
-        "open_tasks": 0,
-        "tim_reports": 0,
-        "saved_photos": 0,
-        "files_on_disk": 1890,
-        "size_kb": 199937,
-        "ai_analyses": 0,
-        "research_notes": 0
-      },
-      "continue_first": {
-        "title": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
-        "cmd": "TIM: Изучи текущее состояние папки «Alex Brus Питер», оцени потенциал заработка и выполни первоочередной шаг: Расчет динамической сметы, сбор контактных данных и квалификация лидов."
-      },
-      "recommended_agents": [
-        {
-          "key": "tim",
-          "label": "👑 Директор Тим (План и запуск)",
-          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Alex Brus Питер"
-        },
-        {
-          "key": "researcher",
-          "label": "🔎 Разведчик (Аудит папки)",
-          "cmd": "STATUS: Полный статус и инвентаризация файлов Alex Brus Питер"
-        },
-        {
-          "key": "marketer",
-          "label": "📈 Маркетолог (Оффер и воронка)",
-          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Alex Brus Питер"
-        }
-      ],
-      "research_topic": "Alex Brus Питер рынок конкуренты кейсы монетизации 2026",
-      "last_work": null
     }
   ],
   "by_agent": [
@@ -815,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 22,
-      "last_project": "Unity Inc",
-      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
-      "updated_at": "2026-11-02 12:48:56"
+      "tasks_completed": 23,
+      "last_project": "Татьяна tentorium.ru",
+      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+      "updated_at": "2026-11-03 11:54:18"
     },
     {
       "key": "intake",
@@ -826,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 87,
+      "tasks_completed": 88,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 14:03:20"
+      "updated_at": "2026-11-03 11:55:15"
     },
     {
       "key": "router",
@@ -837,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 87,
+      "tasks_completed": 88,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 14:03:20"
+      "updated_at": "2026-11-03 11:55:15"
     },
     {
       "key": "gatekeeper",
@@ -848,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 87,
+      "tasks_completed": 88,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 14:03:20"
+      "updated_at": "2026-11-03 11:55:15"
     },
     {
       "key": "scribe",
@@ -859,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 43,
+      "tasks_completed": 44,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 14:03:20"
+      "updated_at": "2026-11-03 11:55:15"
     },
     {
       "key": "project_lead",
@@ -870,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 43,
+      "tasks_completed": 44,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 14:03:20"
+      "updated_at": "2026-11-03 11:55:15"
     },
     {
       "key": "researcher",
@@ -884,7 +894,7 @@
       "tasks_completed": 27,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-02 13:42:43"
+      "updated_at": "2026-11-03 11:43:58"
     },
     {
       "key": "analyst",
@@ -895,7 +905,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-02 14:03:20"
+      "updated_at": "2026-11-03 11:55:15"
     },
     {
       "key": "developer",
@@ -903,10 +913,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 19,
-      "last_project": "Unity Inc",
-      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
-      "updated_at": "2026-11-02 12:48:56"
+      "tasks_completed": 20,
+      "last_project": "Татьяна tentorium.ru",
+      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+      "updated_at": "2026-11-03 11:54:18"
     },
     {
       "key": "strategist",
@@ -914,10 +924,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 17,
-      "last_project": "Unity Inc",
-      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
-      "updated_at": "2026-11-02 12:48:56"
+      "tasks_completed": 18,
+      "last_project": "Татьяна tentorium.ru",
+      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+      "updated_at": "2026-11-03 11:54:18"
     },
     {
       "key": "marketer",
@@ -965,6 +975,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-169",
+      "issue_number": 169,
+      "date": "2026-11-03 11:54:18",
+      "project": "Татьяна tentorium.ru",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#169 TIM: Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261103_115309",
+      "issue_number": 169,
+      "date": "2026-11-03 11:53:09",
+      "project": "Татьяна tentorium.ru",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 💻 Главный Разработчик",
+      "title": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+      "summary": "Мы соберём полный список выполненных работ для tentorium.ru, оценим их влияние на доход и внедрим автоматизированный отчётный механизм, чтобы каждая выполненная задача сразу генерировала KPI и ROI. Это позволит быстро масштабировать проект ",
+      "human_action": "Власлав: одобрить бюджет в 150 000 ₽ на аудит и предоставить доступ к репозиториям и внутренним системам.",
+      "status": "done"
+    },
     {
       "id": "card-1",
       "issue_number": 1,
@@ -1691,28 +1725,6 @@
       "agent": "🛡 Контролёр",
       "title": "#134 REPORT: Полный отчёт по проектам",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-130",
-      "issue_number": 130,
-      "date": "2026-10-23 18:26:11",
-      "project": "Traffic",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#130 PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
-      "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
-      "status": "done"
-    },
-    {
-      "id": "card-131",
-      "issue_number": 131,
-      "date": "2026-10-23 18:23:28",
-      "project": "Traffic",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#131 PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
-      "summary": "✅ Готово · Далее: Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'",
       "status": "done"
     }
   ]
