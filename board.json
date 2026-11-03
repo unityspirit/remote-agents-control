@@ -14576,6 +14576,60 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-02 13:40:19"
+    },
+    "169": {
+      "id": 169,
+      "created": "2026-11-03 11:52:59",
+      "handoffs": [
+        {
+          "t": "2026-11-03 11:52:59",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-03 11:54:18",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
+      "urls": [],
+      "project": "Татьяна tentorium.ru",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-03 11:54:18"
+    },
+    "168": {
+      "id": 168,
+      "created": "2026-11-03 11:57:06",
+      "handoffs": [
+        {
+          "t": "2026-11-03 11:57:06",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-03 11:57:29",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Найди все что мы делали для tentorium.ru Татьяна",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-03 11:57:29"
     }
   }
 }
