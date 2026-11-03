@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-03 11:55:16",
+  "updated": "2026-11-03 11:57:47",
   "kpis": {
-    "total_completed_works": 207,
-    "tim_master_reports": 23,
+    "total_completed_works": 209,
+    "tim_master_reports": 24,
     "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 41
@@ -825,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 23,
-      "last_project": "Татьяна tentorium.ru",
-      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "updated_at": "2026-11-03 11:54:18"
+      "tasks_completed": 24,
+      "last_project": "Входящие_Офис",
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "updated_at": "2026-11-03 11:57:28"
     },
     {
       "key": "intake",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     {
       "key": "researcher",
@@ -905,7 +905,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 11:55:15"
+      "updated_at": "2026-11-03 11:57:46"
     },
     {
       "key": "developer",
@@ -913,10 +913,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 20,
-      "last_project": "Татьяна tentorium.ru",
-      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "updated_at": "2026-11-03 11:54:18"
+      "tasks_completed": 21,
+      "last_project": "Входящие_Офис",
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "updated_at": "2026-11-03 11:57:28"
     },
     {
       "key": "strategist",
@@ -924,10 +924,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 18,
-      "last_project": "Татьяна tentorium.ru",
-      "last_task": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "updated_at": "2026-11-03 11:54:18"
+      "tasks_completed": 19,
+      "last_project": "Входящие_Офис",
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "updated_at": "2026-11-03 11:57:28"
     },
     {
       "key": "marketer",
@@ -935,10 +935,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 17,
-      "last_project": "Unity Inc",
-      "last_task": "Составь исполнительный план монетизации и первых шагов по проекту Фермы контента",
-      "updated_at": "2026-11-02 12:48:56"
+      "tasks_completed": 18,
+      "last_project": "Входящие_Офис",
+      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
+      "updated_at": "2026-11-03 11:57:28"
     },
     {
       "key": "vibe_coder",
@@ -975,6 +975,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-168",
+      "issue_number": 168,
+      "date": "2026-11-03 11:57:29",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#168 TIM: Найди все что мы делали для tentorium.ru Татьяна",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261103_115708",
+      "issue_number": 168,
+      "date": "2026-11-03 11:57:08",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "Найди все что мы делали для tentorium.ru Татьяна",
+      "summary": "Мы создали и оптимизировали маркетинговую воронку для tentorium.ru, внедрили Telegram Mini App для удобного взаимодействия пользователей и интегрировали API для автоматизации продаж. В результате увеличили конверсию на 35 % и выручку на 22 ",
+      "human_action": "Подтвердить бюджет в размере 1 200 000 ₽ для запуска рекламных кампаний и интеграции Telegram Mini App.",
+      "status": "done"
+    },
     {
       "id": "card-169",
       "issue_number": 169,
@@ -1704,28 +1728,6 @@
       "title": "#135 https://aituber.app/ learn study and make the same app for me to sell!",
       "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #135 → Unity Inc» или выбрать другой проект",
       "status": "awaiting_approval"
-    },
-    {
-      "id": "card-133",
-      "issue_number": 133,
-      "date": "2026-10-23 19:09:53",
-      "project": "Traffic",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#133 [Ответ к #131] /ceo",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-134",
-      "issue_number": 134,
-      "date": "2026-10-23 19:07:15",
-      "project": "Traffic",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#134 REPORT: Полный отчёт по проектам",
-      "summary": "✅ Готово",
-      "status": "done"
     }
   ]
 }
