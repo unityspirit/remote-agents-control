@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-03 15:38:32",
+  "updated": "2026-11-03 15:52:28",
   "kpis": {
-    "total_completed_works": 209,
+    "total_completed_works": 211,
     "tim_master_reports": 24,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 89,
+      "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 15:38:30"
+      "updated_at": "2026-11-03 15:52:27"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 89,
+      "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 15:38:30"
+      "updated_at": "2026-11-03 15:52:27"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 89,
+      "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 15:38:30"
+      "updated_at": "2026-11-03 15:52:27"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 45,
+      "tasks_completed": 47,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 15:38:30"
+      "updated_at": "2026-11-03 15:52:27"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 45,
+      "tasks_completed": 47,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 15:38:30"
+      "updated_at": "2026-11-03 15:52:27"
     },
     {
       "key": "researcher",
@@ -905,7 +905,7 @@
       "tasks_completed": 27,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 15:38:30"
+      "updated_at": "2026-11-03 15:52:27"
     },
     {
       "key": "developer",
@@ -975,6 +975,28 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-30",
+      "issue_number": 30,
+      "date": "2026-11-03 15:52:11",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#30 AUTH_SYNC: Быстрая заявка REQ-506276 (Tatianaknyazeva777 / Tatianaknyazeva777)",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "card-31",
+      "issue_number": 31,
+      "date": "2026-11-03 15:45:07",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#31 AUTH_SYNC: Быстрая заявка REQ-657806 (@tatianaknyazeva777 / @tatianaknyazeva777)",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-168",
       "issue_number": 168,
@@ -1706,28 +1728,6 @@
       "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
       "human_action": "",
       "status": "done"
-    },
-    {
-      "id": "card-138",
-      "issue_number": 138,
-      "date": "2026-10-25 08:36:21",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#138 https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #138 → Unity Inc» или выбрать другой проект",
-      "status": "awaiting_approval"
-    },
-    {
-      "id": "card-135",
-      "issue_number": 135,
-      "date": "2026-10-24 14:58:45",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#135 https://aituber.app/ learn study and make the same app for me to sell!",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #135 → Unity Inc» или выбрать другой проект",
-      "status": "awaiting_approval"
     }
   ]
 }
