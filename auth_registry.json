@@ -175,17 +175,21 @@
       "login": "yvyatkin",
       "full_name": "Юрий Вяткин",
       "telegram": "@yvyatkin",
-      "telegram_id": "173185967",
-      "telegram_link": "https://t.me/yvyatkin",
       "role": "admin",
       "status": "approved",
-      "all_projects": true,
+      "salt_hex": "",
+      "pbkdf2_hash": "",
+      "iterations": 120000,
       "assigned_projects": [
         "*"
       ],
-      "is_co_owner": true,
-      "approved_at": "2026-11-04T13:31:50.362161Z"
+      "gta_completed": false,
+      "gta_archetype": "",
+      "created_at": "2026-11-04T13:31:26.685094Z",
+      "approved_at": "2026-11-04T13:31:26.684387Z",
+      "owner_action_stamp": "",
+      "pending_reset": null
     }
   ],
-  "updated_at": "2026-11-04T13:31:50.362161Z"
+  "updated_at": "2026-11-04T13:34:28.303383+00:00"
 }
