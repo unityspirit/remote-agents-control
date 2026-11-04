@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 23:55:02",
+  "updated": "2026-11-03 23:59:28",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 24,
-      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-03 11:57:28"
+      "tasks_completed": 25,
+      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-03 23:58:37"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 19,
-      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-03 11:57:28"
+      "tasks_completed": 20,
+      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-03 23:58:37"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 93,
+      "tasks_completed": 94,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 28,
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-03 23:08:37"
+      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-03 23:58:37"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 93,
+      "tasks_completed": 94,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 28,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 93,
+      "tasks_completed": 94,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-03 23:59:28"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 3,
+      "calls_total": 4,
       "calls_by_provider": {
         "deterministic_local_engine": 2,
-        "cloud_test_gateway": 1
+        "cloud_test_gateway": 2
       },
-      "last_provider": "deterministic_local_engine",
-      "last_model": "structured-v18",
-      "last_call_at": "2026-11-04T06:54:04.308703+00:00",
-      "errors_count": 3
+      "last_provider": "cloud_test_gateway",
+      "last_model": "openai-gateway",
+      "last_call_at": "2026-11-04T06:58:37.372570+00:00",
+      "errors_count": 4
     }
   },
   "statuses": {
