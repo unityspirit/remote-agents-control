@@ -1,12 +1,12 @@
 {
   "version": "20.5",
-  "updated_at": "2026-11-04T09:33:08.889733+00:00",
+  "updated_at": "2026-11-04T09:33:40.375Z",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
         "days_active": 6,
         "days_to_30d_review": 24,
-        "active_minutes": 1.0,
+        "active_minutes": 1,
         "active_hours": 0.02,
         "total_requests": 0,
         "today_requests": 0,
@@ -40,8 +40,8 @@
       "audit_30d": {
         "days_active": 6,
         "days_to_30d_review": 24,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -106,8 +106,8 @@
       "audit_30d": {
         "days_active": 5,
         "days_to_30d_review": 25,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -133,8 +133,8 @@
       "audit_30d": {
         "days_active": 6,
         "days_to_30d_review": 24,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -160,8 +160,8 @@
       "audit_30d": {
         "days_active": 5,
         "days_to_30d_review": 25,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -187,8 +187,8 @@
       "audit_30d": {
         "days_active": 5,
         "days_to_30d_review": 25,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -224,8 +224,8 @@
       "audit_30d": {
         "days_active": 1,
         "days_to_30d_review": 29,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
