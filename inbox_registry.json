@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-11-03 23:09:33",
+  "updated_at": "2026-11-04 02:13:07",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-171",
+      "card": 171,
+      "timestamp": "2026-11-04 02:13:07",
+      "source_text": "Собрал полностью локального голосового ассистента без облаков и подписок. Выкладываю в open source / Habr https://share.",
+      "urls": [
+        "https://share.google/R7ANrhteo63lRiY6G"
+      ],
+      "status": "need_project",
+      "suggested_project": null,
+      "pending_file": "Карточка_171_Собрал_полностью_локального.md",
+      "raw_file": "raw_171_20261104_021248_Собрал_полностью_локального.md"
+    },
     {
       "id": "card-170",
       "card": 170,
