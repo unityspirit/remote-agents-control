@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-11-04 00:07:30",
+  "updated_at": "2026-11-04 00:07:47",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261104_000747",
+      "issue": "Auto",
+      "category": "Проект: Alberta",
+      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "source_url": "",
+      "secondary_url": "",
+      "date": "04.11.2026",
+      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~97, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 11, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: AI_Analysis_History.md, Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md",
+      "agent": "Alberta Creative & Kinfolk Director",
+      "domain": "[[контент-пайплайн-veo-obsidian]]",
+      "related_projects": [
+        "Traffic",
+        "Позновалка",
+        "GlobalFilms (Filmtools)"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261104_000747.md",
+        "Ведущий агент: Alberta Creative & Kinfolk Director"
+      ]
+    },
     {
       "id": "kb-20261104_000730",
       "issue": "Auto",
