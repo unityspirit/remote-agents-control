@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-11-04T09:30:07.988375+00:00",
+  "updated_at": "2026-11-04T09:31:08.689042+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -185,8 +185,8 @@
     },
     "@maxprofitwork": {
       "audit_30d": {
-        "days_active": 4,
-        "days_to_30d_review": 26,
+        "days_active": 5,
+        "days_to_30d_review": 25,
         "active_minutes": 0.0,
         "active_hours": 0.0,
         "total_requests": 0,
@@ -196,7 +196,7 @@
         "nudges_clicked": 0,
         "kpi_score": 0,
         "verdict": "coach",
-        "verdict_label": "🟡 НА КОНТРОЛЕ (День 4/30 · KPI 0/100)",
+        "verdict_label": "🟡 НА КОНТРОЛЕ (День 5/30 · KPI 0/100)",
         "replacement_recommended": false,
         "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       },
