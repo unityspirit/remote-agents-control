@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-04 11:40:39",
+  "updated": "2026-11-04 13:55:58",
   "kpis": {
-    "total_completed_works": 216,
-    "tim_master_reports": 25,
+    "total_completed_works": 218,
+    "tim_master_reports": 26,
     "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 43
@@ -434,7 +434,7 @@
         "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 113,
-        "size_kb": 1063,
+        "size_kb": 1067,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -825,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 25,
-      "last_project": "Alberta",
-      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
-      "updated_at": "2026-11-03 23:58:37"
+      "tasks_completed": 26,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0 создай копию таких автономных ботов для меня и заработай денег как они заработали в о",
+      "updated_at": "2026-11-04 13:55:21"
     },
     {
       "key": "intake",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 97,
+      "tasks_completed": 98,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-04 11:40:37"
+      "updated_at": "2026-11-04 13:55:56"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 97,
+      "tasks_completed": 98,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-04 11:40:37"
+      "updated_at": "2026-11-04 13:55:56"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 97,
+      "tasks_completed": 98,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-04 11:40:37"
+      "updated_at": "2026-11-04 13:55:56"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-04 11:40:37"
+      "updated_at": "2026-11-04 13:55:56"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-04 11:40:37"
+      "updated_at": "2026-11-04 13:55:56"
     },
     {
       "key": "researcher",
@@ -891,10 +891,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 29,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-04 11:14:46"
+      "tasks_completed": 30,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0 создай копию таких автономных ботов для меня и заработай денег как они заработали в о",
+      "updated_at": "2026-11-04 13:55:21"
     },
     {
       "key": "analyst",
@@ -902,10 +902,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 29,
+      "tasks_completed": 30,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-04 11:40:37"
+      "updated_at": "2026-11-04 13:55:56"
     },
     {
       "key": "developer",
@@ -913,10 +913,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 21,
+      "tasks_completed": 22,
       "last_project": "Входящие_Офис",
-      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
-      "updated_at": "2026-11-03 11:57:28"
+      "last_task": "https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0 создай копию таких автономных ботов для меня и заработай денег как они заработали в о",
+      "updated_at": "2026-11-04 13:55:21"
     },
     {
       "key": "strategist",
@@ -975,6 +975,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-173",
+      "issue_number": 173,
+      "date": "2026-11-04 13:55:21",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#173 https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0 создай копию таких автономных ботов для меня и заработай денег ка",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261104_135413",
+      "issue_number": 173,
+      "date": "2026-11-04 13:54:13",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 💻 Главный Разработчик",
+      "title": "https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0 создай копию таких автономных ботов для меня и заработай денег ка",
+      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затр",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-35",
       "issue_number": 35,
@@ -1704,28 +1728,6 @@
       "title": "#156 /strategy",
       "summary": "✅ Готово",
       "status": "done"
-    },
-    {
-      "id": "card-154",
-      "issue_number": 154,
-      "date": "2026-10-28 06:58:41",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#154 🌟 Скилл для ИИ соберёт ваше древо до седьмого колена  В сети появился скилл, который строит полное генеалогическое древо по тысячам источник",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #154 → Личное — обучение и релокация» или выбрать другой проект",
-      "status": "awaiting_approval"
-    },
-    {
-      "id": "card-155",
-      "issue_number": 155,
-      "date": "2026-10-28 06:58:18",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#155 https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they project",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #155 → Grok_xAI_Teammates» или выбрать другой проект",
-      "status": "awaiting_approval"
     }
   ]
 }
