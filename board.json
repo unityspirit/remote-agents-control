@@ -14864,6 +14864,62 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-04 00:07:53"
+    },
+    "171": {
+      "id": 171,
+      "created": "2026-11-04 02:12:47",
+      "handoffs": [
+        {
+          "t": "2026-11-04 02:12:47",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-04 02:12:48",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-04 02:12:49",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-04 02:13:07",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9365
+      },
+      "title": "Собрал полностью локального голосового ассистента без облаков и подписок. Выкладываю в open source / Habr https://share.google/R7ANrhteo63lRiY6G изучи и повтори для",
+      "urls": [
+        "https://share.google/R7ANrhteo63lRiY6G"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-11-04 02:13:10",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_171_Собрал_полностью_локального.md",
+      "raw_file": "raw_171_20261104_021248_Собрал_полностью_локального.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #171 → …»"
+      }
     }
   }
 }
