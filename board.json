@@ -14756,6 +14756,87 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #170 → …»"
       }
+    },
+    "34": {
+      "id": 34,
+      "created": "2026-11-03 23:52:57",
+      "handoffs": [
+        {
+          "t": "2026-11-03 23:52:57",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-03 23:54:38",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-03 23:54:38"
+    },
+    "33": {
+      "id": 33,
+      "created": "2026-11-03 23:58:14",
+      "handoffs": [
+        {
+          "t": "2026-11-03 23:58:14",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-03 23:58:37",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-03 23:58:37"
+    },
+    "36": {
+      "id": 36,
+      "created": "2026-11-04 00:02:53",
+      "handoffs": [
+        {
+          "t": "2026-11-04 00:02:53",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-04 00:04:50",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-04 00:04:50"
     }
   }
 }
