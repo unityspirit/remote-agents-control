@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 17:47:56",
+  "updated": "2026-11-03 23:09:54",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2373,8 +2373,8 @@
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 52,
-        "size_kb": 408,
+        "files_on_disk": 53,
+        "size_kb": 419,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -2694,7 +2694,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 18,
-        "open_tasks": 25,
+        "open_tasks": 26,
         "tim_reports": 5,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2731,6 +2731,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-170",
+          "issue_number": 170,
+          "date": "2026-11-03 23:09:40",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#170 Изучи тренды по книгам самым продающие в интернете для массового создания каждый день по новой книге и продажи размещение этих книг каждый д",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #170 → …»",
+          "status": "need_project"
+        },
         {
           "id": "card-30",
           "issue_number": 30,
@@ -2923,17 +2934,6 @@
           "type": "board_card",
           "agent": "🛡 Контролёр",
           "title": "#164 AUTH_SYNC: Быстрая заявка REQ-063613 (@maxprofitwork / @maxprofitwork)",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "card-163",
-          "issue_number": 163,
-          "date": "2026-10-30 03:44:17",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#163 TIM: найди проекты в папке Костя и отправь мне в телеграм @true1team",
           "summary": "✅ Готово",
           "status": "done"
         }
