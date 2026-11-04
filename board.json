@@ -14952,6 +14952,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-04 13:55:21"
+    },
+    "172": {
+      "id": 172,
+      "created": "2026-11-04 13:57:42",
+      "handoffs": [
+        {
+          "t": "2026-11-04 13:57:42",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-04 13:58:53",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "https://www.instagram.com/reel/DeMoUFfOMdR/?rpxt=MWFuc3lpczNrc2pseA== изучи как это они делают и на чем зарабатывают деньги как работает эта методика и подключи всех",
+      "urls": [
+        "https://www.instagram.com/reel/DeMoUFfOMdR/?rpxt=MWFuc3lpczNrc2pseA=="
+      ],
+      "project": "Traffic",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-04 13:58:53"
     }
   }
 }
