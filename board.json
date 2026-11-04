@@ -14920,6 +14920,38 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #171 → …»"
       }
+    },
+    "173": {
+      "id": 173,
+      "created": "2026-11-04 13:53:24",
+      "handoffs": [
+        {
+          "t": "2026-11-04 13:53:24",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-04 13:55:21",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0 создай копию таких автономных ботов для меня и заработай денег как они заработали в один д",
+      "urls": [
+        "https://www.instagram.com/p/DfT-KuwmzcK/?img_index=3&psln=OWMwYXh0b28xNzI0"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-04 13:55:21"
     }
   }
 }
