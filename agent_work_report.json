@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-03 23:55:04",
+  "updated": "2026-11-04 00:05:05",
   "kpis": {
-    "total_completed_works": 212,
-    "tim_master_reports": 24,
+    "total_completed_works": 215,
+    "tim_master_reports": 25,
     "active_projects_count": 54,
     "total_saved_photos": 1,
     "awaiting_human_count": 42
@@ -377,13 +377,13 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 6,
+        "completed_works": 9,
         "open_tasks": 1,
-        "tim_reports": 2,
+        "tim_reports": 3,
         "saved_photos": 0,
         "files_on_disk": 30,
         "size_kb": 9430,
-        "ai_analyses": 2,
+        "ai_analyses": 4,
         "research_notes": 0
       },
       "continue_first": {
@@ -409,13 +409,13 @@
       ],
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "last_work": {
-        "id": "card-34",
-        "issue_number": 34,
-        "date": "2026-11-03 23:54:38",
+        "id": "card-36",
+        "issue_number": 36,
+        "date": "2026-11-04 00:04:50",
         "project": "Alberta",
         "type": "board_card",
         "agent": "🛡 Контролёр",
-        "title": "#34 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+        "title": "#36 Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
         "summary": "✅ Готово",
         "status": "done"
       }
@@ -825,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 24,
-      "last_project": "Входящие_Офис",
-      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
-      "updated_at": "2026-11-03 11:57:28"
+      "tasks_completed": 25,
+      "last_project": "Alberta",
+      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "updated_at": "2026-11-03 23:58:37"
     },
     {
       "key": "intake",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 93,
+      "tasks_completed": 95,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-04 00:05:04"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 93,
+      "tasks_completed": 95,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-04 00:05:04"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 93,
+      "tasks_completed": 95,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-04 00:05:04"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 50,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-04 00:05:04"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 50,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-04 00:05:04"
     },
     {
       "key": "researcher",
@@ -894,7 +894,7 @@
       "tasks_completed": 28,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-03 23:08:37"
+      "updated_at": "2026-11-04 00:02:46"
     },
     {
       "key": "analyst",
@@ -905,7 +905,7 @@
       "tasks_completed": 28,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:55:02"
+      "updated_at": "2026-11-04 00:05:04"
     },
     {
       "key": "developer",
@@ -924,10 +924,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 19,
-      "last_project": "Входящие_Офис",
-      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
-      "updated_at": "2026-11-03 11:57:28"
+      "tasks_completed": 20,
+      "last_project": "Alberta",
+      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "updated_at": "2026-11-03 23:58:37"
     },
     {
       "key": "marketer",
@@ -975,6 +975,41 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-36",
+      "issue_number": 36,
+      "date": "2026-11-04 00:04:50",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#36 Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "card-33",
+      "issue_number": 33,
+      "date": "2026-11-03 23:58:37",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#33 TIM: Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261103_235819",
+      "issue_number": 33,
+      "date": "2026-11-03 23:58:19",
+      "project": "Alberta",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
+      "title": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "summary": "Мы будем монетизировать контент и данные из папки, создавая платный сервис аналитики и подписку на эксклюзивные видео и вебинары. В течение 30 дней реализуем MVP, привлекем 200 подписчиков и достигнем оборота 500 000 ₽. Далее масштабируем ч",
+      "human_action": "Утвердить бюджет 200 000 ₽ на исследовательскую и стратегическую работу и назначить ответственного.",
+      "status": "done"
+    },
     {
       "id": "card-34",
       "issue_number": 34,
@@ -1691,41 +1726,6 @@
       "title": "#145 CREATE_FOLDER: СтадиБук",
       "summary": "✅ Готово",
       "status": "done"
-    },
-    {
-      "id": "card-142",
-      "issue_number": 142,
-      "date": "2026-10-25 16:56:21",
-      "project": "Thought/Мысль",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#142 https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261025_161533",
-      "issue_number": 141,
-      "date": "2026-10-25 16:15:33",
-      "project": "12 IT Продуктов (Короче Капитан)",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "💻 Главный Разработчик, 🔎 Аналитик & Разведчик",
-      "title": "Разбор Pivex Funded: как устроен бэкенд проп-трейдинговой платформы (Match-Trader) и как на этом заработать",
-      "summary": "Тим скоординировал 2 отделов (Главный Разработчик, Аналитик & Разведчик) для проекта 12 IT Продуктов (Короче Капитан).",
-      "human_action": "",
-      "status": "done"
-    },
-    {
-      "id": "card-141",
-      "issue_number": 141,
-      "date": "2026-10-25 15:55:37",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#141 https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=8288",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #141 → AI Skills & Nobel Stabilization» или выбрать другой проект",
-      "status": "awaiting_approval"
     }
   ]
 }
