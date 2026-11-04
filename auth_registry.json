@@ -169,7 +169,23 @@
       "approved_at": "2026-11-03T22:53:08.168244+00:00",
       "owner_action_stamp": "approved_by_unityspiritpartners_2026-11-03T22:53:08.168244+00:00",
       "pending_reset": null
+    },
+    {
+      "id": "USR-YVYATKIN-01",
+      "login": "yvyatkin",
+      "full_name": "Юрий Вяткин",
+      "telegram": "@yvyatkin",
+      "telegram_id": "173185967",
+      "telegram_link": "https://t.me/yvyatkin",
+      "role": "admin",
+      "status": "approved",
+      "all_projects": true,
+      "assigned_projects": [
+        "*"
+      ],
+      "is_co_owner": true,
+      "approved_at": "2026-11-04T13:31:50.362161Z"
     }
   ],
-  "updated_at": "2026-11-04T13:30:21.546196+00:00"
+  "updated_at": "2026-11-04T13:31:50.362161Z"
 }
