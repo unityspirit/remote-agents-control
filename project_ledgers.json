@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 23:49:12",
+  "updated": "2026-11-04 00:05:05",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -378,13 +378,13 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 5,
+        "completed_works": 9,
         "open_tasks": 1,
-        "tim_reports": 2,
+        "tim_reports": 3,
         "saved_photos": 0,
         "files_on_disk": 30,
         "size_kb": 9430,
-        "ai_analyses": 0,
+        "ai_analyses": 4,
         "research_notes": 0
       },
       "continue_first": {
@@ -416,6 +416,52 @@
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-36",
+          "issue_number": 36,
+          "date": "2026-11-04 00:04:50",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#36 Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "card-33",
+          "issue_number": 33,
+          "date": "2026-11-03 23:58:37",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#33 TIM: Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261103_235819",
+          "issue_number": 33,
+          "date": "2026-11-03 23:58:19",
+          "project": "Alberta",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
+          "title": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
+          "summary": "Мы будем монетизировать контент и данные из папки, создавая платный сервис аналитики и подписку на эксклюзивные видео и вебинары. В течение 30 дней реализуем MVP, привлекем 200 подписчиков и достигнем оборота 500 000 ₽. Далее масштабируем ч",
+          "human_action": "Утвердить бюджет 200 000 ₽ на исследовательскую и стратегическую работу и назначить ответственного.",
+          "status": "done"
+        },
+        {
+          "id": "card-34",
+          "issue_number": 34,
+          "date": "2026-11-03 23:54:38",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#34 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-5",
           "issue_number": 5,
@@ -485,6 +531,26 @@
           "title": "#9005 💳 Ключи ЮKassa/Prodamus для трипваера 490 ₽",
           "summary": "🧑 Ждёт вашего действия · Далее: Передать API-ключи боту",
           "status": "blocked_human"
+        },
+        {
+          "id": "hist-10",
+          "date": "04.11.2026 00:04",
+          "project": "Alberta",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-11",
+          "date": "03.11.2026 23:54",
+          "project": "Alberta",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
         }
       ]
     },
