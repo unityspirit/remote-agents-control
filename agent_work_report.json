@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-03 23:49:12",
+  "updated": "2026-11-03 23:55:04",
   "kpis": {
-    "total_completed_works": 211,
+    "total_completed_works": 212,
     "tim_master_reports": 24,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -377,13 +377,13 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 5,
+        "completed_works": 6,
         "open_tasks": 1,
         "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 30,
         "size_kb": 9430,
-        "ai_analyses": 0,
+        "ai_analyses": 2,
         "research_notes": 0
       },
       "continue_first": {
@@ -409,13 +409,13 @@
       ],
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "last_work": {
-        "id": "card-5",
-        "issue_number": 5,
-        "date": "2026-11-02 13:21:15",
+        "id": "card-34",
+        "issue_number": 34,
+        "date": "2026-11-03 23:54:38",
         "project": "Alberta",
         "type": "board_card",
         "agent": "🛡 Контролёр",
-        "title": "#5 AUTH_SYNC: Быстрая заявка REQ-388120 (Alberta / Alberta)",
+        "title": "#34 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
         "summary": "✅ Готово",
         "status": "done"
       }
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 92,
+      "tasks_completed": 93,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:49:11"
+      "updated_at": "2026-11-03 23:55:02"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 92,
+      "tasks_completed": 93,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:49:11"
+      "updated_at": "2026-11-03 23:55:02"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 92,
+      "tasks_completed": 93,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:49:11"
+      "updated_at": "2026-11-03 23:55:02"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 47,
+      "tasks_completed": 48,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:49:11"
+      "updated_at": "2026-11-03 23:55:02"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 47,
+      "tasks_completed": 48,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:49:11"
+      "updated_at": "2026-11-03 23:55:02"
     },
     {
       "key": "researcher",
@@ -905,7 +905,7 @@
       "tasks_completed": 28,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-03 23:49:11"
+      "updated_at": "2026-11-03 23:55:02"
     },
     {
       "key": "developer",
@@ -975,6 +975,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-34",
+      "issue_number": 34,
+      "date": "2026-11-03 23:54:38",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#34 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-30",
       "issue_number": 30,
@@ -1715,19 +1726,6 @@
       "title": "#141 https://pivexfunded.com/dynamic?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24389595055&utm_adgroupid=204103486929&utm_ad=8288",
       "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #141 → AI Skills & Nobel Stabilization» или выбрать другой проект",
       "status": "awaiting_approval"
-    },
-    {
-      "id": "tim-20261025_153816",
-      "issue_number": null,
-      "date": "2026-10-25 15:38:16",
-      "project": "Traffic",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "Отчет_Tim_20261025_153816_Аудит_Автономных_Задач_И_Новые_Запросы",
-      "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
-      "human_action": "",
-      "status": "done"
     }
   ]
 }
