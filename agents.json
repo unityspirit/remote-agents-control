@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 23:59:28",
+  "updated": "2026-11-04 00:05:04",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 94,
+      "tasks_completed": 95,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 28,
-      "last_task": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-03 23:58:37"
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "updated_at": "2026-11-04 00:02:46"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 94,
+      "tasks_completed": 95,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 28,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 94,
+      "tasks_completed": 95,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 49,
+      "tasks_completed": 50,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 49,
+      "tasks_completed": 50,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-03 23:59:28"
+      "updated_at": "2026-11-04 00:05:04"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 4,
+      "calls_total": 5,
       "calls_by_provider": {
-        "deterministic_local_engine": 2,
+        "deterministic_local_engine": 3,
         "cloud_test_gateway": 2
       },
-      "last_provider": "cloud_test_gateway",
-      "last_model": "openai-gateway",
-      "last_call_at": "2026-11-04T06:58:37.372570+00:00",
-      "errors_count": 4
+      "last_provider": "deterministic_local_engine",
+      "last_model": "structured-v18",
+      "last_call_at": "2026-11-04T07:03:58.560371+00:00",
+      "errors_count": 5
     }
   },
   "statuses": {
