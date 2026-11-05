@@ -445,6 +445,83 @@
         }
 
         /* PLAN & SELF-LEARNING CARDS */
+        /* === v25.8 CRM CALENDAR & HUMAN/AGENT CLASSIFICATION STYLES === */
+        .plan-card.human-action {
+            border: 1px solid rgba(245, 158, 11, 0.5) !important;
+            border-left: 5px solid #f59e0b !important;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.10) 0%, rgba(20, 24, 38, 0.95) 100%) !important;
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.10);
+        }
+        .plan-card.autonomous-agent {
+            border: 1px solid rgba(16, 185, 129, 0.45) !important;
+            border-left: 5px solid #10b981 !important;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(20, 24, 38, 0.95) 100%) !important;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.08);
+        }
+        .badge-human {
+            background: rgba(245, 158, 11, 0.22);
+            border: 1px solid rgba(245, 158, 11, 0.6);
+            color: #fbbf24;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .badge-agent {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.55);
+            color: #34d399;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .cal-day-bar {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            scrollbar-width: thin;
+        }
+        .cal-day-chip {
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .cal-day-chip:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--text-main);
+        }
+        .cal-day-chip.active {
+            background: var(--accent);
+            color: #0b0f19;
+            border-color: var(--accent);
+            box-shadow: 0 2px 10px rgba(56, 189, 248, 0.4);
+        }
+        .cal-reminder-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 12px;
+            padding: 11px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
         .plan-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -1216,7 +1293,7 @@
         }
 
         @media (max-width: 768px) {
-            /* === v25.7 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
+            /* === v25.8 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
             .topbar {
                 padding: 4px 8px !important;
                 display: flex !important;
@@ -2006,7 +2083,7 @@
         }
 
     
-/* v25.7: Sleek Side-Docked AI Navigator ("Выглядывает сбоку когда требуется") */
+/* v25.8: Sleek Side-Docked AI Navigator ("Выглядывает сбоку когда требуется") */
 #btn-floating-guest-ai {
     position: fixed !important;
     right: 0 !important;
@@ -2052,7 +2129,7 @@
     box-shadow: 0 0 8px #34d399 !important;
 }
 
-/* v25.7: Slide-Over AI Side Drawer (Never blocks center screen) */
+/* v25.8: Slide-Over AI Side Drawer (Never blocks center screen) */
 #guest-ai-chat-modal {
     position: fixed !important;
     top: 0 !important;
@@ -2100,7 +2177,7 @@
 <div class="app-shell">
 
     <!-- ========================================================================= -->
-    <!-- === v25.7: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
+    <!-- === v25.8: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
     <section id="guest-portal-view" style="display:none !important;" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
         <!-- Guest Welcome Card -->
@@ -2885,7 +2962,7 @@
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.7</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.8</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -3157,7 +3234,7 @@
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v25.7")).forEach(k => caches.delete(k));
+                        keys.filter(k => !k.includes("v25.8")).forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -3591,114 +3668,291 @@
     ];
 
     const ACTION_PLAN_STEPS = [
+        /* === 5 НОЯБРЯ 2026 (СЕГОДНЯ) === */
         {
-            id: "step-today-gf",
+            id: "step-cal-5-alb-1",
             day: "today",
-            order: "Сегодня · Кинопроизводство",
-            project: "GlobalFilms (Filmtools)",
-            title: "GlobalFilms: Синхронизировать базу актеров из Notion Светланы и утвердить КПП",
-            desc: "Платформа Filmtools доступна онлайн 24/7. Запустить импорт актеров из Notion и утвердить форму вызывного листа смены #15 со Светланой.",
-            cmd: "Создать модуль синхронизации базы актеров из Notion Светланы в реестр Filmtools",
-            doneDefault: false
-        },
-        {
-            id: "step-today-music",
-            day: "today",
-            order: "Сегодня · Музыкальный дроп",
-            project: "Ghost Ghetto Child (Музыка)",
-            title: "Ghost Ghetto Child: Отправить оффер дистрибуции на Spotify/Apple Music",
-            desc: "ИИ сформировал структуру монетизации ($250 фикс или 20% роялти). Отправить сообщение артисту @ghostghettochild в Telegram и согласовать формат.",
-            cmd: "Составить коммерческое предложение (оффер) и расчет роялти для @ghostghettochild",
-            doneDefault: false
-        },
-        {
-            id: "step-today-0",
-            day: "today",
-            order: "Сегодня · Приоритет №1",
-            project: "12 IT Продуктов (Короче Капитан)",
-            title: "Запустить Mini App #1 по методологии «Короче, капитан» (12 IT-продуктов за 12 мес)",
-            desc: "По разбору задачи #97 (itscap.blog / @its_capitan): не пилить долгие сайты, а выпустить за 7 дней первый микро-продукт в Telegram WebApp с 1 главной функцией и реферальным бонусом за приглашение друга.",
-            cmd: "Сформировать MVP-спецификацию и код первого Telegram Mini App по методологии Короче Капитан",
-            doneDefault: false
-        },
-        {
-            id: "step-today-1",
-            day: "today",
-            order: "Сегодня · Очередь №2",
-            project: "Unity Inc",
-            title: "Упаковать воронку Global Plus по модели JoinTECH (Андрей Беловолов)",
-            desc: "Внедрить на globalplus.tech и в КП 3-шаговую воронку: 1) Бесплатный 40-мин разбор узких мест -> 2) Платный «Инженерный аудит 6 узлов бизнеса» (от 50 000 ₽ / $900) -> 3) Пакеты внедрения по 6 отраслям.",
-            cmd: "Подготовить обновленные блоки оффера Инженерного Аудита и 6 отраслей для сайта globalplus.tech по модели JoinTECH",
-            doneDefault: false
-        },
-        {
-            id: "step-today-2",
-            day: "today",
-            order: "Сегодня · Очередь №3",
-            project: "Позновалка",
-            title: "Запустить «Навигатор Telegram-канала» в 2 клика + 5 экспертных постов",
-            desc: "По примеру @belovolov_andrey: собрать единое закрепленное меню-навигатор по нашим кейсам и услугам и выпустить первые 5 постов без воды про потери на стыках CRM и мобильных сайтах.",
-            cmd: "Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plus без воды",
-            doneDefault: false
-        },
-        {
-            id: "step-today-3",
-            day: "today",
-            order: "Сегодня · Очередь №4",
+            dayLabel: "5 Ноя (Ср)",
+            kind: "agent",
+            assignedUser: "aliashirani",
+            userName: "Alberta Shirani",
+            order: "Сегодня · Завершено",
             project: "Alberta",
-            title: "Alberta Shirani: Финализировать PDF Лид-магнит и быстрый Mini App вместо длинного бота",
-            desc: "Убрать сложные кнопочные лабиринты (которые режут конверсию на 20%). Сделать выдачу PDF-гайда за 2 касания + авто-прогрев к консультации.",
-            cmd: "Сформировать чистовую структуру PDF лид-магнита и сценарий выдачи в 2 клика для Alberta Shirani",
-            doneDefault: false
+            title: "Alberta: Полный аудит Alberta_Workspace (96 файлов) и нарезка 900 WebP кадров",
+            desc: "Агенты Creative & Kinfolk Director оцифровали материалы папки Alberta, подготовили пакетный пайплайн 900 WebP кадров для Canvas 2D/WebGL Cinema Engine и спроектировали автоворонку подписки на 1 млн руб / мес.",
+            cmd: "Проверить статус папки Alberta и нарезки 900 WebP кадров",
+            doneDefault: true
         },
         {
-            id: "step-today-4",
+            id: "step-cal-5-t1-1",
             day: "today",
-            order: "Сегодня · Очередь №5",
-            project: "Alex ChopChop",
-            title: "Alex ChopChop: Спроектировать QR-механику возврата клиентов (+35% LTV)",
-            desc: "Вместо прямых скидок в лоб: QR-код в барбершопе -> переход в Telegram Mini App с бонусом на следующую стрижку -> авто-напоминание через 21 день.",
-            cmd: "Разработать механику QR-оцифровки гостей и триггер возврата через 21 день для Alex ChopChop",
-            doneDefault: false
+            dayLabel: "5 Ноя (Ср)",
+            kind: "agent",
+            assignedUser: "true1team",
+            userName: "True1Team",
+            order: "Сегодня · Завершено",
+            project: "12 IT Продуктов",
+            title: "True1Team: Систематизация 12 IT-продуктов & локальный ассистент Whisper+llama.cpp",
+            desc: "Сформирована база 12 продуктов, создана архитектура Reels CPA комбайна, устранены мобильные перекрытия кнопок офиса и развернута модель AI-персонажа ($13,400/мес).",
+            cmd: "Открыть папку 12 IT Продуктов и запустить локальный ассистент",
+            doneDefault: true
         },
         {
-            id: "step-tmrw-1",
-            day: "tomorrow",
-            order: "Завтра · Очередь №1",
-            project: "Unity Inc",
-            title: "Бесплатный трафик по Similarweb для globalplus.tech и unityspiritpartners.com",
-            desc: "Выгрузить реферальные каталоги (Referrals) конкурентов + собрать 6 быстрых отраслевых SEO-страниц на чистом коде (загрузка <1 сек на мобилках).",
-            cmd: "Составить список реферальных площадок и SEO-структуру 6 отраслевых страниц для globalplus.tech и unityspiritpartners.com",
-            doneDefault: false
+            id: "step-cal-5-yura-1",
+            day: "today",
+            dayLabel: "5 Ноя (Ср)",
+            kind: "agent",
+            assignedUser: "yvyatkin",
+            userName: "Юрий Вяткин",
+            order: "Сегодня · Завершено",
+            project: "Юра",
+            title: "Юрий Вяткин: Авторизация Совладельца (*) & верификация КХЛ Бота (WinRate 82.9%)",
+            desc: "Одобрен полный доступ Co-Owner & Admin (*). Нейросетевой демон (PID 12696) непрерывно обучается: 82 матча, WinRate 82.9%, ROI +53.4%, Brier score 0.1716.",
+            cmd: "Синхронизировать статус КХЛ Бота и прогнозы на сегодня",
+            doneDefault: true
         },
         {
-            id: "step-tmrw-2",
-            day: "tomorrow",
-            order: "Завтра · Очередь №2",
-            project: "Alberta",
-            title: "Alberta: Генерация видео по 9 промптам VEO 3.1 и нарезка 900 WebP кадров",
-            desc: "Запустить пакетную конвертацию через FFmpeg для плавного Cinematic Scroll 60 FPS на смартфонах и утвердить финальную версию сайта V1/V2.",
-            cmd: "Проверить готовность пайплайна нарезки 900 WebP кадров и промптов VEO 3.1 для Alberta",
-            doneDefault: false
+            id: "step-cal-5-tatiana-1",
+            day: "today",
+            dayLabel: "5 Ноя (Ср)",
+            kind: "agent",
+            assignedUser: "tatianaknyazeva777",
+            userName: "Татьяна Тенториум",
+            order: "Сегодня · Завершено",
+            project: "Татьяна",
+            title: "Татьяна: Интеграция базы tentorium.ru и архитектура Telegram Mini App",
+            desc: "Одобрен доступ в персональную папку, оцифрована матрица апифитопродукции, сформирован алгоритм консультирования и оформления заказа в 3 клика.",
+            cmd: "Проверить каталог продукции tentorium.ru в рабочей папке",
+            doneDefault: true
         },
         {
-            id: "step-tmrw-3",
-            day: "tomorrow",
-            order: "Завтра · Очередь №3",
-            project: "Егор Трансфер",
-            title: "Егор Трансфер & Татьяна tentorium.ru: Мобильная заявка за 3 секунды и авто-возврат",
-            desc: "Для Егора Трансфера — форма заказа трансфера в 2 клика с мгновенным вебхуком в Telegram. Для Татьяны — триггер повторного заказа курса через 25 дней.",
-            cmd: "Подготовить модуль быстрой заявки в 2 клика и уведомлений в Telegram для проекта Егор Трансфер",
-            doneDefault: false
-        },
-        {
-            id: "step-tmrw-4",
-            day: "tomorrow",
-            order: "Завтра · Очередь №4",
+            id: "step-cal-5-boss-1",
+            day: "today",
+            dayLabel: "5 Ноя (Ср)",
+            kind: "agent",
+            assignedUser: "unityspiritpartners",
+            userName: "Власлав (Boss)",
+            order: "Сегодня · Завершено",
             project: "Позновалка",
-            title: "Безлимитная контент-фабрика (0 ₽/мес): Выпуск первых 3 вертикальных Reels/Shorts",
-            desc: "Использовать локальный конвейер: сценарий из Базы Знаний -> нейро-озвучка edge-tts -> субтитры faster-whisper -> сборка 9:16 в FFmpeg.",
-            cmd: "Подготовить 3 сценария вертикальных роликов Reels/Shorts для озвучки через локальный конвейер edge-tts и FFmpeg",
+            title: "Власлав: Запуск ультра-быстрого демона (1 сек) & изоляция доступов к офису",
+            desc: "Фоновый демон laptop_worker.py переведен на опрос 1 сек (PID 21288), телеметрия #32 синхронизирована, тяжелые веб-модули 24/7 скрыты для пользователей без полного доступа.",
+            cmd: "Проверить статус фонового воркера и синхронизацию Obsidian HQ",
+            doneDefault: true
+        },
+
+        /* === 6 НОЯБРЯ 2026 (ЗАВТРА) === */
+        {
+            id: "step-cal-6-alb-human",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "human",
+            assignedUser: "aliashirani",
+            userName: "Alberta Shirani",
+            order: "Завтра · Решение человека 🔴",
+            project: "Alberta",
+            title: "🔴 Alberta: Записать 1 интро-видео (30 сек) & утвердить тарифы закрытого клуба",
+            desc: "Требуется ваше личное действие: 1) Записать короткое 30-секундное видео/аудио приветствие для интро-экрана. 2) Утвердить тарифы подписки: 4 900 ₽ (Базовый) / 14 900 ₽ (VIP) / 99 000 ₽ (Личное наставничество).",
+            cmd: "Утвердить тарифы закрытого клуба Alberta и передать видео в WebApp",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-alb-agent",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "agent",
+            assignedUser: "aliashirani",
+            userName: "Alberta Shirani",
+            order: "Завтра · Автономный агент 🟢",
+            project: "Alberta",
+            title: "🟢 Alberta: Сборка WebApp с Canvas 2D/WebGL скроллом и эквайрингом",
+            desc: "Нейросетевой агент собирает интерфейс Mini App на смартфонах без фризов (60 FPS), подключает прием платежей через Telegram Stars / ЮKassa и готовит автопостинг анонсов.",
+            cmd: "Собрать и протестировать мобильный WebApp закрытого клуба Alberta",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-t1-human",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "human",
+            assignedUser: "true1team",
+            userName: "True1Team",
+            order: "Завтра · Решение человека 🔴",
+            project: "12 IT Продуктов",
+            title: "🔴 True1Team: Выбрать 1 приоритетный CPA-оффер & выделить $100 тест-бюджета",
+            desc: "Требуется ваше решение: выбрать 1 оффер из топ-3 (Гейминг, Дейтинг или AI-утилиты) и согласовать стартовый бюджет $100 на покупку мобильных прокси и прогретых аккаунтов.",
+            cmd: "Утвердить выбранный CPA оффер и запустить пролив трафика",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-t1-agent",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "agent",
+            assignedUser: "true1team",
+            userName: "True1Team",
+            order: "Завтра · Автономный агент 🟢",
+            project: "12 IT Продуктов",
+            title: "🟢 True1Team: Генерация 50 уникальных Reels/TikTok видео в сутки",
+            desc: "Локальный конвейер FFmpeg + edge-tts нарезает 50 видео-креативов в сутки, накладывает вирусный трек и автоматически постит через антидетект-профиль.",
+            cmd: "Запустить генерацию 50 вертикальных креативов для CPA комбайна",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-yura-human",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "human",
+            assignedUser: "yvyatkin",
+            userName: "Юрий Вяткин",
+            order: "Завтра · Решение человека 🔴",
+            project: "Юра",
+            title: "🔴 Юрий: Утвердить порог кэфа (>= 1.85) & время утренней рассылки предиктов",
+            desc: "Требуется ваше согласование: 1) Подтвердить фильтр ставок с кэфом от 1.85 для платного канала. 2) Утвердить время публикации прематч-аналитики (рекомендуем 11:00 МСК).",
+            cmd: "Утвердить порог коэффициентов 1.85 и расписание публикаций КХЛ",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-yura-agent",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "agent",
+            assignedUser: "yvyatkin",
+            userName: "Юрий Вяткин",
+            order: "Завтра · Автономный агент 🟢",
+            project: "Юра",
+            title: "🟢 Юрий: 24/7 Парсинг линий БК, расчет xG и автокалибровка весов моделей",
+            desc: "Самообучающийся скрипт (PID 12696) парсит котировки букмекеров, вычисляет Brier score и формирует карточки матчей дня с вероятностями побед и тоталов.",
+            cmd: "Выгрузить свежие предикты по играм КХЛ на 6 ноября",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-tatiana-human",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "human",
+            assignedUser: "tatianaknyazeva777",
+            userName: "Татьяна Тенториум",
+            order: "Завтра · Решение человека 🔴",
+            project: "Татьяна",
+            title: "🔴 Татьяна: Утвердить ТОП-5 хитовых товаров & контакт для заказов",
+            desc: "Требуется ваше решение: 1) Выбрать 5 главных продуктов для главной витрины (напр. 'Тенториум Плюс', 'Апиток', крем 'Тенториум'). 2) Указать Telegram-аккаунт или номер для получения чеков заказов.",
+            cmd: "Утвердить ТОП-5 товаров и менеджера для подтверждения заказов Tentorium",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-tatiana-agent",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "agent",
+            assignedUser: "tatianaknyazeva777",
+            userName: "Татьяна Тенториум",
+            order: "Завтра · Автономный агент 🟢",
+            project: "Татьяна",
+            title: "🟢 Татьяна: Синхронизация цен tentorium.ru и 24/7 AI-консультант",
+            desc: "Агент парсит официальные цены, генерирует карточки с описанием полезных свойств и отвечает покупателям на вопросы по дозировкам и оздоровительным курсам.",
+            cmd: "Собрать карточки товаров Tentorium и запустить ИИ-консультанта",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-6-boss-human",
+            day: "tomorrow",
+            dayLabel: "6 Ноя (Чт)",
+            kind: "human",
+            assignedUser: "unityspiritpartners",
+            userName: "Власлав (Boss)",
+            order: "Завтра · Решение человека 🔴",
+            project: "Unity Inc",
+            title: "🔴 Власлав: Утвердить распределение прибыли & запуск закрытого VIP-канала",
+            desc: "Требуется стратегическое решение: согласовать долю реинвестирования прибыли с КХЛ Бота и клуба Alberta в закупку трафика и серверов.",
+            cmd: "Утвердить матрицу распределения прибыли экосистемы Global Spirit Group",
+            doneDefault: false
+        },
+
+        /* === 7 НОЯБРЯ 2026 (ПЯТНИЦА) === */
+        {
+            id: "step-cal-7-all-1",
+            day: "day3",
+            dayLabel: "7 Ноя (Пт)",
+            kind: "human",
+            assignedUser: "all",
+            userName: "Все сотрудники",
+            order: "7 Ноября · Тест 🔴",
+            project: "Позновалка",
+            title: "🔴 Все: Тестовый прогон оплаты в 1 клик & проверка доставки уведомлений",
+            desc: "Каждый участник делает 1 тестовый клик в своем боте/магазине и подтверждает, что уведомления мгновенно приходят в Telegram без зависаний.",
+            cmd: "Провести стресс-тест уведомлений и платежных шлюзов",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-7-all-2",
+            day: "day3",
+            dayLabel: "7 Ноя (Пт)",
+            kind: "agent",
+            assignedUser: "all",
+            userName: "Все сотрудники",
+            order: "7 Ноября · Автономно 🟢",
+            project: "Позновалка",
+            title: "🟢 Агенты: A/B сплит-тест заголовков воронки & оптимизация мобильного FPS",
+            desc: "ИИ-агенты запускают A/B тестирование вариантов оффера и автоматически выбирают связку с максимальной конверсией в подписку.",
+            cmd: "Запустить A/B оптимизацию посадочных страниц и воронки",
+            doneDefault: false
+        },
+
+        /* === 8-11 НОЯБРЯ 2026 (ВЫХОДНЫЕ И НАЧАЛО НЕДЕЛИ) === */
+        {
+            id: "step-cal-8-agent",
+            day: "day4",
+            dayLabel: "8 Ноя (Сб)",
+            kind: "agent",
+            assignedUser: "all",
+            userName: "Все сотрудники",
+            order: "8 Ноября · Автономно 🟢",
+            project: "Позновалка",
+            title: "🟢 Агенты: 24/7 Автономный прием оплат & выдача клубных доступов",
+            desc: "ИИ-боты работают в круглосуточном режиме: принимают оплаты, выдают инвайт-ссылки в закрытые каналы и отправляют отчеты в @unitybusinessbot.",
+            cmd: "Проверить статус автономного процессинга платежей и инвайтов",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-9-agent",
+            day: "day5",
+            dayLabel: "9 Ноя (Вс)",
+            kind: "agent",
+            assignedUser: "yvyatkin",
+            userName: "Юрий Вяткин",
+            order: "9 Ноября · Автономно 🟢",
+            project: "Юра",
+            title: "🟢 КХЛ Бот: Итоговый расчет ROI уик-энда & бэктест на свежих матчах",
+            desc: "Анализ прошедших игр тура, сравнение фактических счетов с прогнозными xG, автоматический пересчет формул Байеса.",
+            cmd: "Сформировать отчет по матчам уик-энда КХЛ и обновить веса",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-10-human",
+            day: "day6",
+            dayLabel: "10 Ноя (Пн)",
+            kind: "human",
+            assignedUser: "unityspiritpartners",
+            userName: "Власлав (Boss)",
+            order: "10 Ноября · Решение 🔴",
+            project: "Unity Inc",
+            title: "🔴 Власлав: Еженедельная летучка & выбор масштабирования чемпионов недели",
+            desc: "Оценить результаты: оффер с максимальной выручкой получает удвоение бюджета на продвижение в Telegram и Instagram.",
+            cmd: "Сформировать сводный недельный P&L отчет по всем направлениям",
+            doneDefault: false
+        },
+        {
+            id: "step-cal-11-agent",
+            day: "day7",
+            dayLabel: "11 Ноя (Вт)",
+            kind: "agent",
+            assignedUser: "all",
+            userName: "Все сотрудники",
+            order: "11 Ноября · Автономно 🟢",
+            project: "Позновалка",
+            title: "🟢 Агенты: Автоматический бэкап в Obsidian Second Brain HQ (Agency_HQ)",
+            desc: "Синхронизация всех новых лидов, диалогов, клиентских заявок и инстинктов самообучения в локальное хранилище Obsidian.",
+            cmd: "Выполнить полный синк офисной памяти в Obsidian HQ",
             doneDefault: false
         }
     ];
@@ -4404,7 +4658,7 @@
 
     
     // =========================================================================
-    // === v25.7: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
+    // === v25.8: HEAD OFFICE MANAGEMENT (ASSIGN & MOVE FOLDERS/MATERIALS) ===
     // =========================================================================
     function openAssignProjectModal(projName) {
         if (!isOwnerSession()) {
@@ -4773,61 +5027,205 @@
         sendTask(cmdText);
     }
 
+    let crmCalDay = "today";
+    let crmCalKind = "all";
+    let crmCalUser = "all";
+
+    function setCrmCalDay(day) {
+        crmCalDay = day;
+        renderPlanView();
+    }
+
+    function setCrmCalKind(kind) {
+        crmCalKind = kind;
+        renderPlanView();
+    }
+
+    function setCrmCalUser(user) {
+        crmCalUser = user;
+        renderPlanView();
+    }
+
+    function openAddCustomCalTaskModal() {
+        const title = prompt("Введите название задачи для CRM-Календаря:");
+        if (!title || !title.trim()) return;
+        const day = prompt("День (today, tomorrow, day3, day4, day5, day6, day7):", "tomorrow") || "tomorrow";
+        const kind = confirm("Нажмите OK если это ЧЕЛОВЕЧЕСКОЕ РЕШЕНИЕ (🔴), или Отмена если АВТОНОМНЫЙ АГЕНТ (🟢)") ? "human" : "agent";
+        const project = currentProject || "Позновалка";
+
+        const customTasks = JSON.parse(localStorage.getItem("crm_calendar_custom_tasks_v25_8") || "[]");
+        customTasks.push({
+            id: "custom-" + Date.now(),
+            day: day,
+            dayLabel: day === "today" ? "5 Ноя (Ср)" : (day === "tomorrow" ? "6 Ноя (Чт)" : day),
+            kind: kind,
+            assignedUser: (currentAuthUser && currentAuthUser.login) ? normalizeAuthLogin(currentAuthUser.login) : "all",
+            userName: (currentAuthUser && currentAuthUser.name) ? currentAuthUser.name : "Пользователь",
+            order: kind === "human" ? "Пользователь · Решение 🔴" : "Пользователь · Агент 🟢",
+            project: project,
+            title: (kind === "human" ? "🔴 " : "🟢 ") + title.trim(),
+            desc: "Добавлено пользователем через CRM-Планировщик. Проект: " + project,
+            cmd: "Выполнить задачу: " + title.trim(),
+            doneDefault: false
+        });
+        localStorage.setItem("crm_calendar_custom_tasks_v25_8", JSON.stringify(customTasks));
+        renderPlanView();
+    }
+
     function renderPlanView() {
         const container = document.getElementById("plan-container");
 
         if (planSubView === "schedule") {
-            const todaySteps = ACTION_PLAN_STEPS.filter(s => s.day === "today");
-            const tomorrowSteps = ACTION_PLAN_STEPS.filter(s => s.day === "tomorrow");
+            const customTasks = JSON.parse(localStorage.getItem("crm_calendar_custom_tasks_v25_8") || "[]");
+            const allSteps = ACTION_PLAN_STEPS.concat(customTasks);
 
-            let html = '<div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 10px 12px; font-size: 0.78rem; line-height: 1.42;">' +
-                '🤖 <b>Сформировано системой самообучения (SelfEvolvingSwarm v3.1):</b> Очередь выстроена по максимальной отдаче денег и времени на основе разбора задач #47–#97.' +
+            // Determine effective user
+            const loggedLogin = (currentAuthUser && currentAuthUser.login) ? normalizeAuthLogin(currentAuthUser.login) : "";
+            const isBoss = (typeof isFullAccessSession === "function" && isFullAccessSession()) || (currentAuthUser && currentAuthUser.role === "owner");
+
+            let filtered = allSteps.filter(s => {
+                // Day filter
+                if (crmCalDay !== "all" && s.day !== crmCalDay) return false;
+                // Kind filter
+                if (crmCalKind !== "all" && s.kind !== crmCalKind) return false;
+                // User filter
+                if (!isBoss) {
+                    if (s.assignedUser !== "all" && s.assignedUser !== loggedLogin) return false;
+                } else {
+                    if (crmCalUser !== "all") {
+                        if (crmCalUser === "my" && s.assignedUser !== "unityspiritpartners" && s.assignedUser !== "all") return false;
+                        if (crmCalUser !== "my" && s.assignedUser !== crmCalUser && s.assignedUser !== "all") return false;
+                    }
+                }
+                return true;
+            });
+
+            const humanSteps = filtered.filter(s => s.kind === "human");
+            const agentSteps = filtered.filter(s => s.kind !== "human");
+
+            let html = '<div class="cal-reminder-box">' +
+                '<div style="font-weight:800; font-size:0.88rem; color:#f59e0b; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                    '<span>🔔 ИНТЕРАКТИВНЫЙ СРМ-КАЛЕНДАРЬ ЗАДАЧ & НАПОМИНАНИЯ (7 ДНЕЙ)</span>' +
+                    '<span style="background:rgba(245,158,11,0.2); border:1px solid rgba(245,158,11,0.5); color:#fbbf24; font-size:0.7rem; padding:2px 8px; border-radius:12px;">5 — 11 Ноября 2026</span>' +
                 '</div>' +
-                '<div class="section-divider"><span>☀️ ЧТО ДЕЛАЕМ СЕГОДНЯ (ПО ОЧЕРЕДИ)</span><span>' + todaySteps.length + ' шагов</span></div>';
+                '<div style="font-size:0.77rem; line-height:1.45; color:var(--text-main);">' +
+                    '💡 <b>Золотое правило эффективности:</b> Спланируйте свои действия наперед! Человек принимает <b>1-2 ключевых решения в день (🔴)</b>, а остальную 95% рутину выполняют <b>автономные ИИ-агенты 24/7 (🟢)</b>.' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
+                    '<button class="mini-btn accent" onclick="openAddCustomCalTaskModal()">➕ Запланировать задачу</button>' +
+                    '<button class="mini-btn" onclick="sendTask(\'СИНХРОНИЗИРОВАТЬ ПЛАН ДЛЯ ВСЕХ СОТРУДНИКОВ В СРМ\')">🔄 Синхронизировать с ИИ</button>' +
+                '</div>' +
+            '</div>';
 
-            todaySteps.forEach(s => {
-                const checked = isStepChecked(s.id, s.doneDefault);
-                const safeProj = escapeHtml(s.project).replace(/'/g, "\\'");
-                const safeCmd = escapeHtml(s.cmd).replace(/'/g, "\\'");
-                html += '<div class="plan-card today">' +
-                    '<div class="plan-step-header">' +
-                        '<span class="badge done">' + escapeHtml(s.order) + '</span>' +
-                        '<span class="crm-project-tag" onclick="selectProject(\'' + safeProj + '\')">📁 ' + escapeHtml(s.project) + '</span>' +
-                    '</div>' +
-                    '<label class="plan-check-row">' +
-                        '<input type="checkbox" ' + (checked ? 'checked' : '') + ' onchange="toggleStepCheck(\'' + s.id + '\', this)">' +
-                        '<span>' + escapeHtml(s.title) + '</span>' +
-                    '</label>' +
-                    '<div class="plan-desc">' + escapeHtml(s.desc) + '</div>' +
-                    '<div class="plan-footer">' +
-                        '<button class="mini-btn accent" onclick="runPlanStep(\'' + safeProj + '\', \'' + safeCmd + '\')">▶️ Запустить шаг в работу</button>' +
-                        '<button class="mini-btn" onclick="selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
-                    '</div>' +
+            // 1. Day Selector Bar
+            html += '<div style="margin-top:6px;"><div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:4px; font-weight:700;">🗓️ ВЫБЕРИТЕ ДЕНЬ КАЛЕНДАРЯ:</div><div class="cal-day-bar">' +
+                '<div class="cal-day-chip ' + (crmCalDay === "today" ? "active" : "") + '" onclick="setCrmCalDay(\'today\')">☀️ Сегодня (5 Ноя)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "tomorrow" ? "active" : "") + '" onclick="setCrmCalDay(\'tomorrow\')">🌅 Завтра (6 Ноя)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "day3" ? "active" : "") + '" onclick="setCrmCalDay(\'day3\')">📅 7 Ноя (Пт)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "day4" ? "active" : "") + '" onclick="setCrmCalDay(\'day4\')">📅 8 Ноя (Сб)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "day5" ? "active" : "") + '" onclick="setCrmCalDay(\'day5\')">📅 9 Ноя (Вс)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "day6" ? "active" : "") + '" onclick="setCrmCalDay(\'day6\')">📅 10 Ноя (Пн)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "day7" ? "active" : "") + '" onclick="setCrmCalDay(\'day7\')">📅 11 Ноя (Вт)</div>' +
+                '<div class="cal-day-chip ' + (crmCalDay === "all" ? "active" : "") + '" onclick="setCrmCalDay(\'all\')">🗓️ Все 7 Дней</div>' +
+            '</div></div>';
+
+            // 2. Kind Selector & User Selector Filter Bar
+            html += '<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin-bottom:6px;">' +
+                '<button class="chip ' + (crmCalKind === "all" ? "active" : "") + '" onclick="setCrmCalKind(\'all\')">Все типы (' + filtered.length + ')</button>' +
+                '<button class="chip ' + (crmCalKind === "human" ? "active" : "") + '" onclick="setCrmCalKind(\'human\')" style="color:#fbbf24; border-color:rgba(245,158,11,0.5);">🔴 Решение человека (' + humanSteps.length + ')</button>' +
+                '<button class="chip ' + (crmCalKind === "agent" ? "active" : "") + '" onclick="setCrmCalKind(\'agent\')" style="color:#34d399; border-color:rgba(16,185,129,0.5);">🟢 Автономный ИИ (' + agentSteps.length + ')</button>' +
+            '</div>';
+
+            if (isBoss) {
+                html += '<div style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; margin-bottom:8px; font-size:0.75rem;">' +
+                    '<span style="color:var(--text-dim); font-weight:700;">Сотрудник:</span>' +
+                    '<button class="chip ' + (crmCalUser === "all" ? "active" : "") + '" onclick="setCrmCalUser(\'all\')">👥 Все</button>' +
+                    '<button class="chip ' + (crmCalUser === "my" ? "active" : "") + '" onclick="setCrmCalUser(\'my\')">👑 Мой фокус</button>' +
+                    '<button class="chip ' + (crmCalUser === "aliashirani" ? "active" : "") + '" onclick="setCrmCalUser(\'aliashirani\')">🌸 Alberta</button>' +
+                    '<button class="chip ' + (crmCalUser === "true1team" ? "active" : "") + '" onclick="setCrmCalUser(\'true1team\')">⚡ True1Team</button>' +
+                    '<button class="chip ' + (crmCalUser === "yvyatkin" ? "active" : "") + '" onclick="setCrmCalUser(\'yvyatkin\')">🏒 Юрий Вяткин</button>' +
+                    '<button class="chip ' + (crmCalUser === "tatianaknyazeva777" ? "active" : "") + '" onclick="setCrmCalUser(\'tatianaknyazeva777\')">🍯 Татьяна</button>' +
                 '</div>';
-            });
+            }
 
-            html += '<div class="section-divider" style="margin-top:6px;"><span>🌅 ЧТО БУДЕМ ДЕЛАТЬ ЗАВТРА (СЛЕДУЮЩАЯ ОЧЕРЕДЬ)</span><span>' + tomorrowSteps.length + ' шага</span></div>';
-
-            tomorrowSteps.forEach(s => {
-                const checked = isStepChecked(s.id, s.doneDefault);
-                const safeProj = escapeHtml(s.project).replace(/'/g, "\\'");
-                const safeCmd = escapeHtml(s.cmd).replace(/'/g, "\\'");
-                html += '<div class="plan-card tomorrow">' +
-                    '<div class="plan-step-header">' +
-                        '<span class="badge purple">' + escapeHtml(s.order) + '</span>' +
-                        '<span class="crm-project-tag" onclick="selectProject(\'' + safeProj + '\')">📁 ' + escapeHtml(s.project) + '</span>' +
-                    '</div>' +
-                    '<label class="plan-check-row">' +
-                        '<input type="checkbox" ' + (checked ? 'checked' : '') + ' onchange="toggleStepCheck(\'' + s.id + '\', this)">' +
-                        '<span>' + escapeHtml(s.title) + '</span>' +
-                    '</label>' +
-                    '<div class="plan-desc">' + escapeHtml(s.desc) + '</div>' +
-                    '<div class="plan-footer">' +
-                        '<button class="mini-btn accent" onclick="runPlanStep(\'' + safeProj + '\', \'' + safeCmd + '\')">▶️ Запустить сейчас</button>' +
-                        '<button class="mini-btn" onclick="selectProject(\'' + safeProj + '\')">Открыть папку →</button>' +
-                    '</div>' +
+            // 3. Render Human Tasks Section
+            if (crmCalKind !== "agent") {
+                html += '<div class="section-divider" style="margin-top:6px; color:#fbbf24;">' +
+                    '<span>🔴 ТРЕБУЕТ ВАШЕГО ВНИМАНИЯ (КЛЮЧЕВЫЕ РЕШЕНИЯ ЧЕЛОВЕКА)</span>' +
+                    '<span>' + humanSteps.length + ' задач</span>' +
                 '</div>';
-            });
+
+                if (humanSteps.length === 0) {
+                    html += '<div style="font-size:0.78rem; color:var(--text-dim); padding:10px; background:rgba(255,255,255,0.02); border-radius:8px; border:1px dashed var(--border); text-align:center;">' +
+                        '🎉 На этот период все человеческие решения приняты! Остальное выполняют агенты.' +
+                    '</div>';
+                }
+
+                humanSteps.forEach(s => {
+                    const checked = isStepChecked(s.id, s.doneDefault);
+                    const safeProj = escapeHtml(s.project).replace(/'/g, "\\'");
+                    const safeCmd = escapeHtml(s.cmd).replace(/'/g, "\\'");
+                    html += '<div class="plan-card human-action">' +
+                        '<div class="plan-step-header">' +
+                            '<span class="badge-human">🔴 ' + escapeHtml(s.order) + '</span>' +
+                            '<div style="display:flex; gap:5px; align-items:center;">' +
+                                '<span class="crm-project-tag" onclick="selectProject(\'' + safeProj + '\')">📁 ' + escapeHtml(s.project) + '</span>' +
+                                '<span style="font-size:0.72rem; color:var(--text-dim);">' + escapeHtml(s.userName || "") + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<label class="plan-check-row">' +
+                            '<input type="checkbox" ' + (checked ? 'checked' : '') + ' onchange="toggleStepCheck(\'' + s.id + '\', this)">' +
+                            '<span style="font-weight:700; color:' + (checked ? 'var(--text-dim)' : 'var(--text-main)') + ';">' + escapeHtml(s.title) + '</span>' +
+                        '</label>' +
+                        '<div class="plan-desc" style="color:var(--text-main); font-size:0.79rem; line-height:1.45;">' + escapeHtml(s.desc) + '</div>' +
+                        '<div class="plan-footer" style="margin-top:4px;">' +
+                            '<button class="mini-btn accent" onclick="runPlanStep(\'' + safeProj + '\', \'' + safeCmd + '\')">⚡ Принять решение / Подтвердить</button>' +
+                            '<button class="mini-btn" onclick="selectProject(\'' + safeProj + '\')">Открыть проект →</button>' +
+                        '</div>' +
+                    '</div>';
+                });
+            }
+
+            // 4. Render Autonomous Agent Tasks Section
+            if (crmCalKind !== "human") {
+                html += '<div class="section-divider" style="margin-top:12px; color:#34d399;">' +
+                    '<span>🟢 100% АВТОНОМНЫЕ ЗАДАЧИ ИИ-АГЕНТОВ (24/7 В ФОНЕ)</span>' +
+                    '<span>' + agentSteps.length + ' процессов</span>' +
+                '</div>';
+
+                if (agentSteps.length === 0) {
+                    html += '<div style="font-size:0.78rem; color:var(--text-dim); padding:10px; background:rgba(255,255,255,0.02); border-radius:8px; border:1px dashed var(--border); text-align:center;">' +
+                        'Нет активных автономных задач на выбранный фильтр.' +
+                    '</div>';
+                }
+
+                agentSteps.forEach(s => {
+                    const checked = isStepChecked(s.id, s.doneDefault);
+                    const safeProj = escapeHtml(s.project).replace(/'/g, "\\'");
+                    const safeCmd = escapeHtml(s.cmd).replace(/'/g, "\\'");
+                    html += '<div class="plan-card autonomous-agent">' +
+                        '<div class="plan-step-header">' +
+                            '<span class="badge-agent">🟢 ' + escapeHtml(s.order) + '</span>' +
+                            '<div style="display:flex; gap:5px; align-items:center;">' +
+                                '<span class="crm-project-tag" onclick="selectProject(\'' + safeProj + '\')">📁 ' + escapeHtml(s.project) + '</span>' +
+                                '<span style="font-size:0.72rem; color:var(--text-dim);">' + escapeHtml(s.userName || "") + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<label class="plan-check-row">' +
+                            '<input type="checkbox" ' + (checked ? 'checked' : '') + ' onchange="toggleStepCheck(\'' + s.id + '\', this)">' +
+                            '<span style="font-weight:600;">' + escapeHtml(s.title) + '</span>' +
+                        '</label>' +
+                        '<div class="plan-desc" style="font-size:0.77rem; color:var(--text-dim);">' + escapeHtml(s.desc) + '</div>' +
+                        '<div class="plan-footer" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-top:4px;">' +
+                            '<span style="font-size:0.71rem; color:#34d399;">● Выполняется непрерывно демоном ноутбука (PID 21288)</span>' +
+                            '<div style="display:flex; gap:6px;">' +
+                                '<button class="mini-btn" onclick="runPlanStep(\'' + safeProj + '\', \'' + safeCmd + '\')">▶️ Запустить шаг</button>' +
+                                '<button class="mini-btn" onclick="selectProject(\'' + safeProj + '\')">Папка →</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+                });
+            }
 
             container.innerHTML = html;
             return;
@@ -5568,7 +5966,7 @@
 
 
     // =========================================================================
-    // === v25.7: UNIVERSAL NON-BLOCKING IN-APP MODAL (ZERO FREEZE / NO PROMPT) ===
+    // === v25.8: UNIVERSAL NON-BLOCKING IN-APP MODAL (ZERO FREEZE / NO PROMPT) ===
     // =========================================================================
     let universalPromptCallback = null;
 
@@ -7608,7 +8006,7 @@
 
     
     // =========================================================================
-    // === v25.7: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
+    // === v25.8: EXCLUSIVE OWNER MONITORING & ALBERTA SHIRANI BUSINESS PLAN ===
     // =========================================================================
 
     function buildOwnerUserMonitoringHtml() {
@@ -8267,7 +8665,7 @@
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v25.7 active");
+                            console.log("Service Worker v25.8 active");
                         }
                     });
                 }
@@ -8677,10 +9075,10 @@
 
     
     // =========================================================================
-    // === v25.7: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+    // === v25.8: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
     // =========================================================================
     // =========================================================================
-// === v25.7: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
+// === v25.8: VISITOR GUEST ENGINE (ZERO FOLDERS, QUIZ + WORKING AI)    ===
 // =========================================================================
 const GUEST_QUIZ_QUESTIONS = [
     {
@@ -8825,7 +9223,7 @@ function sendQuickGuestPromptPortal(txt) {
 
 
     // =========================================================================
-    // === v25.7: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
+    // === v25.8: COMPREHENSIVE AI ASSISTANT ENGINE (CHATGPT MODE 24/7)      ===
     // =========================================================================
     function toggleGuestAiChatModal(forceOpen) {
         const modal = document.getElementById("guest-ai-chat-modal");
@@ -9314,7 +9712,7 @@ function sendQuickGuestPromptPortal(txt) {
         container.insertAdjacentHTML("beforeend", aiHtml);
         container.scrollTop = container.scrollHeight;
     }
-    // === v25.7: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
+    // === v25.8: GLOBAL SPIRIT GROUP — LANGUAGE SWITCHER ENGINE (RU / EN)   ===
     // =========================================================================
     var currentOfficeLang = "ru";
     try {
@@ -9322,7 +9720,7 @@ function sendQuickGuestPromptPortal(txt) {
     } catch(e) {}
 
     // =========================================================================
-    // === v25.7: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
+    // === v25.8: COMPLETE INTERNATIONALIZATION & MULTI-LINGUAL SYSTEM ===
     // =========================================================================
     const I18N_DICT = {
         ru: {
@@ -9632,7 +10030,7 @@ function sendQuickGuestPromptPortal(txt) {
     }
 
     // =========================================================================
-    // === v25.7: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
+    // === v25.8: OFFICE FAST NAVIGATOR & INTELLIGENT HELPER ("НЕ МЕШАТЬ") ===
     // =========================================================================
     function navigateOfficeSection(target) {
         // Automatically minimize AI assistant modal so it does NOT block the screen ("не мешать")
@@ -9924,7 +10322,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.7</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v25.8</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -10029,7 +10427,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
         // =========================================================================
-    // === v25.7: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
+    // === v25.8: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
     const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
     const TG_BOT_NAME = "unitybusinessbot";
@@ -10087,7 +10485,7 @@ function enterPendingWaitingRoom(userObj) {
     }
 
     // =========================================================================
-    // === v25.7: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
+    // === v25.8: URL AUTO-APPROVAL HANDLER FROM TELEGRAM BUTTON ===
     // =========================================================================
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
@@ -11984,9 +12382,9 @@ function enterPendingWaitingRoom(userObj) {
 
 <!-- ========================================================================= -->
 <!-- ========================================================================= -->
-<!-- === v25.7: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
+<!-- === v25.8: LIVE AI ASSISTANT & OFFICE NAVIGATOR (UNOBTRUSIVE & POWERFUL) === -->
 <!-- ========================================================================= -->
-<!-- v25.7: SLEEK SIDE-DOCK PEEKING AI NAVIGATOR & ASSISTANT -->
+<!-- v25.8: SLEEK SIDE-DOCK PEEKING AI NAVIGATOR & ASSISTANT -->
 <button id="btn-floating-guest-ai" onclick="toggleGuestAiChatModal()" title="ИИ-Навигатор & Ассистент (нажмите, чтобы открыть панель сбоку)">
     <span class="ai-side-peek-icon">🤖</span>
     <span class="ai-side-peek-dot"></span>
