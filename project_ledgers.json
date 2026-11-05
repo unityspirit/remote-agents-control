@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 03:22:59",
+  "updated": "2026-11-05 03:28:08",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3738,14 +3738,14 @@
       "why_first": "Все ваши фото, заметки и ссылки с телефона стекаются сюда и связываются с боевыми проектами.",
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
-        "completed_works": 27,
+        "completed_works": 30,
         "open_tasks": 10,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 192,
         "size_kb": 1199,
-        "ai_analyses": 27,
-        "research_notes": 0
+        "ai_analyses": 29,
+        "research_notes": 1
       },
       "continue_first": {
         "title": "Провести ревизию сохранённых материалов Позновалки и передать лучшие в боевые папки",
@@ -3772,7 +3772,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-11",
+          "id": "hist-13",
           "date": "28.10.2026 07:53",
           "project": "Позновалка",
           "type": "ai_study",
@@ -3782,13 +3782,24 @@
           "status": "done"
         },
         {
-          "id": "hist-12",
+          "id": "hist-14",
           "date": "21.10.2026 08:44",
           "project": "Позновалка",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and tell me how we make millions of dollars as soo",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "card-38",
+          "issue_number": 38,
+          "date": "2026-11-05 03:27:47",
+          "project": "Позновалка",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#38 RESEARCH_MORE: personal knowledge management AI second brain monetization workflows",
+          "summary": "✅ Готово",
           "status": "done"
         },
         {
@@ -3913,7 +3924,7 @@
           "status": "not_studied"
         },
         {
-          "id": "hist-13",
+          "id": "hist-15",
           "date": "20.10.2026 10:45",
           "project": "Позновалка",
           "type": "ai_study",
@@ -3923,7 +3934,7 @@
           "status": "done"
         },
         {
-          "id": "hist-14",
+          "id": "hist-16",
           "date": "19.10.2026 14:58",
           "project": "Позновалка",
           "type": "ai_study",
@@ -3933,12 +3944,12 @@
           "status": "done"
         },
         {
-          "id": "hist-15",
-          "date": "19.10.2026 14:46",
+          "id": "hist-12",
+          "date": "05.11.2026 03:27",
           "project": "Позновалка",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
-          "title": "https://bogatushin.com/web_v11/gaigents?utm_source=google&utm_medium=cpc&utm_campaign=24358258691&utm_content=196423618770_828100227048_m_22",
+          "title": "RESEARCH_MORE: personal knowledge management AI second brain monetization workflows",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
           "status": "done"
         }
