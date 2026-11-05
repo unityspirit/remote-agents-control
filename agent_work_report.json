@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-05 16:15:17",
+  "updated": "2026-11-05 16:28:41",
   "kpis": {
-    "total_completed_works": 223,
-    "tim_master_reports": 27,
+    "total_completed_works": 225,
+    "tim_master_reports": 28,
     "active_projects_count": 56,
     "total_saved_photos": 1,
     "awaiting_human_count": 45
@@ -825,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 27,
-      "last_project": "Traffic",
-      "last_task": "https://www.instagram.com/reel/DeMoUFfOMdR/?rpxt=MWFuc3lpczNrc2pseA== изучи как это они делают и на чем зарабатывают деньги как работает эта методика и подключи",
-      "updated_at": "2026-11-04 13:58:53"
+      "tasks_completed": 28,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "updated_at": "2026-11-05 16:27:37"
     },
     {
       "key": "intake",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 103,
+      "tasks_completed": 104,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 16:15:16"
+      "updated_at": "2026-11-05 16:28:39"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 103,
+      "tasks_completed": 104,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 16:15:16"
+      "updated_at": "2026-11-05 16:28:39"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 103,
+      "tasks_completed": 104,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 16:15:16"
+      "updated_at": "2026-11-05 16:28:39"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 55,
+      "tasks_completed": 56,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 16:15:16"
+      "updated_at": "2026-11-05 16:28:39"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 55,
+      "tasks_completed": 56,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 16:15:16"
+      "updated_at": "2026-11-05 16:28:39"
     },
     {
       "key": "researcher",
@@ -891,10 +891,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 33,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-05 15:57:41"
+      "tasks_completed": 34,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "updated_at": "2026-11-05 16:27:37"
     },
     {
       "key": "analyst",
@@ -902,10 +902,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 33,
+      "tasks_completed": 34,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 16:15:16"
+      "updated_at": "2026-11-05 16:28:39"
     },
     {
       "key": "developer",
@@ -913,10 +913,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 23,
-      "last_project": "Traffic",
-      "last_task": "https://www.instagram.com/reel/DeMoUFfOMdR/?rpxt=MWFuc3lpczNrc2pseA== изучи как это они делают и на чем зарабатывают деньги как работает эта методика и подключи",
-      "updated_at": "2026-11-04 13:58:53"
+      "tasks_completed": 24,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "updated_at": "2026-11-05 16:27:37"
     },
     {
       "key": "strategist",
@@ -924,10 +924,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 21,
-      "last_project": "Traffic",
-      "last_task": "https://www.instagram.com/reel/DeMoUFfOMdR/?rpxt=MWFuc3lpczNrc2pseA== изучи как это они делают и на чем зарабатывают деньги как работает эта методика и подключи",
-      "updated_at": "2026-11-04 13:58:53"
+      "tasks_completed": 22,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "updated_at": "2026-11-05 16:27:37"
     },
     {
       "key": "marketer",
@@ -935,10 +935,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 18,
+      "tasks_completed": 19,
       "last_project": "Входящие_Офис",
-      "last_task": "Найди все что мы делали для tentorium.ru Татьяна",
-      "updated_at": "2026-11-03 11:57:28"
+      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "updated_at": "2026-11-05 16:27:37"
     },
     {
       "key": "vibe_coder",
@@ -975,6 +975,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-176",
+      "issue_number": 176,
+      "date": "2026-11-05 16:27:37",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#176 TIM: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awa",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261105_162654",
+      "issue_number": 176,
+      "date": "2026-11-05 16:26:54",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-38",
       "issue_number": 38,
@@ -1702,29 +1726,6 @@
       "title": "Подготовка коммерческого MVP сервиса КХЛ инсайтов (Юра): синхронизация с Юрием, правила фильтрации 1 инсайт на период, расчет юнит-экономики",
       "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Стратег, Главный Разработчик) в рамках проекта «Юра». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затра",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Юра».",
-      "status": "done"
-    },
-    {
-      "id": "card-159",
-      "issue_number": 159,
-      "date": "2026-10-29 20:12:19",
-      "project": "12 IT Продуктов (Короче Капитан)",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#159 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "photo-photo_159_1.jpg",
-      "issue_number": 159,
-      "date": "2026-10-29 20:11:53",
-      "project": "12 IT Продуктов (Короче Капитан)",
-      "type": "photo_study",
-      "agent": "📷 Vision & OCR Агент",
-      "title": "Фото изучено: 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
-      "summary": "Размер: 680x180 px\n[ru] Тариф Mini Арр Pro 2026: 1490 RUB Навигатор канала + Парсер заказов Stars\n[en-US] Taph4) Mini App Pro 2026: 1490 RUB Haamrarop KaHana + napcep 3aKa30B Stars",
-      "image_url": "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg",
       "status": "done"
     }
   ]
