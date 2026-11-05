@@ -15011,6 +15011,60 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-05 03:07:46"
+    },
+    "175": {
+      "id": 175,
+      "created": "2026-11-05 03:08:19",
+      "handoffs": [
+        {
+          "t": "2026-11-05 03:08:19",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-05 03:08:19",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-05 03:08:20",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-05 03:08:41",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 465
+      },
+      "title": "Скуф из Японии заработал $13,450 за месяц на девушке, которую создал с помощью Claude. 47-летний мужик завёл виртуальной девушке аккаунты в OnlyFans и TikTok и начал",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-11-05 03:08:47",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_175_Скуф_из_Японии_заработал__13.md",
+      "raw_file": "raw_175_20261105_030819_Скуф_из_Японии_заработал__13.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #175 → …»"
+      }
     }
   }
 }
