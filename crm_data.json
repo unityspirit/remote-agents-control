@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 162,
+      "evidence_count": 163,
       "scope": "global",
-      "last_updated": "2026-11-04T02:13:40.619296"
+      "last_updated": "2026-11-05T03:09:11.750013"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 211,
+      "evidence_count": 212,
       "scope": "global",
-      "last_updated": "2026-11-04T13:59:44.794772"
+      "last_updated": "2026-11-05T03:09:11.753149"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 237,
+      "evidence_count": 238,
       "scope": "global",
-      "last_updated": "2026-11-05T03:08:14.703841"
+      "last_updated": "2026-11-05T03:09:11.754678"
     },
     {
       "id": "task-custom-request",
@@ -161,7 +161,7 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-05T10:08:16.111927+00:00",
+  "updated_at": "2026-11-05T10:09:13.017897+00:00",
   "knowledge_base": [
     {
       "id": "kb-1793832312438",
