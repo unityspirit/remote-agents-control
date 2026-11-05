@@ -329,10 +329,26 @@
           "urls": [],
           "image_urls": [],
           "ai_reply": "📁 `Входящие_Офис` · 🤖 `Triage & Intelligence Distribution Architect`\n\n### 🧭 Карточка #174: материал изучен, но **проект не очевиден** — выберите\n\nВарианты маршрутизатора: совпадений нет.\n\n📌 **Суть и ценность**  \nClaude ищет людей без опыта работы с ИИ на удалённую работу с зарплатой до 3,3 млн руб. Кандидаты изучают нейросеть, пытаются обойти её защиту и искать уязвимости, чтобы сделать ИИ безопаснее. В первую очередь нужны инженеры, учёные и основатели стартапов. Заявки принимаются до 22 ноября.\n\n🎯 **Куда внедрять**  \nПроект не уточнен; задача – исследовать и улучшать безопасность ИИ.  \n\n💡 **Как применить**  \n- **Оффер**: удалённая работа, зарплата до 3,3 млн руб, без опыта.  \n- **Воронка**: поиск кандидатов → отправка заявки до 22 ноября.  \n- **Фича**: изучение нейросети, поиск и устранение уязвимостей.  \n- **Код**: не указан.  \n\n🤖 **Что сделает ИИ после «Да»**  \nИИ будет использоваться для выявления и устранения уязвимостей, повышая его безопасность.  \n\n👤 **Что нужно от человека**  \nПодать заявку до 22 ноября.\n\n---\n**Проект:** `—` · уверенность: `none` · ведущий агент: `—`\n\n---\n### 🎯 Выберите следующий шаг:\n🔘 Вариант 1: ✅ Утверждаю #174 → Позновалка\n🔘 Вариант 2: 📦 Сохранить только в Базу #174\n🔘 Вариант 3: 📊 Статус конвейера Входящие\n\n<!-- CHOICES: [\"✅ Утверждаю #174 → Позновалка\", \"📦 Сохранить только в Базу #174\", \"📊 Статус конвейера Входящие\"] -->\n\n---\n📋 **Карточка #174** · 🧭 Уточните проект · владелец: `human` · проект: `Входящие_Офис`\n➡️ Дальше (human): Выбрать проект кнопкой «✅ Утверждаю #174 → …»\n🗂 Доска: `C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\ДОСКА.md`"
+        },
+        {
+          "id": "iss-176",
+          "ts": "2026-11-05T23:26:30.519Z",
+          "login": "true1team",
+          "full_name": "@true1team",
+          "issue_number": 176,
+          "project": "Входящие_Офис",
+          "kind": "saved_research",
+          "title": "TIM: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+          "study_text": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awareness_-_Demand_Gen&utm_content=197241853085&utm_term=&utm_id=24028112345&hsa_acc=3291578710&hsa_cam=24028112345&hsa_grp=197241853085&hsa_ad=825598797050&hsa_src=ytif&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24028112345.  Найди когда мы это изучали раннее отправлял для изучения и повтори для нашей системы и потом продовать как они зарабатывают на этой систему и  разработай систему как зарабатывать деньги как они.",
+          "urls": [
+            "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+            "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awareness_-_Demand_Gen&utm_content=197241853085&utm_term=&utm_id=24028112345&hsa_acc=3291578710&hsa_cam=24028112345&hsa_grp=197241853085&hsa_ad=825598797050&hsa_src=ytif&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24028112345."
+          ],
+          "image_urls": []
         }
       ],
-      "total_count": 22,
-      "last_saved_at": "2026-11-05T10:09:36.402864+00:00"
+      "total_count": 23,
+      "last_saved_at": "2026-11-05T23:26:30.519Z"
     },
     "unityspiritteam@gmail.com": {
       "login": "unityspiritteam@gmail.com",
@@ -613,5 +629,5 @@
       "last_saved_at": "2026-11-02T19:57:55.221635+00:00"
     }
   },
-  "updated_at": "2026-11-05T10:27:47.397683+00:00"
+  "updated_at": "2026-11-05T23:26:30.519Z"
 }
