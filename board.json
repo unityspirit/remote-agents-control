@@ -15146,6 +15146,39 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-05 03:27:47"
+    },
+    "176": {
+      "id": 176,
+      "created": "2026-11-05 16:26:29",
+      "handoffs": [
+        {
+          "t": "2026-11-05 16:26:29",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-05 16:27:37",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+      "urls": [
+        "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+        "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awareness_-_Demand_Gen&utm_content=197241853085&utm_term=&utm_id=24028112345&hsa_acc=3291578710&hsa_cam=24028112345&hsa_grp=197241853085&hsa_ad=825598797050&hsa_src=ytif&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24028112345"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-05 16:27:37"
     }
   }
 }
