@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 16:15:17",
+  "updated": "2026-11-05 16:32:39",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -953,7 +953,7 @@
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 22,
-        "size_kb": 2658,
+        "size_kb": 2681,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -2474,8 +2474,8 @@
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 63,
-        "size_kb": 539,
+        "files_on_disk": 64,
+        "size_kb": 558,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -2794,9 +2794,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 21,
+        "completed_works": 23,
         "open_tasks": 29,
-        "tim_reports": 6,
+        "tim_reports": 7,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2832,6 +2832,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-176",
+          "issue_number": 176,
+          "date": "2026-11-05 16:27:37",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#176 TIM: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awa",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261105_162654",
+          "issue_number": 176,
+          "date": "2026-11-05 16:26:54",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-174",
           "issue_number": 174,
@@ -3011,28 +3035,6 @@
           "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
           "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #19 → Unity Inc» или выбрать другой проект",
           "status": "awaiting_approval"
-        },
-        {
-          "id": "card-23",
-          "issue_number": 23,
-          "date": "2026-11-02 12:26:23",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#23 TIM: Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "card-26",
-          "issue_number": 26,
-          "date": "2026-11-02 12:16:59",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#26 TIM: https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=2",
-          "summary": "✅ Готово",
-          "status": "done"
         }
       ]
     },
