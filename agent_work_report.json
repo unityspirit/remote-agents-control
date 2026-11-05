@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-05 03:22:59",
+  "updated": "2026-11-05 03:28:08",
   "kpis": {
-    "total_completed_works": 220,
+    "total_completed_works": 223,
     "tim_master_reports": 27,
     "active_projects_count": 54,
     "total_saved_photos": 1,
@@ -525,14 +525,14 @@
       "why_first": "Все ваши фото, заметки и ссылки с телефона стекаются сюда и связываются с боевыми проектами.",
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
-        "completed_works": 27,
+        "completed_works": 30,
         "open_tasks": 10,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 192,
         "size_kb": 1199,
-        "ai_analyses": 27,
-        "research_notes": 0
+        "ai_analyses": 29,
+        "research_notes": 1
       },
       "continue_first": {
         "title": "Провести ревизию сохранённых материалов Позновалки и передать лучшие в боевые папки",
@@ -557,7 +557,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-11",
+        "id": "hist-13",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 102,
+      "tasks_completed": 103,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 03:22:57"
+      "updated_at": "2026-11-05 03:28:07"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 102,
+      "tasks_completed": 103,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 03:22:57"
+      "updated_at": "2026-11-05 03:28:07"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 102,
+      "tasks_completed": 103,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 03:22:57"
+      "updated_at": "2026-11-05 03:28:07"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 54,
+      "tasks_completed": 55,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 03:22:57"
+      "updated_at": "2026-11-05 03:28:07"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 54,
+      "tasks_completed": 55,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 03:22:57"
+      "updated_at": "2026-11-05 03:28:07"
     },
     {
       "key": "researcher",
@@ -892,9 +892,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 33,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-05 03:07:33"
+      "last_project": "Позновалка",
+      "last_task": "Найдена информация: personal knowledge management AI second brain monetization workflows Папка: Позновалка\nВре",
+      "updated_at": "2026-11-05 03:27:32"
     },
     {
       "key": "analyst",
@@ -905,7 +905,7 @@
       "tasks_completed": 33,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 03:22:57"
+      "updated_at": "2026-11-05 03:28:07"
     },
     {
       "key": "developer",
@@ -975,6 +975,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-38",
+      "issue_number": 38,
+      "date": "2026-11-05 03:27:47",
+      "project": "Позновалка",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#38 RESEARCH_MORE: personal knowledge management AI second brain monetization workflows",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
     {
       "id": "card-37",
       "issue_number": 37,
@@ -1714,17 +1725,6 @@
       "title": "Фото изучено: 📷 Изучить скриншот тарифа Mini App Pro и текст воронки",
       "summary": "Размер: 680x180 px\n[ru] Тариф Mini Арр Pro 2026: 1490 RUB Навигатор канала + Парсер заказов Stars\n[en-US] Taph4) Mini App Pro 2026: 1490 RUB Haamrarop KaHana + napcep 3aKa30B Stars",
       "image_url": "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/12_it_produktov/1793326294_1.jpg",
-      "status": "done"
-    },
-    {
-      "id": "card-158",
-      "issue_number": 158,
-      "date": "2026-10-29 18:53:31",
-      "project": "12 IT Продуктов (Короче Капитан)",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#158 TIM: Автономный E2E-тест v18: запусти связку Бесплатный AI-Магазин за 15 мин (#147) и TMA Vibe-конструктор (#157) с расчётом CPA и подписки",
-      "summary": "✅ Готово",
       "status": "done"
     }
   ]
