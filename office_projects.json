@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 03:39:52",
+  "updated": "2026-11-05 03:45:11",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -427,6 +427,18 @@
       "size_kb": 493,
       "last_change": "2026-11-05",
       "lead_agent": "Regional Sales Kit Lead",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
+      "folder": "Кавказ",
+      "project": "Кавказ",
+      "state": "empty",
+      "files": 0,
+      "size_kb": 0,
+      "last_change": null,
+      "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
