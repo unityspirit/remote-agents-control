@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 03:07:52",
+  "updated": "2026-11-05 03:08:55",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2795,7 +2795,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 21,
-        "open_tasks": 27,
+        "open_tasks": 28,
         "tim_reports": 6,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2832,6 +2832,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-175",
+          "issue_number": 175,
+          "date": "2026-11-05 03:08:47",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#175 Скуф из Японии заработал $13,450 за месяц на девушке, которую создал с помощью Claude. 47-летний мужик завёл виртуальной девушке аккаунты в ",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #175 → …»",
+          "status": "need_project"
+        },
         {
           "id": "card-37",
           "issue_number": 37,
@@ -3023,17 +3034,6 @@
           "title": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=240105",
           "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-25",
-          "issue_number": 25,
-          "date": "2026-11-02 12:07:47",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#25 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
-          "summary": "✅ Готово",
           "status": "done"
         }
       ]
