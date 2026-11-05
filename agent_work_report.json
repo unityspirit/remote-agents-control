@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-05 08:05:19",
+  "updated": "2026-11-05 08:16:15",
   "kpis": {
     "total_completed_works": 223,
     "tim_master_reports": 27,
-    "active_projects_count": 55,
+    "active_projects_count": 56,
     "total_saved_photos": 1,
     "awaiting_human_count": 45
   },
@@ -839,7 +839,7 @@
       "tasks_completed": 103,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 08:05:17"
+      "updated_at": "2026-11-05 08:16:13"
     },
     {
       "key": "router",
@@ -850,7 +850,7 @@
       "tasks_completed": 103,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 08:05:17"
+      "updated_at": "2026-11-05 08:16:13"
     },
     {
       "key": "gatekeeper",
@@ -861,7 +861,7 @@
       "tasks_completed": 103,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 08:05:17"
+      "updated_at": "2026-11-05 08:16:13"
     },
     {
       "key": "scribe",
@@ -872,7 +872,7 @@
       "tasks_completed": 55,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 08:05:17"
+      "updated_at": "2026-11-05 08:16:13"
     },
     {
       "key": "project_lead",
@@ -883,7 +883,7 @@
       "tasks_completed": 55,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 08:05:17"
+      "updated_at": "2026-11-05 08:16:13"
     },
     {
       "key": "researcher",
@@ -905,7 +905,7 @@
       "tasks_completed": 33,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 08:05:17"
+      "updated_at": "2026-11-05 08:16:13"
     },
     {
       "key": "developer",
