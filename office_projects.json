@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 16:21:10",
+  "updated": "2026-11-05 16:32:39",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -144,7 +144,7 @@
       "project": "GitHub_Control_Panel",
       "state": "active",
       "files": 22,
-      "size_kb": 2658,
+      "size_kb": 2681,
       "last_change": "2026-11-05",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -335,8 +335,8 @@
       "folder": "Автономная_База_Знаний_Каналов",
       "project": "Автономная_База_Знаний_Каналов",
       "state": "active",
-      "files": 63,
-      "size_kb": 539,
+      "files": 64,
+      "size_kb": 558,
       "last_change": "2026-11-05",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
