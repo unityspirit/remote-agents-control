@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 04:05:29",
+  "updated": "2026-11-05 04:17:17",
   "projects_count": 58,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3262,8 +3262,8 @@
     "Кавказ": {
       "project": "Кавказ",
       "folder": "Кавказ",
-      "state": "empty",
-      "last_change": null,
+      "state": "active",
+      "last_change": "2026-11-05",
       "lead_agent": "Autonomous Project Agent",
       "priority_score": 55,
       "revenue_potential": "Развитие направления «Кавказ» в связке с экосистемой Виртуального Офиса.",
@@ -3274,8 +3274,8 @@
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 0,
-        "size_kb": 0,
+        "files_on_disk": 15,
+        "size_kb": 51,
         "ai_analyses": 0,
         "research_notes": 0
       },
