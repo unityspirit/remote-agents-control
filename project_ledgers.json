@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04 14:56:28",
+  "updated": "2026-11-05 03:07:52",
   "projects_count": 57,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2787,14 +2787,14 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-11-04",
+      "last_change": "2026-11-05",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 20,
+        "completed_works": 21,
         "open_tasks": 27,
         "tim_reports": 6,
         "saved_photos": 1,
@@ -2832,6 +2832,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-37",
+          "issue_number": 37,
+          "date": "2026-11-05 03:07:46",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#37 AUTH_SYNC: Быстрая заявка REQ-252172 (@yvyatkin / @yvyatkin)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-173",
           "issue_number": 173,
@@ -3023,19 +3034,6 @@
           "agent": "🛡 Контролёр",
           "title": "#25 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
           "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261102_120646",
-          "issue_number": 25,
-          "date": "2026-11-02 12:06:46",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
           "status": "done"
         }
       ]
