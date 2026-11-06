@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 10:57:40",
+  "updated": "2026-11-06 11:03:14",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -144,7 +144,7 @@
       "project": "GitHub_Control_Panel",
       "state": "active",
       "files": 22,
-      "size_kb": 2686,
+      "size_kb": 2708,
       "last_change": "2026-11-06",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -590,9 +590,9 @@
       "folder": "Хаб Релокация",
       "project": "Хаб Релокация",
       "state": "active",
-      "files": 11,
-      "size_kb": 216,
-      "last_change": "2026-11-05",
+      "files": 12,
+      "size_kb": 274,
+      "last_change": "2026-11-06",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
