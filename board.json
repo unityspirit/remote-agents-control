@@ -15455,6 +15455,60 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-06 10:30:04"
+    },
+    "182": {
+      "id": 182,
+      "created": "2026-11-06 12:50:59",
+      "handoffs": [
+        {
+          "t": "2026-11-06 12:50:59",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-06 12:50:59",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-06 12:50:59",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-06 12:51:42",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 733
+      },
+      "title": "👀 Зарабатывай вместе с нами",
+      "urls": [],
+      "project": "Входящие_Офис",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-11-06 12:51:47",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_182_Зарабатывай_вместе_с_нами.md",
+      "raw_file": "raw_182_20261106_125059_Зарабатывай_вместе_с_нами.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #182 → …»"
+      }
     }
   }
 }
