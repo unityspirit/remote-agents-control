@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 15:10:20",
+  "updated": "2026-11-06 15:23:48",
   "kpis": {
     "total_completed_works": 237,
     "tim_master_reports": 34,
@@ -21,8 +21,8 @@
         "open_tasks": 1,
         "tim_reports": 6,
         "saved_photos": 1,
-        "files_on_disk": 17,
-        "size_kb": 139,
+        "files_on_disk": 19,
+        "size_kb": 144,
         "ai_analyses": 4,
         "research_notes": 0
       },
@@ -837,7 +837,7 @@
       "tasks_completed": 113,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 15:10:18"
+      "updated_at": "2026-11-06 15:23:47"
     },
     {
       "key": "router",
@@ -848,7 +848,7 @@
       "tasks_completed": 113,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 15:10:18"
+      "updated_at": "2026-11-06 15:23:47"
     },
     {
       "key": "gatekeeper",
@@ -859,7 +859,7 @@
       "tasks_completed": 113,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 15:10:18"
+      "updated_at": "2026-11-06 15:23:47"
     },
     {
       "key": "scribe",
@@ -870,7 +870,7 @@
       "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 15:10:18"
+      "updated_at": "2026-11-06 15:23:47"
     },
     {
       "key": "project_lead",
@@ -881,7 +881,7 @@
       "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 15:10:18"
+      "updated_at": "2026-11-06 15:23:47"
     },
     {
       "key": "researcher",
@@ -890,9 +890,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 40,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
-      "updated_at": "2026-11-06 14:56:36"
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "updated_at": "2026-11-06 15:23:12"
     },
     {
       "key": "analyst",
@@ -903,7 +903,7 @@
       "tasks_completed": 40,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 15:10:18"
+      "updated_at": "2026-11-06 15:23:47"
     },
     {
       "key": "developer",
