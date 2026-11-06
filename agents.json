@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 03:49:16",
+  "updated": "2026-11-06 03:51:54",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 30,
-      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "tasks_completed": 31,
+      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
       "last_project": "Alberta",
-      "updated_at": "2026-11-06 03:49:02"
+      "updated_at": "2026-11-06 03:51:32"
     },
     "strategist": {
       "name": "Стратег",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 21,
-      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "tasks_completed": 22,
+      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
       "last_project": "Alberta",
-      "updated_at": "2026-11-06 03:49:02"
+      "updated_at": "2026-11-06 03:51:32"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 26,
-      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "tasks_completed": 27,
+      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
       "last_project": "Alberta",
-      "updated_at": "2026-11-06 03:49:02"
+      "updated_at": "2026-11-06 03:51:32"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 107,
+      "tasks_completed": 108,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 107,
+      "tasks_completed": 108,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 36,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 107,
+      "tasks_completed": 108,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 58,
+      "tasks_completed": 59,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 58,
+      "tasks_completed": 59,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-06 03:49:16"
+      "updated_at": "2026-11-06 03:51:54"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-06T00:36:11.424244+00:00",
-      "errors_count": 9
+      "errors_count": 10
     }
   },
   "statuses": {
