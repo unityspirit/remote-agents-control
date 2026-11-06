@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 12:08:27",
+  "updated": "2026-11-06 12:14:56",
   "kpis": {
     "total_completed_works": 235,
     "tim_master_reports": 33,
@@ -433,8 +433,8 @@
         "open_tasks": 0,
         "tim_reports": 2,
         "saved_photos": 0,
-        "files_on_disk": 118,
-        "size_kb": 1139,
+        "files_on_disk": 124,
+        "size_kb": 1185,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -837,7 +837,7 @@
       "tasks_completed": 111,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 12:08:25"
+      "updated_at": "2026-11-06 12:14:55"
     },
     {
       "key": "router",
@@ -848,7 +848,7 @@
       "tasks_completed": 111,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 12:08:25"
+      "updated_at": "2026-11-06 12:14:55"
     },
     {
       "key": "gatekeeper",
@@ -859,7 +859,7 @@
       "tasks_completed": 111,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 12:08:25"
+      "updated_at": "2026-11-06 12:14:55"
     },
     {
       "key": "scribe",
@@ -870,7 +870,7 @@
       "tasks_completed": 61,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 12:08:25"
+      "updated_at": "2026-11-06 12:14:55"
     },
     {
       "key": "project_lead",
@@ -881,7 +881,7 @@
       "tasks_completed": 61,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 12:08:25"
+      "updated_at": "2026-11-06 12:14:55"
     },
     {
       "key": "researcher",
@@ -892,7 +892,7 @@
       "tasks_completed": 38,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-06 11:25:22"
+      "updated_at": "2026-11-06 12:12:39"
     },
     {
       "key": "analyst",
@@ -903,7 +903,7 @@
       "tasks_completed": 38,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 12:08:25"
+      "updated_at": "2026-11-06 12:14:55"
     },
     {
       "key": "developer",
