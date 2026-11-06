@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-06 03:51:56",
+  "updated": "2026-11-06 03:53:11",
   "kpis": {
     "total_completed_works": 231,
     "tim_master_reports": 31,
     "active_projects_count": 56,
     "total_saved_photos": 1,
-    "awaiting_human_count": 46
+    "awaiting_human_count": 47
   },
   "priority_continuations": [
     {
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 108,
+      "tasks_completed": 109,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 03:51:54"
+      "updated_at": "2026-11-06 03:53:09"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 108,
+      "tasks_completed": 109,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 03:51:54"
+      "updated_at": "2026-11-06 03:53:09"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 108,
+      "tasks_completed": 109,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 03:51:54"
+      "updated_at": "2026-11-06 03:53:09"
     },
     {
       "key": "scribe",
@@ -872,7 +872,7 @@
       "tasks_completed": 59,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 03:51:54"
+      "updated_at": "2026-11-06 03:53:09"
     },
     {
       "key": "project_lead",
@@ -883,7 +883,7 @@
       "tasks_completed": 59,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 03:51:54"
+      "updated_at": "2026-11-06 03:53:09"
     },
     {
       "key": "researcher",
@@ -905,7 +905,7 @@
       "tasks_completed": 36,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 03:51:54"
+      "updated_at": "2026-11-06 03:53:09"
     },
     {
       "key": "developer",
