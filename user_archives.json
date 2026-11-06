@@ -346,10 +346,26 @@
           ],
           "image_urls": [],
           "ai_reply": "# 👑 ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ ДИРЕКТОРА ТИМА\n**Дата:** 2026-11-05 16:26:54 | **Проект:** `Входящие_Офис` | **Модель-движок:** `deterministic_local_engine` | **Статус:** 🟢 Выполнено автономно\n**Поручение Власлава #176:** https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes\n\n---\n\n## 1. 🎯 Резюме Генерального Директора Тима\n> Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.\n\n- **Задействованные отделы (4):** 🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик\n\n---\n\n## 2. 🏛️ Результаты работы специализированных отделов\n\n### 🔎 Аналитический Отчёт Отдела Разведки (Intelligence & Data Scout)\n- **Разведка по задаче:** `https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes` (источник: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes).\n- **Фактура источника:** Время: 06.11.2026, 02:26:26 https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awareness_-_Demand_Gen&utm_content=197241853085&utm_term=&utm_id=24028112345&hsa_acc=3291578710&hsa_\n- **Вывод для внедрения:** Убираем лишнюю сложность enterprise-конкурентов — оставляем только 20% функций, которые дают 80% выручки и запускаются за 1–2 дня.\n\n---\n\n### 📊 Заключение Отдела Стратегии (Chief Strategy Officer)\n- **Предмет проработки:** «https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes» в контуре проекта `Входящие_Офис` (источник: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes). Целевые ориентиры из ТЗ: **205%**.\n- **Модель монетизации и Unit-экономика:**\n  1. *Быстрый денежный поток (Fast Cash):* Запуск без капитальных затрат на сторонний SaaS — используем собственную инфраструктуру агентов и готовые модули `Входящие_Офис`.\n  2. *Двухуровневый чек:* Входной продукт / трипвайер (или Pay-on-Results тест / CPA-партнёрка) ➔ основной чек внедрения под ключ (50 000 – 200 000 ₽ в B2B или подписка 690–1 990 ₽/мес / Telegram Stars в B2C).\n- **Контроль рисков (по стандарту Anthropic Cost-Control):** Исключаем раздувание штата и токенов; фиксируем 1 главный KPI — первые оплаченные заявки/подписки за 48–72 часа.\n\n---\n\n### 📈 Решение Отдела Маркетинга & Трафика (Performance Marketing Lead)\n- **Оффер под задачу «https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_»:** Снятие риска с клиента на входе — интерактивная демонстрация / бесплатный AI-расчёт за 2 минуты до оплаты. Целевые ориентиры из ТЗ: **205%**.\n- **Связка привлечения трафика для `Входящие_Офис`:**\n  1. *Прямой аутрич и партнёрские CPA-воронки:* Персонализированные касания (Telegram / WhatsApp / Email) + автоворонка с кодовым словом / ботом.\n  2. *Короткий видео-прогрев (Shorts / Reels):* Разбор кейса за 45 секунд с переходом по QR/ссылке прямо в Telegram Mini App или 1-страничный калькулятор.\n- **Конверсионный маршрут:** `Хук боли ➔ Интерактивное демо / Лид-магнит ➔ Квалификация (3 вопроса) ➔ Оплата / Созвон`.\n\n---\n\n### 💻 Техническая Архитектура Отдела Разработки (Lead Fullstack & TMA Architect)\n- **Реализация под `Входящие_Офис`:** Модульная сборка (Telegram Mini App / Next.js + Python API воркер + автосохранение лидов в CRM и ветку `data`).\n- **Инженерная интеграция с Виртуальным Офисом:**\n  - Подключён мульти-модельный адаптер `model_provider.py` (готов к переносу на Ubuntu VPS: ` systemd` / `Docker` + `OPENAI_API_KEY` / `ANTHROPIC_API_K"
+        },
+        {
+          "id": "iss-177",
+          "ts": "2026-11-06T00:35:51.539Z",
+          "login": "true1team",
+          "full_name": "@true1team",
+          "issue_number": 177,
+          "project": "Входящие_Офис",
+          "kind": "saved_research",
+          "title": "https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
+          "study_text": "https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=4395724374&hsa_cam=24148523427&hsa_grp=194659402050&hsa_ad=821503181495&hsa_src=ytis&hsa_tgt=aud-2501675765732&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24148523427",
+          "urls": [
+            "https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
+            "https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=4395724374&hsa_cam=24148523427&hsa_grp=194659402050&hsa_ad=821503181495&hsa_src=ytis&hsa_tgt=aud-2501675765732&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24148523427"
+          ],
+          "image_urls": []
         }
       ],
-      "total_count": 23,
-      "last_saved_at": "2026-11-05T23:27:37.355271+00:00"
+      "total_count": 24,
+      "last_saved_at": "2026-11-06T00:35:51.540Z"
     },
     "unityspiritteam@gmail.com": {
       "login": "unityspiritteam@gmail.com",
@@ -630,5 +646,5 @@
       "last_saved_at": "2026-11-02T19:57:55.221635+00:00"
     }
   },
-  "updated_at": "2026-11-05T23:27:37.357983+00:00"
+  "updated_at": "2026-11-06T00:35:51.540Z"
 }
