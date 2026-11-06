@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 245,
+      "evidence_count": 246,
       "scope": "global",
-      "last_updated": "2026-11-06T03:52:32.332434"
+      "last_updated": "2026-11-06T03:55:12.366066"
     },
     {
       "id": "task-custom-request",
@@ -161,7 +161,7 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-06T10:52:36.189751+00:00",
+  "updated_at": "2026-11-06T10:55:14.740602+00:00",
   "knowledge_base": [
     {
       "id": "kb-1793929702555",
