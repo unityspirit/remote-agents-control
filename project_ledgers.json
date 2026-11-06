@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 10:18:33",
+  "updated": "2026-11-06 10:35:10",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2512,8 +2512,8 @@
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 70,
-        "size_kb": 646,
+        "files_on_disk": 71,
+        "size_kb": 662,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -2856,9 +2856,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 23,
+        "completed_works": 25,
         "open_tasks": 31,
-        "tim_reports": 7,
+        "tim_reports": 8,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2894,6 +2894,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-181",
+          "issue_number": 181,
+          "date": "2026-11-06 10:30:04",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#181 TIM: https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту ",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261106_102914",
+          "issue_number": 181,
+          "date": "2026-11-06 10:29:14",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
+          "title": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систе",
+          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-179",
           "issue_number": 179,
@@ -3073,28 +3097,6 @@
           "type": "board_card",
           "agent": "🛡 Контролёр",
           "title": "#1 AUTH_SYNC: Быстрая заявка REQ-610711 (Plus / @gmail)",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "card-3",
-          "issue_number": 3,
-          "date": "2026-11-02 13:33:39",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#3 AUTH_SYNC: Быстрая заявка REQ-652931 (@adevargos / @adevargos)",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "card-6",
-          "issue_number": 6,
-          "date": "2026-11-02 13:15:33",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#6 AUTH_SYNC: Быстрая заявка REQ-015916 (@codeplz / @codeplz)",
           "summary": "✅ Готово",
           "status": "done"
         }
