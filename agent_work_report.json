@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-05 17:33:20",
+  "updated": "2026-11-05 17:36:27",
   "kpis": {
     "total_completed_works": 225,
     "tim_master_reports": 28,
     "active_projects_count": 56,
     "total_saved_photos": 1,
-    "awaiting_human_count": 45
+    "awaiting_human_count": 46
   },
   "priority_continuations": [
     {
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 104,
+      "tasks_completed": 105,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:33:16"
+      "updated_at": "2026-11-05 17:36:24"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 104,
+      "tasks_completed": 105,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:33:16"
+      "updated_at": "2026-11-05 17:36:24"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 104,
+      "tasks_completed": 105,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:33:16"
+      "updated_at": "2026-11-05 17:36:24"
     },
     {
       "key": "scribe",
@@ -872,7 +872,7 @@
       "tasks_completed": 56,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:33:16"
+      "updated_at": "2026-11-05 17:36:24"
     },
     {
       "key": "project_lead",
@@ -883,7 +883,7 @@
       "tasks_completed": 56,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:33:16"
+      "updated_at": "2026-11-05 17:36:24"
     },
     {
       "key": "researcher",
@@ -891,7 +891,7 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 34,
+      "tasks_completed": 35,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
       "updated_at": "2026-11-05 17:30:39"
@@ -902,10 +902,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 34,
+      "tasks_completed": 35,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:33:16"
+      "updated_at": "2026-11-05 17:36:24"
     },
     {
       "key": "developer",
@@ -975,6 +975,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-177",
+      "issue_number": 177,
+      "date": "2026-11-05 17:36:15",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#177 https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #177 → Unity Inc» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
     {
       "id": "card-176",
       "issue_number": 176,
@@ -1713,19 +1724,6 @@
       "agent": "🛡 Контролёр",
       "title": "#160 Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.insta",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261029_203623",
-      "issue_number": null,
-      "date": "2026-10-29 20:36:23",
-      "project": "Юра",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
-      "title": "Подготовка коммерческого MVP сервиса КХЛ инсайтов (Юра): синхронизация с Юрием, правила фильтрации 1 инсайт на период, расчет юнит-экономики",
-      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Стратег, Главный Разработчик) в рамках проекта «Юра». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затра",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Юра».",
       "status": "done"
     }
   ]
