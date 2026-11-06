@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-06 14:51:27",
+  "updated": "2026-11-06 14:57:26",
   "kpis": {
-    "total_completed_works": 235,
-    "tim_master_reports": 33,
+    "total_completed_works": 237,
+    "tim_master_reports": 34,
     "active_projects_count": 56,
     "total_saved_photos": 1,
     "awaiting_human_count": 48
@@ -823,10 +823,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 33,
+      "tasks_completed": 34,
       "last_project": "Входящие_Офис",
-      "last_task": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систе",
-      "updated_at": "2026-11-06 10:30:04"
+      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
+      "updated_at": "2026-11-06 14:56:36"
     },
     {
       "key": "intake",
@@ -834,10 +834,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 112,
+      "tasks_completed": 113,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 14:51:25"
+      "updated_at": "2026-11-06 14:57:24"
     },
     {
       "key": "router",
@@ -845,10 +845,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 112,
+      "tasks_completed": 113,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 14:51:25"
+      "updated_at": "2026-11-06 14:57:24"
     },
     {
       "key": "gatekeeper",
@@ -856,10 +856,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 112,
+      "tasks_completed": 113,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 14:51:25"
+      "updated_at": "2026-11-06 14:57:24"
     },
     {
       "key": "scribe",
@@ -867,10 +867,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 61,
+      "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 14:51:25"
+      "updated_at": "2026-11-06 14:57:24"
     },
     {
       "key": "project_lead",
@@ -878,10 +878,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 61,
+      "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 14:51:25"
+      "updated_at": "2026-11-06 14:57:24"
     },
     {
       "key": "researcher",
@@ -889,10 +889,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 39,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-06 14:38:02"
+      "tasks_completed": 40,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
+      "updated_at": "2026-11-06 14:56:36"
     },
     {
       "key": "analyst",
@@ -900,10 +900,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 39,
+      "tasks_completed": 40,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-06 14:51:25"
+      "updated_at": "2026-11-06 14:57:24"
     },
     {
       "key": "developer",
@@ -911,10 +911,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 28,
-      "last_project": "Юра",
-      "last_task": "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
-      "updated_at": "2026-11-06 09:22:30"
+      "tasks_completed": 29,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
+      "updated_at": "2026-11-06 14:56:36"
     },
     {
       "key": "strategist",
@@ -922,10 +922,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 26,
+      "tasks_completed": 27,
       "last_project": "Входящие_Офис",
-      "last_task": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систе",
-      "updated_at": "2026-11-06 10:30:04"
+      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
+      "updated_at": "2026-11-06 14:56:36"
     },
     {
       "key": "marketer",
@@ -933,10 +933,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 23,
-      "last_project": "Юра",
-      "last_task": "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
-      "updated_at": "2026-11-06 09:22:30"
+      "tasks_completed": 24,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
+      "updated_at": "2026-11-06 14:56:36"
     },
     {
       "key": "vibe_coder",
@@ -973,6 +973,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-41",
+      "issue_number": 41,
+      "date": "2026-11-06 14:56:36",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#41 TIM: https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261106_145557",
+      "issue_number": 41,
+      "date": "2026-11-06 14:55:57",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=192207876",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-181",
       "issue_number": 181,
@@ -1700,30 +1724,6 @@
       "agent": "👑 Директор Тим",
       "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
       "title": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=240105",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-25",
-      "issue_number": 25,
-      "date": "2026-11-02 12:07:47",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#25 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261102_120646",
-      "issue_number": 25,
-      "date": "2026-11-02 12:06:46",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
       "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
       "status": "done"
