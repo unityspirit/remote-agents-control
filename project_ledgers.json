@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 09:18:19",
+  "updated": "2026-11-06 09:22:41",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -4477,9 +4477,9 @@
       "why_first": "На ноутбуке круглосуточно работают `khl_live_service_v17.py` и `khl_auto_learning_service.py` — система сама копит статистику и калибрует вероятности.",
       "human_action": "Проверить сигнал модели в Telegram и принять решение по открытию позиции.",
       "counts": {
-        "completed_works": 1,
+        "completed_works": 3,
         "open_tasks": 0,
-        "tim_reports": 1,
+        "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 113,
         "size_kb": 1080,
@@ -4515,6 +4515,30 @@
       "research_topic": "live hockey odds Poisson model calibration expected value sports analytics Python",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-180",
+          "issue_number": 180,
+          "date": "2026-11-06 09:22:30",
+          "project": "Юра",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#180 TIM: https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261106_092206",
+          "issue_number": 180,
+          "date": "2026-11-06 09:22:06",
+          "project": "Юра",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Юра». Сформирована прикладная связка монетизации, воронки привлечения и технической сб",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Юра».",
+          "status": "done"
+        },
         {
           "id": "tim-20261029_203623",
           "issue_number": null,
