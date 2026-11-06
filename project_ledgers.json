@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 03:51:56",
+  "updated": "2026-11-06 03:53:11",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2849,7 +2849,7 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-11-05",
+      "last_change": "2026-11-06",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
@@ -2857,7 +2857,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 23,
-        "open_tasks": 30,
+        "open_tasks": 31,
         "tim_reports": 7,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2894,6 +2894,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-179",
+          "issue_number": 179,
+          "date": "2026-11-06 03:52:59",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#179 True 1, Тебе изменяют!",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #179»",
+          "status": "not_studied"
+        },
         {
           "id": "card-177",
           "issue_number": 177,
@@ -3086,17 +3097,6 @@
           "title": "#6 AUTH_SYNC: Быстрая заявка REQ-015916 (@codeplz / @codeplz)",
           "summary": "✅ Готово",
           "status": "done"
-        },
-        {
-          "id": "card-17",
-          "issue_number": 17,
-          "date": "2026-11-02 12:35:23",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#17 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #17 → Unity Inc» или выбрать другой проект",
-          "status": "awaiting_approval"
         }
       ]
     },
