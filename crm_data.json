@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 220,
+      "evidence_count": 221,
       "scope": "global",
-      "last_updated": "2026-11-06T09:23:02.228684"
+      "last_updated": "2026-11-06T10:34:21.486517"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 100,
+      "evidence_count": 101,
       "scope": "global",
-      "last_updated": "2026-11-06T09:23:02.230621"
+      "last_updated": "2026-11-06T10:34:21.490476"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 135,
+      "evidence_count": 136,
       "scope": "global",
-      "last_updated": "2026-11-06T09:23:02.232354"
+      "last_updated": "2026-11-06T10:34:21.494864"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 247,
+      "evidence_count": 248,
       "scope": "global",
-      "last_updated": "2026-11-06T09:23:02.234739"
+      "last_updated": "2026-11-06T10:34:21.494864"
     },
     {
       "id": "task-custom-request",
@@ -161,7 +161,7 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-06T17:27:30.371837+00:00",
+  "updated_at": "2026-11-06T17:34:34.398780+00:00",
   "knowledge_base": [
     {
       "id": "kb-1793985819639",
