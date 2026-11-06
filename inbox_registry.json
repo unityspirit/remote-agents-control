@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-11-05 17:36:11",
+  "updated_at": "2026-11-06 03:52:55",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-179",
+      "card": 179,
+      "status": "not_studied",
+      "source_text": "True 1, Тебе изменяют!",
+      "urls": [
+        "http://socialvisor.pro/"
+      ],
+      "pending_file": "Карточка_179_True_1__Тебе_изменяют.md",
+      "raw_file": "raw_179_20261106_035245_True_1__Тебе_изменяют.md"
+    },
     {
       "id": "card-177",
       "card": 177,
