@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-05 17:38:23",
+  "updated": "2026-11-05 17:39:44",
   "kpis": {
-    "total_completed_works": 225,
-    "tim_master_reports": 28,
+    "total_completed_works": 227,
+    "tim_master_reports": 29,
     "active_projects_count": 56,
     "total_saved_photos": 1,
     "awaiting_human_count": 46
@@ -325,9 +325,9 @@
       "why_first": "Готова концепция прямого бронирования вилл (Profitroom + WhatsApp): владельцы вилл в Лас-Терренас теряют 15–18% на OTA и охотно идут на прямые заявки.",
       "human_action": "Подтвердить номер WhatsApp / CRM для прямого приема бронирований от туристов.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 2,
         "open_tasks": 1,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 2084,
         "size_kb": 304517,
@@ -357,15 +357,15 @@
       ],
       "research_topic": "Las Terrenas Dominican Republic luxury villa rentals direct booking market 2026",
       "last_work": {
-        "id": "card-9004",
-        "issue_number": 9004,
-        "date": "2026-10-22 08:18:48",
+        "id": "card-178",
+        "issue_number": 178,
+        "date": "2026-11-05 17:39:32",
         "project": "Белый Доминикана",
         "type": "board_card",
-        "agent": "🧑 Власлав",
-        "title": "#9004 💬 WhatsApp 5 контактам в Лас-Терренас",
-        "summary": "🧑 Ждёт вашего действия · Далее: Отправить сообщения по готовому питчу",
-        "status": "blocked_human"
+        "agent": "🛡 Контролёр",
+        "title": "#178 https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+        "summary": "✅ Готово",
+        "status": "done"
       }
     },
     {
@@ -825,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 28,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
-      "updated_at": "2026-11-05 16:27:37"
+      "tasks_completed": 29,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-05 17:39:31"
     },
     {
       "key": "intake",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 105,
+      "tasks_completed": 106,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:38:20"
+      "updated_at": "2026-11-05 17:39:42"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 105,
+      "tasks_completed": 106,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:38:20"
+      "updated_at": "2026-11-05 17:39:42"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 105,
+      "tasks_completed": 106,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:38:20"
+      "updated_at": "2026-11-05 17:39:42"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:38:20"
+      "updated_at": "2026-11-05 17:39:42"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:38:20"
+      "updated_at": "2026-11-05 17:39:42"
     },
     {
       "key": "researcher",
@@ -891,10 +891,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 35,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-05 17:30:39"
+      "tasks_completed": 36,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-05 17:39:31"
     },
     {
       "key": "analyst",
@@ -902,10 +902,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 35,
+      "tasks_completed": 36,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:38:20"
+      "updated_at": "2026-11-05 17:39:42"
     },
     {
       "key": "developer",
@@ -913,10 +913,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 24,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
-      "updated_at": "2026-11-05 16:27:37"
+      "tasks_completed": 25,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-05 17:39:31"
     },
     {
       "key": "strategist",
@@ -924,10 +924,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 22,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
-      "updated_at": "2026-11-05 16:27:37"
+      "tasks_completed": 23,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-05 17:39:31"
     },
     {
       "key": "marketer",
@@ -935,10 +935,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 19,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awarenes",
-      "updated_at": "2026-11-05 16:27:37"
+      "tasks_completed": 20,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-05 17:39:31"
     },
     {
       "key": "vibe_coder",
@@ -975,6 +975,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-178",
+      "issue_number": 178,
+      "date": "2026-11-05 17:39:32",
+      "project": "Белый Доминикана",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#178 https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261105_173909",
+      "issue_number": 178,
+      "date": "2026-11-05 17:39:09",
+      "project": "Белый Доминикана",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Белый Доминикана». Сформирована прикладная связка монетизации, воронки привлечения и т",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Белый Доминикана».",
+      "status": "done"
+    },
     {
       "id": "card-177",
       "issue_number": 177,
@@ -1702,28 +1726,6 @@
       "title": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
       "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Дима Верхняя Синичиха Алапаевск». Сформирована прикладная связка монетизации, воронки привлечения и техничес",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Дима Верхняя Синичиха Алапаевск».",
-      "status": "done"
-    },
-    {
-      "id": "card-161",
-      "issue_number": 161,
-      "date": "2026-10-29 23:37:28",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#161 AUTH_SYNC: Быстрая заявка REQ-607209 (@true1team / @true1team)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-160",
-      "issue_number": 160,
-      "date": "2026-10-29 21:19:12",
-      "project": "GlobalFilms (Filmtools)",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#160 Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен через [Instagram @quest_ptg](https://www.insta",
-      "summary": "✅ Готово",
       "status": "done"
     }
   ]
