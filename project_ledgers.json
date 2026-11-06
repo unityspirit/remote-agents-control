@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 17:33:20",
+  "updated": "2026-11-05 17:36:27",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2795,7 +2795,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 23,
-        "open_tasks": 29,
+        "open_tasks": 30,
         "tim_reports": 7,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2832,6 +2832,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-177",
+          "issue_number": 177,
+          "date": "2026-11-05 17:36:15",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#177 https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #177 → Unity Inc» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
         {
           "id": "card-176",
           "issue_number": 176,
@@ -3023,17 +3034,6 @@
           "agent": "🧑 Власлав",
           "title": "#17 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
           "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #17 → Unity Inc» или выбрать другой проект",
-          "status": "awaiting_approval"
-        },
-        {
-          "id": "card-19",
-          "issue_number": 19,
-          "date": "2026-11-02 12:32:39",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #19 → Unity Inc» или выбрать другой проект",
           "status": "awaiting_approval"
         }
       ]
