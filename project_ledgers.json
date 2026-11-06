@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 17:39:44",
+  "updated": "2026-11-06 03:49:18",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -378,9 +378,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 10,
+        "completed_works": 12,
         "open_tasks": 1,
-        "tim_reports": 3,
+        "tim_reports": 4,
         "saved_photos": 0,
         "files_on_disk": 31,
         "size_kb": 9434,
@@ -416,6 +416,30 @@
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-40",
+          "issue_number": 40,
+          "date": "2026-11-06 03:49:02",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#40 Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261106_034813",
+          "issue_number": 40,
+          "date": "2026-11-06 03:48:13",
+          "project": "Alberta",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних за",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+          "status": "done"
+        },
         {
           "id": "card-35",
           "issue_number": 35,
@@ -544,7 +568,7 @@
           "status": "blocked_human"
         },
         {
-          "id": "hist-11",
+          "id": "hist-13",
           "date": "04.11.2026 00:07",
           "project": "Alberta",
           "type": "ai_study",
@@ -554,7 +578,7 @@
           "status": "done"
         },
         {
-          "id": "hist-12",
+          "id": "hist-14",
           "date": "04.11.2026 00:04",
           "project": "Alberta",
           "type": "ai_study",
