@@ -15334,6 +15334,62 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-06 03:51:33"
+    },
+    "179": {
+      "id": 179,
+      "created": "2026-11-06 03:52:45",
+      "handoffs": [
+        {
+          "t": "2026-11-06 03:52:45",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-06 03:52:45",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-06 03:52:55",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: not_studied (источник не открылся: не удалось получить)"
+        },
+        {
+          "t": "2026-11-06 03:52:55",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "not_studied",
+        "reason": "источник не открылся: не удалось получить",
+        "chars": 570
+      },
+      "title": "True 1, Тебе изменяют!",
+      "urls": [
+        "http://socialvisor.pro/"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-11-06 03:52:59",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_179_True_1__Тебе_изменяют.md",
+      "raw_file": "raw_179_20261106_035245_True_1__Тебе_изменяют.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #179»"
+      }
     }
   }
 }
