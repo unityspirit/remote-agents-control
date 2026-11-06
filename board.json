@@ -15307,6 +15307,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-06 03:49:02"
+    },
+    "39": {
+      "id": 39,
+      "created": "2026-11-06 03:50:37",
+      "handoffs": [
+        {
+          "t": "2026-11-06 03:50:37",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-06 03:51:32",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-06 03:51:33"
     }
   }
 }
