@@ -1,5 +1,5 @@
 {
-  "last_seen": "2026-11-06T16:21:09.786326+00:00",
+  "last_seen": "2026-11-06T16:23:10.107253+00:00",
   "waiting_for_agent": 0,
   "worker_version": "20.5-pwa-vault-gta-telemetry30d",
   "platform": "win32",
@@ -22,7 +22,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-06T00:36:11.424244+00:00",
-      "errors_count": 10
+      "errors_count": 11
     }
   }
 }
