@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 11:52:59",
+  "updated": "2026-11-06 12:03:08",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -436,8 +436,8 @@
       "project": "Кавказ",
       "state": "active",
       "files": 23,
-      "size_kb": 487,
-      "last_change": "2026-11-05",
+      "size_kb": 606,
+      "last_change": "2026-11-06",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
@@ -602,8 +602,8 @@
       "folder": "Юра",
       "project": "Юра",
       "state": "active",
-      "files": 114,
-      "size_kb": 1090,
+      "files": 116,
+      "size_kb": 1100,
       "last_change": "2026-11-06",
       "lead_agent": "Quantitative Sports & Odds Analyst",
       "next_who": "agent",
