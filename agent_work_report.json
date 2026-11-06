@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-05 17:39:44",
+  "updated": "2026-11-06 03:49:18",
   "kpis": {
-    "total_completed_works": 227,
-    "tim_master_reports": 29,
+    "total_completed_works": 229,
+    "tim_master_reports": 30,
     "active_projects_count": 56,
     "total_saved_photos": 1,
     "awaiting_human_count": 46
@@ -377,9 +377,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 10,
+        "completed_works": 12,
         "open_tasks": 1,
-        "tim_reports": 3,
+        "tim_reports": 4,
         "saved_photos": 0,
         "files_on_disk": 31,
         "size_kb": 9434,
@@ -409,13 +409,13 @@
       ],
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "last_work": {
-        "id": "card-35",
-        "issue_number": 35,
-        "date": "2026-11-04 00:07:53",
+        "id": "card-40",
+        "issue_number": 40,
+        "date": "2026-11-06 03:49:02",
         "project": "Alberta",
         "type": "board_card",
         "agent": "🛡 Контролёр",
-        "title": "#35 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+        "title": "#40 Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
         "summary": "✅ Готово",
         "status": "done"
       }
@@ -825,10 +825,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 29,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-05 17:39:31"
+      "tasks_completed": 30,
+      "last_project": "Alberta",
+      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "updated_at": "2026-11-06 03:49:02"
     },
     {
       "key": "intake",
@@ -836,10 +836,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 106,
+      "tasks_completed": 107,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:39:42"
+      "updated_at": "2026-11-06 03:49:16"
     },
     {
       "key": "router",
@@ -847,10 +847,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 106,
+      "tasks_completed": 107,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:39:42"
+      "updated_at": "2026-11-06 03:49:16"
     },
     {
       "key": "gatekeeper",
@@ -858,10 +858,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 106,
+      "tasks_completed": 107,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:39:42"
+      "updated_at": "2026-11-06 03:49:16"
     },
     {
       "key": "scribe",
@@ -869,10 +869,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 57,
+      "tasks_completed": 58,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:39:42"
+      "updated_at": "2026-11-06 03:49:16"
     },
     {
       "key": "project_lead",
@@ -880,10 +880,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 57,
+      "tasks_completed": 58,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:39:42"
+      "updated_at": "2026-11-06 03:49:16"
     },
     {
       "key": "researcher",
@@ -892,9 +892,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 36,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-05 17:39:31"
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "updated_at": "2026-11-06 03:47:58"
     },
     {
       "key": "analyst",
@@ -905,7 +905,7 @@
       "tasks_completed": 36,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-05 17:39:42"
+      "updated_at": "2026-11-06 03:49:16"
     },
     {
       "key": "developer",
@@ -913,10 +913,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 25,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-05 17:39:31"
+      "tasks_completed": 26,
+      "last_project": "Alberta",
+      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "updated_at": "2026-11-06 03:49:02"
     },
     {
       "key": "strategist",
@@ -924,10 +924,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 23,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-05 17:39:31"
+      "tasks_completed": 24,
+      "last_project": "Alberta",
+      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "updated_at": "2026-11-06 03:49:02"
     },
     {
       "key": "marketer",
@@ -935,10 +935,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 20,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-05 17:39:31"
+      "tasks_completed": 21,
+      "last_project": "Alberta",
+      "last_task": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "updated_at": "2026-11-06 03:49:02"
     },
     {
       "key": "vibe_coder",
@@ -975,6 +975,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-40",
+      "issue_number": 40,
+      "date": "2026-11-06 03:49:02",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#40 Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261106_034813",
+      "issue_number": 40,
+      "date": "2026-11-06 03:48:13",
+      "project": "Alberta",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних за",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+      "status": "done"
+    },
     {
       "id": "card-178",
       "issue_number": 178,
@@ -1702,30 +1726,6 @@
       "title": "найди проекты в папке Костя и отправь мне в телеграм @true1team",
       "summary": "Собрать список проектов из папки Костя, оценить их потенциал и отправить в Telegram @true1team. Приоритетные проекты (≥$10k/мес) будут выделены для дальнейшего развития, остальные – в резерв. В итоге получаем 3–5 проектов, из которых 2–3 мо",
       "human_action": "Подтвердить доступ к папке Костя и предоставить токен Telegram‑бота для отправки сообщений.",
-      "status": "done"
-    },
-    {
-      "id": "card-162",
-      "issue_number": 162,
-      "date": "2026-10-30 00:09:20",
-      "project": "Дима Верхняя Синичиха Алапаевск",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#162 TIM: Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261030_000856",
-      "issue_number": 162,
-      "date": "2026-10-30 00:08:56",
-      "project": "Дима Верхняя Синичиха Алапаевск",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Дима Верхняя Синичиха Алапаевск». Сформирована прикладная связка монетизации, воронки привлечения и техничес",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Дима Верхняя Синичиха Алапаевск».",
       "status": "done"
     }
   ]
