@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 03:49:18",
+  "updated": "2026-11-06 03:51:56",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -378,9 +378,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 12,
+        "completed_works": 14,
         "open_tasks": 1,
-        "tim_reports": 4,
+        "tim_reports": 5,
         "saved_photos": 0,
         "files_on_disk": 31,
         "size_kb": 9434,
@@ -416,6 +416,30 @@
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-39",
+          "issue_number": 39,
+          "date": "2026-11-06 03:51:33",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#39 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261106_035037",
+          "issue_number": 39,
+          "date": "2026-11-06 03:50:37",
+          "project": "Alberta",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+          "status": "done"
+        },
         {
           "id": "card-40",
           "issue_number": 40,
@@ -568,17 +592,7 @@
           "status": "blocked_human"
         },
         {
-          "id": "hist-13",
-          "date": "04.11.2026 00:07",
-          "project": "Alberta",
-          "type": "ai_study",
-          "agent": "🧠 ИИ-Аналитик папки",
-          "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
-          "status": "done"
-        },
-        {
-          "id": "hist-14",
+          "id": "hist-15",
           "date": "04.11.2026 00:04",
           "project": "Alberta",
           "type": "ai_study",
