@@ -15390,6 +15390,39 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #179»"
       }
+    },
+    "180": {
+      "id": 180,
+      "created": "2026-11-06 09:21:59",
+      "handoffs": [
+        {
+          "t": "2026-11-06 09:21:59",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-06 09:22:30",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
+      "urls": [
+        "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
+        "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&gad_source=2&gad_campaignid=24422993181"
+      ],
+      "project": "Юра",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-06 09:22:30"
     }
   }
 }
