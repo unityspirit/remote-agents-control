@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 14:46:00",
+  "updated": "2026-11-06 14:57:26",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2856,9 +2856,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 25,
+        "completed_works": 27,
         "open_tasks": 32,
-        "tim_reports": 8,
+        "tim_reports": 9,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -2894,6 +2894,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-41",
+          "issue_number": 41,
+          "date": "2026-11-06 14:56:36",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#41 TIM: https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261106_145557",
+          "issue_number": 41,
+          "date": "2026-11-06 14:55:57",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=192207876",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-182",
           "issue_number": 182,
@@ -3074,30 +3098,6 @@
           "agent": "🛡 Контролёр",
           "title": "#31 AUTH_SYNC: Быстрая заявка REQ-657806 (@tatianaknyazeva777 / @tatianaknyazeva777)",
           "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "card-168",
-          "issue_number": 168,
-          "date": "2026-11-03 11:57:29",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#168 TIM: Найди все что мы делали для tentorium.ru Татьяна",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261103_115708",
-          "issue_number": 168,
-          "date": "2026-11-03 11:57:08",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "Найди все что мы делали для tentorium.ru Татьяна",
-          "summary": "Мы создали и оптимизировали маркетинговую воронку для tentorium.ru, внедрили Telegram Mini App для удобного взаимодействия пользователей и интегрировали API для автоматизации продаж. В результате увеличили конверсию на 35 % и выручку на 22 ",
-          "human_action": "Подтвердить бюджет в размере 1 200 000 ₽ для запуска рекламных кампаний и интеграции Telegram Mini App.",
           "status": "done"
         }
       ]
