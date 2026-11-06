@@ -161,8 +161,24 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-06T17:21:45.546741+00:00",
+  "updated_at": "2026-11-06T17:23:44.143Z",
   "knowledge_base": [
+    {
+      "id": "kb-1793985819639",
+      "issue": 181,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "TIM: https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как ",
+      "source_url": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/",
+      "secondary_url": "",
+      "images": [],
+      "date": "06.11.2026",
+      "summary": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систему для Аватаров HeyGen или Higgsfield вместе с Kimi и Hermes agents system or your system together as one best way to do it learn and plan your next moves",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    },
     {
       "id": "kb-1793982125408",
       "issue": 180,
