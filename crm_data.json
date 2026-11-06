@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 171,
+      "evidence_count": 172,
       "scope": "global",
-      "last_updated": "2026-11-06T09:23:02.224700"
+      "last_updated": "2026-11-06T12:56:17.726680"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 221,
+      "evidence_count": 222,
       "scope": "global",
-      "last_updated": "2026-11-06T10:34:21.486517"
+      "last_updated": "2026-11-06T12:56:17.727733"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 168,
+      "evidence_count": 169,
       "scope": "global",
-      "last_updated": "2026-11-06T09:23:02.233541"
+      "last_updated": "2026-11-06T12:56:17.729509"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 248,
+      "evidence_count": 249,
       "scope": "global",
-      "last_updated": "2026-11-06T10:34:21.494864"
+      "last_updated": "2026-11-06T12:56:17.730794"
     },
     {
       "id": "task-custom-request",
@@ -161,7 +161,7 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-06T19:46:57.415098+00:00",
+  "updated_at": "2026-11-06T19:56:32.136235+00:00",
   "knowledge_base": [
     {
       "id": "kb-1793994271472",
