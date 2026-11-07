@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-11-06 12:51:42",
+  "updated_at": "2026-11-07 04:16:17",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-42",
+      "card": 42,
+      "timestamp": "2026-11-07 04:16:17",
+      "source_text": "Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
+      "urls": [
+        "https://share.google/awZh7BQB5WAIKYyCg"
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "Личное — обучение и релокация",
+      "pending_file": "Карточка_42_Даже_мощные_LLM_теряются_в_д.md",
+      "raw_file": "raw_42_20261107_041553_Даже_мощные_LLM_теряются_в_д.md"
+    },
     {
       "id": "card-182",
       "card": 182,
