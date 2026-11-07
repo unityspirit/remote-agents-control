@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07 04:12:26",
+  "updated": "2026-11-07 04:16:29",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2849,7 +2849,7 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-11-06",
+      "last_change": "2026-11-07",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
@@ -2857,7 +2857,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 27,
-        "open_tasks": 32,
+        "open_tasks": 33,
         "tim_reports": 9,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2894,6 +2894,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-42",
+          "issue_number": 42,
+          "date": "2026-11-07 04:16:20",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#42 Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #42 → Личное — обучение и релокация» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
         {
           "id": "card-41",
           "issue_number": 41,
@@ -3086,17 +3097,6 @@
           "type": "board_card",
           "agent": "🛡 Контролёр",
           "title": "#30 AUTH_SYNC: Быстрая заявка REQ-506276 (Tatianaknyazeva777 / Tatianaknyazeva777)",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "card-31",
-          "issue_number": 31,
-          "date": "2026-11-03 15:45:07",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#31 AUTH_SYNC: Быстрая заявка REQ-657806 (@tatianaknyazeva777 / @tatianaknyazeva777)",
           "summary": "✅ Готово",
           "status": "done"
         }
