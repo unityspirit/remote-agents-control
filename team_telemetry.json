@@ -1,6 +1,6 @@
 {
   "version": "20.5",
-  "updated_at": "2026-11-07T13:30:55.282436+00:00",
+  "updated_at": "2026-11-07T13:34:44.067130+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
@@ -263,8 +263,8 @@
       "total_actions": 12,
       "last_seen": "2026-11-04T13:31:26.687450Z",
       "audit_30d": {
-        "days_active": 3,
-        "days_to_30d_review": 27,
+        "days_active": 4,
+        "days_to_30d_review": 26,
         "active_minutes": 120.0,
         "active_hours": 2.0,
         "total_requests": 8,
@@ -272,9 +272,9 @@
         "stalls_count": 0,
         "nudges_shown": 0,
         "nudges_clicked": 0,
-        "kpi_score": 100,
+        "kpi_score": 86,
         "verdict": "scale",
-        "verdict_label": "🏆 ОТЛИЧНОЕ ПРОДВИЖЕНИЕ (KPI 100/100 · расширить проекты)",
+        "verdict_label": "🏆 ОТЛИЧНОЕ ПРОДВИЖЕНИЕ (KPI 86/100 · расширить проекты)",
         "replacement_recommended": false,
         "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия. Высокий темп исполнения (8 запросов, 1 папок в работе) — системно двигает проекты."
       },
