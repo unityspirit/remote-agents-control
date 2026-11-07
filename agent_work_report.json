@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-07 04:12:26",
+  "updated": "2026-11-07 04:16:29",
   "kpis": {
     "total_completed_works": 237,
     "tim_master_reports": 34,
     "active_projects_count": 56,
     "total_saved_photos": 1,
-    "awaiting_human_count": 48
+    "awaiting_human_count": 49
   },
   "priority_continuations": [
     {
@@ -834,10 +834,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 113,
+      "tasks_completed": 114,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-07 04:12:25"
+      "updated_at": "2026-11-07 04:16:28"
     },
     {
       "key": "router",
@@ -845,10 +845,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 113,
+      "tasks_completed": 114,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-07 04:12:25"
+      "updated_at": "2026-11-07 04:16:28"
     },
     {
       "key": "gatekeeper",
@@ -856,10 +856,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 113,
+      "tasks_completed": 114,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-07 04:12:25"
+      "updated_at": "2026-11-07 04:16:28"
     },
     {
       "key": "scribe",
@@ -870,7 +870,7 @@
       "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-07 04:12:25"
+      "updated_at": "2026-11-07 04:16:28"
     },
     {
       "key": "project_lead",
@@ -881,7 +881,7 @@
       "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-07 04:12:25"
+      "updated_at": "2026-11-07 04:16:28"
     },
     {
       "key": "researcher",
@@ -889,7 +889,7 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 40,
+      "tasks_completed": 41,
       "last_project": "Автономная_База_Знаний_Каналов",
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
       "updated_at": "2026-11-07 04:09:41"
@@ -900,10 +900,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 40,
+      "tasks_completed": 41,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-07 04:12:25"
+      "updated_at": "2026-11-07 04:16:28"
     },
     {
       "key": "developer",
@@ -973,6 +973,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-42",
+      "issue_number": 42,
+      "date": "2026-11-07 04:16:20",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#42 Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #42 → Личное — обучение и релокация» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
     {
       "id": "card-41",
       "issue_number": 41,
@@ -1713,19 +1724,6 @@
       "agent": "🛡 Контролёр",
       "title": "#26 TIM: https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=2",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261102_121613",
-      "issue_number": 26,
-      "date": "2026-11-02 12:16:13",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://www.altahq.com/lp/alta-brand-short?utm_term=&utm_campaign=PPG+DemandGen_UK+USA_Tests&utm_source=adwords&utm_medium=ppc&utm_id=240105",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
       "status": "done"
     }
   ]
