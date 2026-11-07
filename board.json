@@ -15542,6 +15542,73 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-06 14:56:36"
+    },
+    "42": {
+      "id": 42,
+      "created": "2026-11-07 04:15:53",
+      "handoffs": [
+        {
+          "t": "2026-11-07 04:15:53",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-07 04:15:53",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-07 04:15:55",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-07 04:16:17",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Личное — обучение и релокация (уверенность medium)"
+        },
+        {
+          "t": "2026-11-07 04:16:17",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 9394
+      },
+      "title": "Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
+      "urls": [
+        "https://share.google/awZh7BQB5WAIKYyCg"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-11-07 04:16:20",
+      "suggested_project": "Личное — обучение и релокация",
+      "route": {
+        "confidence": "medium",
+        "alternatives": [
+          [
+            "Личное — обучение и релокация",
+            16
+          ]
+        ]
+      },
+      "pending_file": "Карточка_42_Даже_мощные_LLM_теряются_в_д.md",
+      "raw_file": "raw_42_20261107_041553_Даже_мощные_LLM_теряются_в_д.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #42 → Личное — обучение и релокация» или выбрать другой проект"
+      }
     }
   }
 }
