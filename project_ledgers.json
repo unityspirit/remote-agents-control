@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07 15:23:52",
+  "updated": "2026-11-08 13:25:25",
   "projects_count": 59,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2849,7 +2849,7 @@
       "project": "Входящие_Офис",
       "folder": "Входящие_Офис",
       "state": "active",
-      "last_change": "2026-11-07",
+      "last_change": "2026-11-08",
       "lead_agent": "Triage & Intelligence Distribution Architect",
       "priority_score": 68,
       "revenue_potential": "Шлюз первичной оцифровки информации из Офиса с механизмом подтверждения и дистрибуции по проектам холдинга.",
@@ -2857,7 +2857,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 27,
-        "open_tasks": 33,
+        "open_tasks": 34,
         "tim_reports": 9,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -2894,6 +2894,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-184",
+          "issue_number": 184,
+          "date": "2026-11-08 13:25:16",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#184 https://www.etoro.com/?utm_source=55386&utm_campaign=CAMP24426321014|AG206924747412|Devicem|KW|MT|Target|Targetid|Creative830550792632&Task=",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #184 → …»",
+          "status": "need_project"
+        },
         {
           "id": "card-42",
           "issue_number": 42,
@@ -3088,17 +3099,6 @@
           "title": "#170 Изучи тренды по книгам самым продающие в интернете для массового создания каждый день по новой книге и продажи размещение этих книг каждый д",
           "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #170 → …»",
           "status": "need_project"
-        },
-        {
-          "id": "card-30",
-          "issue_number": 30,
-          "date": "2026-11-03 15:52:11",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#30 AUTH_SYNC: Быстрая заявка REQ-506276 (Tatianaknyazeva777 / Tatianaknyazeva777)",
-          "summary": "✅ Готово",
-          "status": "done"
         }
       ]
     },
