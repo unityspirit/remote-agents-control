@@ -15698,6 +15698,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-08 13:26:30"
+    },
+    "185": {
+      "id": 185,
+      "created": "2026-11-08 16:37:43",
+      "handoffs": [
+        {
+          "t": "2026-11-08 16:37:43",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-08 16:38:06",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
+      "urls": [
+        "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw=="
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-08 16:38:06"
     }
   }
 }
