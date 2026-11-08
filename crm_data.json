@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 225,
+      "evidence_count": 226,
       "scope": "global",
-      "last_updated": "2026-11-08T13:25:40.669487"
+      "last_updated": "2026-11-08T13:26:54.719477"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 102,
+      "evidence_count": 103,
       "scope": "global",
-      "last_updated": "2026-11-06T15:01:09.773470"
+      "last_updated": "2026-11-08T13:26:54.722091"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 137,
+      "evidence_count": 138,
       "scope": "global",
-      "last_updated": "2026-11-06T15:01:09.775780"
+      "last_updated": "2026-11-08T13:26:54.723615"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 170,
+      "evidence_count": 171,
       "scope": "global",
-      "last_updated": "2026-11-06T15:01:09.777741"
+      "last_updated": "2026-11-08T13:26:54.725398"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 252,
+      "evidence_count": 253,
       "scope": "global",
-      "last_updated": "2026-11-08T13:25:40.671748"
+      "last_updated": "2026-11-08T13:26:54.727011"
     },
     {
       "id": "task-custom-request",
@@ -161,7 +161,7 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-08T20:25:41.624418+00:00",
+  "updated_at": "2026-11-08T20:26:55.871606+00:00",
   "knowledge_base": [
     {
       "id": "kb-1794097557162",
