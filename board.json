@@ -15666,6 +15666,38 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #184 → …»"
       }
+    },
+    "183": {
+      "id": 183,
+      "created": "2026-11-08 13:25:43",
+      "handoffs": [
+        {
+          "t": "2026-11-08 13:25:43",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-08 13:26:30",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
+      "urls": [
+        "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-08 13:26:30"
     }
   }
 }
