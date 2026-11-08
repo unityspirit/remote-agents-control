@@ -138,7 +138,7 @@
       "full_name": "@maxprofitwork",
       "telegram": "@maxprofitwork",
       "role": "member",
-      "status": "pending",
+      "status": "approved",
       "salt_hex": "0cc6ee1734657e87d80585974de2104c",
       "pbkdf2_hash": "0dc701918430829d5ef97ba79cb892abdff16e76a9bd1e3729ceb960488fcc9e",
       "iterations": 120000,
@@ -146,8 +146,8 @@
       "gta_completed": false,
       "gta_archetype": "",
       "created_at": "2026-10-31T09:31:03.613Z",
-      "approved_at": "",
-      "owner_action_stamp": "",
+      "approved_at": "2026-11-08T00:20:48.266Z",
+      "owner_action_stamp": "own-1794097248267",
       "pending_reset": null
     },
     {
