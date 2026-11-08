@@ -161,5 +161,23 @@
       "last_updated": "2026-10-19T11:34:42.324403"
     }
   ],
-  "updated_at": "2026-11-07T22:24:07.273219+00:00"
+  "updated_at": "2026-11-08T00:20:26.299Z",
+  "knowledge_base": [
+    {
+      "id": "kb-1794097225767",
+      "issue": 183,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "TIM: https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
+      "source_url": "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
+      "secondary_url": "",
+      "images": [],
+      "date": "08.11.2026",
+      "summary": "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    }
+  ]
 }
