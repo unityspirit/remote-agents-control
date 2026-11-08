@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-08 16:36:48",
+  "updated": "2026-11-08 16:38:13",
   "kpis": {
-    "total_completed_works": 239,
-    "tim_master_reports": 35,
+    "total_completed_works": 241,
+    "tim_master_reports": 36,
     "active_projects_count": 56,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -823,10 +823,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 35,
+      "tasks_completed": 36,
       "last_project": "Входящие_Офис",
-      "last_task": "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
-      "updated_at": "2026-11-08 13:26:30"
+      "last_task": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
+      "updated_at": "2026-11-08 16:38:06"
     },
     {
       "key": "intake",
@@ -834,10 +834,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 116,
+      "tasks_completed": 117,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 16:36:46"
+      "updated_at": "2026-11-08 16:38:12"
     },
     {
       "key": "router",
@@ -845,10 +845,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 116,
+      "tasks_completed": 117,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 16:36:46"
+      "updated_at": "2026-11-08 16:38:12"
     },
     {
       "key": "gatekeeper",
@@ -856,10 +856,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 116,
+      "tasks_completed": 117,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 16:36:46"
+      "updated_at": "2026-11-08 16:38:12"
     },
     {
       "key": "scribe",
@@ -867,10 +867,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 63,
+      "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 16:36:46"
+      "updated_at": "2026-11-08 16:38:12"
     },
     {
       "key": "project_lead",
@@ -878,10 +878,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 63,
+      "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 16:36:46"
+      "updated_at": "2026-11-08 16:38:12"
     },
     {
       "key": "researcher",
@@ -889,10 +889,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 43,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-08 16:24:08"
+      "tasks_completed": 44,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
+      "updated_at": "2026-11-08 16:38:06"
     },
     {
       "key": "analyst",
@@ -900,10 +900,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 43,
+      "tasks_completed": 44,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 16:36:46"
+      "updated_at": "2026-11-08 16:38:12"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 27,
+      "tasks_completed": 28,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
-      "updated_at": "2026-11-06 14:56:36"
+      "last_task": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
+      "updated_at": "2026-11-08 16:38:06"
     },
     {
       "key": "marketer",
@@ -973,6 +973,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-185",
+      "issue_number": 185,
+      "date": "2026-11-08 16:38:06",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#185 TIM: https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тож",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261108_163746",
+      "issue_number": 185,
+      "date": "2026-11-08 16:37:46",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
+      "title": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
+      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-183",
       "issue_number": 183,
@@ -1702,30 +1726,6 @@
       "agent": "🛡 Контролёр",
       "title": "#22 GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-23",
-      "issue_number": 23,
-      "date": "2026-11-02 12:26:23",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#23 TIM: Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261102_122537",
-      "issue_number": 23,
-      "date": "2026-11-02 12:25:37",
-      "project": "12 IT Продуктов (Короче Капитан)",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, ⚡ Вайбкодер & Micro-SaaS, 💻 Главный Разработчик",
-      "title": "Тим, собери MVP связку из задач #147 и #157: воронка Бесплатный AI-Магазин / TMA за 15 минут с CPA-монетизацией и подпиской Pro",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Стратег, Маркетолог & Трафик, Вайбкодер & Micro-SaaS, Главный Разработчик) в рамках проекта «12 IT Продуктов (Короче Капитан)». Сформирована прикладная связка монетизации, ворон",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «12 IT Продуктов (Короче Капитан)».",
       "status": "done"
     }
   ]
