@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-08 23:01:02",
+  "updated": "2026-11-08 23:02:10",
   "kpis": {
-    "total_completed_works": 246,
-    "tim_master_reports": 39,
+    "total_completed_works": 248,
+    "tim_master_reports": 40,
     "active_projects_count": 57,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -481,9 +481,9 @@
       "why_first": "Фоновый монитор каждые 45 минут разбирает новые посты каналов и находит идеи Micro-SaaS, инфоповоды кибербезопасности и конкурентные фичи.",
       "human_action": "Определить цель и ответственного.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 2,
         "open_tasks": 0,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 79,
         "size_kb": 781,
@@ -512,7 +512,17 @@
         }
       ],
       "research_topic": "тренды Telegram Mini Apps и AI автоматизации бизнеса Россия октябрь 2026",
-      "last_work": null
+      "last_work": {
+        "id": "card-189",
+        "issue_number": 189,
+        "date": "2026-11-08 23:02:03",
+        "project": "Автономная_База_Знаний_Каналов",
+        "type": "board_card",
+        "agent": "🛡 Контролёр",
+        "title": "#189 TIM: Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+        "summary": "✅ Готово",
+        "status": "done"
+      }
     },
     {
       "project": "Позновалка",
@@ -824,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 39,
-      "last_project": "Thought/Мысль",
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 40,
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "updated_at": "2026-11-08 23:02:03"
     },
     {
       "key": "intake",
@@ -835,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 120,
+      "tasks_completed": 121,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     {
       "key": "router",
@@ -846,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 120,
+      "tasks_completed": 121,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     {
       "key": "gatekeeper",
@@ -857,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 120,
+      "tasks_completed": 121,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     {
       "key": "scribe",
@@ -868,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     {
       "key": "project_lead",
@@ -879,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     {
       "key": "researcher",
@@ -891,9 +901,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 47,
-      "last_project": "Thought/Мысль",
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "updated_at": "2026-11-08 23:00:53"
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "updated_at": "2026-11-08 23:02:03"
     },
     {
       "key": "analyst",
@@ -904,7 +914,7 @@
       "tasks_completed": 47,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     {
       "key": "developer",
@@ -912,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 32,
-      "last_project": "Thought/Мысль",
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 33,
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "updated_at": "2026-11-08 23:02:03"
     },
     {
       "key": "strategist",
@@ -923,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 31,
-      "last_project": "Thought/Мысль",
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 32,
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "updated_at": "2026-11-08 23:02:03"
     },
     {
       "key": "marketer",
@@ -974,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-189",
+      "issue_number": 189,
+      "date": "2026-11-08 23:02:03",
+      "project": "Автономная_База_Знаний_Каналов",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#189 TIM: Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261108_230143",
+      "issue_number": 189,
+      "date": "2026-11-08 23:01:43",
+      "project": "Автономная_База_Знаний_Каналов",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
+      "title": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Стратег, Главный Разработчик) в рамках проекта «Автономная_База_Знаний_Каналов». Сформирована прикладная связка монетизации, воронки привлечения и техничес",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Автономная_База_Знаний_Каналов».",
+      "status": "done"
+    },
     {
       "id": "card-188",
       "issue_number": 188,
@@ -1706,28 +1740,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#16 /expert",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-17",
-      "issue_number": 17,
-      "date": "2026-11-02 12:35:23",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#17 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #17 → Unity Inc» или выбрать другой проект",
-      "status": "awaiting_approval"
-    },
-    {
-      "id": "card-18",
-      "issue_number": 18,
-      "date": "2026-11-02 12:33:54",
-      "project": "Дима Верхняя Синичиха Алапаевск",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#18 TIM: Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
       "summary": "✅ Готово",
       "status": "done"
     }
