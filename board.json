@@ -15856,6 +15856,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-08 23:02:03"
+    },
+    "190": {
+      "id": 190,
+      "created": "2026-11-08 23:02:28",
+      "handoffs": [
+        {
+          "t": "2026-11-08 23:02:28",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-08 23:02:59",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "STATUS: Проверить свежие разборы каналов в Автономная_База_Знаний_Каналов",
+      "urls": [],
+      "project": "Автономная_База_Знаний_Каналов",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-08 23:02:59"
     }
   }
 }
