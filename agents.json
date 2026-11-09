@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08 23:01:01",
+  "updated": "2026-11-08 23:02:09",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 39,
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "last_project": "Thought/Мысль",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 40,
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "updated_at": "2026-11-08 23:02:03"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 31,
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "last_project": "Thought/Мысль",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 32,
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "updated_at": "2026-11-08 23:02:03"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 32,
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "last_project": "Thought/Мысль",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 33,
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "updated_at": "2026-11-08 23:02:03"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 120,
+      "tasks_completed": 121,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 47,
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "last_project": "Thought/Мысль",
-      "updated_at": "2026-11-08 23:00:53"
+      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "updated_at": "2026-11-08 23:02:03"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 120,
+      "tasks_completed": 121,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 47,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 120,
+      "tasks_completed": 121,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 67,
+      "tasks_completed": 68,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-08 23:01:01"
+      "updated_at": "2026-11-08 23:02:09"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
       "last_call_at": "2026-11-08T20:26:30.081192+00:00",
-      "errors_count": 21
+      "errors_count": 22
     }
   },
   "statuses": {
