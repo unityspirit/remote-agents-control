@@ -3786,7 +3786,7 @@
         }
     }
 
-    async function ghApi(path, method = 'GET', body = null, withAuth = true) {
+    async async function ghApi(path, method = 'GET', body = null, withAuth = true) {
         const headers = { 'Accept': 'application/vnd.github.v3+json' };
         if (withAuth) {
             headers['Authorization'] = 'token ' + ACTIVE_TOKEN;
@@ -6629,7 +6629,7 @@
         closeUniversalPromptModal();
     }
 
-    function promptDepartmentTask(deptName) {
+    async function promptDepartmentTask(deptName) {
         const titlesMap = {
             "стратегу": "📊 Отдел Стратегии & Unit-экономики",
             "маркетологу": "📈 Отдел Маркетинга & Воронок",
@@ -8013,7 +8013,7 @@
         }
     }
 
-    async function fetchIssuesAndComments() {
+    async async function fetchIssuesAndComments() {
         try {
             const [rawIssues, rawComments] = await Promise.all([
                 ghApi("/issues?state=all&per_page=100&sort=created&direction=desc", "GET", null, true),
@@ -10930,7 +10930,7 @@ function enterPendingWaitingRoom(userObj) {
         box.innerHTML = htmlMsg;
     }
 
-    async function submitAuthLogin() {
+    async async function submitAuthLogin() {
         const loginVal = normalizeAuthLogin((document.getElementById("auth-login-user") || {}).value);
         const passVal = String((document.getElementById("auth-login-pass") || {}).value || "").trim();
         if (!loginVal || !passVal) {
@@ -10943,6 +10943,9 @@ function enterPendingWaitingRoom(userObj) {
             const reg = await fetchAuthRegistryFresh();
             const isOwnerAttempt = (
                 loginVal === "unityspiritpartners" ||
+                loginVal === "unityspiritpartner" ||
+                loginVal === "@unityspiritpartners" ||
+                loginVal === "@unityspiritpartner" ||
                 loginVal === "unityspiritteam" ||
                 loginVal === "unityspiritteam@gmail.com" ||
                 loginVal === "vlaslav"
