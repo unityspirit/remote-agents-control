@@ -159,9 +159,19 @@
       "evidence_count": 2,
       "scope": "global",
       "last_updated": "2026-10-19T11:34:42.324403"
+    },
+    {
+      "id": "antigravity-cloud-remote-execution",
+      "trigger": "при постановке задач на длительные вычисления, сбор данных или фоновую работу",
+      "action": "Использовать архитектуру Google Antigravity Remote Agents: изолированный фоновый воркер без ожидания включенного ноутбука с фиксацией состояния в Git",
+      "confidence": 0.99,
+      "domain": "system-architecture",
+      "evidence_count": 42,
+      "scope": "global",
+      "last_updated": "2026-11-08T17:39:45.363731"
     }
   ],
-  "updated_at": "2026-11-09T00:38:04.442641+00:00",
+  "updated_at": "2026-11-09T00:43:09.710877+00:00",
   "knowledge_base": [
     {
       "id": "kb-1794181075222",
