@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09 09:13:58",
+  "updated": "2026-11-09 09:18:58",
   "kpis": {
     "total_completed_works": 249,
     "tim_master_reports": 40,
@@ -21,8 +21,8 @@
         "open_tasks": 1,
         "tim_reports": 6,
         "saved_photos": 1,
-        "files_on_disk": 21,
-        "size_kb": 166,
+        "files_on_disk": 23,
+        "size_kb": 176,
         "ai_analyses": 4,
         "research_notes": 0
       },
@@ -848,7 +848,7 @@
       "tasks_completed": 122,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 09:13:56"
+      "updated_at": "2026-11-09 09:18:56"
     },
     {
       "key": "router",
@@ -859,7 +859,7 @@
       "tasks_completed": 122,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 09:13:56"
+      "updated_at": "2026-11-09 09:18:56"
     },
     {
       "key": "gatekeeper",
@@ -870,7 +870,7 @@
       "tasks_completed": 122,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 09:13:56"
+      "updated_at": "2026-11-09 09:18:56"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 09:13:56"
+      "updated_at": "2026-11-09 09:18:56"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 09:13:56"
+      "updated_at": "2026-11-09 09:18:56"
     },
     {
       "key": "researcher",
@@ -914,7 +914,7 @@
       "tasks_completed": 47,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 09:13:56"
+      "updated_at": "2026-11-09 09:18:56"
     },
     {
       "key": "developer",
