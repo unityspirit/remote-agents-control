@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08 17:37:49",
+  "updated": "2026-11-08 17:42:54",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -78,6 +78,18 @@
       "open_cards": []
     },
     {
+      "folder": "AltaHQ_AI_Calling",
+      "project": "AltaHQ_AI_Calling",
+      "state": "active",
+      "files": 2,
+      "size_kb": 9,
+      "last_change": "2026-11-08",
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
       "folder": "Alviole",
       "project": "Alviole",
       "state": "active",
@@ -144,12 +156,26 @@
       "project": "GitHub_Control_Panel",
       "state": "active",
       "files": 23,
-      "size_kb": 3559,
+      "size_kb": 3560,
       "last_change": "2026-11-08",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
       "open_cards": []
+    },
+    {
+      "folder": "GlobalFilms (Filmtools)",
+      "project": "GlobalFilms (Filmtools)",
+      "state": "active",
+      "files": 1,
+      "size_kb": 1,
+      "last_change": "2026-11-08",
+      "lead_agent": "Filmtools Production & Engineering Lead",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": [
+        9006
+      ]
     },
     {
       "folder": "Grok_xAI_Teammates",
