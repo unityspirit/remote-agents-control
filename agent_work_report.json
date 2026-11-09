@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-08 22:57:56",
+  "updated": "2026-11-08 23:01:02",
   "kpis": {
-    "total_completed_works": 245,
-    "tim_master_reports": 38,
+    "total_completed_works": 246,
+    "tim_master_reports": 39,
     "active_projects_count": 57,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -574,9 +574,9 @@
       "why_first": "Синтез данных между всеми узлами системы, аналитика рычагов роста и отчетность.",
       "human_action": "Утвердить приоритетные стратегические направления на текущий квартал.",
       "counts": {
-        "completed_works": 4,
+        "completed_works": 5,
         "open_tasks": 0,
-        "tim_reports": 0,
+        "tim_reports": 1,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -606,13 +606,14 @@
       ],
       "research_topic": "Thought/Мысль рынок конкуренты кейсы монетизации 2026",
       "last_work": {
-        "id": "hist-1",
-        "date": "25.10.2026 16:56",
+        "id": "card-188",
+        "issue_number": 188,
+        "date": "2026-11-08 23:00:54",
         "project": "Thought/Мысль",
-        "type": "ai_study",
-        "agent": "🧠 ИИ-Аналитик папки",
-        "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-        "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+        "type": "board_card",
+        "agent": "🛡 Контролёр",
+        "title": "#188 TIM: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=",
+        "summary": "✅ Готово",
         "status": "done"
       }
     },
@@ -823,10 +824,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 38,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-08 18:50:08"
+      "tasks_completed": 39,
+      "last_project": "Thought/Мысль",
+      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+      "updated_at": "2026-11-08 23:00:53"
     },
     {
       "key": "intake",
@@ -834,10 +835,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 119,
+      "tasks_completed": 120,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 22:57:55"
+      "updated_at": "2026-11-08 23:01:01"
     },
     {
       "key": "router",
@@ -845,10 +846,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 119,
+      "tasks_completed": 120,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 22:57:55"
+      "updated_at": "2026-11-08 23:01:01"
     },
     {
       "key": "gatekeeper",
@@ -856,10 +857,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 119,
+      "tasks_completed": 120,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 22:57:55"
+      "updated_at": "2026-11-08 23:01:01"
     },
     {
       "key": "scribe",
@@ -867,10 +868,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 66,
+      "tasks_completed": 67,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 22:57:55"
+      "updated_at": "2026-11-08 23:01:01"
     },
     {
       "key": "project_lead",
@@ -878,10 +879,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 66,
+      "tasks_completed": 67,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 22:57:55"
+      "updated_at": "2026-11-08 23:01:01"
     },
     {
       "key": "researcher",
@@ -889,10 +890,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 46,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-08 22:24:24"
+      "tasks_completed": 47,
+      "last_project": "Thought/Мысль",
+      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+      "updated_at": "2026-11-08 23:00:53"
     },
     {
       "key": "analyst",
@@ -900,10 +901,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 46,
+      "tasks_completed": 47,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 22:57:55"
+      "updated_at": "2026-11-08 23:01:01"
     },
     {
       "key": "developer",
@@ -911,10 +912,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 31,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-08 18:50:08"
+      "tasks_completed": 32,
+      "last_project": "Thought/Мысль",
+      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+      "updated_at": "2026-11-08 23:00:53"
     },
     {
       "key": "strategist",
@@ -922,10 +923,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 30,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-08 18:50:08"
+      "tasks_completed": 31,
+      "last_project": "Thought/Мысль",
+      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+      "updated_at": "2026-11-08 23:00:53"
     },
     {
       "key": "marketer",
@@ -933,10 +934,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 26,
-      "last_project": "Белый Доминикана",
-      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "updated_at": "2026-11-08 18:50:08"
+      "tasks_completed": 27,
+      "last_project": "Thought/Мысль",
+      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+      "updated_at": "2026-11-08 23:00:53"
     },
     {
       "key": "vibe_coder",
@@ -973,6 +974,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-188",
+      "issue_number": 188,
+      "date": "2026-11-08 23:00:54",
+      "project": "Thought/Мысль",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#188 TIM: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261108_230033",
+      "issue_number": 188,
+      "date": "2026-11-08 23:00:33",
+      "project": "Thought/Мысль",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Thought/Мысль». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Thought/Мысль».",
+      "status": "done"
+    },
     {
       "id": "card-187",
       "issue_number": 187,
@@ -1705,30 +1730,6 @@
       "title": "#18 TIM: Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
       "summary": "✅ Готово",
       "status": "done"
-    },
-    {
-      "id": "tim-20261102_123333",
-      "issue_number": 18,
-      "date": "2026-11-02 12:33:33",
-      "project": "Дима Верхняя Синичиха Алапаевск",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "Разбей текущую цель проекта на 3 простых действия на ближайшие 30 минут",
-      "summary": "Запускаем целевой лид‑генерационный воронку для услуг в Алапаевске: 1) Создадим Telegram Mini App для мгновенного захвата контактов, 2) Запустим рекламную кампанию в YouTube и TG Ads с бюджетом 1.5 к, 3) Монетизируем лиды через Pay‑on‑Resul",
-      "human_action": "Одобрить бюджет 1.5 к руб. для TG Ads и предоставить доступ к CRM API.",
-      "status": "done"
-    },
-    {
-      "id": "card-19",
-      "issue_number": 19,
-      "date": "2026-11-02 12:32:39",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #19 → Unity Inc» или выбрать другой проект",
-      "status": "awaiting_approval"
     }
   ]
 }
