@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 177,
+      "evidence_count": 178,
       "scope": "global",
-      "last_updated": "2026-11-08T18:50:28.705657"
+      "last_updated": "2026-11-08T23:01:14.680268"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 229,
+      "evidence_count": 230,
       "scope": "global",
-      "last_updated": "2026-11-08T18:50:28.707439"
+      "last_updated": "2026-11-08T23:01:14.682056"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 106,
+      "evidence_count": 107,
       "scope": "global",
-      "last_updated": "2026-11-08T18:50:28.708797"
+      "last_updated": "2026-11-08T23:01:14.683806"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 141,
+      "evidence_count": 142,
       "scope": "global",
-      "last_updated": "2026-11-08T18:50:28.710354"
+      "last_updated": "2026-11-08T23:01:14.684962"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 173,
+      "evidence_count": 174,
       "scope": "global",
-      "last_updated": "2026-11-08T18:50:28.712102"
+      "last_updated": "2026-11-08T23:01:14.686231"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 256,
+      "evidence_count": 257,
       "scope": "global",
-      "last_updated": "2026-11-08T18:50:28.713303"
+      "last_updated": "2026-11-08T23:01:14.687360"
     },
     {
       "id": "task-custom-request",
@@ -159,19 +159,9 @@
       "evidence_count": 2,
       "scope": "global",
       "last_updated": "2026-10-19T11:34:42.324403"
-    },
-    {
-      "id": "antigravity-cloud-remote-execution",
-      "trigger": "при постановке задач на длительные вычисления, сбор данных или фоновую работу",
-      "action": "Использовать архитектуру Google Antigravity Remote Agents: изолированный фоновый воркер без ожидания включенного ноутбука с фиксацией состояния в Git",
-      "confidence": 0.99,
-      "domain": "system-architecture",
-      "evidence_count": 42,
-      "scope": "global",
-      "last_updated": "2026-11-08T19:40:38.704750"
     }
   ],
-  "updated_at": "2026-11-09T06:00:33.347Z",
+  "updated_at": "2026-11-09T06:01:15.589111+00:00",
   "knowledge_base": [
     {
       "id": "kb-1794204032686",
