@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-08 17:37:49",
+  "updated": "2026-11-08 17:42:54",
   "kpis": {
     "total_completed_works": 241,
     "tim_master_reports": 36,
-    "active_projects_count": 56,
+    "active_projects_count": 57,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
   },
@@ -278,8 +278,8 @@
         "open_tasks": 1,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 0,
-        "size_kb": 0,
+        "files_on_disk": 1,
+        "size_kb": 1,
         "ai_analyses": 3,
         "research_notes": 0
       },
@@ -837,7 +837,7 @@
       "tasks_completed": 117,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 17:37:46"
+      "updated_at": "2026-11-08 17:42:52"
     },
     {
       "key": "router",
@@ -848,7 +848,7 @@
       "tasks_completed": 117,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 17:37:46"
+      "updated_at": "2026-11-08 17:42:52"
     },
     {
       "key": "gatekeeper",
@@ -859,7 +859,7 @@
       "tasks_completed": 117,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 17:37:46"
+      "updated_at": "2026-11-08 17:42:52"
     },
     {
       "key": "scribe",
@@ -870,7 +870,7 @@
       "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 17:37:46"
+      "updated_at": "2026-11-08 17:42:52"
     },
     {
       "key": "project_lead",
@@ -881,7 +881,7 @@
       "tasks_completed": 64,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 17:37:46"
+      "updated_at": "2026-11-08 17:42:52"
     },
     {
       "key": "researcher",
@@ -903,7 +903,7 @@
       "tasks_completed": 44,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 17:37:46"
+      "updated_at": "2026-11-08 17:42:52"
     },
     {
       "key": "developer",
