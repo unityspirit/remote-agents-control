@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-08 18:38:34",
+  "updated": "2026-11-08 18:39:54",
   "kpis": {
-    "total_completed_works": 241,
-    "tim_master_reports": 36,
+    "total_completed_works": 243,
+    "tim_master_reports": 37,
     "active_projects_count": 57,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -823,10 +823,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 36,
+      "tasks_completed": 37,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
-      "updated_at": "2026-11-08 16:38:06"
+      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
+      "updated_at": "2026-11-08 18:39:45"
     },
     {
       "key": "intake",
@@ -834,10 +834,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 117,
+      "tasks_completed": 118,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:38:32"
+      "updated_at": "2026-11-08 18:39:53"
     },
     {
       "key": "router",
@@ -845,10 +845,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 117,
+      "tasks_completed": 118,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:38:32"
+      "updated_at": "2026-11-08 18:39:53"
     },
     {
       "key": "gatekeeper",
@@ -856,10 +856,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 117,
+      "tasks_completed": 118,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:38:32"
+      "updated_at": "2026-11-08 18:39:53"
     },
     {
       "key": "scribe",
@@ -867,10 +867,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:38:32"
+      "updated_at": "2026-11-08 18:39:53"
     },
     {
       "key": "project_lead",
@@ -878,10 +878,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 64,
+      "tasks_completed": 65,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:38:32"
+      "updated_at": "2026-11-08 18:39:53"
     },
     {
       "key": "researcher",
@@ -889,10 +889,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 44,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-08 17:54:10"
+      "tasks_completed": 45,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
+      "updated_at": "2026-11-08 18:39:45"
     },
     {
       "key": "analyst",
@@ -900,10 +900,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:38:32"
+      "updated_at": "2026-11-08 18:39:53"
     },
     {
       "key": "developer",
@@ -911,10 +911,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 29,
+      "tasks_completed": 30,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
-      "updated_at": "2026-11-06 14:56:36"
+      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
+      "updated_at": "2026-11-08 18:39:45"
     },
     {
       "key": "strategist",
@@ -922,10 +922,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 28,
+      "tasks_completed": 29,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
-      "updated_at": "2026-11-08 16:38:06"
+      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
+      "updated_at": "2026-11-08 18:39:45"
     },
     {
       "key": "marketer",
@@ -933,10 +933,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 24,
+      "tasks_completed": 25,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa",
-      "updated_at": "2026-11-06 14:56:36"
+      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
+      "updated_at": "2026-11-08 18:39:45"
     },
     {
       "key": "vibe_coder",
@@ -973,6 +973,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-186",
+      "issue_number": 186,
+      "date": "2026-11-08 18:39:46",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#186 TIM: https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261108_183925",
+      "issue_number": 186,
+      "date": "2026-11-08 18:39:25",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-185",
       "issue_number": 185,
@@ -1704,28 +1728,6 @@
       "title": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
       "summary": "Создать Telegram‑бота «True1 Office» как Micro‑SaaS с подпиской 9,99 $/мес и 10 % комиссии с транзакций по оплате услуг. В течение 24 ч запуска MVP, затем интеграция с CRM и платежными шлюзами. Ожидаем 200 подписчиков в первый месяц → 2 k$ ",
       "human_action": "Подтвердить бюджет 5 k$ и назначить ответственного за интеграцию с CRM.",
-      "status": "done"
-    },
-    {
-      "id": "card-21",
-      "issue_number": 21,
-      "date": "2026-11-02 12:29:38",
-      "project": "Лиды_Гости",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#21 GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-22",
-      "issue_number": 22,
-      "date": "2026-11-02 12:28:10",
-      "project": "Лиды_Гости",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#22 GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
-      "summary": "✅ Готово",
       "status": "done"
     }
   ]
