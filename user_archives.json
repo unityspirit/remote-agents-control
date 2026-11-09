@@ -589,10 +589,23 @@
           "study_text": "",
           "urls": [],
           "image_urls": []
+        },
+        {
+          "id": "iss-190",
+          "ts": "2026-11-09T06:02:04.986Z",
+          "login": "true1team",
+          "full_name": "@true1team",
+          "issue_number": 190,
+          "project": "Автономная_База_Знаний_Каналов",
+          "kind": "agent_request",
+          "title": "STATUS: Проверить свежие разборы каналов в Автономная_База_Знаний_Каналов",
+          "study_text": "",
+          "urls": [],
+          "image_urls": []
         }
       ],
-      "total_count": 38,
-      "last_saved_at": "2026-11-09T06:01:50.177Z"
+      "total_count": 39,
+      "last_saved_at": "2026-11-09T06:02:04.986Z"
     },
     "unityspiritteam@gmail.com": {
       "login": "unityspiritteam@gmail.com",
@@ -901,5 +914,5 @@
       "last_saved_at": "2026-11-02T19:57:55.221635+00:00"
     }
   },
-  "updated_at": "2026-11-09T06:01:50.177Z"
+  "updated_at": "2026-11-09T06:02:04.986Z"
 }
