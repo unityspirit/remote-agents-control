@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-08 18:48:40",
+  "updated": "2026-11-08 18:50:16",
   "kpis": {
-    "total_completed_works": 243,
-    "tim_master_reports": 37,
+    "total_completed_works": 245,
+    "tim_master_reports": 38,
     "active_projects_count": 57,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -325,9 +325,9 @@
       "why_first": "Готова концепция прямого бронирования вилл (Profitroom + WhatsApp): владельцы вилл в Лас-Терренас теряют 15–18% на OTA и охотно идут на прямые заявки.",
       "human_action": "Подтвердить номер WhatsApp / CRM для прямого приема бронирований от туристов.",
       "counts": {
-        "completed_works": 2,
+        "completed_works": 4,
         "open_tasks": 1,
-        "tim_reports": 1,
+        "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 2085,
         "size_kb": 304526,
@@ -357,13 +357,13 @@
       ],
       "research_topic": "Las Terrenas Dominican Republic luxury villa rentals direct booking market 2026",
       "last_work": {
-        "id": "card-178",
-        "issue_number": 178,
-        "date": "2026-11-05 17:39:32",
+        "id": "card-187",
+        "issue_number": 187,
+        "date": "2026-11-08 18:50:08",
         "project": "Белый Доминикана",
         "type": "board_card",
         "agent": "🛡 Контролёр",
-        "title": "#178 https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+        "title": "#187 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
         "summary": "✅ Готово",
         "status": "done"
       }
@@ -823,10 +823,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 37,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-      "updated_at": "2026-11-08 18:39:45"
+      "tasks_completed": 38,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-08 18:50:08"
     },
     {
       "key": "intake",
@@ -834,10 +834,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 118,
+      "tasks_completed": 119,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:48:39"
+      "updated_at": "2026-11-08 18:50:15"
     },
     {
       "key": "router",
@@ -845,10 +845,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 118,
+      "tasks_completed": 119,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:48:39"
+      "updated_at": "2026-11-08 18:50:15"
     },
     {
       "key": "gatekeeper",
@@ -856,10 +856,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 118,
+      "tasks_completed": 119,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:48:39"
+      "updated_at": "2026-11-08 18:50:15"
     },
     {
       "key": "scribe",
@@ -867,10 +867,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 65,
+      "tasks_completed": 66,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:48:39"
+      "updated_at": "2026-11-08 18:50:15"
     },
     {
       "key": "project_lead",
@@ -878,10 +878,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 65,
+      "tasks_completed": 66,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:48:39"
+      "updated_at": "2026-11-08 18:50:15"
     },
     {
       "key": "researcher",
@@ -889,10 +889,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 45,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-      "updated_at": "2026-11-08 18:39:45"
+      "tasks_completed": 46,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-08 18:50:08"
     },
     {
       "key": "analyst",
@@ -900,10 +900,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 45,
+      "tasks_completed": 46,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-08 18:48:39"
+      "updated_at": "2026-11-08 18:50:15"
     },
     {
       "key": "developer",
@@ -911,10 +911,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 30,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-      "updated_at": "2026-11-08 18:39:45"
+      "tasks_completed": 31,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-08 18:50:08"
     },
     {
       "key": "strategist",
@@ -922,10 +922,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 29,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-      "updated_at": "2026-11-08 18:39:45"
+      "tasks_completed": 30,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-08 18:50:08"
     },
     {
       "key": "marketer",
@@ -933,10 +933,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 25,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-      "updated_at": "2026-11-08 18:39:45"
+      "tasks_completed": 26,
+      "last_project": "Белый Доминикана",
+      "last_task": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "updated_at": "2026-11-08 18:50:08"
     },
     {
       "key": "vibe_coder",
@@ -973,6 +973,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-187",
+      "issue_number": 187,
+      "date": "2026-11-08 18:50:08",
+      "project": "Белый Доминикана",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#187 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261108_184947",
+      "issue_number": 187,
+      "date": "2026-11-08 18:49:47",
+      "project": "Белый Доминикана",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Белый Доминикана». Сформирована прикладная связка монетизации, воронки привлечения и т",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Белый Доминикана».",
+      "status": "done"
+    },
     {
       "id": "card-186",
       "issue_number": 186,
@@ -1705,30 +1729,6 @@
       "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
       "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #19 → Unity Inc» или выбрать другой проект",
       "status": "awaiting_approval"
-    },
-    {
-      "id": "card-20",
-      "issue_number": 20,
-      "date": "2026-11-02 12:30:45",
-      "project": "Личный Офис: @true1team",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#20 TIM: Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261102_123033",
-      "issue_number": 20,
-      "date": "2026-11-02 12:30:33",
-      "project": "Личный Офис: @true1team",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "⚡ Вайбкодер & Micro-SaaS, 💻 Главный Разработчик",
-      "title": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
-      "summary": "Создать Telegram‑бота «True1 Office» как Micro‑SaaS с подпиской 9,99 $/мес и 10 % комиссии с транзакций по оплате услуг. В течение 24 ч запуска MVP, затем интеграция с CRM и платежными шлюзами. Ожидаем 200 подписчиков в первый месяц → 2 k$ ",
-      "human_action": "Подтвердить бюджет 5 k$ и назначить ответственного за интеграцию с CRM.",
-      "status": "done"
     }
   ]
 }
