@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08 22:57:56",
+  "updated": "2026-11-08 23:03:36",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -361,8 +361,8 @@
       "folder": "Автономная_База_Знаний_Каналов",
       "project": "Автономная_База_Знаний_Каналов",
       "state": "active",
-      "files": 79,
-      "size_kb": 781,
+      "files": 85,
+      "size_kb": 848,
       "last_change": "2026-11-08",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -533,8 +533,8 @@
       "folder": "Позновалка",
       "project": "Позновалка",
       "state": "active",
-      "files": 195,
-      "size_kb": 1249,
+      "files": 197,
+      "size_kb": 1261,
       "last_change": "2026-11-08",
       "lead_agent": "Swarm Knowledge & Media Extraction Agent",
       "next_who": "agent",
