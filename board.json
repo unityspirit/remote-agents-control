@@ -15763,6 +15763,39 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-08 18:39:46"
+    },
+    "187": {
+      "id": 187,
+      "created": "2026-11-08 18:49:39",
+      "handoffs": [
+        {
+          "t": "2026-11-08 18:49:39",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-08 18:50:08",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+      "urls": [
+        "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
+        "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region=nor&utm_medium=cpc&utm_source=google&utm_term=&utm_campaign=%5BNvm%5DEN-Nordics-PMax&utm_id=24240220289&hsa_acc=9242610695&hsa_cam=24240220289&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24234667371"
+      ],
+      "project": "Белый Доминикана",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-08 18:50:08"
     }
   }
 }
