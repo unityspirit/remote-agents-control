@@ -2,11 +2,29 @@
 <html lang="ru">
 <head>
 <script>
+window.forceHardRefreshApp = function() {
+    try {
+        localStorage.removeItem("gsg_app_v27_0_loaded");
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+                for (var i = 0; i < regs.length; i++) regs[i].unregister();
+            });
+        }
+        if ('caches' in window) {
+            caches.keys().then(function(keys) {
+                for (var i = 0; i < keys.length; i++) caches.delete(keys[i]);
+            });
+        }
+    } catch(e) {}
+    setTimeout(function() {
+        window.location.href = window.location.pathname + "?v=" + Date.now();
+    }, 180);
+};
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v24_0_loaded");
+        var v = localStorage.getItem("gsg_app_v27_0_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v24_0_loaded", "true");
+            localStorage.setItem("gsg_app_v27_0_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -2175,53 +2193,72 @@
 <!-- WORLD-CLASS VIRTUAL OFFICE ENHANCEMENTS (ROAM / GATHER / DEVIN LEVEL) -->
 <style id="world-class-office-styles">
 :root {
-    --dock-bg: rgba(15, 23, 42, 0.88);
+    --dock-bg: rgba(15, 23, 42, 0.96);
     --dock-border: rgba(255, 255, 255, 0.12);
     --glow-cyan: #06b6d4;
     --glow-emerald: #10b981;
     --glow-amber: #f59e0b;
 }
 
-/* Floating Top Telemetry Status Bar */
+/* Strict Auth Lock Hiding — Zero Leaks on Login Screen */
+body.auth-locked #world-telemetry-bar,
+body.auth-locked .app-shell,
+body.auth-locked #btn-floating-guest-ai,
+body.auth-locked #owner-pending-approval-banner,
+body.auth-locked .bottom-nav {
+    display: none !important;
+}
+
+/* Strict Member Isolation Hiding */
+body.member-nodel .owner-only-ctrl,
+body.member-nodel #btn-top-secured-vault,
+body.member-nodel #btn-top-user-monitor,
+body.member-nodel #owner-pending-approval-banner,
+body.member-nodel #project-cat-filters,
+body.member-nodel #quick-web-apps-box,
+body.member-nodel .add-folder-banner-btn,
+body.member-nodel #crm-user-filters {
+    display: none !important;
+}
+
+/* Floating Top Telemetry Status Bar (Inside .app-shell) */
 .telemetry-bar-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 14px;
-    background: linear-gradient(90deg, rgba(15,23,42,0.94), rgba(30,41,59,0.92));
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    font-size: 0.76rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 6px 12px;
+    background: linear-gradient(90deg, rgba(15,23,42,0.96), rgba(30,41,59,0.94));
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+    font-size: 0.75rem;
     color: #e2e8f0;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+    z-index: 29;
+    gap: 8px;
 }
 .telemetry-pills {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
     overflow-x: auto;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 .telemetry-pills::-webkit-scrollbar { display: none; }
 .telemetry-pill {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 3px 9px;
+    padding: 4px 10px;
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 999px;
     white-space: nowrap;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.18s ease;
+    user-select: none;
 }
-.telemetry-pill:hover {
-    background: rgba(255,255,255,0.14);
+.telemetry-pill:hover, .telemetry-pill:active {
+    background: rgba(255,255,255,0.15);
     transform: translateY(-1px);
 }
 .pulse-indicator {
@@ -2238,45 +2275,36 @@
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-/* Mobile-First Bottom Nav Dock */
+/* Clean Flex Bottom Nav Dock (Never overlaps composer or folder cards) */
 .bottom-nav {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-around !important;
-    background: var(--dock-bg) !important;
-    border-top: 1px solid var(--dock-border) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)) !important;
-    padding-top: 6px !important;
-    height: auto !important;
-    min-height: 60px !important;
-    box-shadow: 0 -8px 30px rgba(0,0,0,0.5) !important;
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--dock-bg);
+    border-top: 1px solid var(--dock-border);
+    padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px)) 6px;
+    flex-shrink: 0;
+    z-index: 35;
+    overflow-x: auto;
+    gap: 2px;
 }
 .b-tab {
-    min-width: 52px !important;
-    min-height: 48px !important;
-    padding: 4px 6px !important;
-    border-radius: 12px !important;
-    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    touch-action: manipulation !important;
-    -webkit-tap-highlight-color: transparent !important;
+    flex: 1;
+    min-width: 48px;
+    min-height: 46px;
+    padding: 4px 4px;
+    border-radius: 10px;
+    transition: all 0.16s ease;
+    touch-action: manipulation;
+    cursor: pointer;
 }
 .b-tab:active {
-    transform: scale(0.92) !important;
+    transform: scale(0.94);
 }
 .b-tab.active {
-    background: rgba(255, 255, 255, 0.12) !important;
-    box-shadow: inset 0 0 12px rgba(6, 182, 212, 0.25) !important;
-}
-.b-tab.b-tab-highlight {
-    background: linear-gradient(135deg, rgba(6,182,212,0.18), rgba(16,185,129,0.18)) !important;
-    border: 1px solid rgba(6,182,212,0.3) !important;
+    background: rgba(59, 130, 246, 0.16);
+    color: #60a5fa;
+    box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.2);
 }
 
 /* Modals UI */
@@ -2284,27 +2312,26 @@
     display: none;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.78);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    z-index: 2000;
+    z-index: 26500;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 14px;
 }
 .world-modal-content {
     background: #0f172a;
-    border: 1px solid rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.16);
     border-radius: 20px;
     width: 100%;
-    max-width: 680px;
-    max-height: 85vh;
+    max-width: 720px;
+    max-height: 88vh;
     overflow-y: auto;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.75);
     color: #f1f5f9;
-    padding: 22px;
+    padding: 20px;
     position: relative;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .world-modal-header {
     display: flex;
@@ -2312,13 +2339,13 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     padding-bottom: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 .world-modal-close {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
     border: none;
     border-radius: 50%;
-    width: 32px; height: 32px;
+    width: 34px; height: 34px;
     color: #fff;
     font-size: 1.1rem;
     cursor: pointer;
@@ -2326,7 +2353,7 @@
 }
 .world-card {
     background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.09);
     border-radius: 14px;
     padding: 14px;
     margin-bottom: 12px;
@@ -2335,13 +2362,13 @@
     display: inline-block;
     padding: 2px 8px;
     border-radius: 6px;
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
 }
-.badge-cyan { background: rgba(6,182,212,0.2); color: #38bdf8; border: 1px solid rgba(6,182,212,0.3); }
-.badge-emerald { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
-.badge-amber { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+.badge-cyan { background: rgba(6,182,212,0.2); color: #22d3ee; border: 1px solid rgba(6,182,212,0.4); }
+.badge-emerald { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4); }
+.badge-amber { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4); }
 </style>
 
 </head>
@@ -3074,16 +3101,6 @@
     <!-- 5-TAB BOTTOM BAR -->
     <nav class="bottom-nav">
 
-        <button class="b-tab b-tab-highlight" id="nav-btn-notebooklm" onclick="openNotebookLMModal()" title="NotebookLM Самообучение">
-            <span class="b-icon">📓</span>
-            <span style="color:#38bdf8; font-weight:700;">NotebookLM</span>
-        </button>
-        <button class="b-tab b-tab-highlight" id="nav-btn-mvp" onclick="openMvpLaunchModal()" title="Самый выгодный MVP">
-            <span class="b-icon">🚀</span>
-            <span style="color:#fbbf24; font-weight:700;">MVP $1,000</span>
-        </button>
-
-
         <button class="b-tab active" id="nav-btn-projects" onclick="switchTab('projects', this)">
             <span class="b-icon">📁</span>
             <span>Папки</span>
@@ -3240,14 +3257,14 @@
                 <!-- GUEST PREVIEW REMOVED (STRICT AUTH ONLY) -->
 
         <div class="auth-tabs-row" id="auth-main-tabs-row">
-            <button class="auth-tab-btn active" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Быстрая регистрация</button>
-            <button class="auth-tab-btn" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Вход</button>
+            <button class="auth-tab-btn" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Быстрая регистрация</button>
+            <button class="auth-tab-btn active" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Вход</button>
         </div>
 
         <div id="auth-feedback-box" style="display:none; padding:10px 12px; border-radius:12px; border:1px solid; font-size:0.77rem; line-height:1.45;"></div>
 
         <!-- PANEL 1: 5-SECOND EXPRESS REGISTRATION (DEFAULT FOR NEW USERS) -->
-        <div id="auth-panel-register" style="display:flex; flex-direction:column; gap:8px;">
+        <div id="auth-panel-register" style="display:none; flex-direction:column; gap:8px;">
             <input type="text" id="reg-login" class="modal-input" style="height:42px; background:#090d16; color:#f8fafc;" placeholder="Логин (или ваш @Telegram / Email) *" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
             <div style="position:relative; display:flex; align-items:center;">
                 <input type="password" id="reg-pass1" class="modal-input" style="height:42px; width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Придумайте пароль (от 4 симв.) *" autocomplete="new-password" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
@@ -3261,7 +3278,7 @@
         </div>
 
         <!-- PANEL 2: LOGIN -->
-        <div id="auth-panel-login" style="display:none; flex-direction:column; gap:9px;">
+        <div id="auth-panel-login" style="display:flex; flex-direction:column; gap:9px;">
             <input type="text" id="auth-login-user" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Логин, @Telegram или Email" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthLogin()">
             <div style="position:relative; display:flex; align-items:center;">
                 <input type="password" id="auth-login-pass" class="modal-input" style="width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Пароль" autocomplete="current-password" onkeypress="if(event.key==='Enter') submitAuthLogin()">
@@ -3786,7 +3803,7 @@
         }
     }
 
-    async async function ghApi(path, method = 'GET', body = null, withAuth = true) {
+    async function ghApi(path, method = 'GET', body = null, withAuth = true) {
         const headers = { 'Accept': 'application/vnd.github.v3+json' };
         if (withAuth) {
             headers['Authorization'] = 'token ' + ACTIVE_TOKEN;
@@ -5651,7 +5668,9 @@
                 if (crmCalKind !== "all" && s.kind !== crmCalKind) return false;
                 // User filter
                 if (!isBoss) {
-                    if (s.assignedUser !== "all" && s.assignedUser !== loggedLogin) return false;
+                    const stepProj = s.project || "";
+                    const isMyLogin = (s.assignedUser === loggedLogin) || (loggedLogin === "alberta_shirani" && s.assignedUser === "aliashirani") || (loggedLogin === "jv" && s.assignedUser === "yvyatkin");
+                    if (!isMyLogin && !(stepProj && canCurrentUserAccessProject(stepProj))) return false;
                 } else {
                     if (crmCalUser !== "all") {
                         if (crmCalUser === "my" && s.assignedUser !== "unityspiritpartners" && s.assignedUser !== "all") return false;
@@ -6765,8 +6784,9 @@
             });
         });
 
-        combinedTimFeedCache = items;
-        return items;
+        const filteredItems = isOwnerSession() ? items : items.filter(it => canCurrentUserAccessProject(it.project));
+        combinedTimFeedCache = filteredItems;
+        return filteredItems;
     }
 
     function toggleTimReportInline(idx) {
@@ -6951,6 +6971,12 @@
 
         let html = "";
         kbItems.forEach(item => {
+            if (!isOwnerSession()) {
+                const cat = item.category || "Позновалка";
+                const savedBy = normalizeAuthLogin(item.saved_by_login || "");
+                const myLog = normalizeAuthLogin((currentAuthUser && currentAuthUser.login) || "");
+                if (savedBy !== myLog && !canCurrentUserAccessProject(cat)) return;
+            }
             const hay = (item.title + " " + (item.category || "") + " " + (item.saved_by_login || "") + " " + (item.saved_by_name || "") + " " + (item.summary || "") + " " + (item.action_items || []).join(" ")).toLowerCase();
             if (q && !hay.includes(q)) return;
 
@@ -8013,7 +8039,7 @@
         }
     }
 
-    async async function fetchIssuesAndComments() {
+    async function fetchIssuesAndComments() {
         try {
             const [rawIssues, rawComments] = await Promise.all([
                 ghApi("/issues?state=all&per_page=100&sort=created&direction=desc", "GET", null, true),
@@ -9035,6 +9061,9 @@
         let priorities = Array.isArray(rep.priority_continuations) && rep.priority_continuations.length > 0
             ? rep.priority_continuations.map(p => getProjectLedger(p.project))
             : Object.keys(CLIENT_PROJECT_BLUEPRINTS).map(k => getProjectLedger(k));
+        if (!isOwnerSession()) {
+            priorities = priorities.filter(p => canCurrentUserAccessProject(p.project));
+        }
         priorities.sort((a, b) => (b.priority_score - a.priority_score) || (b.counts.completed_works - a.counts.completed_works));
 
         return {
@@ -9437,13 +9466,22 @@
         return Boolean(currentAuthUser && currentAuthUser.status === "approved");
     }
 
+        const STRICT_MAIN_HQ_OWNERS = [
+        "unityspiritteam@gmail.com",
+        "unityspiritpartners",
+        "unityspiritpartner",
+        "unityspiritteam",
+        "true1team",
+        "vlaslav"
+    ];
+
     function isFullAccessSession() {
         if (!isUserAuthenticated()) return false;
-        if (currentAuthUser.role === "owner" || currentAuthUser.role === "admin") return true;
-        const l = (currentAuthUser.login || "").toLowerCase().replace(/^@/, "");
-        if (l === "unityspiritpartners" || l === "unityspiritteam" || l === "unityspiritteam@gmail.com" || l === "true1team" || l === "yvyatkin") return true;
-        const arr = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
-        if (arr.includes("*")) return true;
+        const l = (currentAuthUser.login || "").toLowerCase().replace(/^@/, "").trim();
+        const tg = (currentAuthUser.telegram || "").toLowerCase().replace(/^@/, "").trim();
+        if (STRICT_MAIN_HQ_OWNERS.includes(l) || STRICT_MAIN_HQ_OWNERS.includes(tg)) {
+            return true;
+        }
         return false;
     }
 
@@ -9451,12 +9489,24 @@
         return isFullAccessSession();
     }
 
-        function getUserAssignedProjects() {
+    function getUserAssignedProjects() {
         if (!currentAuthUser) return [];
         if (isOwnerSession()) return ["*"];
-        const arr = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
-        if (arr.includes("*")) return ["*"];
-        return arr;
+        const l = (currentAuthUser.login || "").toLowerCase().replace(/^@/, "").trim();
+        const personalFolder = "Личный Офис: @" + l;
+        if (l === "aliashirani" || l === "alberta_shirani" || l === "alberta") {
+            return ["Alberta", personalFolder, "Личный Офис: @aliashirani"];
+        }
+        if (l === "yvyatkin" || l === "jv" || l === "yuri") {
+            return ["Юра", personalFolder, "Личный Офис: @yvyatkin"];
+        }
+        if (l === "tatianaknyazeva777" || l === "tatiana") {
+            return ["Татьяна tentorium.ru", personalFolder, "Личный Офис: @tatianaknyazeva777"];
+        }
+        const rawArr = Array.isArray(currentAuthUser.assigned_projects) ? currentAuthUser.assigned_projects : [];
+        const cleanArr = rawArr.filter(x => x && x !== "*");
+        if (!cleanArr.includes(personalFolder)) cleanArr.push(personalFolder);
+        return cleanArr;
     }
 
     function canCurrentUserAccessProject(projName) {
@@ -9587,10 +9637,15 @@
             }));
         } catch (e) {}
 
-        if (currentAuthUser.role === "owner") {
+        if (isOwnerSession()) {
+            currentAuthUser.role = "owner";
             document.body.classList.remove("member-nodel");
+            document.body.classList.add("owner-full-access");
         } else {
+            currentAuthUser.role = "member";
+            currentAuthUser.assigned_projects = getUserAssignedProjects();
             document.body.classList.add("member-nodel");
+            document.body.classList.remove("owner-full-access");
         }
 
         document.body.classList.remove("auth-locked");
@@ -9605,8 +9660,11 @@
 
         // Multi-tenant: Member automatically enters their own personal office workspace!
         if (!isOwnerSession() && currentAuthUser && currentAuthUser.login) {
-            selectProject("Личный Офис: @" + currentAuthUser.login, "📁");
+            const myProjs = getUserAssignedProjects();
+            const primaryProj = myProjs.find(p => !p.startsWith("Личный Офис")) || ("Личный Офис: @" + currentAuthUser.login);
+            selectProject(primaryProj, "📁");
         }
+        if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
 
         refreshAllData(false);
 
@@ -10930,7 +10988,7 @@ function enterPendingWaitingRoom(userObj) {
         box.innerHTML = htmlMsg;
     }
 
-    async async function submitAuthLogin() {
+    async function submitAuthLogin() {
         const loginVal = normalizeAuthLogin((document.getElementById("auth-login-user") || {}).value);
         const passVal = String((document.getElementById("auth-login-pass") || {}).value || "").trim();
         if (!loginVal || !passVal) {
@@ -10992,13 +11050,19 @@ function enterPendingWaitingRoom(userObj) {
             const computed = await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000);
             const isOwnerPass = (user.role === "owner" && (passVal === "ja4ChyNUBFseSf2" || computed === "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b"));
             if (isYuriAttempt) {
-                user.role = "admin";
+                user.role = "member";
                 user.status = "approved";
-                user.assigned_projects = ["*"];
-                user.is_co_owner = true;
-                unlockOfficeWithUser(user, true);
-                showToast("⭐ Добро пожаловать, Юрий! Полный доступ совладельца KHL AI Bot активирован.");
-                return;
+                user.assigned_projects = ["Юра", "Личный Офис: @yvyatkin"];
+                user.is_co_owner = false;
+                if (!user.salt_hex) {
+                    unlockOfficeWithUser(user, false);
+                    showToast("✅ Добро пожаловать в рабочий кабинет «Юра», Юрий!");
+                    return;
+                }
+            }
+            if (isAlbertaAttempt) {
+                user.role = "member";
+                user.assigned_projects = ["Alberta", "Личный Офис: @" + normalizeAuthLogin(user.login)];
             }
             if (computed !== user.pbkdf2_hash && !isOwnerPass) {
                 showAuthFeedback("❌ Неверный пароль. Для сброса нажмите «🔑 Забыли пароль? Сброс по коду».", "error");
@@ -13466,141 +13530,1089 @@ function enterPendingWaitingRoom(userObj) {
 
 
 
-<!-- NOTEBOOKLM STUDY & AUDIO BRIEFING MODAL -->
+
+<!-- NOTEBOOKLM STUDY & AUDIO BRIEFING MODAL (MAIN HQ OWNER ONLY) -->
 <div class="world-modal-backdrop" id="modal-notebooklm" onclick="if(event.target===this) closeNotebookLMModal()">
     <div class="world-modal-content">
         <div class="world-modal-header">
             <div style="display:flex; align-items:center; gap:8px;">
                 <span style="font-size:1.4rem;">📓</span>
                 <div>
-                    <h3 style="margin:0; font-size:1.15rem; font-weight:700;">Google NotebookLM Исследовательский Хаб</h3>
-                    <div style="font-size:0.75rem; color:#94a3b8;">Source-Grounded RAG • Синтез первоисточников • Аудио-брифинги</div>
+                    <h3 style="margin:0; font-size:1.1rem; font-weight:800; color:#f8fafc;">Google NotebookLM Исследовательский Хаб</h3>
+                    <div style="font-size:0.74rem; color:#94a3b8;">Source-Grounded RAG • Синтез первоисточников • Без фантазий и галлюцинаций</div>
                 </div>
             </div>
-            <button class="world-modal-close" onclick="closeNotebookLMModal()">✕</button>
+            <button type="button" class="world-modal-close" onclick="closeNotebookLMModal()">✕</button>
         </div>
 
-        <div style="margin-bottom:14px; display:flex; gap:8px;">
+        <div style="margin-bottom:14px; display:flex; gap:8px; flex-wrap:wrap;">
             <input type="text" id="notebooklm-query-input" placeholder="Введите тему или вставьте ссылку для детального изучения..." 
-                   style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:10px 14px; color:#fff; font-size:0.85rem; outline:none;">
-            <button onclick="triggerNotebookLmSearch()" style="background:linear-gradient(135deg,#0284c7,#10b981); color:#fff; border:none; border-radius:10px; padding:0 16px; font-weight:600; cursor:pointer; font-size:0.85rem;">
-                Изучить
+                   style="flex:1; min-width:200px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:10px 14px; color:#fff; font-size:0.85rem; outline:none;"
+                   onkeypress="if(event.key==='Enter') triggerNotebookLmSearch()">
+            <button type="button" onclick="triggerNotebookLmSearch()" style="background:linear-gradient(135deg,#0284c7,#10b981); color:#fff; border:none; border-radius:10px; padding:10px 16px; font-weight:800; cursor:pointer; font-size:0.84rem;">
+                🔎 Изучить в NotebookLM
             </button>
         </div>
 
-        <!-- Pre-compiled Grounded Notebook 1: AltaHQ vs Vertical Concierge -->
         <div class="world-card">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
-                <span class="world-badge badge-cyan">B2B Voice SaaS</span>
-                <span style="font-size:0.72rem; color:#94a3b8;">Синтезировано: 09.11.2026</span>
+                <span class="world-badge badge-cyan">B2B Voice SaaS (#1 MVP)</span>
+                <span style="font-size:0.72rem; color:#94a3b8;">Верифицировано: 10.11.2026</span>
             </div>
-            <h4 style="margin:0 0 6px 0; font-size:0.95rem; color:#f8fafc;">B2B AI Calling Agent (AltaHQ) vs Вертикальный Голосовой Ресепшен</h4>
-            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.4; margin:0 0 8px 0;">
-                AltaHQ продает B2B-агентов (Alex & Katie) корпоратам за $1,250–$30,000/год. Для нашего рынка оптимальна модель вертикального консьержа для отелей и частных клиник на стеке Vapi/Retell AI + SIP.
+            <h4 style="margin:0 0 6px 0; font-size:0.95rem; color:#f8fafc;">B2B AI Calling Agent (AltaHQ) & Вертикальный Голосовой Ресепшен</h4>
+            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.45; margin:0 0 8px 0;">
+                Модель: ИИ-администратор для бутик-отелей, клиник и автодетейлинга на стеке Vapi/Retell AI + SIP. Берет трубку за 0.8 сек 24/7, бронирует слоты и отправляет ссылку на оплату в WhatsApp/Telegram.
             </p>
-            <div style="background:rgba(2,132,199,0.1); border-left:3px solid #38bdf8; padding:8px; border-radius:4px; font-size:0.76rem; color:#bae6fd; margin-bottom:8px;">
-                🎙️ <b>NotebookLM Audio Briefing:</b> «Отель на 40 номеров теряет до $4,000/мес на пропущенных ночных звонках и комиссиях Booking.com (20%). Наш бот берет трубку за 0.8с с себестоимостью $0.06/мин. Чек: $750 setup + $350/mo. Окупаемость — 7 дней!»
+            <div style="background:rgba(2,132,199,0.12); border-left:3px solid #38bdf8; padding:8px 10px; border-radius:6px; font-size:0.76rem; color:#bae6fd; margin-bottom:8px;">
+                🎙️ <b>NotebookLM Вывод:</b> Чек внедрения $750–$1,000 setup + $300–$350/мес MRR. Себестоимость звонков $18/мес (маржинальность 94.8%). Окупаемость для клиента — 7 дней!
             </div>
-            <div style="font-size:0.72rem; color:#64748b;">
-                📚 Источники: <a href="https://www.altahq.com/lp/ai-calling-agent" target="_blank" style="color:#38bdf8;">altahq.com</a>, <a href="https://profitroom.com/solutions/individual-hotels/" target="_blank" style="color:#38bdf8;">profitroom.com</a>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeNotebookLMModal(); selectProject('Traffic');">📁 Открыть папку Traffic →</button>
+                <button type="button" class="mini-btn" onclick="closeNotebookLMModal(); openMvpLaunchModal();">🚀 Открыть калькулятор и КП MVP →</button>
             </div>
         </div>
 
-        <!-- Pre-compiled Grounded Notebook 2: KHL Quant Models -->
         <div class="world-card">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
-                <span class="world-badge badge-emerald">Sports Quant Model</span>
-                <span style="font-size:0.72rem; color:#94a3b8;">Статистика сезона 2026</span>
+                <span class="world-badge badge-emerald">B2C Cash-Flow (#2 MVP)</span>
+                <span style="font-size:0.72rem; color:#94a3b8;">Верифицировано: 10.11.2026</span>
             </div>
-            <h4 style="margin:0 0 6px 0; font-size:0.95rem; color:#f8fafc;">КХЛ Количественная Модель: WinRate 82.9% • ROI +53.4%</h4>
-            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.4; margin:0 0 8px 0;">
-                Модель анализирует 42 параметра (xG, усталость после перелетов, броски из слота, Save% вратарей). Калибровка по Brier Score (0.1716) и критерию Келли. Монетизация через закрытый VIP-клуб (3,900 руб/мес) и CPA eToro ($200–600).
+            <h4 style="margin:0 0 6px 0; font-size:0.95rem; color:#f8fafc;">KHL Sports Quant Predictor (WinRate 82.9% · ROI +53.4%)</h4>
+            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.45; margin:0 0 8px 0;">
+                Двухуровневая байесовская модель Пуассона с учётом xG и домашнего льда. Прошла верификацию на 82 реальных матчах КХЛ (Brier Score 0.1716).
             </p>
-            <div style="font-size:0.72rem; color:#64748b;">
-                📚 Источники: KHL Auto-Learning Service (PID 12696), Kelly Criterion Quant Formula
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeNotebookLMModal(); selectProject('Юра');">📁 Открыть папку Юра (КХЛ) →</button>
             </div>
         </div>
 
-        <div style="text-align:right;">
-            <button onclick="closeNotebookLMModal()" style="background:rgba(255,255,255,0.1); color:#fff; border:none; border-radius:8px; padding:8px 18px; font-size:0.85rem; cursor:pointer;">
+        <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button type="button" onclick="closeNotebookLMModal()" style="background:rgba(255,255,255,0.12); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer; font-weight:700;">
                 Закрыть
             </button>
         </div>
     </div>
 </div>
 
-<!-- MVP FAST LAUNCHPAD & COMMERCIAL CLOSER MODAL -->
+<!-- MVP LAUNCHPAD MODAL (MAIN HQ OWNER ONLY) -->
 <div class="world-modal-backdrop" id="modal-mvp-launch" onclick="if(event.target===this) closeMvpLaunchModal()">
     <div class="world-modal-content">
         <div class="world-modal-header">
             <div style="display:flex; align-items:center; gap:8px;">
                 <span style="font-size:1.4rem;">🚀</span>
                 <div>
-                    <h3 style="margin:0; font-size:1.15rem; font-weight:700;">Самый Выгодный Проект на Сегодня</h3>
-                    <div style="font-size:0.75rem; color:#fbbf24; font-weight:600;">AltaDesk AI Voice Concierge • Чистая маржа 94.8%</div>
+                    <h3 style="margin:0; font-size:1.1rem; font-weight:800; color:#f8fafc;">Топ MVP: ИИ-Голосовой Консьерж (AltaDesk AI)</h3>
+                    <div style="font-size:0.74rem; color:#fbbf24;">Юнит-экономика: $750–$1,000 внедрение + $350/мес подписка (Маржа 94.8%)</div>
                 </div>
             </div>
-            <button class="world-modal-close" onclick="closeMvpLaunchModal()">✕</button>
+            <button type="button" class="world-modal-close" onclick="closeMvpLaunchModal()">✕</button>
         </div>
 
-        <div style="background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(16,185,129,0.12)); border:1px solid rgba(245,158,11,0.3); border-radius:14px; padding:14px; margin-bottom:14px;">
-            <div style="font-size:0.88rem; font-weight:700; color:#fbbf24; margin-bottom:4px;">🎯 Быстрый расчет окупаемости MVP:</div>
-            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; text-align:center; margin-top:8px;">
-                <div style="background:rgba(0,0,0,0.3); padding:8px; border-radius:8px;">
+        <div class="world-card" style="background:linear-gradient(135deg, rgba(16,185,129,0.12), rgba(6,182,212,0.12)); border-color:rgba(16,185,129,0.35);">
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; text-align:center;">
+                <div style="background:rgba(0,0,0,0.35); padding:9px; border-radius:8px;">
                     <div style="font-size:0.7rem; color:#94a3b8;">1 Клиент</div>
-                    <div style="font-size:1.05rem; font-weight:700; color:#34d399;">$1,100</div>
+                    <div style="font-size:1.05rem; font-weight:800; color:#34d399;">$1,100</div>
                     <div style="font-size:0.65rem; color:#cbd5e1;">($750 + $350 MRR)</div>
                 </div>
-                <div style="background:rgba(0,0,0,0.3); padding:8px; border-radius:8px;">
+                <div style="background:rgba(0,0,0,0.35); padding:9px; border-radius:8px;">
                     <div style="font-size:0.7rem; color:#94a3b8;">5 Клиентов</div>
-                    <div style="font-size:1.05rem; font-weight:700; color:#34d399;">$5,500</div>
+                    <div style="font-size:1.05rem; font-weight:800; color:#34d399;">$5,500</div>
                     <div style="font-size:0.65rem; color:#cbd5e1;">($1,750 MRR)</div>
                 </div>
-                <div style="background:rgba(0,0,0,0.3); padding:8px; border-radius:8px;">
+                <div style="background:rgba(0,0,0,0.35); padding:9px; border-radius:8px;">
                     <div style="font-size:0.7rem; color:#94a3b8;">Себестоимость</div>
-                    <div style="font-size:1.05rem; font-weight:700; color:#38bdf8;">$18/мес</div>
+                    <div style="font-size:1.05rem; font-weight:800; color:#38bdf8;">$18/мес</div>
                     <div style="font-size:0.65rem; color:#cbd5e1;">(94.8% Маржа)</div>
                 </div>
             </div>
         </div>
 
         <div class="world-card">
-            <h4 style="margin:0 0 6px 0; font-size:0.9rem; color:#f8fafc;">🔥 Готовое Коммерческое Предложение для Отелей и Клиник</h4>
-            <p style="font-size:0.78rem; color:#94a3b8; margin:0 0 10px 0;">
-                Текст адаптирован для моментальной отправки владельцам и управляющим в WhatsApp / Telegram:
-            </p>
-            <textarea id="mvp-proposal-textarea" readonly style="width:100%; height:130px; background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#e2e8f0; font-size:0.75rem; padding:8px; font-family:monospace; resize:none;">
-Добрый день! Заметили, что отели теряют до 30% ночных звонков и отдают до 20% комиссии Booking.com.
+            <h4 style="margin:0 0 6px 0; font-size:0.9rem; color:#f8fafc;">🔥 Готовое Коммерческое Предложение для Отелей, Клиник и Автосалонов</h4>
+            <textarea id="mvp-proposal-textarea" readonly style="width:100%; height:125px; background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.12); border-radius:8px; color:#e2e8f0; font-size:0.76rem; padding:9px; font-family:inherit; resize:none;">Добрый день! Заметили, что отели и клиники теряют до 30% вечерних и ночных звонков и отдают до 20% комиссии агрегаторам.
 
-Мы развернули решение «AltaDesk AI Voice»:
-1. Берет трубку за 0.8 сек 24/7 естественным человеческим голосом.
-2. Знает все категории номеров, правила и моментально оформляет бронь в календарь.
-3. Отправляет ссылку на оплату прямо во время звонка.
+Мы развернули систему «AltaDesk AI Voice»:
+1. Берет трубку за 0.8 сек 24/7 живым естественным голосом.
+2. Отвечает по вашему прайсу и мгновенно бронирует слот в календарь.
+3. Отправляет клиенту подтверждение и ссылку на предоплату в WhatsApp / Telegram.
 
-Хотите послушать 15-секундную запись реального звонка или протестировать прямо сейчас со своего телефона бесплатно на 7 дней?
-            </textarea>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
-                <span id="copy-mvp-status" style="font-size:0.75rem; color:#34d399; display:none;">✓ Скопировано в буфер!</span>
-                <button onclick="copyMvpProposal()" style="background:linear-gradient(135deg,#f59e0b,#10b981); color:#000; font-weight:700; border:none; border-radius:8px; padding:7px 16px; font-size:0.8rem; cursor:pointer; margin-left:auto;">
-                    📋 Скопировать текст оффера
+Хотите протестировать демо-звонок прямо сейчас со своего телефона и подключить 7 дней теста бесплатно?</textarea>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:8px;">
+                <span id="copy-mvp-status" style="font-size:0.75rem; color:#34d399; display:none; font-weight:700;">✓ Скопировано в буфер!</span>
+                <button type="button" onclick="copyMvpProposal()" style="background:linear-gradient(135deg,#f59e0b,#10b981); color:#090d16; font-weight:800; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer; margin-left:auto;">
+                    📋 Скопировать текст КП
                 </button>
             </div>
         </div>
 
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-            <button onclick="triggerTestAiCall()" style="background:rgba(6,182,212,0.18); color:#38bdf8; border:1px solid rgba(6,182,212,0.4); border-radius:8px; padding:8px 14px; font-size:0.8rem; cursor:pointer;">
-                📞 Запустить тест alta_voice_engine
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <button type="button" onclick="triggerTestAiCall()" style="background:rgba(6,182,212,0.18); color:#38bdf8; border:1px solid rgba(6,182,212,0.45); border-radius:8px; padding:8px 14px; font-size:0.8rem; cursor:pointer; font-weight:700;">
+                📞 Поручить Тиму запуск обзвона B2B
             </button>
-            <button onclick="closeMvpLaunchModal()" style="background:rgba(255,255,255,0.1); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer;">
+            <button type="button" onclick="closeMvpLaunchModal()" style="background:rgba(255,255,255,0.12); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer; font-weight:700;">
                 Закрыть
             </button>
         </div>
     </div>
 </div>
 
-<!-- WORLD-CLASS INTERACTIVE SCRIPT -->
+<!-- 32 PHOTO PROJECTS & 6 DEPARTMENTS ECOSYSTEM MODAL (MAIN HQ OWNER ONLY) -->
+<div class="world-modal-backdrop" id="modal-departments-ecosystem" style="display:none;" onclick="if(event.target===this) closeDepartmentsModal()">
+    <div class="world-modal-content">
+        <div class="world-modal-header">
+            <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1.4rem;">🏛️</span>
+                <div>
+                    <h3 style="margin:0; font-size:1.05rem; color:#f8fafc; font-weight:800;">6 Департаментов & Все 32 Проекта Главного Штаба</h3>
+                    <div style="font-size:0.72rem; color:#94a3b8;">Доступно только Владельцу (@unityspiritpartners) · Полная синхронизация всех диалогов</div>
+                </div>
+            </div>
+            <button type="button" class="world-modal-close" onclick="closeDepartmentsModal()">✕</button>
+        </div>
+
+        <div style="background:rgba(6,182,212,0.1); border:1px solid rgba(6,182,212,0.28); border-radius:9px; padding:10px 12px; margin-bottom:12px; font-size:0.77rem; color:#cbd5e1; line-height:1.45;">
+            ✨ <b>Нажмите на любую карточку ниже</b>, чтобы мгновенно перейти в рабочую папку проекта или отправить поручение Генеральному AI-Директору Тиму:
+        </div>
+
+        
+    <div class="world-card" style="margin-bottom:14px; border-left:3px solid #06b6d4;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <h4 style="margin:0; font-size:0.95rem; color:#38bdf8;">📈 Департамент Квантовых Финансов & Алготрейдинга</h4>
+            <span class="world-badge badge-cyan" style="font-size:0.68rem;">2 Проектов</span>
+        </div>
+        <div style="font-size:0.73rem; color:#94a3b8; margin-bottom:10px;">
+            👤 <b>Куратор:</b> Юрий Вяткин / @yvyatkin &nbsp;|&nbsp; 🤖 <b>Лид-агент:</b> Sports Bayesian Quant & Trading Lead
+        </div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">KHL Sports Quant Predictor</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (КХЛ Сигналы)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Юра</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">188674d1...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> 82 матча · WinRate 82.9% · ROI +53.4% · Brier 0.1716
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Ежедневная VIP-рассылка в @Vlaslovebot (3,900 ₽/мес) и CPA eToro ($200-600)
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Юра');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Юра» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту KHL Sports Quant Predictor: Ежедневная VIP-рассылка в @Vlaslovebot (3,900 ₽/мес) и CPA eToro ($200-600)', 'Юра');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">AI Crypto Trading Bot (Freqtrade)</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Крипто Трейдинг)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Юра</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">76516183...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> UptrendDipVolStrategy · Порт 8060 · Dry-run мониторинг
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Синхронизация котировок Bybit/Binance и репликация доходности
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Юра');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Юра» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту AI Crypto Trading Bot (Freqtrade): Синхронизация котировок Bybit/Binance и репликация доходности', 'Юра');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="world-card" style="margin-bottom:14px; border-left:3px solid #06b6d4;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <h4 style="margin:0; font-size:0.95rem; color:#38bdf8;">🌐 Департамент AI Веб-Разработки, 3D & Кинематографичных Сайтов</h4>
+            <span class="world-badge badge-cyan" style="font-size:0.68rem;">5 Проектов</span>
+        </div>
+        <div style="font-size:0.73rem; color:#94a3b8; margin-bottom:10px;">
+            👤 <b>Куратор:</b> Власлав / @unityspiritpartners &nbsp;|&nbsp; 🤖 <b>Лид-агент:</b> Creative Web3D Architect
+        </div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">8 Diverse Cinematic Demo Websites</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Готовое портфолио</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Development</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">2fcf5308...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> 8 готовых интерактивных сайтов (Wood, Luxury, Auto, Real Estate)
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Использовать как демонстрационную витрину для закрытия B2B клиентов ($1,500-3,000)
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Development');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Development» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту 8 Diverse Cinematic Demo Websites: Использовать как демонстрационную витрину для закрытия B2B клиентов ($1,500-3,000)', 'Development');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Unity Spirit 3D Website & Pyatigorsk Demos</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ 3D Интерактив</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">delaem%20prezervativ 2</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">37e5937b...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Three.js / WebGL эффекты и региональные демо-сайты КМВ
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Упаковка в интерактивное агентство unityspiritpartners.com
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «delaem%20prezervativ 2» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Unity Spirit 3D Website & Pyatigorsk Demos: Упаковка в интерактивное агентство unityspiritpartners.com', 'delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Alberta Shirani Luxury Website</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Воронка 1M ₽)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Saitodel</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">157e46a9...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Премиальный сайт + связка с Veo видеопромптами
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Интеграция с трипвайером и закрытым клубом трансформации
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Saitodel');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Saitodel» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Alberta Shirani Luxury Website: Интеграция с трипвайером и закрытым клубом трансформации', 'Saitodel');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Portfolio Website Expansion Strategy</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Масштабирование</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Websites</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">0b756ec2...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> 15+ кейсов студии в едином шоукейсе
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Публикация кейсов для Upwork и прямого аутрича
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Websites');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Websites» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Portfolio Website Expansion Strategy: Публикация кейсов для Upwork и прямого аутрича', 'Websites');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Unity Platform & Casting Assistant Bot</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Кастинг-Платформа</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Development</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">cee297c7...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Telegram-бот @casting_assist_bot + база моделей и актеров
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Запуск монетизации анкет и подписки на кастинги
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Development');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Development» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Unity Platform & Casting Assistant Bot: Запуск монетизации анкет и подписки на кастинги', 'Development');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="world-card" style="margin-bottom:14px; border-left:3px solid #06b6d4;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <h4 style="margin:0; font-size:0.95rem; color:#38bdf8;">🎯 Департамент B2B Лидогенерации & Холодного Аутрича</h4>
+            <span class="world-badge badge-cyan" style="font-size:0.68rem;">5 Проектов</span>
+        </div>
+        <div style="font-size:0.73rem; color:#94a3b8; margin-bottom:10px;">
+            👤 <b>Куратор:</b> Генеральный Директор Тим & @true1team &nbsp;|&nbsp; 🤖 <b>Лид-агент:</b> Outreach & Pipeline Automation Lead
+        </div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Businesses Without Websites Scraper</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Прямые лиды)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Global Web Market</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">b4d60217...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Парсинг Google Maps 4-5★ компаний Ниагара/Канада без сайтов
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Прямая рассылка готовых кинематографичных демо-сайтов владельцам
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Global Web Market');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Global Web Market» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Businesses Without Websites Scraper: Прямая рассылка готовых кинематографичных демо-сайтов владельцам', 'Global Web Market');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Auto Detailing B2B Leadgen</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Детейлинг)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Detailing</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">01705f05...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> База детейлинг-центров Белграда и Европы + готовый демо-сайт
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Продажа пакета «Сайт + Голосовой ассистент записи» ($1,200)
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Detailing');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Detailing» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Auto Detailing B2B Leadgen: Продажа пакета «Сайт + Голосовой ассистент записи» ($1,200)', 'Detailing');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Comparee.ai & LinkedIn Lead Scraping</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Автоматизация B2B</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">delaem%20prezervativ 2</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">45187534...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Парсинг лиц принимающих решения через Jarvis агент
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Автоматическое наполнение CRM лидами
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «delaem%20prezervativ 2» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Comparee.ai & LinkedIn Lead Scraping: Автоматическое наполнение CRM лидами', 'delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Stealth Lead Tracking & Email Sequences</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Конверсия</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Global + Orders</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">8838013e...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Трекинг посетителей сайта без формы + серия дожимающих писем
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Подключение к сайтам клиентов для повышения конверсии x2.5
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Global + Orders');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Global + Orders» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Stealth Lead Tracking & Email Sequences: Подключение к сайтам клиентов для повышения конверсии x2.5', 'Global + Orders');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Upwork Session Cookies Outreach</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Фриланс-Поток</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Upwork</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">2d071a50...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Автоматическая подача заявок на высокобюджетные контракты Upwork
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Отклик на заказы $2,000+ по стеку React/Next.js/Three.js
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Upwork');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Upwork» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Upwork Session Cookies Outreach: Отклик на заказы $2,000+ по стеку React/Next.js/Three.js', 'Upwork');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="world-card" style="margin-bottom:14px; border-left:3px solid #06b6d4;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <h4 style="margin:0; font-size:0.95rem; color:#38bdf8;">🎬 Департамент Промпт-Инжиниринга & Генеративного Видео</h4>
+            <span class="world-badge badge-cyan" style="font-size:0.68rem;">3 Проектов</span>
+        </div>
+        <div style="font-size:0.73rem; color:#94a3b8; margin-bottom:10px;">
+            👤 <b>Куратор:</b> PromptMaster &nbsp;|&nbsp; 🤖 <b>Лид-агент:</b> Generative Media & Veo Director
+        </div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">15 Industry Prompts Mega-Pack</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Промпт-Библиотека</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">PromptMaster</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">b78ca06c...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> 15 отраслевых наборов промптов (Недвижимость, Авто, Медицина, Ювелирка)
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Использование для генерации контента клиентам в 1 клик
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('PromptMaster');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «PromptMaster» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту 15 Industry Prompts Mega-Pack: Использование для генерации контента клиентам в 1 клик', 'PromptMaster');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Veo Video Commercial Pipelines</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Видео ИИ)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">PromptMaster</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">03731eea...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Промпты для Google Veo / Runway Gen-3 под фабрики и премиум-бренды
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Создание рекламных роликов с чеком 50 000 ₽ за 30-секундный ролик
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('PromptMaster');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «PromptMaster» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Veo Video Commercial Pipelines: Создание рекламных роликов с чеком 50 000 ₽ за 30-секундный ролик', 'PromptMaster');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Elite Auto Salon & Luxury Prompts</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Люкс Сегмент</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">PromptMaster</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">abf90069...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Промпты для кастомных ювелирных салонов «Аурум» и премиум-авто
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Генерация кинематографичных видео-фонов для сайтов
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('PromptMaster');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «PromptMaster» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Elite Auto Salon & Luxury Prompts: Генерация кинематографичных видео-фонов для сайтов', 'PromptMaster');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="world-card" style="margin-bottom:14px; border-left:3px solid #06b6d4;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <h4 style="margin:0; font-size:0.95rem; color:#38bdf8;">📱 Департамент Вирусного Трафика & Контент-Ферм</h4>
+            <span class="world-badge badge-cyan" style="font-size:0.68rem;">4 Проектов</span>
+        </div>
+        <div style="font-size:0.73rem; color:#94a3b8; margin-bottom:10px;">
+            👤 <b>Куратор:</b> Traffic Team & Alberta &nbsp;|&nbsp; 🤖 <b>Лид-агент:</b> Viral Traffic & Social Funnel Lead
+        </div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Контент-Ферма 50 Видео/День (shag-video.ru)</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Трафик-Ферма)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Study</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">4e926dd2...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Авто-генерация 50 вирусных сценариев Reels/Shorts под CPA
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Бесплатный органический трафик на КХЛ бот и B2B услуги
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Study');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Study» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Контент-Ферма 50 Видео/День (shag-video.ru): Бесплатный органический трафик на КХЛ бот и B2B услуги', 'Study');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Feminamind Tripwire Funnels ($7–$27)</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Микро-Продукты</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">delaem%20prezervativ 2</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">0077de92...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Линейка цифровых продуктов с конверсией 5-8% в холодном трафике
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Окупаемость рекламного трафика в ноль с первого дня
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «delaem%20prezervativ 2» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Feminamind Tripwire Funnels ($7–$27): Окупаемость рекламного трафика в ноль с первого дня', 'delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Instagram Monetization Funnel (Alberta)</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Клуб Alberta)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Alberta</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">6927805b...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Связка: Reel ➔ Директ-бот ➔ Лид-магнит ➔ Подписка на клуб (3,500 ₽/мес)
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Масштабирование аудитории до 10,000 подписчиков
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Alberta');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Alberta» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Instagram Monetization Funnel (Alberta): Масштабирование аудитории до 10,000 подписчиков', 'Alberta');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">YouTube Creator & Visual Remake 111</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Визуальный Ремейк</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Vlaslove</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">46375a89...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> AI-ремейк изображений и превью роликов YouTube
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> CTR оптимизация видеороликов
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Vlaslove');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Vlaslove» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту YouTube Creator & Visual Remake 111: CTR оптимизация видеороликов', 'Vlaslove');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="world-card" style="margin-bottom:14px; border-left:3px solid #06b6d4;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <h4 style="margin:0; font-size:0.95rem; color:#38bdf8;">🏛️ Департамент Главного Штаба, Безопасности & Платформ</h4>
+            <span class="world-badge badge-cyan" style="font-size:0.68rem;">5 Проектов</span>
+        </div>
+        <div style="font-size:0.73rem; color:#94a3b8; margin-bottom:10px;">
+            👤 <b>Куратор:</b> Власлав & Генеральный Директор Тим &nbsp;|&nbsp; 🤖 <b>Лид-агент:</b> Chief of Staff & Core Platform Architect
+        </div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Virtual Office v26.0 (Remote Agents Control)</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Главный Центр)</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">System 1</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">5eeab7b0...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> PWA интерфейс · 24/7 Телеметрия · NotebookLM RAG · Модалки офферов
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Центральное управление всеми процессами и агентами
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('System 1');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «System 1» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Virtual Office v26.0 (Remote Agents Control): Центральное управление всеми процессами и агентами', 'System 1');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">SoloMan Autonomous CRM</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ CRM Одиночки</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">SoloMan</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">232a2335...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> ТЗ_SoloMan_CRM.html · Полная изоляция лидов и сделок
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Использование как персонального трекера сделок Власлава
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('SoloMan');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «SoloMan» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту SoloMan Autonomous CRM: Использование как персонального трекера сделок Власлава', 'SoloMan');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Globalmarket Autonomous Hub (Abacus.AI Model)</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ AI Платформа</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Vlaslove</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">067104f7...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Архитектура корпоративного AI-хаба Globalmarket
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Развертывание B2B платформы для средних предприятий
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Vlaslove');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Vlaslove» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Globalmarket Autonomous Hub (Abacus.AI Model): Развертывание B2B платформы для средних предприятий', 'Vlaslove');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Scam Check & Anti-Phishing Sentinel</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">⚡ Безопасность</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">delaem%20prezervativ 2</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">8a3ad7b1...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Проверка ссылок и контрагентов на скам и вирусы
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Защита экосистемы от утечек и фишинга
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «delaem%20prezervativ 2» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Scam Check & Anti-Phishing Sentinel: Защита экосистемы от утечек и фишинга', 'delaem%20prezervativ 2');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Belarus Regional Telegram Services</span>
+                <span class="world-badge badge-amber" style="font-size:0.65rem;">💼 Региональный B2B</span>
+            </div>
+            <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
+                📁 Папка: <code style="color:#38bdf8; font-weight:700;">Белорусь</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">4be732e9...</span>
+            </div>
+            <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
+                📊 <b>Метрики:</b> Автошкола 'Пора за Руль' (Минск) + анонимные боты
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
+                ⚡ <b>Следующий шаг:</b> Поддержка и монетизация региональных лидов
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('Белорусь');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
+                    📁 Открыть папку «Белорусь» →
+                </button>
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Belarus Regional Telegram Services: Поддержка и монетизация региональных лидов', 'Белорусь');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    👑 Поручить Тиму
+                </button>
+            </div>
+        </div>
+    </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-top:12px;">
+            <button type="button" onclick="closeDepartmentsModal()" style="background:rgba(255,255,255,0.12); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer; font-weight:700;">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</div>
+
 <script id="world-class-office-scripts">
+// ============================================================================
+// === v27.0: STRICT MULTI-TENANT RBAC, PERSONAL AGENTS & BUTTON GUARD      ===
+// ============================================================================
+var PERSONAL_MEMBER_AGENTS_DIRECTORY = {
+    "aliashirani": {
+        title: "🌸 Персональный Штаб Alberta Shirani",
+        subtitle: "Вам доступны только ваши папки («Alberta» и «Личный Офис: @aliashirani») и ваши выделенные ИИ-агенты 24/7",
+        folders: ["Alberta", "Личный Офис: @aliashirani"],
+        agents: [
+            {
+                name: "🌸 AI-Продюсер Воронки (Alberta Funnel Architect)",
+                badge: "🟢 В работе 24/7",
+                desc: "Архитектура инфопродуктов для женщин 30–50 лет (Красота, Энергия, Кинематографический стиль жизни).",
+                workingOn: "Над чем работает сейчас: Лид-магнит (тест из 5 вопросов), оффер Закрытого Клуба (14 900 ₽/мес) и VIP-наставничество (99 000 – 150 000 ₽).",
+                presetCmd: "Тим, обнови структуру воронки и прогрева для закрытого клуба Alberta Shirani (14 900 ₽/мес)",
+                project: "Alberta"
+            },
+            {
+                name: "🎬 VEO 3.1 & WebApp Cinema Agent",
+                badge: "🟢 В работе 24/7",
+                desc: "Генерация кинематографических видео-промптов и поддержка интерактивного Telegram WebApp.",
+                workingOn: "Над чем работает сейчас: Сборка скролл-анимации из 900 WebP кадров (60fps) и сценарии Reels/Shorts для привлечения женской аудитории.",
+                presetCmd: "Тим, сгенерируй 5 новых кинематографических видео-сценариев VEO 3.1 для Reels Alberta Shirani",
+                project: "Alberta"
+            },
+            {
+                name: "🤖 Telegram-Бот Автопродаж (Alberta Sales Bot)",
+                badge: "🟢 В работе 24/7",
+                desc: "Автоматизация приёма заявок, квалификации лидов и оплаты подписки в Telegram.",
+                workingOn: "Над чем работает сейчас: Сценарий автоматического дожима после прохождения теста и выдача ссылки на оплату клуба.",
+                presetCmd: "Тим, проверь цепочку сообщений Telegram-бота Alberta Shirani для выхода на 1 000 000 ₽/мес",
+                project: "Alberta"
+            }
+        ]
+    },
+    "yvyatkin": {
+        title: "🏒 Персональный Штаб Юрия Вяткина (@yvyatkin)",
+        subtitle: "Вам доступны только ваши папки («Юра» и «Личный Офис: @yvyatkin») и ваши выделенные квантовые ИИ-агенты 24/7",
+        folders: ["Юра", "Личный Офис: @yvyatkin"],
+        agents: [
+            {
+                name: "🏒 KHL AI Predictor Bot (PID 12696 · Quant Engine)",
+                badge: "🟢 WinRate 82.9%",
+                desc: "Двухуровневая байесовская модель Пуассона + xG для прогнозирования матчей КХЛ.",
+                workingOn: "Над чем работает сейчас: Парсинг линий БК 24/7, калибровка на 82 матчах (WinRate 82.9%, ROI +53.4%, Brier 0.1716), отбор валуйных кэфов >= 1.85.",
+                presetCmd: "Тим, сформируй актуальный разбор ближайших матчей КХЛ с кэфами >= 1.85 по модели Пуассона",
+                project: "Юра"
+            },
+            {
+                name: "📈 AI Crypto Trading Bot (Freqtrade Arena)",
+                badge: "🟢 В работе 24/7",
+                desc: "Алгоритмический анализ крипторынка и тестирование торговых стратегий без риска.",
+                workingOn: "Над чем работает сейчас: Мониторинг импульсов BTC/ETH/SOL, фильтрация ложных пробоев и расчёт математического ожидания сделок.",
+                presetCmd: "Тим, покажи текущий отчёт и параметры риск-менеджмента по AI Crypto Trading Bot в папке Юра",
+                project: "Юра"
+            },
+            {
+                name: "🤝 VIP-Канал & Монетизация Прогнозов Агент",
+                badge: "🟢 В работе 24/7",
+                desc: "Упаковка верифицированной статистики и подготовка ежедневных утренних рассылок.",
+                workingOn: "Над чем работает сейчас: Подготовка шаблонов отчётов для VIP-подписчиков (3 900 ₽/мес) и учёт банка.",
+                presetCmd: "Тим, подготовь утренний пост со статистикой побед КХЛ Бота (82.9%) для VIP-канала",
+                project: "Юра"
+            }
+        ]
+    },
+    "tatianaknyazeva777": {
+        title: "🍯 Персональный Штаб Татьяны Князевой (tentorium.ru)",
+        subtitle: "Вам доступны только ваши папки («Татьяна tentorium.ru» и «Личный Офис: @tatianaknyazeva777») и ваши выделенные ИИ-агенты 24/7",
+        folders: ["Татьяна tentorium.ru", "Личный Офис: @tatianaknyazeva777"],
+        agents: [
+            {
+                name: "🐝 E-Commerce & Catalog Agent (tentorium.ru)",
+                badge: "🟢 В работе 24/7",
+                desc: "Управление каталогом велнес-продукции, карточками товаров и наборами здоровья.",
+                workingOn: "Над чем работает сейчас: Оптимизация описаний хитов продукции Тенториум и сборка высокомаржинальных подарочных и сезонных наборов.",
+                presetCmd: "Тим, подготовь продающее описание для топ-5 сезонных наборов здоровья tentorium.ru",
+                project: "Татьяна tentorium.ru"
+            },
+            {
+                name: "💬 AI-Консультант Клиентов 24/7",
+                badge: "🟢 В работе 24/7",
+                desc: "Автоматический подбор программ здоровья и ответы на вопросы покупателей.",
+                workingOn: "Над чем работает сейчас: Скрипты консультаций по укреплению иммунитета и энергии, перевод лидов в повторные заказы.",
+                presetCmd: "Тим, составь скрипт быстрой консультации клиента в WhatsApp/Telegram для подбора набора Тенториум",
+                project: "Татьяна tentorium.ru"
+            },
+            {
+                name: "📈 Трафик & Лояльность Агент",
+                badge: "🟢 В работе 24/7",
+                desc: "Привлечение новых клиентов и реактивация существующей базы покупателей.",
+                workingOn: "Над чем работает сейчас: Контент-план полезных постов и акций месяца для роста повторных покупок.",
+                presetCmd: "Тим, создай серию из 3 прогревающих постов для клиентов tentorium.ru с приглашением на консультацию",
+                project: "Татьяна tentorium.ru"
+            }
+        ]
+    }
+};
+
+function getMemberIsolationProfile() {
+    if (!currentAuthUser) return null;
+    const l = (currentAuthUser.login || "").toLowerCase().replace(/^@/, "").trim();
+    if (l === "aliashirani" || l === "alberta_shirani" || l === "alberta") return PERSONAL_MEMBER_AGENTS_DIRECTORY["aliashirani"];
+    if (l === "yvyatkin" || l === "jv" || l === "yuri") return PERSONAL_MEMBER_AGENTS_DIRECTORY["yvyatkin"];
+    if (l === "tatianaknyazeva777" || l === "tatiana") return PERSONAL_MEMBER_AGENTS_DIRECTORY["tatianaknyazeva777"];
+    const myFolders = getUserAssignedProjects();
+    const mainProj = myFolders[0] || ("Личный Офис: @" + l);
+    return {
+        title: "🏢 Персональный Офис: @" + l,
+        subtitle: "Вам доступны только ваши назначенные папки и ваши персональные ИИ-агенты 24/7",
+        folders: myFolders,
+        agents: [
+            {
+                name: "👑 Персональный AI-Координатор (@" + l + ")",
+                badge: "🟢 В работе 24/7",
+                desc: "Управление вашими задачами, заметками и материалами в личной папке.",
+                workingOn: "Над чем работает сейчас: Обработка входящих задач и структурирование материалов в папке «" + mainProj + "».",
+                presetCmd: "Тим, проанализируй текущие задачи в моей папке и составь план приоритетных шагов",
+                project: mainProj
+            },
+            {
+                name: "🔎 Персональный AI-Исследователь",
+                badge: "🟢 В работе 24/7",
+                desc: "Глубокий разбор ссылок, скриншотов и документов с сохранением выводов.",
+                workingOn: "Над чем работает сейчас: Готов к изучению новых ссылок и фото в папке «" + mainProj + "».",
+                presetCmd: "Тим, проведи исследование рынка и конкурентов по тематике моей папки",
+                project: mainProj
+            },
+            {
+                name: "⚡ AI-Исполнитель Задач 24/7",
+                badge: "🟢 В работе 24/7",
+                desc: "Подготовка готовых текстов, коммерческих предложений, таблиц и решений.",
+                workingOn: "Над чем работает сейчас: Автономное выполнение поручений в папке «" + mainProj + "».",
+                presetCmd: "Тим, подготовь готовый драфт коммерческого предложения и план действий по моей папке",
+                project: mainProj
+            }
+        ]
+    };
+}
+
+function applyStrictUserIsolationUI() {
+    const isOwner = (typeof isOwnerSession === "function") && isOwnerSession();
+    const pillsBox = document.getElementById("world-telemetry-pills");
+    const rightLbl = document.getElementById("world-telemetry-right-label");
+    const workerTxt = document.getElementById("worker-text");
+
+    if (isOwner) {
+        document.body.classList.remove("member-nodel");
+        document.body.classList.add("owner-full-access");
+        if (pillsBox) {
+            pillsBox.innerHTML =
+                '<span class="telemetry-pill" onclick="openAgentsStatusModal()" title="Статус всех 12 автономных ИИ-агентов">' +
+                    '<span class="pulse-indicator"></span>' +
+                    '<strong style="color:#34d399;">12 Агентов 24/7</strong>' +
+                '</span>' +
+                '<span class="telemetry-pill" onclick="openDepartmentsModal()" style="border-color:rgba(168,85,247,0.5); background:rgba(168,85,247,0.14);">' +
+                    '🏛️ <strong style="color:#c084fc;">32 Проекта (6 Отделов)</strong>' +
+                '</span>' +
+                '<span class="telemetry-pill" onclick="openNotebookLMModal()" style="border-color:rgba(6,182,212,0.45); background:rgba(6,182,212,0.12);">' +
+                    '📓 <strong style="color:#38bdf8;">NotebookLM RAG</strong>' +
+                '</span>' +
+                '<span class="telemetry-pill" onclick="openMvpLaunchModal()" style="border-color:rgba(245,158,11,0.45); background:rgba(245,158,11,0.12);">' +
+                    '🚀 <strong style="color:#fbbf24;">Топ MVP ($1,000 + $300/мес)</strong>' +
+                '</span>' +
+                '<span class="telemetry-pill" onclick="openUserActivityMonitorModal()" style="border-color:rgba(236,72,153,0.45); background:rgba(236,72,153,0.12);">' +
+                    '👥 <strong style="color:#f472b6;">Монитор Сотрудников</strong>' +
+                '</span>' +
+                '<span class="telemetry-pill" onclick="openSecuredVaultModal()" style="border-color:rgba(16,185,129,0.45); background:rgba(16,185,129,0.12);">' +
+                    '🔒 <strong style="color:#34d399;">Сейф & Доступы</strong>' +
+                '</span>';
+        }
+        if (rightLbl) rightLbl.innerHTML = '<span>👑 Главный Штаб (Полный доступ)</span>';
+        return;
+    }
+
+    // STRICT MEMBER VIEW: Only their own folders and their own agents!
+    document.body.classList.add("member-nodel");
+    document.body.classList.remove("owner-full-access");
+    const prof = getMemberIsolationProfile();
+    if (!prof) return;
+
+    if (workerTxt) {
+        workerTxt.innerText = "🟢 Мои ИИ-Агенты (" + prof.agents.length + "): В работе 24/7";
+    }
+
+    if (pillsBox) {
+        const folderPills = prof.folders.map(f => {
+            const sf = f.replace(/'/g, "\\'");
+            return '<span class="telemetry-pill" onclick="selectProject(\'' + sf + '\')" style="border-color:rgba(59,130,246,0.45); background:rgba(59,130,246,0.14);">' +
+                '📁 <strong style="color:#93c5fd;">' + escapeHtml(f) + '</strong>' +
+            '</span>';
+        }).join("");
+
+        pillsBox.innerHTML =
+            '<span class="telemetry-pill" onclick="switchTab(\'tim\', document.getElementById(\'nav-btn-tim\'))" title="Посмотреть над чем работают ваши агенты">' +
+                '<span class="pulse-indicator"></span>' +
+                '<strong style="color:#34d399;">Мои Агенты (' + prof.agents.length + ') · 24/7</strong>' +
+            '</span>' +
+            folderPills;
+    }
+    if (rightLbl) {
+        rightLbl.innerHTML = '<span>🔒 Личный доступ</span>';
+    }
+
+    // Update #tab-tim to show ONLY this member's personal agents and what they are working on
+    const timTab = document.getElementById("tab-tim");
+    if (timTab) {
+        let existingMemberBox = document.getElementById("member-isolated-agents-view");
+        // Hide global presets and global 7 departments inside #tab-tim for members
+        Array.from(timTab.children).forEach(ch => {
+            if (ch.id === "member-isolated-agents-view") return;
+            // Keep the last child (tim-reports-container wrapper) visible so member sees their own folder's Tim reports
+            if (ch.querySelector && ch.querySelector("#tim-reports-container")) {
+                ch.style.display = "block";
+            } else {
+                ch.style.display = "none";
+            }
+        });
+
+        if (!existingMemberBox) {
+            existingMemberBox = document.createElement("div");
+            existingMemberBox.id = "member-isolated-agents-view";
+            timTab.insertBefore(existingMemberBox, timTab.firstChild);
+        }
+
+        const agCardsHtml = prof.agents.map(ag => {
+            const sp = ag.project.replace(/'/g, "\\'");
+            const sc = ag.presetCmd.replace(/'/g, "\\'");
+            return '<div style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:6px;">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">' +
+                    '<span style="font-weight:800; font-size:0.86rem; color:var(--text-main);">' + escapeHtml(ag.name) + '</span>' +
+                    '<span class="badge done" style="font-size:0.68rem;">' + escapeHtml(ag.badge) + '</span>' +
+                '</div>' +
+                '<div style="font-size:0.75rem; color:var(--text-dim); line-height:1.4;">' + escapeHtml(ag.desc) + '</div>' +
+                '<div style="font-size:0.75rem; color:#34d399; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:8px; padding:7px 9px; line-height:1.4;">' +
+                    '⚙️ <b>' + escapeHtml(ag.workingOn) + '</b>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
+                    '<button type="button" class="mini-btn accent" onclick="sendTimPreset(\'' + sc + '\', \'' + sp + '\')">⚡ Запустить поручение агенту →</button>' +
+                    '<button type="button" class="mini-btn" onclick="selectProject(\'' + sp + '\')">📁 Открыть папку «' + escapeHtml(ag.project) + '»</button>' +
+                '</div>' +
+            '</div>';
+        }).join("");
+
+        existingMemberBox.innerHTML =
+            '<div style="background:linear-gradient(135deg, rgba(16,185,129,0.15), rgba(59,130,246,0.15)); border:1px solid rgba(16,185,129,0.4); border-radius:14px; padding:14px; margin-bottom:12px;">' +
+                '<div style="font-weight:900; font-size:0.95rem; color:#f8fafc;">' + escapeHtml(prof.title) + '</div>' +
+                '<div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px; line-height:1.4;">' + escapeHtml(prof.subtitle) + '</div>' +
+            '</div>' +
+            '<div style="font-size:0.75rem; font-weight:800; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">🤖 Ваши персональные ИИ-агенты и над чем они сейчас работают:</div>' +
+            '<div style="display:flex; flex-direction:column; gap:10px; margin-bottom:14px;">' + agCardsHtml + '</div>';
+    }
+
+    // Update #tab-dashboard ("Мой Офис") to hide global company ecosystem cards and show only the member's folders & agents
+    const dashTab = document.getElementById("tab-dashboard");
+    if (dashTab) {
+        let memberDashBox = document.getElementById("member-isolated-dashboard-view");
+        Array.from(dashTab.children).forEach(ch => {
+            if (ch.id === "member-isolated-dashboard-view") return;
+            ch.style.display = "none";
+        });
+        if (!memberDashBox) {
+            memberDashBox = document.createElement("div");
+            memberDashBox.id = "member-isolated-dashboard-view";
+            dashTab.insertBefore(memberDashBox, dashTab.firstChild);
+        }
+        const folderBtns = prof.folders.map(f => {
+            const sf = f.replace(/'/g, "\\'");
+            return '<button type="button" class="btn-action accent" onclick="selectProject(\'' + sf + '\')" style="padding:10px 14px; font-weight:800;">📁 Открыть «' + escapeHtml(f) + '» →</button>';
+        }).join(" ");
+
+        const agSummary = prof.agents.map(a =>
+            '<div style="padding:8px 10px; background:var(--bg-main); border:1px solid var(--border); border-radius:9px;">' +
+                '<div style="font-weight:800; font-size:0.8rem; color:var(--text-main);">' + escapeHtml(a.name) + ' <span style="color:#34d399; font-size:0.7rem;">(' + escapeHtml(a.badge) + ')</span></div>' +
+                '<div style="font-size:0.73rem; color:var(--text-dim); margin-top:3px;">' + escapeHtml(a.workingOn) + '</div>' +
+            '</div>'
+        ).join("");
+
+        memberDashBox.innerHTML =
+            '<div class="project-card" style="cursor:default; border-left:3px solid #10b981;">' +
+                '<div class="p-card-name">' + escapeHtml(prof.title) + '</div>' +
+                '<div style="font-size:0.76rem; color:var(--text-dim); margin-top:4px; line-height:1.45;">' + escapeHtml(prof.subtitle) + '</div>' +
+                '<div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">' + folderBtns + '</div>' +
+            '</div>' +
+            '<div class="project-card" style="cursor:default; border-left:3px solid #3b82f6; margin-top:10px;">' +
+                '<div class="p-card-name">🤖 Над чем сейчас работают ваши ИИ-агенты (24/7):</div>' +
+                '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">' + agSummary + '</div>' +
+            '</div>';
+    }
+
+    // Hide global plan filter chips for members
+    const planFilters = document.getElementById("plan-sub-filters");
+    if (planFilters) {
+        planFilters.querySelectorAll(".chip").forEach(ch => {
+            const dv = ch.getAttribute("data-view");
+            if (dv === "improvements" || dv === "instincts" || dv === "report") {
+                ch.style.display = "none";
+            }
+        });
+    }
+}
+
+window.openAgentsStatusModal = function() {
+    if (typeof isOwnerSession === "function" && isOwnerSession()) {
+        if (typeof openAntigravityModal === "function") openAntigravityModal();
+    } else {
+        if (typeof switchTab === "function") switchTab("tim", document.getElementById("nav-btn-tim"));
+    }
+};
+
 function openNotebookLMModal() {
+    if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+        if (typeof showToast === "function") showToast("🔒 Доступно только Главному Штабу (@unityspiritpartners)");
+        return;
+    }
     const m = document.getElementById("modal-notebooklm");
     if (m) m.style.display = "flex";
 }
@@ -13609,11 +14621,27 @@ function closeNotebookLMModal() {
     if (m) m.style.display = "none";
 }
 function openMvpLaunchModal() {
+    if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+        if (typeof showToast === "function") showToast("🔒 Доступно только Главному Штабу (@unityspiritpartners)");
+        return;
+    }
     const m = document.getElementById("modal-mvp-launch");
     if (m) m.style.display = "flex";
 }
 function closeMvpLaunchModal() {
     const m = document.getElementById("modal-mvp-launch");
+    if (m) m.style.display = "none";
+}
+function openDepartmentsModal() {
+    if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+        if (typeof showToast === "function") showToast("🔒 Полный реестр 32 проектов доступен только Главному Штабу (@unityspiritpartners)");
+        return;
+    }
+    const m = document.getElementById("modal-departments-ecosystem");
+    if (m) m.style.display = "flex";
+}
+function closeDepartmentsModal() {
+    const m = document.getElementById("modal-departments-ecosystem");
     if (m) m.style.display = "none";
 }
 function copyMvpProposal() {
@@ -13626,30 +14654,88 @@ function copyMvpProposal() {
                 st.style.display = "inline";
                 setTimeout(() => { st.style.display = "none"; }, 3000);
             }
-        }).catch(err => {
-            document.execCommand('copy');
-            alert("Текст оффера скопирован!");
+            if (typeof showToast === "function") showToast("✅ Текст КП скопирован в буфер обмена!");
+        }).catch(() => {
+            document.execCommand("copy");
+            if (typeof showToast === "function") showToast("✅ Текст КП скопирован!");
         });
     }
 }
 function triggerTestAiCall() {
-    alert("⚡ Демо-шлюз AltaDesk активен. Уведомление о звонке отправлено в @unitybusinessbot!");
+    closeMvpLaunchModal();
+    if (typeof switchTab === "function") switchTab("tim", document.getElementById("nav-btn-tim"));
+    if (typeof sendTimPreset === "function") {
+        sendTimPreset("Тим, запусти B2B-обзвон и рассылку КП AltaDesk AI Voice ($750 setup + $350/мес) по базе отелей и клиник", "Traffic");
+    }
 }
 function triggerNotebookLmSearch() {
-    const val = document.getElementById("notebooklm-query-input").value;
-    if (!val) { alert("Введите тему или URL для синтеза знаний"); return; }
-    alert("🧠 NotebookLM RAG: задача '" + val + "' принята к глубинному исследованию агентами.");
+    const inp = document.getElementById("notebooklm-query-input");
+    const val = inp ? inp.value.trim() : "";
+    if (!val) {
+        if (typeof showToast === "function") showToast("⚠️ Введите тему или ссылку для изучения");
+        return;
+    }
+    closeNotebookLMModal();
+    if (typeof sendTimPreset === "function") {
+        sendTimPreset("NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: " + val, currentProject || "Позновалка");
+    }
+    if (inp) inp.value = "";
 }
 
-// Global Bulletproof Button Guard
+// Wrap Owner-only modals so non-owners can never open them
+(function() {
+    const origOpenVault = window.openSecuredVaultModal;
+    if (typeof origOpenVault === "function") {
+        window.openSecuredVaultModal = function(tabName) {
+            if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+                if (typeof showToast === "function") showToast("🔒 Доступ к Сейфу есть только у Главного Штаба (@unityspiritpartners)");
+                return;
+            }
+            return origOpenVault(tabName);
+        };
+    }
+    const origOpenMon = window.openUserActivityMonitorModal;
+    if (typeof origOpenMon === "function") {
+        window.openUserActivityMonitorModal = function() {
+            if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+                if (typeof showToast === "function") showToast("🔒 Монитор всех сотрудников доступен только Главному Штабу");
+                return;
+            }
+            return origOpenMon();
+        };
+    }
+    const origOpenAg = window.openAntigravityModal;
+    if (typeof origOpenAg === "function") {
+        window.openAntigravityModal = function() {
+            if (typeof isOwnerSession === "function" && !isOwnerSession()) {
+                if (typeof switchTab === "function") switchTab("tim", document.getElementById("nav-btn-tim"));
+                return;
+            }
+            return origOpenAg();
+        };
+    }
+    const origSwitchTab = window.switchTab;
+    if (typeof origSwitchTab === "function") {
+        window.switchTab = function(tabId, btnEl) {
+            const res = origSwitchTab(tabId, btnEl);
+            if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
+            return res;
+        };
+    }
+    const origRenderAgentsStatus = window.renderAgentsStatus;
+    if (typeof origRenderAgentsStatus === "function") {
+        window.renderAgentsStatus = function() {
+            const res = origRenderAgentsStatus();
+            if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
+            return res;
+        };
+    }
+})();
+
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("🛡️ World-Class Office Architecture: Initializing bulletproof handlers...");
-    const allButtons = document.querySelectorAll("button");
-    allButtons.forEach(btn => {
-        btn.addEventListener("error", function(e) {
-            console.warn("Caught button interaction error:", e);
-        });
-    });
+    setTimeout(function() {
+        if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
+    }, 120);
 });
 </script>
 
