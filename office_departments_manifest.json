@@ -1,0 +1,298 @@
+[
+  {
+    "dept_id": "DEPT_1_FINTECH",
+    "dept_name": "📈 Департамент Квантовых Финансов & Алготрейдинга",
+    "owner": "Юрий Вяткин / @yvyatkin",
+    "lead_agent": "Sports Bayesian Quant & Trading Lead",
+    "folder": "Юра",
+    "projects": [
+      {
+        "name": "KHL Sports Quant Predictor",
+        "folder": "Юра",
+        "conv_id": "188674d1-58d7-4632-8dfb-b0b6910606fe",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (КХЛ Сигналы)",
+        "status": "active_running",
+        "pid": 12696,
+        "metrics": "82 матча · WinRate 82.9% · ROI +53.4% · Brier 0.1716",
+        "action": "Ежедневная VIP-рассылка в @Vlaslovebot (3,900 ₽/мес) и CPA eToro ($200-600)"
+      },
+      {
+        "name": "AI Crypto Trading Bot (Freqtrade)",
+        "folder": "Юра",
+        "conv_id": "76516183-42c1-4bdb-bc50-23038a4ecb45",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Крипто Трейдинг)",
+        "status": "active_running",
+        "pid": 17936,
+        "metrics": "UptrendDipVolStrategy · Порт 8060 · Dry-run мониторинг",
+        "action": "Синхронизация котировок Bybit/Binance и репликация доходности"
+      }
+    ]
+  },
+  {
+    "dept_id": "DEPT_2_WEB3D",
+    "dept_name": "🌐 Департамент AI Веб-Разработки, 3D & Кинематографичных Сайтов",
+    "owner": "Власлав / @unityspiritpartners",
+    "lead_agent": "Creative Web3D Architect",
+    "folder": "Development",
+    "projects": [
+      {
+        "name": "8 Diverse Cinematic Demo Websites",
+        "folder": "Development",
+        "conv_id": "2fcf5308-3a13-4315-bb82-2775f0f3ae90",
+        "priority": "P2",
+        "priority_label": "⚡ Готовое портфолио",
+        "status": "ready_for_sale",
+        "metrics": "8 готовых интерактивных сайтов (Wood, Luxury, Auto, Real Estate)",
+        "action": "Использовать как демонстрационную витрину для закрытия B2B клиентов ($1,500-3,000)"
+      },
+      {
+        "name": "Unity Spirit 3D Website & Pyatigorsk Demos",
+        "folder": "delaem%20prezervativ 2",
+        "conv_id": "37e5937b-9518-46bd-a74f-e8587789ad73",
+        "priority": "P2",
+        "priority_label": "⚡ 3D Интерактив",
+        "status": "developed",
+        "metrics": "Three.js / WebGL эффекты и региональные демо-сайты КМВ",
+        "action": "Упаковка в интерактивное агентство unityspiritpartners.com"
+      },
+      {
+        "name": "Alberta Shirani Luxury Website",
+        "folder": "Saitodel",
+        "conv_id": "157e46a9-94da-41b4-959f-6cffd485cfe8",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Воронка 1M ₽)",
+        "status": "in_progress",
+        "metrics": "Премиальный сайт + связка с Veo видеопромптами",
+        "action": "Интеграция с трипвайером и закрытым клубом трансформации"
+      },
+      {
+        "name": "Portfolio Website Expansion Strategy",
+        "folder": "Websites",
+        "conv_id": "0b756ec2-3f68-4887-ae84-86422d774703",
+        "priority": "P2",
+        "priority_label": "⚡ Масштабирование",
+        "status": "active",
+        "metrics": "15+ кейсов студии в едином шоукейсе",
+        "action": "Публикация кейсов для Upwork и прямого аутрича"
+      },
+      {
+        "name": "Unity Platform & Casting Assistant Bot",
+        "folder": "Development",
+        "conv_id": "cee297c7-f3e0-4193-a5c0-5b971d7e1d6f",
+        "priority": "P2",
+        "priority_label": "⚡ Кастинг-Платформа",
+        "status": "active",
+        "metrics": "Telegram-бот @casting_assist_bot + база моделей и актеров",
+        "action": "Запуск монетизации анкет и подписки на кастинги"
+      }
+    ]
+  },
+  {
+    "dept_id": "DEPT_3_LEADGEN",
+    "dept_name": "🎯 Департамент B2B Лидогенерации & Холодного Аутрича",
+    "owner": "Генеральный Директор Тим & @true1team",
+    "lead_agent": "Outreach & Pipeline Automation Lead",
+    "folder": "Global Web Market",
+    "projects": [
+      {
+        "name": "Businesses Without Websites Scraper",
+        "folder": "Global Web Market",
+        "conv_id": "b4d60217-bb7f-404d-bf8d-64e579e44fe3",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Прямые лиды)",
+        "status": "active",
+        "metrics": "Парсинг Google Maps 4-5★ компаний Ниагара/Канада без сайтов",
+        "action": "Прямая рассылка готовых кинематографичных демо-сайтов владельцам"
+      },
+      {
+        "name": "Auto Detailing B2B Leadgen",
+        "folder": "Detailing",
+        "conv_id": "01705f05-c7dc-4b6e-80b3-dd0e3da9a9c2",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Детейлинг)",
+        "status": "active",
+        "metrics": "База детейлинг-центров Белграда и Европы + готовый демо-сайт",
+        "action": "Продажа пакета «Сайт + Голосовой ассистент записи» ($1,200)"
+      },
+      {
+        "name": "Comparee.ai & LinkedIn Lead Scraping",
+        "folder": "delaem%20prezervativ 2",
+        "conv_id": "45187534-4b53-4dc9-9d7a-1ea407c0bfb2",
+        "priority": "P2",
+        "priority_label": "⚡ Автоматизация B2B",
+        "status": "active",
+        "metrics": "Парсинг лиц принимающих решения через Jarvis агент",
+        "action": "Автоматическое наполнение CRM лидами"
+      },
+      {
+        "name": "Stealth Lead Tracking & Email Sequences",
+        "folder": "Global + Orders",
+        "conv_id": "8838013e-bf63-4796-9f88-e99997ceae30",
+        "priority": "P2",
+        "priority_label": "⚡ Конверсия",
+        "status": "active",
+        "metrics": "Трекинг посетителей сайта без формы + серия дожимающих писем",
+        "action": "Подключение к сайтам клиентов для повышения конверсии x2.5"
+      },
+      {
+        "name": "Upwork Session Cookies Outreach",
+        "folder": "Upwork",
+        "conv_id": "2d071a50-fa7f-475b-8e04-945206e81923",
+        "priority": "P2",
+        "priority_label": "⚡ Фриланс-Поток",
+        "status": "ready",
+        "metrics": "Автоматическая подача заявок на высокобюджетные контракты Upwork",
+        "action": "Отклик на заказы $2,000+ по стеку React/Next.js/Three.js"
+      }
+    ]
+  },
+  {
+    "dept_id": "DEPT_4_PROMPTS_VEO",
+    "dept_name": "🎬 Департамент Промпт-Инжиниринга & Генеративного Видео",
+    "owner": "PromptMaster",
+    "lead_agent": "Generative Media & Veo Director",
+    "folder": "PromptMaster",
+    "projects": [
+      {
+        "name": "15 Industry Prompts Mega-Pack",
+        "folder": "PromptMaster",
+        "conv_id": "b78ca06c-2f2a-4d8e-9493-b637b8690a6c",
+        "priority": "P2",
+        "priority_label": "⚡ Промпт-Библиотека",
+        "status": "completed",
+        "metrics": "15 отраслевых наборов промптов (Недвижимость, Авто, Медицина, Ювелирка)",
+        "action": "Использование для генерации контента клиентам в 1 клик"
+      },
+      {
+        "name": "Veo Video Commercial Pipelines",
+        "folder": "PromptMaster",
+        "conv_id": "03731eea-8dce-4c49-8132-bc2cb67a2602",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Видео ИИ)",
+        "status": "active",
+        "metrics": "Промпты для Google Veo / Runway Gen-3 под фабрики и премиум-бренды",
+        "action": "Создание рекламных роликов с чеком 50 000 ₽ за 30-секундный ролик"
+      },
+      {
+        "name": "Elite Auto Salon & Luxury Prompts",
+        "folder": "PromptMaster",
+        "conv_id": "abf90069-2ed7-48b6-82bb-cba8b33348fb",
+        "priority": "P2",
+        "priority_label": "⚡ Люкс Сегмент",
+        "status": "active",
+        "metrics": "Промпты для кастомных ювелирных салонов «Аурум» и премиум-авто",
+        "action": "Генерация кинематографичных видео-фонов для сайтов"
+      }
+    ]
+  },
+  {
+    "dept_id": "DEPT_5_TRAFFIC_FARMS",
+    "dept_name": "📱 Департамент Вирусного Трафика & Контент-Ферм",
+    "owner": "Traffic Team & Alberta",
+    "lead_agent": "Viral Traffic & Social Funnel Lead",
+    "folder": "Study",
+    "projects": [
+      {
+        "name": "Контент-Ферма 50 Видео/День (shag-video.ru)",
+        "folder": "Study",
+        "conv_id": "4e926dd2-04e8-4226-bf70-96f3c178cb77",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Трафик-Ферма)",
+        "status": "in_implementation",
+        "metrics": "Авто-генерация 50 вирусных сценариев Reels/Shorts под CPA",
+        "action": "Бесплатный органический трафик на КХЛ бот и B2B услуги"
+      },
+      {
+        "name": "Feminamind Tripwire Funnels ($7–$27)",
+        "folder": "delaem%20prezervativ 2",
+        "conv_id": "0077de92-e625-4dbc-8e52-a9e51b7f5a41",
+        "priority": "P2",
+        "priority_label": "⚡ Микро-Продукты",
+        "status": "ready_to_launch",
+        "metrics": "Линейка цифровых продуктов с конверсией 5-8% в холодном трафике",
+        "action": "Окупаемость рекламного трафика в ноль с первого дня"
+      },
+      {
+        "name": "Instagram Monetization Funnel (Alberta)",
+        "folder": "Alberta",
+        "conv_id": "6927805b-80df-416b-a82f-87063d84b256",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Клуб Alberta)",
+        "status": "active",
+        "metrics": "Связка: Reel ➔ Директ-бот ➔ Лид-магнит ➔ Подписка на клуб (3,500 ₽/мес)",
+        "action": "Масштабирование аудитории до 10,000 подписчиков"
+      },
+      {
+        "name": "YouTube Creator & Visual Remake 111",
+        "folder": "Vlaslove",
+        "conv_id": "46375a89-f03a-448d-a733-c000cd4438e1",
+        "priority": "P2",
+        "priority_label": "⚡ Визуальный Ремейк",
+        "status": "active",
+        "metrics": "AI-ремейк изображений и превью роликов YouTube",
+        "action": "CTR оптимизация видеороликов"
+      }
+    ]
+  },
+  {
+    "dept_id": "DEPT_6_HQ_PLATFORMS",
+    "dept_name": "🏛️ Департамент Главного Штаба, Безопасности & Платформ",
+    "owner": "Власлав & Генеральный Директор Тим",
+    "lead_agent": "Chief of Staff & Core Platform Architect",
+    "folder": "System 1",
+    "projects": [
+      {
+        "name": "Virtual Office v26.0 (Remote Agents Control)",
+        "folder": "System 1",
+        "conv_id": "5eeab7b0-daf5-414c-a3a0-2d6062b877fe",
+        "priority": "P1",
+        "priority_label": "🔥 Высший (Главный Центр)",
+        "status": "live_v26",
+        "metrics": "PWA интерфейс · 24/7 Телеметрия · NotebookLM RAG · Модалки офферов",
+        "action": "Центральное управление всеми процессами и агентами"
+      },
+      {
+        "name": "SoloMan Autonomous CRM",
+        "folder": "SoloMan",
+        "conv_id": "232a2335-7038-4606-84ac-3e93ddd069c0",
+        "priority": "P2",
+        "priority_label": "⚡ CRM Одиночки",
+        "status": "completed",
+        "metrics": "ТЗ_SoloMan_CRM.html · Полная изоляция лидов и сделок",
+        "action": "Использование как персонального трекера сделок Власлава"
+      },
+      {
+        "name": "Globalmarket Autonomous Hub (Abacus.AI Model)",
+        "folder": "Vlaslove",
+        "conv_id": "067104f7-a53c-4ac6-9710-75cc37c93bec",
+        "priority": "P2",
+        "priority_label": "⚡ AI Платформа",
+        "status": "architected",
+        "metrics": "Архитектура корпоративного AI-хаба Globalmarket",
+        "action": "Развертывание B2B платформы для средних предприятий"
+      },
+      {
+        "name": "Scam Check & Anti-Phishing Sentinel",
+        "folder": "delaem%20prezervativ 2",
+        "conv_id": "8a3ad7b1-4344-421b-af9d-934532713af0",
+        "priority": "P2",
+        "priority_label": "⚡ Безопасность",
+        "status": "active",
+        "metrics": "Проверка ссылок и контрагентов на скам и вирусы",
+        "action": "Защита экосистемы от утечек и фишинга"
+      },
+      {
+        "name": "Belarus Regional Telegram Services",
+        "folder": "Белорусь",
+        "conv_id": "4be732e9-74d3-4a17-b7a4-e91024f2b5fa",
+        "priority": "P3",
+        "priority_label": "💼 Региональный B2B",
+        "status": "active",
+        "metrics": "Автошкола 'Пора за Руль' (Минск) + анонимные боты",
+        "action": "Поддержка и монетизация региональных лидов"
+      }
+    ]
+  }
+]
