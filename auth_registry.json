@@ -1,6 +1,6 @@
 {
   "version": "25.5",
-  "updated_at": "2026-11-11T13:53:54.795949+00:00",
+  "updated_at": "2026-11-11T20:18:00Z",
   "users": [
     {
       "id": "owner-vlaslav",
@@ -27,7 +27,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -58,7 +59,8 @@
         "bot_token": "",
         "chat_id": "8538272428",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -88,7 +90,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -116,7 +119,8 @@
         "bot_token": "",
         "chat_id": "8538272428",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -146,7 +150,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -175,7 +180,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -204,7 +210,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -229,7 +236,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -262,7 +270,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     },
     {
@@ -290,7 +299,8 @@
         "bot_token": "",
         "chat_id": "",
         "auto_send_reports": true,
-        "updated_at": "2026-11-11T13:53:54.795949+00:00"
+        "updated_at": "2026-11-11T13:50:43.065732+00:00",
+        "control_status": "not_configured"
       }
     }
   ]
