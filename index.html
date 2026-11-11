@@ -4,7 +4,7 @@
 <script>
 window.forceHardRefreshApp = function() {
     try {
-        localStorage.removeItem("gsg_app_v27_0_loaded");
+        localStorage.removeItem("gsg_app_v28_0_loaded");
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function(regs) {
                 for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -22,9 +22,9 @@ window.forceHardRefreshApp = function() {
 };
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v27_0_loaded");
+        var v = localStorage.getItem("gsg_app_v28_0_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v27_0_loaded", "true");
+            localStorage.setItem("gsg_app_v28_0_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -12953,6 +12953,10 @@ function enterPendingWaitingRoom(userObj) {
                         (rawPwd ? '<button class="mini-btn" onclick="toggleVaultPwd(\'' + pwdId + '\')">👁️ Показать</button>' : '') +
                         (rawPwd ? '<button class="mini-btn" onclick="copyVaultPwd(\'' + pwdId + '\')">📋</button>' : '') +
                     '</div>' +
+                    '<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin-top:4px;">' +
+                        '<input type="text" id="adm-direct-pwd-' + idx + '" class="task-inline-input" style="max-width:210px; height:28px; font-size:0.73rem;" placeholder="🔑 Новый пароль для ' + escapeHtml(u.login) + '...">' +
+                        '<button type="button" class="mini-btn accent" onclick="adminDirectSetUserPassword(\'' + sl + '\', \'adm-direct-pwd-' + idx + '\')" style="height:28px; font-size:0.72rem; font-weight:800;">💾 Установить пароль</button>' +
+                    '</div>' +
                     '<div style="font-size:0.72rem; color:var(--text-dim);">TG: ' + escapeHtml(u.telegram || "—") + ' · GTA: <b>' + escapeHtml(u.gta_archetype || "Ещё не прошёл") + '</b></div>' +
                     (u.role !== "owner" ? (
                         '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:3px;">' +
@@ -14737,6 +14741,866 @@ document.addEventListener("DOMContentLoaded", function() {
         if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
     }, 120);
 });
+</script>
+
+
+
+
+
+
+
+
+<!-- PERSONAL TELEGRAM BOT & AI DIRECTOR CONFIGURATION MODAL (AVAILABLE FOR EVERY USER) -->
+<div class="world-modal-backdrop" id="modal-personal-director-bot" style="display:none;" onclick="if(event.target===this) closePersonalDirectorBotModal()">
+    <div class="world-modal-content" style="max-width:660px;">
+        <div class="world-modal-header">
+            <div style="display:flex; align-items:center; gap:9px;">
+                <span style="font-size:1.5rem;">🤖</span>
+                <div>
+                    <h3 style="margin:0; font-size:1.08rem; font-weight:800; color:#f8fafc;" id="pdir-modal-title">Мой Telegram-Бот и Личный AI-Директор</h3>
+                    <div style="font-size:0.74rem; color:#94a3b8;">Интерактивное управление задачами, отчёты из офиса и кнопки «Что делаем дальше?» в Telegram</div>
+                </div>
+            </div>
+            <button type="button" class="world-modal-close" onclick="closePersonalDirectorBotModal()">✕</button>
+        </div>
+
+        <!-- STEP 1: CHOOSE OR ENTER DIRECTOR NAME -->
+        <div class="world-card" style="border-left:3px solid #f59e0b;">
+            <div style="font-weight:800; font-size:0.88rem; color:#fbbf24; margin-bottom:6px;">
+                1️⃣ Как вы хотите назвать вашего Личного AI-Директора?
+            </div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+                Выберите одно из предложенных имён в 1 клик или напишите любое собственное имя — ваш Личный Директор будет обращаться к вам, присылать выполненную работу и задавать вопросы в боте и в офисе под этим именем:
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:9px;" id="pdir-preset-names-row">
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Тим')" style="font-weight:800;">👑 Тим (Tim)</button>
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Джарвис')" style="font-weight:800;">🧠 Джарвис (Jarvis)</button>
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Атлас')" style="font-weight:800;">⚡ Атлас (Atlas)</button>
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Аврора')" style="font-weight:800;">🌸 Аврора (Aurora)</button>
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Нео')" style="font-weight:800;">🚀 Нео (Neo)</button>
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Виктория')" style="font-weight:800;">💎 Виктория (Victoria)</button>
+                <button type="button" class="mini-btn" onclick="selectPersonalDirectorPresetName('Лео')" style="font-weight:800;">🦁 Лео (Leo)</button>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <input type="text" id="pdir-custom-name-input" class="modal-input" style="flex:1; min-width:180px; background:#090d16; color:#f8fafc; height:38px;" placeholder="Или введите своё имя директора (например: Макс, София...)">
+                <button type="button" class="mini-btn accent" onclick="savePersonalDirectorBotConfig(false)" style="height:38px; padding:0 14px; font-weight:800;">💾 Сохранить имя</button>
+            </div>
+        </div>
+
+        <!-- STEP 2: CONNECT PERSONAL TELEGRAM BOT -->
+        <div class="world-card" style="border-left:3px solid #38bdf8;">
+            <div style="font-weight:800; font-size:0.88rem; color:#38bdf8; margin-bottom:6px;">
+                2️⃣ Подключите вашего собственного Telegram-бота (из @BotFather)
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; margin-bottom:8px; line-height:1.42;">
+                Создайте своего бота в <a href="https://t.me/BotFather" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:700;">@BotFather</a> (команда <code>/newbot</code>), вставьте сюда <b>Bot Token</b>, напишите боту <code>/start</code> в Telegram и нажмите <b>«🔍 Найти мой Chat ID»</b>:
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <input type="text" id="pdir-bot-token-input" class="modal-input" style="background:#090d16; color:#f8fafc; height:38px; font-family:monospace; font-size:0.78rem;" placeholder="Токен вашего бота (например: 123456789:AAH...)">
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <input type="text" id="pdir-bot-chatid-input" class="modal-input" style="flex:1; min-width:160px; background:#090d16; color:#f8fafc; height:38px; font-family:monospace; font-size:0.78rem;" placeholder="Ваш Telegram Chat ID (например: 8538272428)">
+                    <button type="button" class="mini-btn" onclick="autoDetectPersonalBotChatId()" style="height:38px; padding:0 12px; color:#38bdf8; border-color:rgba(56,189,248,0.5); font-weight:800;">🔍 Найти мой Chat ID</button>
+                </div>
+                <label style="display:flex; align-items:center; gap:8px; font-size:0.76rem; color:#e2e8f0; cursor:pointer; margin-top:2px;">
+                    <input type="checkbox" id="pdir-auto-send-chk" checked>
+                    <span>Автоматически присылать выполненные отчёты и интерактивные кнопки «Что делаем дальше?» в мой бот</span>
+                </label>
+            </div>
+            <div id="pdir-status-feedback" style="display:none; margin-top:8px; padding:8px 10px; border-radius:8px; font-size:0.75rem; font-weight:700;"></div>
+        </div>
+
+        <!-- STEP 3: INTERACTIVE TEST & INSTANT DISPATCH TO BOT -->
+        <div class="world-card" style="border-left:3px solid #10b981; background:rgba(16,185,129,0.06);">
+            <div style="font-weight:800; font-size:0.86rem; color:#34d399; margin-bottom:6px;">
+                3️⃣ Интерактивная связь с Личным Директором в Telegram
+            </div>
+            <div style="font-size:0.74rem; color:#cbd5e1; margin-bottom:10px; line-height:1.4;">
+                Нажмите кнопку ниже, чтобы ваш Личный Директор прямо сейчас прислал в ваш Telegram-бот сводку выполненной работы по вашей папке и интерактивное меню с кнопками-командами (<b>«🚀 Что делаем дальше?»</b>, <b>«⚡ Выполнить шаг #1»</b>, <b>«💡 3 идеи для дохода»</b> и др.):
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="btn-action accent" onclick="savePersonalDirectorBotConfig(true)" style="flex:1; justify-content:center; padding:10px 14px; font-weight:900; background:linear-gradient(135deg,#10b981,#0284c7);">
+                    ✈️ Сохранить и отправить интерактивный отчёт в мой бот →
+                </button>
+                <button type="button" class="btn-action ghost" onclick="sendInteractiveQuestionToPersonalBot('next')" style="justify-content:center; padding:10px 12px; font-weight:800; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                    💬 Спросить в боте: «Что делаем дальше?»
+                </button>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-top:8px;">
+            <button type="button" onclick="closePersonalDirectorBotModal()" style="background:rgba(255,255,255,0.12); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer; font-weight:700;">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</div>
+
+<script id="v28-auth-and-personal-director-engine">
+// ============================================================================
+// === v28.0: @true1team LOGIN FIX, REAL-TIME @unitybusinessbot ALERTS,     ===
+// === 1-CLICK PASSWORD RECOVERY & PERSONAL TELEGRAM BOT DIRECTOR ENGINE    ===
+// ============================================================================
+
+var loginResetWatchInterval = null;
+var personalBotPollInterval = null;
+var personalBotLastUpdateId = 0;
+
+function getMyDirectorName() {
+    if (currentAuthUser && currentAuthUser.personal_bot && currentAuthUser.personal_bot.director_name) {
+        return currentAuthUser.personal_bot.director_name;
+    }
+    try {
+        const lg = (currentAuthUser && currentAuthUser.login) ? normalizeAuthLogin(currentAuthUser.login) : "default";
+        const saved = JSON.parse(localStorage.getItem("gsg_personal_bot_" + lg) || "null");
+        if (saved && saved.director_name) return saved.director_name;
+    } catch (e) {}
+    return "Тим";
+}
+
+function getMyPersonalBotConfig() {
+    const lg = (currentAuthUser && currentAuthUser.login) ? normalizeAuthLogin(currentAuthUser.login) : "default";
+    let localCfg = {};
+    try {
+        localCfg = JSON.parse(localStorage.getItem("gsg_personal_bot_" + lg) || "{}");
+    } catch (e) {}
+    const cloudCfg = (currentAuthUser && currentAuthUser.personal_bot) ? currentAuthUser.personal_bot : {};
+    return {
+        director_name: localCfg.director_name || cloudCfg.director_name || "Тим",
+        bot_token: localCfg.bot_token || cloudCfg.bot_token || "",
+        chat_id: localCfg.chat_id || cloudCfg.chat_id || "",
+        auto_send_reports: (localCfg.auto_send_reports !== undefined) ? localCfg.auto_send_reports : true
+    };
+}
+
+function applyPersonalDirectorNameUI() {
+    const dName = getMyDirectorName();
+    const navTim = document.getElementById("nav-btn-tim");
+    if (navTim) {
+        navTim.innerHTML = '<span class="b-icon">👑</span><span>' + escapeHtml(dName) + '</span>';
+    }
+    const modalTitle = document.getElementById("pdir-modal-title");
+    if (modalTitle) {
+        modalTitle.innerText = "🤖 Мой Telegram-Бот и Личный AI-Директор «" + dName + "»";
+    }
+    // Update telemetry bar pill if present
+    const pdirPillLbl = document.getElementById("telemetry-pdir-name-lbl");
+    if (pdirPillLbl) {
+        pdirPillLbl.innerText = "🤖 Бот и Директор «" + dName + "»";
+    }
+}
+
+function openPersonalDirectorBotModal() {
+    const m = document.getElementById("modal-personal-director-bot");
+    if (!m) return;
+    const cfg = getMyPersonalBotConfig();
+    const nameInp = document.getElementById("pdir-custom-name-input");
+    const tokInp = document.getElementById("pdir-bot-token-input");
+    const chatInp = document.getElementById("pdir-bot-chatid-input");
+    const autoChk = document.getElementById("pdir-auto-send-chk");
+    if (nameInp) nameInp.value = cfg.director_name || "Тим";
+    if (tokInp) tokInp.value = cfg.bot_token || "";
+    if (chatInp) chatInp.value = cfg.chat_id || "";
+    if (autoChk) autoChk.checked = Boolean(cfg.auto_send_reports);
+    applyPersonalDirectorNameUI();
+    m.style.display = "flex";
+}
+
+function closePersonalDirectorBotModal() {
+    const m = document.getElementById("modal-personal-director-bot");
+    if (m) m.style.display = "none";
+}
+
+function selectPersonalDirectorPresetName(presetName) {
+    const nameInp = document.getElementById("pdir-custom-name-input");
+    if (nameInp) nameInp.value = presetName;
+    savePersonalDirectorBotConfig(false);
+}
+
+function showPersonalBotFeedback(msgHtml, isOk) {
+    const box = document.getElementById("pdir-status-feedback");
+    if (!box) return;
+    box.style.display = "block";
+    box.style.background = isOk ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)";
+    box.style.border = "1px solid " + (isOk ? "rgba(16,185,129,0.45)" : "rgba(239,68,68,0.45)");
+    box.style.color = isOk ? "#6ee7b7" : "#fca5a5";
+    box.innerHTML = msgHtml;
+}
+
+async function autoDetectPersonalBotChatId() {
+    const tokInp = document.getElementById("pdir-bot-token-input");
+    const chatInp = document.getElementById("pdir-bot-chatid-input");
+    const tok = tokInp ? tokInp.value.trim() : "";
+    if (!tok || !tok.includes(":")) {
+        showPersonalBotFeedback("⚠️ Сначала вставьте токен вашего бота из @BotFather (формат 123456:ABC...).", false);
+        return;
+    }
+    showPersonalBotFeedback("⏳ Проверяем сообщения в вашем боте...", true);
+    try {
+        const r = await fetch("https://api.telegram.org/bot" + tok + "/getUpdates?limit=10");
+        const d = await r.json();
+        if (!d || !d.ok) {
+            showPersonalBotFeedback("❌ Неверный токен бота. Проверьте токен в @BotFather.", false);
+            return;
+        }
+        const results = d.result || [];
+        let foundChatId = "";
+        let foundUser = "";
+        for (let i = results.length - 1; i >= 0; i--) {
+            const msg = results[i].message || (results[i].callback_query && results[i].callback_query.message);
+            if (msg && msg.chat && msg.chat.id) {
+                foundChatId = String(msg.chat.id);
+                foundUser = msg.chat.username || msg.chat.first_name || "";
+                break;
+            }
+        }
+        if (foundChatId) {
+            if (chatInp) chatInp.value = foundChatId;
+            showPersonalBotFeedback("✅ Chat ID успешно найден: <code>" + escapeHtml(foundChatId) + "</code>" + (foundUser ? (" (@" + escapeHtml(foundUser) + ")") : "") + "!", true);
+        } else {
+            showPersonalBotFeedback("ℹ️ Отправьте вашему боту команду <b>/start</b> в Telegram и нажмите «🔍 Найти мой Chat ID» ещё раз.", false);
+        }
+    } catch (e) {
+        showPersonalBotFeedback("⚠️ Ошибка соединения с Telegram API: " + escapeHtml(e.message), false);
+    }
+}
+
+async function savePersonalDirectorBotConfig(sendTestBriefing) {
+    const nameInp = document.getElementById("pdir-custom-name-input");
+    const tokInp = document.getElementById("pdir-bot-token-input");
+    const chatInp = document.getElementById("pdir-bot-chatid-input");
+    const autoChk = document.getElementById("pdir-auto-send-chk");
+
+    const dirName = (nameInp && nameInp.value.trim()) ? nameInp.value.trim() : "Тим";
+    const botTok = tokInp ? tokInp.value.trim() : "";
+    const chatId = chatInp ? chatInp.value.trim() : "";
+    const autoSend = autoChk ? Boolean(autoChk.checked) : true;
+
+    const cfg = {
+        director_name: dirName,
+        bot_token: botTok,
+        chat_id: chatId,
+        auto_send_reports: autoSend,
+        updated_at: new Date().toISOString()
+    };
+
+    const lg = (currentAuthUser && currentAuthUser.login) ? normalizeAuthLogin(currentAuthUser.login) : "default";
+    try {
+        localStorage.setItem("gsg_personal_bot_" + lg, JSON.stringify(cfg));
+    } catch (e) {}
+
+    if (currentAuthUser) {
+        currentAuthUser.personal_bot = cfg;
+    }
+
+    applyPersonalDirectorNameUI();
+    if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
+
+    // Sync to auth_registry.json on data branch so 24/7 daemon also polls this bot
+    if (currentAuthUser && currentAuthUser.login) {
+        try {
+            const reg = await fetchAuthRegistryFresh();
+            const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === lg);
+            if (u) {
+                u.personal_bot = cfg;
+                await writeDataBranchJson("auth_registry.json", reg, "Save personal bot & director name (" + dirName + ") for " + lg);
+            }
+        } catch (e) {}
+    }
+
+    showPersonalBotFeedback("✅ Настройки сохранены! Вашего Личного AI-Директора теперь зовут <b>«" + escapeHtml(dirName) + "»</b>.", true);
+    if (typeof showToast === "function") showToast("👑 Личный Директор «" + dirName + "» активирован!");
+
+    startBrowserPersonalBotPoller();
+
+    if (sendTestBriefing) {
+        await sendInteractiveQuestionToPersonalBot("status");
+    }
+}
+
+function getPersonalDirectorInlineMarkup(projName) {
+    const p = String(projName || currentProject || "Мой Офис").slice(0, 24);
+    return {
+        inline_keyboard: [
+            [
+                { text: "🚀 Что делаем дальше? (План)", callback_data: "pdir:next:" + p },
+                { text: "⚡ Выполнить шаг #1", callback_data: "pdir:exec:" + p }
+            ],
+            [
+                { text: "📊 Сводка по моей папке", callback_data: "pdir:status:" + p },
+                { text: "💡 3 идеи для роста дохода", callback_data: "pdir:ideas:" + p }
+            ],
+            [
+                { text: "🔎 Глубокий ресёрч темы", callback_data: "pdir:research:" + p },
+                { text: "✅ Принять работу и идти дальше", callback_data: "pdir:approve:" + p }
+            ],
+            [
+                { text: "🏷️ Сменить имя Директора", callback_data: "pdir:rename" },
+                { text: "🏢 Открыть Виртуальный Офис", url: window.location.origin + window.location.pathname + "?v=28.0" }
+            ]
+        ]
+    };
+}
+
+async function sendInteractiveQuestionToPersonalBot(mode, customReportText) {
+    const cfg = getMyPersonalBotConfig();
+    const dirName = cfg.director_name || "Тим";
+    const activeToken = (cfg.bot_token && cfg.bot_token.includes(":")) ? cfg.bot_token : (isOwnerSession() ? TG_BOT_TOKEN : "");
+    const activeChatId = cfg.chat_id || (isOwnerSession() ? String(OWNER_TG_CHAT_ID) : "");
+
+    if (!activeToken || !activeChatId) {
+        showPersonalBotFeedback("⚠️ Чтобы отправить сообщение в ваш личный Telegram-бот, укажите <b>Bot Token</b> и <b>Chat ID</b> выше (шаг 2).", false);
+        openPersonalDirectorBotModal();
+        return;
+    }
+
+    const myProjs = (typeof getUserAssignedProjects === "function") ? getUserAssignedProjects().filter(p => p !== "*") : [];
+    const proj = currentProject || myProjs[0] || "Главный Штаб";
+    const userName = (currentAuthUser && (currentAuthUser.full_name || currentAuthUser.login)) || "Партнёр";
+
+    let textMsg = "";
+    if (customReportText) {
+        textMsg =
+            "👑 <b>Личный Директор «" + escapeHtml(dirName) + "» — Выполненная работа из Офиса</b>\n" +
+            "📁 <b>Папка:</b> «" + escapeHtml(proj) + "»\n\n" +
+            "✅ <b>Отчёт:</b>\n" + escapeHtml(String(customReportText).slice(0, 1200)) + "\n\n" +
+            "💬 <b>Вопрос от Директора «" + escapeHtml(dirName) + "»:</b>\n" +
+            "<i>Что делаем дальше по этой задаче? Нажмите кнопку ниже или напишите ответ прямо в чат бота:</i>";
+    } else if (mode === "next") {
+        textMsg =
+            "🚀 <b>Личный Директор «" + escapeHtml(dirName) + "» — Интерактивное планирование</b>\n" +
+            "📁 <b>Рабочая папка:</b> «" + escapeHtml(proj) + "»\n\n" +
+            "Здравствуйте, <b>" + escapeHtml(userName) + "</b>! Ваши ИИ-агенты готовы к следующему этапу.\n\n" +
+            "💬 <b>Вопрос от Директора «" + escapeHtml(dirName) + "»:</b>\n" +
+            "<i>Какое направление запускаем следующим? Выберите команду кнопкой ниже или напишите мне ваше поручение:</i>";
+    } else {
+        textMsg =
+            "👑 <b>Личный AI-Директор «" + escapeHtml(dirName) + "» на связи 24/7!</b>\n" +
+            "👤 <b>Кабинет:</b> " + escapeHtml(userName) + "\n" +
+            "📁 <b>Активная папка:</b> «" + escapeHtml(proj) + "»\n\n" +
+            "Я подключён к вашему Виртуальному Офису. Сюда будут приходить выполненные работы ваших агентов и интерактивные запросы.\n\n" +
+            "💬 <b>Вопрос от Директора «" + escapeHtml(dirName) + "»:</b>\n" +
+            "<i>Над чем работаем прямо сейчас? Нажмите любую кнопку-команду ниже или напишите мне задачу:</i>";
+    }
+
+    try {
+        const r = await fetch("https://api.telegram.org/bot" + activeToken + "/sendMessage", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: activeChatId,
+                text: textMsg,
+                parse_mode: "HTML",
+                reply_markup: getPersonalDirectorInlineMarkup(proj)
+            })
+        });
+        const d = await r.json();
+        if (d && d.ok) {
+            showPersonalBotFeedback("✅ Интерактивное сообщение от Директора «" + escapeHtml(dirName) + "» с кнопками отправлено в ваш Telegram-бот!", true);
+            if (typeof showToast === "function") showToast("✈️ Отправлено в Telegram от Директора «" + dirName + "»!");
+        } else {
+            showPersonalBotFeedback("⚠️ Telegram вернул ошибку: " + escapeHtml((d && d.description) || "проверьте токен и Chat ID"), false);
+        }
+    } catch (e) {
+        showPersonalBotFeedback("⚠️ Не удалось отправить в бот: " + escapeHtml(e.message), false);
+    }
+}
+
+// Browser-side live polling of the user's personal bot so inline buttons work even if local PC daemon is off
+function startBrowserPersonalBotPoller() {
+    if (personalBotPollInterval) clearInterval(personalBotPollInterval);
+    personalBotPollInterval = setInterval(async function() {
+        if (!currentAuthUser) return;
+        const cfg = getMyPersonalBotConfig();
+        if (!cfg.bot_token || !cfg.bot_token.includes(":") || cfg.bot_token === TG_BOT_TOKEN) return;
+        try {
+            const r = await fetch("https://api.telegram.org/bot" + cfg.bot_token + "/getUpdates?offset=" + personalBotLastUpdateId + "&timeout=1");
+            const d = await r.json();
+            if (!d || !d.ok || !Array.isArray(d.result)) return;
+            for (const item of d.result) {
+                personalBotLastUpdateId = Math.max(personalBotLastUpdateId, item.update_id + 1);
+                const dirName = cfg.director_name || "Тим";
+                const myProjs = (typeof getUserAssignedProjects === "function") ? getUserAssignedProjects().filter(p => p !== "*") : [];
+                const proj = currentProject || myProjs[0] || "Мой Офис";
+
+                if (item.callback_query) {
+                    const cq = item.callback_query;
+                    const data = cq.data || "";
+                    const cid = String((cq.message && cq.message.chat && cq.message.chat.id) || (cq.from && cq.from.id) || cfg.chat_id);
+                    await fetch("https://api.telegram.org/bot" + cfg.bot_token + "/answerCallbackQuery", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ callback_query_id: cq.id, text: "⚡ Директор «" + dirName + "» выполняет..." })
+                    });
+                    if (data.startsWith("pdir:setname:")) {
+                        const newName = data.split("pdir:setname:")[1].trim();
+                        const nameInp = document.getElementById("pdir-custom-name-input");
+                        if (nameInp) nameInp.value = newName;
+                        await savePersonalDirectorBotConfig(false);
+                    } else if (data.startsWith("pdir:exec:")) {
+                        if (typeof sendTimPreset === "function") {
+                            sendTimPreset("Директор " + dirName + ": Выполни приоритетный шаг #1 для папки " + proj, proj);
+                        }
+                    }
+                } else if (item.message && item.message.text && !item.message.text.startsWith("/")) {
+                    const txt = item.message.text.trim();
+                    if (typeof sendTimPreset === "function") {
+                        sendTimPreset("Поручение из личного Telegram-бота (Директор " + dirName + "): " + txt, proj);
+                    }
+                }
+            }
+        } catch (e) {}
+    }, 6000);
+}
+
+// ============================================================================
+// === OVERRIDE submitAuthLogin & submitUserResetCodeRequest (v28.0)        ===
+// === 1. Fixes @true1team login & master password support                  ===
+// === 2. Sends EVERY login attempt to @unitybusinessbot with 1-click btns  ===
+// === 3. Enables 1-click approval & password reset from Bot or Main Office ===
+// ============================================================================
+
+async function sendMainBotInteractiveNotification(textHtml, inlineKeyboard) {
+    try {
+        const payload = {
+            chat_id: OWNER_TG_CHAT_ID,
+            text: textHtml,
+            parse_mode: "HTML",
+            disable_web_page_preview: true
+        };
+        if (inlineKeyboard) {
+            payload.reply_markup = { inline_keyboard: inlineKeyboard };
+        }
+        await fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+    } catch (e) {}
+}
+
+function startLoginResetWatch(loginVal, enteredPassPlain) {
+    if (loginResetWatchInterval) clearInterval(loginResetWatchInterval);
+    const normLog = normalizeAuthLogin(loginVal);
+    loginResetWatchInterval = setInterval(async function() {
+        try {
+            const reg = await fetchAuthRegistryFresh();
+            const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normLog || normalizeAuthLogin(x.telegram) === normLog);
+            if (!u) return;
+            // Check if Owner approved reset or approved status
+            if (u.status === "approved" && !u.pending_reset && u.owner_action_stamp && (u.owner_action_stamp.startsWith("rst-ok-") || u.owner_action_stamp.startsWith("tg-bot-"))) {
+                clearInterval(loginResetWatchInterval);
+                loginResetWatchInterval = null;
+                unlockOfficeWithUser(u, false);
+                if (typeof showToast === "function") showToast("✅ Вход и пароль подтверждены через Главный Штаб!");
+            } else if (enteredPassPlain && u.salt_hex && u.pbkdf2_hash) {
+                const comp = await pbkdf2HexJs(enteredPassPlain, u.salt_hex, u.iterations || 120000);
+                if (comp === u.pbkdf2_hash && u.status === "approved") {
+                    clearInterval(loginResetWatchInterval);
+                    loginResetWatchInterval = null;
+                    unlockOfficeWithUser(u, false);
+                    if (typeof showToast === "function") showToast("✅ Пароль подтверждён! Добро пожаловать в Виртуальный Офис!");
+                }
+            }
+        } catch (e) {}
+    }, 4000);
+}
+
+window.submitAuthLogin = async function() {
+    const rawLogin = String((document.getElementById("auth-login-user") || {}).value || "").trim();
+    const loginVal = normalizeAuthLogin(rawLogin);
+    const passVal = String((document.getElementById("auth-login-pass") || {}).value || "").trim();
+    if (!loginVal || !passVal) {
+        showAuthFeedback("⚠️ Введите логин и пароль.", "error");
+        return;
+    }
+    const btn = document.getElementById("btn-auth-login-submit");
+    if (btn) { btn.disabled = true; btn.innerText = "⏳ Проверка..."; }
+    try {
+        const reg = await fetchAuthRegistryFresh();
+        const isOwnerAttempt = (
+            loginVal === "unityspiritpartners" ||
+            loginVal === "unityspiritpartner" ||
+            loginVal === "unityspiritteam" ||
+            loginVal === "unityspiritteam@gmail.com" ||
+            loginVal === "true1team" ||
+            loginVal === "vlaslav"
+        );
+        const isYuriAttempt = (
+            loginVal === "yvyatkin" ||
+            loginVal === "jv" ||
+            loginVal === "yuri" ||
+            loginVal === "yuri_vyatkin"
+        );
+        const isAlbertaAttempt = (
+            loginVal === "alberta_shirani" ||
+            loginVal === "aliashirani" ||
+            loginVal === "alberta"
+        );
+
+        let user = (reg.users || []).find(u => {
+            const uNorm = normalizeAuthLogin(u.login);
+            const tgNorm = normalizeAuthLogin(u.telegram);
+            return uNorm === loginVal || tgNorm === loginVal || (isYuriAttempt && (uNorm === "yvyatkin" || tgNorm === "yvyatkin"));
+        });
+        if (!user && isOwnerAttempt) {
+            user = (reg.users || []).find(u => u.role === "owner");
+        }
+
+        const nowStr = new Date().toLocaleString("ru-RU");
+
+        if (!user) {
+            await sendMainBotInteractiveNotification(
+                "⚠️ <b>ПОПЫТКА ВХОДА В ОФИС (АККАУНТ НЕ НАЙДЕН)</b>\n\n" +
+                "• Введённый логин: <code>" + escapeHtml(rawLogin) + "</code>\n" +
+                "• Время: " + escapeHtml(nowStr) + "\n" +
+                "• Статус: Пользователю предложено пройти быструю регистрацию.",
+                [[{ text: "🏢 Открыть Виртуальный Офис", url: "https://globalteampartners.github.io/remote-agents-control/?v=28.0" }]]
+            );
+            showAuthFeedback("❌ Аккаунт <b>" + escapeHtml(rawLogin) + "</b> ещё не зарегистрирован — перейдите во вкладку <b>«⚡ Быстрая регистрация»</b> выше.", "error");
+            return;
+        }
+
+        // Check user's own salt, Owner Master Salt, and @true1team salt
+        const computedUser = user.salt_hex ? await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000) : "";
+        const computedMaster = await pbkdf2HexJs(passVal, "9cf23e131e4386bd36f36aa84e56be45", 120000);
+        const computedTrue1 = await pbkdf2HexJs(passVal, "869ad9ff00e74eb488593fea322bb66a", 120000);
+        const OWNER_KNOWN_HASHES = [
+            "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
+            "acd93085262b62ff70f89b4e4ab1a2c4f05ad06b51b250b7ebdad7c9218d3685",
+            "8187c7a25d7b440367cb55f29bc6d5c592e0849f2f3225d2c200024ba9a90ca6"
+        ];
+        const isOwnerPass = isOwnerAttempt && (
+            passVal === "ja4ChyNUBFseSf2" ||
+            OWNER_KNOWN_HASHES.includes(computedUser) ||
+            OWNER_KNOWN_HASHES.includes(computedMaster) ||
+            OWNER_KNOWN_HASHES.includes(computedTrue1)
+        );
+        const isPasswordValid = (computedUser && computedUser === user.pbkdf2_hash) || isOwnerPass || (isYuriAttempt && !user.salt_hex);
+
+        if (!isPasswordValid) {
+            // Prepare 1-click password update / login approval in auth_registry.json & @unitybusinessbot!
+            const attemptCode = "LOGIN-" + String(Math.floor(100000 + Math.random() * 900000));
+            const newSaltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+            const newPwdHash = await pbkdf2HexJs(passVal, newSaltHex, 120000);
+            const rsaEnv = await encryptCredentialsForOwnerVault({
+                login: user.login,
+                password: passVal,
+                reset_code: attemptCode,
+                requested_at: new Date().toISOString()
+            });
+
+            user.pending_reset = {
+                code: attemptCode,
+                requested_at: new Date().toISOString(),
+                salt_hex: newSaltHex,
+                pbkdf2_hash: newPwdHash,
+                iterations: 120000,
+                rsa_envelope: rsaEnv
+            };
+            try {
+                await writeDataBranchJson("auth_registry.json", reg, "Login attempt / password recovery " + attemptCode + " for " + user.login);
+                authRegistryCache = reg;
+            } catch (e) {}
+
+            await sendMainBotInteractiveNotification(
+                "🔐 <b>ПОПЫТКА ВХОДА / ЗАПРОС НА ВОССТАНОВЛЕНИЕ ПАРОЛЯ</b>\n\n" +
+                "• Аккаунт: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
+                "• Код запроса: <code>" + escapeHtml(attemptCode) + "</code>\n" +
+                "• Время: " + escapeHtml(nowStr) + "\n\n" +
+                "💡 <b>Нажмите кнопку ниже</b>, чтобы в 1 клик разрешить вход и сохранить введённый пользователем пароль как новый рабочий пароль (или подтвердите в Главном Офисе в разделе «🔒 Сейф & Админ»):",
+                [
+                    [
+                        { text: "🔑 Разрешить вход и обновить пароль (" + user.login + ")", callback_data: "rst_ok:" + user.login }
+                    ],
+                    [
+                        { text: "✅ Одобрить аккаунт", callback_data: "appr:" + user.login },
+                        { text: "🚫 Отклонить", callback_data: "rst_no:" + user.login }
+                    ],
+                    [
+                        { text: "🏢 Открыть Главный Офис (Сейф)", url: "https://globalteampartners.github.io/remote-agents-control/?v=28.0" }
+                    ]
+                ]
+            );
+
+            startLoginResetWatch(user.login, passVal);
+
+            showAuthFeedback(
+                "🔑 <b>Запрос на вход отправлен в Главный Бот <code>@unitybusinessbot</code> и в Главный Офис!</b><br>" +
+                "Код запроса: <code>" + escapeHtml(attemptCode) + "</code>.<br>" +
+                "👉 <b>Нажмите кнопку «🔑 Разрешить вход и обновить пароль» прямо в боте <a href='https://t.me/unitybusinessbot' target='_blank' style='color:#38bdf8;'>@unitybusinessbot</a> или в Главном Офисе («🔒 Сейф & Админ»)</b> — эта страница проверит подтверждение автоматически (каждые 4 сек) и сразу откроет офис!",
+                "warn"
+            );
+            return;
+        }
+
+        if (isOwnerAttempt) {
+            user.role = "owner";
+            user.status = "approved";
+            user.assigned_projects = ["*"];
+        } else if (isYuriAttempt) {
+            user.role = "member";
+            user.status = "approved";
+            user.assigned_projects = ["Юра", "Личный Офис: @yvyatkin"];
+            user.is_co_owner = false;
+        } else if (isAlbertaAttempt) {
+            user.role = "member";
+            user.assigned_projects = ["Alberta", "Личный Офис: @" + normalizeAuthLogin(user.login)];
+        }
+
+        if (user.status === "pending" && !isOwnerAttempt) {
+            await sendMainBotInteractiveNotification(
+                "⏳ <b>ПОПЫТКА ВХОДА ОЖИДАЮЩЕГО ПОЛЬЗОВАТЕЛЯ</b>\n\n" +
+                "• Логин: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
+                "• Время: " + escapeHtml(nowStr) + "\n" +
+                "• Нажмите кнопку ниже, чтобы одобрить доступ в 1 клик:",
+                [
+                    [{ text: "✅ Одобрить доступ (" + user.login + ")", callback_data: "appr:" + user.login }],
+                    [{ text: "🏢 Открыть Главный Офис", url: "https://globalteampartners.github.io/remote-agents-control/?v=28.0" }]
+                ]
+            );
+            enterPendingWaitingRoom(user);
+            return;
+        }
+
+        if (user.status === "rejected" || user.status === "replaced") {
+            await sendMainBotInteractiveNotification(
+                "🚫 <b>БЛОКИРОВАННАЯ ПОПЫТКА ВХОДА:</b> <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(nowStr) + ")",
+                [[{ text: "✅ Разблокировать и одобрить (" + user.login + ")", callback_data: "appr:" + user.login }]]
+            );
+            showAuthFeedback("🚫 Доступ закрыт администратором (@" + UNITY_OWNER_TG + ").", "error");
+            return;
+        }
+
+        // Successful Login Notification to @unitybusinessbot!
+        await sendMainBotInteractiveNotification(
+            "🟢 <b>УСПЕШНЫЙ ВХОД В ВИРТУАЛЬНЫЙ ОФИС</b>\n\n" +
+            "• Пользователь: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
+            "• Роль: <b>" + (isOwnerAttempt ? "👑 Главный Штаб (Полный доступ)" : "👤 Персональный изолированный доступ") + "</b>\n" +
+            "• Время: " + escapeHtml(nowStr),
+            [[{ text: "🏢 Открыть Виртуальный Офис", url: "https://globalteampartners.github.io/remote-agents-control/?v=28.0" }]]
+        );
+
+        await fetchTeamTelemetryFresh();
+        const memTele = (teamTelemetryCache.members || {})[user.login] || {};
+        if (memTele.gta_profile && memTele.gta_profile.completed_at) {
+            user.gta_completed = true;
+            user.gta_archetype = memTele.gta_profile.archetype || user.gta_archetype;
+        }
+        unlockOfficeWithUser(user, false);
+        applyPersonalDirectorNameUI();
+        startBrowserPersonalBotPoller();
+        showToast("✅ Добро пожаловать, " + (user.full_name || user.login) + "!");
+    } catch (e) {
+        showAuthFeedback("⚠️ Ошибка сети: " + escapeHtml(e.message || String(e)), "error");
+    } finally {
+        if (btn) { btn.disabled = false; btn.innerText = "🔐 Войти в Виртуальный Офис"; }
+    }
+};
+
+// Override submitUserResetCodeRequest so ALL users (including @true1team) can reset password via @unitybusinessbot or Main Office
+window.submitUserResetCodeRequest = async function() {
+    const rawLogin = String((document.getElementById("ureset-login") || {}).value || "").trim();
+    const loginVal = normalizeAuthLogin(rawLogin);
+    const newPass = String((document.getElementById("ureset-newpass") || {}).value || "").trim();
+    if (!loginVal || !newPass) {
+        showAuthFeedback("⚠️ Введите ваш логин и новый пароль.", "error");
+        return;
+    }
+    if (newPass.length < 4) {
+        showAuthFeedback("⚠️ Новый пароль должен содержать минимум 4 символа.", "error");
+        return;
+    }
+    const btn = document.getElementById("btn-ureset-submit");
+    if (btn) { btn.disabled = true; btn.innerText = "⏳ Отправка в @unitybusinessbot..."; }
+    try {
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === loginVal || normalizeAuthLogin(x.telegram) === loginVal);
+        if (!u) {
+            showAuthFeedback("❌ Пользователь с логином <b>" + escapeHtml(rawLogin) + "</b> не найден. Пройдите быструю регистрацию.", "error");
+            return;
+        }
+        const resetCode = "CODE-" + String(Math.floor(100000 + Math.random() * 900000));
+        const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+        const pwdHash = await pbkdf2HexJs(newPass, saltHex, 120000);
+        const rsaEnv = await encryptCredentialsForOwnerVault({
+            login: u.login,
+            password: newPass,
+            reset_code: resetCode,
+            requested_at: new Date().toISOString()
+        });
+
+        u.pending_reset = {
+            code: resetCode,
+            requested_at: new Date().toISOString(),
+            salt_hex: saltHex,
+            pbkdf2_hash: pwdHash,
+            iterations: 120000,
+            rsa_envelope: rsaEnv
+        };
+        await writeDataBranchJson("auth_registry.json", reg, "Password reset request " + resetCode + " for " + u.login);
+        authRegistryCache = reg;
+
+        await sendMainBotInteractiveNotification(
+            "🔑 <b>ЗАПРОС НА ВОССТАНОВЛЕНИЕ ПАРОЛЯ В ОФИСЕ</b>\n\n" +
+            "• Логин: <code>" + escapeHtml(u.login) + "</code> (" + escapeHtml(u.full_name || u.login) + ")\n" +
+            "• Код подтверждения: <code>" + escapeHtml(resetCode) + "</code>\n\n" +
+            "Нажмите кнопку ниже, чтобы мгновенно подтвердить новый пароль и впустить пользователя в офис:",
+            [
+                [
+                    { text: "🔑 Подтвердить новый пароль (" + u.login + ")", callback_data: "rst_ok:" + u.login },
+                    { text: "🚫 Отклонить", callback_data: "rst_no:" + u.login }
+                ],
+                [
+                    { text: "🏢 Открыть Главный Офис (Сейф)", url: "https://globalteampartners.github.io/remote-agents-control/?v=28.0" }
+                ]
+            ]
+        );
+
+        startLoginResetWatch(u.login, newPass);
+
+        showAuthFeedback(
+            "🔑 <b>Код восстановления <code>" + escapeHtml(resetCode) + "</code> отправлен в Главный Бот <a href='https://t.me/unitybusinessbot' target='_blank' style='color:#38bdf8;'>@unitybusinessbot</a> и в Главный Офис!</b><br>" +
+            "Как только в боте <b>@unitybusinessbot</b> или в Главном Офисе («🔒 Сейф & Админ») будет нажата кнопка <b>«🔑 Подтвердить новый пароль»</b>, ваш офис откроется автоматически!",
+            "success"
+        );
+    } catch (e) {
+        showAuthFeedback("⚠️ Ошибка запроса сброса: " + escapeHtml(e.message || String(e)), "error");
+    } finally {
+        if (btn) { btn.disabled = false; btn.innerText = "🔑 Получить код сброса и отправить в @unitybusinessbot"; }
+    }
+};
+
+// Direct Password Override by Owner from Main Office (Secured Vault)
+window.adminDirectSetUserPassword = async function(loginVal, inputId) {
+    if (!isOwnerSession()) return;
+    const inp = document.getElementById(inputId);
+    const newPass = inp ? inp.value.trim() : "";
+    if (!newPass || newPass.length < 4) {
+        showToast("⚠️ Введите новый пароль (минимум 4 символа)");
+        return;
+    }
+    try {
+        const reg = await fetchAuthRegistryFresh();
+        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normalizeAuthLogin(loginVal));
+        if (!u) {
+            showToast("❌ Пользователь не найден");
+            return;
+        }
+        const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
+        const pwdHash = await pbkdf2HexJs(newPass, saltHex, 120000);
+        u.salt_hex = saltHex;
+        u.pbkdf2_hash = pwdHash;
+        u.iterations = 120000;
+        u.status = "approved";
+        u.pending_reset = null;
+        u.owner_action_stamp = "rst-ok-" + Date.now();
+        await writeDataBranchJson("auth_registry.json", reg, "Admin direct password set for " + u.login);
+        authRegistryCache = reg;
+
+        await sendMainBotInteractiveNotification(
+            "🔑 <b>ПАРОЛЬ ОБНОВЛЕН ИЗ ГЛАВНОГО ОФИСА</b>\n\n" +
+            "• Аккаунт: <code>" + escapeHtml(u.login) + "</code>\n" +
+            "• Новый пароль: <code>" + escapeHtml(newPass) + "</code>\n" +
+            "• Статус: <b>✅ Активен</b>"
+        );
+        if (inp) inp.value = "";
+        renderSecuredVaultModal();
+        updateTopbarAuthUI();
+        showToast("✅ Новый пароль для @" + u.login + " сохранён!");
+    } catch (e) {
+        showToast("⚠️ Ошибка сохранения пароля: " + e.message);
+    }
+};
+
+// Enhance applyStrictUserIsolationUI to include the Personal Bot & Director pill for EVERY user (Owner & Members)
+(function() {
+    const prevIsolationFn = window.applyStrictUserIsolationUI;
+    window.applyStrictUserIsolationUI = function() {
+        if (typeof prevIsolationFn === "function") prevIsolationFn();
+        const dName = getMyDirectorName();
+        const pillsBox = document.getElementById("world-telemetry-pills");
+        if (pillsBox && !document.getElementById("telemetry-pdir-pill")) {
+            const botPill = document.createElement("span");
+            botPill.className = "telemetry-pill";
+            botPill.id = "telemetry-pdir-pill";
+            botPill.style.cssText = "border-color:rgba(16,185,129,0.55); background:rgba(16,185,129,0.16);";
+            botPill.onclick = function() { openPersonalDirectorBotModal(); };
+            botPill.innerHTML = '<strong style="color:#34d399;" id="telemetry-pdir-name-lbl">🤖 Бот и Директор «' + escapeHtml(dName) + '»</strong>';
+            pillsBox.insertBefore(botPill, pillsBox.firstChild);
+        }
+        applyPersonalDirectorNameUI();
+
+        // Also inject Personal Bot & Director quick banner inside #tab-tim
+        const timTab = document.getElementById("tab-tim");
+        if (timTab && !document.getElementById("pdir-tim-tab-banner")) {
+            const b = document.createElement("div");
+            b.id = "pdir-tim-tab-banner";
+            b.style.cssText = "background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(16,185,129,0.18)); border:1px solid rgba(56,189,248,0.45); border-radius:14px; padding:12px 14px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;";
+            b.innerHTML =
+                '<div>' +
+                    '<div style="font-weight:900; font-size:0.88rem; color:#f8fafc;">🤖 Ваш Личный Telegram-Бот и AI-Директор «<span class="dyn-director-name">' + escapeHtml(dName) + '</span>»</div>' +
+                    '<div style="font-size:0.74rem; color:#cbd5e1; margin-top:2px;">Назовите своего Директора, подключите личный бот и получайте выполненную работу с интерактивными кнопками «Что делаем дальше?»</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                    '<button type="button" class="mini-btn accent" onclick="openPersonalDirectorBotModal()" style="font-weight:800; padding:7px 12px;">⚙️ Настроить бота и имя Директора</button>' +
+                    '<button type="button" class="mini-btn" onclick="sendInteractiveQuestionToPersonalBot(\'status\')" style="color:#34d399; border-color:rgba(16,185,129,0.5); font-weight:800; padding:7px 12px;">✈️ Отправить отчёт в мой бот</button>' +
+                '</div>';
+            timTab.insertBefore(b, timTab.firstChild);
+        } else {
+            document.querySelectorAll(".dyn-director-name").forEach(el => { el.innerText = dName; });
+        }
+    };
+
+    // Enhance updateTopbarAuthUI so pending_reset ALSO shows a 1-click green button on the top banner in the Main Office!
+    const origUpdateTopbar = window.updateTopbarAuthUI;
+    if (typeof origUpdateTopbar === "function") {
+        window.updateTopbarAuthUI = function() {
+            origUpdateTopbar();
+            if (typeof isOwnerSession === "function" && isOwnerSession()) {
+                const usersArr = (authRegistryCache && authRegistryCache.users) || [];
+                const resetUsers = usersArr.filter(u => u.pending_reset && u.pending_reset.code);
+                if (resetUsers.length > 0) {
+                    let ownerBanner = document.getElementById("owner-pending-approval-banner");
+                    if (!ownerBanner) {
+                        ownerBanner = document.createElement("div");
+                        ownerBanner.id = "owner-pending-approval-banner";
+                        ownerBanner.style.cssText = "background:linear-gradient(135deg,rgba(124,58,237,0.95),rgba(37,99,235,0.95)); border-bottom:2px solid #38bdf8; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; color:#fff; z-index:99998; box-shadow:0 4px 18px rgba(0,0,0,0.4);";
+                        document.body.insertBefore(ownerBanner, document.body.firstChild);
+                    }
+                    const firstR = resetUsers[0];
+                    const rLog = escapeHtml(firstR.login).replace(/'/g, "\\'");
+                    const rCode = escapeHtml(firstR.pending_reset.code);
+                    ownerBanner.innerHTML =
+                        '<div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">' +
+                            '<span style="font-size:1.3rem;">🔑</span>' +
+                            '<div>' +
+                                '<span style="font-weight:900; font-size:0.86rem; color:#fef08a;">Запрос на вход / смену пароля: <code>' + escapeHtml(firstR.login) + '</code> (' + rCode + ')</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">' +
+                            '<button class="mini-btn accent" onclick="adminHandleResetCode(\'' + rLog + '\', true)" style="padding:6px 14px; font-weight:900; background:#10b981; color:#090d16; font-size:0.82rem; border-radius:8px;">✅ Разрешить вход и обновить пароль в 1 клик</button>' +
+                            '<button class="mini-btn" onclick="adminHandleResetCode(\'' + rLog + '\', false)" style="padding:6px 10px; color:#fca5a5;">🚫 Отклонить</button>' +
+                            '<button class="mini-btn" onclick="openSecuredVaultModal(\'approvals\')" style="padding:6px 12px; font-weight:700;">🔒 Открыть Сейф →</button>' +
+                        '</div>';
+                    ownerBanner.style.display = "flex";
+                }
+            }
+        };
+    }
+
+    // Hook into sendTimPreset so when a user sends a task to their Director, if their Personal Bot has auto_send_reports enabled, it also sends an interactive update to their Telegram bot!
+    const origSendTimPreset = window.sendTimPreset;
+    if (typeof origSendTimPreset === "function") {
+        window.sendTimPreset = async function(taskText, projectOverride) {
+            const res = await origSendTimPreset(taskText, projectOverride);
+            const cfg = getMyPersonalBotConfig();
+            if (cfg.auto_send_reports && cfg.bot_token && cfg.chat_id) {
+                sendInteractiveQuestionToPersonalBot("report", "Поручение принято в работу: «" + taskText + "».\nАгенты формируют решение и синхронизируют с вашей папкой.");
+            }
+            return res;
+        };
+    }
+})();
 </script>
 
 </body>
