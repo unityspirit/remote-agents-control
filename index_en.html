@@ -4,7 +4,7 @@
 <script>
 window.forceHardRefreshApp = function() {
     try {
-        localStorage.removeItem("gsg_app_v29_0_loaded");
+        localStorage.removeItem("gsg_app_v30_0_loaded");
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function(regs) {
                 for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -22,9 +22,9 @@ window.forceHardRefreshApp = function() {
 };
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v29_0_loaded");
+        var v = localStorage.getItem("gsg_app_v30_0_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v29_0_loaded", "true");
+            localStorage.setItem("gsg_app_v30_0_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -3288,8 +3288,11 @@ body.member-nodel #crm-user-filters {
             </div>
             <button class="modal-btn confirm" id="btn-auth-login-submit" onclick="submitAuthLogin()" style="padding:12px; font-size:0.9rem; font-weight:800;">🔐 Войти в Виртуальный Офис</button>
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; font-size:0.73rem;">
-                <a href="javascript:void(0)" onclick="switchAuthGateTab('user-reset')" style="color:#60a5fa; text-decoration:none; font-weight:700;">🔑 Забыли пароль? Сброс по коду</a>
+                <a href="javascript:void(0)" onclick="switchAuthGateTab('user-reset')" style="color:#60a5fa; text-decoration:none; font-weight:700;">🔑 Забыли пароль? Сброс / @unitybusinessbot</a>
                 <a href="javascript:void(0)" onclick="switchAuthGateTab('family9')" style="color:#64748b; text-decoration:none; font-size:0.69rem;">👑 Владелец (9/9)</a>
+            </div>
+            <div style="font-size:0.71rem; color:#94a3b8; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.25); border-radius:9px; padding:7px 9px; line-height:1.38;">
+                🤖 Пароль можно обновить напрямую в <a href="https://t.me/unitybusinessbot" target="_blank" rel="noopener" style="color:#38bdf8; font-weight:800;">@unitybusinessbot</a> (<code>/passwords</code> или <code>/reset</code>) — доступно <b>всем, кроме @unityspiritpartners</b>.
             </div>
         </div>
 
@@ -3318,17 +3321,17 @@ body.member-nodel #crm-user-filters {
             </div>
         </div>
 
-        <!-- PANEL 4: USER PASSWORD RECOVERY VIA CODE SENT TO @unityspiritpartners -->
+        <!-- PANEL 4: USER PASSWORD RECOVERY VIA @unitybusinessbot (ALL EXCEPT @unityspiritpartners) -->
         <div id="auth-panel-user-reset" style="display:none; flex-direction:column; gap:8px;">
             <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(59,130,246,0.13); border:1px solid rgba(59,130,246,0.38); border-radius:10px; padding:9px 10px; line-height:1.42;">
-                🔑 <b>Восстановление пароля участника:</b> введите ваш логин и новый пароль. Система выдаст <b>код подтверждения</b> — отправьте его в Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a>, и после подтверждения владельцем пароль обновится.
+                🔑 <b>Обновление пароля для всех участников (кроме @unityspiritpartners):</b> введите логин и новый пароль ниже — либо обновите пароль напрямую через <a href="https://t.me/unitybusinessbot" target="_blank" rel="noopener" style="color:#38bdf8; font-weight:800;">@unitybusinessbot</a> (команды <code>/passwords</code> и <code>/reset</code>).
             </div>
             <input type="text" id="ureset-login" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваш Логин / @Telegram / Email">
             <div style="position:relative; display:flex; align-items:center;">
                 <input type="password" id="ureset-newpass" class="modal-input" style="height:40px; width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Новый пароль (от 4 симв.)">
                 <button type="button" onclick="const p=document.getElementById('ureset-newpass'); p.type=(p.type==='password'?'text':'password');" style="position:absolute; right:8px; background:none; border:none; color:#94a3b8; cursor:pointer;">👁️</button>
             </div>
-            <button class="modal-btn confirm" id="btn-ureset-submit" onclick="submitUserResetCodeRequest()" style="padding:11px; font-weight:800;">🔑 Получить код сброса для @unityspiritpartners</button>
+            <button class="modal-btn confirm" id="btn-ureset-submit" onclick="submitUserResetCodeRequest()" style="padding:11px; font-weight:800;">🔑 Обновить / запросить сброс через @unitybusinessbot</button>
             <button class="btn-action ghost" style="justify-content:center;" onclick="switchAuthGateTab('login')">← Назад ко входу</button>
         </div>
 
@@ -3646,19 +3649,19 @@ body.member-nodel #crm-user-filters {
             localStorage.clear();
             sessionStorage.clear();
         } catch(e) {}
-        window.location.replace(location.origin + location.pathname + '?v=29.0&nocache=' + Date.now());
+        window.location.replace(location.origin + location.pathname + '?v=30.0&nocache=' + Date.now());
     };
 
     // Auto purge older PWA caches if code version bumped
     (function() {
         try {
-            const currentVer = "29.0";
+            const currentVer = "30.0";
             const storedVer = localStorage.getItem("unity_app_code_version");
             if (storedVer !== currentVer) {
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => !k.includes("v26.0")).forEach(k => caches.delete(k));
+                        keys.filter(k => k !== "global-spirit-group-pwa-v30.0").forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -9288,14 +9291,14 @@ body.member-nodel #crm-user-filters {
 
     // Register PWA Service Worker & Capture Native Install Prompt
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-        navigator.serviceWorker.register("./sw.js?v=29.0").then(reg => {
+        navigator.serviceWorker.register("./sw.js?v=30.0").then(reg => {
             reg.update().catch(()=>{});
             reg.addEventListener("updatefound", () => {
                 const nw = reg.installing;
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v26.0 Antigravity Remote Agents active");
+                            console.log("Service Worker v30.0 Antigravity Remote Agents active");
                         }
                     });
                 }
@@ -10986,7 +10989,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v29.0</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v30.0</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -15009,7 +15012,7 @@ async function recordPersonalDirectorActionAndMirror(actionType, projName, summa
                 ],
                 [
                     { text: "📜 Весь журнал Директоров", callback_data: "cmd:dirlog" },
-                    { text: "🏢 Контроль в Офисе", url: window.location.origin + window.location.pathname + "?open_vault=bots&v=29.0" }
+                    { text: "🏢 Контроль в Офисе", url: window.location.origin + window.location.pathname + "?open_vault=bots&v=30.0" }
                 ]
             ]
         );
@@ -15192,7 +15195,7 @@ async function requestPersonalBotFromOwner() {
             authRegistryCache = reg;
             currentAuthUser.personal_bot = u.personal_bot;
         }
-        const baseApproveUrl = window.location.origin + window.location.pathname + "?open_vault=bots&v=29.0";
+        const baseApproveUrl = window.location.origin + window.location.pathname + "?open_vault=bots&v=30.0";
         await sendMainBotInteractiveNotification(
             "📨 <b>ЗАПРОС НА ВЫДАЧУ / ПОДКЛЮЧЕНИЕ ЛИЧНОГО БОТА</b>\n\n" +
             "• Сотрудник: <code>@" + escapeHtml(lg) + "</code> (" + escapeHtml(currentAuthUser.full_name || lg) + ")\n" +
@@ -15274,7 +15277,7 @@ async function savePersonalDirectorBotConfig(sendTestBriefing) {
 
     // Notify Owner in @unitybusinessbot for Master Control whenever a user configures/updates a bot!
     if (!isOwnerSession() && botTok) {
-        const apprUrl = window.location.origin + window.location.pathname + "?tg_action=bot_appr&target=" + encodeURIComponent(lg) + "&v=29.0";
+        const apprUrl = window.location.origin + window.location.pathname + "?tg_action=bot_appr&target=" + encodeURIComponent(lg) + "&v=30.0";
         await sendMainBotInteractiveNotification(
             "🤖 <b>ПОДКЛЮЧЕНИЕ ЛИЧНОГО БОТА ЧЕРЕЗ ВЛАДЕЛЬЦА</b>\n\n" +
             "• Сотрудник: <code>@" + escapeHtml(lg) + "</code> (" + escapeHtml(currentAuthUser.full_name || lg) + ")\n" +
@@ -15370,7 +15373,7 @@ function getPersonalDirectorInlineMarkup(projName) {
             ],
             [
                 { text: "🏷️ Сменить имя Директора", callback_data: "pdir:rename" },
-                { text: "🏢 Открыть Виртуальный Офис", url: window.location.origin + window.location.pathname + "?v=29.0" }
+                { text: "🏢 Открыть Виртуальный Офис", url: window.location.origin + window.location.pathname + "?v=30.0" }
             ]
         ]
     };
@@ -15496,27 +15499,48 @@ function startBrowserPersonalBotPoller() {
 // === AUTH LOGIN, LOGIN ATTEMPT BOT ALERTS, 1-CLICK URL & BOT RESET       ===
 // ============================================================================
 
+function isProtectedBotPwdAccount(loginVal) {
+    const n = normalizeAuthLogin(loginVal);
+    return ["unityspiritpartners", "owner", "vlaslav"].includes(n);
+}
+
+function findRegistryUserExactFirst(users, loginVal) {
+    const list = users || [];
+    const norm = normalizeAuthLogin(loginVal);
+    return list.find(x => normalizeAuthLogin(x.login) === norm) ||
+           list.find(x => normalizeAuthLogin(x.telegram) === norm) ||
+           null;
+}
+
 function startLoginResetWatch(loginVal, enteredPassPlain) {
     if (loginResetWatchInterval) clearInterval(loginResetWatchInterval);
     const normLog = normalizeAuthLogin(loginVal);
+    const watchStartedSec = Math.floor(Date.now() / 1000);
+    let notifiedBotPwdUpdate = false;
     loginResetWatchInterval = setInterval(async function() {
         try {
             const reg = await fetchAuthRegistryFresh();
-            const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normLog || normalizeAuthLogin(x.telegram) === normLog);
+            const u = findRegistryUserExactFirst(reg.users, normLog);
             if (!u) return;
-            if (u.status === "approved" && !u.pending_reset && u.owner_action_stamp && (u.owner_action_stamp.startsWith("rst-ok-") || u.owner_action_stamp.startsWith("tg-bot-") || u.owner_action_stamp.startsWith("url-"))) {
-                clearInterval(loginResetWatchInterval);
-                loginResetWatchInterval = null;
-                unlockOfficeWithUser(u, false);
-                if (typeof showToast === "function") showToast("✅ Подтверждено через @unitybusinessbot / Главный Штаб!");
-            } else if (enteredPassPlain && u.salt_hex && u.pbkdf2_hash) {
+            if (enteredPassPlain && u.salt_hex && u.pbkdf2_hash) {
                 const comp = await pbkdf2HexJs(enteredPassPlain, u.salt_hex, u.iterations || 120000);
                 if (comp === u.pbkdf2_hash && u.status === "approved") {
                     clearInterval(loginResetWatchInterval);
                     loginResetWatchInterval = null;
                     unlockOfficeWithUser(u, false);
-                    if (typeof showToast === "function") showToast("✅ Пароль подтверждён! Офис открыт!");
+                    if (typeof showToast === "function") showToast("✅ Пароль подтверждён через @unitybusinessbot! Офис открыт!");
+                    return;
                 }
+            }
+            const stamp = String(u.owner_action_stamp || "");
+            const stampTs = Number(stamp.split("-").pop() || "0");
+            const isFreshBotPwd = stamp.startsWith("tg-bot-pwd-") && stampTs >= (watchStartedSec - 5);
+            if (isFreshBotPwd && !notifiedBotPwdUpdate) {
+                notifiedBotPwdUpdate = true;
+                showAuthFeedback(
+                    "🔑 <b>Пароль для <code>" + escapeHtml(u.login) + "</code> обновлён в @unitybusinessbot!</b> Введите новый пароль из бота для входа.",
+                    "success"
+                );
             }
         } catch (e) {}
     }, 4000);
@@ -15532,12 +15556,17 @@ async function handleBotUrlActionsV29() {
     const normTarget = normalizeAuthLogin(target);
     try {
         const reg = await fetchAuthRegistryFresh();
-        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normTarget || normalizeAuthLogin(x.telegram) === normTarget);
+        const u = findRegistryUserExactFirst(reg.users, normTarget);
         if (!u) {
             showToast("⚠️ Аккаунт " + target + " не найден.");
             return;
         }
         if (tgAction === "rst_ok") {
+            if (isProtectedBotPwdAccount(normTarget) || isProtectedBotPwdAccount(u.login)) {
+                showToast("🛡️ Аккаунт @unityspiritpartners защищён — пароль не меняется через бота.");
+                window.history.replaceState({}, document.title, window.location.pathname + "?v=30.0");
+                return;
+            }
             const pr = u.pending_reset;
             if (pr && pr.salt_hex && pr.pbkdf2_hash) {
                 u.salt_hex = pr.salt_hex;
@@ -15569,7 +15598,7 @@ async function handleBotUrlActionsV29() {
             await sendMainBotInteractiveNotification("✅ <b>Доступ для <code>@" + escapeHtml(u.login) + "</code> одобрен по 1-клик ссылке!</b>");
             showToast("✅ Доступ @" + u.login + " одобрен!");
         }
-        window.history.replaceState({}, document.title, window.location.pathname + "?v=29.0");
+        window.history.replaceState({}, document.title, window.location.pathname + "?v=30.0");
     } catch (e) {
         showToast("⚠️ Ошибка выполнения 1-клик действия: " + e.message);
     }
@@ -15599,11 +15628,10 @@ window.submitAuthLogin = async function() {
         const isYuriAttempt = ["yvyatkin", "jv", "yuri", "yuri_vyatkin"].includes(loginVal);
         const isAlbertaAttempt = ["alberta_shirani", "aliashirani", "alberta"].includes(loginVal);
 
-        let user = (reg.users || []).find(u => {
-            const uNorm = normalizeAuthLogin(u.login);
-            const tgNorm = normalizeAuthLogin(u.telegram);
-            return uNorm === loginVal || tgNorm === loginVal || (isYuriAttempt && (uNorm === "yvyatkin" || tgNorm === "yvyatkin"));
-        });
+        let user = findRegistryUserExactFirst(reg.users, loginVal);
+        if (!user && isYuriAttempt) {
+            user = (reg.users || []).find(u => ["yvyatkin", "jv"].includes(normalizeAuthLogin(u.login)) || normalizeAuthLogin(u.telegram) === "yvyatkin");
+        }
         if (!user && isOwnerAttempt) {
             user = (reg.users || []).find(u => u.role === "owner");
         }
@@ -15616,7 +15644,7 @@ window.submitAuthLogin = async function() {
                 "⚠️ <b>ПОПЫТКА ВХОДА (АККАУНТ НЕ НАЙДЕН)</b>\n\n" +
                 "• Введённый логин: <code>" + escapeHtml(rawLogin) + "</code>\n" +
                 "• Время: " + escapeHtml(nowStr),
-                [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=29.0" }]]
+                [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=30.0" }]]
             );
             showAuthFeedback("❌ Аккаунт <b>" + escapeHtml(rawLogin) + "</b> ещё не зарегистрирован — перейдите во вкладку <b>«⚡ Быстрая регистрация»</b> выше.", "error");
             return;
@@ -15639,6 +15667,20 @@ window.submitAuthLogin = async function() {
         const isPasswordValid = (computedUser && computedUser === user.pbkdf2_hash) || isOwnerPass || (isYuriAttempt && !user.salt_hex);
 
         if (!isPasswordValid) {
+            if (isProtectedBotPwdAccount(user.login) || isProtectedBotPwdAccount(loginVal)) {
+                await sendMainBotInteractiveNotification(
+                    "🛡️ <b>Зафиксирован неверный пароль для защищённого аккаунта <code>" + escapeHtml(user.login) + "</code></b>\n" +
+                    "• Время: " + escapeHtml(nowStr) + "\n" +
+                    "• Смена/сброс через @unitybusinessbot для <code>@unityspiritpartners</code> отключены правилами безопасности.",
+                    [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=30.0" }]]
+                );
+                showAuthFeedback(
+                    "❌ Неверный пароль для защищённого аккаунта <b>@unityspiritpartners</b>.<br>" +
+                    "Сброс пароля для @unityspiritpartners через @unitybusinessbot отключён — введите действующий пароль или используйте вкладку <b>«👑 Владелец (9/9)»</b>.",
+                    "error"
+                );
+                return;
+            }
             const attemptCode = "LOGIN-" + String(Math.floor(100000 + Math.random() * 900000));
             const newSaltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
             const newPwdHash = await pbkdf2HexJs(passVal, newSaltHex, 120000);
@@ -15660,7 +15702,7 @@ window.submitAuthLogin = async function() {
             await writeDataBranchJson("auth_registry.json", reg, "Login recovery " + attemptCode + " for " + user.login);
             authRegistryCache = reg;
 
-            const oneClickRstUrl = baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(user.login) + "&v=29.0";
+            const oneClickRstUrl = baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(user.login) + "&v=30.0";
             await sendMainBotInteractiveNotification(
                 "🔐 <b>ПОПЫТКА ВХОДА / ЗАПРОС СМЕНЫ ПАРОЛЯ</b>\n\n" +
                 "• Аккаунт: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
@@ -15682,7 +15724,7 @@ window.submitAuthLogin = async function() {
             showAuthFeedback(
                 "🔑 <b>Запрос на подтверждение входа/пароля отправлен в <a href='https://t.me/unitybusinessbot' target='_blank' style='color:#38bdf8;'>@unitybusinessbot</a>!</b><br>" +
                 "Код: <code>" + escapeHtml(attemptCode) + "</code>.<br>" +
-                "Нажмите в боте <b>«🔑 Разрешить вход»</b> или <b>«🌐 Подтвердить в 1 клик»</b> (либо поменяйте пароль командой <code>/passwords</code> в боте) — офис откроется автоматически через 4 сек!",
+                "Подтвердите в боте кнопкой (или обновите свой пароль напрямую в боте командой <code>/passwords</code> / <code>/reset</code>) — офис откроется автоматически!",
                 "warn"
             );
             return;
@@ -15703,7 +15745,7 @@ window.submitAuthLogin = async function() {
         }
 
         if (user.status === "pending" && !isOwnerAttempt) {
-            const oneClickApprUrl = baseOfficeUrl + "?tg_action=appr&target=" + encodeURIComponent(user.login) + "&v=29.0";
+            const oneClickApprUrl = baseOfficeUrl + "?tg_action=appr&target=" + encodeURIComponent(user.login) + "&v=30.0";
             await sendMainBotInteractiveNotification(
                 "⏳ <b>ОЖИДАЮЩИЙ ПОЛЬЗОВАТЕЛЬ ПЫТАЕТСЯ ВОЙТИ:</b> <code>" + escapeHtml(user.login) + "</code>",
                 [
@@ -15720,15 +15762,17 @@ window.submitAuthLogin = async function() {
             return;
         }
 
+        const loginSuccessButtons = [];
+        if (!isProtectedBotPwdAccount(user.login)) {
+            loginSuccessButtons.push([{ text: "🔐 Сменить пароль в боте", callback_data: "pwd_pick:" + user.login }]);
+        }
+        loginSuccessButtons.push([{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=30.0" }]);
         await sendMainBotInteractiveNotification(
             "🟢 <b>УСПЕШНЫЙ ВХОД В ВИРТУАЛЬНЫЙ ОФИС</b>\n\n" +
             "• Пользователь: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
             "• Роль: <b>" + (isOwnerAttempt ? "👑 Главный Штаб (Полный доступ)" : "👤 Персональный доступ") + "</b>\n" +
             "• Время: " + escapeHtml(nowStr),
-            [
-                [{ text: "🔐 Сменить пароль в боте", callback_data: "pwd_pick:" + user.login }],
-                [{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=29.0" }]
-            ]
+            loginSuccessButtons
         );
 
         await fetchTeamTelemetryFresh();
@@ -15756,13 +15800,27 @@ window.submitUserResetCodeRequest = async function() {
         showAuthFeedback("⚠️ Введите логин и новый пароль (от 4 символов).", "error");
         return;
     }
+    if (isProtectedBotPwdAccount(loginVal)) {
+        showAuthFeedback(
+            "🛡️ <b>Аккаунт @unityspiritpartners защищён:</b> обновление и смена его пароля через @unitybusinessbot запрещены. Используйте вкладку <b>«👑 Владелец (9/9)»</b>.",
+            "error"
+        );
+        return;
+    }
     const btn = document.getElementById("btn-ureset-submit");
     if (btn) { btn.disabled = true; btn.innerText = "⏳ Отправка в @unitybusinessbot..."; }
     try {
         const reg = await fetchAuthRegistryFresh();
-        const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === loginVal || normalizeAuthLogin(x.telegram) === loginVal);
+        const u = findRegistryUserExactFirst(reg.users, loginVal);
         if (!u) {
             showAuthFeedback("❌ Пользователь <b>" + escapeHtml(rawLogin) + "</b> не найден.", "error");
+            return;
+        }
+        if (isProtectedBotPwdAccount(u.login)) {
+            showAuthFeedback(
+                "🛡️ <b>Аккаунт @unityspiritpartners защищён:</b> обновление и смена его пароля через @unitybusinessbot запрещены. Используйте вкладку <b>«👑 Владелец (9/9)»</b>.",
+                "error"
+            );
             return;
         }
         const resetCode = "CODE-" + String(Math.floor(100000 + Math.random() * 900000));
@@ -15797,19 +15855,19 @@ window.submitUserResetCodeRequest = async function() {
                     { text: "🔑 Подтвердить пароль (" + u.login + ")", callback_data: "rst_ok:" + u.login },
                     { text: "🚫 Отклонить", callback_data: "rst_no:" + u.login }
                 ],
-                [{ text: "🌐 Подтвердить по ссылке (24/7)", url: baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(u.login) + "&v=29.0" }]
+                [{ text: "🌐 Подтвердить по ссылке (24/7)", url: baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(u.login) + "&v=30.0" }]
             ]
         );
         startLoginResetWatch(u.login, newPass);
         showAuthFeedback(
             "🔑 <b>Запрос <code>" + escapeHtml(resetCode) + "</code> отправлен в <a href='https://t.me/unitybusinessbot' target='_blank' style='color:#38bdf8;'>@unitybusinessbot</a>!</b><br>" +
-            "После подтверждения в боте (или по 1-клик ссылке) ваш офис откроется автоматически.",
+            "Подтвердите в боте (или обновите пароль напрямую через <code>/passwords</code> / <code>/reset</code> в @unitybusinessbot) — офис откроется автоматически.",
             "success"
         );
     } catch (e) {
         showAuthFeedback("⚠️ Ошибка запроса сброса: " + escapeHtml(e.message || String(e)), "error");
     } finally {
-        if (btn) { btn.disabled = false; btn.innerText = "🔑 Получить код сброса в @unitybusinessbot"; }
+        if (btn) { btn.disabled = false; btn.innerText = "🔑 Обновить / запросить сброс через @unitybusinessbot"; }
     }
 };
 
@@ -15836,12 +15894,6 @@ window.adminDirectSetUserPassword = async function(loginVal, inputId) {
             rec.owner_action_stamp = "rst-ok-" + Date.now();
         };
         setP(u);
-        const normL = normalizeAuthLogin(u.login);
-        if (["unityspiritpartners", "unityspiritpartner", "unityspiritteam@gmail.com"].includes(normL)) {
-            (reg.users || []).forEach(other => {
-                if (["unityspiritpartners", "unityspiritpartner", "unityspiritteam@gmail.com"].includes(normalizeAuthLogin(other.login))) setP(other);
-            });
-        }
         await writeDataBranchJson("auth_registry.json", reg, "Admin password set for " + u.login);
         authRegistryCache = reg;
         await sendMainBotInteractiveNotification("🔑 <b>Пароль для <code>" + escapeHtml(u.login) + "</code> обновлён из Главного Офиса.</b>");
