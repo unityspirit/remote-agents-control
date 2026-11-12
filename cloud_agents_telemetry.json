@@ -1,0 +1,17 @@
+{
+  "version": "32.0",
+  "status": "online_24_7",
+  "last_cycle_iso": "2026-11-12T22:39:13+00:00",
+  "cycle_count": 1,
+  "event": "schedule",
+  "tasks_executed_this_cycle": 0,
+  "studied_this_cycle": false,
+  "memory_facts_count": 0,
+  "studied_urls_count": 0,
+  "bot_gate_mode": "request_only_by_@unityspiritpartners",
+  "tg_offline_fallback": {
+    "polled": true,
+    "updates": 1,
+    "handled": 0
+  }
+}
