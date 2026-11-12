@@ -1,0 +1,62 @@
+name: Cloud Agents 24/7 Autonomous Office
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  issue_comment:
+    types: [created]
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Execution mode (auto, study, digest)'
+        required: false
+        default: 'auto'
+      issue_number:
+        description: 'Optional specific issue number to execute'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  issues: write
+  models: read
+
+concurrency:
+  group: cloud-agents-24-7-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  autonomous-cloud-office:
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' && !contains(github.event.comment.body, '<!-- cloud-agent-v32 -->')) ||
+      github.event_name == 'issues'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/scripts/cloud_agent_worker.py
+          sparse-checkout-cone-mode: false
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GTP_SYNC_TOKEN: ${{ secrets.GTP_SYNC_TOKEN }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          OWNER_TG_CHAT_ID: ${{ secrets.OWNER_TG_CHAT_ID }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          DISPATCH_MODE: ${{ github.event.inputs.mode }}
+          DISPATCH_ISSUE: ${{ github.event.inputs.issue_number }}
+        run: python .github/scripts/cloud_agent_worker.py
