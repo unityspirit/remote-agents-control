@@ -59,7 +59,7 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=31.0"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=31.1"
 
 
 def _persist_personal_bot_token_local(login_val, bot_token_val):
