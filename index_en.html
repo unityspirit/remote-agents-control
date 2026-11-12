@@ -14060,39 +14060,29 @@ function enterPendingWaitingRoom(userObj) {
             }
         };
 
-        const _origOpenAgents = window.openAgentsStatusModal;
-        if (typeof _origOpenAgents === "function") {
-            window.openAgentsStatusModal = function() {
-                const r = _origOpenAgents.apply(this, arguments);
-                setTimeout(async () => {
-                    const modal = Array.from(document.querySelectorAll(".modal, [id*='modal']")).find(m => {
-                        const st = window.getComputedStyle(m);
-                        return st.display !== "none" && st.visibility !== "hidden" && m.innerText.includes("Агент");
-                    });
-                    if (!modal) return;
-                    let panel = document.getElementById("cloud-247-memory-panel");
-                    if (!panel) {
-                        panel = document.createElement("div");
-                        panel.id = "cloud-247-memory-panel";
-                        panel.style.cssText = "margin-top:12px; padding:12px; border-radius:12px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.35); font-size:0.78rem;";
-                        const body = modal.querySelector(".modal-body, .card, div:last-child") || modal;
-                        body.appendChild(panel);
-                    }
-                    panel.innerHTML = "⏳ Загрузка облачной памяти и телеметрии 24/7...";
-                    const { telemetry, memory } = await window.fetchCloud247TelemetryAndMemory();
-                    const facts = (memory && Array.isArray(memory.learned_facts)) ? memory.learned_facts.slice(-3).reverse() : [];
-                    const factsHtml = facts.map(f => "<li style='margin:4px 0;'><b>" + escapeHtml(f.topic || "") + "</b>: " + escapeHtml((f.insight || "").slice(0, 140)) + "...</li>").join("");
-                    panel.innerHTML =
-                        "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ ОБЛАЧНЫЕ АГЕНТЫ 24/7 + ПАМЯТЬ ОФИСА</div>" +
-                        "<div>• Статус: <b>" + (telemetry ? "🟢 Активны в GitHub Actions (без ноутбука)" : "🟡 Ожидание первого цикла") + "</b></div>" +
-                        "<div>• Цикл №: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Знаний в памяти: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b></div>" +
-                        "<div>• Бот-шлюз: <b>🔒 @unitybusinessbot только по одобрению @unityspiritpartners</b></div>" +
-                        (factsHtml ? "<ul style='margin:8px 0 6px 16px; padding:0; color:#cbd5e1;'>" + factsHtml + "</ul>" : "") +
-                        "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Запустить 24/7 Облачный цикл сейчас</button></div>";
-                }, 120);
-                return r;
-            };
-        }
+        window.renderCloud247MemoryPanel = async function() {
+            const modal = document.getElementById("antigravity-modal") || document.querySelector(".modal");
+            if (!modal) return;
+            let panel = document.getElementById("cloud-247-memory-panel");
+            if (!panel) {
+                panel = document.createElement("div");
+                panel.id = "cloud-247-memory-panel";
+                panel.style.cssText = "margin-top:14px; padding:12px; border-radius:12px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.35); font-size:0.78rem;";
+                const body = modal.querySelector(".modal-body, .antigravity-card, .card, div:last-child") || modal;
+                body.appendChild(panel);
+            }
+            panel.innerHTML = "⏳ Загрузка облачной памяти и телеметрии 24/7...";
+            const { telemetry, memory } = await window.fetchCloud247TelemetryAndMemory();
+            const facts = (memory && Array.isArray(memory.learned_facts)) ? memory.learned_facts.slice(-3).reverse() : [];
+            const factsHtml = facts.map(f => "<li style='margin:4px 0;'><b>" + escapeHtml(f.topic || "") + "</b>: " + escapeHtml((f.insight || "").slice(0, 140)) + "...</li>").join("");
+            panel.innerHTML =
+                "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ ОБЛАЧНЫЕ АГЕНТЫ 24/7 + ПАМЯТЬ ОФИСА</div>" +
+                "<div>• Статус: <b>" + (telemetry ? "🟢 Активны в GitHub Actions (без ноутбука)" : "🟡 Ожидание первого цикла") + "</b></div>" +
+                "<div>• Цикл №: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Знаний в памяти: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b></div>" +
+                "<div>• Бот-шлюз: <b>🔒 @unitybusinessbot только по одобрению @unityspiritpartners</b></div>" +
+                (factsHtml ? "<ul style='margin:8px 0 6px 16px; padding:0; color:#cbd5e1;'>" + factsHtml + "</ul>" : "") +
+                "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Запустить 24/7 Облачный цикл сейчас</button></div>";
+        };
     })();
 
     initAuthGateV20();
@@ -15265,6 +15255,7 @@ function applyStrictUserIsolationUI() {
 window.openAgentsStatusModal = function() {
     if (typeof isOwnerSession === "function" && isOwnerSession()) {
         if (typeof openAntigravityModal === "function") openAntigravityModal();
+        if (typeof renderCloud247MemoryPanel === "function") renderCloud247MemoryPanel();
     } else {
         if (typeof switchTab === "function") switchTab("tim", document.getElementById("nav-btn-tim"));
     }
