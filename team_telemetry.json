@@ -1,13 +1,13 @@
 {
   "version": "20.5",
-  "updated_at": "2026-11-09T19:53:24.196145+00:00",
+  "updated_at": "2026-11-13T22:32:00Z",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
-        "days_active": 11,
-        "days_to_30d_review": 19,
-        "active_minutes": 1.0,
-        "active_hours": 0.02,
+        "days_active": 1,
+        "days_to_30d_review": 29,
+        "active_minutes": 0,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
         "stalls_count": 0,
@@ -18,40 +18,6 @@
         "verdict_label": "👑 Владелец компании",
         "replacement_recommended": false,
         "why_diagnosis": "Начальный этап адаптации: данных мало, требуется контроль первых задач в назначенных папках."
-      },
-      "metrics": {
-        "total_active_sec": 60,
-        "total_requests": 0,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 0,
-        "today_date": "2026-10-30",
-        "today_active_sec": 60,
-        "today_requests": 0,
-        "first_seen": "2026-10-30T07:37:23.269Z",
-        "online_state": "active",
-        "last_seen": "2026-10-30T09:52:33.223Z",
-        "current_project": "Позновалка"
-      }
-    },
-    "__e2e_temp_member__": {
-      "audit_30d": {
-        "days_active": 11,
-        "days_to_30d_review": 19,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
-        "total_requests": 0,
-        "today_requests": 0,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 0,
-        "verdict": "warning_replace",
-        "verdict_label": "⚠️ РИСК ЗАМЕНЫ (День 11/30 · низкий темп)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       },
       "metrics": {
         "total_active_sec": 0,
@@ -65,234 +31,36 @@
     },
     "true1team": {
       "audit_30d": {
-        "days_active": 6,
-        "days_to_30d_review": 24,
-        "active_minutes": 2.5,
-        "active_hours": 0.04,
+        "days_active": 1,
+        "days_to_30d_review": 29,
+        "active_minutes": 0.2,
+        "active_hours": 0,
         "total_requests": 0,
         "today_requests": 0,
-        "stalls_count": 6,
-        "nudges_shown": 1,
+        "stalls_count": 1,
+        "nudges_shown": 0,
         "nudges_clicked": 0,
         "kpi_score": 0,
         "verdict": "coach",
-        "verdict_label": "🟡 НА КОНТРОЛЕ (День 6/30 · KPI 0/100)",
+        "verdict_label": "🟡 НА КОНТРОЛЕ (День 1/30 · KPI 0/100)",
         "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия. Часто медлит (6 пауз простоя) и игнорирует авто-подсказки системы — низкая вовлечённость или отвлечение."
+        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       },
       "metrics": {
-        "total_active_sec": 150,
+        "total_active_sec": 15,
         "total_requests": 0,
-        "idle_stall_count": 6,
-        "nudges_shown": 1,
+        "idle_stall_count": 1,
+        "nudges_shown": 0,
         "nudges_clicked": 0,
         "photos_sent": 0,
         "tim_requests": 0,
-        "today_date": "2026-11-03",
-        "today_active_sec": 60,
+        "today_date": "2026-10-30",
+        "today_active_sec": 15,
         "today_requests": 0,
         "first_seen": "2026-10-30T06:42:12.018Z",
         "online_state": "active",
-        "last_seen": "2026-11-03T14:30:44.964Z",
-        "current_project": "Личный Офис: @true1team"
-      },
-      "role": "admin",
-      "assigned_projects": [
-        "*"
-      ],
-      "status": "approved"
-    },
-    "aliashirani": {
-      "audit_30d": {
-        "days_active": 11,
-        "days_to_30d_review": 19,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
-        "total_requests": 0,
-        "today_requests": 0,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 0,
-        "verdict": "warning_replace",
-        "verdict_label": "⚠️ РИСК ЗАМЕНЫ (День 11/30 · низкий темп)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
-      },
-      "metrics": {
-        "total_active_sec": 0,
-        "total_requests": 0,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 0
-      }
-    },
-    "unityspiritpartners": {
-      "audit_30d": {
-        "days_active": 11,
-        "days_to_30d_review": 19,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
-        "total_requests": 0,
-        "today_requests": 0,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 0,
-        "verdict": "warning_replace",
-        "verdict_label": "⚠️ РИСК ЗАМЕНЫ (День 11/30 · низкий темп)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
-      },
-      "metrics": {
-        "total_active_sec": 0,
-        "total_requests": 0,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 0
-      }
-    },
-    "alberta_shirani": {
-      "audit_30d": {
-        "days_active": 11,
-        "days_to_30d_review": 19,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
-        "total_requests": 0,
-        "today_requests": 0,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 0,
-        "verdict": "warning_replace",
-        "verdict_label": "⚠️ РИСК ЗАМЕНЫ (День 11/30 · низкий темп)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
-      },
-      "metrics": {
-        "total_active_sec": 0,
-        "total_requests": 0,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 0
-      }
-    },
-    "@maxprofitwork": {
-      "audit_30d": {
-        "days_active": 10,
-        "days_to_30d_review": 20,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
-        "total_requests": 0,
-        "today_requests": 0,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 0,
-        "verdict": "warning_replace",
-        "verdict_label": "⚠️ РИСК ЗАМЕНЫ (День 10/30 · низкий темп)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
-      },
-      "metrics": {
-        "total_active_sec": 0,
-        "total_requests": 0,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 0
-      }
-    },
-    "tatianaknyazeva777": {
-      "login": "tatianaknyazeva777",
-      "full_name": "Татьяна Князева (tentorium.ru)",
-      "role": "member",
-      "status": "approved",
-      "telegram": "@tatianaknyazeva777",
-      "assigned_projects": [
-        "Татьяна tentorium.ru"
-      ],
-      "total_actions": 1,
-      "last_seen": "2026-11-03T22:53:08.168244+00:00",
-      "audit_30d": {
-        "days_active": 6,
-        "days_to_30d_review": 24,
-        "active_minutes": 0.0,
-        "active_hours": 0.0,
-        "total_requests": 0,
-        "today_requests": 0,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 0,
-        "verdict": "coach",
-        "verdict_label": "🟡 НА КОНТРОЛЕ (День 6/30 · KPI 0/100)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
-      },
-      "metrics": {
-        "total_active_sec": 0,
-        "total_requests": 0,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 0
-      }
-    },
-    "yvyatkin": {
-      "login": "yvyatkin",
-      "full_name": "Юрий Вяткин",
-      "role": "admin",
-      "status": "approved",
-      "telegram": "@yvyatkin",
-      "telegram_id": "173185967",
-      "telegram_link": "https://t.me/yvyatkin",
-      "assigned_projects": [
-        "*"
-      ],
-      "is_co_owner": true,
-      "co_owner_project": "Юра (КХЛ ИИ Бот)",
-      "total_actions": 12,
-      "last_seen": "2026-11-04T13:31:26.687450Z",
-      "audit_30d": {
-        "days_active": 6,
-        "days_to_30d_review": 24,
-        "active_minutes": 120.0,
-        "active_hours": 2.0,
-        "total_requests": 8,
-        "today_requests": 2,
-        "stalls_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "kpi_score": 57,
-        "verdict": "coach",
-        "verdict_label": "🟡 НА КОНТРОЛЕ (День 6/30 · KPI 57/100)",
-        "replacement_recommended": false,
-        "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
-      },
-      "metrics": {
-        "total_active_sec": 7200,
-        "total_requests": 8,
-        "idle_stall_count": 0,
-        "nudges_shown": 0,
-        "nudges_clicked": 0,
-        "photos_sent": 0,
-        "tim_requests": 3,
-        "today_date": "2026-11-04",
-        "today_active_sec": 1200,
-        "today_requests": 2,
-        "first_seen": "2026-10-15T00:00:00.000Z",
-        "online_state": "active",
-        "last_seen": "2026-11-04T13:31:26.687450Z",
-        "current_project": "Юра"
+        "last_seen": "2026-10-30T06:42:12.018Z",
+        "current_project": "Позновалка"
       }
     }
   }
