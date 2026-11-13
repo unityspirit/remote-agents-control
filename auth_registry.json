@@ -249,18 +249,7 @@
       "pbkdf2_hash": "69506b2cb490e7ab0d48271b2e11b4ec813cb1b8f031d957477064920cea9611",
       "iterations": 120000,
       "updated_at": "2026-11-13T22:32:00Z",
-      "pending_reset": {
-        "code": "LOGIN-293781",
-        "requested_at": "2026-11-13T22:47:05.542Z",
-        "salt_hex": "cd82dd85e0d1721e9f088b5ebfa8bb0a",
-        "pbkdf2_hash": "553c9a5ac1d339c495abd916d355ac3d63b4dfc0498821793e2ead1a2874498b",
-        "iterations": 120000,
-        "rsa_envelope": {
-          "ek": "Ij9iTtZaBIS+0qwNk1vToyel4Lu3uCArVJJ7t6Ey2yXpe5ZYUyZk0jjr4NCQ3uYfVNtRkUEHfUuN7WbT3cGPsOCdeSgEDzwHlwnN8Ml7LuP1RSCiRB5oDzFfvg2KbapDj66v7/NGgntwcCQXlU2NPMQumw6kB/ZWVzOUooxQZZqX5fxEMwo31iAo5BO6irDS33LE+hl1aA2pnRVVyaH1YHaHQqoy+tfnw7n51ubp7anLJRfk7hCK9h2/du8XRsPpnyckv9Y8ONtU66Q1DYqTzzbmsgJyHjkmyCgNLDDzqT+Jfgf3RVh9eo83/g1JcsdOs7Q6gu0w0jjOhR4TeNmhZA==",
-          "iv": "w/kOz8rkoU2iU+vn",
-          "ct": "UIg+6Jzt4kZiDB8Tz1AMTVxkaCZ2m6vPrxA5GcpRgz1TjI866bZZfTt8WCIKm1Hcezb9+a7zrI5qNFZobSXosPQIdA4oG/YUsdqJFP8Hg2LMD5DPJhce6Ec9lF53loFynwX8hcAMJlNHIzSglsTZ/1Vsksok5gjHAEWHUC6G1QRxrmGmNUvlig=="
-        }
-      }
+      "pending_reset": null
     },
     {
       "id": "REQ-252172",
