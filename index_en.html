@@ -5,6 +5,7 @@
 window.forceHardRefreshApp = function() {
     try {
         localStorage.removeItem("gsg_app_v32_0_loaded");
+        localStorage.removeItem("gsg_app_v33_0_loaded");
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function(regs) {
                 for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -22,9 +23,9 @@ window.forceHardRefreshApp = function() {
 };
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v32_0_loaded");
+        var v = localStorage.getItem("gsg_app_v33_0_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v32_0_loaded", "true");
+            localStorage.setItem("gsg_app_v33_0_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -2491,12 +2492,15 @@ textarea.task-inline-input {
         <div class="telemetry-pill" onclick="openNotebookLMModal()" style="border-color:rgba(6,182,212,0.3); color:#38bdf8;">
             <span>📓 NotebookLM RAG</span>
         </div>
+        <div class="telemetry-pill" onclick="openAntigravityModal()" style="border-color:rgba(139,92,246,0.45); color:#c4b5fd;" title="Google Antigravity 2.0 Orchestrator & Gemini 4 Hydrogen">
+            <span>⚛️ Hydrogen 2.0</span>
+        </div>
         <div class="telemetry-pill" onclick="openMvpLaunchModal()" style="border-color:rgba(245,158,11,0.3); color:#fbbf24;">
             <span>🚀 MVP: Голосовой ИИ (94%)</span>
         </div>
     </div>
     <div style="font-size:0.75rem; color:#94a3b8; font-weight:600; display:flex; gap:6px; align-items:center;">
-        <span id="version-badge-label">v32.0 Cloud 24/7</span>
+        <span id="version-badge-label">v33.0 Hydrogen 24/7</span>
     </div>
 </div>
 
@@ -3622,16 +3626,16 @@ textarea.task-inline-input {
 </div>
 
 
-<!-- v26.0: GOOGLE ANTIGRAVITY REMOTE AGENTS 24/7 ARCHITECTURE & LIVE TELEMETRY MODAL -->
+<!-- v33.0: GOOGLE ANTIGRAVITY 2.0 ORCHESTRATOR + GEMINI 4 HYDROGEN 24/7 MODAL -->
 <div id="antigravity-modal" class="modal-overlay" style="display:none; z-index:24700;" onclick="if(event.target===this) closeAntigravityModal()">
-    <div class="modal-card" style="max-width:840px; max-height:90dvh; display:flex; flex-direction:column; border:1px solid rgba(56,189,248,0.4); box-shadow:0 10px 40px rgba(56,189,248,0.25);">
+    <div class="modal-card" style="max-width:860px; max-height:90dvh; display:flex; flex-direction:column; border:1px solid rgba(56,189,248,0.45); box-shadow:0 12px 44px rgba(56,189,248,0.28);">
         <div class="modal-header" style="border-bottom:1px solid var(--border); padding-bottom:12px;">
             <div>
-                <h3 style="font-size:1.05rem; font-weight:900; color:#38bdf8; display:flex; align-items:center; gap:8px;">
-                    <span>☁️ Google Antigravity: Remote Agents Cloud System (v26.0)</span>
+                <h3 style="font-size:1.05rem; font-weight:900; color:#38bdf8; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span>⚛️ Google Antigravity 2.0 & Gemini 4 Hydrogen (v33.0)</span>
                 </h3>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:2px;">
-                    Официальная архитектура Google Antigravity: Headless 24/7 Cloud VM Runner. Защита от деградации контекста LLM (Задача #42) & Реестр автономных процессов.
+                    Новинки 12–13.11.2026: Динамический оркестратор Carbon ↔ Hydrogen · Контекст 1M токенов · Управляемое мышление <code>thinking_level</code> · Headless 24/7 Cloud
                 </div>
             </div>
             <div style="display:flex; gap:6px; align-items:center;">
@@ -3641,6 +3645,49 @@ textarea.task-inline-input {
         </div>
 
         <div class="modal-body" style="overflow-y:auto; max-height:76dvh; display:flex; flex-direction:column; gap:12px; padding:12px 6px;">
+            <!-- v33.0 HYDROGEN ORCHESTRATOR ENGINE CONTROLS -->
+            <div style="background:linear-gradient(135deg, rgba(14,165,233,0.14), rgba(139,92,246,0.14)); border:1px solid rgba(56,189,248,0.45); border-radius:12px; padding:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
+                    <h4 style="font-size:0.88rem; font-weight:900; color:#e0f2fe; margin:0;">⚛️ ЯДРО GEMINI 4 HYDROGEN & ОРKEСТРАТОР 2.0</h4>
+                    <span style="background:rgba(16,185,129,0.22); color:#34d399; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:999px;">Релиз 12.11.2026 · 1M Context</span>
+                </div>
+                <div style="font-size:0.76rem; color:#cbd5e1; line-height:1.45; margin-bottom:10px;">
+                    • <b>Gemini 4 Hydrogen (<code>gemini-4-hydrogen</code>):</b> в 2.5x быстрее 3.8 Flash ($1.50/1M in, $7.50/1M out), мультимодальность + нативные инструменты.<br>
+                    • <b>Двусторонняя маршрутизация (Antigravity 2.0):</b> автоматическое переключение <b>Carbon ↔ Hydrogen</b> (-24% расхода frontier-квоты, +19% скорости), совместимость с <b>COMSS AI 2.0</b>.<br>
+                    • <b>Миграция с GitHub Models:</b> <code>models.github.ai</code> официально закрыт 30.07.2026 — облачный воркер переведён на Gemini 4 Hydrogen + gzip/deflate парсер.
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(175px, 1fr)); gap:8px; margin-bottom:8px;">
+                    <div>
+                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Модель маршрутизации:</label>
+                        <select id="hydrogen-model-select" class="modal-input" style="padding:7px 9px; font-size:0.76rem; background:#090d16; color:#f8fafc;">
+                            <option value="gemini-4-hydrogen">⚡ Auto: Carbon ↔ Gemini 4 Hydrogen</option>
+                            <option value="gemini-4-carbon">🧠 Приоритет: Gemini 4 Carbon (Heavy)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Глубина мышления (<code>thinking_level</code>):</label>
+                        <select id="hydrogen-thinking-select" class="modal-input" style="padding:7px 9px; font-size:0.76rem; background:#090d16; color:#f8fafc;">
+                            <option value="high">high (Баланс: стандарт)</option>
+                            <option value="xhigh">xhigh (Максимум: /ceo и /critic)</option>
+                            <option value="medium">medium (Быстрый анализ)</option>
+                            <option value="low">low (Мгновенный чат)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Браузерный Gemini API Key (опц., только локально):</label>
+                        <input type="password" id="hydrogen-byok-input" placeholder="AIza... (в localStorage браузера)" class="modal-input" style="padding:7px 9px; font-size:0.75rem; background:#090d16; color:#f8fafc;">
+                    </div>
+                </div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                    <button type="button" class="mini-btn accent" onclick="saveHydrogenConfigUI()">💾 Применить параметры Hydrogen</button>
+                    <button type="button" class="mini-btn" onclick="testHydrogenLivePing()" style="border-color:#38bdf8; color:#38bdf8;">🧪 Проверить Gemini 4 Hydrogen API</button>
+                    <span id="hydrogen-status-pill" style="font-size:0.72rem; color:#94a3b8;"></span>
+                </div>
+                <div style="font-size:0.7rem; color:#94a3b8; margin-top:6px;">
+                    💡 Для автономной LLM-генерации 24/7 в GitHub Actions добавьте секрет <code>GEMINI_API_KEY</code> в <b>Settings → Secrets → Actions</b> репозитория <code>GlobalTeamPartners/remote-agents-control</code>.
+                </div>
+            </div>
+
             <!-- 4 PILLARS OF ANTIGRAVITY -->
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:8px;">
                 <div style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:10px;">
@@ -3720,7 +3767,7 @@ textarea.task-inline-input {
                     📋 СВОДКА ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЕЙ И ВЫПОЛНЕННЫХ ЗАДАЧ (6–8 НОЯБРЯ 2026)
                 </h4>
                 <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.5; display:flex; flex-direction:column; gap:6px;">
-                    <div>• <b>@true1team (Власлав):</b> Задача #42 (Анализ деградации LLM в длинных контекстах / Allen AI & Habr 1104552) ➔ Внедрена архитектура Antigravity Remote Agents с внешним Obsidian Vault. Задача #41 ➔ Развернут робот AltaHQ Voice ($1,000 + $300/мес).</div>
+                    <div>• <b>@unityspiritpartners (Власлав, Главный Штаб) & @true1team:</b> Задача #42 (Анализ деградации LLM в длинных контекстах / Allen AI & Habr 1104552) ➔ Внедрена архитектура Antigravity Remote Agents с внешним Obsidian Vault. Задача #41 ➔ Развернут робот AltaHQ Voice ($1,000 + $300/мес).</div>
                     <div>• <b>@aliashirani (Alberta Shirani):</b> Задача #40 ➔ Фундаментальный поворот проекта с дизайна интерьера на «Трансформацию женщин 30–50 лет». Задача #39 ➔ Воронка подписки и Telegram-бот на 1,000,000 ₽. Собрано WebApp Cinema.</div>
                     <div>• <b>@yvyatkin (Юрий Вяткин):</b> Задача #37 ➔ Выдан полный доступ к офису. Калиброван бэктест 82 матчей КХЛ Бота (WinRate 82.9%). Подготовка к монетизации VIP-канала с кэфами >=1.85.</div>
                     <div>• <b>@tatianaknyazeva777:</b> Задачи #30, #31 ➔ Полный доступ одобрен. Каталогизирована база tentorium.ru, подключен AI-консультант здоровья.</div>
@@ -3777,7 +3824,7 @@ textarea.task-inline-input {
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => k !== "global-spirit-group-pwa-v32.0").forEach(k => caches.delete(k));
+                        keys.filter(k => k !== "global-spirit-group-pwa-v33.0").forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -9709,7 +9756,7 @@ textarea.task-inline-input {
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v32.0 Antigravity Remote Agents active");
+                            console.log("Service Worker v33.0 Antigravity 2.0 Hydrogen Remote Agents active");
                         }
                     });
                 }
@@ -9888,7 +9935,6 @@ textarea.task-inline-input {
         "unityspiritpartners",
         "unityspiritpartner",
         "unityspiritteam",
-        "true1team",
         "vlaslav"
     ];
 
@@ -10676,7 +10722,59 @@ function sendQuickGuestPromptPortal(txt) {
             }
         }
 
-        // D. General ChatGPT Mode / Assistant fallback
+        // D. Gemini 4 Hydrogen Live / Local API / Smart Assistant fallback
+        if (!replyText) {
+            if (/(?:hydrogen|гидроген|antigravity|оркестратор|gemini\s*4|comss|новинк|обновлен)/i.test(lower)) {
+                const hModel = localStorage.getItem("gsg_hydrogen_model") || "gemini-4-hydrogen";
+                const hThink = localStorage.getItem("gsg_hydrogen_thinking") || "high";
+                const hasKey = Boolean((localStorage.getItem("gsg_hydrogen_api_key") || "").trim());
+                replyText = isEn ?
+                    ("⚛️ **Gemini 4 Hydrogen & Antigravity 2.0 Orchestrator (Nov 12–13, 2026):**\n\n" +
+                     "• **Model Engine:** `gemini-4-hydrogen` — 2.5x faster than Gemini 3.8 Flash, **1M token context**, native `thinking_level` (`low` / `medium` / `high` / `xhigh`), flat pricing `$1.50/1M` in, `$7.50/1M` out.\n" +
+                     "• **Dynamic Orchestrator:** Auto-handoff between **Carbon** (deep strategy/critic) and **Hydrogen** (rapid execution), reducing frontier quota by ~24% while boosting throughput +19%.\n" +
+                     "• **Cloud Migration:** `models.github.ai` was retired on July 30, 2026 — Worker v33.0 now targets Gemini 4 Hydrogen + gzip-safe page extraction + COMSS AI 2.0 routing.\n" +
+                     "• **Active Mode:** `" + hModel + "` (`thinking: " + hThink + "`) · Live Key: " + (hasKey ? "✅ Configured" : "⏳ Add GEMINI_API_KEY in Antigravity Panel / GitHub Secrets") + "\n\n" +
+                     "[[NAV:tim|👑 Open Director Tim]]") :
+                    ("⚛️ **Gemini 4 Hydrogen & Antigravity 2.0 Оркестратор (новинки 12–13.11.2026):**\n\n" +
+                     "• **Новая модель Google Gemini 4 Hydrogen (`gemini-4-hydrogen`):** в 2.5 раза быстрее Gemini 3.8 Flash, **контекст 1M токенов**, управляемое мышление `thinking_level` (`low` / `medium` / `high` / `xhigh`), тариф `$1.50/1M` вход и `$7.50/1M` выход.\n" +
+                     "• **Google Antigravity 2.0 Оркестратор:** динамическая маршрутизация Carbon ↔ Hydrogen с обратным возвратом на сложный анализ (`-24%` расхода тяжёлой квоты, `+19%` скорости).\n" +
+                     "• **Исправление 24/7 Облака:** GitHub Models (`models.github.ai`) официально закрыт 30.07.2026, поэтому воркер v33.0 переведён на **Gemini 4 Hydrogen** + корректную декомпрессию `gzip/deflate` для русских сайтов (включая COMSS AI 2.0).\n" +
+                     "• **Текущий режим:** `" + hModel + "` (`thinking: " + hThink + "`) · API-ключ: " + (hasKey ? "✅ Подключён" : "⏳ Добавьте GEMINI_API_KEY в Панели Antigravity / GitHub Secrets") + "\n\n" +
+                     "<i>Открыть настройки оркестратора можно нажав «Antigravity 2.0 · 24/7» в верхней панели.</i>");
+                actionExecuted = true;
+            }
+        }
+
+        if (!replyText) {
+            const hKey = (isUserAuthenticated() && typeof localStorage !== "undefined") ? (localStorage.getItem("gsg_hydrogen_api_key") || "").trim() : "";
+            if (hKey && hKey.length > 12) {
+                try {
+                    const hModel = localStorage.getItem("gsg_hydrogen_model") || "gemini-4-hydrogen";
+                    const hThink = localStorage.getItem("gsg_hydrogen_thinking") || "high";
+                    const hResp = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", "Authorization": "Bearer " + hKey },
+                        body: JSON.stringify({
+                            model: hModel,
+                            reasoning_effort: hThink,
+                            max_tokens: 900,
+                            messages: [
+                                { role: "system", content: "Ты встроенный ИИ-директор Global Spirit Group ★ Виртуальный Офис (v33.0 Hydrogen). Отвечай кратко, по делу, без галлюцинаций. Текущий проект: " + (currentProject || "Офис") + "." },
+                                { role: "user", content: msg }
+                            ]
+                        })
+                    });
+                    if (hResp.ok) {
+                        const hJson = await hResp.json();
+                        const hText = (((hJson.choices || [])[0] || {}).message || {}).content;
+                        if (hText && String(hText).trim()) {
+                            replyText = "⚛️ **Gemini 4 Hydrogen (`" + hThink + "`):**\n\n" + String(hText).trim();
+                        }
+                    }
+                } catch(e) {}
+            }
+        }
+
         if (!replyText) {
             try {
                 const localP = fetch(LOCAL_TRUST_API + "/api/guest-chat", {
@@ -11400,118 +11498,16 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v30.0</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v33.0</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
 
     async function submitAuthLogin() {
-        const loginVal = normalizeAuthLogin((document.getElementById("auth-login-user") || {}).value);
-        const passVal = String((document.getElementById("auth-login-pass") || {}).value || "").trim();
-        if (!loginVal || !passVal) {
-            showAuthFeedback("⚠️ Введите логин и пароль.", "error");
-            return;
+        if (typeof window.submitAuthLogin === "function" && window.submitAuthLogin !== submitAuthLogin) {
+            return window.submitAuthLogin();
         }
-        const btn = document.getElementById("btn-auth-login-submit");
-        if (btn) { btn.disabled = true; btn.innerText = "⏳ Проверка..."; }
-        try {
-            const reg = await fetchAuthRegistryFresh();
-            const isOwnerAttempt = (
-                loginVal === "unityspiritpartners" ||
-                loginVal === "unityspiritpartner" ||
-                loginVal === "@unityspiritpartners" ||
-                loginVal === "@unityspiritpartner" ||
-                loginVal === "unityspiritteam" ||
-                loginVal === "unityspiritteam@gmail.com" ||
-                loginVal === "vlaslav"
-            );
-            const isYuriAttempt = (
-                loginVal === "yvyatkin" ||
-                loginVal === "@yvyatkin" ||
-                loginVal === "yuri" ||
-                loginVal === "yuri_vyatkin"
-            );
-            const isAlbertaAttempt = (
-                loginVal === "alberta_shirani" ||
-                loginVal === "aliashirani" ||
-                loginVal === "alberta"
-            );
-            const user = (reg.users || []).find(u => {
-                const uNorm = normalizeAuthLogin(u.login);
-                const tgNorm = normalizeAuthLogin(u.telegram);
-                return uNorm === loginVal || tgNorm === loginVal || (isOwnerAttempt && u.role === "owner") || (isYuriAttempt && (uNorm === "yvyatkin" || tgNorm === "yvyatkin"));
-            });
-            if (!user) {
-                const ownerHashAttempt = isOwnerAttempt ? await pbkdf2HexJs(passVal, "9cf23e131e4386bd36f36aa84e56be45", 120000) : "";
-                if (isOwnerAttempt && ownerHashAttempt === "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b") {
-                    const ownerFallback = {
-                        id: "owner-unityspiritpartners",
-                        login: "unityspiritpartners",
-                        full_name: "Vlaslav (Owner — Unity Spirit Partners)",
-                        telegram: "@unityspiritpartners",
-                        role: "owner",
-                        status: "approved",
-                        salt_hex: "9cf23e131e4386bd36f36aa84e56be45",
-                        pbkdf2_hash: "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
-                        iterations: 120000,
-                        assigned_projects: ["*"],
-                        gta_completed: true,
-                        gta_archetype: "👑 Босс Синдиката"
-                    };
-                    unlockOfficeWithUser(ownerFallback, true);
-                    showToast("✅ Добро пожаловать, Владелец Офиса!");
-                    return;
-                }
-                showAuthFeedback("❌ Аккаунт не найден — нажмите <b>«⚡ Быстрая регистрация»</b> выше.", "error");
-                return;
-            }
-            const computed = await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000);
-            const isOwnerPass = (user.role === "owner" && computed === "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b");
-            if (isYuriAttempt) {
-                user.role = "member";
-                user.status = "approved";
-                user.assigned_projects = ["Юра", "Личный Офис: @yvyatkin"];
-                user.is_co_owner = false;
-                if (!user.salt_hex) {
-                    unlockOfficeWithUser(user, false);
-                    showToast("✅ Добро пожаловать в рабочий кабинет «Юра», Юрий!");
-                    return;
-                }
-            }
-            if (isAlbertaAttempt) {
-                user.role = "member";
-                user.assigned_projects = ["Alberta", "Личный Офис: @" + normalizeAuthLogin(user.login)];
-            }
-            if (computed !== user.pbkdf2_hash && !isOwnerPass) {
-                showAuthFeedback("❌ Неверный пароль. Для сброса нажмите «🔑 Забыли пароль? Сброс по коду».", "error");
-                return;
-            }
-            if (isOwnerAttempt) {
-                user.role = "owner";
-                user.status = "approved";
-                user.assigned_projects = ["*"];
-            }
-            if (user.status === "pending" && !isOwnerPass && user.role !== "owner" && !isOwnerAttempt) {
-                enterPendingWaitingRoom(user);
-                return;
-            }
-            if (user.status === "rejected" || user.status === "replaced") {
-                showAuthFeedback("🚫 Доступ закрыт администратором (@" + UNITY_OWNER_TG + ").", "error");
-                return;
-            }
-            await fetchTeamTelemetryFresh();
-            const memTele = (teamTelemetryCache.members || {})[user.login] || {};
-            if (memTele.gta_profile && memTele.gta_profile.completed_at) {
-                user.gta_completed = true;
-                user.gta_archetype = memTele.gta_profile.archetype || user.gta_archetype;
-            }
-            unlockOfficeWithUser(user, false);
-            showToast("✅ Добро пожаловать, " + (user.full_name || user.login) + "!");
-        } catch (e) {
-            showAuthFeedback("⚠️ Ошибка сети: " + escapeHtml(e.message || String(e)), "error");
-        } finally {
-            if (btn) { btn.disabled = false; btn.innerText = "🔐 Войти в Виртуальный Офис"; }
-        }
+        showAuthFeedback("⚠️ Загрузка модуля авторизации v33.0 — нажмите ещё раз.", "error");
     }
 
         // =========================================================================
@@ -11732,16 +11728,89 @@ function enterPendingWaitingRoom(userObj) {
         if (m) m.style.display = "none";
     }
 
-    // === v26.0: GOOGLE ANTIGRAVITY REMOTE AGENTS MODAL & TELEMETRY ===
+    // === v33.0: GOOGLE ANTIGRAVITY 2.0 ORCHESTRATOR & GEMINI 4 HYDROGEN ===
     function openAntigravityModal() {
         const m = document.getElementById("antigravity-modal");
         if (m) m.style.display = "flex";
+        try {
+            const ms = document.getElementById("hydrogen-model-select");
+            const ts = document.getElementById("hydrogen-thinking-select");
+            const ks = document.getElementById("hydrogen-byok-input");
+            const st = document.getElementById("hydrogen-status-pill");
+            if (ms) ms.value = localStorage.getItem("gsg_hydrogen_model") || "gemini-4-hydrogen";
+            if (ts) ts.value = localStorage.getItem("gsg_hydrogen_thinking") || "high";
+            const savedKey = localStorage.getItem("gsg_hydrogen_api_key") || "";
+            if (ks) ks.value = savedKey;
+            if (st) st.innerHTML = savedKey ? "<span style='color:#34d399;'>● Локальный API-ключ сохранён</span>" : "<span style='color:#fbbf24;'>○ Локальный ключ не задан (работает Smart Orchestrator)</span>";
+        } catch(e) {}
+        if (typeof renderCloud247MemoryPanel === "function") {
+            renderCloud247MemoryPanel();
+        }
     }
 
     function closeAntigravityModal() {
         const m = document.getElementById("antigravity-modal");
         if (m) m.style.display = "none";
     }
+
+    window.saveHydrogenConfigUI = function() {
+        const ms = document.getElementById("hydrogen-model-select");
+        const ts = document.getElementById("hydrogen-thinking-select");
+        const ks = document.getElementById("hydrogen-byok-input");
+        const st = document.getElementById("hydrogen-status-pill");
+        const model = ms ? ms.value : "gemini-4-hydrogen";
+        const thinking = ts ? ts.value : "high";
+        const key = ks ? String(ks.value || "").trim() : "";
+        localStorage.setItem("gsg_hydrogen_model", model);
+        localStorage.setItem("gsg_hydrogen_thinking", thinking);
+        if (key) {
+            localStorage.setItem("gsg_hydrogen_api_key", key);
+        } else {
+            localStorage.removeItem("gsg_hydrogen_api_key");
+        }
+        const chatBadge = document.getElementById("ai-chat-mode-badge");
+        if (chatBadge) {
+            chatBadge.innerText = key ? (model === "gemini-4-carbon" ? "Carbon · " + thinking : "Hydrogen 4 · " + thinking) : "Orchestrator 24/7";
+        }
+        if (st) st.innerHTML = key ? "<span style='color:#34d399;'>✅ Сохранено локально в браузере</span>" : "<span style='color:#94a3b8;'>💾 Настройки сохранены (ключ очищен)</span>";
+        showToast("⚛️ Параметры " + model + " (thinking: " + thinking + ") сохранены!");
+    };
+
+    window.testHydrogenLivePing = async function() {
+        const ks = document.getElementById("hydrogen-byok-input");
+        const st = document.getElementById("hydrogen-status-pill");
+        const key = (ks ? String(ks.value || "").trim() : "") || (localStorage.getItem("gsg_hydrogen_api_key") || "").trim();
+        const model = (document.getElementById("hydrogen-model-select") || {}).value || "gemini-4-hydrogen";
+        const thinking = (document.getElementById("hydrogen-thinking-select") || {}).value || "high";
+        if (!key) {
+            if (st) st.innerHTML = "<span style='color:#fca5a5;'>⚠️ Введите ваш GEMINI_API_KEY для проверки</span>";
+            return;
+        }
+        if (st) st.innerHTML = "<span style='color:#38bdf8;'>⏳ Запрос к Gemini 4 Hydrogen...</span>";
+        try {
+            const resp = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "Authorization": "Bearer " + key },
+                body: JSON.stringify({
+                    model: model,
+                    reasoning_effort: thinking,
+                    max_tokens: 60,
+                    messages: [{ role: "user", content: "Ответь одной короткой фразой: OK Gemini 4 Hydrogen active" }]
+                })
+            });
+            if (resp.ok) {
+                const j = await resp.json();
+                const txt = (((j.choices || [])[0] || {}).message || {}).content || "OK";
+                if (st) st.innerHTML = "<span style='color:#34d399;'>✅ " + escapeHtml(String(txt).slice(0, 60)) + "</span>";
+                showToast("✅ Gemini 4 Hydrogen API работает!");
+            } else {
+                const errTxt = await resp.text();
+                if (st) st.innerHTML = "<span style='color:#fca5a5;'>❌ HTTP " + resp.status + ": " + escapeHtml(errTxt.slice(0, 90)) + "</span>";
+            }
+        } catch(e) {
+            if (st) st.innerHTML = "<span style='color:#fca5a5;'>❌ Ошибка сети: " + escapeHtml(e.message || "error") + "</span>";
+        }
+    };
 
     async function sendAntigravityTelegramReport() {
         const token = getMainBotToken();
@@ -11966,19 +12035,38 @@ function enterPendingWaitingRoom(userObj) {
     async function handleUrlAutoApproval() {
         const params = new URLSearchParams(window.location.search);
         const approveUser = params.get("approve_user");
+        const approveCode = params.get("code") || "";
         if (!approveUser) return;
+
+        // v33.0 SECURITY HARDENING: NEVER allow unauthenticated URL elevation or blind ["*"] grant
+        if (!isOwnerSession()) {
+            showToast("🔒 Для подтверждения заявки войдите как Владелец (@unityspiritpartners)!");
+            try { history.replaceState(null, "", window.location.pathname); } catch(e) {}
+            return;
+        }
+        if (!approveCode) {
+            showToast("⚠️ Ссылка без проверочного кода отклонена. Подтвердите через @unitybusinessbot или Сейф.");
+            try { history.replaceState(null, "", window.location.pathname); } catch(e) {}
+            return;
+        }
         
         try {
             const reg = await fetchAuthRegistryFresh();
             const normTarget = normalizeAuthLogin(approveUser);
+            if (["unityspiritpartners", "unityspiritpartner", "unityspiritteam", "unityspiritteam@gmail.com", "vlaslav"].includes(normTarget)) {
+                showToast("🛡️ Главные аккаунты не меняются через URL.");
+                return;
+            }
             const user = (reg.users || []).find(u => normalizeAuthLogin(u.login) === normTarget || normalizeAuthLogin(u.telegram) === normTarget);
-            if (user) {
+            if (user && String(user.id || "") === String(approveCode)) {
                 user.status = "approved";
                 user.approved_at = new Date().toISOString();
                 user.owner_action_stamp = "url-approve-" + Date.now();
-                user.assigned_projects = ["*"];
+                if (!Array.isArray(user.assigned_projects) || user.assigned_projects.length === 0) {
+                    user.assigned_projects = ["Личный Офис: @" + normTarget];
+                }
                 
-                await ghApiPushJson("auth_registry.json", reg, "approve: user " + approveUser + " via 1-click URL button", "data");
+                await ghApiPushJson("auth_registry.json", reg, "approve: user " + approveUser + " verified via Owner URL [v33.0]", "data");
                 showToast("✅ Пользователь @" + approveUser + " успешно одобрен в 1 клик на 30 дней!");
                 
                 if (TG_BOT_TOKEN && OWNER_TG_CHAT_ID) {
@@ -12073,12 +12161,8 @@ function enterPendingWaitingRoom(userObj) {
                 created_at: new Date().toISOString()
             });
 
-            const isAutoApprovedAdmin = (
-                loginVal === "yvyatkin" || 
-                loginVal === "true1team" || 
-                loginVal === "unityspiritpartners" || 
-                (tgVal && tgVal.toLowerCase().includes("yvyatkin"))
-            );
+            // v33.0 Security Hardening: NO unverified self-registration auto-admin elevation
+            const isAutoApprovedAdmin = false;
             const reqCode = "REQ-" + String(Date.now()).slice(-6);
             const newUserEntry = {
                 id: reqCode,
@@ -14067,21 +14151,24 @@ function enterPendingWaitingRoom(userObj) {
             if (!panel) {
                 panel = document.createElement("div");
                 panel.id = "cloud-247-memory-panel";
-                panel.style.cssText = "margin-top:14px; padding:12px; border-radius:12px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.35); font-size:0.78rem;";
-                const body = modal.querySelector(".modal-body, .antigravity-card, .card, div:last-child") || modal;
+                panel.style.cssText = "margin-top:6px; padding:12px; border-radius:12px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.35); font-size:0.78rem;";
+                const body = modal.querySelector(".modal-body") || modal;
                 body.appendChild(panel);
             }
             panel.innerHTML = "⏳ Загрузка облачной памяти и телеметрии 24/7...";
             const { telemetry, memory } = await window.fetchCloud247TelemetryAndMemory();
             const facts = (memory && Array.isArray(memory.learned_facts)) ? memory.learned_facts.slice(-3).reverse() : [];
             const factsHtml = facts.map(f => "<li style='margin:4px 0;'><b>" + escapeHtml(f.topic || "") + "</b>: " + escapeHtml((f.insight || "").slice(0, 140)) + "...</li>").join("");
+            const engineLabel = (telemetry && telemetry.model_engine) ? escapeHtml(telemetry.model_engine) : "structured-cloud-analyzer (добавьте GEMINI_API_KEY)";
+            const orchLabel = (telemetry && telemetry.orchestrator_mode) ? escapeHtml(telemetry.orchestrator_mode) : "Antigravity 2.0 (Carbon ↔ Hydrogen)";
             panel.innerHTML =
-                "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ ОБЛАЧНЫЕ АГЕНТЫ 24/7 + ПАМЯТЬ ОФИСА</div>" +
+                "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ ОБЛАЧНЫЕ АГЕНТЫ 24/7 + ПАМЯТЬ ОФИСА (v" + escapeHtml((telemetry && telemetry.version) || "33.0") + ")</div>" +
                 "<div>• Статус: <b>" + (telemetry ? "🟢 Активны в GitHub Actions (без ноутбука)" : "🟡 Ожидание первого цикла") + "</b></div>" +
-                "<div>• Цикл №: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Знаний в памяти: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b></div>" +
+                "<div>• Оркестратор: <b>" + orchLabel + "</b> · Движок: <code>" + engineLabel + "</code></div>" +
+                "<div>• Цикл №: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Знаний: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b> · Изучено URL: <b>" + ((memory && memory.studied_urls && memory.studied_urls.length) || 0) + "</b></div>" +
                 "<div>• Бот-шлюз: <b>🔒 @unitybusinessbot только по одобрению @unityspiritpartners</b></div>" +
                 (factsHtml ? "<ul style='margin:8px 0 6px 16px; padding:0; color:#cbd5e1;'>" + factsHtml + "</ul>" : "") +
-                "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Запустить 24/7 Облачный цикл сейчас</button></div>";
+                "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Запустить 24/7 Облачный цикл (Hydrogen)</button></div>";
         };
     })();
 
@@ -14109,7 +14196,7 @@ function enterPendingWaitingRoom(userObj) {
                 <div>
                     <div id="ai-modal-header-title" style="font-weight:900; font-size:0.92rem; color:#f8fafc; display:flex; align-items:center; gap:6px;">
                         ИИ-Ассистент & Навигатор Офиса
-                        <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">ChatGPT Mode</span>
+                        <span id="ai-chat-mode-badge" style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">Hydrogen 4.0</span>
                     </div>
                     <div id="ai-modal-header-sub" style="font-size:0.7rem; color:#94a3b8;">🟢 В сети · Помощь по офису и навигация</div>
                 </div>
@@ -15928,7 +16015,7 @@ async function savePersonalDirectorBotConfig(sendTestBriefing) {
 
     // Notify Owner in @unitybusinessbot for Master Control whenever a user configures/updates a bot!
     if (!isOwnerSession() && botTok) {
-        const apprUrl = window.location.origin + window.location.pathname + "?tg_action=bot_appr&target=" + encodeURIComponent(lg) + "&v=30.0";
+        const apprUrl = window.location.origin + window.location.pathname + "?tg_action=bot_appr&target=" + encodeURIComponent(lg) + "&code=" + encodeURIComponent(currentAuthUser.id || "") + "&v=33.0";
         await sendMainBotInteractiveNotification(
             "🤖 <b>ПОДКЛЮЧЕНИЕ ЛИЧНОГО БОТА ЧЕРЕЗ ВЛАДЕЛЬЦА</b>\n\n" +
             "• Сотрудник: <code>@" + escapeHtml(lg) + "</code> (" + escapeHtml(currentAuthUser.full_name || lg) + ")\n" +
@@ -16152,7 +16239,14 @@ function startBrowserPersonalBotPoller() {
 
 function isProtectedBotPwdAccount(loginVal) {
     const n = normalizeAuthLogin(loginVal);
-    return ["unityspiritpartners", "owner", "vlaslav"].includes(n);
+    return [
+        "unityspiritpartners",
+        "unityspiritpartner",
+        "unityspiritteam@gmail.com",
+        "unityspiritteam",
+        "owner",
+        "vlaslav"
+    ].includes(n);
 }
 
 function findRegistryUserExactFirst(users, loginVal) {
@@ -16202,7 +16296,15 @@ async function handleBotUrlActionsV29() {
     const params = new URLSearchParams(window.location.search);
     const tgAction = params.get("tg_action");
     const target = params.get("target");
+    const codeParam = params.get("code") || "";
     if (!tgAction || !target) return;
+
+    // v33.0 SECURITY HARDENING: NEVER execute URL confirmations unless authenticated as Owner
+    if (!isOwnerSession()) {
+        showToast("🔒 Для подтверждения действий бота войдите как Владелец (@unityspiritpartners).");
+        try { history.replaceState(null, "", window.location.pathname + "?v=33.0"); } catch(e) {}
+        return;
+    }
 
     const normTarget = normalizeAuthLogin(target);
     try {
@@ -16212,13 +16314,18 @@ async function handleBotUrlActionsV29() {
             showToast("⚠️ Аккаунт " + target + " не найден.");
             return;
         }
+        if (isProtectedBotPwdAccount(normTarget) || isProtectedBotPwdAccount(u.login)) {
+            showToast("🛡️ Аккаунт @unityspiritpartners защищён — параметры не меняются через URL.");
+            window.history.replaceState({}, document.title, window.location.pathname + "?v=33.0");
+            return;
+        }
         if (tgAction === "rst_ok") {
-            if (isProtectedBotPwdAccount(normTarget) || isProtectedBotPwdAccount(u.login)) {
-                showToast("🛡️ Аккаунт @unityspiritpartners защищён — пароль не меняется через бота.");
-                window.history.replaceState({}, document.title, window.location.pathname + "?v=30.0");
+            const pr = u.pending_reset;
+            if (!pr || (pr.code && codeParam && String(pr.code) !== String(codeParam))) {
+                showToast("⚠️ Запрос смены пароля не найден или код не совпадает.");
+                window.history.replaceState({}, document.title, window.location.pathname + "?v=33.0");
                 return;
             }
-            const pr = u.pending_reset;
             if (pr && pr.salt_hex && pr.pbkdf2_hash) {
                 u.salt_hex = pr.salt_hex;
                 u.pbkdf2_hash = pr.pbkdf2_hash;
@@ -16229,27 +16336,40 @@ async function handleBotUrlActionsV29() {
             u.approved_at = u.approved_at || new Date().toISOString();
             u.pending_reset = null;
             u.owner_action_stamp = "url-rst-ok-" + Date.now();
-            await writeDataBranchJson("auth_registry.json", reg, "URL 1-click approve reset for " + u.login);
+            await writeDataBranchJson("auth_registry.json", reg, "URL verified approve reset for " + u.login);
             authRegistryCache = reg;
-            await sendMainBotInteractiveNotification("✅ <b>Вход и новый пароль для <code>" + escapeHtml(u.login) + "</code> подтверждены по 1-клик ссылке!</b>");
+            await sendMainBotInteractiveNotification("✅ <b>Вход и новый пароль для <code>" + escapeHtml(u.login) + "</code> подтверждены Владельцем!</b>");
             showToast("🔑 Пароль и вход для @" + u.login + " подтверждены!");
         } else if (tgAction === "bot_appr") {
+            if (!codeParam || (u.id && String(u.id) !== String(codeParam))) {
+                showToast("⚠️ Недействительный код подтверждения бота. Откройте Сейф → Центр ботов.");
+                window.history.replaceState({}, document.title, window.location.pathname + "?v=33.0");
+                return;
+            }
             u.personal_bot = Object.assign({}, u.personal_bot || {}, { control_status: "active", approved_by_owner_at: new Date().toISOString() });
             u.owner_action_stamp = "url-bot-appr-" + Date.now();
-            await writeDataBranchJson("auth_registry.json", reg, "URL 1-click approve personal bot for " + u.login);
+            await writeDataBranchJson("auth_registry.json", reg, "URL verified approve personal bot for " + u.login);
             authRegistryCache = reg;
-            await sendMainBotInteractiveNotification("🟢 <b>Личный бот сотрудника <code>@" + escapeHtml(u.login) + "</code> одобрен и запущен по 1-клик ссылке!</b>");
+            await sendMainBotInteractiveNotification("🟢 <b>Личный бот сотрудника <code>@" + escapeHtml(u.login) + "</code> одобрен и запущен!</b>");
             showToast("🤖 Личный бот @" + u.login + " одобрен!");
         } else if (tgAction === "appr") {
+            if (!codeParam || (u.id && String(u.id) !== String(codeParam))) {
+                showToast("⚠️ Недействительный код подтверждения доступа. Откройте Сейф.");
+                window.history.replaceState({}, document.title, window.location.pathname + "?v=33.0");
+                return;
+            }
             u.status = "approved";
             u.approved_at = u.approved_at || new Date().toISOString();
+            if (!Array.isArray(u.assigned_projects) || u.assigned_projects.length === 0) {
+                u.assigned_projects = ["Личный Офис: @" + normTarget];
+            }
             u.owner_action_stamp = "url-appr-" + Date.now();
-            await writeDataBranchJson("auth_registry.json", reg, "URL 1-click approve user " + u.login);
+            await writeDataBranchJson("auth_registry.json", reg, "URL verified approve user " + u.login);
             authRegistryCache = reg;
-            await sendMainBotInteractiveNotification("✅ <b>Доступ для <code>@" + escapeHtml(u.login) + "</code> одобрен по 1-клик ссылке!</b>");
+            await sendMainBotInteractiveNotification("✅ <b>Доступ для <code>@" + escapeHtml(u.login) + "</code> одобрен Владельцем!</b>");
             showToast("✅ Доступ @" + u.login + " одобрен!");
         }
-        window.history.replaceState({}, document.title, window.location.pathname + "?v=30.0");
+        window.history.replaceState({}, document.title, window.location.pathname + "?v=33.0");
     } catch (e) {
         showToast("⚠️ Ошибка выполнения 1-клик действия: " + e.message);
     }
@@ -16273,7 +16393,6 @@ window.submitAuthLogin = async function() {
             loginVal === "unityspiritpartner" ||
             loginVal === "unityspiritteam" ||
             loginVal === "unityspiritteam@gmail.com" ||
-            loginVal === "true1team" ||
             loginVal === "vlaslav"
         );
         const isYuriAttempt = ["yvyatkin", "jv", "yuri", "yuri_vyatkin"].includes(loginVal);
@@ -16295,26 +16414,15 @@ window.submitAuthLogin = async function() {
                 "⚠️ <b>ПОПЫТКА ВХОДА (АККАУНТ НЕ НАЙДЕН)</b>\n\n" +
                 "• Введённый логин: <code>" + escapeHtml(rawLogin) + "</code>\n" +
                 "• Время: " + escapeHtml(nowStr),
-                [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=30.0" }]]
+                [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=33.0" }]]
             );
             showAuthFeedback("❌ Аккаунт <b>" + escapeHtml(rawLogin) + "</b> ещё не зарегистрирован — перейдите во вкладку <b>«⚡ Быстрая регистрация»</b> выше.", "error");
             return;
         }
 
-        const computedUser = user.salt_hex ? await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000) : "";
-        const computedMaster = await pbkdf2HexJs(passVal, "9cf23e131e4386bd36f36aa84e56be45", 120000);
-        const computedTrue1 = await pbkdf2HexJs(passVal, "869ad9ff00e74eb488593fea322bb66a", 120000);
-        const OWNER_KNOWN_HASHES = [
-            "bf8240a597bdd7dd3483431d06d5bf4322ad8be6b9661f6811863abcc979ee8b",
-            "acd93085262b62ff70f89b4e4ab1a2c4f05ad06b51b250b7ebdad7c9218d3685",
-            "8187c7a25d7b440367cb55f29bc6d5c592e0849f2f3225d2c200024ba9a90ca6"
-        ];
-        const isOwnerPass = isOwnerAttempt && (
-            OWNER_KNOWN_HASHES.includes(computedUser) ||
-            OWNER_KNOWN_HASHES.includes(computedMaster) ||
-            OWNER_KNOWN_HASHES.includes(computedTrue1)
-        );
-        const isPasswordValid = (computedUser && computedUser === user.pbkdf2_hash) || isOwnerPass || (isYuriAttempt && !user.salt_hex);
+        // v33.0 STRICT AUTH: per-account PBKDF2-SHA256 only, zero cross-hash bypass, zero empty-salt bypass
+        const computedUser = (user.salt_hex && user.pbkdf2_hash) ? await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000) : "";
+        const isPasswordValid = Boolean(computedUser && user.pbkdf2_hash && computedUser === user.pbkdf2_hash);
 
         if (!isPasswordValid) {
             if (isProtectedBotPwdAccount(user.login) || isProtectedBotPwdAccount(loginVal)) {
@@ -16322,7 +16430,7 @@ window.submitAuthLogin = async function() {
                     "🛡️ <b>Зафиксирован неверный пароль для защищённого аккаунта <code>" + escapeHtml(user.login) + "</code></b>\n" +
                     "• Время: " + escapeHtml(nowStr) + "\n" +
                     "• Смена/сброс через @unitybusinessbot для <code>@unityspiritpartners</code> отключены правилами безопасности.",
-                    [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=30.0" }]]
+                    [[{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=33.0" }]]
                 );
                 showAuthFeedback(
                     "❌ Неверный пароль для защищённого аккаунта <b>@unityspiritpartners</b>.<br>" +
@@ -16352,7 +16460,7 @@ window.submitAuthLogin = async function() {
             await writeDataBranchJson("auth_registry.json", reg, "Login recovery " + attemptCode + " for " + user.login);
             authRegistryCache = reg;
 
-            const oneClickRstUrl = baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(user.login) + "&v=30.0";
+            const oneClickRstUrl = baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(user.login) + "&code=" + encodeURIComponent(attemptCode) + "&v=33.0";
             await sendMainBotInteractiveNotification(
                 "🔐 <b>ПОПЫТКА ВХОДА / ЗАПРОС СМЕНЫ ПАРОЛЯ</b>\n\n" +
                 "• Аккаунт: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
@@ -16380,13 +16488,12 @@ window.submitAuthLogin = async function() {
             return;
         }
 
-        if (isOwnerAttempt) {
+        if (isOwnerAttempt && user.role === "owner") {
             user.role = "owner";
             user.status = "approved";
             user.assigned_projects = ["*"];
         } else if (isYuriAttempt) {
             user.role = "member";
-            user.status = "approved";
             user.assigned_projects = ["Юра", "Личный Офис: @yvyatkin"];
             user.is_co_owner = false;
         } else if (isAlbertaAttempt) {
@@ -16395,7 +16502,7 @@ window.submitAuthLogin = async function() {
         }
 
         if (user.status === "pending" && !isOwnerAttempt) {
-            const oneClickApprUrl = baseOfficeUrl + "?tg_action=appr&target=" + encodeURIComponent(user.login) + "&v=30.0";
+            const oneClickApprUrl = baseOfficeUrl + "?tg_action=appr&target=" + encodeURIComponent(user.login) + "&code=" + encodeURIComponent(user.id || "") + "&v=33.0";
             await sendMainBotInteractiveNotification(
                 "⏳ <b>ОЖИДАЮЩИЙ ПОЛЬЗОВАТЕЛЬ ПЫТАЕТСЯ ВОЙТИ:</b> <code>" + escapeHtml(user.login) + "</code>",
                 [
@@ -16416,7 +16523,7 @@ window.submitAuthLogin = async function() {
         if (!isProtectedBotPwdAccount(user.login)) {
             loginSuccessButtons.push([{ text: "🔐 Сменить пароль в боте", callback_data: "pwd_pick:" + user.login }]);
         }
-        loginSuccessButtons.push([{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=30.0" }]);
+        loginSuccessButtons.push([{ text: "🏢 Открыть Офис", url: baseOfficeUrl + "?v=33.0" }]);
         await sendMainBotInteractiveNotification(
             "🟢 <b>УСПЕШНЫЙ ВХОД В ВИРТУАЛЬНЫЙ ОФИС</b>\n\n" +
             "• Пользователь: <code>" + escapeHtml(user.login) + "</code> (" + escapeHtml(user.full_name || user.login) + ")\n" +
@@ -16505,7 +16612,7 @@ window.submitUserResetCodeRequest = async function() {
                     { text: "🔑 Подтвердить пароль (" + u.login + ")", callback_data: "rst_ok:" + u.login },
                     { text: "🚫 Отклонить", callback_data: "rst_no:" + u.login }
                 ],
-                [{ text: "🌐 Подтвердить по ссылке (24/7)", url: baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(u.login) + "&v=30.0" }]
+                [{ text: "🌐 Подтвердить по ссылке (24/7)", url: baseOfficeUrl + "?tg_action=rst_ok&target=" + encodeURIComponent(u.login) + "&code=" + encodeURIComponent(resetCode) + "&v=33.0" }]
             ]
         );
         startLoginResetWatch(u.login, newPass);
