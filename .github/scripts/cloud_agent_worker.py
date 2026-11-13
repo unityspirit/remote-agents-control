@@ -130,6 +130,9 @@ def fetch_public_url_preview(url, max_chars=2400):
             },
         )
         with opener.open(req, timeout=10) as resp:
+            ctype = (resp.headers.get("Content-Type") or "").lower()
+            if ctype and not any(t in ctype for t in ("text/", "html", "json", "xml", "javascript")):
+                return {"url": url, "ok": False, "error": f"non_text_content_type:{ctype.split(';')[0]}"}
             raw_bytes = resp.read(160000)
             enc = (resp.headers.get("Content-Encoding") or "").lower()
             if "gzip" in enc or raw_bytes[:2] == b"\x1f\x8b":
@@ -498,6 +501,9 @@ def run_cloud_study_cycle(repo, gh_token, models_token, mem):
         if not isinstance(item, dict):
             continue
         url = (item.get("source_url") or item.get("url") or item.get("link") or "").strip()
+        low_u = url.lower()
+        if any(low_u.endswith(ext) or (ext + "?") in low_u for ext in (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".pdf", ".mp4", ".mp3")):
+            continue
         if url and url not in studied and is_public_ip_host(urllib.parse.urlparse(url).hostname):
             candidates.append((item.get("title") or url, url, item.get("category") or ""))
 
