@@ -1391,7 +1391,7 @@ def touch_local_heartbeat_if_due(force=False):
     hb_payload = {
         "ts": now,
         "iso": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "version": "32.0",
+        "version": "33.0",
         "status": "online"
     }
     def _write_hb(obj):
