@@ -1,6 +1,6 @@
 {
   "version": "25.5",
-  "updated_at": "2026-11-12T11:45:00+00:00",
+  "updated_at": "2026-11-13T22:32:00Z",
   "users": [
     {
       "id": "owner-vlaslav",
@@ -37,13 +37,14 @@
       "email": "",
       "full_name": "@true1team",
       "telegram": "@true1team",
-      "role": "owner",
+      "role": "member",
       "status": "approved",
       "salt_hex": "869ad9ff00e74eb488593fea322bb66a",
       "pbkdf2_hash": "8187c7a25d7b440367cb55f29bc6d5c592e0849f2f3225d2c200024ba9a90ca6",
       "iterations": 120000,
       "assigned_projects": [
-        "*"
+        "True 1 Team",
+        "Личный Офис: @true1team"
       ],
       "all_projects": true,
       "has_full_access": true,
@@ -61,7 +62,8 @@
         "auto_send_reports": true,
         "updated_at": "2026-11-11T13:50:43.065732+00:00",
         "control_status": "not_configured"
-      }
+      },
+      "updated_at": "2026-11-13T22:32:00Z"
     },
     {
       "id": "REQ-388120",
@@ -242,7 +244,11 @@
         "auto_send_reports": true,
         "updated_at": "2026-11-11T13:50:43.065732+00:00",
         "control_status": "not_configured"
-      }
+      },
+      "salt_hex": "aed30cc7f01ab990d8d255f7310687c3",
+      "pbkdf2_hash": "69506b2cb490e7ab0d48271b2e11b4ec813cb1b8f031d957477064920cea9611",
+      "iterations": 120000,
+      "updated_at": "2026-11-13T22:32:00Z"
     },
     {
       "id": "REQ-252172",
@@ -307,5 +313,6 @@
         "control_status": "not_configured"
       }
     }
-  ]
+  ],
+  "security_version": "33.0"
 }
