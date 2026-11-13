@@ -5,8 +5,6 @@ on:
     types: [opened, edited, reopened]
   issue_comment:
     types: [created]
-  schedule:
-    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -54,6 +52,9 @@ jobs:
           GTP_SYNC_TOKEN: ${{ secrets.GTP_SYNC_TOKEN }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           OWNER_TG_CHAT_ID: ${{ secrets.OWNER_TG_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}
