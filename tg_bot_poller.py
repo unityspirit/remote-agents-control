@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Telegram Multi-Bot Poller Daemon v30.0 for Global Spirit Group ★ Virtual Office.
+Telegram Multi-Bot Poller Daemon v32.0 for Global Spirit Group ★ Virtual Office.
+Hardened security gate (@unityspiritpartners approval-only bot access) + 24/7 Cloud sync heartbeat.
 1. Main HQ Bot (@unitybusinessbot):
    - Reliable 1-click auth approvals (appr:<login>, rst_ok:<login>, rst_no:<login>) with retries & zero dropped clicks.
    - Allows ALL users EXCEPT @unityspiritpartners to update & change their passwords directly in Telegram (/passwords, /reset, interactive buttons).
@@ -59,7 +60,11 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=31.1"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=33.0"
+LOCAL_BOT_ACCESS_FILE = os.path.join(BASE_DIR, ".bot_access_registry.json")
+_cached_bot_access = None
+_cached_bot_access_ts = 0.0
+_last_heartbeat_push_ts = 0.0
 
 
 def _persist_personal_bot_token_local(login_val, bot_token_val):
@@ -104,7 +109,14 @@ def _strip_bot_tokens_for_public_repo(obj):
             _persist_personal_bot_token_local(u.get("login"), pb["bot_token"])
             pb["bot_token"] = ""
     return cloned
-PROTECTED_BOT_PWD_ACCOUNTS = {"unityspiritpartners", "owner", "vlaslav"}
+PROTECTED_BOT_PWD_ACCOUNTS = {
+    "unityspiritpartners",
+    "unityspiritpartner",
+    "unityspiritteam@gmail.com",
+    "unityspiritteam",
+    "owner",
+    "vlaslav",
+}
 
 
 def norm_login(val):
@@ -968,7 +980,7 @@ def send_member_home_menu(chat_id, from_user):
     kb.append([{"text": "🔐 Все доступные аккаунты (Смена пароля)", "callback_data": "cmd:passwords"}])
     if matched:
         kb.append([{"text": "🤖 Спросить Личного Директора", "callback_data": "pdir:status:Личный Офис"}])
-    kb.append([{"text": "🏢 Открыть Виртуальный Офис (v30.0)", "url": OFFICE_URL}])
+    kb.append([{"text": "🏢 Открыть Виртуальный Офис (v33.0 Hydrogen)", "url": OFFICE_URL}])
 
     matched_note = (
         f"• Ваш подтверждённый аккаунт: <code>{', '.join(m.get('login', '') for m in matched)}</code> (прямая смена пароля без ожидания!)\n"
@@ -978,7 +990,7 @@ def send_member_home_menu(chat_id, from_user):
     call_tg("sendMessage", {
         "chat_id": chat_id,
         "text": (
-            f"👋 <b>Добро пожаловать в @unitybusinessbot v30.0, {fname}!</b>\n\n"
+            f"👋 <b>Добро пожаловать в @unitybusinessbot v33.0 Hydrogen, {fname}!</b>\n\n"
             f"Здесь любой участник команды может обновить и сменить свой пароль (кроме защищённого аккаунта главного владельца <code>@unityspiritpartners</code>).\n\n"
             f"{matched_note}"
             f"• Быстрая команда: <code>/reset логин новый_пароль</code>"
@@ -1118,10 +1130,11 @@ def send_hq_home_menu(chat_id, from_user=None):
     active_bots = [u for u in users if (u.get("personal_bot") or {}).get("bot_token") and (u.get("personal_bot") or {}).get("control_status") == "active"]
 
     txt = (
-        f"👑 <b>ГЛАВНЫЙ БОТ ШТАБА (@unitybusinessbot v30.0)</b>\n\n"
+        f"👑 <b>ГЛАВНЫЙ БОТ ШТАБА (@unitybusinessbot v33.0 Hydrogen)</b>\n\n"
         f"• Сотрудников в реестре: <b>{len(users)}</b>\n"
         f"• Заявок на вход / сброс пароля: <b>{len(pending) + len(resets)}</b>\n"
         f"• Личных ботов активно / ждут одобрения: <b>{len(active_bots)}</b> / <b>{len(pend_bots)}</b>\n"
+        f"• ⚛️ Движок: <b>Antigravity 2.0 + Gemini 4 Hydrogen</b> (команда <code>/hydrogen</code>)\n"
         f"• 🛡️ Защита: смена пароля через бота разрешена <b>всем, кроме @unityspiritpartners</b>\n\n"
         f"Выберите действие кнопкой ниже:"
     )
@@ -1149,7 +1162,8 @@ def send_hq_home_menu(chat_id, from_user=None):
         {"text": "🚀 План Главного Штаба", "callback_data": "pdir:next:Главный Штаб"}
     ])
     kb.append([
-        {"text": "🏢 Открыть Главный Офис (v30.0)", "url": OFFICE_URL}
+        {"text": "🔒 Доступ в бот (По запросу)", "callback_data": "cmd:botaccess"},
+        {"text": "🏢 Главный Офис (v33.0)", "url": OFFICE_URL}
     ])
     call_tg("sendMessage", {
         "chat_id": chat_id,
@@ -1178,6 +1192,218 @@ def _notify_owner_bot_pwd_request(ul, code, req_cid, req_tg_user=""):
     })
 
 
+def _default_bot_access():
+    return {
+        "mode": "request_only",
+        "owner_chat_id": str(OWNER_TG_CHAT_ID),
+        "approved": {},
+        "pending": {},
+        "banned": {}
+    }
+
+
+def fetch_bot_access_registry(force=False):
+    global _cached_bot_access, _cached_bot_access_ts
+    now = time.time()
+    if not force and _cached_bot_access is not None and (now - _cached_bot_access_ts < 12):
+        return _cached_bot_access
+    if os.path.exists(LOCAL_BOT_ACCESS_FILE):
+        try:
+            with open(LOCAL_BOT_ACCESS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, dict) and "approved" in data:
+                    _cached_bot_access = data
+                    _cached_bot_access_ts = now
+                    if not force:
+                        return data
+        except Exception:
+            pass
+    for repo, tok in [(GTP_REPO, GTP_TOKEN), (U_REPO, U_TOKEN)]:
+        try:
+            data, _ = fetch_json_from_github(repo, tok, "bot_access_registry.json", "data")
+            if isinstance(data, dict):
+                data.setdefault("approved", {})
+                data.setdefault("pending", {})
+                data.setdefault("banned", {})
+                _cached_bot_access = data
+                _cached_bot_access_ts = now
+                with open(LOCAL_BOT_ACCESS_FILE, "w", encoding="utf-8") as lf:
+                    json.dump(data, lf, indent=2, ensure_ascii=False)
+                return data
+        except urllib.error.HTTPError as he:
+            if he.code == 404:
+                continue
+        except Exception:
+            pass
+    data = _cached_bot_access or _default_bot_access()
+    _cached_bot_access = data
+    _cached_bot_access_ts = now
+    return data
+
+
+def mutate_bot_access_registry(mutator_fn, commit_msg):
+    global _cached_bot_access, _cached_bot_access_ts
+    ok, latest = mutate_json_across_repos(
+        "bot_access_registry.json",
+        mutator_fn,
+        commit_msg,
+        branches=["data"],
+        default_factory=_default_bot_access,
+    )
+    if ok and latest is not None:
+        _cached_bot_access = latest
+        _cached_bot_access_ts = time.time()
+        try:
+            with open(LOCAL_BOT_ACCESS_FILE, "w", encoding="utf-8") as lf:
+                json.dump(latest, lf, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+    return ok, latest
+
+
+def check_bot_entry_gate(chat_id, from_user, message_text="", is_callback=False, cq_id=None):
+    c_id = str(chat_id)
+    if is_owner_chat(c_id) or is_owner_chat((from_user or {}).get("id")):
+        return True
+    access = fetch_bot_access_registry(force=False)
+    if c_id in (access.get("approved") or {}):
+        return True
+    if c_id in (access.get("banned") or {}):
+        if is_callback and cq_id:
+            call_tg("answerCallbackQuery", {
+                "callback_query_id": cq_id,
+                "text": "🚫 Доступ к @unitybusinessbot закрыт Главным Штабом (@unityspiritpartners).",
+                "show_alert": True
+            })
+        else:
+            call_tg("sendMessage", {
+                "chat_id": c_id,
+                "text": "🚫 <b>Доступ к @unitybusinessbot закрыт.</b>\n\nОбратитесь напрямую к @unityspiritpartners.",
+                "parse_mode": "HTML"
+            })
+        return False
+
+    uname = (from_user or {}).get("username") or ""
+    fname = (from_user or {}).get("first_name") or (from_user or {}).get("last_name") or "Пользователь"
+    now_ts = time.time()
+    prev_notified = float(((access.get("pending") or {}).get(c_id) or {}).get("last_notified_ts") or 0)
+    should_notify_owner = (now_ts - prev_notified) >= 120
+
+    def _mutate(obj):
+        obj.setdefault("pending", {})
+        entry = obj["pending"].get(c_id) or {}
+        entry.update({
+            "chat_id": c_id,
+            "username": uname,
+            "first_name": fname,
+            "last_text": (message_text or "")[:180],
+            "requested_at": entry.get("requested_at") or datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "last_seen_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "last_notified_ts": now_ts if should_notify_owner else entry.get("last_notified_ts", 0),
+        })
+        obj["pending"][c_id] = entry
+        return True
+
+    mutate_bot_access_registry(_mutate, f"bot-gate: pending request from chat_id {c_id} [v32.0]")
+
+    if should_notify_owner:
+        who = f"@{_esc_h(uname)} ({_esc_h(fname)})" if uname else _esc_h(fname)
+        msg_preview = _esc_h((message_text or "/start")[:180])
+        call_tg("sendMessage", {
+            "chat_id": OWNER_TG_CHAT_ID,
+            "text": (
+                f"🔒 <b>ЗАПРОС НА ВХОД В @unitybusinessbot</b>\n\n"
+                f"• Пользователь: {who}\n"
+                f"• Chat ID: <code>{_esc_h(c_id)}</code>\n"
+                f"• Текст запроса: <code>{msg_preview}</code>\n\n"
+                f"<i>Бот работает в режиме «только по одобрению @unityspiritpartners». Без вашего нажатия ниже пользователь не увидит меню, задачи и смену паролей.</i>"
+            ),
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": [[
+                {"text": "✅ Одобрить вход в бот", "callback_data": f"bot_gate_ok:{c_id}"},
+                {"text": "🚫 Отклонить", "callback_data": f"bot_gate_ban:{c_id}"}
+            ]]}
+        })
+
+    if is_callback and cq_id:
+        call_tg("answerCallbackQuery", {
+            "callback_query_id": cq_id,
+            "text": "⏳ Вход в бот только по запросу и одобрению @unityspiritpartners.",
+            "show_alert": True
+        })
+    else:
+        call_tg("sendMessage", {
+            "chat_id": c_id,
+            "text": (
+                f"🔒 <b>Вход в @unitybusinessbot — только по личному запросу к @unityspiritpartners</b>\n\n"
+                f"Ваш запрос на доступ (Chat ID: <code>{_esc_h(c_id)}</code>) отправлен владельцу <b>@unityspiritpartners</b>.\n"
+                f"Как только @unityspiritpartners одобрит заявку, вы получите уведомление сюда."
+            ),
+            "parse_mode": "HTML"
+        })
+    return False
+
+
+def send_bot_access_menu(chat_id):
+    access = fetch_bot_access_registry(force=True)
+    pending = access.get("pending") or {}
+    approved = access.get("approved") or {}
+    banned = access.get("banned") or {}
+    lines = [
+        "🔒 <b>ДОСТУП В @unitybusinessbot (ТОЛЬКО ПО ЗАПРОСУ)</b>\n",
+        f"• Режим: <b>Только по одобрению @unityspiritpartners</b>",
+        f"• Ожидают решения: <b>{len(pending)}</b>",
+        f"• Одобрено: <b>{len(approved)}</b>",
+        f"• Отклонено: <b>{len(banned)}</b>\n"
+    ]
+    kb = []
+    if pending:
+        lines.append("<b>⏳ Новые запросы:</b>")
+        for cid, info in list(pending.items())[:8]:
+            lbl = f"@{info.get('username')}" if info.get("username") else (info.get("first_name") or cid)
+            lines.append(f"• {_esc_h(lbl)} (<code>{_esc_h(cid)}</code>)")
+            kb.append([
+                {"text": f"✅ Одобрить: {lbl[:20]}", "callback_data": f"bot_gate_ok:{cid}"},
+                {"text": "🚫 Отклонить", "callback_data": f"bot_gate_ban:{cid}"}
+            ])
+        lines.append("")
+    if approved:
+        lines.append("<b>✅ Имеют доступ в бот:</b>")
+        for cid, info in list(approved.items())[:10]:
+            lbl = f"@{info.get('username')}" if info.get("username") else (info.get("first_name") or cid)
+            lines.append(f"• {_esc_h(lbl)} (<code>{_esc_h(cid)}</code>)")
+            kb.append([{"text": f"🗑️ Закрыть доступ: {lbl[:24]}", "callback_data": f"bot_gate_rev:{cid}"}])
+    kb.append([{"text": "🔄 Обновить список", "callback_data": "cmd:botaccess"}, {"text": "⬅️ Главное меню", "callback_data": "cmd:home"}])
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": "\n".join(lines),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": kb}
+    })
+
+
+def touch_local_heartbeat_if_due(force=False):
+    global _last_heartbeat_push_ts
+    now = time.time()
+    if not force and (now - _last_heartbeat_push_ts < 90):
+        return
+    _last_heartbeat_push_ts = now
+    hb_payload = {
+        "ts": now,
+        "iso": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "version": "32.0",
+        "status": "online"
+    }
+    def _write_hb(obj):
+        obj.clear()
+        obj.update(hb_payload)
+        return True
+    try:
+        mutate_json_across_repos("local_daemon_heartbeat.json", _write_hb, "Heartbeat local daemon [v33.0]", branches=["data"], default_factory=dict)
+    except Exception:
+        pass
+
+
 def handle_hq_callback(cq):
     cq_id = cq["id"]
     data = cq.get("data", "")
@@ -1186,14 +1412,75 @@ def handle_hq_callback(cq):
     c_id = str(cq.get("message", {}).get("chat", {}).get("id") or from_user.get("id") or OWNER_TG_CHAT_ID)
     is_owner = is_owner_chat(c_id) or is_owner_chat(from_user.get("id"))
 
-    admin_prefixes = ("cmd:bots", "cmd:dirlog", "appr:", "rst_ok:", "rst_no:", "bot_pick:", "bot_appr:", "bot_pause:", "bot_ban:", "bot_asktok:", "bot_askdir:", "bot_askmsg:", "bot_log:")
+    admin_prefixes = ("cmd:bots", "cmd:dirlog", "cmd:botaccess", "appr:", "rst_ok:", "rst_no:", "bot_gate_ok:", "bot_gate_ban:", "bot_gate_rev:", "bot_pick:", "bot_appr:", "bot_pause:", "bot_ban:", "bot_asktok:", "bot_askdir:", "bot_askmsg:", "bot_log:")
     if any(data == p or data.startswith(p) for p in admin_prefixes) and not is_owner:
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "⛔ Эта функция доступна только Главному Штабу.", "show_alert": True})
+        return
+
+    if not is_owner and not check_bot_entry_gate(c_id, from_user, message_text=f"cb:{data}", is_callback=True, cq_id=cq_id):
         return
 
     if data == "cmd:home" or data == "cmd:pending":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔄 Обновляю..."})
         send_hq_home_menu(c_id, from_user=from_user)
+    elif data == "cmd:botaccess":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔒 Загружаю список доступа..."})
+        send_bot_access_menu(c_id)
+    elif data.startswith("bot_gate_ok:"):
+        target_cid = data.split("bot_gate_ok:", 1)[1].strip()
+        user_rec = {}
+        def _approve_gate(obj):
+            obj.setdefault("approved", {})
+            obj.setdefault("pending", {})
+            obj.setdefault("banned", {})
+            src = obj["pending"].pop(target_cid, None) or obj["banned"].pop(target_cid, None) or {"chat_id": target_cid}
+            src["approved_by"] = "@unityspiritpartners"
+            src["approved_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            obj["approved"][target_cid] = src
+            user_rec.update(src)
+            return True
+        ok, _ = mutate_bot_access_registry(_approve_gate, f"bot-gate: approve {target_cid} by @unityspiritpartners [v32.0]")
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "✅ Вход в бот одобрен!" if ok else "⚠️ Ошибка сохранения"})
+        if ok:
+            lbl = f"@{_esc_h(user_rec.get('username'))}" if user_rec.get("username") else _esc_h(user_rec.get("first_name") or target_cid)
+            call_tg("sendMessage", {
+                "chat_id": c_id,
+                "text": f"✅ Доступ в <b>@unitybusinessbot</b> для {lbl} (<code>{_esc_h(target_cid)}</code>) <b>одобрен</b>.",
+                "parse_mode": "HTML"
+            })
+            call_tg("sendMessage", {
+                "chat_id": target_cid,
+                "text": "✅ <b>@unityspiritpartners одобрил ваш вход в @unitybusinessbot!</b>\n\nНажмите /start для открытия вашего меню.",
+                "parse_mode": "HTML"
+            })
+        return
+    elif data.startswith("bot_gate_ban:"):
+        target_cid = data.split("bot_gate_ban:", 1)[1].strip()
+        def _ban_gate(obj):
+            obj.setdefault("approved", {})
+            obj.setdefault("pending", {})
+            obj.setdefault("banned", {})
+            src = obj["pending"].pop(target_cid, None) or obj["approved"].pop(target_cid, None) or {"chat_id": target_cid}
+            src["banned_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            obj["banned"][target_cid] = src
+            return True
+        ok, _ = mutate_bot_access_registry(_ban_gate, f"bot-gate: ban {target_cid} by @unityspiritpartners [v32.0]")
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🚫 Доступ отклонён"})
+        if ok:
+            call_tg("sendMessage", {"chat_id": c_id, "text": f"🚫 Доступ в бот для Chat ID <code>{_esc_h(target_cid)}</code> отклонён.", "parse_mode": "HTML"})
+            call_tg("sendMessage", {"chat_id": target_cid, "text": "🚫 Запрос на вход в @unitybusinessbot отклонён @unityspiritpartners."})
+        return
+    elif data.startswith("bot_gate_rev:"):
+        target_cid = data.split("bot_gate_rev:", 1)[1].strip()
+        def _rev_gate(obj):
+            obj.setdefault("approved", {}).pop(target_cid, None)
+            obj.setdefault("pending", {}).pop(target_cid, None)
+            return True
+        ok, _ = mutate_bot_access_registry(_rev_gate, f"bot-gate: revoke {target_cid} by @unityspiritpartners [v32.0]")
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🗑️ Доступ закрыт" if ok else "⚠️ Ошибка"})
+        if ok:
+            send_bot_access_menu(c_id)
+        return
     elif data == "cmd:passwords":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔐 Смена паролей"})
         send_passwords_menu(c_id, from_user=from_user)
@@ -1611,6 +1898,10 @@ def handle_hq_text(msg):
     sender_username = norm_login(from_user.get("username"))
     is_owner = is_owner_chat(c_id) or is_owner_chat(from_user.get("id"))
 
+    # Strict v32.0 Gate: only @unityspiritpartners or explicitly approved chat_ids may enter @unitybusinessbot
+    if not is_owner and not check_bot_entry_gate(c_id, from_user, message_text=text):
+        return
+
     # Allow /cancel to exit multi-step input
     if text == "/cancel":
         _chat_states.pop(c_id, None)
@@ -1665,8 +1956,33 @@ def handle_hq_text(msg):
 
     if text.startswith("/start") or text.startswith("/menu") or text == "/pending":
         send_hq_home_menu(c_id, from_user=from_user)
+    elif text.startswith("/botaccess"):
+        if not is_owner:
+            call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Управление доступом в бот доступно только @unityspiritpartners."})
+            return
+        send_bot_access_menu(c_id)
     elif text.startswith("/passwords") or text.startswith("/users"):
         send_passwords_menu(c_id, from_user=from_user)
+    elif text.startswith("/hydrogen"):
+        try:
+            tel = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "cloud_agents_telemetry.json", branch="data") or {}
+        except Exception:
+            tel = {}
+        gemini_ok = bool(os.environ.get("GEMINI_API_KEY") or _CFG.get("gemini_api_key"))
+        msg_h = (
+            "⚛️ <b>ANTIGRAVITY 2.0 ORCHESTRATOR & GEMINI 4 HYDROGEN (v33.0)</b>\n\n"
+            f"• Облачный цикл: <b>#{tel.get('cycle_count', 0)}</b> | Движок: <code>{tel.get('model_engine', 'structured-cloud-analyzer')}</code>\n"
+            f"• Оркестратор: <b>{tel.get('orchestrator_mode', 'Antigravity 2.0 (Carbon <-> Hydrogen)')}</b>\n"
+            f"• Знаний в памяти: <b>{tel.get('memory_facts_count', 0)}</b> | Изучено URL: <b>{tel.get('studied_urls_count', 0)}</b>\n"
+            f"• Локальный <code>GEMINI_API_KEY</code>: {'✅ Подключён' if gemini_ok else '⏳ Не задан (работает smart-режим)'}\n"
+            "• Архитектура 12–13.11.2026: Carbon ↔ Hydrogen, контекст 1M, <code>thinking_level</code>: <code>low/medium/high/xhigh</code>, <code>models.github.ai</code> выведен из эксплуатации 30.07.2026."
+        )
+        call_tg("sendMessage", {
+            "chat_id": c_id,
+            "text": msg_h,
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Открыть Hydrogen 2.0 в Офисе", "url": OFFICE_URL}]]},
+        })
     elif text.startswith("/bots"):
         if not is_owner:
             call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Раздел управления ботами команды доступен только Главному Штабу. Для смены своего пароля нажмите /passwords."})
@@ -1731,10 +2047,12 @@ def handle_hq_text(msg):
 
 def run_loop(single_run=False):
     offset = get_persisted_offset()
-    print(f"Telegram Multi-Bot Poller Daemon v30.0 started (offset={offset})...", flush=True)
+    print(f"Telegram Multi-Bot Poller Daemon v33.0 (Hydrogen) started (offset={offset})...", flush=True)
+    touch_local_heartbeat_if_due(force=True)
 
     while True:
         try:
+            touch_local_heartbeat_if_due(force=False)
             updates = call_tg("getUpdates", {"offset": offset, "timeout": 4}, retries=1)
             if updates and updates.get("ok"):
                 for item in updates.get("result", []):
