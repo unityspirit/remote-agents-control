@@ -1,10 +1,27 @@
 {
-  "version": "32.0",
-  "updated_at": "2026-11-13T18:27:00+00:00",
+  "version": "34.0",
+  "updated_at": "2026-11-14T00:09:56+00:00",
   "cycle_count": 4,
   "processed_triggers": [],
   "studied_urls": [],
-  "learned_facts": [],
+  "learned_facts": [
+    {
+      "at": "2026-11-14T00:09:56+00:00",
+      "topic": "v34.0 Antigravity 2.31 + Gemini 4 Upgrade (HQ Architecture)",
+      "insight": "Развёрнут 3-уровневый роутер Gemini 4: Carbon (архитектура/аудит/безопасность), Argon (стратегия/CEO/1M RAG), Hydrogen (быстрое исполнение); удалены локальные PAT-тесты и ложные зелёные PID (12696/21288/17936), добавлено экранирование HTML в tg_bot_poller.py и зеркало index_en.html."
+    },
+    {
+      "at": "2026-11-14T00:09:56+00:00",
+      "topic": "v34.0 HQ Open Issues Consolidated (#43-#58 Audit)",
+      "insight": "#45 (Three.js 3D floorplan walkthroughs $5k-$10k: Fable/Seedance пресейл -> Blender+Python+Three.js baked lighting + Critic), #53 (Profitroom+AltaHQ $750-$1200 + $350-$550/mo против комиссий Booking 15-25%), #54 (REPT Battero EV/ESS + боль Luz y Fuerza), #55 (Pivex $50->$25k DemandGen), #56 (COMSS AI 2.0: trial + возврат подписки по ID платежа + gzip fix), #57-#58 (Kali NetHunter NFC аудит отелей и No-Wipe Hot Update)."
+    },
+    {
+      "at": "2026-11-14T00:09:56+00:00",
+      "topic": "v34.0 Alberta Funnel Pivot (#47-#50)",
+      "insight": "Вектор клуба для @aliashirani переключён на тотальную трансформацию и перезагрузку женщин 30-50 лет (триггер выгорания/отложенной жизни -> 90-сек AI-диагностика + 7-дневный челлендж 990-1490 ₽ -> клуб 1500-3500 ₽/мес на цель 1 000 000 ₽)."
+    }
+  ],
   "projects": {},
-  "recent_events": []
+  "recent_events": [],
+  "failed_urls": {}
 }
