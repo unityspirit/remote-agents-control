@@ -45,7 +45,9 @@
     "https://www.altahq.com/lp/ai-calling-agent",
     "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7",
     "https://www.youtube.com/shorts/uz-zrN-3b2A",
-    "https://t.me/nazare_info_bot?start=l_nenoiai"
+    "https://t.me/nazare_info_bot?start=l_nenoiai",
+    "https://plan.muscle-booster.io/",
+    "https://go.shadowpages.io/thealexanderlari-booking"
   ],
   "learned_facts": [
     {
@@ -206,6 +208,18 @@
       "topic": "Аудит Авто- и Транспортных перспектив (Detailing, VT VIP, Егор Трансфер, Пора за Руль)",
       "insight": "1) elite-detailing-en (896 кадров WebP): нужно заменить заглушки YOUR COMPANY/YOUR PHONE и связать с AltaHQ Voice Booking ($1,200). 2) Визуализированый Транспорт (VT VIP импорт до 2л/200лс): в index.html стоит заглушка +7 495 000 00 00. 3) Егор Трансфер (1,133 файла, RU/EN/AR): готов к приёму TG-лидов, 0 выполненных задач. 4) Автошкола Пора за Руль: 2 видео 16:9/9:16 + КП .docx готовы к запуску TG/Reels воронки.",
       "source": "workspace surface & automotive audit 2026-11-13"
+    },
+    {
+      "at": "2026-11-14T15:36:46.784869Z",
+      "title": "Задача #60: Muscle Booster (Welltech) монетизация",
+      "summary": "Quiz-воронка -> AI-план иллюзия персонализации -> жёсткий Paywall с автопродлением ($14.99–$19.99/мес, $59.99–$99.99/год) + meal-upsells ~$29.99 + web-checkout.",
+      "source": "issue #60 (true1team)"
+    },
+    {
+      "at": "2026-11-14T15:36:46.784869Z",
+      "title": "Задача #61: Shadow Pages (Alexander Lari) модель и воронка",
+      "summary": "Faceless theme pages на ИИ (реклама, affiliate, перелив в воронки, продажа страниц); ссылка go.shadowpages.io -> Calendly квалификация на high-ticket сопровождение.",
+      "source": "issue #61 (true1team)"
     }
   ],
   "projects": {
