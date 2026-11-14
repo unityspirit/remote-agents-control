@@ -2492,8 +2492,8 @@ textarea.task-inline-input {
         <div class="telemetry-pill" onclick="openNotebookLMModal()" style="border-color:rgba(6,182,212,0.3); color:#38bdf8;">
             <span>📓 NotebookLM RAG</span>
         </div>
-        <div class="telemetry-pill" onclick="openAntigravityModal()" style="border-color:rgba(139,92,246,0.45); color:#c4b5fd;" title="Google Antigravity 2.0 Orchestrator & Gemini 4 Hydrogen">
-            <span>⚛️ Hydrogen 2.0</span>
+        <div class="telemetry-pill" onclick="openAntigravityModal()" style="border-color:rgba(139,92,246,0.45); color:#c4b5fd;" title="Google Antigravity 2.31 (Argon ↔ Carbon ↔ Hydrogen)">
+            <span>⚛️ Antigravity 2.31</span>
         </div>
         <div class="telemetry-pill" onclick="openMvpLaunchModal()" style="border-color:rgba(245,158,11,0.3); color:#fbbf24;">
             <span>🚀 MVP: Голосовой ИИ (94%)</span>
@@ -10857,7 +10857,7 @@ function sendQuickGuestPromptPortal(txt) {
         } else if (urlParams.get("lang") === "ru") {
             currentOfficeLang = "ru";
         } else if (pathLower.includes("index_en")) {
-            currentOfficeLang = localStorage.getItem("unity_office_lang") || "en";
+            currentOfficeLang = "en";
         } else {
             currentOfficeLang = localStorage.getItem("unity_office_lang") || "ru";
         }
