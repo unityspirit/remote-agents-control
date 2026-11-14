@@ -10056,6 +10056,15 @@ textarea.task-inline-input {
             latest.updated_at = new Date().toISOString();
             userArchivesCache = latest;
             await writeDataBranchJson("user_archives.json", latest, "Append user archive: " + lg);
+            if (typeof recordTeamRequestTelemetry === "function") {
+                try {
+                    recordTeamRequestTelemetry({
+                        title: "[" + (itemObj.project || currentProject || "Позновалка") + "] " + String(itemObj.title || "Сохранение в Базу Знаний").slice(0, 80),
+                        body: (itemObj.urls || []).join(" ")
+                    });
+                    await flushTeamTelemetryToCloud(true);
+                } catch (e) {}
+            }
         } catch (e) {}
     }
 
@@ -13156,12 +13165,24 @@ function enterPendingWaitingRoom(userObj) {
         scheduleTeamTelemetryFlush();
     }
 
+    if (!window._gsgTeleUnloadHooked) {
+        window._gsgTeleUnloadHooked = true;
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === "hidden" && currentAuthUser) {
+                flushTeamTelemetryToCloud(true);
+            }
+        });
+        window.addEventListener("pagehide", function() {
+            if (currentAuthUser) flushTeamTelemetryToCloud(true);
+        });
+    }
+
     function scheduleTeamTelemetryFlush() {
         if (telemetryFlushTimer) return;
         telemetryFlushTimer = setTimeout(() => {
             telemetryFlushTimer = null;
             flushTeamTelemetryToCloud(false);
-        }, 18000);
+        }, 3500);
     }
 
     async function flushTeamTelemetryToCloud(immediate) {
@@ -15695,6 +15716,26 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </div>
 
+        <!-- STEP 4: INTER-BOT MESH & MAIN OFFICE HQ COMMUNICATION -->
+        <div class="world-card" style="border-left:3px solid #a855f7; background:rgba(168,85,247,0.08);">
+            <div style="font-weight:800; font-size:0.86rem; color:#d8b4fe; margin-bottom:6px;">
+                4️⃣ Связь с Главным Штабом (@unitybusinessbot) и ботами команды
+            </div>
+            <div style="font-size:0.73rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+                Отправляйте запросы в Главный Штаб или другому боту команды (через подтверждение <b>@unityspiritpartners</b> в @unitybusinessbot):
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <select id="pdir-bridge-target-select" class="modal-input" style="flex:1; min-width:170px; height:36px; background:#090d16; color:#f8fafc; font-size:0.76rem;">
+                    <option value="hq">🏛️ Главный Штаб (@unitybusinessbot)</option>
+                </select>
+                <input type="text" id="pdir-bridge-msg-input" class="modal-input" style="flex:2; min-width:190px; height:36px; background:#090d16; color:#f8fafc; font-size:0.76rem;" placeholder="💬 Вопрос / запрос другому боту или в Штаб...">
+                <button type="button" class="mini-btn accent" onclick="sendPersonalMeshRequestFromModal()" style="height:36px; padding:0 12px; font-weight:800;">🤝 Отправить</button>
+            </div>
+            <div id="pdir-bridge-inbox-list" style="font-size:0.72rem; color:#cbd5e1; background:rgba(9,13,22,0.7); border:1px solid rgba(168,85,247,0.28); border-radius:8px; padding:8px 10px; max-height:150px; overflow-y:auto;">
+                ⏳ Загружаю статус мостов и входящие...
+            </div>
+        </div>
+
         <div style="display:flex; justify-content:flex-end; margin-top:8px;">
             <button type="button" onclick="closePersonalDirectorBotModal()" style="background:rgba(255,255,255,0.12); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:0.8rem; cursor:pointer; font-weight:700;">Закрыть</button>
         </div>
@@ -15975,6 +16016,7 @@ async function openPersonalDirectorBotModal() {
     if (autoChk) autoChk.checked = Boolean(cfg.auto_send_reports);
     applyPersonalDirectorNameUI();
     updatePersonalBotStatusBannerUI();
+    if (typeof refreshPersonalBotMeshUI === "function") refreshPersonalBotMeshUI();
     m.style.display = "flex";
 }
 
@@ -16312,8 +16354,22 @@ function startBrowserPersonalBotPoller() {
         const cfg = getMyPersonalBotConfig();
         if (!isOwnerSession() && cfg.control_status !== "active") return;
         if (!cfg.bot_token || !cfg.bot_token.includes(":") || cfg.bot_token === TG_BOT_TOKEN) return;
+        if (window._browserBotPollBackoffUntil && Date.now() < window._browserBotPollBackoffUntil) return;
         try {
+            // Avoid 409 Conflict & 429 rate-limits when local Python daemon v34.2 is polling getUpdates
+            if (!window._gsgDaemonHbCache || (Date.now() - window._gsgDaemonHbCache.checkedAt > 45000)) {
+                const hbRes = await readRepoJson("local_daemon_heartbeat.json").catch(() => null);
+                const hbTs = Number(hbRes && hbRes.json && hbRes.json.ts) || 0;
+                window._gsgDaemonHbCache = { checkedAt: Date.now(), hbTs: hbTs };
+            }
+            if (window._gsgDaemonHbCache && window._gsgDaemonHbCache.hbTs && (Date.now() - window._gsgDaemonHbCache.hbTs * 1000 < 150000)) {
+                return;
+            }
             const r = await fetch("https://api.telegram.org/bot" + cfg.bot_token + "/getUpdates?offset=" + personalBotLastUpdateId + "&timeout=1");
+            if (r.status === 409 || r.status === 429) {
+                window._browserBotPollBackoffUntil = Date.now() + 60000;
+                return;
+            }
             const d = await r.json();
             if (!d || !d.ok || !Array.isArray(d.result)) return;
             for (const item of d.result) {
@@ -16870,6 +16926,231 @@ async function adminAssignUserBotFromVault(loginVal, tokInpId, dirInpId) {
     }
 }
 
+var botBridgeRegistryCache = { version: "34.2", bridges: {}, requests: [], delivered_report_ids: [] };
+
+function makeBridgePairKey(a, b) {
+    const na = normalizeAuthLogin(a);
+    const nb = normalizeAuthLogin(b);
+    if (!na || !nb || na === nb) return "";
+    return [na, nb].sort().join("<->");
+}
+
+async function fetchBotBridgeRegistryFresh() {
+    try {
+        const res = await readRepoJson("bot_bridge_registry.json");
+        if (res && res.json && typeof res.json === "object") {
+            botBridgeRegistryCache = Object.assign({ version: "34.2", bridges: {}, requests: [], delivered_report_ids: [] }, res.json);
+            if (!botBridgeRegistryCache.bridges || typeof botBridgeRegistryCache.bridges !== "object") botBridgeRegistryCache.bridges = {};
+            if (!Array.isArray(botBridgeRegistryCache.requests)) botBridgeRegistryCache.requests = [];
+            return botBridgeRegistryCache;
+        }
+    } catch (e) {}
+    return botBridgeRegistryCache;
+}
+
+async function mutateBotBridgeRegistry(mutatorFn, commitMsg) {
+    const cur = await fetchBotBridgeRegistryFresh();
+    const copy = JSON.parse(JSON.stringify(cur || { version: "34.2", bridges: {}, requests: [], delivered_report_ids: [] }));
+    mutatorFn(copy);
+    copy.version = "34.2";
+    copy.updated_at = new Date().toISOString();
+    copy.requests = (copy.requests || []).slice(-120);
+    await writeDataBranchJson("bot_bridge_registry.json", copy, commitMsg || "Update bot_bridge_registry.json");
+    botBridgeRegistryCache = copy;
+    return copy;
+}
+
+async function refreshPersonalBotMeshUI() {
+    if (!currentAuthUser) return;
+    const lg = normalizeAuthLogin(currentAuthUser.login);
+    const sel = document.getElementById("pdir-bridge-target-select");
+    const inboxBox = document.getElementById("pdir-bridge-inbox-list");
+    const [reg, br] = await Promise.all([fetchAuthRegistryFresh().catch(() => authRegistryCache), fetchBotBridgeRegistryFresh()]);
+    const usersArr = (reg && reg.users) || [];
+    const bridges = (br && br.bridges) || {};
+
+    if (sel) {
+        const prev = sel.value || "hq";
+        let opts = '<option value="hq">🏛️ Главный Штаб (@unitybusinessbot)</option>';
+        usersArr.forEach(u => {
+            const ulg = normalizeAuthLogin(u.login);
+            if (!ulg || ulg === lg) return;
+            const pb = u.personal_bot || {};
+            const pk = makeBridgePairKey(lg, ulg);
+            const active = bridges[pk] && bridges[pk].status === "active";
+            const badge = active ? "🔓 Мост" : (pb.bot_username ? "🤖 " + pb.bot_username : "📨 Офис");
+            opts += '<option value="' + escapeHtml(ulg) + '">' + badge + ' · @' + escapeHtml(ulg) + ' («' + escapeHtml(pb.director_name || "Тим") + '»)</option>';
+        });
+        sel.innerHTML = opts;
+        if ([...sel.options].some(o => o.value === prev)) sel.value = prev;
+    }
+
+    if (inboxBox) {
+        const myBridges = Object.entries(bridges).filter(([, b]) => b && b.status === "active" && Array.isArray(b.pair) && b.pair.includes(lg));
+        const myMsgs = (br.requests || []).filter(r => r && (r.to_login === lg || r.from_login === lg)).slice(-6).reverse();
+        let html = '<div><b>🔓 Ваши активные мосты:</b> ' + (myBridges.length ? myBridges.map(([k]) => '<code>' + escapeHtml(k) + '</code>').join(', ') : '<span style="color:#94a3b8;">пока только по запросу через @unitybusinessbot</span>') + '</div>';
+        if (myMsgs.length) {
+            html += '<div style="margin-top:6px; display:flex; flex-direction:column; gap:4px;">';
+            myMsgs.forEach(m => {
+                const dirIcon = (m.from_login === lg) ? '📤 → @' + escapeHtml(m.to_login) : '📥 ← @' + escapeHtml(m.from_login);
+                html += '<div style="padding:4px 6px; border-radius:6px; background:rgba(255,255,255,0.04);"><b>' + dirIcon + '</b> [<code>' + escapeHtml(m.status || '') + '</code>]: ' + escapeHtml(String(m.text || '').slice(0, 140)) + '</div>';
+            });
+            html += '</div>';
+        } else {
+            html += '<div style="margin-top:4px; color:#94a3b8;">Сообщений по межботовой связи пока нет.</div>';
+        }
+        inboxBox.innerHTML = html;
+    }
+}
+
+async function sendPersonalMeshRequestFromModal() {
+    if (!currentAuthUser) return;
+    const sel = document.getElementById("pdir-bridge-target-select");
+    const inp = document.getElementById("pdir-bridge-msg-input");
+    const toTarget = sel ? sel.value : "hq";
+    const msgTxt = inp ? inp.value.trim() : "";
+    if (!msgTxt) { showPersonalBotFeedback("⚠️ Введите текст сообщения для отправки.", false); return; }
+
+    const lg = normalizeAuthLogin(currentAuthUser.login);
+    const cfg = getMyPersonalBotConfig();
+    const isToHq = (toTarget === "hq");
+    const reqId = "brg_" + Math.floor(Date.now() / 1000) + "_" + Math.floor(1000 + Math.random() * 8999);
+    const reg = await fetchAuthRegistryFresh().catch(() => authRegistryCache);
+    const targetU = !isToHq ? ((reg && reg.users) || []).find(x => normalizeAuthLogin(x.login) === toTarget) : null;
+    const reqObj = {
+        id: reqId,
+        ts: new Date().toISOString(),
+        from_login: lg,
+        from_director: cfg.director_name || "Тим",
+        from_bot: cfg.bot_username || ("@" + lg + "_office"),
+        to_login: isToHq ? "unityspiritpartners" : toTarget,
+        to_director: isToHq ? "Главный Штаб" : ((targetU && targetU.personal_bot && targetU.personal_bot.director_name) || "Тим"),
+        pair_key: isToHq ? "" : makeBridgePairKey(lg, toTarget),
+        kind: isToHq ? "to_hq" : "inter_bot",
+        project: currentProject || "Мой Офис",
+        text: msgTxt.slice(0, 1400),
+        status: isToHq ? "pending_owner" : "queued_from_office",
+        inbox_unread: false
+    };
+
+    try {
+        await mutateBotBridgeRegistry(obj => { obj.requests.push(reqObj); }, "Office mesh request " + reqId + " by " + lg);
+        if (isToHq) {
+            await sendMainBotInteractiveNotification(
+                "🏛️ <b>ЗАПРОС ИЗ ОФИСА В ГЛАВНЫЙ ШТАБ</b> (<code>" + escapeHtml(reqId) + "</code>)\n\n" +
+                "• От: <code>@" + escapeHtml(lg) + "</code> · 👑 «" + escapeHtml(cfg.director_name || "Тим") + "»\n" +
+                "• Текст: <blockquote>" + escapeHtml(msgTxt.slice(0, 800)) + "</blockquote>",
+                [
+                    [{ text: "🏛️ Ответить от Штаба", callback_data: "brg_hq:" + reqId }, { text: "⚡ В ИИ-задачи", callback_data: "brg_exec:" + reqId }],
+                    [{ text: "🤝 Все мосты", callback_data: "cmd:bridges" }]
+                ]
+            );
+        }
+        if (inp) inp.value = "";
+        showPersonalBotFeedback(isToHq ? "✅ Отправлено в Главный Штаб (@unitybusinessbot)!" : "⏳ Запрос передан на маршрутизацию и контроль @unitybusinessbot!", true);
+        await refreshPersonalBotMeshUI();
+    } catch (e) {
+        showPersonalBotFeedback("⚠️ Ошибка отправки: " + escapeHtml(e.message), false);
+    }
+}
+
+async function ownerBridgeDecisionFromVault(reqId, decision) {
+    if (!isOwnerSession()) return;
+    try {
+        let reqTarget = null;
+        await mutateBotBridgeRegistry(obj => {
+            const req = (obj.requests || []).find(r => r && r.id === reqId);
+            if (!req) return;
+            reqTarget = req;
+            if (decision === "deny") {
+                req.status = "denied";
+                req.decided_at = new Date().toISOString();
+            } else {
+                const pk = req.pair_key || makeBridgePairKey(req.from_login, req.to_login);
+                if (decision === "link" && pk) {
+                    obj.bridges[pk] = {
+                        pair: [normalizeAuthLogin(req.from_login), normalizeAuthLogin(req.to_login)].sort(),
+                        status: "active",
+                        approved_by: "@unityspiritpartners",
+                        approved_at: new Date().toISOString(),
+                        message_count: Number((obj.bridges[pk] && obj.bridges[pk].message_count) || 0)
+                    };
+                }
+                req.status = "queued_from_office";
+                req.kind = "hq_to_bot";
+            }
+        }, "Vault bridge decision " + decision + " for " + reqId);
+        renderSecuredVaultModal();
+        showToast(decision === "deny" ? "🚫 Запрос отклонён" : (decision === "link" ? "🔓 Мост открыт и сообщение поставлено на доставку!" : "✅ Разовая доставка запущена!"));
+    } catch (e) {
+        showToast("⚠️ Ошибка моста: " + e.message);
+    }
+}
+
+async function ownerCloseBridgeFromVault(pairKey) {
+    if (!isOwnerSession()) return;
+    try {
+        await mutateBotBridgeRegistry(obj => {
+            if (obj.bridges && obj.bridges[pairKey]) {
+                obj.bridges[pairKey].status = "closed";
+                obj.bridges[pairKey].closed_at = new Date().toISOString();
+            }
+        }, "Vault close bridge " + pairKey);
+        renderSecuredVaultModal();
+        showToast("🛑 Мост " + pairKey + " закрыт!");
+    } catch (e) {
+        showToast("⚠️ Ошибка закрытия моста: " + e.message);
+    }
+}
+
+async function ownerQuickPairBridgeFromVault() {
+    if (!isOwnerSession()) return;
+    const fromEl = document.getElementById("vbrg-from-select");
+    const toEl = document.getElementById("vbrg-to-select");
+    const txtEl = document.getElementById("vbrg-msg-input");
+    const fromLg = normalizeAuthLogin(fromEl ? fromEl.value : "");
+    const toLg = normalizeAuthLogin(toEl ? toEl.value : "");
+    const txt = txtEl ? txtEl.value.trim() : "";
+    if (!fromLg || !toLg || fromLg === toLg) {
+        showToast("⚠️ Выберите двух разных участников/ботов.");
+        return;
+    }
+    const pk = makeBridgePairKey(fromLg, toLg);
+    try {
+        await mutateBotBridgeRegistry(obj => {
+            obj.bridges[pk] = {
+                pair: [fromLg, toLg].sort(),
+                status: "active",
+                approved_by: "@unityspiritpartners",
+                approved_at: new Date().toISOString(),
+                message_count: Number((obj.bridges[pk] && obj.bridges[pk].message_count) || 0) + (txt ? 1 : 0)
+            };
+            if (txt) {
+                obj.requests.push({
+                    id: "brg_" + Math.floor(Date.now() / 1000) + "_oq",
+                    ts: new Date().toISOString(),
+                    from_login: fromLg,
+                    from_director: "Штаб / @" + fromLg,
+                    from_bot: "@unitybusinessbot",
+                    to_login: toLg,
+                    to_director: "Директор",
+                    pair_key: pk,
+                    kind: "inter_bot",
+                    project: "Главный Штаб",
+                    text: txt.slice(0, 1400),
+                    status: "queued_from_office",
+                    inbox_unread: false
+                });
+            }
+        }, "Owner activate bridge " + pk);
+        if (txtEl) txtEl.value = "";
+        renderSecuredVaultModal();
+        showToast("🔓 Мост " + pk + " активирован!" + (txt ? " Сообщение отправлено в доставку." : ""));
+    } catch (e) {
+        showToast("⚠️ Ошибка создания моста: " + e.message);
+    }
+}
+
 async function adminSendMessageToUserBotFromVault(loginVal, msgInpId) {
     if (!isOwnerSession()) return;
     const inp = document.getElementById(msgInpId);
@@ -16879,42 +17160,64 @@ async function adminSendMessageToUserBotFromVault(loginVal, msgInpId) {
     const reg = await fetchAuthRegistryFresh();
     const u = (reg.users || []).find(x => normalizeAuthLogin(x.login) === normL);
     const pb = (u && u.personal_bot) || {};
-    if (!pb.bot_token || !pb.chat_id) {
-        showToast("⚠️ У @" + normL + " ещё не заполнены Bot Token и Chat ID.");
-        return;
-    }
     const dirN = pb.director_name || "Тим";
+    const ownerCollision = Boolean(pb.chat_id && pb.chat_id === OWNER_TG_CHAT_ID && !["unityspiritpartners", "unityspiritpartner", "unityspiritteam@gmail.com"].includes(normL));
+
+    if (pb.bot_token && pb.chat_id && !ownerCollision) {
+        try {
+            const r = await fetch("https://api.telegram.org/bot" + pb.bot_token + "/sendMessage", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: pb.chat_id,
+                    text: "👑 <b>Сообщение от Главного Штаба через вашего Директора «" + escapeHtml(dirN) + "»:</b>\n\n" + escapeHtml(txt),
+                    parse_mode: "HTML",
+                    reply_markup: getPersonalDirectorInlineMarkup("Личный Офис: @" + normL)
+                })
+            });
+            const d = await r.json();
+            if (d && d.ok) {
+                if (inp) inp.value = "";
+                showToast("✈️ Сообщение отправлено в бот @" + normL + "!");
+                return;
+            }
+        } catch (e) {}
+    }
+
+    // Secure relay via bot_bridge_registry.json -> local @unitybusinessbot daemon (holds protected bot tokens locally)
     try {
-        const r = await fetch("https://api.telegram.org/bot" + pb.bot_token + "/sendMessage", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                chat_id: pb.chat_id,
-                text: "👑 <b>Сообщение от Главного Штаба через вашего Директора «" + escapeHtml(dirN) + "»:</b>\n\n" + escapeHtml(txt),
-                parse_mode: "HTML",
-                reply_markup: getPersonalDirectorInlineMarkup("Личный Офис: @" + normL)
-            })
-        });
-        const d = await r.json();
-        if (d && d.ok) {
-            if (inp) inp.value = "";
-            showToast("✈️ Сообщение отправлено в бот @" + normL + "!");
-        } else {
-            showToast("⚠️ Telegram: " + ((d && d.description) || "ошибка отправки"));
-        }
+        await mutateBotBridgeRegistry(obj => {
+            obj.requests.push({
+                id: "hq_" + Math.floor(Date.now() / 1000) + "_" + normL.slice(0, 6),
+                ts: new Date().toISOString(),
+                from_login: "unityspiritpartners",
+                from_director: "Главный Штаб",
+                from_bot: "@unitybusinessbot",
+                to_login: normL,
+                to_director: dirN,
+                kind: "hq_to_bot",
+                project: "Главный Штаб -> @" + normL,
+                text: txt.slice(0, 1400),
+                status: "queued_from_office",
+                inbox_unread: false
+            });
+        }, "Vault HQ message queued for @" + normL);
+        if (inp) inp.value = "";
+        showToast("📡 Поставлено в очередь Главного Штаба (@unitybusinessbot) для доставки @" + normL + "!");
+        renderSecuredVaultModal();
     } catch (e) {
-        showToast("⚠️ Ошибка отправки: " + e.message);
+        showToast("⚠️ Ошибка постановки в очередь: " + e.message);
     }
 }
 
-// Wrap openSecuredVaultModal to also fetch director_actions_log.json
+// Wrap openSecuredVaultModal to also fetch director_actions_log.json & bot_bridge_registry.json
 (function() {
     const prevOpenVault = window.openSecuredVaultModal;
     if (typeof prevOpenVault === "function") {
         window.openSecuredVaultModal = async function(subTab) {
             await prevOpenVault(subTab);
             if (subTab === "bots" || vaultSubTab === "bots") {
-                await fetchDirectorActionsLogFresh();
+                await Promise.all([fetchDirectorActionsLogFresh(), fetchBotBridgeRegistryFresh()]);
                 renderSecuredVaultModal();
             }
         };
@@ -16934,65 +17237,116 @@ async function adminSendMessageToUserBotFromVault(loginVal, msgInpId) {
             if (vaultSubTab === "bots") {
                 const usersArr = (authRegistryCache && authRegistryCache.users) || [];
                 const logItems = (directorActionsLogCache && directorActionsLogCache.actions) || [];
+                const brData = botBridgeRegistryCache || { bridges: {}, requests: [] };
+                const activeBridges = Object.entries(brData.bridges || {}).filter(([, b]) => b && b.status === "active");
+                const pendingBridgeReqs = (brData.requests || []).filter(r => r && r.status === "pending_owner");
+                const recentBridgeReqs = (brData.requests || []).slice(-12).reverse();
 
                 let html =
                     '<div style="background:linear-gradient(135deg,rgba(16,185,129,0.14),rgba(59,130,246,0.14)); border:1px solid rgba(16,185,129,0.45); border-radius:12px; padding:10px 12px; font-size:0.76rem; line-height:1.45;">' +
-                        '🤖 <b>Главный Контроль всех личных ботов команды & Живая лента их AI-Директоров:</b><br>' +
-                        '• Все сотрудники подключают своих ботов <b>через вас</b>. Здесь вы одобряете запуск, назначаете токены, ставите ботов на паузу, отправляете команды и видите <b>все действия каждого Директора в реальном времени</b>.' +
+                        '🤖 <b>Главный Контроль всех личных ботов команды, Межботовых мостов A↔B и AI-Директоров (v34.2):</b><br>' +
+                        '• Все боты взаимодействуют с Главным Офисом и друг другом <b>только через ваш контроль в @unitybusinessbot</b>. Токены ботов защищены в локальном Штабе и не светятся в публичном GitHub.' +
                     '</div>' +
                     '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-top:4px;">' +
                         '<span style="font-size:0.78rem; font-weight:800; color:#38bdf8; text-transform:uppercase;">📱 Подключённые боты пользователей (' + usersArr.length + '):</span>' +
-                        '<button type="button" class="mini-btn accent" onclick="fetchDirectorActionsLogFresh().then(renderSecuredVaultModal)">🔄 Обновить журнал</button>' +
+                        '<button type="button" class="mini-btn accent" onclick="Promise.all([fetchDirectorActionsLogFresh(),fetchBotBridgeRegistryFresh()]).then(renderSecuredVaultModal)">🔄 Обновить ботов и мосты</button>' +
                     '</div>';
 
                 usersArr.forEach((u, idx) => {
                     const sl = escapeHtml(u.login).replace(/'/g, "\\'");
                     const pb = u.personal_bot || {};
                     const tok = pb.bot_token || "";
-                    const st = pb.control_status || (tok ? "active" : "not_configured");
-                    const stBadge = (st === "active" && tok)
-                        ? '<span class="badge done">🟢 Активен (Под контролем)</span>'
+                    const hasBot = Boolean(tok || pb.bot_username || pb.control_status === "active");
+                    const st = pb.control_status || (hasBot ? "active" : "not_configured");
+                    const stBadge = (st === "active" && hasBot)
+                        ? '<span class="badge done">🟢 Активен' + (!tok && pb.bot_username ? ' (🔐 Токен в Штабе)' : '') + '</span>'
                         : (st === "pending_owner"
                             ? '<span class="badge running" style="color:#fbbf24;">⏳ Ждёт вашего одобрения</span>'
                             : (st === "paused"
                                 ? '<span class="badge" style="color:#f87171;">⏸️ На паузе</span>'
                                 : '<span class="badge" style="color:#94a3b8;">⚪ Бот не подключён</span>'));
 
+                    const isOwnerU = ["unityspiritpartners", "unityspiritpartner", "unityspiritteam@gmail.com"].includes(normalizeAuthLogin(u.login));
+                    const chatCollision = Boolean(pb.chat_id && pb.chat_id === OWNER_TG_CHAT_ID && !isOwnerU);
                     const tokId = "vbot-tok-" + idx;
                     const dirId = "vbot-dir-" + idx;
                     const msgId = "vbot-msg-" + idx;
 
                     html +=
-                        '<div style="background:var(--bg-card); border:1px solid var(--border); border-left:4px solid ' + (st === "pending_owner" ? "#f59e0b" : (st === "active" && tok ? "#10b981" : "#475569")) + '; border-radius:12px; padding:10px 12px; display:flex; flex-direction:column; gap:6px;">' +
+                        '<div style="background:var(--bg-card); border:1px solid var(--border); border-left:4px solid ' + (st === "pending_owner" ? "#f59e0b" : (st === "active" && hasBot ? "#10b981" : "#475569")) + '; border-radius:12px; padding:10px 12px; display:flex; flex-direction:column; gap:6px;">' +
                             '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
                                 '<span style="font-weight:800; font-size:0.84rem;">👤 ' + escapeHtml(u.full_name || u.login) + ' (<code>@' + escapeHtml(u.login) + '</code>)</span>' +
                                 stBadge +
                             '</div>' +
                             '<div style="font-size:0.74rem; color:var(--text-dim);">' +
                                 'Директор: <b style="color:#fbbf24;">«' + escapeHtml(pb.director_name || "Тим") + '»</b> · ' +
-                                'Бот: <b>' + escapeHtml(pb.bot_username || (tok ? "подключён" : "—")) + '</b> · ' +
+                                'Бот: <b>' + escapeHtml(pb.bot_username || (hasBot ? "подключён" : "—")) + '</b> · ' +
                                 'Chat ID: <code>' + escapeHtml(pb.chat_id || "—") + '</code>' +
+                                (chatCollision ? ' <span style="color:#f87171; font-weight:800;">(⚠️ привязан Chat ID Владельца!)</span>' : '') +
                             '</div>' +
                             '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
-                                '<input type="text" id="' + tokId + '" class="task-inline-input" style="flex:2; min-width:170px; height:29px; font-size:0.72rem; font-family:monospace;" value="' + escapeHtml(tok) + '" placeholder="Вставьте Bot Token из @BotFather...">' +
+                                '<input type="text" id="' + tokId + '" class="task-inline-input" style="flex:2; min-width:170px; height:29px; font-size:0.72rem; font-family:monospace;" value="' + escapeHtml(tok) + '" placeholder="' + (hasBot && !tok ? '🔐 Токен защищён в локальном Штабе (введите только для замены)' : 'Вставьте Bot Token из @BotFather...') + '">' +
                                 '<input type="text" id="' + dirId + '" class="task-inline-input" style="flex:1; min-width:100px; height:29px; font-size:0.72rem;" value="' + escapeHtml(pb.director_name || "Тим") + '" placeholder="Имя Директора">' +
                                 '<button type="button" class="mini-btn accent" onclick="adminAssignUserBotFromVault(\'' + sl + '\', \'' + tokId + '\', \'' + dirId + '\')" style="height:29px; font-weight:800;">💾 Назначить / Вкл</button>' +
                             '</div>' +
                             '<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">' +
-                                (tok ? (
+                                (hasBot ? (
                                     '<button type="button" class="mini-btn" onclick="adminUpdateBotControlFromVault(\'' + sl + '\', \'approve\')" style="color:#34d399; border-color:rgba(16,185,129,0.5);">✅ Одобрить/Вкл</button>' +
                                     '<button type="button" class="mini-btn" onclick="adminUpdateBotControlFromVault(\'' + sl + '\', \'pause\')" style="color:#fbbf24;">⏸️ Пауза</button>' +
                                     '<button type="button" class="mini-btn" onclick="adminUpdateBotControlFromVault(\'' + sl + '\', \'disable\')" style="color:#f87171;">🚫 Отключить</button>'
                                 ) : '') +
                             '</div>' +
-                            (tok && pb.chat_id ? (
-                                '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
-                                    '<input type="text" id="' + msgId + '" class="task-inline-input" style="flex:1; min-width:180px; height:28px; font-size:0.72rem;" placeholder="💬 Написать пользователю через его Директора «' + escapeHtml(pb.director_name || "Тим") + '»...">' +
-                                    '<button type="button" class="mini-btn accent" onclick="adminSendMessageToUserBotFromVault(\'' + sl + '\', \'' + msgId + '\')" style="height:28px;">✈️ Отправить в бот</button>' +
-                                '</div>'
-                            ) : '') +
+                            '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">' +
+                                '<input type="text" id="' + msgId + '" class="task-inline-input" style="flex:1; min-width:180px; height:28px; font-size:0.72rem;" placeholder="💬 Отправить через Штаб (@unitybusinessbot) к @' + escapeHtml(u.login) + '...">' +
+                                '<button type="button" class="mini-btn accent" onclick="adminSendMessageToUserBotFromVault(\'' + sl + '\', \'' + msgId + '\')" style="height:28px;">✈️ Отправить через Штаб</button>' +
+                            '</div>' +
                         '</div>';
                 });
+
+                const userOptionsHtml = usersArr.map(u => '<option value="' + escapeHtml(normalizeAuthLogin(u.login)) + '">@' + escapeHtml(u.login) + ((u.personal_bot && u.personal_bot.bot_username) ? ' (' + escapeHtml(u.personal_bot.bot_username) + ')' : '') + '</option>').join('');
+                html +=
+                    '<div style="background:rgba(168,85,247,0.08); border:1px solid rgba(168,85,247,0.38); border-radius:12px; padding:10px 12px; margin-top:8px; display:flex; flex-direction:column; gap:8px;">' +
+                        '<div style="font-size:0.78rem; font-weight:800; color:#d8b4fe; text-transform:uppercase;">🤝 Межботовые мосты A↔B и запросы через @unitybusinessbot (Активных: ' + activeBridges.length + ' · Ожидают: ' + pendingBridgeReqs.length + ')</div>' +
+                        '<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">' +
+                            '<select id="vbrg-from-select" class="task-inline-input" style="height:29px; font-size:0.72rem; flex:1; min-width:120px;">' + userOptionsHtml + '</select>' +
+                            '<span style="font-weight:800; color:#c084fc;">↔</span>' +
+                            '<select id="vbrg-to-select" class="task-inline-input" style="height:29px; font-size:0.72rem; flex:1; min-width:120px;">' + userOptionsHtml + '</select>' +
+                            '<input type="text" id="vbrg-msg-input" class="task-inline-input" style="height:29px; font-size:0.72rem; flex:2; min-width:160px;" placeholder="Опционально: первое сообщение по мосту...">' +
+                            '<button type="button" class="mini-btn accent" onclick="ownerQuickPairBridgeFromVault()" style="height:29px; font-weight:800;">🔓 Открыть мост A↔B</button>' +
+                        '</div>';
+
+                if (activeBridges.length) {
+                    html += '<div style="display:flex; gap:6px; flex-wrap:wrap;">';
+                    activeBridges.forEach(([pk, b]) => {
+                        const pkEsc = escapeHtml(pk).replace(/'/g, "\\'");
+                        html += '<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.45); border-radius:8px; padding:4px 8px; font-size:0.72rem; display:inline-flex; align-items:center; gap:6px;">🔓 <b>' + escapeHtml(pk) + '</b> (' + (b.message_count || 0) + ' сообщ.) <button type="button" class="mini-btn" onclick="ownerCloseBridgeFromVault(\'' + pkEsc + '\')" style="color:#f87171; padding:1px 6px;">🛑</button></span>';
+                    });
+                    html += '</div>';
+                }
+
+                if (pendingBridgeReqs.length) {
+                    pendingBridgeReqs.forEach(r => {
+                        const rEsc = escapeHtml(r.id).replace(/'/g, "\\'");
+                        html +=
+                            '<div style="background:var(--bg-main); border:1px solid rgba(245,158,11,0.45); border-radius:8px; padding:7px 9px; font-size:0.73rem;">' +
+                                '<div>⏳ <b>@' + escapeHtml(r.from_login) + ' ➜ @' + escapeHtml(r.to_login) + '</b>: ' + escapeHtml(String(r.text || '').slice(0, 180)) + '</div>' +
+                                '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:5px;">' +
+                                    '<button type="button" class="mini-btn" onclick="ownerBridgeDecisionFromVault(\'' + rEsc + '\', \'once\')" style="color:#34d399;">✅ Разово</button>' +
+                                    '<button type="button" class="mini-btn" onclick="ownerBridgeDecisionFromVault(\'' + rEsc + '\', \'link\')" style="color:#38bdf8;">🔓 Открыть мост A↔B</button>' +
+                                    '<button type="button" class="mini-btn" onclick="ownerBridgeDecisionFromVault(\'' + rEsc + '\', \'deny\')" style="color:#f87171;">🚫 Отклонить</button>' +
+                                '</div>' +
+                            '</div>';
+                    });
+                }
+
+                if (recentBridgeReqs.length) {
+                    html += '<div style="display:flex; flex-direction:column; gap:4px; max-height:140px; overflow-y:auto;">';
+                    recentBridgeReqs.forEach(r => {
+                        html += '<div style="font-size:0.71rem; color:#cbd5e1; background:rgba(255,255,255,0.03); border-radius:6px; padding:4px 7px;"><code>[' + escapeHtml(r.status || '') + ']</code> <b>@' + escapeHtml(r.from_login) + ' → @' + escapeHtml(r.to_login) + '</b>: ' + escapeHtml(String(r.text || '').slice(0, 120)) + '</div>';
+                    });
+                    html += '</div>';
+                }
+                html += '</div>';
 
                 html += '<div style="font-size:0.78rem; font-weight:800; color:#c084fc; text-transform:uppercase; margin-top:8px;">👁️ Живая лента действий Личных Директоров всех пользователей (' + logItems.length + '):</div>';
                 if (logItems.length === 0) {
