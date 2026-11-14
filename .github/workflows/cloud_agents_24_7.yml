@@ -5,8 +5,6 @@ on:
     types: [opened, edited, reopened]
   issue_comment:
     types: [created]
-  # schedule: (disabled on mirror repo — only HQ runs 24/7 cron)
-  # - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -24,7 +22,7 @@ permissions:
   models: read
 
 concurrency:
-  group: cloud-agents-24-7-${{ github.repository }}
+  group: cloud-agents-24-7-${{ github.repository }}-${{ github.event.issue.number || github.event_name }}
   cancel-in-progress: false
 
 jobs:
@@ -33,7 +31,7 @@ jobs:
     if: >
       github.event_name == 'schedule' ||
       github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'issue_comment' && !contains(github.event.comment.body, '<!-- cloud-agent-v')) ||
+      (github.event_name == 'issue_comment' && !contains(github.event.comment.body, '<!-- cloud-agent-v') && !contains(github.event.comment.body, '<!-- office-ui-auto-note -->')) ||
       github.event_name == 'issues'
     steps:
       - name: Checkout repository
@@ -48,7 +46,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync (v34.0 Antigravity 2.31)
+      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync (v34.1 Antigravity 2.31 + 8-Layer AI)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GTP_SYNC_TOKEN: ${{ secrets.GTP_SYNC_TOKEN }}
@@ -62,8 +60,10 @@ jobs:
           GEMINI_ARGON_MODEL: "gemini-4-argon"
           GEMINI_CARBON_MODEL: "gemini-4-carbon"
           GEMINI_HYDROGEN_MODEL: "gemini-4-hydrogen"
+          GITHUB_MODELS_FRONTIER: "openai/gpt-4o"
+          GITHUB_MODELS_FAST: "openai/gpt-4o-mini"
           GEMINI_THINKING_LEVEL: "high"
-          OFFICE_VERSION: "34.0"
+          OFFICE_VERSION: "34.1"
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}
