@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Telegram Multi-Bot Poller Daemon v32.0 for Global Spirit Group ★ Virtual Office.
+Telegram Multi-Bot Poller Daemon v34.0 (Antigravity 2.31) for Global Spirit Group ★ Virtual Office.
 Hardened security gate (@unityspiritpartners approval-only bot access) + 24/7 Cloud sync heartbeat.
 1. Main HQ Bot (@unitybusinessbot):
    - Reliable 1-click auth approvals (appr:<login>, rst_ok:<login>, rst_no:<login>) with retries & zero dropped clicks.
@@ -8,17 +8,20 @@ Hardened security gate (@unityspiritpartners approval-only bot access) + 24/7 Cl
    - Explicitly protects @unityspiritpartners from any password modification via Telegram bot.
    - Owner Primary Control over ALL users' personal bots (/bots, bot_pick, bot_appr, bot_pause, bot_ban, bot_asktok, bot_askmsg).
    - Live visibility & audit log of every action performed by every user's AI Director (/logs, cmd:dirlog, director_actions_log.json).
+   - Antigravity 2.31 telemetry (/hydrogen, /antigravity) & Saved-Work Audit (/audit).
 2. Personal User Bots:
    - Strictly enforces Owner approval (control_status == "active" required for members).
    - Executes interactive AI Director workflows & mirrors every Director action to @unitybusinessbot and director_actions_log.json.
 """
 import sys
+import html as _html
 import urllib.request
 import json
 import base64
 import datetime
 import time
 import os
+import socket
 import hashlib
 import secrets
 import string
@@ -43,6 +46,7 @@ def _load_config():
         "gtp_token": os.environ.get("GTP_TOKEN") or cfg.get("gtp_token", ""),
         "u_repo": cfg.get("u_repo", "unityspirit/remote-agents-control"),
         "gtp_repo": cfg.get("gtp_repo", "GlobalTeamPartners/remote-agents-control"),
+        "gemini_api_key": (os.environ.get("GEMINI_API_KEY") or cfg.get("gemini_api_key") or "").strip(),
         "personal_bot_tokens": cfg.get("personal_bot_tokens", {}),
     }
 
@@ -53,6 +57,7 @@ U_TOKEN = _CFG["u_token"]
 GTP_TOKEN = _CFG["gtp_token"]
 U_REPO = _CFG["u_repo"]
 GTP_REPO = _CFG["gtp_repo"]
+GEMINI_API_KEY = _CFG["gemini_api_key"]
 PERSONAL_BOT_TOKENS = dict(_CFG.get("personal_bot_tokens") or {})
 
 _cached_registry = None
@@ -60,7 +65,7 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=33.0"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.2"
 LOCAL_BOT_ACCESS_FILE = os.path.join(BASE_DIR, ".bot_access_registry.json")
 _cached_bot_access = None
 _cached_bot_access_ts = 0.0
@@ -178,7 +183,47 @@ def log_throttled_err(prefix, err):
         print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] {prefix}: {err}", flush=True)
 
 
-def call_tg(method, data=None, bot_token=TG_BOT_TOKEN, retries=2):
+import bot_mesh_hub
+
+_TG_COOLDOWN_UNTIL = {}
+
+
+def _is_owner_login(val):
+    return norm_login(val) in ("unityspiritpartners", "unityspiritpartner", "unityspiritteam@gmail.com")
+
+
+def _mesh_create_issue(project_name, task_title, body_text):
+    num = create_github_issue_task(project_name, task_title, body_text)
+    url = f"https://github.com/{GTP_REPO}/issues/{num}" if num else ""
+    return bool(num), num, url
+
+
+def _get_mesh_ctx():
+    return {
+        "primary_repo": GTP_REPO,
+        "gh_token": GTP_TOKEN,
+        "tg_bot_token": TG_BOT_TOKEN,
+        "owner_chat_id": OWNER_TG_CHAT_ID,
+        "personal_bot_tokens": PERSONAL_BOT_TOKENS,
+        "call_tg": call_tg,
+        "norm_login": norm_login,
+        "fetch_json": fetch_json_from_github,
+        "mutate_repos": mutate_json_across_repos,
+        "fetch_registry": fetch_registry,
+        "find_user": find_user_in_registry,
+        "is_owner_chat": is_owner_chat,
+        "is_owner_login": _is_owner_login,
+        "create_issue": _mesh_create_issue,
+        "record_action": record_director_action_and_mirror,
+    }
+
+
+def call_tg(method, data=None, bot_token=TG_BOT_TOKEN, retries=2, bot_label=""):
+    if method == "getUpdates":
+        cool_until = _TG_COOLDOWN_UNTIL.get(bot_token, 0.0)
+        if cool_until and time.time() < cool_until:
+            return None
+    label = bot_label or ("main_hq" if bot_token == TG_BOT_TOKEN else f"bot:{str(bot_token)[:8]}")
     url = f"https://api.telegram.org/bot{bot_token}/{method}"
     payload = json.dumps(data or {}).encode("utf-8")
     for attempt in range(retries):
@@ -188,17 +233,40 @@ def call_tg(method, data=None, bot_token=TG_BOT_TOKEN, retries=2):
             headers={
                 "Content-Type": "application/json",
                 "Connection": "close",
-                "User-Agent": "GSG-Bot-Daemon/29.0"
+                "User-Agent": "GSG-Bot-Daemon/34.2"
             }
         )
         try:
             with urllib.request.urlopen(req, timeout=14) as resp:
                 return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as he:
+            err_body = ""
+            try:
+                err_body = he.read().decode("utf-8", "replace")
+            except Exception:
+                pass
+            retry_after = 0
+            if he.code == 429:
+                try:
+                    retry_after = int(json.loads(err_body).get("parameters", {}).get("retry_after", 8))
+                except Exception:
+                    retry_after = 10
+                _TG_COOLDOWN_UNTIL[bot_token] = time.time() + max(retry_after, 4)
+            elif he.code == 409:
+                # Another client briefly polled getUpdates; back off briefly without busy-looping
+                _TG_COOLDOWN_UNTIL[bot_token] = time.time() + 12
+                log_throttled_err(f"TG {method} [{label}]", f"HTTP 409 Conflict (backed off 12s): {err_body[:160]}")
+                return None
+            if attempt + 1 < retries and he.code not in (401, 403, 404, 409, 429):
+                time.sleep(1.0)
+            else:
+                log_throttled_err(f"TG {method} [{label}]", f"HTTP {he.code}: {err_body[:160] or he}")
+                return None
         except Exception as e:
             if attempt + 1 < retries:
                 time.sleep(1.0)
             else:
-                log_throttled_err(f"TG {method}", e)
+                log_throttled_err(f"TG {method} [{label}]", e)
                 return None
 
 
@@ -386,7 +454,7 @@ def approve_user_in_github(login_to_approve):
             u["assigned_projects"] = [f"Личный Офис: @{u_norm}"]
         return True
 
-    return mutate_registry_across_repos(_mutate, f"approve: user {norm_login(login_to_approve)} via @unitybusinessbot [v30.0]")
+    return mutate_registry_across_repos(_mutate, f"approve: user {norm_login(login_to_approve)} via @unitybusinessbot [v34.0]")
 
 
 def set_user_password_in_github(login_target, new_password, verified_chat_id=None):
@@ -413,7 +481,7 @@ def set_user_password_in_github(login_target, new_password, verified_chat_id=Non
             u["verified_bot_chat_id"] = str(verified_chat_id)
         return True
 
-    return mutate_registry_across_repos(_mutate, f"pwd-update: {norm_login(login_target)} via @unitybusinessbot [v30.0]")
+    return mutate_registry_across_repos(_mutate, f"pwd-update: {norm_login(login_target)} via @unitybusinessbot [v34.0]")
 
 
 def save_pending_bot_reset_in_github(login_target, new_password, req_chat_id, req_tg_username=""):
@@ -440,7 +508,7 @@ def save_pending_bot_reset_in_github(login_target, new_password, req_chat_id, re
         }
         return True
 
-    ok = mutate_registry_across_repos(_mutate, f"bot-reset-req: {norm_login(login_target)} via @unitybusinessbot [v30.0]")
+    ok = mutate_registry_across_repos(_mutate, f"bot-reset-req: {norm_login(login_target)} via @unitybusinessbot [v34.0]")
     return ok, code
 
 
@@ -483,7 +551,7 @@ def handle_password_reset_in_github(login_target, approve_bool, explicit_new_pas
         return False
 
     act = "approve-reset" if approve_bool else "reject-reset"
-    return mutate_registry_across_repos(_mutate, f"{act}: {norm_login(login_target)} via @unitybusinessbot [v30.0]")
+    return mutate_registry_across_repos(_mutate, f"{act}: {norm_login(login_target)} via @unitybusinessbot [v34.0]")
 
 
 def update_user_bot_control(login_target, action, bot_token=None, director_name=None):
@@ -528,7 +596,7 @@ def update_user_bot_control(login_target, action, bot_token=None, director_name=
         u["owner_action_stamp"] = f"bot-{action}-{now_ts}"
         return True
 
-    ok = mutate_registry_across_repos(_mutate, f"bot-ctrl({action}): {norm_login(login_target)} via @unitybusinessbot [v29.0]")
+    ok = mutate_registry_across_repos(_mutate, f"bot-ctrl({action}): {norm_login(login_target)} via @unitybusinessbot [v34.0]")
     return ok, bot_username
 
 
@@ -591,17 +659,17 @@ def record_director_action_and_mirror(user_obj, action_type, project_name, summa
         _mutate_log,
         f"audit(director): {login} ({dir_name}) -> {action_type}",
         branches=["data"],
-        default_factory=lambda: {"version": "29.0", "actions": []}
+        default_factory=lambda: {"version": "34.0", "actions": []}
     )
 
     if mirror_to_owner and login not in ("unityspiritpartners", "unityspiritpartner", "unityspiritteam@gmail.com"):
         mirror_msg = (
             f"👁️ <b>КОНТРОЛЬ ДИРЕКТОРА СОТРУДНИКА</b>\n\n"
-            f"• <b>Пользователь:</b> <code>@{login}</code> ({full_name})\n"
-            f"• <b>Бот / Директор:</b> {bot_uname} · «<b>{dir_name}</b>»\n"
-            f"• <b>Папка:</b> «{project_name}»\n"
-            f"• <b>Действие ({action_type}):</b>\n<i>{str(summary_text)[:450]}</i>\n"
-            f"• <b>Время:</b> {now_local}"
+            f"• <b>Пользователь:</b> <code>@{_esc_h(login)}</code> ({_esc_h(full_name)})\n"
+            f"• <b>Бот / Директор:</b> {_esc_h(bot_uname)} · «<b>{_esc_h(dir_name)}</b>»\n"
+            f"• <b>Папка:</b> «{_esc_h(project_name)}»\n"
+            f"• <b>Действие ({_esc_h(action_type)}):</b>\n<i>{_esc_h(str(summary_text)[:450])}</i>\n"
+            f"• <b>Время:</b> {_esc_h(now_local)}"
         )
         kb = {
             "inline_keyboard": [
@@ -624,31 +692,7 @@ def record_director_action_and_mirror(user_obj, action_type, project_name, summa
 
 
 def build_director_inline_keyboard(project_name):
-    p = (project_name or "Мой Офис")[:24]
-    kb = [
-        [
-            {"text": "🚀 Что делаем дальше? (План)", "callback_data": f"pdir:next:{p}"},
-            {"text": "⚡ Выполнить шаг #1", "callback_data": f"pdir:exec:{p}"}
-        ],
-        [
-            {"text": "📊 Сводка по моей папке", "callback_data": f"pdir:status:{p}"},
-            {"text": "💡 3 идеи для роста дохода", "callback_data": f"pdir:ideas:{p}"}
-        ],
-        [
-            {"text": "🔎 Глубокий ресёрч темы", "callback_data": f"pdir:research:{p}"},
-            {"text": "✅ Принять работу и идти дальше", "callback_data": f"pdir:approve:{p}"}
-        ],
-    ]
-    if "alberta" in p.lower() or "aliashirani" in p.lower():
-        kb.append([
-            {"text": "👑 Мой Бизнес-Хаб & Бренд-Бук", "url": "https://unityspirit.github.io/alberta-hub/"},
-            {"text": "🌌 Международный Штаб 5-в-1", "url": "https://unityspirit.github.io/alberta-hub/international/"}
-        ])
-    kb.append([
-        {"text": "🏷️ Сменить имя Директора", "callback_data": "pdir:rename"},
-        {"text": "🏢 Открыть Виртуальный Офис", "url": OFFICE_URL}
-    ])
-    return {"inline_keyboard": kb}
+    return bot_mesh_hub.build_mesh_director_keyboard(project_name)
 
 
 def generate_director_reply(user_obj, action_type, project_name, custom_text=""):
@@ -679,7 +723,7 @@ def generate_director_reply(user_obj, action_type, project_name, custom_text="")
     elif "yvyatkin" in login or login == "jv":
         proj = "Юра"
         ctx_status = (
-            "• <b>KHL AI Predictor Bot (PID 12696):</b> WinRate 82.9%, ROI +53.4%, Brier 0.1716.\n"
+            "• <b>KHL AI Predictor (модель на паузе на ПК):</b> калибровочные метрики модели — WinRate 82.9%, ROI +53.4%, Brier 0.1716.\n"
             "• <b>AI Crypto Trading Bot:</b> мониторинг импульсов BTC/ETH/SOL активен 24/7.\n"
             "• <b>VIP-канал прогнозов:</b> отбор кэфов >= 1.85."
         )
@@ -712,14 +756,15 @@ def generate_director_reply(user_obj, action_type, project_name, custom_text="")
         )
     else:
         proj = project_name or "Главный Штаб"
+        proj_h_tmp = _esc_h(proj)
         ctx_status = (
-            f"• <b>Активная папка:</b> «{proj}»\n"
+            f"• <b>Активная папка:</b> «{proj_h_tmp}»\n"
             "• <b>Автономные агенты 24/7:</b> все отделы и 32 проекта синхронизированы.\n"
             "• <b>Топ MVP #1:</b> AltaDesk AI Voice ($750 setup + $350/мес, маржа 94.8%)."
         )
         ctx_next = (
             "1️⃣ Отправить КП AltaDesk AI Voice первым 20 отелям и клиникам.\n"
-            f"2️⃣ Проверить свежие отчёты агентов в папке «{proj}».\n"
+            f"2️⃣ Проверить свежие отчёты агентов в папке «{proj_h_tmp}».\n"
             "3️⃣ Запустить ресёрч новой ниши через NotebookLM RAG."
         )
         ctx_ideas = (
@@ -728,60 +773,64 @@ def generate_director_reply(user_obj, action_type, project_name, custom_text="")
             "💎 <b>Идея 3:</b> Авто-поиск бизнесов без виджета связи."
         )
 
+    dir_h = _esc_h(dir_name)
+    proj_h = _esc_h(proj)
+    full_h = _esc_h(full_name)
+    custom_h = _esc_h(custom_text)
     summary_for_log = f"Команда {action_type} в папке «{proj}»"
     if action_type == "status":
         reply = (
-            f"👑 <b>Личный Директор «{dir_name}» — Сводка по папке «{proj}»</b>\n\n"
-            f"Здравствуйте, <b>{full_name}</b>! Текущее состояние работ:\n\n"
+            f"👑 <b>Личный Директор «{dir_h}» — Сводка по папке «{proj_h}»</b>\n\n"
+            f"Здравствуйте, <b>{full_h}</b>! Текущее состояние работ:\n\n"
             f"{ctx_status}\n\n"
-            f"💬 <b>Вопрос от «{dir_name}»:</b> <i>Что делаем дальше?</i>"
+            f"💬 <b>Вопрос от «{dir_h}»:</b> <i>Что делаем дальше?</i>"
         )
         summary_for_log = f"Выдана сводка по папке «{proj}»"
     elif action_type == "next":
         reply = (
-            f"🚀 <b>Личный Директор «{dir_name}» — План «Что делаем дальше?»</b>\n\n"
-            f"Для папки <b>«{proj}»</b> рекомендую 3 приоритетных шага:\n\n"
+            f"🚀 <b>Личный Директор «{dir_h}» — План «Что делаем дальше?»</b>\n\n"
+            f"Для папки <b>«{proj_h}»</b> рекомендую 3 приоритетных шага:\n\n"
             f"{ctx_next}\n\n"
-            f"💬 <b>Вопрос от «{dir_name}»:</b> <i>Нажмите «⚡ Выполнить шаг #1» или напишите своё задание:</i>"
+            f"💬 <b>Вопрос от «{dir_h}»:</b> <i>Нажмите «⚡ Выполнить шаг #1» или напишите своё задание:</i>"
         )
         summary_for_log = f"Сформирован план из 3 шагов для «{proj}»"
     elif action_type == "exec":
         iss_num = create_github_issue_task(proj, f"DIRECTOR_{dir_name.upper()}: Выполнение шага #1 ({proj})", f"Запущено @{login} через личного директора «{dir_name}».")
         num_str = f" (Задача #{iss_num})" if iss_num else ""
         reply = (
-            f"⚡ <b>Личный Директор «{dir_name}» — Задача принята{num_str}!</b>\n\n"
-            f"• Папка: <b>«{proj}»</b>\n"
+            f"⚡ <b>Личный Директор «{dir_h}» — Задача принята{num_str}!</b>\n\n"
+            f"• Папка: <b>«{proj_h}»</b>\n"
             f"• Статус: <b>🟢 ИИ-агенты выполняют приоритетный шаг #1</b>\n\n"
-            f"💬 <b>Вопрос от «{dir_name}»:</b> <i>Подготовить 3 идеи роста дохода или провести ресёрч?</i>"
+            f"💬 <b>Вопрос от «{dir_h}»:</b> <i>Подготовить 3 идеи роста дохода или провести ресёрч?</i>"
         )
         summary_for_log = f"Запущен шаг #1 в папке «{proj}»{num_str}"
     elif action_type == "ideas":
         reply = (
-            f"💡 <b>Личный Директор «{dir_name}» — 3 Идеи для дохода («{proj}»)</b>\n\n"
+            f"💡 <b>Личный Директор «{dir_h}» — 3 Идеи для дохода («{proj_h}»)</b>\n\n"
             f"{ctx_ideas}\n\n"
-            f"💬 <b>Вопрос от «{dir_name}»:</b> <i>Какую идею запускаем? Напишите номер 1, 2 или 3:</i>"
+            f"💬 <b>Вопрос от «{dir_h}»:</b> <i>Какую идею запускаем? Напишите номер 1, 2 или 3:</i>"
         )
         summary_for_log = f"Предложены 3 идеи монетизации для «{proj}»"
     elif action_type == "research":
         reply = (
-            f"🔎 <b>Личный Директор «{dir_name}» — Режим Исследования</b>\n\n"
-            f"Пришлите любую <b>тему, вопрос или ссылку</b> — агенты разберут материал и сохранят в папку <b>«{proj}»</b>."
+            f"🔎 <b>Личный Директор «{dir_h}» — Режим Исследования</b>\n\n"
+            f"Пришлите любую <b>тему, вопрос или ссылку</b> — агенты разберут материал и сохранят в папку <b>«{proj_h}»</b>."
         )
         summary_for_log = f"Открыт режим исследования в «{proj}»"
     elif action_type == "approve":
         reply = (
-            f"✅ <b>Личный Директор «{dir_name}» — Этап принят!</b>\n\n"
-            f"Отлично, <b>{full_name}</b>! Работа в папке <b>«{proj}»</b> зафиксирована. Переходим к следующей задаче."
+            f"✅ <b>Личный Директор «{dir_h}» — Этап принят!</b>\n\n"
+            f"Отлично, <b>{full_h}</b>! Работа в папке <b>«{proj_h}»</b> зафиксирована. Переходим к следующей задаче."
         )
         summary_for_log = f"Пользователь принял выполненную работу по «{proj}»"
     else:
         iss_num = create_github_issue_task(proj, f"TIM: [{dir_name}] {custom_text[:120]}", f"Отправлено @{login} через бота (Директор: {dir_name}):\n\n{custom_text}")
         num_str = f" (Задача #{iss_num})" if iss_num else ""
         reply = (
-            f"👑 <b>Личный Директор «{dir_name}» принял ваше поручение{num_str}!</b>\n\n"
-            f"📥 <b>Текст:</b> <i>«{custom_text}»</i>\n"
-            f"📁 <b>Папка:</b> «{proj}»\n\n"
-            f"💬 <b>Вопрос от «{dir_name}»:</b> <i>Что делаем дальше параллельно?</i>"
+            f"👑 <b>Личный Директор «{dir_h}» принял ваше поручение{num_str}!</b>\n\n"
+            f"📥 <b>Текст:</b> <i>«{custom_h}»</i>\n"
+            f"📁 <b>Папка:</b> «{proj_h}»\n\n"
+            f"💬 <b>Вопрос от «{dir_h}»:</b> <i>Что делаем дальше параллельно?</i>"
         )
         summary_for_log = f"Поручение от @{login}{num_str}: {custom_text[:200]}"
 
@@ -793,19 +842,21 @@ def poll_personal_user_bots():
     reg = fetch_registry(force=False)
     offsets = get_user_bot_offsets()
     offsets_changed = False
+    polled_tokens = set()
 
     for u in reg.get("users", []):
         pb = u.get("personal_bot")
         if not isinstance(pb, dict):
             continue
-        b_tok = (pb.get("bot_token") or "").strip()
-        if not b_tok or ":" not in b_tok or b_tok == TG_BOT_TOKEN:
-            continue
-
         u_login = norm_login(u.get("login"))
+        b_tok = (pb.get("bot_token") or PERSONAL_BOT_TOKENS.get(u_login) or "").strip()
+        if not b_tok or ":" not in b_tok or b_tok == TG_BOT_TOKEN or b_tok in polled_tokens:
+            continue
+        polled_tokens.add(b_tok)
+        bot_uname = str(pb.get("bot_username") or f"@{u_login}_bot").strip()
         ctrl_status = pb.get("control_status") or ("active" if u.get("role") == "owner" else "pending_owner")
         cur_off = int(offsets.get(b_tok, 0))
-        updates = call_tg("getUpdates", {"offset": cur_off, "timeout": 1}, bot_token=b_tok, retries=1)
+        updates = call_tg("getUpdates", {"offset": cur_off, "timeout": 1}, bot_token=b_tok, retries=1, bot_label=bot_uname)
         if not updates or not updates.get("ok"):
             continue
 
@@ -850,13 +901,13 @@ def poll_personal_user_bots():
                     msg_st = (
                         f"⏸️ <b>Управление этим ботом сейчас на паузе по решению Главного Штаба.</b>"
                         if ctrl_status in ("paused", "disabled")
-                        else f"⏳ <b>Ваш личный бот и Директор «{dir_name}» ожидают подтверждения Главного Штаба (@unityspiritpartners).</b>\n\nЗаявка на активацию уже отправлена Владельцу."
+                        else f"⏳ <b>Ваш личный бот и Директор «{_esc_h(dir_name)}» ожидают подтверждения Главного Штаба (@unityspiritpartners).</b>\n\nЗаявка на активацию уже отправлена Владельцу."
                     )
                     call_tg("sendMessage", {"chat_id": c_id, "text": msg_st, "parse_mode": "HTML"}, bot_token=b_tok)
                     if ctrl_status == "pending_owner":
                         call_tg("sendMessage", {
                             "chat_id": OWNER_TG_CHAT_ID,
-                            "text": f"🤖 <b>ПОЛЬЗОВАТЕЛЬ АКТИВИРОВАЛ БОТА (/start) — ЖДЁТ ВАШЕГО КОНТРОЛЯ</b>\n\n• Логин: <code>@{u_login}</code>\n• Директор: <b>«{dir_name}»</b>\n• Бот: {pb.get('bot_username') or 'Telegram Bot'}",
+                            "text": f"🤖 <b>ПОЛЬЗОВАТЕЛЬ АКТИВИРОВАЛ БОТА (/start) — ЖДЁТ ВАШЕГО КОНТРОЛЯ</b>\n\n• Логин: <code>@{_esc_h(u_login)}</code>\n• Директор: <b>«{_esc_h(dir_name)}»</b>\n• Бот: {_esc_h(pb.get('bot_username') or 'Telegram Bot')}",
                             "parse_mode": "HTML",
                             "reply_markup": {"inline_keyboard": [
                                 [{"text": f"✅ Одобрить и включить бот @{u_login}", "callback_data": f"bot_appr:{u_login}"}],
@@ -869,6 +920,8 @@ def poll_personal_user_bots():
                 cq = item["callback_query"]
                 cq_id = cq["id"]
                 data = cq.get("data", "")
+                if bot_mesh_hub.handle_personal_bot_mesh_interaction(_get_mesh_ctx(), item, u, b_tok, bot_uname, reg):
+                    continue
 
                 if data == "pdir:rename":
                     call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "Выберите имя Директора"}, bot_token=b_tok)
@@ -893,7 +946,7 @@ def poll_personal_user_bots():
                     call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"✅ Директора теперь зовут «{new_name}»!"}, bot_token=b_tok)
                     call_tg("sendMessage", {
                         "chat_id": c_id,
-                        "text": f"👑 <b>Теперь вашего Личного AI-Директора зовут «{new_name}»!</b>\n\nЧто делаем дальше?",
+                        "text": f"👑 <b>Теперь вашего Личного AI-Директора зовут «{_esc_h(new_name)}»!</b>\n\nЧто делаем дальше?",
                         "parse_mode": "HTML",
                         "reply_markup": build_director_inline_keyboard(default_proj)
                     }, bot_token=b_tok)
@@ -911,12 +964,14 @@ def poll_personal_user_bots():
                     }, bot_token=b_tok)
 
             elif "message" in item and "text" in item["message"]:
+                if bot_mesh_hub.handle_personal_bot_mesh_interaction(_get_mesh_ctx(), item, u, b_tok, bot_uname, reg):
+                    continue
                 text = item["message"]["text"].strip()
                 if text.startswith("/start"):
                     reply_html = (
-                        f"👑 <b>Здравствуйте, {u.get('full_name') or u_login}!</b>\n"
-                        f"Я — ваш Личный AI-Директор <b>«{dir_name}»</b> (одобрен Главным Штабом).\n\n"
-                        f"📁 Ваша папка: <b>«{default_proj}»</b>\n"
+                        f"👑 <b>Здравствуйте, {_esc_h(u.get('full_name') or u_login)}!</b>\n"
+                        f"Я — ваш Личный AI-Директор <b>«{_esc_h(dir_name)}»</b> (одобрен Главным Штабом).\n\n"
+                        f"📁 Ваша папка: <b>«{_esc_h(default_proj)}»</b>\n"
                         f"💬 <i>Выберите команду ниже или напишите любую задачу:</i>"
                     )
                     call_tg("sendMessage", {
@@ -934,7 +989,7 @@ def poll_personal_user_bots():
                         record_director_action_and_mirror(u, "rename", default_proj, f"Смена имени Директора на «{new_name}»")
                         call_tg("sendMessage", {
                             "chat_id": c_id,
-                            "text": f"✅ Имя Директора изменено на <b>«{new_name}»</b>.",
+                            "text": f"✅ Имя Директора изменено на <b>«{_esc_h(new_name)}»</b>.",
                             "parse_mode": "HTML",
                             "reply_markup": build_director_inline_keyboard(default_proj)
                         }, bot_token=b_tok)
@@ -980,17 +1035,17 @@ def send_member_home_menu(chat_id, from_user):
     kb.append([{"text": "🔐 Все доступные аккаунты (Смена пароля)", "callback_data": "cmd:passwords"}])
     if matched:
         kb.append([{"text": "🤖 Спросить Личного Директора", "callback_data": "pdir:status:Личный Офис"}])
-    kb.append([{"text": "🏢 Открыть Виртуальный Офис (v33.0 Hydrogen)", "url": OFFICE_URL}])
+    kb.append([{"text": "🏢 Открыть Виртуальный Офис (v34.0 Antigravity 2.31)", "url": OFFICE_URL}])
 
     matched_note = (
-        f"• Ваш подтверждённый аккаунт: <code>{', '.join(m.get('login', '') for m in matched)}</code> (прямая смена пароля без ожидания!)\n"
+        f"• Ваш подтверждённый аккаунт: <code>{_esc_h(', '.join(str(m.get('login', '')) for m in matched))}</code> (прямая смена пароля без ожидания!)\n"
         if matched
         else "• Для мгновенной смены пароля нажмите кнопку ниже или напишите: <code>/reset ваш_логин новый_пароль</code>\n"
     )
     call_tg("sendMessage", {
         "chat_id": chat_id,
         "text": (
-            f"👋 <b>Добро пожаловать в @unitybusinessbot v33.0 Hydrogen, {fname}!</b>\n\n"
+            f"👋 <b>Добро пожаловать в @unitybusinessbot v34.0 (Antigravity 2.31), {_esc_h(fname)}!</b>\n\n"
             f"Здесь любой участник команды может обновить и сменить свой пароль (кроме защищённого аккаунта главного владельца <code>@unityspiritpartners</code>).\n\n"
             f"{matched_note}"
             f"• Быстрая команда: <code>/reset логин новый_пароль</code>"
@@ -1032,13 +1087,13 @@ def send_passwords_menu(chat_id, from_user=None):
 
     if is_owner:
         header = (
-            "🔐 <b>СМЕНА ПАРОЛЕЙ КОМАНДЫ (@unitybusinessbot v30.0)</b>\n\n"
+            "🔐 <b>СМЕНА ПАРОЛЕЙ КОМАНДЫ (@unitybusinessbot v34.0)</b>\n\n"
             "Выберите любой аккаунт ниже (все пользователи, кроме защищённого <code>@unityspiritpartners</code>), чтобы мгновенно обновить пароль:\n"
             "<i>(Либо командой: <code>/reset логин новый_пароль</code>)</i>"
         )
     else:
         header = (
-            "🔐 <b>ОБНОВЛЕНИЕ И СМЕНА ПАРОЛЯ (@unitybusinessbot v30.0)</b>\n\n"
+            "🔐 <b>ОБНОВЛЕНИЕ И СМЕНА ПАРОЛЯ (@unitybusinessbot v34.0)</b>\n\n"
             "• 🔑 — ваш подтверждённый аккаунт (пароль меняется мгновенно)\n"
             "• 🔐 — другой аккаунт команды (запрос с 1-клик подтверждением Штаба)\n"
             "<i>🛡️ Главный аккаунт <code>@unityspiritpartners</code> защищён от смены через бота.</i>"
@@ -1059,15 +1114,18 @@ def send_bots_control_menu(chat_id):
     for u in users:
         lg = u.get("login", "")
         pb = u.get("personal_bot") or {}
-        tok = pb.get("bot_token") or ""
+        tok = (pb.get("bot_token") or PERSONAL_BOT_TOKENS.get(norm_login(lg)) or "").strip()
         st = pb.get("control_status") or ("active" if tok else "not_configured")
         dir_name = pb.get("director_name") or "Тим"
         b_uname = pb.get("bot_username") or ("подключён" if tok else "не подключён")
         badge = "🟢" if (st == "active" and tok) else ("⏳" if st == "pending_owner" else ("⏸️" if st == "paused" else "⚪"))
-        lines.append(f"{badge} <code>@{lg}</code> · Директор: <b>«{dir_name}»</b> · Бот: {b_uname}")
+        lines.append(f"{badge} <code>@{_esc_h(lg)}</code> · Директор: <b>«{_esc_h(dir_name)}»</b> · Бот: {_esc_h(b_uname)}")
         rows.append([{"text": f"{badge} Управлять ботом @{lg} (Дир: {dir_name})", "callback_data": f"bot_pick:{lg[:45]}"}])
     rows.append([
-        {"text": "👁️ Что выполняют их Директора (Лог)", "callback_data": "cmd:dirlog"},
+        {"text": "🤝 Мосты Ботов (A↔B)", "callback_data": "cmd:bridges"},
+        {"text": "👁️ Лог Директоров", "callback_data": "cmd:dirlog"}
+    ])
+    rows.append([
         {"text": "⬅️ Главное меню", "callback_data": "cmd:home"}
     ])
     call_tg("sendMessage", {
@@ -1089,16 +1147,16 @@ def send_directors_log_menu(chat_id, filter_login=None):
         fn = norm_login(filter_login)
         actions = [a for a in actions if norm_login(a.get("user_login")) == fn]
 
-    header = f"👁️ <b>ДЕЙСТВИЯ ДИРЕКТОРОВ {('@' + filter_login) if filter_login else 'ВСЕЙ КОМАНДЫ'}</b>\n\n"
+    header = f"👁️ <b>ДЕЙСТВИЯ ДИРЕКТОРОВ {_esc_h('@' + filter_login) if filter_login else 'ВСЕЙ КОМАНДЫ'}</b>\n\n"
     if not actions:
         body = "Пока нет зафиксированных действий Директоров в облачном журнале."
     else:
         chunks = []
         for a in actions[:12]:
-            ts = str(a.get("time_local") or a.get("ts", "")[11:19])
+            ts = _esc_h(str(a.get("time_local") or a.get("ts", "")[11:19]))
             chunks.append(
-                f"• <code>{ts}</code> | <b>@{a.get('user_login')}</b> (Дир: «<b>{a.get('director_name')}</b>»)\n"
-                f"  📁 {a.get('project')} · <i>{str(a.get('summary',''))[:160]}</i>"
+                f"• <code>{ts}</code> | <b>@{_esc_h(a.get('user_login'))}</b> (Дир: «<b>{_esc_h(a.get('director_name'))}</b>»)\n"
+                f"  📁 {_esc_h(a.get('project'))} · <i>{_esc_h(str(a.get('summary',''))[:160])}</i>"
             )
         body = "\n\n".join(chunks)
 
@@ -1127,14 +1185,15 @@ def send_hq_home_menu(chat_id, from_user=None):
     pending = [u for u in users if u.get("status") == "pending"]
     resets = [u for u in users if u.get("pending_reset") and not is_protected_bot_pwd_account(u.get("login"))]
     pend_bots = [u for u in users if (u.get("personal_bot") or {}).get("control_status") == "pending_owner"]
-    active_bots = [u for u in users if (u.get("personal_bot") or {}).get("bot_token") and (u.get("personal_bot") or {}).get("control_status") == "active"]
+    active_bots = [u for u in users if ((u.get("personal_bot") or {}).get("bot_token") or PERSONAL_BOT_TOKENS.get(norm_login(u.get("login")))) and (u.get("personal_bot") or {}).get("control_status") == "active"]
 
     txt = (
-        f"👑 <b>ГЛАВНЫЙ БОТ ШТАБА (@unitybusinessbot v33.0 Hydrogen)</b>\n\n"
+        f"👑 <b>ГЛАВНЫЙ БОТ ШТАБА (@unitybusinessbot v34.2 · Antigravity 2.31)</b>\n\n"
         f"• Сотрудников в реестре: <b>{len(users)}</b>\n"
         f"• Заявок на вход / сброс пароля: <b>{len(pending) + len(resets)}</b>\n"
         f"• Личных ботов активно / ждут одобрения: <b>{len(active_bots)}</b> / <b>{len(pend_bots)}</b>\n"
-        f"• ⚛️ Движок: <b>Antigravity 2.0 + Gemini 4 Hydrogen</b> (команда <code>/hydrogen</code>)\n"
+        f"• 🤝 Межботовые мосты A↔B и связь со Штабом: <b>активно</b> (<code>/bridges</code>)\n"
+        f"• ⚛️ Движок: <b>Antigravity 2.31 (Argon ↔ Carbon ↔ Hydrogen)</b> (команда <code>/antigravity</code> / <code>/hydrogen</code>)\n"
         f"• 🛡️ Защита: смена пароля через бота разрешена <b>всем, кроме @unityspiritpartners</b>\n\n"
         f"Выберите действие кнопкой ниже:"
     )
@@ -1154,16 +1213,25 @@ def send_hq_home_menu(chat_id, from_user=None):
         kb.append([{"text": f"🤖 Одобрить личный бот: @{ul}", "callback_data": f"bot_appr:{ul}"}])
 
     kb.append([
-        {"text": "🔐 Сменить пароль (Все кроме @unityspiritpartners)", "callback_data": "cmd:passwords"},
-        {"text": "🤖 Контроль ботов команды", "callback_data": "cmd:bots"}
+        {"text": "🤖 Контроль ботов команды", "callback_data": "cmd:bots"},
+        {"text": "🤝 Мосты Ботов (A↔B)", "callback_data": "cmd:bridges"}
     ])
     kb.append([
-        {"text": "👁️ Что делают их Директора", "callback_data": "cmd:dirlog"},
-        {"text": "🚀 План Главного Штаба", "callback_data": "pdir:next:Главный Штаб"}
+        {"text": "🔐 Сменить пароль", "callback_data": "cmd:passwords"},
+        {"text": "👁️ Что делают их Директора", "callback_data": "cmd:dirlog"}
     ])
-    kb.append([
-        {"text": "🔒 Доступ в бот (По запросу)", "callback_data": "cmd:botaccess"},
-        {"text": "🏢 Главный Офис (v33.0)", "url": OFFICE_URL}
+    kb.extend([
+        [
+            {"text": "🚀 План Главного Штаба", "callback_data": "pdir:next:Главный Штаб"},
+            {"text": "🔒 Доступ в бот (По запросу)", "callback_data": "cmd:botaccess"},
+        ],
+        [
+            {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
+            {"text": "📊 Аудит работы", "callback_data": "cmd:audit"},
+        ],
+        [
+            {"text": "🏢 Главный Офис (v34.2)", "url": OFFICE_URL},
+        ],
     ])
     call_tg("sendMessage", {
         "chat_id": chat_id,
@@ -1304,7 +1372,7 @@ def check_bot_entry_gate(chat_id, from_user, message_text="", is_callback=False,
         obj["pending"][c_id] = entry
         return True
 
-    mutate_bot_access_registry(_mutate, f"bot-gate: pending request from chat_id {c_id} [v32.0]")
+    mutate_bot_access_registry(_mutate, f"bot-gate: pending request from chat_id {c_id} [v34.0]")
 
     if should_notify_owner:
         who = f"@{_esc_h(uname)} ({_esc_h(fname)})" if uname else _esc_h(fname)
@@ -1391,7 +1459,7 @@ def touch_local_heartbeat_if_due(force=False):
     hb_payload = {
         "ts": now,
         "iso": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "version": "33.0",
+        "version": "34.2",
         "status": "online"
     }
     def _write_hb(obj):
@@ -1399,9 +1467,89 @@ def touch_local_heartbeat_if_due(force=False):
         obj.update(hb_payload)
         return True
     try:
-        mutate_json_across_repos("local_daemon_heartbeat.json", _write_hb, "Heartbeat local daemon [v33.0]", branches=["data"], default_factory=dict)
+        mutate_json_across_repos("local_daemon_heartbeat.json", _write_hb, "Heartbeat local daemon [v34.2]", branches=["data"], default_factory=dict)
     except Exception:
         pass
+
+
+def send_antigravity_status_menu(chat_id):
+    try:
+        tel_raw, _ = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "cloud_agents_telemetry.json", branch="data")
+        tel = tel_raw if isinstance(tel_raw, dict) else {}
+    except Exception:
+        tel = {}
+    try:
+        mem_raw, _ = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "office_memory.json", branch="data")
+        mem = mem_raw if isinstance(mem_raw, dict) else {}
+    except Exception:
+        mem = {}
+    llm_ok = bool(tel.get("llm_ready")) or bool(GEMINI_API_KEY)
+    lines = [
+        "⚛️ <b>ANTIGRAVITY 2.31 · GEMINI 4 ORCHESTRATOR (v34.0)</b>\n",
+        f"• <b>Маршрутизация:</b> <code>{_esc_h(tel.get('orchestrator_mode') or 'Argon <-> Carbon <-> Hydrogen (1M context)')}</code>",
+        f"• <b>Движок:</b> <code>{_esc_h(tel.get('model_engine') or 'gemini-4-argon / gemini-4-hydrogen')}</code>",
+        f"• <b>Облако 24/7:</b> <code>{_esc_h(tel.get('status') or 'online_24_7')}</code> (цикл #{int(tel.get('cycle_count') or 0)})",
+        f"• <b>Последний цикл:</b> <code>{_esc_h(tel.get('last_cycle_iso') or '—')}</code>",
+        f"• <b>Память офиса:</b> v<code>{_esc_h(mem.get('version') or '—')}</code> · <b>{len(mem.get('learned_facts') or [])}</b> фактов · <b>{len(mem.get('studied_urls') or [])}</b> ссылок",
+        f"• <b>Локальный Poller v34.0:</b> 🟢 Онлайн (только @unitybusinessbot; устаревшие PC-воркеры KHL/Freqtrade остановлены)",
+        f"• <b>Ключ GEMINI_API_KEY:</b> {'🟢 Активен' if llm_ok else '🟡 Не задан в GitHub Secrets — работает structured analyzer'}",
+    ]
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": "\n".join(lines),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": [
+            [{"text": "📊 Аудит сохранённой работы (/audit)", "callback_data": "cmd:audit"}],
+            [{"text": "🏢 Открыть Офис (v34.0)", "url": OFFICE_URL}, {"text": "⬅️ Меню", "callback_data": "cmd:home"}]
+        ]}
+    })
+
+
+def send_saved_work_audit_menu(chat_id):
+    try:
+        bd_raw, _ = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "board.json", branch="data")
+        bd = bd_raw if isinstance(bd_raw, dict) else {}
+    except Exception:
+        bd = {}
+    try:
+        mem_raw, _ = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "office_memory.json", branch="data")
+        mem = mem_raw if isinstance(mem_raw, dict) else {}
+    except Exception:
+        mem = {}
+    cards = bd.get("cards") if isinstance(bd.get("cards"), dict) else {}
+    by_status = {}
+    for c in cards.values():
+        if isinstance(c, dict):
+            st = c.get("status") or "unknown"
+            by_status[st] = by_status.get(st, 0) + 1
+    open_issues_cnt = "—"
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{GTP_REPO}/issues?state=open&per_page=40",
+            headers={"Authorization": f"token {GTP_TOKEN}", "Accept": "application/vnd.github.v3+json", "User-Agent": "GSG-Bot-v34"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            iss = json.loads(resp.read().decode("utf-8"))
+            open_issues_cnt = len([x for x in iss if isinstance(x, dict) and not x.get("pull_request")])
+    except Exception:
+        pass
+    st_str = ", ".join(f"{_esc_h(k)}: <b>{v}</b>" for k, v in sorted(by_status.items(), key=lambda kv: -kv[1])) or "нет данных"
+    lines = [
+        "📊 <b>АУДИТ СОХРАНЁННОЙ РАБОТЫ И СИСТЕМЫ (v34.0)</b>\n",
+        f"• <b>Карточки в board.json:</b> <b>{len(cards)}</b> ({st_str})",
+        f"• <b>Открытые задачи GitHub HQ:</b> <b>{_esc_h(open_issues_cnt)}</b>",
+        f"• <b>Память office_memory.json:</b> v<code>{_esc_h(mem.get('version') or '—')}</code> | цикл #{int(mem.get('cycle_count') or 0)} | <b>{len(mem.get('learned_facts') or [])}</b> фактов | <b>{len(mem.get('studied_urls') or [])}</b> URL | ошибок: <b>{len(mem.get('failed_urls') or {})}</b>",
+        f"• <b>Штаб Poller v34.0:</b> 🟢 Работает с реальным heartbeat",
+    ]
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": "\n".join(lines),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": [
+            [{"text": "⚛️ Статус Antigravity 2.31", "callback_data": "cmd:antigravity"}],
+            [{"text": "🏢 Открыть Офис (v34.0)", "url": OFFICE_URL}, {"text": "⬅️ Меню", "callback_data": "cmd:home"}]
+        ]}
+    })
 
 
 def handle_hq_callback(cq):
@@ -1412,7 +1560,7 @@ def handle_hq_callback(cq):
     c_id = str(cq.get("message", {}).get("chat", {}).get("id") or from_user.get("id") or OWNER_TG_CHAT_ID)
     is_owner = is_owner_chat(c_id) or is_owner_chat(from_user.get("id"))
 
-    admin_prefixes = ("cmd:bots", "cmd:dirlog", "cmd:botaccess", "appr:", "rst_ok:", "rst_no:", "bot_gate_ok:", "bot_gate_ban:", "bot_gate_rev:", "bot_pick:", "bot_appr:", "bot_pause:", "bot_ban:", "bot_asktok:", "bot_askdir:", "bot_askmsg:", "bot_log:")
+    admin_prefixes = ("cmd:bots", "cmd:bridges", "cmd:dirlog", "cmd:botaccess", "cmd:antigravity", "cmd:audit", "appr:", "rst_ok:", "rst_no:", "bot_gate_ok:", "bot_gate_ban:", "bot_gate_rev:", "bot_pick:", "bot_appr:", "bot_pause:", "bot_ban:", "bot_asktok:", "bot_askdir:", "bot_askmsg:", "bot_log:", "brg_")
     if any(data == p or data.startswith(p) for p in admin_prefixes) and not is_owner:
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "⛔ Эта функция доступна только Главному Штабу.", "show_alert": True})
         return
@@ -1420,9 +1568,18 @@ def handle_hq_callback(cq):
     if not is_owner and not check_bot_entry_gate(c_id, from_user, message_text=f"cb:{data}", is_callback=True, cq_id=cq_id):
         return
 
+    if bot_mesh_hub.handle_hq_mesh_callback(_get_mesh_ctx(), cq):
+        return
+
     if data == "cmd:home" or data == "cmd:pending":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔄 Обновляю..."})
         send_hq_home_menu(c_id, from_user=from_user)
+    elif data == "cmd:antigravity":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "⚛️ Загружаю Antigravity 2.31..."})
+        send_antigravity_status_menu(c_id)
+    elif data == "cmd:audit":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "📊 Считаю аудит работы..."})
+        send_saved_work_audit_menu(c_id)
     elif data == "cmd:botaccess":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔒 Загружаю список доступа..."})
         send_bot_access_menu(c_id)
@@ -1439,7 +1596,7 @@ def handle_hq_callback(cq):
             obj["approved"][target_cid] = src
             user_rec.update(src)
             return True
-        ok, _ = mutate_bot_access_registry(_approve_gate, f"bot-gate: approve {target_cid} by @unityspiritpartners [v32.0]")
+        ok, _ = mutate_bot_access_registry(_approve_gate, f"bot-gate: approve {target_cid} by @unityspiritpartners [v34.0]")
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "✅ Вход в бот одобрен!" if ok else "⚠️ Ошибка сохранения"})
         if ok:
             lbl = f"@{_esc_h(user_rec.get('username'))}" if user_rec.get("username") else _esc_h(user_rec.get("first_name") or target_cid)
@@ -1464,7 +1621,7 @@ def handle_hq_callback(cq):
             src["banned_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
             obj["banned"][target_cid] = src
             return True
-        ok, _ = mutate_bot_access_registry(_ban_gate, f"bot-gate: ban {target_cid} by @unityspiritpartners [v32.0]")
+        ok, _ = mutate_bot_access_registry(_ban_gate, f"bot-gate: ban {target_cid} by @unityspiritpartners [v34.0]")
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🚫 Доступ отклонён"})
         if ok:
             call_tg("sendMessage", {"chat_id": c_id, "text": f"🚫 Доступ в бот для Chat ID <code>{_esc_h(target_cid)}</code> отклонён.", "parse_mode": "HTML"})
@@ -1476,7 +1633,7 @@ def handle_hq_callback(cq):
             obj.setdefault("approved", {}).pop(target_cid, None)
             obj.setdefault("pending", {}).pop(target_cid, None)
             return True
-        ok, _ = mutate_bot_access_registry(_rev_gate, f"bot-gate: revoke {target_cid} by @unityspiritpartners [v32.0]")
+        ok, _ = mutate_bot_access_registry(_rev_gate, f"bot-gate: revoke {target_cid} by @unityspiritpartners [v34.0]")
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🗑️ Доступ закрыт" if ok else "⚠️ Ошибка"})
         if ok:
             send_bot_access_menu(c_id)
@@ -1595,7 +1752,7 @@ def handle_hq_callback(cq):
                 f"• Статус: <b>✅ Активен во всех репозиториях</b>"
             ),
             "parse_mode": "HTML",
-            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Войти в Офис (v30.0)", "url": OFFICE_URL}]]}
+            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Войти в Офис (v34.0)", "url": OFFICE_URL}]]}
         })
         if not is_owner:
             call_tg("sendMessage", {
@@ -1686,7 +1843,7 @@ def handle_hq_callback(cq):
                     f"• Можете входить в Виртуальный Офис прямо сейчас!"
                 ),
                 "parse_mode": "HTML",
-                "reply_markup": {"inline_keyboard": [[{"text": "🏢 Войти в Офис (v30.0)", "url": OFFICE_URL}]]}
+                "reply_markup": {"inline_keyboard": [[{"text": "🏢 Войти в Офис (v34.0)", "url": OFFICE_URL}]]}
             })
     elif data.startswith("rst_no:"):
         ul = data.split("rst_no:", 1)[1]
@@ -1740,11 +1897,11 @@ def handle_hq_callback(cq):
         call_tg("sendMessage", {
             "chat_id": c_id,
             "text": (
-                f"🤖 <b>КОНТРОЛЬ БОТА СОТРУДНИКА <code>@{ul}</code></b>\n\n"
-                f"• <b>Статус контроля:</b> <code>{st}</code>\n"
-                f"• <b>Имя Директора:</b> «<b>{dir_n}</b>»\n"
-                f"• <b>Бот:</b> {pb.get('bot_username') or '—'} (Токен: <code>{tok_mask}</code>)\n"
-                f"• <b>Chat ID:</b> <code>{pb.get('chat_id') or 'не привязан'}</code>"
+                f"🤖 <b>КОНТРОЛЬ БОТА СОТРУДНИКА <code>@{_esc_h(ul)}</code></b>\n\n"
+                f"• <b>Статус контроля:</b> <code>{_esc_h(st)}</code>\n"
+                f"• <b>Имя Директора:</b> «<b>{_esc_h(dir_n)}</b>»\n"
+                f"• <b>Бот:</b> {_esc_h(pb.get('bot_username') or '—')} (Токен: <code>{_esc_h(tok_mask)}</code>)\n"
+                f"• <b>Chat ID:</b> <code>{_esc_h(pb.get('chat_id') or 'не привязан')}</code>"
             ),
             "parse_mode": "HTML",
             "reply_markup": kb
@@ -1761,28 +1918,28 @@ def handle_hq_callback(cq):
                 d_n = pb.get("director_name") or "Тим"
                 call_tg("sendMessage", {
                     "chat_id": pb["chat_id"],
-                    "text": f"🟢 <b>Главный Штаб (@unityspiritpartners) одобрил и подключил вашего Личного Директора «{d_n}»!</b>\n\nТеперь вы можете управлять задачами прямо отсюда:",
+                    "text": f"🟢 <b>Главный Штаб (@unityspiritpartners) одобрил и подключил вашего Личного Директора «{_esc_h(d_n)}»!</b>\n\nТеперь вы можете управлять задачами прямо отсюда:",
                     "parse_mode": "HTML",
                     "reply_markup": build_director_inline_keyboard(f"Личный Офис: @{ul}")
                 }, bot_token=pb["bot_token"])
-            call_tg("sendMessage", {"chat_id": c_id, "text": f"🟢 Бот пользователя <code>@{ul}</code> одобрен и запущен в работу.", "parse_mode": "HTML"})
+            call_tg("sendMessage", {"chat_id": c_id, "text": f"🟢 Бот пользователя <code>@{_esc_h(ul)}</code> одобрен и запущен в работу.", "parse_mode": "HTML"})
     elif data.startswith("bot_pause:"):
         ul = data.split("bot_pause:", 1)[1]
         ok, _ = update_user_bot_control(ul, "pause")
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"⏸️ Бот @{ul} поставлен на паузу." if ok else "⚠️ Ошибка", "show_alert": True})
-        call_tg("sendMessage", {"chat_id": c_id, "text": f"⏸️ Личный бот сотрудника <code>@{ul}</code> поставлен на паузу.", "parse_mode": "HTML"})
+        call_tg("sendMessage", {"chat_id": c_id, "text": f"⏸️ Личный бот сотрудника <code>@{_esc_h(ul)}</code> поставлен на паузу.", "parse_mode": "HTML"})
     elif data.startswith("bot_ban:"):
         ul = data.split("bot_ban:", 1)[1]
         ok, _ = update_user_bot_control(ul, "disable")
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"🚫 Бот @{ul} отключён." if ok else "⚠️ Ошибка", "show_alert": True})
-        call_tg("sendMessage", {"chat_id": c_id, "text": f"🚫 Личный бот сотрудника <code>@{ul}</code> отключён.", "parse_mode": "HTML"})
+        call_tg("sendMessage", {"chat_id": c_id, "text": f"🚫 Личный бот сотрудника <code>@{_esc_h(ul)}</code> отключён.", "parse_mode": "HTML"})
     elif data.startswith("bot_asktok:"):
         ul = data.split("bot_asktok:", 1)[1]
         _chat_states[c_id] = {"mode": "set_bot_token", "login": ul, "ts": time.time()}
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"Отправьте Bot Token для @{ul}"})
         call_tg("sendMessage", {
             "chat_id": c_id,
-            "text": f"🔑 <b>Отправьте токен бота из @BotFather для сотрудника <code>@{ul}</code></b>:\n<i>Бот автоматически проверится через Telegram API, привяжется к @{ul} и начнёт работу под вашим контролем.</i>",
+            "text": f"🔑 <b>Отправьте токен бота из @BotFather для сотрудника <code>@{_esc_h(ul)}</code></b>:\n<i>Бот автоматически проверится через Telegram API, привяжется к @{_esc_h(ul)} и начнёт работу под вашим контролем.</i>",
             "parse_mode": "HTML"
         })
     elif data.startswith("bot_askdir:"):
@@ -1791,7 +1948,7 @@ def handle_hq_callback(cq):
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"Введите имя Директора для @{ul}"})
         call_tg("sendMessage", {
             "chat_id": c_id,
-            "text": f"🏷️ <b>Отправьте новое имя Личного Директора для сотрудника <code>@{ul}</code>:</b>",
+            "text": f"🏷️ <b>Отправьте новое имя Личного Директора для сотрудника <code>@{_esc_h(ul)}</code>:</b>",
             "parse_mode": "HTML"
         })
     elif data.startswith("bot_askmsg:"):
@@ -1800,7 +1957,7 @@ def handle_hq_callback(cq):
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"Введите сообщение в бот @{ul}"})
         call_tg("sendMessage", {
             "chat_id": c_id,
-            "text": f"💬 <b>Напишите сообщение или задание для отправки прямо в личный бот сотрудника <code>@{ul}</code>:</b>",
+            "text": f"💬 <b>Напишите сообщение или задание для отправки прямо в личный бот сотрудника <code>@{_esc_h(ul)}</code>:</b>",
             "parse_mode": "HTML"
         })
     elif data.startswith("bot_log:"):
@@ -1862,7 +2019,7 @@ def _process_bot_reset_command(c_id, from_user, target, new_pwd):
                 f"• Статус: <b>✅ Активен во всех репозиториях</b>"
             ) if ok else f"❌ Не удалось обновить пароль для <code>{_esc_h(target)}</code>. Повторите попытку.",
             "parse_mode": "HTML",
-            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Открыть Офис (v30.0)", "url": OFFICE_URL}]]}
+            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Открыть Офис (v34.0)", "url": OFFICE_URL}]]}
         })
         if ok and not is_owner:
             call_tg("sendMessage", {
@@ -1898,7 +2055,7 @@ def handle_hq_text(msg):
     sender_username = norm_login(from_user.get("username"))
     is_owner = is_owner_chat(c_id) or is_owner_chat(from_user.get("id"))
 
-    # Strict v32.0 Gate: only @unityspiritpartners or explicitly approved chat_ids may enter @unitybusinessbot
+    # Strict v34.0 Gate: only @unityspiritpartners or explicitly approved chat_ids may enter @unitybusinessbot
     if not is_owner and not check_bot_entry_gate(c_id, from_user, message_text=text):
         return
 
@@ -1940,19 +2097,23 @@ def handle_hq_text(msg):
             reg = fetch_registry(force=True)
             u = find_user_in_registry(reg, target)
             pb = (u or {}).get("personal_bot") or {}
-            if pb.get("bot_token") and pb.get("chat_id"):
+            t_tok = (pb.get("bot_token") or PERSONAL_BOT_TOKENS.get(norm_login(target)) or "").strip()
+            if t_tok and pb.get("chat_id"):
                 d_n = pb.get("director_name") or "Тим"
                 call_tg("sendMessage", {
                     "chat_id": pb["chat_id"],
                     "text": f"👑 <b>Сообщение от Главного Штаба через Директора «{_esc_h(d_n)}»:</b>\n\n{_esc_h(text)}",
                     "parse_mode": "HTML",
                     "reply_markup": build_director_inline_keyboard(f"Личный Офис: @{target}")
-                }, bot_token=pb["bot_token"])
+                }, bot_token=t_tok)
                 record_director_action_and_mirror(u, "hq_directive", f"Личный Офис: @{target}", f"Владелец отправил команду в бот @{target}: {text}", mirror_to_owner=False)
                 call_tg("sendMessage", {"chat_id": c_id, "text": f"✅ Сообщение доставлено в личный бот <code>@{_esc_h(target)}</code>.", "parse_mode": "HTML"})
             else:
                 call_tg("sendMessage", {"chat_id": c_id, "text": f"⚠️ У <code>@{_esc_h(target)}</code> ещё не настроен Chat ID или Bot Token.", "parse_mode": "HTML"})
             return
+
+    if bot_mesh_hub.handle_hq_mesh_text(_get_mesh_ctx(), msg):
+        return
 
     if text.startswith("/start") or text.startswith("/menu") or text == "/pending":
         send_hq_home_menu(c_id, from_user=from_user)
@@ -1963,25 +2124,30 @@ def handle_hq_text(msg):
         send_bot_access_menu(c_id)
     elif text.startswith("/passwords") or text.startswith("/users"):
         send_passwords_menu(c_id, from_user=from_user)
+    elif text.startswith("/antigravity") and is_owner:
+        send_antigravity_status_menu(c_id)
+    elif text.startswith("/audit") and is_owner:
+        send_saved_work_audit_menu(c_id)
     elif text.startswith("/hydrogen"):
         try:
-            tel = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "cloud_agents_telemetry.json", branch="data") or {}
+            tel_raw, _ = fetch_json_from_github(GTP_REPO, GTP_TOKEN, "cloud_agents_telemetry.json", branch="data")
+            tel = tel_raw if isinstance(tel_raw, dict) else {}
         except Exception:
             tel = {}
         gemini_ok = bool(os.environ.get("GEMINI_API_KEY") or _CFG.get("gemini_api_key"))
         msg_h = (
-            "⚛️ <b>ANTIGRAVITY 2.0 ORCHESTRATOR & GEMINI 4 HYDROGEN (v33.0)</b>\n\n"
-            f"• Облачный цикл: <b>#{tel.get('cycle_count', 0)}</b> | Движок: <code>{tel.get('model_engine', 'structured-cloud-analyzer')}</code>\n"
-            f"• Оркестратор: <b>{tel.get('orchestrator_mode', 'Antigravity 2.0 (Carbon <-> Hydrogen)')}</b>\n"
-            f"• Знаний в памяти: <b>{tel.get('memory_facts_count', 0)}</b> | Изучено URL: <b>{tel.get('studied_urls_count', 0)}</b>\n"
+            "⚛️ <b>ANTIGRAVITY 2.31 ORCHESTRATOR · GEMINI 4 ARGON ↔ CARBON ↔ HYDROGEN (v34.0)</b>\n\n"
+            f"• Облачный цикл: <b>#{int(tel.get('cycle_count') or 0)}</b> | Движок: <code>{_esc_h(tel.get('model_engine') or 'structured-cloud-analyzer')}</code>\n"
+            f"• Оркестратор: <b>{_esc_h(tel.get('orchestrator_mode') or 'Antigravity 2.31 (Argon <-> Carbon <-> Hydrogen)')}</b>\n"
+            f"• Знаний в памяти: <b>{int(tel.get('memory_facts_count') or 0)}</b> | Изучено URL: <b>{int(tel.get('studied_urls_count') or 0)}</b>\n"
             f"• Локальный <code>GEMINI_API_KEY</code>: {'✅ Подключён' if gemini_ok else '⏳ Не задан (работает smart-режим)'}\n"
-            "• Архитектура 12–13.11.2026: Carbon ↔ Hydrogen, контекст 1M, <code>thinking_level</code>: <code>low/medium/high/xhigh</code>, <code>models.github.ai</code> выведен из эксплуатации 30.07.2026."
+            "• Архитектура 12–13.11.2026: Argon ↔ Carbon ↔ Hydrogen, контекст 1M, <code>thinking_level</code>: <code>low/medium/high/xhigh</code>, Remote Agents &amp; Live Voice."
         )
         call_tg("sendMessage", {
             "chat_id": c_id,
             "text": msg_h,
             "parse_mode": "HTML",
-            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Открыть Hydrogen 2.0 в Офисе", "url": OFFICE_URL}]]},
+            "reply_markup": {"inline_keyboard": [[{"text": "🏢 Открыть v34.0 (Antigravity 2.31)", "url": OFFICE_URL}]]},
         })
     elif text.startswith("/bots"):
         if not is_owner:
@@ -2045,15 +2211,36 @@ def handle_hq_text(msg):
                 send_member_home_menu(c_id, from_user)
 
 
+_INSTANCE_LOCK_SOCK = None
+
+
+def _acquire_single_instance_lock(port=47934):
+    """Ensure only one tg_bot_poller.py runs per host (prevents Telegram 409 getUpdates conflict)."""
+    global _INSTANCE_LOCK_SOCK
+    try:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        if hasattr(socket, "SO_EXCLUSIVEADDRUSE"):
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+        sock.bind(("127.0.0.1", port))
+        sock.listen(1)
+        _INSTANCE_LOCK_SOCK = sock
+        return True
+    except OSError:
+        return False
+
+
 def run_loop(single_run=False):
+    if not single_run and not _acquire_single_instance_lock():
+        print("Another tg_bot_poller.py instance is already active (port 47934 locked). Exiting cleanly.", flush=True)
+        return
     offset = get_persisted_offset()
-    print(f"Telegram Multi-Bot Poller Daemon v33.0 (Hydrogen) started (offset={offset})...", flush=True)
+    print(f"Telegram Multi-Bot Poller Daemon v34.2 (Antigravity 2.31 + Inter-Bot Mesh) started (offset={offset})...", flush=True)
     touch_local_heartbeat_if_due(force=True)
 
     while True:
         try:
             touch_local_heartbeat_if_due(force=False)
-            updates = call_tg("getUpdates", {"offset": offset, "timeout": 4}, retries=1)
+            updates = call_tg("getUpdates", {"offset": offset, "timeout": 4}, retries=1, bot_label="main_hq")
             if updates and updates.get("ok"):
                 for item in updates.get("result", []):
                     # Process item BEFORE committing offset if possible, retry cleanly
@@ -2065,6 +2252,7 @@ def run_loop(single_run=False):
                     save_persisted_offset(offset)
 
             poll_personal_user_bots()
+            bot_mesh_hub.sync_outbox_and_cloud_reports(_get_mesh_ctx(), force=False)
         except Exception as e:
             log_throttled_err("Main daemon loop", e)
             time.sleep(2)
