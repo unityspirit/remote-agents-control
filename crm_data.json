@@ -1,558 +1,250 @@
 {
-  "updated_at": "2026-11-14T00:09:56+00:00",
-  "version": "34.0",
+  "updated_at": "2026-11-14T03:07:41+00:00",
+  "version": "34.1",
   "knowledge_base": [
     {
-      "id": "kb-20261108_230256",
-      "issue": "Auto",
-      "category": "Проект: Автономная_База_Знаний_Каналов",
-      "title": "STATUS: Проверить свежие разборы каналов в Автономная_База_Знаний_Каналов",
-      "source_url": "",
+      "id": "kb-1794622233889",
+      "issue": 59,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service",
+      "source_url": "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7",
       "secondary_url": "",
-      "date": "08.11.2026",
-      "summary": "Ответ по существу задачи\n\nВ папке C:\\Users\\Vlaslav\\Downloads\\Автономная_База_Знаний_Каналов находятся 83 файла, из которых 75 – Markdown‑документы, в которых содержится разбор каналов. На момент 09.11.2026 г. последние обновления датированы 08.11.2026 – 09.11.2026. Ниже перечислены файлы, которые считаются «свежими» (добавлены/изменены за последние 3 дня):\n\n| № | Файл | Дата последнего изменения | Краткое содержание",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
+      "images": [],
+      "date": "14.11.2026",
+      "summary": "NE NOI: «Свой ИИ для компании: 8 слоёв внутри» — внедрено в Virtual Office v34.1: (1) LLM + системные роли, (2) RAG-память с keyword-поиском и дедупликацией crm_data.json, (3) MCP + YouTube oEmbed + Git Data API, (4) RBAC auth_registry + Telegram Bot Gate, (5) <untrusted_web_data> prompt-injection & secret redaction guard, (6) 3-tier роутер Carbon/Argon/Hydrogen + GitHub Models fallback, (7) Telemetry & eval_stats, (8) Анти-дрейф фильтр промо/реферального спама.",
       "action_items": [
-        "Сохранено в Note_20261108_230256.md",
-        "Ведущий агент: Autonomous Project Agent"
+        "Внедрено в cloud_agent_worker.py v34.1 (8 слоёв + YouTube oEmbed + Layer 5/8 защита)",
+        "Предложить как пакет «Корпоративный ИИ 8 слоёв + Голосовой агент» ($1,200–$3,000)"
       ]
     },
     {
-      "id": "kb-20261108_230253",
-      "issue": "Auto",
-      "category": "Проект: Автономная_База_Знаний_Каналов",
-      "title": "STATUS: Проверить свежие разборы каналов в Автономная_База_Знаний_Каналов",
-      "source_url": "",
+      "id": "kb-1794604982288",
+      "issue": 57,
+      "saved_by_login": "unityspiritpartners",
+      "saved_by_name": "Vlaslav (Owner — Unity Spirit Partners)",
+      "category": "Проект: Входящие_Офис",
+      "title": "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and conti",
+      "source_url": "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
       "secondary_url": "",
-      "date": "08.11.2026",
-      "summary": "Ответ по существу задачи\n\nВ папке C:\\Users\\Vlaslav\\Downloads\\Автономная_База_Знаний_Каналов находятся 83 файла, из которых 75 – Markdown‑документы, в которых содержится разбор каналов. На момент 09.11.2026 г. последние обновления датированы 08.11.2026 – 09.11.2026. Ниже перечислены файлы, которые считаются «свежими» (добавлены/изменены за последние 3 дня):\n\n| № | Файл | Дата последнего изменения | Краткое содержание",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
+      "images": [],
+      "date": "14.11.2026",
+      "summary": "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue\n• Title: Mobile Hacker on Instagram: \"Kali NetHunter 2026.3 was published this week, with new set of NFC Arsenal tools!\n• You can update your NetHunter by:\n• Download image zip from nethunter website for your specific device and OS verison and then flash it via Magisk. That's it, no recovery entry or data wiping.\n• #nethunter #kalilinux #pentesting #magisk #root\"\n• URL Source: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0\n• ![Image 1: Video by Mobile Hacker on November 07, 2026. May be an image of phone, digital audio player, screen, battery and text.](https://scontent-atl3-2.cdninstagram.com/v/t15.5256-10/894228266_1939787007460073_4183079005453547818_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZmlyc3RfZnJhbWVfdGh1bWJuYWlsLkMzIn0%3D&_nc_ohc=eVeXFTsq1fgQ7kNvwF6NhUD&_nc_oc=AdpD73O_ZQD72_y1GRiwreSj9tMxymMoiTqdg0Y58jKw-QIBQzg-GfQUZXzmOYDGt0M&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_gid=A96kae5LQp8bXiodxFW57g&_nc_ss=7b689&oh=00_AQQQuzn07TAPwiScBzHzky4HiXPDuRyjofofmZ8kdI9taA&oe=6AFD4B26)\n• ![Image 2: mobile_hacker0's profile picture](https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/275767039_651024306153991_3981338906045872426_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=1&ig_cache_key=GP-ebxAHKoJoGlACACp5ThmkjkA3bkULAAAB1501500j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy42NDAuQzMifQ%3D%3D&_nc_ohc=0VU2N1e07L8Q7kNvwGAnFXj&_nc_oc=AdqC5f2ztKQ3DbiqkQvFK08cEaAEyZ9LHS2hBRJdYH9k6_LxM3eWOfNxfHQ9jRZdUzU&_nc_zt=24&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ss=7b689&_nc_ct=RQosPBUCFQIAAAA&oh=00_AQRJt4VppNqhYnn6OUkKuNH_KPp6DVZtrpeDOOnbroSo1g&oe=6AFD3F0E)\n• [![Image 3: mobile_hacker0's profile picture](https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/275767039_651024306153991_3981338906045872426_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=1&ig_cache_key=GP-ebxAHKoJoGlACACp5ThmkjkA3bkULAAAB1501500j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy42NDAuQzMifQ%3D%3D&_nc_ohc=0VU2N1e07L8Q7kNvwGAnFXj&_nc_oc=AdqC5f2ztKQ3DbiqkQvFK08cEaAEyZ9LHS2hBRJdYH9k6_LxM3eWOfNxfHQ9jRZdUzU&_nc_zt=24&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ss=7b689&_nc_ct=RQosPBUCFQIAAAA&oh=00_AQRJt4VppNqhYnn6OUkKuNH_KPp6DVZtrpeDOOnbroSo1g&oe=6AFD3F0E)](https://www.instagram.com/mobile_hacker0/)",
       "action_items": [
-        "Сохранено в Note_20261108_230253.md",
-        "Ведущий агент: Autonomous Project Agent"
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
       ]
     },
     {
-      "id": "kb-20261105_032732",
-      "issue": "Auto",
+      "id": "kb-1794603176871",
+      "issue": 56,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
+      "source_url": "https://www.comss.ru/page.php?id=22854",
+      "secondary_url": "",
+      "images": [],
+      "date": "13.11.2026",
+      "summary": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения\n• Title: Приложение COMSS AI 2.0 получило поддержку Google Antigravity\n• URL Source: https://www.comss.ru/page.php?id=22854\n• Published Time: 2026-11-12T23:02:00+03:00\n• 12 ноября вышла версия COMSS AI 2.0 для Windows. В ней появилась поддержка [Google Antigravity](https://www.comss.ru/page.php?id=22853) – платформы Google для разработки [программ](https://www.comss.ru/page.php?id=22854#) с помощью ИИ-агентов. Antigravity, как и остальные возможности приложения, доступен в бесплатном пробном периоде. Кроме того, оплаченную подписку теперь можно восстановить по номеру платежа, например после переустановки Windows.\n• ![Image 1: Окно COMSS AI 2.0.3: режим Comss AI включён, пункт «Comss.one DNS для программ без поддержки прокси» со списком ChatGPT, Codex, Antigravity, Cursor и Copilot](blob:http://localhost/4e9e1002e91ab485b8457f6f57173df7)_Google Antigravity и COMSS AI 2.0.3 с включённым режимом Comss AI на тестовом ПК. Изображение: Comss.ru_\n• ### Что изменилось во второй версии\n• антивирус Касперского\n• COMSS AI открывает доступ из России к ChatGPT, Claude, Gemini и другим ИИ-сервисам и инструментам разработки. Во второй версии приложение переписано на WinUI 3 (Windows App SDK) вместо Electron. .NET и Windows App SDK устанавливаются вместе с приложением. Версия ставится поверх 1.x с сохранением подписки и настроек, а дальше приложение обновляется автоматически.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    },
+    {
+      "id": "kb-1794603113202",
+      "issue": 55,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "TIM: https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm",
+      "source_url": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "secondary_url": "",
+      "images": [],
+      "date": "13.11.2026",
+      "summary": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm_type=demgen&utm_acc=3067916666&gad_source=2&gad_campaignid=24417053234&pivex_attribution_id=617592ba-d561-4eca-801e-483d299214de&pageindex=landing изучи как они рекламируют 50 долларов привратить в 25000 доларов\n• Title: Pivex Funded - Proprietary Trading Firm\n• URL Source: https://pivex.com/h?prc_id=1204&utm=\n• Final URL: https://pivex.com/h?prc_id=1204&utm=&pivex_attribution_id=da42168f-9992-41c9-83fd-9e8383b20028&pageindex=landing\n• ![Image 1: Pivex](https://pivex.com/assets/new-logo.svg)\n• Default Dark Green Dark Blue\n• ![Image 2: Pivex](https://pivex.com/assets/new-logo.svg)\n• ![Image 3](https://d3qivkc2bjz4ig.cloudfront.net/aim_pivex_info.svg)\n• ![Image 4](https://d3qivkc2bjz4ig.cloudfront.net/Trustpilot-Logo-2.svg)",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    },
+    {
+      "id": "kb-1794513728058",
+      "issue": 54,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "https://www.reptbattero.com/",
+      "source_url": "https://www.reptbattero.com/",
+      "secondary_url": "",
+      "images": [],
+      "date": "12.11.2026",
+      "summary": "https://www.reptbattero.com/\nWhat's there goal how they make revenue?\n• URL Source: https://www.reptbattero.com/\n• Published Time: 2025-03-27T06:49:09+08:00\n• ## Driving a Sustainable Future\n• As a global leader in power battery and energy storage solutions, REPT BATTERO is dedicated to advancing renewable energy for a cleaner, more affordable, and sustainable future.\n• ## Leading the Charge in Sustainable Battery Innovation\n• As one of the leading lithium-ion battery manufacturers and a global leader in power battery and energy storage solutions, REPT BATTERO is dedicated to advancing renewable energy for a cleaner, more affordable, and sustainable future.\n• ![Image 1](https://www.reptbattero.com/wp-content/uploads/2025/03/1.svg)\n• ### Energy Storage Solutions",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    },
+    {
+      "id": "kb-1794513172891",
+      "issue": 53,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Белый Доминикана",
+      "title": "TIM: Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpart",
+      "source_url": "",
+      "secondary_url": "",
+      "images": [],
+      "date": "12.11.2026",
+      "summary": "Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business bot report how we make money",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Белый Доминикана"
+      ]
+    },
+    {
+      "id": "kb-1794478213876",
+      "issue": 50,
+      "saved_by_login": "aliashirani",
+      "saved_by_name": "Alberta Shirani",
+      "category": "Проект: Входящие_Офис",
+      "title": "TIM: Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех ",
+      "source_url": "",
+      "secondary_url": "",
+      "images": [],
+      "date": "12.11.2026",
+      "summary": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и социальных сетях, все алгоритмы и действия данной аудитории. И на основании полученных данных создай мини-продукт полностью закрывающий эту боль (триггер), без малейших возражений.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
+      ]
+    },
+    {
+      "id": "kb-1794478026979",
+      "issue": 49,
+      "saved_by_login": "aliashirani",
+      "saved_by_name": "Alberta Shirani",
+      "category": "Проект: Traffic",
+      "title": "TIM: 1. Продукт & Закрытый Клуб",
+      "source_url": "",
+      "secondary_url": "",
+      "images": [],
+      "date": "12.11.2026",
+      "summary": "1. Продукт & Закрытый Клуб\nAI-Консьерж & Клуб Эстетики\nTelegram-бот с AI-ассистентом по стилю интерьера и внутренней гармонии дома. Лид-магнит за 90 сек: «Экспресс-тест гармонии дома». Доступ в закрытый клуб по подписке 1 000–3 500 ₽/мес.\nИзмени гармонизацию дома на трансформацию женщин 30-50 лет, проект должен быть связан с темой тотальной трансформации и перезагрузки женщин: опора, уверенность, позиционирование, ко",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Traffic"
+      ]
+    },
+    {
+      "id": "kb-1794435801785",
+      "issue": 45,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: True 1 Team",
+      "title": "Изучить фото (3 шт.) для True 1 Team",
+      "source_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+      "secondary_url": "",
+      "images": [
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg"
+      ],
+      "date": "12.11.2026",
+      "summary": "Сохранено в автономном облачном режиме (доступно 24/7 в Базе Знаний и папке проекта).",
+      "action_items": [
+        "Сохранено фото (3 шт.) + текст изучения в папку True 1 Team"
+      ]
+    },
+    {
+      "id": "kb-1794435754038",
+      "issue": 44,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: True 1 Team",
+      "title": "TIM: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_m",
+      "source_url": "https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_conv",
+      "secondary_url": "",
+      "images": [],
+      "date": "12.11.2026",
+      "summary": "https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_conv&utm_content=mark-eting&utm_term=&gad_source=2&gad_campaignid=23951194982\n• Title: https://match.adsrvr.org/track/cmf/google\n• URL Source: https://www.optimizely.com/campaigns/who-is-mark-eting\n• Final URL: https://match.adsrvr.org/track/cmf/google?g_uuid=&gdpr=0&gdpr_consent=&ttd_tdid=ea100831-2fe3-4ac5-b124-2f147c0893f6&google_gid=CAESEItHKYAFF3KdiydoXyZFFJI&google_cver=1\n• A 1x1 image, likely be a tacker probe",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку True 1 Team"
+      ]
+    },
+    {
+      "id": "kb-1793951172866",
+      "issue": 40,
+      "saved_by_login": "aliashirani",
+      "saved_by_name": "Alberta Shirani",
+      "category": "Проект: Личный Офис: @aliashirani",
+      "title": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исх",
+      "source_url": "",
+      "secondary_url": "",
+      "images": [],
+      "date": "06.11.2026",
+      "summary": "Исправь, что у нас проект не про интерьер, а про трансформацию женщин 30-50 лет и выстраивай всю структуру инфо продуктов исходя из этого.",
+      "action_items": [
+        "Сохранено в облако GitHub CRM и папку Личный Офис: @aliashirani"
+      ]
+    },
+    {
+      "id": "kb-1793874405678",
+      "issue": 38,
+      "saved_by_login": "unityspiritteam@gmail.com",
+      "saved_by_name": "Vlaslav (Owner — Unity Spirit Partners)",
       "category": "Проект: Позновалка",
       "title": "RESEARCH_MORE: personal knowledge management AI second brain monetization workflows",
       "source_url": "",
       "secondary_url": "",
+      "images": [],
       "date": "05.11.2026",
-      "summary": "🔎 Отчёт разведки для папки Позновалка\nТема исследования: personal knowledge management AI second brain monetization workflows Папка: Позновалка\nВремя: 05.11.2026, 03:26:43\n\n<!-- ACTOR: unityspiritteam@gmail.com | Vlaslav (Owner — Unity Spirit Partners) -->\n\n ⚡ ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ И МАТЕРИАЛЫ ВНЕДРЕНИЯ (Позновалка)\nВедущий агент-куратор: Executive Director Tim & Lead Specialist\nСкорость выдачи: ⚡ Мгновенно (0.1с) ·",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
+      "summary": "Сохранено в автономном облачном режиме (доступно 24/7 в Базе Знаний и папке проекта).",
       "action_items": [
-        "Сохранено в Note_20261105_032732.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
+        "Сохранено в облако GitHub CRM и папку Позновалка"
       ]
     },
     {
-      "id": "kb-20261104_000747",
-      "issue": "Auto",
+      "id": "kb-1793640251582",
+      "issue": 29,
+      "saved_by_login": "unityspiritpartners",
+      "saved_by_name": "Vlaslav (Owner — Unity Spirit Partners)",
       "category": "Проект: Alberta",
-      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "title": "запусти все облачные процессы в очереди для Alberta обработай и отправь ей отчет @aliashiran что делаем дальше направив ей на",
       "source_url": "",
       "secondary_url": "",
-      "date": "04.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~97, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 11, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: AI_Analysis_History.md, Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md",
-      "agent": "Alberta Creative & Kinfolk Director",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "Traffic",
-        "Позновалка",
-        "GlobalFilms (Filmtools)"
-      ],
+      "images": [],
+      "date": "02.11.2026",
+      "summary": "запусти все облачные процессы в очереди для Alberta обработай и отправь ей отчет @aliashiran что  делаем  дальше направив ей напоминание что ей стоит зайти в офис и проверить свою стратагию",
       "action_items": [
-        "Сохранено в Note_20261104_000747.md",
-        "Ведущий агент: Alberta Creative & Kinfolk Director"
+        "Сохранено в облако GitHub CRM и папку Alberta"
       ]
     },
     {
-      "id": "kb-20261104_000730",
-      "issue": "Auto",
+      "id": "kb-1793621992780",
+      "issue": 28,
+      "saved_by_login": "aliashirani",
+      "saved_by_name": "Alberta Shirani",
       "category": "Проект: Alberta",
-      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "title": "Покажи мне вариант нашего мини-продукта, который закрывает полностью главную боль моей аудитории, абсолютно без возражений.",
       "source_url": "",
       "secondary_url": "",
-      "date": "04.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~97, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 11, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: AI_Analysis_History.md, Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md",
-      "agent": "Alberta Creative & Kinfolk Director",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "Traffic",
-        "Позновалка",
-        "GlobalFilms (Filmtools)"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261104_000730.md",
-        "Ведущий агент: Alberta Creative & Kinfolk Director"
-      ]
-    },
-    {
-      "id": "kb-20261104_000433",
-      "issue": "Auto",
-      "category": "Проект: Alberta",
-      "title": "Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "04.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~97, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 11, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: AI_Analysis_History.md, Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md",
-      "agent": "Alberta Creative & Kinfolk Director",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "Traffic",
-        "Позновалка",
-        "GlobalFilms (Filmtools)"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261104_000433.md",
-        "Ведущий агент: Alberta Creative & Kinfolk Director"
-      ]
-    },
-    {
-      "id": "kb-20261104_000358",
-      "issue": "Auto",
-      "category": "Проект: Alberta",
-      "title": "Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "04.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~97, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 11, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: AI_Analysis_History.md, Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md",
-      "agent": "Alberta Creative & Kinfolk Director",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "Traffic",
-        "Позновалка",
-        "GlobalFilms (Filmtools)"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261104_000358.md",
-        "Ведущий агент: Alberta Creative & Kinfolk Director"
-      ]
-    },
-    {
-      "id": "kb-20261103_235425",
-      "issue": "Auto",
-      "category": "Проект: Alberta",
-      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "03.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~96, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 10, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md, alberta_7_day_veo_prom",
-      "agent": "Alberta Creative & Kinfolk Director",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "Traffic",
-        "Позновалка",
-        "GlobalFilms (Filmtools)"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261103_235425.md",
-        "Ведущий агент: Alberta Creative & Kinfolk Director"
-      ]
-    },
-    {
-      "id": "kb-20261103_235404",
-      "issue": "Auto",
-      "category": "Проект: Alberta",
-      "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "03.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\OneDrive\\Desktop\\delaem prezervativ\\Alberta_Workspace\n- Всего файлов: ~96, Общий размер: 5.8 МБ\n- Типы файлов: .js: 27, .md: 10, .png: 9, .json: 8, .svg: 8, : 7\n- Содержимое в корне: Alberta.code-workspace, _office, alberta-agents, alberta-club-site, alberta_30_day_content_strategy.md, alberta_7_day_prompts_and_30_day_prep.md, alberta_7_day_veo_prom",
-      "agent": "Alberta Creative & Kinfolk Director",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "Traffic",
-        "Позновалка",
-        "GlobalFilms (Filmtools)"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261103_235404.md",
-        "Ведущий агент: Alberta Creative & Kinfolk Director"
-      ]
-    },
-    {
-      "id": "kb-20261102_133857",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
-      "source_url": "",
-      "secondary_url": "",
+      "images": [],
       "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~3, Общий размер: 33.0 КБ\n- Типы файлов: .md: 2, .jsonl: 1\n- Содержимое в корне: AI_Analysis_History.md, _office, queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить д",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
+      "summary": "Покажи мне вариант нашего мини-продукта, который закрывает полностью главную боль моей аудитории, абсолютно без возражений.",
       "action_items": [
-        "Сохранено в Note_20261102_133857.md",
-        "Ведущий агент: Autonomous Project Agent"
+        "Сохранено в облако GitHub CRM и папку Alberta"
       ]
     },
     {
-      "id": "kb-20261102_133822",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
-      "source_url": "",
+      "id": "kb-1793488544286",
+      "issue": 19,
+      "saved_by_login": "true1team",
+      "saved_by_name": "@true1team",
+      "category": "Проект: Входящие_Офис",
+      "title": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FR",
+      "source_url": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
       "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~3, Общий размер: 33.0 КБ\n- Типы файлов: .md: 2, .jsonl: 1\n- Содержимое в корне: AI_Analysis_History.md, _office, queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить д",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
+      "images": [],
+      "date": "01.11.2026",
+      "summary": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04&utm_id=24354174629&g_net=ytis&g_dev=m&gad_source=2&gad_campaignid=24354174629 изучить и повторить этот проект как сестему заработка!\n• Title: SCW26 - YOUTUBE - GNSS ACADEMY\n• URL Source: https://space.gnssacademy.com/spacecareerweek26-yt/\n• ## FREE · LIVE ONLINE · NOV 9 · 2 WEEKS · 8 PM (PARIS TIME)\n• ## SPACE CAREER WEEK 2026\n• ## Discover where your engineering background fits in Space, and leave with your roadmap to get there\n• *   **Free certified training with Eduardo Tapias, ESA trainer with 25+ years in the European space industry.**\n• *   **Learn what Space companies are really hiring for, see how engineers like you made the switch, and build your own Space Career Roadmap**\n• ## ★ 10,000+ engineers already attended last editions",
       "action_items": [
-        "Сохранено в Note_20261102_133822.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_132701",
-      "issue": "Auto",
-      "category": "Проект: Traffic",
-      "title": "GUEST_LEAD_QUIZ: AI-Маркетинг & Pay-on-Results Воронки",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Traffic\n- Всего файлов: ~7, Общий размер: 75.8 КБ\n- Типы файлов: .md: 6, .html: 1\n- Содержимое в корне: AI_Analysis_History.md, README.md, _office, index.html, ПЛАН_МОНЕТИЗАЦИИ_VIBECODING_2026.md, РАЗБОР_PIVEX_FUNDED_БЭКЕНД_И_МОНЕТИЗАЦИЯ.md\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Traffic — материал структурир",
-      "agent": "Performance Marketing & Cold Outreach Lead",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Alberta",
-        "Дима Верхняя Синичиха Алапаевск",
-        "Белый Доминикана"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_132701.md",
-        "Ведущий агент: Performance Marketing & Cold Outreach Lead"
-      ]
-    },
-    {
-      "id": "kb-20261102_132622",
-      "issue": "Auto",
-      "category": "Проект: Traffic",
-      "title": "GUEST_LEAD_QUIZ: AI-Маркетинг & Pay-on-Results Воронки",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Traffic\n- Всего файлов: ~7, Общий размер: 75.8 КБ\n- Типы файлов: .md: 6, .html: 1\n- Содержимое в корне: AI_Analysis_History.md, README.md, _office, index.html, ПЛАН_МОНЕТИЗАЦИИ_VIBECODING_2026.md, РАЗБОР_PIVEX_FUNDED_БЭКЕНД_И_МОНЕТИЗАЦИЯ.md\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Traffic — материал структурир",
-      "agent": "Performance Marketing & Cold Outreach Lead",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Alberta",
-        "Дима Верхняя Синичиха Алапаевск",
-        "Белый Доминикана"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_132622.md",
-        "Ведущий агент: Performance Marketing & Cold Outreach Lead"
-      ]
-    },
-    {
-      "id": "kb-20261102_130940",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~3, Общий размер: 29.1 КБ\n- Типы файлов: .md: 2, .jsonl: 1\n- Содержимое в корне: AI_Analysis_History.md, _office, queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить д",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_130940.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_130857",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~3, Общий размер: 29.1 КБ\n- Типы файлов: .md: 2, .jsonl: 1\n- Содержимое в корне: AI_Analysis_History.md, _office, queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить д",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_130857.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_125014",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "RESEARCH_MORE: Фермы контента рынок конкуренты кейсы монетизации 2026",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "🔎 Отчёт разведки для папки Unity Inc\nТема исследования: Фермы контента рынок конкуренты кейсы монетизации 2026 Папка: Фермы контента\nВремя: 30.10.2026, 19:29:09\n\n<!-- ACTOR: @globalplusteam | @globalplusteam -->\n\n1. 📌 Суть и проверенные факты из источника:\n- Поисковый запрос на углублённое изучение: «Фермы контента рынок конкуренты кейсы монетизации 2026 Папка: Фермы контента\n- Время: 30.10.2026, 19:29:09\n- <!-- ACT",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_125014.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261102_124055",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD: Покажи отчёт о проделанной работе и статус задач",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nНиже приведён отчёт о проделанной работе по проекту Лиды_Гости и текущий статус всех задач, связанных с ним.  \n\n| № | Задача | Описание | Статус | Последний шаг |\n|---|--------|----------|--------|---------------|\n| 1 | Создание плана внедрения | На основе queries.jsonl сформирован файл LeadProcessingPlan.md с описанием 3‑шаговой воронки (B2B‑AI‑решения → квалификация → предложени",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_124055.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_124032",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD: Покажи отчёт о проделанной работе и статус задач",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nНиже приведён отчёт о проделанной работе по проекту Лиды_Гости и текущий статус всех задач, связанных с ним.  \n\n| № | Задача | Описание | Статус | Последний шаг |\n|---|--------|----------|--------|---------------|\n| 1 | Создание плана внедрения | На основе queries.jsonl сформирован файл LeadProcessingPlan.md с описанием 3‑шаговой воронки (B2B‑AI‑решения → квалификация → предложени",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_124032.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_123652",
-      "issue": "Auto",
-      "category": "Проект: Личный Офис: @true1team",
-      "title": "/expert",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "Четкий ответ по существу задачи  \nПроект «Личный Офис: @true1team» находится на ранней стадии разработки. В корневой папке находятся четыре файла (≈ 5 МБ): два изображения (вероятно, UI‑скриншоты/диаграммы) и два Markdown‑файла (README, возможно, техническое задание/архитектура). Отсутствует репозиторий Git, CI/CD, автоматизированная документация и интеграция с внешними сервисами.  \n\nС учётом опыта 20‑летнего лидера",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_123652.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_123644",
-      "issue": "Auto",
-      "category": "Проект: Личный Офис: @true1team",
-      "title": "/expert",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "Четкий ответ по существу задачи  \nПроект «Личный Офис: @true1team» находится на ранней стадии разработки. В корневой папке находятся четыре файла (≈ 5 МБ): два изображения (вероятно, UI‑скриншоты/диаграммы) и два Markdown‑файла (README, возможно, техническое задание/архитектура). Отсутствует репозиторий Git, CI/CD, автоматизированная документация и интеграция с внешними сервисами.  \n\nС учётом опыта 20‑летнего лидера",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_123644.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_122931",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nКуда перейти в первую очередь – это первый файл, который нужно проанализировать и на основе него сформировать план действий.  \nВ папке C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости единственным источником данных о лидах является queries.jsonl. Именно от его содержимого зависят все последующие шаги:  \n- определение структуры лида (имя, контакт, интересы, источник),  \n- постро",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_122931.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_122925",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nКуда перейти в первую очередь – это первый файл, который нужно проанализировать и на основе него сформировать план действий.  \nВ папке C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости единственным источником данных о лидах является queries.jsonl. Именно от его содержимого зависят все последующие шаги:  \n- определение структуры лида (имя, контакт, интересы, источник),  \n- постро",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_122925.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_122800",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~3, Общий размер: 8.1 КБ\n- Типы файлов: .md: 2, .jsonl: 1\n- Содержимое в корне: AI_Analysis_History.md, _office, queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить дл",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_122800.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_122754",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD: Помоги с навигацией: куда перейти в первую очередь?",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~3, Общий размер: 8.1 КБ\n- Типы файлов: .md: 2, .jsonl: 1\n- Содержимое в корне: AI_Analysis_History.md, _office, queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить дл",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_122754.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261102_122246",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plu",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Unity Inc\n- Всего файлов: ~11, Общий размер: 276.5 МБ\n- Типы файлов: .mp4: 8, .md: 3\n- Содержимое в корне: AI_Analysis_History.md, _office, Белград\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Unity Inc — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить для заработка и автомат",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_122246.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261102_122204",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "Сгенерировать структуру Навигатора Telegram-канала и 5 готовых экспертных постов для Global Plu",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "02.11.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Unity Inc\n- Всего файлов: ~11, Общий размер: 276.5 МБ\n- Типы файлов: .mp4: 8, .md: 3\n- Содержимое в корне: AI_Analysis_History.md, _office, Белград\n- Ключевые файлы и накопленная база знаний папки:\n\n2. 🎯 Куда внедрять: Unity Inc — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить для заработка и автомат",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261102_122204.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261031_060155",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD_QUIZ: B2B AI-Решения & Цифровые Директора",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "31.10.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~1, Общий размер: 1.8 КБ\n- Содержимое в корне: queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n- Задача / материал пользователя для изучения:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить для заработка и автом",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261031_060155.md",
-        "Ведущий агент: Autonomous Project Agent"
-      ]
-    },
-    {
-      "id": "kb-20261031_060151",
-      "issue": "Auto",
-      "category": "Проект: Лиды_Гости",
-      "title": "GUEST_LEAD_QUIZ: B2B AI-Решения & Цифровые Директора",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "31.10.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\Лиды_Гости\n- Всего файлов: ~1, Общий размер: 1.8 КБ\n- Содержимое в корне: queries.jsonl\n- Ключевые файлы и накопленная база знаний папки:\n- Задача / материал пользователя для изучения:\n\n2. 🎯 Куда внедрять: Лиды_Гости — материал структурирован и привязан к конвейеру Виртуального Офиса.\n\n3. 💡 Как применить для заработка и автом",
-      "agent": "Autonomous Project Agent",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261031_060151.md",
-        "Ведущий агент: Autonomous Project Agent"
+        "Сохранено в облако GitHub CRM и папку Входящие_Офис"
       ]
     },
     {
@@ -572,26 +264,6 @@
       ],
       "action_items": [
         "Сохранено в Note_20261029_211906.md",
-        "Ведущий агент: Filmtools Production & Engineering Lead"
-      ]
-    },
-    {
-      "id": "kb-20261029_211903",
-      "issue": "Auto",
-      "category": "Проект: GlobalFilms (Filmtools)",
-      "title": "Отдельный сайт квеста «СЕКТА» в открытых источниках я не обнаружил. Сейчас проект представлен ч",
-      "source_url": "https://www.instagram.com/quest_ptg/",
-      "secondary_url": "https://www.instagram.com/quest_ptg/",
-      "date": "29.10.2026",
-      "summary": "1. 📌 Суть и проверенные факты из источника:\n- Проект: GlobalFilms (Filmtools)\n- Путь: C:\\Users\\Vlaslav\\Downloads\\Светлана Notion\\globalfilms\n- Всего файлов: ~150, Общий размер: 182.8 МБ\n- Типы файлов: .sst: 57, .meta: 56, .json: 15, .js: 6, : 5, .md: 4\n- Содержимое в корне: .git, .gitignore, .next, AGENTS.md, AI_Analysis_History.md, CLAUDE.md, README.md, _office, components.json, eslint.config.mjs, next-env.d.ts, nex",
-      "agent": "Filmtools Production & Engineering Lead",
-      "domain": "[[дашборды-аналитика]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Позновалка"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261029_211903.md",
         "Ведущий агент: Filmtools Production & Engineering Lead"
       ]
     },
@@ -657,27 +329,6 @@
       ]
     },
     {
-      "id": "kb-20261028_075230",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "/strategy",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "28.10.2026",
-      "summary": "Четкий ответ по существу задачи  \nВ проекте «Позновалка» (и аналогично «Global Plus», «Unity Spirit Partners») основная проблема – отсутствие единообразной, масштабируемой маркетинговой воронки, которая бы объединяла рекламу, лид‑генерацию, квалификацию и удержание.  \nСсылки TikTok и Reddit демонстрируют готовый шаблон:  \n1. Таргетинг – параметры в URL фиксируют аудиторию.  \n2. Креатив – короткое вертикальное видео +",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261028_075230.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261025_182710",
       "issue": "Auto",
       "category": "Проект: СтадиБук",
@@ -714,27 +365,6 @@
       ],
       "action_items": [
         "Сохранено в Note_20261025_165618.md",
-        "Ведущий агент: System Cognitive Architect"
-      ]
-    },
-    {
-      "id": "kb-20261025_165614",
-      "issue": "Auto",
-      "category": "Проект: Thought/Мысль",
-      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so",
-      "source_url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
-      "secondary_url": "",
-      "date": "25.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Thought/Мысль\n\nПроанализированные ссылки: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src",
-      "agent": "System Cognitive Architect",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка",
-        "Traffic",
-        "AI Skills & Nobel Stabilization"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261025_165614.md",
         "Ведущий агент: System Cognitive Architect"
       ]
     },
@@ -802,27 +432,6 @@
       ]
     },
     {
-      "id": "kb-20261023_182239",
-      "issue": "Auto",
-      "category": "Проект: Traffic",
-      "title": "PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "⚡ Матрица Планирования: ИИ Автономно vs Человек\n\n| Задача / Шаг | Проект | Кто делает | Что конкретно выполняется |\n| :--- | :--- | :--- | :--- |\n| Методология 12 IT-продуктов и Mini App | 12 IT Продуктов (Короче Капитан) | 🤖 ИИ сам | Оцифровка воронки @its_capitan, сборка интерактивного шаблона Mini App |\n| Выбор 1-й ниши Mini App для запуска | 12 IT Продуктов (Короче Капитан) | 👤 Человек | Утвердить тему 1-го микр",
-      "agent": "Performance Marketing & Cold Outreach Lead",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Alberta",
-        "Дима Верхняя Синичиха Алапаевск",
-        "Белый Доминикана"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_182239.md",
-        "Ведущий агент: Performance Marketing & Cold Outreach Lead"
-      ]
-    },
-    {
       "id": "kb-20261023_182009",
       "issue": "Auto",
       "category": "Проект: Unity Inc",
@@ -840,1846 +449,6 @@
       "action_items": [
         "Сохранено в Note_20261023_182009.md",
         "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_181852",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181852.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_181413",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181413.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_181307",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181307.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_181152",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181152.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_180923",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180923.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_180842",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180842.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_180812",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180812.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_180741",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180741.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_180611",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180611.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175443",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175443.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175417",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175417.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175354",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175354.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175311",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175311.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175247",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175247.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175220",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175220.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175132",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175132.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175107",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175107.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_175017",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175017.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174955",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174955.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174932",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174932.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174903",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174903.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174843",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174843.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174348",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174348.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174310",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174310.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174237",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174237.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174143",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174143.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174107",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174107.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_174028",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174028.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173930",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173930.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173900",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173900.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173826",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173826.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173755",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173755.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173720",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173720.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173650",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173650.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173612",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173612.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173536",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173536.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173504",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173504.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173405",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173405.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173330",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173330.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173237",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173237.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173150",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173150.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173112",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173112.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_173035",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_173035.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172959",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172959.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172839",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172839.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172757",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172757.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172716",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172716.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172627",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172627.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172544",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172544.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172241",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172241.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172136",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172136.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_172033",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_172033.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171923",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171923.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171716",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171716.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171522",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171522.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171455",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171455.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171428",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171428.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171404",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171404.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171339",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171339.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171312",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Значение | Комментарий |\n|------------|----------|-------------|\n| Общая стоимость реализации | $200 – 250 тыс. (разработка + интеграция + обучение) | Включает создание модели, настройку диалогов, интеграцию с CRM, QA и тестирование. |\n| Срок запуска | 3–4 месяца | 1 мес. на сбор требований, 1 мес. на разработку, 1 мес. на интеграцию, 1 мес. на пилот. |\n| Ожидаемый д",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171312.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171226",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171226.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171202",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171202.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171123",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171123.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171101",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171101.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171037",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171037.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_171014",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_171014.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170933",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170933.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170910",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170910.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170848",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170848.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170821",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170821.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170756",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170756.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170601",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170601.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170515",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170515.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170430",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170430.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170350",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170350.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170259",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170259.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170056",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170056.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_170023",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_170023.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165959",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165959.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165936",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165936.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165900",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165900.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165752",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165752.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165656",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 120 % | При стоимости внедрения $200 к и ежемесячных расходов $10 к (обслуживание, лицензии) – ожидаемый прирост выручки от B2B‑продаж ≈ $500 к. |\n| Unit‑экономика | CPL ≈ $25 – $35 (с учётом стоимости AI‑агента $200 к/год + 10 к/мес) vs традиционный CPL $75 – $120. | Экономия ≈ 60 % н",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165656.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165539",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165539.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165421",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- (Не удалось получить полный текст https://www.altahq.com/lp/ai-calling-agent: <urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>)\n\n---\n📂 Мате",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165421.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165256",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165256.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165212",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165212.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_165024",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_165024.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_164900",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_164900.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_164752",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_164752.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261023_164651",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_164651.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
-    {
-      "id": "kb-20261022_082359",
-      "issue": "Auto",
-      "category": "Проект: соеденения",
-      "title": "https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxc",
-      "source_url": "https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxconv_demandgen&utm_content=828009486204&cc_gclid=CjwKCAjwxeHWBhBPEiwAiqtQ-Thm_Sy67dMRxYYWyTsJHLsKlr14PW6OsG6yhKWxHr7Zogi7rQ08BRoCVKUQAvD_BwE&gad_source=2&gad_campaignid=24187973224",
-      "secondary_url": "",
-      "date": "22.10.2026",
-      "summary": "📁 Автоматически создана новая папка проекта: соеденения\n- Локальный путь на ноутбуке: C:\\Users\\Vlaslav\\Downloads\\соеденения\n- Ведущий агент-куратор: Autonomous Project Bootstrapper\n- Облачная синхронизация: папка добавлена в projects.json (всего папок: 111) и привязана к этой задаче.\n\n---\n\n1. Четкий ответ по существу задачи  \nВы хотите создать отдельную папку, в которой будут собраны все три проекта (Global Plus, Un",
-      "agent": "Autonomous Project Bootstrapper",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка",
-        "System 1"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261022_082359.md",
-        "Ведущий агент: Autonomous Project Bootstrapper"
       ]
     },
     {
@@ -2724,27 +493,6 @@
       ]
     },
     {
-      "id": "kb-20261022_082058",
-      "issue": "Auto",
-      "category": "Проект: Traffic",
-      "title": "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&",
-      "source_url": "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.com&gad_source=2&gad_campaignid=24276174909",
-      "secondary_url": "",
-      "date": "22.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Traffic\n\nПроанализированные ссылки: https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.com&gad_source=2&gad_campaignid=24276174909\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&",
-      "agent": "Performance Marketing & Cold Outreach Lead",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Alberta",
-        "Дима Верхняя Синичиха Алапаевск",
-        "Белый Доминикана"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261022_082058.md",
-        "Ведущий агент: Performance Marketing & Cold Outreach Lead"
-      ]
-    },
-    {
       "id": "kb-20261021_084541",
       "issue": "Auto",
       "category": "Проект: 12 IT Продуктов (Короче Капитан)",
@@ -2765,68 +513,6 @@
       ]
     },
     {
-      "id": "kb-20261021_084535",
-      "issue": "Auto",
-      "category": "Проект: 12 IT Продуктов (Короче Капитан)",
-      "title": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid",
-      "source_url": "https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065370&aid=799060508631&kid=&kw=&nw=ytis&dv=m&mt=&pl=youtube.com&utm_source=youtube_ads&utm_medium=cpc&utm_campaign=nimb&utm_content=189059065370|23616818868|799060508631&utm_term=2246&gad_source=2&gad_campaignid=23616818868",
-      "secondary_url": "",
-      "date": "21.10.2026",
-      "summary": "🧠 Автоматический разбор источников для 12 IT Продуктов (Короче Капитан)\n\nПроанализированные ссылки: https://itscap.blog/challenge_12_it_products_in_12_months_dark_v2_google_ads?tm=tt&ap=gads&aaid=adahWqvvxfi0d&cid=23616818868&agid=189059065370&aid=799060508631&kid=&kw=&nw=ytis&dv=m&mt=&pl=youtube.com&utm_source=youtube_ads&utm_medium=cpc&utm_campaign=nimb&utm_content=189059065370|23616818868|799060508631&utm_term=22",
-      "agent": "Telegram Mini Apps & Micro-SaaS Architect",
-      "domain": "[[telegram-боты]]",
-      "related_projects": [
-        "Позновалка",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261021_084535.md",
-        "Ведущий агент: Telegram Mini Apps & Micro-SaaS Architect"
-      ]
-    },
-    {
-      "id": "kb-20261021_084438",
-      "issue": "Auto",
-      "category": "Проект: Thought/Мысль",
-      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so",
-      "source_url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
-      "secondary_url": "",
-      "date": "21.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Thought/Мысль\n\nПроанализированные ссылки: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src",
-      "agent": "System Cognitive Architect",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка",
-        "Traffic",
-        "AI Skills & Nobel Stabilization"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261021_084438.md",
-        "Ведущий агент: System Cognitive Architect"
-      ]
-    },
-    {
-      "id": "kb-20261021_084434",
-      "issue": "Auto",
-      "category": "Проект: Thought/Мысль",
-      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so",
-      "source_url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
-      "secondary_url": "",
-      "date": "21.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Thought/Мысль\n\nПроанализированные ссылки: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src",
-      "agent": "System Cognitive Architect",
-      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
-      "related_projects": [
-        "Позновалка",
-        "Traffic",
-        "AI Skills & Nobel Stabilization"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261021_084434.md",
-        "Ведущий агент: System Cognitive Architect"
-      ]
-    },
-    {
       "id": "kb-20261021_084404",
       "issue": "Auto",
       "category": "Проект: Позновалка",
@@ -2844,27 +530,6 @@
       ],
       "action_items": [
         "Сохранено в Note_20261021_084404.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
-      "id": "kb-20261021_084401",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and t",
-      "source_url": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH",
-      "secondary_url": "",
-      "date": "21.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH ===\n- ⚠️ Субтитры видео получить не удалось — разбор возможен только по заголовку и автору, не выдумывай содержание.\n- YouTube Видео: «Get Rich with these 5 A",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261021_084401.md",
         "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
       ]
     },
@@ -2890,27 +555,6 @@
       ]
     },
     {
-      "id": "kb-20261020_104518",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-",
-      "source_url": "https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/ipa-investigator/?cmpid=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&utm_source=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&gad_source=2&gad_campaignid=24357100713",
-      "secondary_url": "",
-      "date": "20.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/ipa-investigator/?cmpid=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&utm_source=CM_QDI_DISC_IPA-Investigator_1026_DemGen_Google_Global&gad_source=2&gad_campaignid=24357100713\n\n 📌 Ключевые тезисы и данные со стра",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261020_104518.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261019_145832",
       "issue": "Auto",
       "category": "Проект: Позновалка",
@@ -2928,27 +572,6 @@
       ],
       "action_items": [
         "Сохранено в Note_20261019_145832.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
-      "id": "kb-20261019_145830",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://www.astons.com/residency-by-investment/greece/?utm_source=google&utm_medium=cpc&utm_cam",
-      "source_url": "https://www.astons.com/residency-by-investment/greece/?utm_source=google&utm_medium=cpc&utm_campaign=rez_greece_dgen_eu_en_24092026&utm_content=dgen_greece_en&utm_term=24284806448|825849871804||2246&gad_source=2&gad_campaignid=24284806448",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "Четкий ответ по существу задачи  \nAstons – компания, предлагающая «Residency‑by‑Investment» в Греции (пакет 250 к–500 к €).  \nНаша цель – создать взаимовыгодное партнерство, при котором мы будем получать комиссию за каждого привлечённого клиента (или фиксированную плату за лид) и одновременно расширять портфель услуг «Позновалка» (CRM‑консалтинг, AI‑агенты, веб‑разработка).  \n\nКлючевые элементы партнёрства:\n\n| Элемен",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_145830.md",
         "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
       ]
     },
@@ -2974,27 +597,6 @@
       ]
     },
     {
-      "id": "kb-20261019_144647",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://bogatushin.com/web_v11/gaigents?utm_source=google&utm_medium=cpc&utm_campaign=243582586",
-      "source_url": "https://bogatushin.com/web_v11/gaigents?utm_source=google&utm_medium=cpc&utm_campaign=24358258691&utm_content=196423618770_828100227048_m_2246&gad_source=2&gad_campaignid=24358258691",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "Четкий ответ по существу задачи  \nВы хотите:  \n1. Проанализировать три рекламные/продажные URL (TikTok, Reddit, bogatushin.com) и понять, как их маркетинговая модель можно применить к проекту Позновалка.  \n2. Сформировать практический план внедрения этих моделей в существующую воронку JoinTECH (бесплатный разбор → платный аудит → внедрение пакетов).  \n3. Интегрировать воронку с Telegram Mini‑App для удержания и ретар",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_144647.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261019_143917",
       "issue": "Auto",
       "category": "Проект: Позновалка",
@@ -3012,27 +614,6 @@
       ],
       "action_items": [
         "Сохранено в Note_20261019_143917.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
-      "id": "kb-20261019_143915",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&ut",
-      "source_url": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&utm_term=&utm_campaign=RP_PMAX_Google_Prospecting_MOFU_Reg-T1T2_EMEA_EU_EN_All_23736473219&utm_content=_m_&hsa_acc=1706531352&hsa_cam=23736473219&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23736483581",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \n\n| Ссылка | Что это | Как это работает | Как применить к проектам (Позновалка, Global Plus, Unity Spirit Partners) |\n|--------|---------|------------------|--------------------------------------------------------------------------|\n| TikTok “Get Started” (https://getstarted.tiktok.com/...) | Платформа TikTok Ads – «Grow Your Business» воронка. | 1️⃣ Таргетинг по интересам/vertical",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_143915.md",
         "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
       ]
     },
@@ -3077,27 +658,6 @@
       ]
     },
     {
-      "id": "kb-20261019_141907",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://www.altahq.com/lp/ai-sdr-katie?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source",
-      "source_url": "https://www.altahq.com/lp/ai-sdr-katie?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922078764&hsa_cam=24303424977&hsa_grp=199404240886&hsa_ad=826684887017&hsa_src=ytis&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=24303424977",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "{\"role\":\"assistant\",\"reasoning\":\"We need to respond to user: They provided context of project \\\"Позновалка\\\", path, files, etc. They want to analyze the links and produce plan for projects. They also mention \\\"Контекст проекта: Проект: Позновалка Путь: C:\\\\Users\\\\Vlaslav\\\\Downloads\\\\Позновалка\\\". They want to include the structure: 1. Четкий ответ по существу задачи 2. 💡 Предложения по продолжению (ИИ) 3. 🚨 Требуется",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_141907.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261019_134308",
       "issue": "Auto",
       "category": "Проект: Позновалка",
@@ -3115,27 +675,6 @@
       ],
       "action_items": [
         "Сохранено в Note_20261019_134308.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
-      "id": "kb-20261019_134305",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://t.me/ghostghettochild изучи эту группу и придумай для него предложение он хочет размест",
-      "source_url": "https://t.me/ghostghettochild",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "Четкий ответ по существу задачи  \nГруппа «Ghost Ghetto Child» – это музыкальный артист, который хочет вывести свою музыку на все крупные мировые стриминговые площадки (Spotify, Apple Music, Deezer, Tidal, YouTube Music, Amazon Music и др.) и получить максимальный охват, роялти и маркетинговую поддержку.  \n\nНаша компания может предложить полный цикл услуг:  \n1. Техническая дистрибуция – подключение к агрегатору (Distr",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_134305.md",
         "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
       ]
     },
@@ -3182,27 +721,6 @@
       ]
     },
     {
-      "id": "kb-20261019_131718",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://t.me/sysadminfuture изучи и сделай агента который изучает всю информацию из этой группы",
-      "source_url": "https://t.me/sysadminfuture",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://t.me/sysadminfuture\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://t.me/sysadminfuture ===\n- URL Source: https://t.me/s/sysadminfuture\n- [](https://t.me/s/sysadminfuture)\n- _![Image 1](https://cdn4.telesco.pe/file/COMDK0aEioujk4BReIrXLGedS5mhEps1uha3fj68LAzAhMDNWvEkadGes6etUddSGM5yeSngXabsR3Ki\\_8faMhPmSJJm",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_131718.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261019_123257",
       "issue": "Auto",
       "category": "Проект: GlobalFilms (Filmtools)",
@@ -3244,48 +762,6 @@
       ]
     },
     {
-      "id": "kb-20261019_113433",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "Где информация которую ты узнал? используй NotebookLM для изучения видео для сбора знаний для с",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nИнформация, которую я использовал, пришла из следующих источников, которые находятся в папке C:\\Users\\Vlaslav\\Downloads\\Позновалка и в базе знаний, созданной системой NotebookLM:\n\n| Источник | Что было изучено | Где хранится результат |\n|----------|------------------|------------------------|\n| AI_Analysis_History.md | Анализ ссылок TikTok и Reddit, описание воронки JoinTECH, реко",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_113433.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
-      "id": "kb-20261019_112549",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "EVOLVE",
-      "source_url": "",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "🤖 Отчёт системы самообучения (Autonomous Swarm v3.0)\n\n 📚 Статус Google NotebookLM Bridge\n- CLI модуль (notebooklm-mcp-cli): ✅ Установлен (v0.15.4)\n- Python API (notebooklm-py): ✅ Установлен (v0.8.4)\n- Статус авторизации: 🟡 Требуется первичный вход\n> 💡 Шаг для входа: Выполните команду nlm login в консоли Windows. Откроется окно Google для подтверждения входа, после чего система сможет автоматически отправлять статьи",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_112549.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261019_111758",
       "issue": "Auto",
       "category": "Проект: Позновалка",
@@ -3307,27 +783,6 @@
       ]
     },
     {
-      "id": "kb-20261019_111755",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео ",
-      "source_url": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "Четкий ответ по существу задачи  \nВидео «NxTsA72O5x0» (Dan Martell) — практическое руководство по созданию высокоэффективной воронки продаж для цифровых продуктов и услуг. Ключевые моменты:\n\n| Этап | Что делается | Как это выглядит в видео |\n|------|--------------|--------------------------|\n| 1. Привлечение | Использовать короткие, целевые видео‑объявления (TikTok, YouTube Shorts) + таргетинг по интересам/поведению.",
-      "agent": "Swarm Knowledge & Media Extraction Agent",
-      "domain": "[[контент-пайплайн-veo-obsidian]]",
-      "related_projects": [
-        "12 IT Продуктов (Короче Капитан)",
-        "Alberta",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261019_111755.md",
-        "Ведущий агент: Swarm Knowledge & Media Extraction Agent"
-      ]
-    },
-    {
       "id": "kb-20261019_104051",
       "issue": "Auto",
       "category": "Проект: Позновалка",
@@ -3338,19 +793,6 @@
       "summary": "🧠 Автоматический разбор источников для Позновалка\n\nПроанализированные ссылки: https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h ===\n- ⚠️ Субтитры видео получить не удалось — разбор возможен только по заголовку и автору, не выдумывай содержание.\n- YouTube Видео: «The EASIEST AI Side Hustle To Start Today (",
       "action_items": [
         "Сохранено в Note_20261019_104051.md"
-      ]
-    },
-    {
-      "id": "kb-20261019_103623",
-      "issue": "Auto",
-      "category": "Проект: Позновалка",
-      "title": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&ut",
-      "source_url": "https://ads.reddit.com/register?promo_code=PPC500&ploc=2246&utm_medium=cpc&utm_source=google&utm_term=&utm_campaign=RP_PMAX_Google_Prospecting_MOFU_Reg-T1T2_EMEA_EU_EN_All_23736473219&utm_content=_m_&hsa_acc=1706531352&hsa_cam=23736473219&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23736483581",
-      "secondary_url": "",
-      "date": "19.10.2026",
-      "summary": "Четкий ответ по существу задачи  \nСсылка — страница регистрации рекламного аккаунта Reddit (промокод PPC500). Она представляет собой пошаговый процесс создания рекламного кабинета:  \n1. Регистрация/авторизация – ввод email и пароля.  \n2. Создание рекламной кампании – выбор цели (просмотры, клики, конверсии), бюджет, таргетинг.  \n3. Выбор формата объявлений – видео, карусель, изображение, текст.  \n4. Оплата – подключе",
-      "action_items": [
-        "Сохранено в Note_20261019_103623.md"
       ]
     },
     {
@@ -3392,19 +834,6 @@
       "summary": "🧠 Автоматический разбор источников для Traffic\n\nПроанализированные ссылки: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_region=nor&utm_medium=cpc&utm_source=google&utm_term=&utm_campaign=%5BNvm%5DEN-Nordics-PMax&utm_id=24240220289&hsa_acc=9242610695&hsa_cam=24240220289&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa",
       "action_items": [
         "Сохранено в Note_20261018_193822.md"
-      ]
-    },
-    {
-      "id": "kb-20261018_190430",
-      "issue": "Auto",
-      "category": "Проект: Thought/Мысль",
-      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so",
-      "source_url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
-      "secondary_url": "",
-      "date": "18.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Thought/Мысль\n\nПроанализированные ссылки: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src",
-      "action_items": [
-        "Сохранено в Note_20261018_190430.md"
       ]
     },
     {
@@ -3715,9 +1144,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 180,
+      "evidence_count": 145,
       "scope": "global",
-      "last_updated": "2026-11-08T23:03:20.033163"
+      "last_updated": "2026-10-30T00:09:49.550211"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -3725,9 +1154,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 233,
+      "evidence_count": 165,
       "scope": "global",
-      "last_updated": "2026-11-08T23:03:20.034799"
+      "last_updated": "2026-10-30T00:09:49.561058"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -3735,9 +1164,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 108,
+      "evidence_count": 87,
       "scope": "global",
-      "last_updated": "2026-11-08T23:02:22.909884"
+      "last_updated": "2026-10-30T00:09:49.564245"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -3745,9 +1174,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 87,
+      "evidence_count": 69,
       "scope": "global",
-      "last_updated": "2026-11-03T23:10:52.640741"
+      "last_updated": "2026-10-28T07:53:17.109022"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -3755,9 +1184,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 143,
+      "evidence_count": 105,
       "scope": "global",
-      "last_updated": "2026-11-08T23:02:22.911069"
+      "last_updated": "2026-10-30T00:09:49.570458"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -3765,9 +1194,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 176,
+      "evidence_count": 143,
       "scope": "global",
-      "last_updated": "2026-11-08T23:03:20.035876"
+      "last_updated": "2026-10-30T00:09:49.573721"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -3795,9 +1224,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 52,
+      "evidence_count": 40,
       "scope": "project:Alberta",
-      "last_updated": "2026-11-06T03:52:32.330627"
+      "last_updated": "2026-10-29T20:12:43.335267"
     },
     {
       "id": "autonomous-task-resolution",
@@ -3805,9 +1234,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 260,
+      "evidence_count": 181,
       "scope": "global",
-      "last_updated": "2026-11-08T23:03:20.037666"
+      "last_updated": "2026-10-30T00:09:49.575714"
     },
     {
       "id": "task-custom-request",
@@ -3815,9 +1244,9 @@
       "action": "Executed autonomously with report and choices",
       "confidence": 0.99,
       "domain": "operations",
-      "evidence_count": 55,
+      "evidence_count": 40,
       "scope": "project:Позновалка",
-      "last_updated": "2026-11-08T23:02:58.858514"
+      "last_updated": "2026-10-29T21:19:11.961253"
     },
     {
       "id": "task-status",
@@ -3868,16 +1297,6 @@
       "evidence_count": 2,
       "scope": "global",
       "last_updated": "2026-10-19T11:34:42.324403"
-    },
-    {
-      "id": "antigravity-cloud-remote-execution",
-      "trigger": "при постановке задач на длительные вычисления, сбор данных или фоновую работу",
-      "action": "Использовать архитектуру Google Antigravity Remote Agents: изолированный фоновый воркер без ожидания включенного ноутбука с фиксацией состояния в Git",
-      "confidence": 0.99,
-      "domain": "system-architecture",
-      "evidence_count": 42,
-      "scope": "global",
-      "last_updated": "2026-11-08T23:40:44.499129"
     }
   ]
 }
