@@ -1,4 +1,19 @@
 {
   "version": "29.0",
-  "actions": []
+  "actions": [
+    {
+      "id": "dirlog-1794699164925",
+      "ts": "2026-11-14T23:32:44.925245+00:00",
+      "time_local": "16:32:44",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "custom",
+      "project": "Главный Штаб",
+      "summary": "Поручение от @unityspiritpartners (Задача #64): Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инцидента 2025–2026 гг. с группировками BlackNevas и The Gentlemen. Общее в них одно: ",
+      "source": "telegram_bot"
+    }
+  ],
+  "updated_at": "2026-11-14T23:32:44.925245+00:00"
 }
