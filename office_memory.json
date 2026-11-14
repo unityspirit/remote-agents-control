@@ -1,10 +1,173 @@
 {
-  "version": "34.0",
-  "updated_at": "2026-11-14T00:09:56+00:00",
-  "cycle_count": 4,
-  "processed_triggers": [],
-  "studied_urls": [],
+  "version": "34.1",
+  "updated_at": "2026-11-14T03:07:53+00:00",
+  "cycle_count": 20,
+  "processed_triggers": [
+    "issue:47:auto:6823241610",
+    "issue:48:auto:6823241003",
+    "issue:51:comment:open",
+    "issue:52:comment:open",
+    "issue:50:auto:6823240175",
+    "issue:49:auto:6823239374",
+    "issue:53:comment:open",
+    "issue:54:comment:open",
+    "issue:46:auto:init",
+    "issue:45:auto:init",
+    "issue:44:auto:6808488696",
+    "issue:43:auto:init",
+    "issue:32:auto:init",
+    "issue:55:comment:open",
+    "issue:56:comment:open",
+    "issue:57:comment:open",
+    "issue:58:comment:open",
+    "issue:51:comment:6866762952",
+    "issue:56:comment:manual",
+    "issue:59:comment:open"
+  ],
+  "studied_urls": [
+    "https://t.me/lermontovplusbot?start=aliashirani",
+    "https://unityspirit.github.io/alberta-hub/",
+    "https://unityspirit.github.io/alberta-hub/international/",
+    "https://www.reptbattero.com/",
+    "https://www.softswiss.com/",
+    "https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_conv",
+    "https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_conv&utm_content=mark-eting&utm_term=&gad_source=2&gad_campaignid=23951194982",
+    "https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
+    "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+    "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm_type=demgen&utm_acc=3067916666&gad_source=2&gad_campaignid=24417053234&pivex_attribution_id=617592ba-d561-4eca-801e-483d299214de&pageindex=landing",
+    "https://www.comss.ru/page.php?id=22854",
+    "https://www.comss.ru/page.php?id=22853",
+    "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+    "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+    "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+    "https://www.instagram.com/quest_ptg/",
+    "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
+    "https://www.altahq.com/lp/ai-calling-agent",
+    "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7",
+    "https://www.youtube.com/shorts/uz-zrN-3b2A",
+    "https://t.me/nazare_info_bot?start=l_nenoiai"
+  ],
   "learned_facts": [
+    {
+      "at": "2026-11-12T16:52:37+00:00",
+      "topic": "Задача #47: CMD: RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta | PROJ: Alberta",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta | PROJ: Alberta\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнение или команду (`/ceo`, `/strategy`, `/viral`, `/expert`) в ответ, и облачный агент продолжи",
+      "source": "issue #47"
+    },
+    {
+      "at": "2026-11-12T16:52:38+00:00",
+      "topic": "Задача #48: CMD: Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽ | PROJ: Alberta",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽ | PROJ: Alberta\n\n**Изученные материалы:**\n- 🔗 **Telegram: Launch @lermontovplusbot** (`https://t.me/lermontovplusbot?start=aliashirani`): Telegram: Launch @lermontovplusbot Download Alberta @lermontovplusbot Start Bot If you have Telegram , you can launch Alberta",
+      "source": "issue #48"
+    },
+    {
+      "at": "2026-11-12T17:05:32+00:00",
+      "topic": "Задача #51: CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнение или команду (`/ceo`, `/strategy`, `/viral`, `/expert`) в ответ, и облачн",
+      "source": "issue #51"
+    },
+    {
+      "at": "2026-11-12T17:07:49+00:00",
+      "topic": "Задача #52: CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнение или команду (`/ceo`, `/strategy`, `/viral`, `/expert`) в ответ, и облачн",
+      "source": "issue #52"
+    },
+    {
+      "at": "2026-11-12T17:09:14+00:00",
+      "topic": "Задача #50: CMD: TIM: Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на все",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с | PROJ: Входящие_Офис\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнение",
+      "source": "issue #50"
+    },
+    {
+      "at": "2026-11-12T17:09:15+00:00",
+      "topic": "Задача #49: CMD: TIM: 1. Продукт & Закрытый Клуб | PROJ: Traffic",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: 1. Продукт & Закрытый Клуб | PROJ: Traffic\n\n**Изученные материалы:**\n- 🔗 **Alberta Shirani × Global Spirit Group | Персональный Бизнес-Хаб & Бренд-Бук** (`https://unityspirit.github.io/alberta-hub/`): Alberta Shirani × Global Spirit Group | Персональный Бизнес-Хаб & Бренд-Бук 🔒 ПЕРСОНАЛЬНЫЙ ОФИС · ДОСТУП Alberta Shirani Бизнес-хаб продюсировани",
+      "source": "issue #49"
+    },
+    {
+      "at": "2026-11-12T19:53:06+00:00",
+      "topic": "Задача #53: CMD: TIM: Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpa",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business | PROJ: Белый Доминикана\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнен",
+      "source": "issue #53"
+    },
+    {
+      "at": "2026-11-12T20:02:20+00:00",
+      "topic": "Задача #54: CMD: https://www.reptbattero.com/ | PROJ: Входящие_Офис",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: https://www.reptbattero.com/ | PROJ: Входящие_Офис\n\n**Изученные материалы:**\n- 🔗 **Lithium Battery Manufacturer for EV & ESS Solutions | REPT BATTERO** (`https://www.reptbattero.com/`): Lithium Battery Manufacturer for EV & ESS Solutions | REPT BATTERO Skip to content Home Solutions Products Projects R&D Industrial Chain About News Contact Energy St",
+      "source": "issue #54"
+    },
+    {
+      "at": "2026-11-12T22:33:48+00:00",
+      "topic": "Задача #46: CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from thi",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money | PROJ: Входящие_Офис\n\n**Изученные материалы:**\n- 🔗 **Online Casino Software – B2B iGaming Provider | SOFTSWISS** (`https://www.softswiss.com/`): Online Casino Software – B2B iGaming Provider | SOFTSW",
+      "source": "issue #46"
+    },
+    {
+      "at": "2026-11-12T22:33:49+00:00",
+      "topic": "Задача #45: CMD: 📷 Изучить фото (3 шт.) для True 1 Team | PROJ: True 1 Team",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: 📷 Изучить фото (3 шт.) для True 1 Team | PROJ: True 1 Team\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнение или команду (`/ceo`, `/strategy`, `/viral`, `/expert`) в ответ, и облачный агент продолжит автоматически даж",
+      "source": "issue #45"
+    },
+    {
+      "at": "2026-11-13T02:54:55+00:00",
+      "topic": "Задача #44: CMD: TIM: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_conv | PROJ: True 1 Team\n\n**Изученные материалы:**\n- 🔗 **Mark Eting** (`https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_co",
+      "source": "issue #44"
+    },
+    {
+      "at": "2026-11-13T02:54:56+00:00",
+      "topic": "Задача #43: CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go | PROJ: Входящие_Офис\n\n**Изученные материалы:**\n- 🔗 **Mark Eting** (`https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go`): Mark Eting Mark Eting's favorite AI platform. Meet Mark. He",
+      "source": "issue #43"
+    },
+    {
+      "at": "2026-11-13T10:28:35+00:00",
+      "topic": "Задача #32: 📊 СВОДНЫЙ АУДИТ ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЕЙ И СИСТЕМЫ (ПОЛНЫЙ ДОСТУП @unityspiritpartners)",
+      "insight": "🤖 **24/7 Облачный Агент (Технический Эксперт) выполнил разбор в облаке**\n\n**Задача:** 📊 СВОДНЫЙ АУДИТ ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЕЙ И СИСТЕМЫ (ПОЛНЫЙ ДОСТУП @unityspiritpartners)\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован контекст задачи и сохранён в облачной памяти офиса (`office_memory.json`).\n2. Подготовлен план дальнейшего действия — напишите уточнение или команду (`/ceo`, `/strategy`, `/viral`, `/expert`) в ответ, и облачный агент продолжит авт",
+      "source": "issue #32"
+    },
+    {
+      "at": "2026-11-13T20:52:06+00:00",
+      "topic": "Задача #55: CMD: TIM: https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&u",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm | PROJ: Входящие_Офис\n\n**Изученные материалы:**\n- 🔗 **Pivex Funded - Proprietary Trading Firm | Get Funded to Trade** (`https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=2441705",
+      "source": "issue #55"
+    },
+    {
+      "at": "2026-11-13T21:23:20+00:00",
+      "topic": "Задача #57: CMD: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and con",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue | PROJ: Входящие_Офис\n\n**Изученные материалы:**\n- 🔗 **Instagram** (`https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0`): Instagram {\"require\":[[\"replaceNativeT...\n- ⚠️ Не удалось открыть `https://www.instag",
+      "source": "issue #57"
+    },
+    {
+      "at": "2026-11-13T21:23:45+00:00",
+      "topic": "Задача #58: CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDI",
+      "insight": "🤖 **24/7 Облачный Агент (Облачный Совет Агентов 24/7) выполнил разбор в облаке**\n\n**Задача:** CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 | PROJ: Traffic\n\n**Изученные материалы:**\n- 🔗 **Instagram** (`https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0`): Instagram {\"require...\n\n**Итоговые шаги выполнения:**\n1. Зафиксирован ко",
+      "source": "issue #58"
+    },
+    {
+      "at": "2026-11-13T22:43:30+00:00",
+      "topic": "Задача #51: CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta",
+      "insight": "⚛️ **Antigravity 2.0 Cloud (Облачный Совет Агентов 24/7 (Hydrogen)) — структурированный разбор 24/7**\n\n**Задача:** CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta\n\n**Прикладной план и внедрение (Carbon ↔ Hydrogen):**\n1. Контекст задачи и извлечённые материалы сохранены в облачную память офиса (`office_memory.json`).\n2. Оцените применимость для ключевых воронок (B2B AI Voice AltaDesk / Traffic / ",
+      "source": "issue #51"
+    },
+    {
+      "at": "2026-11-13T22:44:07+00:00",
+      "topic": "Задача #56: CMD: TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения | PROJ: Входящи",
+      "insight": "⚛️ **Antigravity 2.0 Cloud (CEO Стратег) — структурированный разбор 24/7**\n\n**Задача:** CMD: TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения | PROJ: Входящие_Офис\n\n**Изученные источники и извлечённые факты:**\n- 🔗 **Приложение COMSS AI 2.0 получило поддержку Google Antigravity** (`https://www.comss.ru/page.php?id=22854`)\n  > В COMSS AI 2.0 для Windows появилась поддержка Google Antigravit",
+      "source": "issue #56"
+    },
+    {
+      "at": "2026-11-13T22:46:12+00:00",
+      "topic": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FR",
+      "insight": "Изучено (Проект: Входящие_Офис): «SCW26 - YOUTUBE - GNSS ACADEMY». Ключевое: SCW26 - YOUTUBE - GNSS ACADEMY FREE · LIVE ONLINE · NOV 9 · 2 WEEKS · 8 PM (PARIS TIME) SPACE CAREER WEEK 2026 Discover where your engineering background fits in Space, and leave with your roadmap to get there Free certified training with Eduardo Tapias, ESA trainer with 25+ years in the European space industry. Learn ",
+      "source": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04"
+    },
+    {
+      "at": "2026-11-13T23:26:52+00:00",
+      "topic": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so",
+      "insight": "Изучено (Проект: Thought/Мысль): «Gartner® Predicts 2026: Intelligent Applications». Ключевое: If you",
+      "source": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retarget"
+    },
     {
       "at": "2026-11-14T00:09:56+00:00",
       "topic": "v34.0 Antigravity 2.31 + Gemini 4 Upgrade (HQ Architecture)",
@@ -19,9 +182,361 @@
       "at": "2026-11-14T00:09:56+00:00",
       "topic": "v34.0 Alberta Funnel Pivot (#47-#50)",
       "insight": "Вектор клуба для @aliashirani переключён на тотальную трансформацию и перезагрузку женщин 30-50 лет (триггер выгорания/отложенной жизни -> 90-сек AI-диагностика + 7-дневный челлендж 990-1490 ₽ -> клуб 1500-3500 ₽/мес на цель 1 000 000 ₽)."
+    },
+    {
+      "at": "2026-11-14T00:12:20+00:00",
+      "topic": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
+      "insight": "Изучено (Проект: Unity Inc): «AI Sales Calling Agent | Alex by Alta». Ключевое: Meet Alex, Alta’s AI Sales Agent. Automate calls, book meetings, and engage prospects with precision using advanced AI tools. Try Alex today.",
+      "source": "https://www.altahq.com/lp/ai-calling-agent"
+    },
+    {
+      "at": "2026-11-14T02:10:48+00:00",
+      "topic": "Задача #59: CMD: https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service | PR",
+      "insight": "⚛️ **Antigravity 2.31 Cloud (Облачный Совет Агентов 24/7 (Hydrogen)) — структурированный разбор 24/7**\n\n**Задача:** CMD: https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service | PROJ: Входящие_Офис\n\n**Изученные источники и извлечённые факты:**\n- 🔗 **Свой ИИ для компании: 8 слоёв внутри - YouTube** (`https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7`)\n  > Как сделать свой ИИ ",
+      "source": "issue #59"
+    },
+    {
+      "at": "2026-11-14T03:07:53+00:00",
+      "topic": "v34.1 #59: Свой ИИ для компании (8 слоёв) — внедрено в ядро Офиса",
+      "insight": "Реализованы все 8 слоёв архитектуры из #59: Gemini4/GitHubModels роутер, дедуплицированная RAG-память (177->63), YouTube oEmbed, RBAC + Bot Gate, <untrusted_web_data> фильтр инъекций и редактирование секретов, scoping concurrency в cloud_agents_24_7.yml против отмены очередей, анти-дрейф фильтр промо-ссылок и единичный lock tg_bot_poller.py.",
+      "source": "issue #59 + v34.1 audit"
+    },
+    {
+      "at": "2026-11-14T03:07:53+00:00",
+      "topic": "Аудит Авто- и Транспортных перспектив (Detailing, VT VIP, Егор Трансфер, Пора за Руль)",
+      "insight": "1) elite-detailing-en (896 кадров WebP): нужно заменить заглушки YOUR COMPANY/YOUR PHONE и связать с AltaHQ Voice Booking ($1,200). 2) Визуализированый Транспорт (VT VIP импорт до 2л/200лс): в index.html стоит заглушка +7 495 000 00 00. 3) Егор Трансфер (1,133 файла, RU/EN/AR): готов к приёму TG-лидов, 0 выполненных задач. 4) Автошкола Пора за Руль: 2 видео 16:9/9:16 + КП .docx готовы к запуску TG/Reels воронки.",
+      "source": "workspace surface & automotive audit 2026-11-13"
     }
   ],
-  "projects": {},
-  "recent_events": [],
+  "projects": {
+    "KHL Sports Quant Predictor": {
+      "folder": "Юра",
+      "priority": "P1",
+      "status": "paused_offline_local",
+      "owner": "Юрий Вяткин / @yvyatkin"
+    },
+    "AI Crypto Trading Bot (Freqtrade)": {
+      "folder": "Юра",
+      "priority": "P1",
+      "status": "paused_offline_local",
+      "owner": "Юрий Вяткин / @yvyatkin"
+    },
+    "8 Diverse Cinematic Demo Websites": {
+      "folder": "Development",
+      "priority": "P2",
+      "status": "ready_for_sale",
+      "owner": "Власлав / @unityspiritpartners"
+    },
+    "Unity Spirit 3D Website & Pyatigorsk Demos": {
+      "folder": "delaem%20prezervativ 2",
+      "priority": "P2",
+      "status": "developed",
+      "owner": "Власлав / @unityspiritpartners"
+    },
+    "Alberta Shirani Luxury Website": {
+      "folder": "Saitodel",
+      "priority": "P1",
+      "status": "in_progress",
+      "owner": "Власлав / @unityspiritpartners"
+    },
+    "Portfolio Website Expansion Strategy": {
+      "folder": "Websites",
+      "priority": "P2",
+      "status": "active",
+      "owner": "Власлав / @unityspiritpartners"
+    },
+    "Unity Platform & Casting Assistant Bot": {
+      "folder": "Development",
+      "priority": "P2",
+      "status": "active",
+      "owner": "Власлав / @unityspiritpartners"
+    },
+    "Businesses Without Websites Scraper": {
+      "folder": "Global Web Market",
+      "priority": "P1",
+      "status": "active",
+      "owner": "Генеральный Директор Тим & @true1team"
+    },
+    "Auto Detailing B2B Leadgen": {
+      "folder": "Detailing",
+      "priority": "P1",
+      "status": "active",
+      "owner": "Генеральный Директор Тим & @true1team"
+    },
+    "Comparee.ai & LinkedIn Lead Scraping": {
+      "folder": "delaem%20prezervativ 2",
+      "priority": "P2",
+      "status": "active",
+      "owner": "Генеральный Директор Тим & @true1team"
+    },
+    "Stealth Lead Tracking & Email Sequences": {
+      "folder": "Global + Orders",
+      "priority": "P2",
+      "status": "active",
+      "owner": "Генеральный Директор Тим & @true1team"
+    },
+    "Upwork Session Cookies Outreach": {
+      "folder": "Upwork",
+      "priority": "P2",
+      "status": "ready",
+      "owner": "Генеральный Директор Тим & @true1team"
+    },
+    "15 Industry Prompts Mega-Pack": {
+      "folder": "PromptMaster",
+      "priority": "P2",
+      "status": "completed",
+      "owner": "PromptMaster"
+    },
+    "Veo Video Commercial Pipelines": {
+      "folder": "PromptMaster",
+      "priority": "P1",
+      "status": "active",
+      "owner": "PromptMaster"
+    },
+    "Elite Auto Salon & Luxury Prompts": {
+      "folder": "PromptMaster",
+      "priority": "P2",
+      "status": "active",
+      "owner": "PromptMaster"
+    },
+    "Контент-Ферма 50 Видео/День (shag-video.ru)": {
+      "folder": "Study",
+      "priority": "P1",
+      "status": "in_implementation",
+      "owner": "Traffic Team & Alberta"
+    },
+    "Feminamind Tripwire Funnels ($7–$27)": {
+      "folder": "delaem%20prezervativ 2",
+      "priority": "P2",
+      "status": "ready_to_launch",
+      "owner": "Traffic Team & Alberta"
+    },
+    "Instagram Monetization Funnel (Alberta)": {
+      "folder": "Alberta",
+      "priority": "P1",
+      "status": "active",
+      "owner": "Traffic Team & Alberta"
+    },
+    "YouTube Creator & Visual Remake 111": {
+      "folder": "Vlaslove",
+      "priority": "P2",
+      "status": "active",
+      "owner": "Traffic Team & Alberta"
+    },
+    "Virtual Office v34.0 (Antigravity 2.31 Remote Control)": {
+      "folder": "System 1",
+      "priority": "P1",
+      "status": "live_v34",
+      "owner": "Власлав & Генеральный Директор Тим"
+    },
+    "SoloMan Autonomous CRM": {
+      "folder": "SoloMan",
+      "priority": "P2",
+      "status": "completed",
+      "owner": "Власлав & Генеральный Директор Тим"
+    },
+    "Globalmarket Autonomous Hub (Abacus.AI Model)": {
+      "folder": "Vlaslove",
+      "priority": "P2",
+      "status": "architected",
+      "owner": "Власлав & Генеральный Директор Тим"
+    },
+    "Scam Check & Anti-Phishing Sentinel": {
+      "folder": "delaem%20prezervativ 2",
+      "priority": "P2",
+      "status": "active",
+      "owner": "Власлав & Генеральный Директор Тим"
+    },
+    "Belarus Regional Telegram Services": {
+      "folder": "Белорусь",
+      "priority": "P3",
+      "status": "active",
+      "owner": "Власлав & Генеральный Директор Тим"
+    }
+  },
+  "recent_events": [
+    {
+      "at": "2026-11-12T16:52:37+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 47,
+      "url": null,
+      "summary": "#47 (Облачный Совет Агентов 24/7): CMD: RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta | PROJ: Alberta"
+    },
+    {
+      "at": "2026-11-12T16:52:38+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 48,
+      "url": null,
+      "summary": "#48 (Облачный Совет Агентов 24/7): CMD: Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽ | PROJ: Alberta"
+    },
+    {
+      "at": "2026-11-12T17:05:32+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 51,
+      "url": null,
+      "summary": "#51 (Облачный Совет Агентов 24/7): CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta"
+    },
+    {
+      "at": "2026-11-12T17:07:49+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 52,
+      "url": null,
+      "summary": "#52 (Облачный Совет Агентов 24/7): CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta"
+    },
+    {
+      "at": "2026-11-12T17:09:14+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 50,
+      "url": null,
+      "summary": "#50 (Облачный Совет Агентов 24/7): CMD: TIM: Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-12T17:09:15+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 49,
+      "url": null,
+      "summary": "#49 (Облачный Совет Агентов 24/7): CMD: TIM: 1. Продукт & Закрытый Клуб | PROJ: Traffic"
+    },
+    {
+      "at": "2026-11-12T19:53:06+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 53,
+      "url": null,
+      "summary": "#53 (Облачный Совет Агентов 24/7): CMD: TIM: Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business | PROJ: Белый Доминикана"
+    },
+    {
+      "at": "2026-11-12T20:02:20+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 54,
+      "url": null,
+      "summary": "#54 (Облачный Совет Агентов 24/7): CMD: https://www.reptbattero.com/ | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-12T22:33:48+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 46,
+      "url": null,
+      "summary": "#46 (Облачный Совет Агентов 24/7): CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-12T22:33:49+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 45,
+      "url": null,
+      "summary": "#45 (Облачный Совет Агентов 24/7): CMD: 📷 Изучить фото (3 шт.) для True 1 Team | PROJ: True 1 Team"
+    },
+    {
+      "at": "2026-11-13T02:54:55+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 44,
+      "url": null,
+      "summary": "#44 (Облачный Совет Агентов 24/7): CMD: TIM: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=google&utm_medium=cpc&utm_campaign=global_all_demgen_mark-eting_na_na_conv | PROJ: True 1 Team"
+    },
+    {
+      "at": "2026-11-13T02:54:56+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 43,
+      "url": null,
+      "summary": "#43 (Облачный Совет Агентов 24/7): CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-13T10:28:35+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 32,
+      "url": null,
+      "summary": "#32 (Технический Эксперт): 📊 СВОДНЫЙ АУДИТ ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЕЙ И СИСТЕМЫ (ПОЛНЫЙ ДОСТУП @unityspiritpartners)"
+    },
+    {
+      "at": "2026-11-13T20:52:06+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 55,
+      "url": null,
+      "summary": "#55 (Облачный Совет Агентов 24/7): CMD: TIM: https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-13T20:53:08+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 56,
+      "url": null,
+      "summary": "#56 (Облачный Совет Агентов 24/7): CMD: TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-13T21:23:20+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 57,
+      "url": null,
+      "summary": "#57 (Облачный Совет Агентов 24/7): CMD: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-13T21:23:45+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 58,
+      "url": null,
+      "summary": "#58 (Облачный Совет Агентов 24/7): CMD: TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 | PROJ: Traffic"
+    },
+    {
+      "at": "2026-11-13T22:43:30+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 51,
+      "url": null,
+      "summary": "#51 (Облачный Совет Агентов 24/7 (Hydrogen) / structured-cloud-analyzer): CMD: /ceo Оцени экономический эффект и риски: QA Проверка поля ввода и 24/7 агентов | PROJ: Alberta"
+    },
+    {
+      "at": "2026-11-13T22:44:07+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 56,
+      "url": null,
+      "summary": "#56 (CEO Стратег / structured-cloud-analyzer): CMD: TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения | PROJ: Входящие_Офис"
+    },
+    {
+      "at": "2026-11-13T22:44:18+00:00",
+      "kind": "cloud_study",
+      "issue": null,
+      "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+      "summary": "Изучен материал (structured-cloud-analyzer): Изучить фото (3 шт.) для True 1 Team"
+    },
+    {
+      "at": "2026-11-13T22:46:12+00:00",
+      "kind": "cloud_study",
+      "issue": null,
+      "url": "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
+      "summary": "Изучен материал (structured-cloud-analyzer): https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FR"
+    },
+    {
+      "at": "2026-11-13T23:26:51+00:00",
+      "kind": "study_skip",
+      "issue": null,
+      "url": "https://www.instagram.com/quest_ptg/",
+      "summary": "URL недоступен: https://www.instagram.com/quest_ptg/ (HTTP Error 429: Too Many Requests)"
+    },
+    {
+      "at": "2026-11-13T23:26:52+00:00",
+      "kind": "study_skip",
+      "issue": null,
+      "url": "https://www.instagram.com/quest_ptg/",
+      "summary": "URL недоступен: https://www.instagram.com/quest_ptg/ (HTTP Error 429: Too Many Requests)"
+    },
+    {
+      "at": "2026-11-13T23:26:52+00:00",
+      "kind": "cloud_study",
+      "issue": null,
+      "url": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_ENG_-_Gartner_Predicts_-_Retargeting_-_Demand_Gen&utm_content=194121865846&utm_term=&utm_id=23758715662&hsa_acc=3291578710&hsa_cam=23758715662&hsa_grp=194121865846&hsa_ad=805355427016&hsa_src=ytis&hsa_tgt=aud-2423854277168&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=2&gad_campaignid=23758715662",
+      "summary": "Изучен материал (structured-cloud-analyzer): https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_so"
+    },
+    {
+      "at": "2026-11-14T00:12:20+00:00",
+      "kind": "cloud_study",
+      "issue": null,
+      "url": "https://www.altahq.com/lp/ai-calling-agent",
+      "summary": "Изучен материал (structured-cloud-analyzer): /ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис"
+    },
+    {
+      "at": "2026-11-14T02:10:48+00:00",
+      "kind": "cloud_task_executed",
+      "issue": 59,
+      "url": null,
+      "summary": "#59 (Облачный Совет Агентов 24/7 (Hydrogen) / structured-cloud-analyzer): CMD: https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service | PROJ: Входящие_Офис"
+    }
+  ],
   "failed_urls": {}
 }
