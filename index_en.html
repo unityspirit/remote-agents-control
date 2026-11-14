@@ -8093,17 +8093,41 @@ textarea.task-inline-input {
             ]
         };
 
-        kbItems.unshift(newEntry);
+        const normTitle = (newEntry.title || "").toLowerCase().replace(/\s+/g, " ").trim().slice(0, 110);
+        const normUrl = (newEntry.source_url || "").toLowerCase().split("?")[0].trim();
+        const isDupEntry = (x) => {
+            if (!x) return false;
+            if (x.id === newEntry.id) return true;
+            const xt = (x.title || "").toLowerCase().replace(/\s+/g, " ").trim().slice(0, 110);
+            const xu = (x.source_url || "").toLowerCase().split("?")[0].trim();
+            return (normTitle && xt === normTitle && (!normUrl || !xu || xu === normUrl));
+        };
+        const existingLocalIdx = kbItems.findIndex(isDupEntry);
+        if (existingLocalIdx >= 0) {
+            kbItems[existingLocalIdx] = Object.assign({}, kbItems[existingLocalIdx], {
+                issue: newEntry.issue || kbItems[existingLocalIdx].issue,
+                summary: (newEntry.summary && newEntry.summary.length > (kbItems[existingLocalIdx].summary || "").length) ? newEntry.summary : kbItems[existingLocalIdx].summary,
+                date: newEntry.date
+            });
+        } else {
+            kbItems.unshift(newEntry);
+        }
         localStorage.setItem("crm_kb_cache", JSON.stringify(kbItems.slice(0, 50)));
         renderKnowledgeBase();
 
-        // Также записываем напрямую в ветку data/crm_data.json на GitHub
+        // Также записываем напрямую в ветку data/crm_data.json на GitHub (с защитой от дубликатов)
         try {
             const existing = await readRepoJson("crm_data.json");
             const crmObj = (existing && existing.json) ? existing.json : { version: "10.0", knowledge_base: [] };
             if (!Array.isArray(crmObj.knowledge_base)) crmObj.knowledge_base = [];
-            // Append-only union: never drop existing entries!
-            if (!crmObj.knowledge_base.some(x => x && x.id === newEntry.id)) {
+            const dupIdx = crmObj.knowledge_base.findIndex(isDupEntry);
+            if (dupIdx >= 0) {
+                crmObj.knowledge_base[dupIdx] = Object.assign({}, crmObj.knowledge_base[dupIdx], {
+                    issue: newEntry.issue || crmObj.knowledge_base[dupIdx].issue,
+                    summary: (newEntry.summary && newEntry.summary.length > (crmObj.knowledge_base[dupIdx].summary || "").length) ? newEntry.summary : crmObj.knowledge_base[dupIdx].summary,
+                    date: newEntry.date
+                });
+            } else {
                 crmObj.knowledge_base.unshift(newEntry);
             }
             crmObj.updated_at = new Date().toISOString();
@@ -8235,7 +8259,7 @@ textarea.task-inline-input {
                 if (cloudDigest) {
                     try {
                         await ghApi("/issues/" + created.number + "/comments", "POST", {
-                            body: "### ☁️ Материал сохранен в «Позновалку» (Автономный облачный режим)\n\n**Источник:** " + urls.join(", ") + "\n\n#### 📌 Первичная выжимка со страницы:\n• " + cloudDigest
+                            body: "### ☁️ Материал сохранен в «Позновалку» (Автономный облачный режим)\n\n**Источник:** " + urls.join(", ") + "\n\n#### 📌 Первичная выжимка со страницы:\n• " + cloudDigest + "\n<!-- office-ui-auto-note -->"
                         }, true);
                     } catch (ce) {}
                 }
