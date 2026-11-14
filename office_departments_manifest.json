@@ -12,8 +12,8 @@
         "conv_id": "188674d1-58d7-4632-8dfb-b0b6910606fe",
         "priority": "P1",
         "priority_label": "🔥 Высший (КХЛ Сигналы)",
-        "status": "active_running",
-        "pid": 12696,
+        "status": "paused_offline_local",
+        "note": "Остановлен локально (архивный PID 12696 на ПК; готов к запуску из папки Юра)",
         "metrics": "82 матча · WinRate 82.9% · ROI +53.4% · Brier 0.1716",
         "action": "Ежедневная VIP-рассылка в @Vlaslovebot (3,900 ₽/мес) и CPA eToro ($200-600)"
       },
@@ -23,8 +23,8 @@
         "conv_id": "76516183-42c1-4bdb-bc50-23038a4ecb45",
         "priority": "P1",
         "priority_label": "🔥 Высший (Крипто Трейдинг)",
-        "status": "active_running",
-        "pid": 17936,
+        "status": "paused_offline_local",
+        "note": "Остановлен локально (архивный PID 17936 на ПК; Web UI :8060 выключен)",
         "metrics": "UptrendDipVolStrategy · Порт 8060 · Dry-run мониторинг",
         "action": "Синхронизация котировок Bybit/Binance и репликация доходности"
       }
@@ -244,13 +244,13 @@
     "folder": "System 1",
     "projects": [
       {
-        "name": "Virtual Office v26.0 (Remote Agents Control)",
+        "name": "Virtual Office v34.0 (Antigravity 2.31 Remote Control)",
         "folder": "System 1",
         "conv_id": "5eeab7b0-daf5-414c-a3a0-2d6062b877fe",
         "priority": "P1",
         "priority_label": "🔥 Высший (Главный Центр)",
-        "status": "live_v26",
-        "metrics": "PWA интерфейс · 24/7 Телеметрия · NotebookLM RAG · Модалки офферов",
+        "status": "live_v34",
+        "metrics": "PWA интерфейс v34.0 · Argon ↔ Carbon ↔ Hydrogen · Automations Cockpit · Cloud 24/7",
         "action": "Центральное управление всеми процессами и агентами"
       },
       {
