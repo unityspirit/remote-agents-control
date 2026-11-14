@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync (v34.1 Antigravity 2.31 + 8-Layer AI)
+      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync (v34.2 Antigravity 2.31 + Inter-Bot Mesh)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GTP_SYNC_TOKEN: ${{ secrets.GTP_SYNC_TOKEN }}
@@ -63,7 +63,7 @@ jobs:
           GITHUB_MODELS_FRONTIER: "openai/gpt-4o"
           GITHUB_MODELS_FAST: "openai/gpt-4o-mini"
           GEMINI_THINKING_LEVEL: "high"
-          OFFICE_VERSION: "34.1"
+          OFFICE_VERSION: "34.2"
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}
