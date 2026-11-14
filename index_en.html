@@ -2492,8 +2492,8 @@ textarea.task-inline-input {
         <div class="telemetry-pill" onclick="openNotebookLMModal()" style="border-color:rgba(6,182,212,0.3); color:#38bdf8;">
             <span>📓 NotebookLM RAG</span>
         </div>
-        <div class="telemetry-pill" onclick="openAntigravityModal()" style="border-color:rgba(139,92,246,0.45); color:#c4b5fd;" title="Google Antigravity 2.0 Orchestrator & Gemini 4 Hydrogen">
-            <span>⚛️ Hydrogen 2.0</span>
+        <div class="telemetry-pill" onclick="openAntigravityModal()" style="border-color:rgba(139,92,246,0.45); color:#c4b5fd;" title="Google Antigravity 2.31 (Argon ↔ Carbon ↔ Hydrogen)">
+            <span>⚛️ Antigravity 2.31</span>
         </div>
         <div class="telemetry-pill" onclick="openMvpLaunchModal()" style="border-color:rgba(245,158,11,0.3); color:#fbbf24;">
             <span>🚀 MVP: Voice AI (94%)</span>
@@ -2641,7 +2641,7 @@ textarea.task-inline-input {
         <div class="brand-row">
             <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Global Spirit Group" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Global Spirit Group 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
             <div class="brand-titles">
-                <h1 id="brand-header-title">Global Spirit Group ★ Виртуальный Офис</h1>
+                <h1 id="brand-header-title">Global Spirit Group ★ Virtual Office</h1>
                 <div class="worker-pill" id="topbar-worker-pill" onclick="openAntigravityModal()" style="cursor:pointer;" title="Google Antigravity 2.31 (Argon / Carbon / Hydrogen) · Automations & 24/7 Cloud (v34.0)">
                     <span class="status-dot cloud" id="worker-dot" style="background:#38bdf8; box-shadow:0 0 10px #38bdf8;"></span>
                     <span id="worker-text">☁️ Antigravity 2.31 Cloud: checking...</span>
@@ -3338,7 +3338,7 @@ textarea.task-inline-input {
     <div class="auth-gate-card">
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
-            <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
+            <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Virtual Office
                 <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v34.0</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
@@ -3481,7 +3481,7 @@ textarea.task-inline-input {
             <div style="display:flex; align-items:center; gap:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:10px 12px;">
                 <img src="icons/icon-192.png" alt="3D App Logo" style="width:62px; height:62px; border-radius:16px; object-fit:cover; border:1px solid rgba(96,165,250,0.5); flex-shrink:0;">
                 <div>
-                    <div style="font-weight:900; font-size:0.94rem;">Global Spirit Group ★ Виртуальный Офис</div>
+                    <div style="font-weight:900; font-size:0.94rem;">Global Spirit Group ★ Virtual Office</div>
                     <div style="font-size:0.74rem; color:var(--text-dim); margin-top:2px;">Полноэкранное приложение для iPhone, Android, Windows и Mac (3D Глобус & Самолёты)</div>
                 </div>
             </div>
@@ -10380,7 +10380,7 @@ function sendQuickGuestPromptPortal(txt) {
                        "Tap below to jump directly, or ask me anything:\n" +
                        "[[NAV:12apps|📁 Open 12 IT Products]] [[NAV:traffic|🚦 Open Traffic & Funnels]] [[NAV:reports|📊 Open Work Reports]] [[NAV:tim|👑 Open Director Tim]]";
             }
-            return "👋 **Здравствуйте! Рад приветствовать вас в Global Spirit Group ★ Виртуальный Офис!**\n\n" +
+            return "👋 **Здравствуйте! Рад приветствовать вас в Global Spirit Group ★ Virtual Office!**\n\n" +
                    "Я ваш персональный **ИИ-Ассистент и Навигатор экосистемы**. Я помогаю работать с задачами и мгновенно перемещаться по офису:\n" +
                    "• 📁 **12 IT Продуктов** — готовые Telegram Mini Apps под ключ\n" +
                    "• 🚦 **Трафик и Воронки** — привлечение клиентов с оплатой за результат\n" +
@@ -10730,7 +10730,7 @@ function sendQuickGuestPromptPortal(txt) {
                 const prefModel = (typeof localStorage !== "undefined" && localStorage.getItem("gsg_hydrogen_model")) || "auto";
                 const hThink = (typeof localStorage !== "undefined" && localStorage.getItem("gsg_hydrogen_thinking")) || "high";
                 const chosenModel = typeof selectAntigravityClientModel === "function" ? selectAntigravityClientModel(prefModel, msg) : (prefModel === "auto" ? "gemini-4-hydrogen" : prefModel);
-                const sysPrompt = "Ты встроенный ИИ-директор Global Spirit Group ★ Виртуальный Офис (v34.0 Antigravity 2.31). Отвечай кратко, по делу, без галлюцинаций. Текущий проект: " + (currentProject || "Офис") + ".";
+                const sysPrompt = "Ты встроенный ИИ-директор Global Spirit Group ★ Virtual Office (v34.0 Antigravity 2.31). Отвечай кратко, по делу, без галлюцинаций. Текущий проект: " + (currentProject || "Офис") + ".";
                 const resCall = await callGeminiDirectClient(activeHKey, chosenModel, hThink, sysPrompt, msg, 1200);
                 if (resCall && resCall.ok && resCall.text) {
                     replyText = "⚛️ **" + resCall.model + " (`" + hThink + "`):**\n\n" + resCall.text;
@@ -10857,7 +10857,7 @@ function sendQuickGuestPromptPortal(txt) {
         } else if (urlParams.get("lang") === "ru") {
             currentOfficeLang = "ru";
         } else if (pathLower.includes("index_en")) {
-            currentOfficeLang = localStorage.getItem("unity_office_lang") || "en";
+            currentOfficeLang = "en";
         } else {
             currentOfficeLang = localStorage.getItem("unity_office_lang") || "ru";
         }
@@ -10925,7 +10925,7 @@ function sendQuickGuestPromptPortal(txt) {
             study_drawer_btn: "🚀 Запустить анализ агентами",
             
             // Auth gate
-            auth_title: "Global Spirit Group ★ Виртуальный Офис",
+            auth_title: "Global Spirit Group ★ Virtual Office",
             auth_status: "🔒 Доступ к офису открывается только после подтверждения @unityspiritpartners",
             auth_install_btn: "📲 Установить приложение в 1 клик",
                                     tab_register: "⚡ Быстрая регистрация",
@@ -10950,7 +10950,7 @@ function sendQuickGuestPromptPortal(txt) {
             ai_starter_2: "👑 Как работает Директор Тим?",
             ai_starter_3: "🗺️ Куда перейти в 1 очередь?",
             ai_starter_4: "📊 Отчёт о работе (150 задач)",
-            ai_welcome_html: "Hello! I am the official <b>AI Assistant & Navigator for Global Spirit Group ★ Virtual Office</b> 🚀<br><br>Ask me anything live or jump directly to any office department:<br>• 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>• 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>• 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>• 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br><i>Click a navigation pill above or type your question below!</i>",
+            ai_welcome_html: "Здравствуйте! Я официальный <b>ИИ-Ассистент & Навигатор Global Spirit Group ★ Virtual Office</b> 🚀<br><br>Ask me anything live or jump directly to any office department:<br>• 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>• 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>• 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>• 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br><i>Click a navigation pill above or type your question below!</i>",
             
             // Modals
             action_modal_title: "🚨 Центр Предупреждений и Ожидания Действий",
@@ -12287,7 +12287,7 @@ function enterPendingWaitingRoom(userObj) {
             });
             try {
                 const resetMsg = [
-                    "🔑 Запрос на сброс пароля в Global Spirit Group ★ Виртуальный Офис:",
+                    "🔑 Запрос на сброс пароля в Global Spirit Group ★ Virtual Office:",
                     "• Логин: " + loginVal,
                     "• Код подтверждения: " + resetCode,
                     "Ожидает вашего подтверждения в Сейфе."
@@ -12680,10 +12680,10 @@ function enterPendingWaitingRoom(userObj) {
 
     async function shareAppToAnyDevice() {
         const shareUrl = UNITY_APP_URL + "?install=1";
-        const shareText = "📲 Установи приложение Global Spirit Group ★ Виртуальный Офис (вход по регистрации после одобрения @" + UNITY_OWNER_TG + "):";
+        const shareText = "📲 Установи приложение Global Spirit Group ★ Virtual Office (вход по регистрации после одобрения @" + UNITY_OWNER_TG + "):";
         if (navigator.share) {
             try {
-                await navigator.share({ title: "Global Spirit Group ★ Виртуальный Офис", text: shareText, url: shareUrl });
+                await navigator.share({ title: "Global Spirit Group ★ Virtual Office", text: shareText, url: shareUrl });
                 return;
             } catch (e) {}
         }
@@ -14336,7 +14336,7 @@ function enterPendingWaitingRoom(userObj) {
             <div style="display:flex; gap:10px; align-items:flex-start;">
                 <div style="width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">🤖</div>
                 <div id="ai-chat-welcome-msg" style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:11px 13px; font-size:0.8rem; line-height:1.48; color:#f1f5f9; max-width:85%;">
-                    Hello! I am the official <b>AI Assistant & Navigator for Global Spirit Group ★ Virtual Office</b> 🚀<br><br>
+                    Здравствуйте! Я официальный <b>ИИ-Ассистент & Навигатор Global Spirit Group ★ Virtual Office</b> 🚀<br><br>
                     Ask me anything live or jump directly to any office department:<br>
                     • 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>
                     • 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>
