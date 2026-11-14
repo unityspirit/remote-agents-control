@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <script>
 window.forceHardRefreshApp = function() {
     try {
         localStorage.removeItem("gsg_app_v32_0_loaded");
-        localStorage.removeItem("gsg_app_v33_0_loaded");
+        localStorage.removeItem("gsg_app_v34_0_loaded");
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function(regs) {
                 for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -23,9 +23,9 @@ window.forceHardRefreshApp = function() {
 };
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v33_0_loaded");
+        var v = localStorage.getItem("gsg_app_v34_0_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v33_0_loaded", "true");
+            localStorage.setItem("gsg_app_v34_0_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -54,7 +54,7 @@ window.forceHardRefreshApp = function() {
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <title>Global Spirit Group ★ Виртуальный Офис</title>
+    <title>Global Spirit Group ★ Virtual Office</title>
     <style>
         :root {
             --bg-main: #090d16;
@@ -2094,7 +2094,7 @@ window.forceHardRefreshApp = function() {
         body.guest-preview-mode #btn-top-user-chip,
         body.guest-preview-mode #btn-top-work-report,
         body.guest-preview-mode #btn-action-needed,
-        body.guest-preview-mode button[title="Новая папка"] {
+        body.guest-preview-mode button[title="New Folder"] {
             display: none !important;
         }
         body.guest-preview-mode #guest-portal-view {
@@ -2482,12 +2482,12 @@ textarea.task-inline-input {
 <!-- LIVE WORLD-CLASS TELEMETRY HEADER -->
 <div class="telemetry-bar-top" id="world-telemetry-bar">
     <div class="telemetry-pills">
-        <div class="telemetry-pill" onclick="openAgentsStatusModal()" title="Статус ядра офиса">
+        <div class="telemetry-pill" onclick="openAgentsStatusModal()" title="Office Core Status">
             <span class="pulse-indicator"></span>
-            <span>ОФИС ОНЛАЙН 24/7</span>
+            <span>OFFICE ONLINE 24/7</span>
         </div>
         <div class="telemetry-pill" onclick="openAgentsStatusModal()" style="border-color:rgba(16,185,129,0.3);">
-            <span>🤖 4 Агента Активны</span>
+            <span>🤖 4 Agents Active</span>
         </div>
         <div class="telemetry-pill" onclick="openNotebookLMModal()" style="border-color:rgba(6,182,212,0.3); color:#38bdf8;">
             <span>📓 NotebookLM RAG</span>
@@ -2496,11 +2496,11 @@ textarea.task-inline-input {
             <span>⚛️ Hydrogen 2.0</span>
         </div>
         <div class="telemetry-pill" onclick="openMvpLaunchModal()" style="border-color:rgba(245,158,11,0.3); color:#fbbf24;">
-            <span>🚀 MVP: Голосовой ИИ (94%)</span>
+            <span>🚀 MVP: Voice AI (94%)</span>
         </div>
     </div>
     <div style="font-size:0.75rem; color:#94a3b8; font-weight:600; display:flex; gap:6px; align-items:center;">
-        <span id="version-badge-label">v33.0 Hydrogen 24/7</span>
+        <span id="version-badge-label">v34.0 Antigravity 2.31</span>
     </div>
 </div>
 
@@ -2536,22 +2536,22 @@ textarea.task-inline-input {
             <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:8px;">
                 <img src="icons/icon-192.png" alt="Global Spirit Group Logo" style="width:46px; height:46px; border-radius:12px; box-shadow:0 4px 14px rgba(2,132,199,0.5);">
                 <div style="text-align:left;">
-                    <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc; margin:0;">Global Spirit Group — Гостевой Превью-Портал</h2>
-                    <div style="font-size:0.75rem; color:#94a3b8;">ИИ-экосистема автономных агентов для бизнеса, маркетинга и монетизации</div>
+                    <h2 style="font-size:1.18rem; font-weight:900; color:#f8fafc; margin:0;">Global Spirit Group — Guest Preview Portal</h2>
+                    <div style="font-size:0.75rem; color:#94a3b8;">AI autonomous agent ecosystem for business, marketing, and monetization</div>
                 </div>
             </div>
             <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.45); border-radius:999px; padding:3px 14px; font-size:0.73rem; color:#6ee7b7; font-weight:800;">
-                <span>🟢 ИИ-Ассистент онлайн (ChatGPT Mode)</span> · <span>🔒 Все внутренние папки компании скрыты</span>
+                <span>🟢 AI Assistant Online (Antigravity 2.31)</span> · <span>🔒 Internal company folders are hidden</span>
             </div>
         </div>
 
         <!-- Subtab Switcher: Quiz & AI vs Interface Surfing -->
         <div style="display:flex; justify-content:center; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
             <button type="button" class="mini-btn active" id="btn-guest-tab-quiz" onclick="switchGuestPortalSubTab('quiz')" style="padding:8px 16px; font-weight:800; font-size:0.82rem; border-radius:999px; background:#0284c7; color:#fff;">
-                🎯 Опросник по интересам & Живой ИИ-Чат
+                🎯 Interest Quiz & Live AI Chat
             </button>
             <button type="button" class="mini-btn" id="btn-guest-tab-surf" onclick="switchGuestPortalSubTab('surf')" style="padding:8px 16px; font-weight:800; font-size:0.82rem; border-radius:999px;">
-                👀 Серфинг интерфейса офиса (Live Превью)
+                👀 Office Interface Tour (Live Preview)
             </button>
         </div>
 
@@ -2562,12 +2562,12 @@ textarea.task-inline-input {
             <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:12px; box-shadow:0 8px 24px rgba(0,0,0,0.25);">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                     <span style="font-size:0.96rem; font-weight:900; color:#fbbf24; display:flex; align-items:center; gap:6px;">
-                        🎯 Опросник по интересам
+                        🎯 Interest Quiz
                     </span>
-                    <span id="guest-quiz-step-badge" class="badge" style="background:rgba(245,158,11,0.2); color:#fbbf24; font-weight:800; font-size:0.72rem;">Шаг 1 из 4</span>
+                    <span id="guest-quiz-step-badge" class="badge" style="background:rgba(245,158,11,0.2); color:#fbbf24; font-weight:800; font-size:0.72rem;">Step 1 of 4</span>
                 </div>
                 <div style="font-size:0.75rem; color:var(--text-dim); line-height:1.45;">
-                    Ответьте на 4 вопроса — система подберёт персональное направление сотрудничества, проекты и зафиксирует ваш запрос у нас в системе.
+                    Answer 4 quick questions — the system will match a collaboration track and record your request.
                 </div>
 
                 <!-- Quiz Interactive Container -->
@@ -2577,13 +2577,13 @@ textarea.task-inline-input {
 
                 <!-- Quiz Result Box (shown on complete) -->
                 <div id="guest-quiz-result-box" style="display:none; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.45); border-radius:14px; padding:14px; flex-direction:column; gap:8px;">
-                    <div style="font-weight:900; font-size:0.88rem; color:#6ee7b7;">✨ Персональный подбор завершён!</div>
+                    <div style="font-weight:900; font-size:0.88rem; color:#6ee7b7;">✨ Personal Match Complete!</div>
                     <div id="guest-quiz-match-text" style="font-size:0.78rem; color:#f1f5f9; line-height:1.5;"></div>
                     <div style="font-size:0.72rem; color:#94a3b8; margin-top:2px;">
-                        💾 <i>Ваш профиль интересов зафиксирован в системе Global Spirit Group. Зарегистрируйтесь за 5 секунд, чтобы закрепить проект за собой.</i>
+                        💾 <i>Your interest profile has been recorded. Register in 5 seconds to claim your workspace.</i>
                     </div>
                     <button class="btn-action accent" onclick="openAuthGateFromGuest()" style="padding:11px; font-weight:900; justify-content:center; background:linear-gradient(135deg,#10b981,#059669); color:#fff; margin-top:6px;">
-                        ⚡ Зарегистрироваться и закрепить проект →
+                        ⚡ Register & Claim Workspace →
                     </button>
                 </div>
             </div>
@@ -2594,11 +2594,11 @@ textarea.task-inline-input {
                     <div style="display:flex; align-items:center; gap:8px;">
                         <div style="width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1.15rem;">🤖</div>
                         <div>
-                            <div style="font-weight:900; font-size:0.88rem; color:#f8fafc;">Живой ИИ-Ассистент</div>
-                            <div style="font-size:0.69rem; color:#94a3b8;">ChatGPT Mode · Запросы сохраняются</div>
+                            <div style="font-weight:900; font-size:0.88rem; color:#f8fafc;">Live AI Assistant</div>
+                            <div style="font-size:0.69rem; color:#94a3b8;">Antigravity 2.31 · Requests Saved</div>
                         </div>
                     </div>
-                    <span class="badge done" style="font-size:0.66rem;">🟢 В сети</span>
+                    <span class="badge done" style="font-size:0.66rem;">🟢 Online</span>
                 </div>
 
                 <!-- Chat Messages Scroll Container -->
@@ -2606,27 +2606,27 @@ textarea.task-inline-input {
                     <div style="display:flex; gap:8px; align-items:flex-start;">
                         <div style="width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0;">🤖</div>
                         <div style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:10px 12px; font-size:0.79rem; line-height:1.48; color:#f1f5f9; max-width:88%;">
-                            Здравствуйте! Я официальный <b>ИИ-Ассистент Global Spirit Group</b> 🚀<br><br>
-                            Задайте мне любой вопрос в живом режиме (как в ChatGPT):<br>
-                            • Как работают <b>7 автономных отделов</b> Генерального Директора Тима<br>
-                            • Как запустить ИИ-воронки и привлекать клиентов<br>
-                            • Чем платформа может помочь вашему бизнесу или идее<br><br>
-                            <i>Все вопросы фиксируются в системе у нас, а вы получаете живой разбор прямо сейчас!</i>
+                            Hello! I am the official <b>Global Spirit Group AI Assistant</b> 🚀<br><br>
+                            Ask me anything in live mode:<br>
+                            • How General Director Tim's <b>7 autonomous departments</b> work<br>
+                            • How to launch AI funnels and acquire clients<br>
+                            • How the platform can accelerate your business or idea<br><br>
+                            <i>All questions are logged in our system while you get an instant live breakdown!</i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Quick Starter Pills -->
                 <div style="padding:6px 12px; background:#0a1222; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:5px; overflow-x:auto; white-space:nowrap;">
-                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Чем ваши ИИ-агенты могут помочь моему бизнесу?')">🛍️ Чем полезен для бизнеса?</button>
-                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как Директор Тим координирует 7 отделов и выполняет задачи?')">👑 Директор Тим</button>
-                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как автоматизировать маркетинг и продажи через ИИ?')">📈 Маркетинг и продажи</button>
-                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как подключить свой проект в платформу?')">🤝 Подключить проект</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Чем ваши ИИ-агенты могут помочь моему бизнесу?')">🛍️ Business benefits?</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как Директор Тим координирует 7 отделов и выполняет задачи?')">👑 Director Tim</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как автоматизировать маркетинг и продажи через ИИ?')">📈 Marketing & Sales</button>
+                    <button class="choice-btn" style="font-size:0.71rem; padding:3px 8px;" onclick="sendQuickGuestPromptPortal('Как подключить свой проект в платформу?')">🤝 Connect a Project</button>
                 </div>
 
                 <!-- Chat Input Bar -->
                 <div style="padding:9px 12px; background:#0f172a; border-top:1px solid rgba(255,255,255,0.09); display:flex; gap:6px; align-items:center;">
-                    <input type="text" id="guest-portal-chat-input" class="modal-input" style="flex:1; height:38px; background:#070d19; color:#f8fafc; font-size:0.79rem;" placeholder="Спросите что угодно у ИИ-ассистента..." onkeydown="if(event.key==='Enter') submitGuestPortalChatMessage()">
+                    <input type="text" id="guest-portal-chat-input" class="modal-input" style="flex:1; height:38px; background:#070d19; color:#f8fafc; font-size:0.79rem;" placeholder="Ask the AI assistant anything..." onkeydown="if(event.key==='Enter') submitGuestPortalChatMessage()">
                     <button type="button" class="btn-action accent" onclick="submitGuestPortalChatMessage()" style="height:38px; padding:0 14px; font-size:1rem; justify-content:center; background:linear-gradient(135deg,#0284c7,#10b981);">
                         ✈️
                     </button>
@@ -2642,9 +2642,9 @@ textarea.task-inline-input {
             <div class="brand-logo" onclick="openInstallAppModal()" title="Установить приложение Global Spirit Group" style="padding:0; overflow:hidden; background:none; cursor:pointer; box-shadow:0 2px 10px rgba(59,130,246,0.4);"><img src="icons/icon-192.png" alt="Global Spirit Group 3D" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
             <div class="brand-titles">
                 <h1 id="brand-header-title">Global Spirit Group ★ Виртуальный Офис</h1>
-                <div class="worker-pill" onclick="openAntigravityModal()" style="cursor:pointer;" title="Google Antigravity Remote Agents 24/7 Cloud System & Processes (v26.0)">
+                <div class="worker-pill" id="topbar-worker-pill" onclick="openAntigravityModal()" style="cursor:pointer;" title="Google Antigravity 2.31 (Argon / Carbon / Hydrogen) · Automations & 24/7 Cloud (v34.0)">
                     <span class="status-dot cloud" id="worker-dot" style="background:#38bdf8; box-shadow:0 0 10px #38bdf8;"></span>
-                    <span id="worker-text">☁️ Antigravity 24/7 Cloud: Активен (6 Машин)</span>
+                    <span id="worker-text">☁️ Antigravity 2.31 Cloud: checking...</span>
                 </div>
             </div>
         </div>
@@ -2655,10 +2655,10 @@ textarea.task-inline-input {
             <button class="icon-btn" style="display:none; font-weight:700;" onclick="openUserProfileMenu()" id="btn-top-user-chip" title="Профиль / GTA-Досье">👤</button>
             <button class="icon-btn" onclick="openUserActivityMonitorModal()" id="btn-top-user-monitor" title="Мониторинг пользователей: кто что делает, задачи, процесс и когда заходили" style="background:linear-gradient(135deg, rgba(139,92,246,0.26), rgba(59,130,246,0.26)); border-color:rgba(167,139,250,0.65); color:#c4b5fd; font-weight:800; cursor:pointer;">👥 <span id="lbl-top-user-monitor">Пользователи & Процессы</span> <span id="top-users-today-badge" style="background:#ec4899; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem; margin-left:3px; font-weight:900;">2 Сегодня</span></button>
             <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report"  title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 <span id="lbl-top-report">Отчёт работы</span> (<span id="topbar-work-cnt">150</span>)</button>
-            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Предупреждения и ожидание действий">🚨 <span id="lbl-top-actions">Действия</span> (<span id="topbar-action-cnt">5</span>)</button>
-            <button class="icon-btn" onclick="openNewFolderModal()" title="Новая папка">➕ <span id="lbl-top-folder">Папка</span></button>
-            <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Тема">☀️</button>
-            <button class="icon-btn" onclick="refreshAllData(true)" title="Обновить">🔄</button>
+            <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Alerts & Action Required">🚨 <span id="lbl-top-actions">Действия</span> (<span id="topbar-action-cnt">5</span>)</button>
+            <button class="icon-btn" onclick="openNewFolderModal()" title="New Folder">➕ <span id="lbl-top-folder">Folder</span></button>
+            <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="Theme">☀️</button>
+            <button class="icon-btn" onclick="refreshAllData(true)" title="Refresh">🔄</button>
         </div>
     </header>
 
@@ -2668,7 +2668,7 @@ textarea.task-inline-input {
         <button class="icon-btn" onclick="triggerPhotoPicker('global', true)" title="Добавить фото / скриншоты для изучения" style="height:38px; padding:0 10px; border-color:rgba(139,92,246,0.55); background:rgba(139,92,246,0.14); color:#c084fc; font-weight:700; flex-shrink:0;">📷 Фото <span id="global-photo-cnt" style="display:none; background:#8b5cf6; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem;">0</span></button>
         <button class="icon-btn" onclick="toggleGlobalStudyDrawer()" id="btn-global-study-toggle" title="Открыть поле текста и фото для изучения в любой папке" style="height:38px; padding:0 10px; border-color:rgba(59,130,246,0.45); color:#93c5fd; font-weight:700; flex-shrink:0;">📝 Текст+</button>
         <input type="text" class="quick-save-input" id="instant-kb-input" style="min-width:160px;" placeholder="📥 Сохранить ссылку, фото (Ctrl+V) или текст на изучение..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
-        <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
+        <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Save</button>
     </div>
     <!-- LIVE SMART ROUTE & INTERCONNECTION PREVIEW -->
     <div id="quick-save-route-preview" style="display:none; padding:6px 14px; font-size:0.75rem; background:rgba(59,130,246,0.12); border-bottom:1px solid var(--border); color:var(--text-main); font-weight:600; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
@@ -2678,10 +2678,10 @@ textarea.task-inline-input {
     <!-- EXPANDABLE MULTI-LINE PHOTO + TEXT STUDY STUDIO (AVAILABLE FROM ANY TAB) -->
     <div id="global-study-drawer" class="study-drawer-box" style="display:none;">
         <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
-            <span style="font-size:0.79rem; font-weight:800; color:#c084fc;">📷 + 📝 Сохранение фото и текста для изучения ИИ-агентами</span>
+            <span style="font-size:0.79rem; font-weight:800; color:#c084fc;">📷 + 📝 Save Photos & Notes for AI Agent Analysis</span>
             <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
                 <select id="global-study-folder" class="chip-select" style="font-size:0.73rem; max-width:230px;"></select>
-                <button class="mini-btn" onclick="toggleGlobalStudyDrawer(false)">✕ Скрыть</button>
+                <button class="mini-btn" onclick="toggleGlobalStudyDrawer(false)">✕ Hide</button>
             </div>
         </div>
         <textarea id="global-study-textarea" class="study-textarea" placeholder="Напишите или вставьте подробный текст для изучения, идеи, посты, условия сделки... Можно вставить скриншот прямо через Ctrl+V!"></textarea>
@@ -2700,9 +2700,9 @@ textarea.task-inline-input {
 
     <!-- ACTION REQUIRED & WAITING ALERT STRIP -->
     <div class="human-action-strip" id="human-action-strip" onclick="openActionModal()">
-        <span class="strip-badge" id="strip-badge-label">🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ (5)</span>
+        <span class="strip-badge" id="strip-badge-label">🚨 ACTION REQUIRED (5)</span>
         <span class="strip-text" id="strip-dynamic-text">Ожидают решения: <strong>12 IT Продуктов</strong> (выбор Mini App), <strong>Traffic</strong> (ниша), <strong>Alberta</strong> (ключи), <strong>Урал</strong> (КП), <strong>Доминикана</strong> (WhatsApp).</span>
-        <span class="strip-arrow">Открыть ➔</span>
+        <span class="strip-arrow">Open ➔</span>
     </div>
 
     <div class="main-body">
@@ -2711,26 +2711,26 @@ textarea.task-inline-input {
             <!-- TAB 1: PROJECTS / FOLDERS -->
             <section class="tab-view active" id="tab-projects">
                 <div class="search-bar">
-                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Найти папку (12 IT Продуктов, Traffic, Alberta...)" oninput="renderProjects()">
+                    <input type="text" class="search-input" id="project-search" placeholder="🔍 Search folder (12 IT Products, Traffic, Alberta...)" oninput="renderProjects()">
                 </div>
                 <div class="filter-row" id="project-cat-filters" style="overflow-x:auto; flex-wrap:nowrap; padding-bottom:6px; -webkit-overflow-scrolling:touch;">
                     <button class="chip" onclick="setProjectFilter('p1', this)" style="border-color:rgba(239,68,68,0.85); color:#f87171; font-weight:900; background:rgba(239,68,68,0.12);">🔥 В 1-ю очередь (P1)</button>
-                    <button class="chip" onclick="setProjectFilter('inbox', this)" style="border-color:rgba(139,92,246,0.6); color:#c084fc;">📥 Входящие & Триаж</button>
-                    <button class="chip active" onclick="setProjectFilter('worked', this)">⭐ Активные (<span id="cnt-worked" class="tabular">30</span>)</button>
-                    <button class="chip" onclick="setProjectFilter('products', this)">🚀 Выручка & Трафик</button>
-                    <button class="chip" onclick="setProjectFilter('media', this)">🎬 Кино & Медиа</button>
-                    <button class="chip" onclick="setProjectFilter('automation', this)">🤖 ИИ-Агенты & Софт</button>
-                    <button class="chip" onclick="setProjectFilter('relocation', this)">🎓 Обучение & Релокация</button>
-                    <button class="chip" onclick="setProjectFilter('clients', this)">🏭 B2B Клиенты</button>
-                    <button class="chip" onclick="setProjectFilter('knowledge', this)">🧠 База Знаний</button>
-                    <button class="chip" onclick="setProjectFilter('all', this)">📂 Все (<span id="cnt-folders" class="tabular">48</span>)</button>
+                    <button class="chip" onclick="setProjectFilter('inbox', this)" style="border-color:rgba(139,92,246,0.6); color:#c084fc;">📥 Inbox & Triage</button>
+                    <button class="chip active" onclick="setProjectFilter('worked', this)">⭐ Active (<span id="cnt-worked" class="tabular">30</span>)</button>
+                    <button class="chip" onclick="setProjectFilter('products', this)">🚀 Revenue & Traffic</button>
+                    <button class="chip" onclick="setProjectFilter('media', this)">🎬 Cinema & Media</button>
+                    <button class="chip" onclick="setProjectFilter('automation', this)">🤖 AI Agents & Software</button>
+                    <button class="chip" onclick="setProjectFilter('relocation', this)">🎓 Training & Relocation</button>
+                    <button class="chip" onclick="setProjectFilter('clients', this)">🏭 B2B Clients</button>
+                    <button class="chip" onclick="setProjectFilter('knowledge', this)">🧠 Knowledge Base</button>
+                    <button class="chip" onclick="setProjectFilter('all', this)">📂 All (<span id="cnt-folders" class="tabular">48</span>)</button>
                 </div>
 
                 <!-- 24/7 INTERACTIVE WEB APPS QUICK LAUNCH (RESTRICTED: FULL ACCESS ONLY) -->
                 <div id="quick-web-apps-box" style="display:none; background:linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.14)); border:1px solid rgba(59,130,246,0.35); border-radius:14px; padding:10px 12px; margin-bottom:8px;">
                     <div style="font-size:0.7rem; font-weight:800; color:var(--accent); text-transform:uppercase; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
-                        <span>⚡ Веб-модули 24/7 (с телефона):</span>
-                        <span style="font-size:0.65rem; color:var(--text-dim); background:var(--bg-main); padding:2px 6px; border-radius:6px;">Онлайн без ПК</span>
+                        <span>⚡ 24/7 Web Modules (mobile-ready):</span>
+                        <span style="font-size:0.65rem; color:var(--text-dim); background:var(--bg-main); padding:2px 6px; border-radius:6px;">Cloud-native (no PC)</span>
                     </div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
                         <a href="globalfilms/index.html" class="icon-btn" style="text-decoration:none; font-size:0.73rem; padding:7px 8px; justify-content:center; background:var(--bg-card); border-color:rgba(139,92,246,0.45); color:var(--text-main); font-weight:700;">🎬 Filmtools</a>
@@ -2743,7 +2743,7 @@ textarea.task-inline-input {
                 <div class="tab-study-quickbar">
                     <span style="font-size:0.75rem; font-weight:700; color:var(--text-main);">📷 Фото + 📝 Текст на изучение в любую папку:</span>
                     <div style="display:flex; gap:6px;">
-                        <button class="mini-btn accent" onclick="openStudyStudioForProject(currentProject)">📷 Добавить фото и текст</button>
+                        <button class="mini-btn accent" onclick="openStudyStudioForProject(currentProject)">📷 Add Photo & Note</button>
                         <button class="mini-btn" style="color:#34d399; border-color:rgba(16,185,129,0.45);" onclick="openWorkReportTab()">📊 Отчёт работ</button>
                     </div>
                 </div>
@@ -2866,7 +2866,7 @@ textarea.task-inline-input {
                 <div class="project-card" id="live-agents-dashboard-card" style="cursor:default; border-left: 3px solid #10b981;">
                     <div class="p-card-name" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
                         <span>🤖 Живой монитор агентов и фоновых служб (24/7)</span>
-                        <button class="mini-btn accent" onclick="switchTab('tim', document.getElementById('nav-btn-tim'))">👑 Открыть штаб Тима →</button>
+                        <button class="mini-btn accent" onclick="switchTab('tim', document.getElementById('nav-btn-tim'))">👑 Open Director Tim HQ →</button>
                     </div>
                     <div id="live-agents-dashboard-container" style="font-size:0.76rem; color:var(--text-dim); margin-top:6px; display:flex; flex-direction:column; gap:6px;">
                         Загрузка телеметрии агентов из облачной ветки <code>data</code>...
@@ -3225,36 +3225,36 @@ textarea.task-inline-input {
 
         <button class="b-tab active" id="nav-btn-projects" onclick="switchTab('projects', this)">
             <span class="b-icon">📁</span>
-            <span>Папки</span>
+            <span>Folders</span>
         </button>
         <button class="b-tab" id="nav-btn-tim" onclick="switchTab('tim', this)" style="color:#fbbf24;">
             <span class="b-icon">👑</span>
-            <span>Тим</span>
+            <span>Tim</span>
         </button>
         <button class="b-tab" id="nav-btn-reports" onclick="switchTab('reports', this)" style="color:#34d399;">
             <span class="b-icon">📈</span>
-            <span>Отчёты</span>
+            <span>Reports</span>
         </button>
         <button class="b-tab" id="nav-btn-plan" onclick="switchTab('plan', this)">
             <span class="b-icon">🗓️</span>
-            <span>План & ИИ</span>
+            <span>Plan & AI</span>
         </button>
         <button class="b-tab" id="nav-btn-tasks" onclick="switchTab('tasks', this)">
             <span class="b-icon">📋</span>
-            <span>Задачи</span>
+            <span>Tasks</span>
         </button>
         <button class="b-tab" id="nav-btn-kb" onclick="switchTab('kb', this)">
             <span class="b-icon">🧠</span>
-            <span>Позновалка</span>
+            <span>Knowledge</span>
         </button>
         <button class="b-tab" id="nav-btn-dashboard" onclick="switchTab('dashboard', this)">
             <span class="b-icon">📊</span>
-            <span>Офис</span>
+            <span>Office</span>
         </button>
     </nav>
 </div>
 
-<div class="toast-msg" id="toast-msg">✅ Сохранено!</div>
+<div class="toast-msg" id="toast-msg">✅ Saved!</div>
 
 <!-- PHOTO ZOOM LIGHTBOX MODAL -->
 <div id="photo-lightbox-modal" class="modal-overlay" style="display:none; z-index:9999; background:rgba(0,0,0,0.88);" onclick="closePhotoLightbox()">
@@ -3339,7 +3339,7 @@ textarea.task-inline-input {
         <img src="icons/icon-512.png" alt="Global Spirit Group 3D Globe & Airplanes Logo" class="auth-3d-hero-logo">
         <div style="text-align:center;">
             <h2 id="auth-gate-title" style="font-size:1.16rem; font-weight:900; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">Global Spirit Group ★ Виртуальный Офис
-                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v25.9</span>
+                <span style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-size:0.68rem; padding:2px 7px; border-radius:999px; font-weight:800;">v34.0</span>
             </h2>
             <div style="margin-top:2px; font-size:0.72rem;">
                 <a href="javascript:void(0)" onclick="forceHardRefreshApp()" style="color:#38bdf8; text-decoration:underline; font-weight:700;">🔄 Сбросить кэш и обновить</a>
@@ -3368,10 +3368,10 @@ textarea.task-inline-input {
             </div>
             <div id="gate-android-tg-box" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.2);">
                 <div style="color:#fde68a; font-size:0.73rem; margin-bottom:5px;">
-                    ✈️ <i>Если вы открыли ссылку через Telegram:</i>
+                    ✈️ <i>If you opened this link inside Telegram:</i>
                 </div>
                 <button type="button" class="btn-action accent" onclick="openInAndroidChrome()" style="width:100%; padding:9px 12px; font-size:0.8rem; font-weight:900; justify-content:center; background:linear-gradient(135deg,#0284c7,#10b981);">
-                    🌐 Открыть прямо в Google Chrome →
+                    🌐 Open directly in Google Chrome →
                 </button>
             </div>
         </div>
@@ -3379,40 +3379,40 @@ textarea.task-inline-input {
                 <!-- GUEST PREVIEW REMOVED (STRICT AUTH ONLY) -->
 
         <div class="auth-tabs-row" id="auth-main-tabs-row">
-            <button class="auth-tab-btn" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Быстрая регистрация</button>
-            <button class="auth-tab-btn active" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Вход</button>
+            <button class="auth-tab-btn" id="auth-tab-btn-register" onclick="switchAuthGateTab('register')">⚡ Express Sign-Up</button>
+            <button class="auth-tab-btn active" id="auth-tab-btn-login" onclick="switchAuthGateTab('login')">🔐 Sign In</button>
         </div>
 
         <div id="auth-feedback-box" style="display:none; padding:10px 12px; border-radius:12px; border:1px solid; font-size:0.77rem; line-height:1.45;"></div>
 
         <!-- PANEL 1: 5-SECOND EXPRESS REGISTRATION (DEFAULT FOR NEW USERS) -->
         <div id="auth-panel-register" style="display:none; flex-direction:column; gap:8px;">
-            <input type="text" id="reg-login" class="modal-input" style="height:42px; background:#090d16; color:#f8fafc;" placeholder="Логин (или ваш @Telegram / Email) *" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
+            <input type="text" id="reg-login" class="modal-input" style="height:42px; background:#090d16; color:#f8fafc;" placeholder="Username (or @Telegram / Email) *" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
             <div style="position:relative; display:flex; align-items:center;">
-                <input type="password" id="reg-pass1" class="modal-input" style="height:42px; width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Придумайте пароль (от 4 симв.) *" autocomplete="new-password" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
+                <input type="password" id="reg-pass1" class="modal-input" style="height:42px; width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Choose password (min 4 chars) *" autocomplete="new-password" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
                 <button type="button" onclick="const p=document.getElementById('reg-pass1'); p.type=(p.type==='password'?'text':'password');" style="position:absolute; right:8px; background:none; border:none; color:#94a3b8; cursor:pointer; font-size:1rem;">👁️</button>
             </div>
-            <input type="text" id="reg-contact" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Ваше имя и @Telegram (для одобрения)" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
-            <button class="modal-btn confirm" id="btn-auth-reg-submit" onclick="submitAuthRegistration()" style="padding:12px; font-size:0.9rem; font-weight:900; background:linear-gradient(135deg,#10b981,#2563eb);">⚡ Быстрая регистрация →</button>
+            <input type="text" id="reg-contact" class="modal-input" style="height:40px; background:#090d16; color:#f8fafc;" placeholder="Your Name & @Telegram (for approval)" onkeypress="if(event.key==='Enter') submitAuthRegistration()">
+            <button class="modal-btn confirm" id="btn-auth-reg-submit" onclick="submitAuthRegistration()" style="padding:12px; font-size:0.9rem; font-weight:900; background:linear-gradient(135deg,#10b981,#2563eb);">⚡ Express Sign-Up →</button>
             <div style="font-size:0.72rem; color:#94a3b8; text-align:center; line-height:1.38;">
-                Офис откроется <b>только после подтверждения</b> вашей заявки в Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a>.
+                Access opens <b>only after approval</b> via Telegram <a href="https://t.me/unityspiritpartners" target="_blank" rel="noopener" style="color:#60a5fa; font-weight:800;">@unityspiritpartners</a>.
             </div>
         </div>
 
         <!-- PANEL 2: LOGIN -->
         <div id="auth-panel-login" style="display:flex; flex-direction:column; gap:9px;">
-            <input type="text" id="auth-login-user" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Логин, @Telegram или Email" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+            <input type="text" id="auth-login-user" class="modal-input" style="background:#090d16; color:#f8fafc;" placeholder="Username, @Telegram or Email" autocomplete="username" onkeypress="if(event.key==='Enter') submitAuthLogin()">
             <div style="position:relative; display:flex; align-items:center;">
-                <input type="password" id="auth-login-pass" class="modal-input" style="width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Пароль" autocomplete="current-password" onkeypress="if(event.key==='Enter') submitAuthLogin()">
+                <input type="password" id="auth-login-pass" class="modal-input" style="width:100%; padding-right:42px; background:#090d16; color:#f8fafc;" placeholder="Password" autocomplete="current-password" onkeypress="if(event.key==='Enter') submitAuthLogin()">
                 <button type="button" onclick="const p=document.getElementById('auth-login-pass'); p.type=(p.type==='password'?'text':'password');" style="position:absolute; right:8px; background:none; border:none; color:#94a3b8; cursor:pointer; font-size:1rem;">👁️</button>
             </div>
-            <button class="modal-btn confirm" id="btn-auth-login-submit" onclick="submitAuthLogin()" style="padding:12px; font-size:0.9rem; font-weight:800;">🔐 Войти в Виртуальный Офис</button>
+            <button class="modal-btn confirm" id="btn-auth-login-submit" onclick="submitAuthLogin()" style="padding:12px; font-size:0.9rem; font-weight:800;">🔐 Sign In to Virtual Office</button>
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; font-size:0.73rem;">
-                <a href="javascript:void(0)" onclick="switchAuthGateTab('user-reset')" style="color:#60a5fa; text-decoration:none; font-weight:700;">🔑 Забыли пароль? Сброс / @unitybusinessbot</a>
-                <a href="javascript:void(0)" onclick="switchAuthGateTab('family9')" style="color:#64748b; text-decoration:none; font-size:0.69rem;">👑 Владелец (9/9)</a>
+                <a href="javascript:void(0)" onclick="switchAuthGateTab('user-reset')" style="color:#60a5fa; text-decoration:none; font-weight:700;">🔑 Forgot password? Reset / @unitybusinessbot</a>
+                <a href="javascript:void(0)" onclick="switchAuthGateTab('family9')" style="color:#64748b; text-decoration:none; font-size:0.69rem;">👑 Owner (9/9)</a>
             </div>
             <div style="font-size:0.71rem; color:#94a3b8; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.25); border-radius:9px; padding:7px 9px; line-height:1.38;">
-                🤖 Пароль можно обновить напрямую в <a href="https://t.me/unitybusinessbot" target="_blank" rel="noopener" style="color:#38bdf8; font-weight:800;">@unitybusinessbot</a> (<code>/passwords</code> или <code>/reset</code>) — доступно <b>всем, кроме @unityspiritpartners</b>.
+                🤖 Passwords can be updated directly in <a href="https://t.me/unitybusinessbot" target="_blank" rel="noopener" style="color:#38bdf8; font-weight:800;">@unitybusinessbot</a> (<code>/passwords</code> or <code>/reset</code>) — available to <b>everyone except @unityspiritpartners</b>.
             </div>
         </div>
 
@@ -3420,7 +3420,7 @@ textarea.task-inline-input {
         <div id="auth-panel-pending" style="display:none; flex-direction:column; gap:10px;">
             <div style="background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.5); border-radius:14px; padding:13px; text-align:center;">
                 <div style="font-size:1.35rem;">⏳</div>
-                <div style="font-weight:900; font-size:0.92rem; color:#fde68a; margin-top:3px;">Аккаунт создан · Ожидание подтверждения</div>
+                <div style="font-weight:900; font-size:0.92rem; color:#fde68a; margin-top:3px;">Account Created · Pending Approval</div>
                 <div id="pending-user-summary" style="font-size:0.76rem; color:#e2e8f0; margin-top:5px; line-height:1.45;"></div>
                 <div style="font-size:0.72rem; color:#94a3b8; margin-top:6px;">
                     🔄 Авто-проверка каждые 5 сек: как только <b>@unityspiritpartners</b> одобрит вас, офис откроется автоматически!
@@ -3626,42 +3626,44 @@ textarea.task-inline-input {
 </div>
 
 
-<!-- v33.0: GOOGLE ANTIGRAVITY 2.0 ORCHESTRATOR + GEMINI 4 HYDROGEN 24/7 MODAL -->
+<!-- v34.0: GOOGLE ANTIGRAVITY 2.31 ORCHESTRATOR + GEMINI 4 ARGON/CARBON/HYDROGEN + AUTOMATIONS COCKPIT -->
 <div id="antigravity-modal" class="modal-overlay" style="display:none; z-index:24700;" onclick="if(event.target===this) closeAntigravityModal()">
-    <div class="modal-card" style="max-width:860px; max-height:90dvh; display:flex; flex-direction:column; border:1px solid rgba(56,189,248,0.45); box-shadow:0 12px 44px rgba(56,189,248,0.28);">
+    <div class="modal-card" style="max-width:880px; max-height:90dvh; display:flex; flex-direction:column; border:1px solid rgba(56,189,248,0.45); box-shadow:0 12px 44px rgba(56,189,248,0.28);">
         <div class="modal-header" style="border-bottom:1px solid var(--border); padding-bottom:12px;">
             <div>
                 <h3 style="font-size:1.05rem; font-weight:900; color:#38bdf8; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <span>⚛️ Google Antigravity 2.0 & Gemini 4 Hydrogen (v33.0)</span>
+                    <span>⚛️ Google Antigravity 2.31 & Gemini 4 Element (v34.0)</span>
                 </h3>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:2px;">
-                    Новинки 12–13.11.2026: Динамический оркестратор Carbon ↔ Hydrogen · Контекст 1M токенов · Управляемое мышление <code>thinking_level</code> · Headless 24/7 Cloud
+                    Antigravity 2.31 (12–13.11.2026): Argon ↔ Carbon ↔ Hydrogen · Remote Agents · Live Voice · Automations Cockpit (Always-on / Scheduled / Paused)
                 </div>
             </div>
             <div style="display:flex; gap:6px; align-items:center;">
-                <button class="mini-btn" onclick="sendAntigravityTelegramReport()" style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-weight:800; cursor:pointer;" title="Отправить полный отчет в Telegram бот @unitybusinessbot">📲 В Бизнес Бот</button>
+                <button class="mini-btn" onclick="sendAntigravityTelegramReport()" style="background:rgba(56,189,248,0.2); border:1px solid #38bdf8; color:#38bdf8; font-weight:800; cursor:pointer;" title="Отправить актуальный отчет v34.0 в @unitybusinessbot">📲 В Бизнес Бот</button>
                 <button class="modal-close" onclick="closeAntigravityModal()">✕</button>
             </div>
         </div>
 
         <div class="modal-body" style="overflow-y:auto; max-height:76dvh; display:flex; flex-direction:column; gap:12px; padding:12px 6px;">
-            <!-- v33.0 HYDROGEN ORCHESTRATOR ENGINE CONTROLS -->
+            <!-- v34.0 GEMINI 4 ARGON / CARBON / HYDROGEN ORCHESTRATOR -->
             <div style="background:linear-gradient(135deg, rgba(14,165,233,0.14), rgba(139,92,246,0.14)); border:1px solid rgba(56,189,248,0.45); border-radius:12px; padding:12px;">
                 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
-                    <h4 style="font-size:0.88rem; font-weight:900; color:#e0f2fe; margin:0;">⚛️ ЯДРО GEMINI 4 HYDROGEN & ОРKEСТРАТОР 2.0</h4>
-                    <span style="background:rgba(16,185,129,0.22); color:#34d399; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:999px;">Релиз 12.11.2026 · 1M Context</span>
+                    <h4 style="font-size:0.88rem; font-weight:900; color:#e0f2fe; margin:0;">⚛️ ЯДРО ANTIGRAVITY 2.31 · GEMINI 4 ARGON / CARBON / HYDROGEN</h4>
+                    <span style="background:rgba(16,185,129,0.22); color:#34d399; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:999px;">Обновлено 13.11.2026 · 1M Context</span>
                 </div>
                 <div style="font-size:0.76rem; color:#cbd5e1; line-height:1.45; margin-bottom:10px;">
-                    • <b>Gemini 4 Hydrogen (<code>gemini-4-hydrogen</code>):</b> в 2.5x быстрее 3.8 Flash ($1.50/1M in, $7.50/1M out), мультимодальность + нативные инструменты.<br>
-                    • <b>Двусторонняя маршрутизация (Antigravity 2.0):</b> автоматическое переключение <b>Carbon ↔ Hydrogen</b> (-24% расхода frontier-квоты, +19% скорости), совместимость с <b>COMSS AI 2.0</b>.<br>
-                    • <b>Миграция с GitHub Models:</b> <code>models.github.ai</code> официально закрыт 30.07.2026 — облачный воркер переведён на Gemini 4 Hydrogen + gzip/deflate парсер.
+                    • <b>Трёхуровневый оркестратор 2.31:</b> <b>Carbon</b> (<code>gemini-4-carbon</code>, архитектура, аудит и безопасность), <b>Argon</b> (<code>gemini-4-argon</code>, стратегия CEO, NotebookLM RAG и синтез), <b>Hydrogen</b> (<code>gemini-4-hydrogen</code>, $1.50/1M in · быстрое исполнение и web-ресёрч).<br>
+                    • <b>Новые возможности 2.31:</b> облачные VM <b>Remote Agents</b> (<code>antigravity.google.com/remote</code>), голосовой режим <b>Gemini Live Voice</b>, мультиагентный <b>/swarm</b> и честный <b>Automations Cockpit</b>.<br>
+                    • <b>Надёжный 24/7 транспорт:</b> OpenAI-compat + прямой <code>generateContent</code> <code>thinkingLevel</code> fallback, очистка трекеров и проверка кодировки HTML.
                 </div>
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(175px, 1fr)); gap:8px; margin-bottom:8px;">
                     <div>
-                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Модель маршрутизации:</label>
+                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Antigravity 2.31 Routing:</label>
                         <select id="hydrogen-model-select" class="modal-input" style="padding:7px 9px; font-size:0.76rem; background:#090d16; color:#f8fafc;">
-                            <option value="gemini-4-hydrogen">⚡ Auto: Carbon ↔ Gemini 4 Hydrogen</option>
-                            <option value="gemini-4-carbon">🧠 Приоритет: Gemini 4 Carbon (Heavy)</option>
+                            <option value="auto">⚡ Auto: Argon ↔ Carbon ↔ Hydrogen</option>
+                            <option value="gemini-4-argon">🌐 Gemini 4 Argon (Strategy / CEO)</option>
+                            <option value="gemini-4-hydrogen">🔥 Gemini 4 Hydrogen (Fast Mode)</option>
+                            <option value="gemini-4-carbon">🧠 Gemini 4 Carbon (Heavy / Audit)</option>
                         </select>
                     </div>
                     <div>
@@ -3674,13 +3676,17 @@ textarea.task-inline-input {
                         </select>
                     </div>
                     <div>
-                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Браузерный Gemini API Key (опц., только локально):</label>
-                        <input type="password" id="hydrogen-byok-input" placeholder="AIza... (в localStorage браузера)" class="modal-input" style="padding:7px 9px; font-size:0.75rem; background:#090d16; color:#f8fafc;">
+                        <label style="font-size:0.69rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:3px;">Браузерный Gemini API Key (опц., BYOK):</label>
+                        <input type="password" id="hydrogen-byok-input" placeholder="AIza... (клиентский ключ)" class="modal-input" style="padding:7px 9px; font-size:0.75rem; background:#090d16; color:#f8fafc;">
+                        <label style="display:flex; align-items:center; gap:5px; font-size:0.67rem; color:#cbd5e1; margin-top:4px; cursor:pointer;">
+                            <input type="checkbox" id="hydrogen-key-session-only" checked style="accent-color:#38bdf8;"> Хранить ключ только до закрытия вкладки (sessionStorage)
+                        </label>
                     </div>
                 </div>
                 <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
-                    <button type="button" class="mini-btn accent" onclick="saveHydrogenConfigUI()">💾 Применить параметры Hydrogen</button>
-                    <button type="button" class="mini-btn" onclick="testHydrogenLivePing()" style="border-color:#38bdf8; color:#38bdf8;">🧪 Проверить Gemini 4 Hydrogen API</button>
+                    <button type="button" class="mini-btn accent" onclick="saveHydrogenConfigUI()">💾 Apply 2.31 Settings</button>
+                    <button type="button" class="mini-btn" onclick="testHydrogenLivePing()" style="border-color:#38bdf8; color:#38bdf8;">🧪 Ping Gemini 4 API</button>
+                    <a href="https://antigravity.google.com/remote" target="_blank" rel="noopener noreferrer" class="mini-btn" style="text-decoration:none; border-color:rgba(167,139,250,0.6); color:#c4b5fd;">☁️ Remote Agents</a>
                     <span id="hydrogen-status-pill" style="font-size:0.72rem; color:#94a3b8;"></span>
                 </div>
                 <div style="font-size:0.7rem; color:#94a3b8; margin-top:6px;">
@@ -3688,89 +3694,58 @@ textarea.task-inline-input {
                 </div>
             </div>
 
-            <!-- 4 PILLARS OF ANTIGRAVITY -->
+            <!-- 4 PILLARS OF ANTIGRAVITY 2.31 -->
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:8px;">
                 <div style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:10px;">
-                    <div style="font-size:0.7rem; color:#38bdf8; font-weight:800; text-transform:uppercase;">1. Headless 24/7 Cloud</div>
-                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">ПК и ноутбук можно выключить. Задачи исполняются в облачных воркерах непрерывно.</div>
+                    <div style="font-size:0.7rem; color:#38bdf8; font-weight:800; text-transform:uppercase;">1. Remote Agents 2.31</div>
+                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">Облачные GitHub Actions + VM Remote Agents работают без включённого ноутбука.</div>
                 </div>
                 <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:10px;">
-                    <div style="font-size:0.7rem; color:#34d399; font-weight:800; text-transform:uppercase;">2. Anti-Context Drift</div>
-                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">Решение Задачи #42: контекст не раздувается, память хранится во внешнем Obsidian Vault.</div>
+                    <div style="font-size:0.7rem; color:#34d399; font-weight:800; text-transform:uppercase;">2. Native /swarm & Memory</div>
+                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">Мультиагентный совет (Argon + Hydrogen + Carbon) с защитой <code>office_memory.json</code> без потери фактов.</div>
                 </div>
                 <div style="background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.3); border-radius:10px; padding:10px;">
-                    <div style="font-size:0.7rem; color:#f472b6; font-weight:800; text-transform:uppercase;">3. GitHub State Anchor</div>
-                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">Единый Source of Truth: коммиты через Git Data API мгновенно обновляют живой офис.</div>
+                    <div style="font-size:0.7rem; color:#f472b6; font-weight:800; text-transform:uppercase;">3. Gemini Live & Automations</div>
+                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">Честные статусы Always-on / Scheduled / Paused без ложных локальных PID.</div>
                 </div>
                 <div style="background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.3); border-radius:10px; padding:10px;">
-                    <div style="font-size:0.7rem; color:#fbbf24; font-weight:800; text-transform:uppercase;">4. Мобильный Кокпит</div>
-                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">Управление со смартфона в 1 клик через PWA и связку с ботом @unitybusinessbot.</div>
+                    <div style="font-size:0.7rem; color:#fbbf24; font-weight:800; text-transform:uppercase;">4. Мобильный Штаб v34.0</div>
+                    <div style="font-size:0.78rem; color:#f1f5f9; margin-top:4px;">PWA + /hydrogen, /antigravity, /audit в @unitybusinessbot с экранированием HTML.</div>
                 </div>
             </div>
 
-            <!-- LIVE DAEMONS REGISTRY -->
+            <!-- LIVE AUTOMATIONS COCKPIT (TRUTH STATE) -->
             <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:12px;">
                 <h4 style="font-size:0.88rem; font-weight:900; color:#38bdf8; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-                    <span>🟢 РЕЕСТР АВТОНОМНЫХ ПРОЦЕССОВ (РАБОТАЮТ 24/7 БЕЗ УЧАСТИЯ ЧЕЛОВЕКА)</span>
+                    <span>⚙️ AUTOMATIONS COCKPIT (РЕАЛЬНЫЕ СТАТУСЫ: ALWAYS-ON / SCHEDULED / PAUSED)</span>
                 </h4>
-                <div style="display:flex; flex-direction:column; gap:8px;">
+                <div id="antigravity-automations-list" style="display:flex; flex-direction:column; gap:8px;">
                     <div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
                         <div>
-                            <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">PID 12696</span>
-                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">Нейросетевой КХЛ Бот (khl_auto_learning_service.py)</b>
-                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">82 верифицированных матча · WinRate 82.9% · ROI +53.4% · Байесовская калибровка</div>
+                            <span style="background:rgba(56,189,248,0.2); color:#38bdf8; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">SCHEDULED 24/7</span>
+                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">GitHub Actions Cloud Orchestrator (.github/workflows/cloud_agents_24_7.yml)</b>
+                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Argon ↔ Carbon ↔ Hydrogen · Gzip-парсер · Офлайн перехват Telegram</div>
                         </div>
-                        <span style="color:#34d399; font-size:0.75rem; font-weight:800;">● 24/7 Онлайн</span>
+                        <span style="color:#38bdf8; font-size:0.75rem; font-weight:800;">🕒 Scheduled</span>
                     </div>
-
                     <div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
                         <div>
-                            <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">PID 21288</span>
-                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">Офисный Диспетчер Очереди (laptop_worker.py)</b>
-                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Непрерывный опрос 1 сек · Автораспределение по отделам Тима · Мониторинг задач</div>
+                            <span style="background:rgba(245,158,11,0.2); color:#fbbf24; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">LOCAL PC</span>
+                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">Устаревшие локальные воркеры (KHL Auto-Learning / laptop_worker / Freqtrade)</b>
+                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Не запущены на ПК · Модели и код сохранены в архиве папок для ручного запуска</div>
                         </div>
-                        <span style="color:#34d399; font-size:0.75rem; font-weight:800;">● 24/7 Онлайн</span>
-                    </div>
-
-                    <div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-                        <div>
-                            <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">PID 17936 / 20884 / 34824</span>
-                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">Крипто-Трейдинг Арена & Freqtrade (UptrendDipVolStrategy)</b>
-                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Алгоритмический анализ стакана · Суточный бэктест · Сервер арены :8060</div>
-                        </div>
-                        <span style="color:#34d399; font-size:0.75rem; font-weight:800;">● 24/7 Онлайн</span>
-                    </div>
-
-                    <div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-                        <div>
-                            <span style="background:rgba(56,189,248,0.2); color:#38bdf8; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">ГОЛОСОВОЙ ИИ</span>
-                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">AltaHQ AI Calling Agent (alta_voice_calling_engine.py)</b>
-                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Автономный прием звонков · Бронирование отелей · 15% прямая скидка · Лид $1,020</div>
-                        </div>
-                        <span style="color:#38bdf8; font-size:0.75rem; font-weight:800;">Готов к трафику</span>
-                    </div>
-
-                    <div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-                        <div>
-                            <span style="background:rgba(236,72,153,0.2); color:#f472b6; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">CPA АВТО-ТРАФИК</span>
-                            <b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">Трафик-Комбайн Вертикальных Видео (traffic_reels_combain.py)</b>
-                            <div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">50 скриптов/сутки для Reels, TikTok, Shorts · Потенциал $4,236/сутки</div>
-                        </div>
-                        <span style="color:#f472b6; font-size:0.75rem; font-weight:800;">Скрипты готовы</span>
+                        <span style="color:#fbbf24; font-size:0.75rem; font-weight:800;">⏸️ Paused / Offline</span>
                     </div>
                 </div>
             </div>
 
-            <!-- RECENT AUDIT (NOV 6-8, 2026) -->
+            <!-- SAVED WORK & ISSUE AUDIT SUMMARY (NOV 13, 2026) -->
             <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:12px;">
                 <h4 style="font-size:0.88rem; font-weight:900; color:#fbbf24; margin-bottom:8px;">
-                    📋 СВОДКА ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЕЙ И ВЫПОЛНЕННЫХ ЗАДАЧ (6–8 НОЯБРЯ 2026)
+                    📋 АУДИТ СОХРАНЁННОЙ РАБОТЫ И ЗАДАЧ (13 НОЯБРЯ 2026 · v34.0)
                 </h4>
-                <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.5; display:flex; flex-direction:column; gap:6px;">
-                    <div>• <b>@unityspiritpartners (Власлав, Главный Штаб) & @true1team:</b> Задача #42 (Анализ деградации LLM в длинных контекстах / Allen AI & Habr 1104552) ➔ Внедрена архитектура Antigravity Remote Agents с внешним Obsidian Vault. Задача #41 ➔ Развернут робот AltaHQ Voice ($1,000 + $300/мес).</div>
-                    <div>• <b>@aliashirani (Alberta Shirani):</b> Задача #40 ➔ Фундаментальный поворот проекта с дизайна интерьера на «Трансформацию женщин 30–50 лет». Задача #39 ➔ Воронка подписки и Telegram-бот на 1,000,000 ₽. Собрано WebApp Cinema.</div>
-                    <div>• <b>@yvyatkin (Юрий Вяткин):</b> Задача #37 ➔ Выдан полный доступ к офису. Калиброван бэктест 82 матчей КХЛ Бота (WinRate 82.9%). Подготовка к монетизации VIP-канала с кэфами >=1.85.</div>
-                    <div>• <b>@tatianaknyazeva777:</b> Задачи #30, #31 ➔ Полный доступ одобрен. Каталогизирована база tentorium.ru, подключен AI-консультант здоровья.</div>
+                <div id="antigravity-audit-summary" style="font-size:0.78rem; color:#cbd5e1; line-height:1.5; display:flex; flex-direction:column; gap:6px;">
+                    <div>⏳ Загружаю свежие счётчики из <code>board.json</code>, <code>office_memory.json</code> и <code>cloud_agents_telemetry.json</code>...</div>
                 </div>
             </div>
         </div>
@@ -3798,33 +3773,16 @@ textarea.task-inline-input {
     localStorage.setItem('ecc_gh_token', ACTIVE_TOKEN);
     localStorage.setItem('ecc_gh_repo', ACTIVE_REPO);
 
-    // Hard cache-purge helper for mobile browsers
-    window.forceHardRefreshApp = async function() {
-        try {
-            if ('serviceWorker' in navigator) {
-                const regs = await navigator.serviceWorker.getRegistrations();
-                for (let r of regs) await r.unregister();
-            }
-            if ('caches' in window) {
-                const keys = await caches.keys();
-                for (let k of keys) await caches.delete(k);
-            }
-            localStorage.clear();
-            sessionStorage.clear();
-        } catch(e) {}
-        window.location.replace(location.origin + location.pathname + '?v=32.0&nocache=' + Date.now());
-    };
-
-    // Auto purge older PWA caches if code version bumped
+    // Auto purge older PWA caches once when code version bumps to v34.0 (single canonical forceHardRefreshApp lives in <head>)
     (function() {
         try {
-            const currentVer = "32.0";
+            const currentVer = "34.0";
             const storedVer = localStorage.getItem("unity_app_code_version");
             if (storedVer !== currentVer) {
                 localStorage.setItem("unity_app_code_version", currentVer);
                 if ("caches" in window) {
                     caches.keys().then(keys => {
-                        keys.filter(k => k !== "global-spirit-group-pwa-v33.0").forEach(k => caches.delete(k));
+                        keys.filter(k => k !== "global-spirit-group-pwa-v34.0").forEach(k => caches.delete(k));
                     }).catch(()=>{});
                 }
             }
@@ -7277,29 +7235,38 @@ textarea.task-inline-input {
     }
 
     function renderAgentsStatus() {
-        // 1. Update Tim telemetry bar & online badge
+        // 1. Update Tim telemetry bar & online badge (honest local vs cloud separation)
         const barEl = document.getElementById("tim-live-telemetry-bar");
         const badgeEl = document.getElementById("tim-online-badge");
-        let workerOnline = false;
-        let lastSeenText = "нет данных";
-        if (workerStatusTelemetry && workerStatusTelemetry.last_seen) {
+        const hbObj = window.__gsgLocalHeartbeat || null;
+        const cloudTel = window.__gsgCloudTelemetry || null;
+        let localOnline = false;
+        let lastSeenText = "офлайн";
+        if (hbObj && hbObj.iso) {
+            const hbMins = Math.round((Date.now() - new Date(hbObj.iso).getTime()) / 60000);
+            if (hbMins <= 5) {
+                localOnline = true;
+                lastSeenText = hbMins <= 1 ? "только что" : (hbMins + " мин назад");
+            }
+        } else if (workerStatusTelemetry && workerStatusTelemetry.local_daemon_online && workerStatusTelemetry.last_seen) {
             const mins = Math.round((Date.now() - new Date(workerStatusTelemetry.last_seen).getTime()) / 60000);
-            workerOnline = mins <= 6;
+            localOnline = mins <= 6;
             lastSeenText = mins <= 1 ? "только что" : (mins + " мин назад");
         }
+        const cloudCycles = (cloudTel && cloudTel.cycle_count) || (workerStatusTelemetry && workerStatusTelemetry.cycle_count) || 0;
         const routerInfo = (workerStatusTelemetry && workerStatusTelemetry.model_router) || (liveAgentsTelemetry && liveAgentsTelemetry.model_router) || null;
-        const routerLabel = routerInfo ? (routerInfo.active_mode || "VPS-Ready Router") : "Hybrid Cloud Test Gateway (VPS-Ready)";
-        const workerVer = (workerStatusTelemetry && workerStatusTelemetry.worker_version) || "v18.0-vps-ready";
+        const routerLabel = (cloudTel && cloudTel.orchestrator_mode) || (routerInfo && routerInfo.active_mode) || "Antigravity 2.31 (Argon / Carbon / Hydrogen)";
+        const workerVer = (workerStatusTelemetry && workerStatusTelemetry.worker_version) || "v34.0-antigravity-2.31";
 
         if (badgeEl) {
-            badgeEl.innerText = workerOnline ? "🟢 Локальный воркер активен · 24/7" : "☁️ Облачный приём (ожидание воркера)";
-            badgeEl.style.color = workerOnline ? "#34d399" : "#60a5fa";
+            badgeEl.innerText = localOnline ? "🟢 Бот-поллер на связи + Облако 24/7" : "☁️ Автономное Облако 24/7 (ПК на паузе)";
+            badgeEl.style.color = localOnline ? "#34d399" : "#38bdf8";
         }
         if (barEl) {
             const totalReps = combinedTimFeedCache.length || (timReportsRegistry ? timReportsRegistry.length : 0);
             barEl.innerHTML =
-                '<span>' + (workerOnline ? '🟢 <b>Сервер подключён</b> (' + escapeHtml(workerVer) + ', сигнал ' + escapeHtml(lastSeenText) + ')' : '☁️ <b>Облачная очередь активна</b> (задачи выполнятся при связи с воркером)') + '</span>' +
-                '<span>🧠 <b>Модель:</b> ' + escapeHtml(routerLabel) + ' · 📂 <b>Отчётов:</b> ' + totalReps + '</span>';
+                '<span>' + (localOnline ? '🟢 <b>Штаб Poller v34.0 на связи</b> (' + escapeHtml(lastSeenText) + ') + ☁️ Облако цикл #' + cloudCycles : '☁️ <b>Облако Antigravity 2.31 активно</b> (цикл #' + cloudCycles + ', ПК на паузе)') + '</span>' +
+                '<span>🧠 <b>Оркестратор:</b> ' + escapeHtml(routerLabel) + ' · 📂 <b>Отчётов:</b> ' + totalReps + '</span>';
         }
 
         // 2. Update 7 department cards in #tab-tim
@@ -7327,14 +7294,19 @@ textarea.task-inline-input {
             let dHtml = '<div style="font-weight:700; color:var(--text-main); margin-bottom:2px;">⚙️ Фоновые демоны ноутбука / сервера:</div>';
             const dKeys = Object.keys(daemons);
             if (dKeys.length === 0) {
-                dHtml += '<div>• 🔄 <b>laptop_worker.py</b> — ' + (workerOnline ? '🟢 Онлайн' : '☁️ Ожидание') + '</div>';
+                dHtml += '<div>• ☁️ <b>GitHub Actions Cloud 24/7</b> — ' + (localOnline ? '🟢 + Локальный штаб' : '☁️ Облачный режим Antigravity 2.31') + '</div>';
             } else {
                 dKeys.forEach(k => {
                     const d = daemons[k];
-                    const iconSt = d.status === "online" ? "🟢 Онлайн" : (d.status === "scheduled" ? "🕒 Авто-расписание" : "⚪ Ожидание");
+                    let iconSt = "⚪ Ожидание";
+                    let badgeCls = "";
+                    if (d.status === "online") { iconSt = "🟢 Онлайн"; badgeCls = "done"; }
+                    else if (d.status === "scheduled") { iconSt = "🕒 Scheduled"; }
+                    else if (d.status === "paused_offline_local") { iconSt = "⏸️ Пауза (локально)"; }
+                    else if (d.status === "offline_local") { iconSt = "☁️ Перехвачен облаком"; }
                     dHtml += '<div style="padding:6px 8px; background:var(--bg-main); border:1px solid var(--border); border-radius:8px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
                         '<div><b>' + escapeHtml((d.emoji || "🤖") + " " + d.name) + '</b><div style="font-size:0.7rem; color:var(--text-dim);">' + escapeHtml(d.detail || "") + '</div></div>' +
-                        '<span class="badge ' + (d.status === "online" ? "done" : "") + '" style="font-size:0.68rem;">' + iconSt + '</span>' +
+                        '<span class="badge ' + badgeCls + '" style="font-size:0.68rem;">' + iconSt + '</span>' +
                     '</div>';
                 });
             }
@@ -7912,7 +7884,7 @@ textarea.task-inline-input {
                             '<div style="font-size:0.7rem; color:#fbbf24; font-weight:700;">⏳ Задача #' + iss.number + ' · ' + escapeHtml(parsed.project) + '</div>' +
                             '<div style="font-size:0.8rem; font-weight:600; color:var(--text-main);">' + escapeHtml(parsed.cmd) + '</div>' +
                         '</div>' +
-                        '<button class="mini-btn accent" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Открыть ➔</button>' +
+                        '<button class="mini-btn accent" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Open ➔</button>' +
                     '</div>';
                 });
             }
@@ -7974,7 +7946,7 @@ textarea.task-inline-input {
                         '<div style="font-size:0.7rem; color:#fbbf24; font-weight:700;">⏳ Задача #' + iss.number + ' · ' + escapeHtml(parsed.project) + '</div>' +
                         '<div style="font-size:0.8rem; font-weight:600; color:var(--text-main);">' + escapeHtml(parsed.cmd) + '</div>' +
                     '</div>' +
-                    '<button class="mini-btn accent" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Открыть ➔</button>' +
+                    '<button class="mini-btn accent" onclick="closeActionModal(); selectProject(\'' + safeProj + '\')">Open ➔</button>' +
                 '</div>';
             });
         }
@@ -8416,13 +8388,19 @@ textarea.task-inline-input {
         const txt = document.getElementById("worker-text");
 
         try {
-            const [stObj, timObj, agObj, ledObj, repObj] = await Promise.all([
+            const [stObj, timObj, agObj, ledObj, repObj, cloudTelObj, localHbObj, memObj] = await Promise.all([
                 readRepoJson("status.json"),
                 readRepoJson("tim_reports.json"),
                 readRepoJson("agents.json"),
                 readRepoJson("project_ledgers.json"),
-                readRepoJson("agent_work_report.json")
+                readRepoJson("agent_work_report.json"),
+                readRepoJson("cloud_agents_telemetry.json"),
+                readRepoJson("local_daemon_heartbeat.json"),
+                readRepoJson("office_memory.json")
             ]);
+            if (cloudTelObj && cloudTelObj.json) window.__gsgCloudTelemetry = cloudTelObj.json;
+            if (localHbObj && localHbObj.json) window.__gsgLocalHeartbeat = localHbObj.json;
+            if (memObj && memObj.json) window.__gsgOfficeMemory = memObj.json;
             if (ledObj && ledObj.json && ledObj.json.ledgers) {
                 projectLedgersMap = ledObj.json.ledgers;
                 try { localStorage.setItem("crm_project_ledgers_cache", JSON.stringify(projectLedgersMap)); } catch (e) {}
@@ -8447,18 +8425,21 @@ textarea.task-inline-input {
                 } catch (e) {}
             }
 
-            if (stObj && stObj.json && stObj.json.last_seen) {
-                const mins = Math.round((Date.now() - new Date(stObj.json.last_seen).getTime()) / 60000);
-                if (mins <= 5) {
-                    dot.className = "status-dot";
-                    txt.innerText = "🟢 Сервер/Ноутбук на связи + Облако 24/7";
-                } else {
-                    dot.className = "status-dot cloud";
-                    txt.innerText = "☁️ Автономный облачный режим (сохранение работает 24/7)";
-                }
+            const hbIso = window.__gsgLocalHeartbeat && window.__gsgLocalHeartbeat.iso;
+            const hbMins = hbIso ? Math.round((Date.now() - new Date(hbIso).getTime()) / 60000) : 9999;
+            const cTel = window.__gsgCloudTelemetry || {};
+            const cCycle = cTel.cycle_count ? (" · цикл #" + cTel.cycle_count) : "";
+            if (hbMins <= 5) {
+                dot.className = "status-dot";
+                dot.style.background = "#34d399";
+                txt.innerText = "🟢 Облако 24/7 + Бот-Штаб v34.0 онлайн" + cCycle;
+            } else if (cTel && cTel.last_cycle_iso) {
+                dot.className = "status-dot cloud";
+                dot.style.background = "#38bdf8";
+                txt.innerText = "☁️ Облако Antigravity 2.31 24/7" + cCycle + " (ПК на паузе)";
             } else {
                 dot.className = "status-dot cloud";
-                txt.innerText = "☁️ Автономный облачный режим активен";
+                txt.innerText = "☁️ Автономный облачный режим v34.0";
             }
             renderAgentsStatus();
             renderTimReportsList();
@@ -9749,14 +9730,14 @@ textarea.task-inline-input {
 
     // Register PWA Service Worker & Capture Native Install Prompt
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-        navigator.serviceWorker.register("./sw.js?v=32.0").then(reg => {
+        navigator.serviceWorker.register("./sw.js?v=34.0").then(reg => {
             reg.update().catch(()=>{});
             reg.addEventListener("updatefound", () => {
                 const nw = reg.installing;
                 if (nw) {
                     nw.addEventListener("statechange", () => {
                         if (nw.state === "activated" && navigator.serviceWorker.controller) {
-                            console.log("Service Worker v33.0 Antigravity 2.0 Hydrogen Remote Agents active");
+                            console.log("Service Worker v34.0 Antigravity 2.31 Remote Agents active");
                         }
                     });
                 }
@@ -10425,14 +10406,14 @@ function sendQuickGuestPromptPortal(txt) {
             }
             return "🗺️ **Карта Офиса и Мгновенная Навигация:**\n\n" +
                    "Вот ключевые разделы нашего виртуального офиса, куда можно перейти в 1 клик:\n" +
-                   "1. **📁 12 IT Продуктов:** готовые Telegram Mini Apps для быстрой монетизации.\n" +
+                   "1. **📁 12 IT Products:** готовые Telegram Mini Apps для быстрой монетизации.\n" +
                    "2. **🚦 Трафик и Воронки:** привлечение целевых клиентов с оплатой за результат.\n" +
                    "3. **📊 Отчёты работы:** 150 решённых задач и 50 приоритетов на продолжение.\n" +
                    "4. **👑 Генеральный Директор Тим:** постановка задач 7 автономным отделам.\n" +
-                   "5. **🚨 5 Решений Человека:** задачи, ожидающие подтверждения владельца.\n" +
+                   "5. **🚨 5 Decisions Человека:** задачи, ожидающие подтверждения владельца.\n" +
                    "6. **📷 Студия Изучения:** быстрая отправка фото, заметок и ссылок на анализ.\n\n" +
                    "Нажмите на нужную кнопку для перехода:\n" +
-                   "[[NAV:12apps|📁 12 IT Продуктов]] [[NAV:traffic|🚦 Трафик и Воронки]] [[NAV:reports|📊 Отчёт (150 задач)]] [[NAV:tim|👑 Директор Тим]] [[NAV:actions|🚨 5 Решений]] [[NAV:study|📷 Студия Фото]]";
+                   "[[NAV:12apps|📁 12 IT Products]] [[NAV:traffic|🚦 Трафик и Воронки]] [[NAV:reports|📊 Work Report (150 tasks)]] [[NAV:tim|👑 Директор Тим]] [[NAV:actions|🚨 5 Decisions]] [[NAV:study|📷 Студия Фото]]";
         }
 
         // 3. REPORTS (150 COMPLETED TASKS & WHAT TO CONTINUE)
@@ -10577,7 +10558,7 @@ function sendQuickGuestPromptPortal(txt) {
                "Я готов помочь вам с любой задачей по бизнесу, маркетингу или навигации по офису.\n" +
                "• Спросите о 12 IT Продуктах, трафике с оплатой за результат или координации Директора Тима.\n" +
                "• Или нажмите кнопку ниже для быстрого перехода в нужный раздел:\n" +
-               "[[NAV:12apps|📁 12 IT Продуктов]] [[NAV:traffic|🚦 Трафик и Воронки]] [[NAV:reports|📊 Отчёт работы (150)]] [[NAV:tim|👑 Директор Тим]] [[NAV:actions|🚨 5 Решений]]";
+               "[[NAV:12apps|📁 12 IT Products]] [[NAV:traffic|🚦 Трафик и Воронки]] [[NAV:reports|📊 Отчёт работы (150)]] [[NAV:tim|👑 Директор Тим]] [[NAV:actions|🚨 5 Decisions]]";
     }
 
     async function submitGuestChatMessage() {
@@ -10722,57 +10703,39 @@ function sendQuickGuestPromptPortal(txt) {
             }
         }
 
-        // D. Gemini 4 Hydrogen Live / Local API / Smart Assistant fallback
-        if (!replyText) {
-            if (/(?:hydrogen|гидроген|antigravity|оркестратор|gemini\s*4|comss|новинк|обновлен)/i.test(lower)) {
-                const hModel = localStorage.getItem("gsg_hydrogen_model") || "gemini-4-hydrogen";
-                const hThink = localStorage.getItem("gsg_hydrogen_thinking") || "high";
-                const hasKey = Boolean((localStorage.getItem("gsg_hydrogen_api_key") || "").trim());
+        // D. Gemini 4 (Argon <-> Carbon <-> Hydrogen) Live API / Smart Antigravity 2.31 Assistant
+        const activeHKey = (typeof getHydrogenApiKey === "function" && isUserAuthenticated()) ? getHydrogenApiKey() : "";
+        if (!replyText && (!activeHKey || activeHKey.length <= 12)) {
+            if (/(?:hydrogen|argon|carbon|гидроген|аргон|antigravity|оркестратор|gemini\s*4|comss|новинк|обновлен|swarm|remote\s*agent)/i.test(lower)) {
+                const hModel = (typeof localStorage !== "undefined" && localStorage.getItem("gsg_hydrogen_model")) || "auto";
+                const hThink = (typeof localStorage !== "undefined" && localStorage.getItem("gsg_hydrogen_thinking")) || "high";
+                const cTel = window.__gsgCloudTelemetry || {};
                 replyText = isEn ?
-                    ("⚛️ **Gemini 4 Hydrogen & Antigravity 2.0 Orchestrator (Nov 12–13, 2026):**\n\n" +
-                     "• **Model Engine:** `gemini-4-hydrogen` — 2.5x faster than Gemini 3.8 Flash, **1M token context**, native `thinking_level` (`low` / `medium` / `high` / `xhigh`), flat pricing `$1.50/1M` in, `$7.50/1M` out.\n" +
-                     "• **Dynamic Orchestrator:** Auto-handoff between **Carbon** (deep strategy/critic) and **Hydrogen** (rapid execution), reducing frontier quota by ~24% while boosting throughput +19%.\n" +
-                     "• **Cloud Migration:** `models.github.ai` was retired on July 30, 2026 — Worker v33.0 now targets Gemini 4 Hydrogen + gzip-safe page extraction + COMSS AI 2.0 routing.\n" +
-                     "• **Active Mode:** `" + hModel + "` (`thinking: " + hThink + "`) · Live Key: " + (hasKey ? "✅ Configured" : "⏳ Add GEMINI_API_KEY in Antigravity Panel / GitHub Secrets") + "\n\n" +
+                    ("⚛️ **Antigravity 2.31 & Gemini 4 Element (v34.0 — Nov 12–13, 2026):**\n\n" +
+                     "• **Three-Tier Routing:** `gemini-4-carbon` (deep architecture & security), `gemini-4-argon` (frontier strategy & NotebookLM RAG), and `gemini-4-hydrogen` (`$1.50/1M` in · 2.5x speed, **1M context**, `thinking_level`: `low/medium/high/xhigh`).\n" +
+                     "• **2.31 Platform Features:** Cloud VM **Remote Agents**, **Gemini Live Voice Mode**, native **/swarm**, and **Automations Cockpit** (Always-on / Scheduled / Paused).\n" +
+                     "• **Live Mode:** `" + hModel + "` (`thinking: " + hThink + "`) · Cloud Cycle: `#" + (cTel.cycle_count || 0) + "` · Live BYOK Key: ⏳ Add `GEMINI_API_KEY` in Antigravity 2.31 Panel.\n\n" +
                      "[[NAV:tim|👑 Open Director Tim]]") :
-                    ("⚛️ **Gemini 4 Hydrogen & Antigravity 2.0 Оркестратор (новинки 12–13.11.2026):**\n\n" +
-                     "• **Новая модель Google Gemini 4 Hydrogen (`gemini-4-hydrogen`):** в 2.5 раза быстрее Gemini 3.8 Flash, **контекст 1M токенов**, управляемое мышление `thinking_level` (`low` / `medium` / `high` / `xhigh`), тариф `$1.50/1M` вход и `$7.50/1M` выход.\n" +
-                     "• **Google Antigravity 2.0 Оркестратор:** динамическая маршрутизация Carbon ↔ Hydrogen с обратным возвратом на сложный анализ (`-24%` расхода тяжёлой квоты, `+19%` скорости).\n" +
-                     "• **Исправление 24/7 Облака:** GitHub Models (`models.github.ai`) официально закрыт 30.07.2026, поэтому воркер v33.0 переведён на **Gemini 4 Hydrogen** + корректную декомпрессию `gzip/deflate` для русских сайтов (включая COMSS AI 2.0).\n" +
-                     "• **Текущий режим:** `" + hModel + "` (`thinking: " + hThink + "`) · API-ключ: " + (hasKey ? "✅ Подключён" : "⏳ Добавьте GEMINI_API_KEY в Панели Antigravity / GitHub Secrets") + "\n\n" +
-                     "<i>Открыть настройки оркестратора можно нажав «Antigravity 2.0 · 24/7» в верхней панели.</i>");
+                    ("⚛️ **Antigravity 2.31 & Gemini 4 Argon ↔ Carbon ↔ Hydrogen (v34.0):**\n\n" +
+                     "• **Трёхуровневый оркестратор:** **Carbon** (`gemini-4-carbon`, аудит/архитектура), **Argon** (`gemini-4-argon`, CEO-стратегия/RAG), **Hydrogen** (`gemini-4-hydrogen`, `$1.50/1M` in · контекст 1M токенов, `thinking_level`: `low/medium/high/xhigh`).\n" +
+                     "• **Новинки Antigravity 2.31:** облачные VM **Remote Agents**, голосовой режим **Gemini Live Voice**, мультиагентный **/swarm** и честный **Automations Cockpit**.\n" +
+                     "• **Текущий режим:** `" + hModel + "` (`thinking: " + hThink + "`) · Облачный цикл: `#" + (cTel.cycle_count || 0) + "` · Личный ключ: ⏳ Не задан (нажмите панель Antigravity 2.31 вверху).\n\n" +
+                     "<i>Подключите ключ в панели «Antigravity 2.31 Cloud» или добавьте GEMINI_API_KEY в GitHub Secrets.</i>");
                 actionExecuted = true;
             }
         }
 
-        if (!replyText) {
-            const hKey = (isUserAuthenticated() && typeof localStorage !== "undefined") ? (localStorage.getItem("gsg_hydrogen_api_key") || "").trim() : "";
-            if (hKey && hKey.length > 12) {
-                try {
-                    const hModel = localStorage.getItem("gsg_hydrogen_model") || "gemini-4-hydrogen";
-                    const hThink = localStorage.getItem("gsg_hydrogen_thinking") || "high";
-                    const hResp = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json", "Authorization": "Bearer " + hKey },
-                        body: JSON.stringify({
-                            model: hModel,
-                            reasoning_effort: hThink,
-                            max_tokens: 900,
-                            messages: [
-                                { role: "system", content: "Ты встроенный ИИ-директор Global Spirit Group ★ Виртуальный Офис (v33.0 Hydrogen). Отвечай кратко, по делу, без галлюцинаций. Текущий проект: " + (currentProject || "Офис") + "." },
-                                { role: "user", content: msg }
-                            ]
-                        })
-                    });
-                    if (hResp.ok) {
-                        const hJson = await hResp.json();
-                        const hText = (((hJson.choices || [])[0] || {}).message || {}).content;
-                        if (hText && String(hText).trim()) {
-                            replyText = "⚛️ **Gemini 4 Hydrogen (`" + hThink + "`):**\n\n" + String(hText).trim();
-                        }
-                    }
-                } catch(e) {}
-            }
+        if (!replyText && activeHKey && activeHKey.length > 12) {
+            try {
+                const prefModel = (typeof localStorage !== "undefined" && localStorage.getItem("gsg_hydrogen_model")) || "auto";
+                const hThink = (typeof localStorage !== "undefined" && localStorage.getItem("gsg_hydrogen_thinking")) || "high";
+                const chosenModel = typeof selectAntigravityClientModel === "function" ? selectAntigravityClientModel(prefModel, msg) : (prefModel === "auto" ? "gemini-4-hydrogen" : prefModel);
+                const sysPrompt = "Ты встроенный ИИ-директор Global Spirit Group ★ Виртуальный Офис (v34.0 Antigravity 2.31). Отвечай кратко, по делу, без галлюцинаций. Текущий проект: " + (currentProject || "Офис") + ".";
+                const resCall = await callGeminiDirectClient(activeHKey, chosenModel, hThink, sysPrompt, msg, 1200);
+                if (resCall && resCall.ok && resCall.text) {
+                    replyText = "⚛️ **" + resCall.model + " (`" + hThink + "`):**\n\n" + resCall.text;
+                }
+            } catch(e) {}
         }
 
         if (!replyText) {
@@ -10888,8 +10851,13 @@ function sendQuickGuestPromptPortal(txt) {
     var currentOfficeLang = "ru";
     try {
         const urlParams = new URLSearchParams(window.location.search);
+        const pathLower = (window.location.pathname || "").toLowerCase();
         if (urlParams.get("lang") === "en") {
             currentOfficeLang = "en";
+        } else if (urlParams.get("lang") === "ru") {
+            currentOfficeLang = "ru";
+        } else if (pathLower.includes("index_en")) {
+            currentOfficeLang = localStorage.getItem("unity_office_lang") || "en";
         } else {
             currentOfficeLang = localStorage.getItem("unity_office_lang") || "ru";
         }
@@ -10930,7 +10898,7 @@ function sendQuickGuestPromptPortal(txt) {
             nav_office: "Офис",
             
             // Human action strip
-            strip_badge: "🚨 ТРЕБУЕТСЯ ДЕЙСТВИЕ (5)",
+            strip_badge: "🚨 ACTION REQUIRED (5)",
             strip_text: "Ожидают решения: <strong>12 IT Продуктов</strong> (выбор Mini App), <strong>Traffic</strong> (ниша), <strong>Alberta</strong> (ключи), <strong>Урал</strong> (КП), <strong>Доминикана</strong> (WhatsApp).",
             strip_arrow: "Открыть ➔",
             
@@ -10974,15 +10942,15 @@ function sendQuickGuestPromptPortal(txt) {
             // AI Assistant
             floating_ai_title: "ИИ-Ассистент & Навигатор",
             floating_ai_label: "ИИ-Навигатор",
-            ai_modal_title: "ИИ-Ассистент & Навигатор Офиса",
-            ai_modal_sub: "🟢 В сети · Помощь по офису и навигация",
-            ai_nav_strip_title: "🗺️ Быстрый переход по офису (1 клик):",
+            ai_modal_title: "AI Assistant & Office Navigator",
+            ai_modal_sub: "🟢 Online · Office Assistant & Navigator",
+            ai_nav_strip_title: "🗺️ Quick Office Navigation (1 click):",
             ai_chat_placeholder: "Спросите что угодно или куда перейти (Enter для отправки)...",
             ai_starter_1: "🛍️ Чем полезен для бизнеса?",
             ai_starter_2: "👑 Как работает Директор Тим?",
             ai_starter_3: "🗺️ Куда перейти в 1 очередь?",
             ai_starter_4: "📊 Отчёт о работе (150 задач)",
-            ai_welcome_html: "Здравствуйте! Я официальный <b>ИИ-Ассистент & Навигатор Global Spirit Group ★ Виртуальный Офис</b> 🚀<br><br>Вы можете спросить меня о чём угодно в живом режиме или попросить перейти в любой раздел офиса:<br>• 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>• 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>• 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>• 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br><i>Нажмите кнопку в панели навигатора выше или напишите вопрос!</i>",
+            ai_welcome_html: "Hello! I am the official <b>AI Assistant & Navigator for Global Spirit Group ★ Virtual Office</b> 🚀<br><br>Ask me anything live or jump directly to any office department:<br>• 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>• 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>• 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>• 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br><i>Click a navigation pill above or type your question below!</i>",
             
             // Modals
             action_modal_title: "🚨 Центр Предупреждений и Ожидания Действий",
@@ -11090,7 +11058,7 @@ function sendQuickGuestPromptPortal(txt) {
 
         const el = (id) => document.getElementById(id);
         if (el("brand-header-title")) el("brand-header-title").innerText = d.brand_title;
-        if (el("worker-text")) el("worker-text").innerText = d.worker_status;
+        if (el("worker-text") && !window.__gsgCloudTelemetry) el("worker-text").innerText = d.worker_status;
         if (el("lbl-top-app")) el("lbl-top-app").innerText = d.btn_app;
         if (el("lbl-top-vault")) el("lbl-top-vault").innerText = d.btn_vault;
         if (el("lbl-top-report")) el("lbl-top-report").innerText = d.btn_report;
@@ -11152,7 +11120,14 @@ function sendQuickGuestPromptPortal(txt) {
         if (el("btn-study-drawer-send")) el("btn-study-drawer-send").innerText = d.study_drawer_btn;
 
         // Auth Gate
-        if (el("auth-gate-title")) el("auth-gate-title").innerText = d.auth_title;
+        if (el("auth-gate-title")) {
+            const verBadge = el("auth-gate-title").querySelector("span");
+            if (verBadge) {
+                el("auth-gate-title").innerHTML = d.auth_title + " " + verBadge.outerHTML;
+            } else {
+                el("auth-gate-title").innerHTML = d.auth_title + ' <span style="background:linear-gradient(135deg,#0ea5e9,#8b5cf6); color:#fff; font-size:0.65rem; padding:2px 7px; border-radius:999px; font-weight:900;">v34.0</span>';
+            }
+        }
         if (el("auth-gate-status")) el("auth-gate-status").innerText = d.auth_status;
         if (el("btn-direct-install-gate")) el("btn-direct-install-gate").innerText = d.auth_install_btn;
                         if (el("auth-tab-btn-register")) el("auth-tab-btn-register").innerText = d.tab_register;
@@ -11169,7 +11144,14 @@ function sendQuickGuestPromptPortal(txt) {
         // AI Assistant & Navigator
         if (el("floating-ai-label")) el("floating-ai-label").innerText = d.floating_ai_label;
         if (el("btn-floating-guest-ai")) el("btn-floating-guest-ai").title = d.floating_ai_title;
-        if (el("ai-modal-header-title")) el("ai-modal-header-title").innerHTML = d.ai_modal_title + ' <span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">ChatGPT Mode</span>';
+        if (el("ai-modal-header-title")) {
+            const existingMode = el("ai-chat-mode-badge");
+            const modeText = (existingMode && existingMode.textContent.trim()) || "Antigravity 2.31";
+            el("ai-modal-header-title").innerHTML = d.ai_modal_title + ' <span id="ai-chat-mode-badge" style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">' + escapeHtml(modeText) + '</span>';
+        }
+        if (typeof renderCloud247MemoryPanel === "function") {
+            try { renderCloud247MemoryPanel(); } catch(e) {}
+        }
         if (el("ai-modal-header-sub")) el("ai-modal-header-sub").innerText = d.ai_modal_sub;
         if (el("ai-nav-strip-label")) el("ai-nav-strip-label").innerText = d.ai_nav_strip_title;
         if (el("guest-chat-input-text")) el("guest-chat-input-text").placeholder = d.ai_chat_placeholder;
@@ -11182,15 +11164,15 @@ function sendQuickGuestPromptPortal(txt) {
         if (el("pill-ai-4")) el("pill-ai-4").innerText = d.ai_starter_4;
 
         // AI Nav strip pills
-        if (el("nav-pill-12apps")) el("nav-pill-12apps").innerText = isEn ? "📁 12 IT Products" : "📁 12 IT Продуктов";
-        if (el("nav-pill-traffic")) el("nav-pill-traffic").innerText = isEn ? "🚦 Traffic & Funnels" : "🚦 Трафик & Воронки";
-        if (el("nav-pill-reports")) el("nav-pill-reports").innerText = isEn ? "📊 Work Reports (150)" : "📊 Отчёт (150 задач)";
+        if (el("nav-pill-12apps")) el("nav-pill-12apps").innerText = isEn ? "📁 12 IT Products" : "📁 12 IT Products";
+        if (el("nav-pill-traffic")) el("nav-pill-traffic").innerText = isEn ? "🚦 Traffic & Funnels" : "🚦 Traffic & Funnels";
+        if (el("nav-pill-reports")) el("nav-pill-reports").innerText = isEn ? "📊 Work Reports (150)" : "📊 Work Report (150 tasks)";
         if (el("nav-pill-tim")) el("nav-pill-tim").innerText = isEn ? "👑 Director Tim" : "👑 Директор Тим";
-        if (el("nav-pill-actions")) el("nav-pill-actions").innerText = isEn ? "🚨 5 Decisions" : "🚨 5 Решений";
-        if (el("nav-pill-tasks")) el("nav-pill-tasks").innerText = isEn ? "📋 Tasks" : "📋 Задачи";
-        if (el("nav-pill-study")) el("nav-pill-study").innerText = isEn ? "📷 Study Studio" : "📷 Студия / Фото";
-        if (el("nav-pill-vault")) el("nav-pill-vault").innerText = isEn ? "🔒 Vault & Admin" : "🔒 Сейф & Админ";
-        if (el("nav-pill-kb")) el("nav-pill-kb").innerText = isEn ? "🧠 Knowledge Base" : "🧠 База Знаний";
+        if (el("nav-pill-actions")) el("nav-pill-actions").innerText = isEn ? "🚨 5 Decisions" : "🚨 5 Decisions";
+        if (el("nav-pill-tasks")) el("nav-pill-tasks").innerText = isEn ? "📋 Tasks" : "📋 Tasks";
+        if (el("nav-pill-study")) el("nav-pill-study").innerText = isEn ? "📷 Study Studio" : "📷 Study / Photo";
+        if (el("nav-pill-vault")) el("nav-pill-vault").innerText = isEn ? "🔒 Vault & Admin" : "🔒 Vault & Admin";
+        if (el("nav-pill-kb")) el("nav-pill-kb").innerText = isEn ? "🧠 Knowledge Base" : "🧠 Knowledge Base";
 
         // Modals
         const aMTitle = document.querySelector("#action-modal .modal-header h3");
@@ -11498,7 +11480,7 @@ function enterPendingWaitingRoom(userObj) {
         box.style.background = type === "error" ? "rgba(239,68,68,0.13)" : (type === "success" ? "rgba(16,185,129,0.13)" : "rgba(245,158,11,0.13)");
         box.style.color = type === "error" ? "#fca5a5" : (type === "success" ? "#6ee7b7" : "#fde68a");
         if (type === "error") {
-            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v33.0</button></div>";
+            htmlMsg += "<div style='margin-top:9px;'><button type='button' onclick='forceHardRefreshApp()' style='background:#38bdf8; color:#090d16; border:none; border-radius:7px; padding:7px 12px; font-size:0.75rem; font-weight:900; cursor:pointer;'>🔄 Сбросить кэш и обновить до v34.0</button></div>";
         }
         box.innerHTML = htmlMsg;
     }
@@ -11507,7 +11489,7 @@ function enterPendingWaitingRoom(userObj) {
         if (typeof window.submitAuthLogin === "function" && window.submitAuthLogin !== submitAuthLogin) {
             return window.submitAuthLogin();
         }
-        showAuthFeedback("⚠️ Загрузка модуля авторизации v33.0 — нажмите ещё раз.", "error");
+        showAuthFeedback("⚠️ Загрузка модуля авторизации v34.0 — нажмите ещё раз.", "error");
     }
 
         // =========================================================================
@@ -11576,7 +11558,7 @@ function enterPendingWaitingRoom(userObj) {
             totalTasksCount: 4,
             openTasksCount: 0,
             closedTasksCount: 4,
-            currentProcess: "24/7 Нейросетевой КХЛ Бот (PID 12696). Верифицировано 82 матча: WinRate 82.9%, ROI +53.4%, Brier score 0.1716. Согласование порога кэфа (>=1.85) для платного VIP-канала.",
+            currentProcess: "Квантовый КХЛ Бот (локальный сервис на паузе · калибровка модели на 82 матчах: WinRate 82.9%, ROI +53.4%, Brier score 0.1716). Согласование порога кэфа (>=1.85) для VIP-канала.",
             recentTasks: [
                 { num: 37, state: "closed", isToday: false, date: "05.11.2026 11:44", title: "AUTH_SYNC: Регистрация и выдача полного доступа к офису REQ-252172" },
                 { num: 101, state: "closed", isToday: false, date: "05.11.2026", title: "Синхронизация бэктеста 82 матчей и байесовской калибровки весов" },
@@ -11627,7 +11609,7 @@ function enterPendingWaitingRoom(userObj) {
             login: "unityspiritteam@gmail.com",
             name: "Позновалка / PKM",
             role: "member",
-            roleLabel: "🧠 База Знаний & AI Вторая Память",
+            roleLabel: "🧠 Knowledge Base & AI Вторая Память",
             avatar: "🧠",
             primaryProject: "Позновалка",
             lastSeen: "5 Ноября в 13:26 МСК",
@@ -11728,7 +11710,79 @@ function enterPendingWaitingRoom(userObj) {
         if (m) m.style.display = "none";
     }
 
-    // === v33.0: GOOGLE ANTIGRAVITY 2.0 ORCHESTRATOR & GEMINI 4 HYDROGEN ===
+    // === v34.0: GOOGLE ANTIGRAVITY 2.31 ORCHESTRATOR & GEMINI 4 ARGON / CARBON / HYDROGEN ===
+    window.getHydrogenApiKey = function() {
+        try {
+            const sKey = sessionStorage.getItem("gsg_hydrogen_api_key");
+            if (sKey && sKey.trim()) return sKey.trim();
+            return (localStorage.getItem("gsg_hydrogen_api_key") || "").trim();
+        } catch(e) { return ""; }
+    };
+
+    window.selectAntigravityClientModel = function(prefModel, promptText) {
+        if (prefModel && prefModel !== "auto") return prefModel;
+        const low = String(promptText || "").toLowerCase();
+        if (/(?:critic|критик|безопас|аудит|security|архитект|debug|three\.js|nethunter|exploit)/i.test(low)) return "gemini-4-carbon";
+        if (/(?:ceo|strategy|стратег|roi|profitroom|pivex|alberta|воронка|notebooklm|b2b)/i.test(low)) return "gemini-4-argon";
+        return "gemini-4-hydrogen";
+    };
+
+    window.callGeminiDirectClient = async function(key, model, thinking, systemPrompt, userPrompt, maxTokens) {
+        const mList = [model || "gemini-4-hydrogen"];
+        if (mList[0] !== "gemini-4-argon") mList.push("gemini-4-argon");
+        if (mList[0] !== "gemini-4-hydrogen") mList.push("gemini-4-hydrogen");
+        let lastErr = "error";
+        for (const m of mList) {
+            try {
+                const resp = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Authorization": "Bearer " + key },
+                    body: JSON.stringify({
+                        model: m,
+                        reasoning_effort: thinking || "high",
+                        max_tokens: maxTokens || 1000,
+                        messages: [
+                            ...(systemPrompt ? [{ role: "system", content: systemPrompt }] : []),
+                            { role: "user", content: userPrompt }
+                        ]
+                    })
+                });
+                if (resp.ok) {
+                    const j = await resp.json();
+                    const txt = (((j.choices || [])[0] || {}).message || {}).content;
+                    if (txt && String(txt).trim()) return { ok: true, text: String(txt).trim(), model: m, transport: "openai_compat" };
+                } else {
+                    lastErr = "HTTP " + resp.status + ": " + (await resp.text()).slice(0, 90);
+                }
+            } catch(e) { lastErr = e.message || "net_err"; }
+
+            try {
+                const nResp = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(m) + ":generateContent", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "x-goog-api-key": key },
+                    body: JSON.stringify({
+                        ...(systemPrompt ? { systemInstruction: { parts: [{ text: systemPrompt }] } } : {}),
+                        contents: [{ role: "user", parts: [{ text: userPrompt }] }],
+                        generationConfig: {
+                            temperature: 0.35,
+                            maxOutputTokens: maxTokens || 1000,
+                            thinkingConfig: { thinkingLevel: String(thinking || "high").toUpperCase() }
+                        }
+                    })
+                });
+                if (nResp.ok) {
+                    const nj = await nResp.json();
+                    const parts = (((nj.candidates || [])[0] || {}).content || {}).parts || [];
+                    const nTxt = parts.filter(p => !p.thought && p.text).map(p => p.text).join("\n").trim() || parts.filter(p => p.text).map(p => p.text).join("\n").trim();
+                    if (nTxt) return { ok: true, text: nTxt, model: m, transport: "gemini_native" };
+                } else {
+                    lastErr = "Native HTTP " + nResp.status + ": " + (await nResp.text()).slice(0, 90);
+                }
+            } catch(ne) { lastErr = ne.message || "native_err"; }
+        }
+        return { ok: false, error: lastErr };
+    };
+
     function openAntigravityModal() {
         const m = document.getElementById("antigravity-modal");
         if (m) m.style.display = "flex";
@@ -11736,12 +11790,15 @@ function enterPendingWaitingRoom(userObj) {
             const ms = document.getElementById("hydrogen-model-select");
             const ts = document.getElementById("hydrogen-thinking-select");
             const ks = document.getElementById("hydrogen-byok-input");
+            const sOnly = document.getElementById("hydrogen-key-session-only");
             const st = document.getElementById("hydrogen-status-pill");
-            if (ms) ms.value = localStorage.getItem("gsg_hydrogen_model") || "gemini-4-hydrogen";
+            if (ms) ms.value = localStorage.getItem("gsg_hydrogen_model") || "auto";
             if (ts) ts.value = localStorage.getItem("gsg_hydrogen_thinking") || "high";
-            const savedKey = localStorage.getItem("gsg_hydrogen_api_key") || "";
+            const savedKey = getHydrogenApiKey();
+            const isSess = Boolean((sessionStorage.getItem("gsg_hydrogen_api_key") || "").trim());
             if (ks) ks.value = savedKey;
-            if (st) st.innerHTML = savedKey ? "<span style='color:#34d399;'>● Локальный API-ключ сохранён</span>" : "<span style='color:#fbbf24;'>○ Локальный ключ не задан (работает Smart Orchestrator)</span>";
+            if (sOnly) sOnly.checked = isSess || !localStorage.getItem("gsg_hydrogen_api_key");
+            if (st) st.innerHTML = savedKey ? ("<span style='color:#34d399;'>● Ключ активен (" + (isSess ? "sessionStorage" : "localStorage") + ")</span>") : "<span style='color:#fbbf24;'>○ Локальный ключ не задан (работает 24/7 Orchestrator)</span>";
         } catch(e) {}
         if (typeof renderCloud247MemoryPanel === "function") {
             renderCloud247MemoryPanel();
@@ -11757,79 +11814,66 @@ function enterPendingWaitingRoom(userObj) {
         const ms = document.getElementById("hydrogen-model-select");
         const ts = document.getElementById("hydrogen-thinking-select");
         const ks = document.getElementById("hydrogen-byok-input");
+        const sOnly = document.getElementById("hydrogen-key-session-only");
         const st = document.getElementById("hydrogen-status-pill");
-        const model = ms ? ms.value : "gemini-4-hydrogen";
+        const model = ms ? ms.value : "auto";
         const thinking = ts ? ts.value : "high";
         const key = ks ? String(ks.value || "").trim() : "";
+        const useSession = sOnly ? Boolean(sOnly.checked) : true;
         localStorage.setItem("gsg_hydrogen_model", model);
         localStorage.setItem("gsg_hydrogen_thinking", thinking);
+        localStorage.removeItem("gsg_hydrogen_api_key");
+        sessionStorage.removeItem("gsg_hydrogen_api_key");
         if (key) {
-            localStorage.setItem("gsg_hydrogen_api_key", key);
-        } else {
-            localStorage.removeItem("gsg_hydrogen_api_key");
+            if (useSession) sessionStorage.setItem("gsg_hydrogen_api_key", key);
+            else localStorage.setItem("gsg_hydrogen_api_key", key);
         }
         const chatBadge = document.getElementById("ai-chat-mode-badge");
         if (chatBadge) {
-            chatBadge.innerText = key ? (model === "gemini-4-carbon" ? "Carbon · " + thinking : "Hydrogen 4 · " + thinking) : "Orchestrator 24/7";
+            chatBadge.innerText = key ? (model === "auto" ? "Antigravity 2.31 · " + thinking : model.replace("gemini-4-", "") + " · " + thinking) : "Antigravity 2.31";
         }
-        if (st) st.innerHTML = key ? "<span style='color:#34d399;'>✅ Сохранено локально в браузере</span>" : "<span style='color:#94a3b8;'>💾 Настройки сохранены (ключ очищен)</span>";
+        if (st) st.innerHTML = key ? ("<span style='color:#34d399;'>✅ Сохранено (" + (useSession ? "только до закрытия вкладки" : "localStorage") + ")</span>") : "<span style='color:#94a3b8;'>💾 Настройки сохранены (ключ очищен)</span>";
         showToast("⚛️ Параметры " + model + " (thinking: " + thinking + ") сохранены!");
     };
 
     window.testHydrogenLivePing = async function() {
         const ks = document.getElementById("hydrogen-byok-input");
         const st = document.getElementById("hydrogen-status-pill");
-        const key = (ks ? String(ks.value || "").trim() : "") || (localStorage.getItem("gsg_hydrogen_api_key") || "").trim();
-        const model = (document.getElementById("hydrogen-model-select") || {}).value || "gemini-4-hydrogen";
+        const key = (ks ? String(ks.value || "").trim() : "") || getHydrogenApiKey();
+        const prefModel = (document.getElementById("hydrogen-model-select") || {}).value || "auto";
+        const model = selectAntigravityClientModel(prefModel, "quick test");
         const thinking = (document.getElementById("hydrogen-thinking-select") || {}).value || "high";
         if (!key) {
             if (st) st.innerHTML = "<span style='color:#fca5a5;'>⚠️ Введите ваш GEMINI_API_KEY для проверки</span>";
             return;
         }
-        if (st) st.innerHTML = "<span style='color:#38bdf8;'>⏳ Запрос к Gemini 4 Hydrogen...</span>";
-        try {
-            const resp = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "Authorization": "Bearer " + key },
-                body: JSON.stringify({
-                    model: model,
-                    reasoning_effort: thinking,
-                    max_tokens: 60,
-                    messages: [{ role: "user", content: "Ответь одной короткой фразой: OK Gemini 4 Hydrogen active" }]
-                })
-            });
-            if (resp.ok) {
-                const j = await resp.json();
-                const txt = (((j.choices || [])[0] || {}).message || {}).content || "OK";
-                if (st) st.innerHTML = "<span style='color:#34d399;'>✅ " + escapeHtml(String(txt).slice(0, 60)) + "</span>";
-                showToast("✅ Gemini 4 Hydrogen API работает!");
-            } else {
-                const errTxt = await resp.text();
-                if (st) st.innerHTML = "<span style='color:#fca5a5;'>❌ HTTP " + resp.status + ": " + escapeHtml(errTxt.slice(0, 90)) + "</span>";
-            }
-        } catch(e) {
-            if (st) st.innerHTML = "<span style='color:#fca5a5;'>❌ Ошибка сети: " + escapeHtml(e.message || "error") + "</span>";
+        if (st) st.innerHTML = "<span style='color:#38bdf8;'>⏳ Проверка Antigravity 2.31 (" + escapeHtml(model) + ")...</span>";
+        const res = await callGeminiDirectClient(key, model, thinking, "", "Ответь одной короткой фразой: OK Antigravity 2.31 Gemini 4 active", 80);
+        if (res.ok) {
+            if (st) st.innerHTML = "<span style='color:#34d399;'>✅ " + escapeHtml(res.model + " [" + res.transport + "]: " + res.text.slice(0, 60)) + "</span>";
+            showToast("✅ " + res.model + " API работает!");
+        } else {
+            if (st) st.innerHTML = "<span style='color:#fca5a5;'>❌ " + escapeHtml(res.error || "error") + "</span>";
         }
     };
 
     async function sendAntigravityTelegramReport() {
         const token = getMainBotToken();
         const chatId = 8538272428;
-        const msg = "☁️ <b>ОТЧЕТ: АРХИТЕКТУРА GOOGLE ANTIGRAVITY REMOTE AGENTS & 24/7 АВТОНОМНЫЕ ПРОЦЕССЫ</b>\n\n" +
-            "✅ <b>Архитектура внедрена в Офис v26.0:</b>\n" +
-            "• Headless 24/7 Cloud VM Runner: независимость от включенного ПК\n" +
-            "• Защита от деградации памяти LLM (Задача #42, Habr 1104552 / Allen AI)\n" +
-            "• State Anchoring: Git Data API + Obsidian Second Brain HQ\n\n" +
-            "🟢 <b>РЕЕСТР АВТОНОМНЫХ ПРОЦЕССОВ 24/7:</b>\n" +
-            "1. 🏒 <b>PID 12696 (КХЛ Бот):</b> 82 матча, WinRate 82.9%, ROI +53.4%\n" +
-            "2. ⚡ <b>PID 21288 (Диспетчер Офиса):</b> опрос 1 сек, автораспределение\n" +
-            "3. 📈 <b>PIDs 17936, 20884 (Крипто Арена):</b> Freqtrade UptrendDipVolStrategy\n" +
-            "4. 📞 <b>AltaHQ AI Calling:</b> робот бронирования отелей, лид $1,020\n" +
-            "5. 🎬 <b>CPA Видео-Комбайн:</b> 50 Reels/TikTok скриптов в сутки\n\n" +
-            "🔗 <b>Открыть в Офисе:</b> https://globalteampartners.github.io/remote-agents-control/";
+        const tel = window.__gsgCloudTelemetry || {};
+        const mem = window.__gsgOfficeMemory || {};
+        const hb = window.__gsgLocalHeartbeat || {};
+        const hbFresh = hb.iso ? ((Date.now() - new Date(hb.iso).getTime()) <= 300000) : false;
+        const msg = "⚛️ <b>ОТЧЁТ ANTIGRAVITY 2.31 · GEMINI 4 (v34.0)</b>\n\n" +
+            "• <b>Оркестратор:</b> " + escapeHtml(tel.orchestrator_mode || "Argon <-> Carbon <-> Hydrogen") + "\n" +
+            "• <b>Облако 24/7 (GitHub Actions):</b> цикл <b>#" + Number(tel.cycle_count || mem.cycle_count || 0) + "</b> · " + (tel.llm_ready ? "🟢 LLM активен" : "🟡 Structured (добавьте GEMINI_API_KEY в Secrets)") + "\n" +
+            "• <b>Память Офиса:</b> v" + escapeHtml(mem.version || "34.0") + " · <b>" + ((mem.learned_facts || []).length) + "</b> фактов · <b>" + ((mem.studied_urls || []).length) + "</b> ссылок\n" +
+            "• <b>Локальный Штаб Poller:</b> " + (hbFresh ? "🟢 Онлайн (@unitybusinessbot)" : "⏸️ На паузе — перехвачен облачным fallback 24/7") + "\n" +
+            "• <b>Устаревшие PC-демоны (KHL/Freqtrade/laptop_worker):</b> ⏸️ Пауза / Архив на ПК\n\n" +
+            "🔗 <b>Открыть в Офисе v34.0:</b> https://globalteampartners.github.io/remote-agents-control/?v=34.0";
         
         try {
-            showToast("⏳ Отправка отчета в Telegram...");
+            showToast("⏳ Отправка актуального отчета v34.0 в Telegram...");
             const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -11837,7 +11881,7 @@ function enterPendingWaitingRoom(userObj) {
             });
             const data = await res.json();
             if (data.ok) {
-                showToast("✅ Отчет Antigravity доставлен в @unitybusinessbot!");
+                showToast("✅ Актуальный отчет Antigravity 2.31 доставлен в @unitybusinessbot!");
             } else {
                 showToast("⚠️ Ошибка отправки: " + (data.description || "error"));
             }
@@ -12005,7 +12049,7 @@ function enterPendingWaitingRoom(userObj) {
                         callback_data: "appr:" + encodeURIComponent(loginVal).slice(0, 45)
                     },
                     {
-                        text: "🔒 Сейф & Админ",
+                        text: "🔒 Vault & Admin",
                         url: "https://globalteampartners.github.io/remote-agents-control/?open_vault=1"
                     }
                 ]
@@ -12203,7 +12247,7 @@ function enterPendingWaitingRoom(userObj) {
         } catch (e) {
             showAuthFeedback("⚠️ Ошибка регистрации: " + escapeHtml(e.message || String(e)), "error");
         } finally {
-            if (btn) { btn.disabled = false; btn.innerText = "⚡ Быстрая регистрация →"; }
+            if (btn) { btn.disabled = false; btn.innerText = "⚡ Express Sign-Up →"; }
         }
     }
 
@@ -12220,7 +12264,7 @@ function enterPendingWaitingRoom(userObj) {
             return;
         }
         if (loginVal === UNITY_OWNER_EMAIL) {
-            showAuthFeedback("👑 Аккаунт Владельца восстанавливается только через 9 имён родственников (кнопка «👑 Владелец (9/9)»).", "warn");
+            showAuthFeedback("👑 Аккаунт Владельца восстанавливается только через 9 имён родственников (кнопка «👑 Owner (9/9)»).", "warn");
             return;
         }
         const btn = document.getElementById("btn-ureset-submit");
@@ -14120,23 +14164,29 @@ function enterPendingWaitingRoom(userObj) {
             sendCrmTaskReply = window.sendCrmTaskReply;
         }
 
-        // 24/7 Cloud Agents Telemetry & Trigger
+        // 24/7 Cloud Agents Telemetry, Automations Cockpit & Saved-Work Audit (v34.0)
         window.fetchCloud247TelemetryAndMemory = async function() {
             const rawBase = "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data";
             try {
-                const [tRes, mRes] = await Promise.all([
+                const [tRes, mRes, hbRes, bdRes, repRes] = await Promise.all([
                     fetch(rawBase + "/cloud_agents_telemetry.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
-                    fetch(rawBase + "/office_memory.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null)
+                    fetch(rawBase + "/office_memory.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+                    fetch(rawBase + "/local_daemon_heartbeat.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+                    fetch(rawBase + "/board.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+                    fetch(rawBase + "/agent_work_report.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null)
                 ]);
-                return { telemetry: tRes, memory: mRes };
+                if (tRes) window.__gsgCloudTelemetry = tRes;
+                if (mRes) window.__gsgOfficeMemory = mRes;
+                if (hbRes) window.__gsgLocalHeartbeat = hbRes;
+                return { telemetry: tRes, memory: mRes, heartbeat: hbRes, board: bdRes, reports: repRes };
             } catch (e) {
-                return { telemetry: null, memory: null };
+                return { telemetry: null, memory: null, heartbeat: null, board: null, reports: null };
             }
         };
 
         window.triggerCloudAgentsNow = async function() {
             try {
-                showToast("☁️ Запускаю 24/7 Облачный цикл GitHub Actions...");
+                showToast("☁️ Запускаю 24/7 Облачный цикл Antigravity 2.31...");
                 await ghApi("/actions/workflows/cloud_agents_24_7.yml/dispatches", "POST", { ref: "main", inputs: { mode: "auto" } }, true);
                 showToast("✅ Облачные агенты 24/7 запущены! Отчёт придёт в @unitybusinessbot.");
             } catch (e) {
@@ -14155,20 +14205,68 @@ function enterPendingWaitingRoom(userObj) {
                 const body = modal.querySelector(".modal-body") || modal;
                 body.appendChild(panel);
             }
-            panel.innerHTML = "⏳ Загрузка облачной памяти и телеметрии 24/7...";
-            const { telemetry, memory } = await window.fetchCloud247TelemetryAndMemory();
-            const facts = (memory && Array.isArray(memory.learned_facts)) ? memory.learned_facts.slice(-3).reverse() : [];
+            panel.innerHTML = "⏳ Загрузка телеметрии, Automations Cockpit и аудита сохранённой работы...";
+            const { telemetry, memory, heartbeat, board, reports } = await window.fetchCloud247TelemetryAndMemory();
+            const facts = (memory && Array.isArray(memory.learned_facts)) ? memory.learned_facts.slice(-4).reverse() : [];
             const factsHtml = facts.map(f => "<li style='margin:4px 0;'><b>" + escapeHtml(f.topic || "") + "</b>: " + escapeHtml((f.insight || "").slice(0, 140)) + "...</li>").join("");
             const engineLabel = (telemetry && telemetry.model_engine) ? escapeHtml(telemetry.model_engine) : "structured-cloud-analyzer (добавьте GEMINI_API_KEY)";
-            const orchLabel = (telemetry && telemetry.orchestrator_mode) ? escapeHtml(telemetry.orchestrator_mode) : "Antigravity 2.0 (Carbon ↔ Hydrogen)";
-            panel.innerHTML =
-                "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ ОБЛАЧНЫЕ АГЕНТЫ 24/7 + ПАМЯТЬ ОФИСА (v" + escapeHtml((telemetry && telemetry.version) || "33.0") + ")</div>" +
-                "<div>• Статус: <b>" + (telemetry ? "🟢 Активны в GitHub Actions (без ноутбука)" : "🟡 Ожидание первого цикла") + "</b></div>" +
-                "<div>• Оркестратор: <b>" + orchLabel + "</b> · Движок: <code>" + engineLabel + "</code></div>" +
-                "<div>• Цикл №: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Знаний: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b> · Изучено URL: <b>" + ((memory && memory.studied_urls && memory.studied_urls.length) || 0) + "</b></div>" +
-                "<div>• Бот-шлюз: <b>🔒 @unitybusinessbot только по одобрению @unityspiritpartners</b></div>" +
-                (factsHtml ? "<ul style='margin:8px 0 6px 16px; padding:0; color:#cbd5e1;'>" + factsHtml + "</ul>" : "") +
-                "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Запустить 24/7 Облачный цикл (Hydrogen)</button></div>";
+            const orchLabel = (telemetry && telemetry.orchestrator_mode) ? escapeHtml(telemetry.orchestrator_mode) : "Antigravity 2.31 (Argon ↔ Carbon ↔ Hydrogen)";
+            const hbMins = (heartbeat && heartbeat.iso) ? Math.round((Date.now() - new Date(heartbeat.iso).getTime()) / 60000) : 9999;
+            const hbOnline = hbMins <= 5;
+            const cloudMins = (telemetry && telemetry.last_cycle_iso) ? Math.round((Date.now() - new Date(telemetry.last_cycle_iso).getTime()) / 60000) : 9999;
+            const autoList = document.getElementById("antigravity-automations-list");
+            if (autoList) {
+                autoList.innerHTML =
+                    '<div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<div><span style="background:rgba(56,189,248,0.2); color:#38bdf8; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">SCHEDULED · GITHUB CLOUD</span>' +
+                        '<b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">Cloud Agents 24/7 (cloud_agent_worker.py v' + escapeHtml((telemetry && telemetry.version) || "34.0") + ')</b>' +
+                        '<div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Последний цикл #' + ((telemetry && telemetry.cycle_count) || 0) + ' (' + (cloudMins < 9999 ? (cloudMins + " мин назад") : "ожидание") + ') · LLM Ready: ' + ((telemetry && telemetry.llm_ready) ? "Да" : "Нужен GEMINI_API_KEY в GitHub Secrets") + '</div></div>' +
+                        '<span style="color:#38bdf8; font-size:0.75rem; font-weight:800;">🕒 Scheduled (24/7)</span>' +
+                    '</div>' +
+                    '<div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<div><span style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">TELEGRAM ШТАБ</span>' +
+                        '<b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">@unitybusinessbot Poller Daemon (tg_bot_poller.py v' + escapeHtml((heartbeat && heartbeat.version) || "34.0") + ')</b>' +
+                        '<div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Команды /start, /passwords, /bots, /hydrogen, /antigravity, /audit · ' + (hbOnline ? ("heartbeat " + hbMins + " мин назад") : "перехвачен облачным fallback") + '</div></div>' +
+                        '<span style="color:' + (hbOnline ? "#34d399" : "#38bdf8") + '; font-size:0.75rem; font-weight:800;">' + (hbOnline ? "● Always-on (PC Live)" : "☁️ Cloud Fallback") + '</span>' +
+                    '</div>' +
+                    '<div style="background:rgba(15,23,42,0.6); border:1px solid var(--border); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">' +
+                        '<div><span style="background:rgba(245,158,11,0.2); color:#fbbf24; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:4px;">LOCAL ARCHIVE</span>' +
+                        '<b style="font-size:0.8rem; margin-left:6px; color:#f8fafc;">' + ((typeof currentOfficeLang !== "undefined" && currentOfficeLang === "en") ? 'KHL Bot / laptop_worker / Freqtrade (:8060) / AltaHQ Voice' : 'КХЛ Бот / laptop_worker / Freqtrade (:8060) / AltaHQ Voice') + '</b>' +
+                        '<div style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">' + ((typeof currentOfficeLang !== "undefined" && currentOfficeLang === "en") ? 'Stopped locally (not running in Windows background) · Ready for manual launch & audit in Yura / AltaHQ / System 1' : 'Остановлены локально (не активны в фоне Windows) · Готовы к ручному запуску и аудиту в папках Юра / AltaHQ / System 1') + '</div></div>' +
+                        '<span style="color:#fbbf24; font-size:0.75rem; font-weight:800;">⏸️ Paused / Offline</span>' +
+                    '</div>';
+            }
+            const isEnLang = (typeof currentOfficeLang !== "undefined" && currentOfficeLang === "en");
+            const auditEl = document.getElementById("antigravity-audit-summary");
+            if (auditEl) {
+                const cardsObj = (board && board.cards && typeof board.cards === "object") ? board.cards : {};
+                const cardArr = Object.values(cardsObj);
+                const cntBy = {};
+                cardArr.forEach(c => { const s = (c && c.status) || "other"; cntBy[s] = (cntBy[s] || 0) + 1; });
+                const repCnt = Array.isArray(reports) ? reports.length : (Array.isArray(agentWorkReportData) ? agentWorkReportData.length : 0);
+                auditEl.innerHTML = isEnLang
+                    ? '<div>• <b>Saved board (<code>board.json</code>):</b> <b>' + cardArr.length + '</b> cards (done: <b>' + (cntBy.done || 0) + '</b>, not studied: <b>' + (cntBy.not_studied || 0) + '</b>, needs project: <b>' + (cntBy.need_project || 0) + '</b>, waiting human: <b>' + ((cntBy.blocked_human || 0) + (cntBy.awaiting_approval || 0)) + '</b>).</div>' +
+                      '<div>• <b>Memory & Reports:</b> <code>office_memory.json</code> v' + escapeHtml((memory && memory.version) || "34.0") + ' (<b>' + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + '</b> facts, <b>' + ((memory && memory.studied_urls && memory.studied_urls.length) || 0) + '</b> URLs, errors: <b>' + (memory && memory.failed_urls ? Object.keys(memory.failed_urls).length : 0) + '</b>) · <code>agent_work_report.json</code>: <b>' + repCnt + '</b> entries.</div>' +
+                      '<div>• <b>Open HQ Issues Audit (#43–#46, #53–#58):</b> #45 (3 screenshots -> $5k–$10k Three.js walkthrough floorplan playbook), #53 (Profitroom + White Dominicana + AltaHQ), #54 (REPT Battero + hotels/energy), #55 (Pivex $50→$25k DemandGen), #56 (COMSS AI 2.0 corrupt-gzip fix), #57–#58 (Kali NetHunter NFC defense audit & No-Wipe Hot Update).</div>'
+                    : '<div>• <b>Сохранённая доска (<code>board.json</code>):</b> <b>' + cardArr.length + '</b> карточек (выполнено: <b>' + (cntBy.done || 0) + '</b>, не изучено: <b>' + (cntBy.not_studied || 0) + '</b>, нужен проект: <b>' + (cntBy.need_project || 0) + '</b>, ждёт человека: <b>' + ((cntBy.blocked_human || 0) + (cntBy.awaiting_approval || 0)) + '</b>).</div>' +
+                      '<div>• <b>Память и репорты:</b> <code>office_memory.json</code> v' + escapeHtml((memory && memory.version) || "34.0") + ' (<b>' + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + '</b> фактов, <b>' + ((memory && memory.studied_urls && memory.studied_urls.length) || 0) + '</b> URL, ошибок: <b>' + (memory && memory.failed_urls ? Object.keys(memory.failed_urls).length : 0) + '</b>) · <code>agent_work_report.json</code>: <b>' + repCnt + '</b> записей.</div>' +
+                      '<div>• <b>Аудит открытых задач HQ (#43–#46, #53–#58):</b> #45 (3 фото -> сценарий Three.js 3D-туров с чеком $5k–$10k за план этажа), #53 (Profitroom + Белый Доминикана + AltaHQ), #54 (REPT Battero + отели/энергия), #55 (Pivex $50→$25k DemandGen), #56 (COMSS AI 2.0 без битого gzip), #57–#58 (Kali NetHunter NFC аудит обороны и Hot No-Wipe Update).</div>';
+            }
+            panel.innerHTML = isEnLang
+                ? "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ CLOUD AGENTS 24/7 + OFFICE MEMORY (v" + escapeHtml((telemetry && telemetry.version) || "34.0") + ")</div>" +
+                  "<div>• Status: <b>" + (telemetry ? "🟢 Active on GitHub Actions (PC-independent)" : "🟡 Awaiting first cycle") + "</b></div>" +
+                  "<div>• Orchestrator: <b>" + orchLabel + "</b> · Engine: <code>" + engineLabel + "</code></div>" +
+                  "<div>• Cycle #: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Facts: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b> · Studied URLs: <b>" + ((memory && memory.studied_urls && memory.studied_urls.length) || 0) + "</b></div>" +
+                  "<div>• Bot Gateway: <b>🔒 @unitybusinessbot upon @unityspiritpartners approval</b></div>" +
+                  (factsHtml ? "<ul style='margin:8px 0 6px 16px; padding:0; color:#cbd5e1;'>" + factsHtml + "</ul>" : "") +
+                  "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Run 24/7 Cloud Cycle (Antigravity 2.31)</button></div>"
+                : "<div style='font-weight:800; color:#34d399; margin-bottom:6px;'>☁️ ОБЛАЧНЫЕ АГЕНТЫ 24/7 + ПАМЯТЬ ОФИСА (v" + escapeHtml((telemetry && telemetry.version) || "34.0") + ")</div>" +
+                  "<div>• Статус: <b>" + (telemetry ? "🟢 Активны в GitHub Actions (без ноутбука)" : "🟡 Ожидание первого цикла") + "</b></div>" +
+                  "<div>• Оркестратор: <b>" + orchLabel + "</b> · Движок: <code>" + engineLabel + "</code></div>" +
+                  "<div>• Цикл №: <b>" + ((telemetry && telemetry.cycle_count) || (memory && memory.cycle_count) || 0) + "</b> · Знаний: <b>" + ((memory && memory.learned_facts && memory.learned_facts.length) || 0) + "</b> · Изучено URL: <b>" + ((memory && memory.studied_urls && memory.studied_urls.length) || 0) + "</b></div>" +
+                  "<div>• Бот-шлюз: <b>🔒 @unitybusinessbot только по одобрению @unityspiritpartners</b></div>" +
+                  (factsHtml ? "<ul style='margin:8px 0 6px 16px; padding:0; color:#cbd5e1;'>" + factsHtml + "</ul>" : "") +
+                  "<div style='margin-top:8px;'><button type='button' class='mini-btn accent' onclick='triggerCloudAgentsNow()'>⚡ Запустить 24/7 Облачный цикл (Antigravity 2.31)</button></div>";
         };
     })();
 
@@ -14195,10 +14293,10 @@ function enterPendingWaitingRoom(userObj) {
                 <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1.25rem;">🤖</div>
                 <div>
                     <div id="ai-modal-header-title" style="font-weight:900; font-size:0.92rem; color:#f8fafc; display:flex; align-items:center; gap:6px;">
-                        ИИ-Ассистент & Навигатор Офиса
-                        <span id="ai-chat-mode-badge" style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">Hydrogen 4.0</span>
+                        AI Assistant & Office Navigator
+                        <span id="ai-chat-mode-badge" style="background:rgba(16,185,129,0.2); color:#34d399; font-size:0.65rem; padding:1px 6px; border-radius:999px; font-weight:800;">Antigravity 2.31</span>
                     </div>
-                    <div id="ai-modal-header-sub" style="font-size:0.7rem; color:#94a3b8;">🟢 В сети · Помощь по офису и навигация</div>
+                    <div id="ai-modal-header-sub" style="font-size:0.7rem; color:#94a3b8;">🟢 Online · Office Assistant & Navigator</div>
                 </div>
             </div>
             <div style="display:flex; align-items:center; gap:6px;">
@@ -14210,26 +14308,26 @@ function enterPendingWaitingRoom(userObj) {
         <!-- Office Fast Navigation Strip -->
         <div id="ai-office-navigator-bar" style="background:#080e1c; border-bottom:1px solid rgba(56,189,248,0.2); padding:8px 12px; display:flex; flex-direction:column; gap:6px;">
             <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.7rem; color:#94a3b8; font-weight:700;">
-                <span id="ai-nav-strip-label">🗺️ Быстрый переход по офису (1 клик):</span>
-                <span style="font-size:0.65rem; color:#38bdf8;">⚡ Мгновенно</span>
+                <span id="ai-nav-strip-label">🗺️ Quick Office Navigation (1 click):</span>
+                <span style="font-size:0.65rem; color:#38bdf8;">⚡ Instant</span>
             </div>
             <div id="ai-nav-pills-row" style="display:flex; gap:6px; overflow-x:auto; white-space:nowrap; padding-bottom:2px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
-                <button type="button" class="choice-btn" id="nav-pill-12apps" onclick="navigateOfficeSection('12apps')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(37,99,235,0.22); border:1px solid rgba(96,165,250,0.5); color:#bfdbfe; font-weight:700;">📁 12 IT Продуктов</button>
-                <button type="button" class="choice-btn" id="nav-pill-traffic" onclick="navigateOfficeSection('traffic')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(16,185,129,0.2); border:1px solid rgba(52,211,153,0.5); color:#a7f3d0; font-weight:700;">🚦 Трафик & Воронки</button>
-                <button type="button" class="choice-btn" id="nav-pill-reports" onclick="navigateOfficeSection('reports')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(245,158,11,0.2); border:1px solid rgba(251,191,36,0.5); color:#fde68a; font-weight:700;">📊 Отчёт (150 задач)</button>
-                <button type="button" class="choice-btn" id="nav-pill-tim" onclick="navigateOfficeSection('tim')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(139,92,246,0.22); border:1px solid rgba(167,139,250,0.5); color:#ddd6fe; font-weight:700;">👑 Директор Тим</button>
-                <button type="button" class="choice-btn" id="nav-pill-actions" onclick="navigateOfficeSection('actions')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(239,68,68,0.22); border:1px solid rgba(248,113,113,0.5); color:#fca5a5; font-weight:700;">🚨 5 Решений</button>
-                <button type="button" class="choice-btn" id="nav-pill-tasks" onclick="navigateOfficeSection('tasks')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(14,165,233,0.2); border:1px solid rgba(56,189,248,0.5); color:#bae6fd; font-weight:700;">📋 Задачи</button>
-                <button type="button" class="choice-btn" id="nav-pill-study" onclick="navigateOfficeSection('study')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(236,72,153,0.2); border:1px solid rgba(244,114,182,0.5); color:#fbcfe8; font-weight:700;">📷 Студия / Фото</button>
-                <button type="button" class="choice-btn" id="nav-pill-vault" onclick="navigateOfficeSection('vault')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(234,179,8,0.2); border:1px solid rgba(250,204,21,0.5); color:#fef08a; font-weight:700;">🔒 Сейф & Админ</button>
-                <button type="button" class="choice-btn" id="nav-pill-kb" onclick="navigateOfficeSection('kb')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(99,102,241,0.2); border:1px solid rgba(129,140,248,0.5); color:#c7d2fe; font-weight:700;">🧠 База Знаний</button>
+                <button type="button" class="choice-btn" id="nav-pill-12apps" onclick="navigateOfficeSection('12apps')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(37,99,235,0.22); border:1px solid rgba(96,165,250,0.5); color:#bfdbfe; font-weight:700;">📁 12 IT Products</button>
+                <button type="button" class="choice-btn" id="nav-pill-traffic" onclick="navigateOfficeSection('traffic')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(16,185,129,0.2); border:1px solid rgba(52,211,153,0.5); color:#a7f3d0; font-weight:700;">🚦 Traffic & Funnels</button>
+                <button type="button" class="choice-btn" id="nav-pill-reports" onclick="navigateOfficeSection('reports')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(245,158,11,0.2); border:1px solid rgba(251,191,36,0.5); color:#fde68a; font-weight:700;">📊 Work Report (150 tasks)</button>
+                <button type="button" class="choice-btn" id="nav-pill-tim" onclick="navigateOfficeSection('tim')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(139,92,246,0.22); border:1px solid rgba(167,139,250,0.5); color:#ddd6fe; font-weight:700;">👑 Director Tim</button>
+                <button type="button" class="choice-btn" id="nav-pill-actions" onclick="navigateOfficeSection('actions')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(239,68,68,0.22); border:1px solid rgba(248,113,113,0.5); color:#fca5a5; font-weight:700;">🚨 5 Decisions</button>
+                <button type="button" class="choice-btn" id="nav-pill-tasks" onclick="navigateOfficeSection('tasks')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(14,165,233,0.2); border:1px solid rgba(56,189,248,0.5); color:#bae6fd; font-weight:700;">📋 Tasks</button>
+                <button type="button" class="choice-btn" id="nav-pill-study" onclick="navigateOfficeSection('study')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(236,72,153,0.2); border:1px solid rgba(244,114,182,0.5); color:#fbcfe8; font-weight:700;">📷 Study / Photo</button>
+                <button type="button" class="choice-btn" id="nav-pill-vault" onclick="navigateOfficeSection('vault')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(234,179,8,0.2); border:1px solid rgba(250,204,21,0.5); color:#fef08a; font-weight:700;">🔒 Vault & Admin</button>
+                <button type="button" class="choice-btn" id="nav-pill-kb" onclick="navigateOfficeSection('kb')" style="font-size:0.71rem; padding:4px 9px; border-radius:8px; background:rgba(99,102,241,0.2); border:1px solid rgba(129,140,248,0.5); color:#c7d2fe; font-weight:700;">🧠 Knowledge Base</button>
             </div>
         </div>
 
         <!-- Chat Info Notice -->
         <div id="guest-chat-notice-bar" style="background:rgba(14,165,233,0.12); border-bottom:1px solid rgba(14,165,233,0.25); padding:8px 14px; font-size:0.73rem; color:#bae6fd; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-            <span id="ai-chat-notice-text">💡 <b>Временная сессия:</b> ваши вопросы фиксируются в системе. Чтобы закрепить историю за собой:</span>
-            <button onclick="openAuthGateFromGuest()" id="ai-chat-register-btn" style="background:#10b981; color:#fff; border:none; border-radius:6px; padding:3px 8px; font-size:0.71rem; font-weight:900; cursor:pointer;">⚡ Зарегистрироваться</button>
+            <span id="ai-chat-notice-text">💡 <b>Temporary session:</b> your questions are logged. To save history under your account:</span>
+            <button onclick="openAuthGateFromGuest()" id="ai-chat-register-btn" style="background:#10b981; color:#fff; border:none; border-radius:6px; padding:3px 8px; font-size:0.71rem; font-weight:900; cursor:pointer;">⚡ Sign Up</button>
         </div>
 
         <!-- Messages Thread -->
@@ -14238,20 +14336,20 @@ function enterPendingWaitingRoom(userObj) {
             <div style="display:flex; gap:10px; align-items:flex-start;">
                 <div style="width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,#0284c7,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">🤖</div>
                 <div id="ai-chat-welcome-msg" style="background:#111c33; border:1px solid rgba(255,255,255,0.08); border-radius:12px; border-top-left-radius:3px; padding:11px 13px; font-size:0.8rem; line-height:1.48; color:#f1f5f9; max-width:85%;">
-                    Здравствуйте! Я официальный <b>ИИ-Ассистент & Навигатор Global Spirit Group ★ Виртуальный Офис</b> 🚀<br><br>
-                    Вы можете спросить меня о чём угодно в живом режиме или попросить перейти в любой раздел офиса:<br>
+                    Hello! I am the official <b>AI Assistant & Navigator for Global Spirit Group ★ Virtual Office</b> 🚀<br><br>
+                    Ask me anything live or jump directly to any office department:<br>
                     • 📁 <b>12 IT Продуктов</b> — готовые Telegram Mini Apps<br>
                     • 🚦 <b>Трафик и воронки</b> — клиенты с оплатой за результат<br>
                     • 📊 <b>Отчёты о работе</b> — статус 150 завершённых задач<br>
                     • 👑 <b>Директор Тим</b> — поручить задачу 7 отделам<br><br>
-                    <i>Нажмите кнопку в панели навигатора выше или напишите вопрос!</i>
+                    <i>Click a navigation pill above or type your question below!</i>
                 </div>
             </div>
         </div>
 
         <!-- Quick Starter Pills -->
         <div id="ai-chat-starters-row" style="padding:6px 14px; background:#0a1222; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:6px; overflow-x:auto; white-space:nowrap;">
-            <button id="pill-ai-1" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Чем этот Виртуальный Офис и ИИ-агенты могут помочь моему бизнесу?')">🛍️ Чем полезен для бизнеса?</button>
+            <button id="pill-ai-1" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Чем этот Виртуальный Офис и ИИ-агенты могут помочь моему бизнесу?')">🛍️ Business benefits?</button>
             <button id="pill-ai-2" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Как Директор Тим координирует 7 отделов и выполняет задачи?')">👑 Как работает Директор Тим?</button>
             <button id="pill-ai-3" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Помоги с навигацией: куда перейти в первую очередь?')">🗺️ Куда перейти в 1 очередь?</button>
             <button id="pill-ai-4" class="choice-btn" style="font-size:0.72rem; padding:4px 9px;" onclick="sendQuickGuestPrompt('Покажи отчёт о проделанной работе и статус задач')">📊 Отчёт о работе (150 задач)</button>
@@ -14913,14 +15011,14 @@ function enterPendingWaitingRoom(userObj) {
         
         <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:11px; margin-bottom:8px;">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:5px; flex-wrap:wrap;">
-                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Virtual Office v26.0 (Remote Agents Control)</span>
+                <span style="font-weight:800; color:#f8fafc; font-size:0.86rem;">Virtual Office v34.0 (Antigravity 2.31 Remote Control)</span>
                 <span class="world-badge badge-amber" style="font-size:0.65rem;">🔥 Высший (Главный Центр)</span>
             </div>
             <div style="font-size:0.74rem; color:#94a3b8; margin-bottom:4px;">
                 📁 Папка: <code style="color:#38bdf8; font-weight:700;">System 1</code> &nbsp;|&nbsp; 💬 Диалог: <span style="font-family:monospace; color:#cbd5e1;">5eeab7b0...</span>
             </div>
             <div style="font-size:0.74rem; color:#34d399; margin-bottom:5px;">
-                📊 <b>Метрики:</b> PWA интерфейс · 24/7 Телеметрия · NotebookLM RAG · Модалки офферов
+                📊 <b>Метрики:</b> PWA v34.0 · Argon ↔ Carbon ↔ Hydrogen · Automations Cockpit · Cloud 24/7
             </div>
             <div style="font-size:0.74rem; color:#cbd5e1; background:rgba(0,0,0,0.28); padding:6px 9px; border-radius:7px; margin-bottom:8px;">
                 ⚡ <b>Следующий шаг:</b> Центральное управление всеми процессами и агентами
@@ -14929,7 +15027,7 @@ function enterPendingWaitingRoom(userObj) {
                 <button type="button" class="mini-btn accent" onclick="closeDepartmentsModal(); selectProject('System 1');" style="font-size:0.72rem; padding:5px 10px; font-weight:800;">
                     📁 Открыть папку «System 1» →
                 </button>
-                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Virtual Office v26.0 (Remote Agents Control): Центральное управление всеми процессами и агентами', 'System 1');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
+                <button type="button" class="mini-btn" onclick="closeDepartmentsModal(); switchTab('tim', document.getElementById('nav-btn-tim')); sendTimPreset('Тим, выполни задачу по проекту Virtual Office v34.0 (Antigravity 2.31): Центральное управление всеми процессами и агентами', 'System 1');" style="font-size:0.72rem; padding:5px 10px; color:#fbbf24; border-color:rgba(245,158,11,0.45);">
                     👑 Поручить Тиму
                 </button>
             </div>
@@ -15078,24 +15176,24 @@ var PERSONAL_MEMBER_AGENTS_DIRECTORY = {
         folders: ["Юра", "Личный Офис: @yvyatkin"],
         agents: [
             {
-                name: "🏒 KHL AI Predictor Bot (PID 12696 · Quant Engine)",
-                badge: "🟢 WinRate 82.9%",
+                name: "🏒 KHL AI Predictor (Quant Model · Локально на паузе)",
+                badge: "⏸️ Модель 82.9% WinRate (ПК пауза)",
                 desc: "Двухуровневая байесовская модель Пуассона + xG для прогнозирования матчей КХЛ.",
-                workingOn: "Над чем работает сейчас: Парсинг линий БК 24/7, калибровка на 82 матчах (WinRate 82.9%, ROI +53.4%, Brier 0.1716), отбор валуйных кэфов >= 1.85.",
+                workingOn: "Статус: локальный сервис на ПК остановлен. Архив модели калиброван на 82 матчах (WinRate 82.9%, ROI +53.4%, Brier 0.1716).",
                 presetCmd: "Тим, сформируй актуальный разбор ближайших матчей КХЛ с кэфами >= 1.85 по модели Пуассона",
                 project: "Юра"
             },
             {
                 name: "📈 AI Crypto Trading Bot (Freqtrade Arena)",
-                badge: "🟢 В работе 24/7",
+                badge: "⏸️ Стратегия на паузе (ПК)",
                 desc: "Алгоритмический анализ крипторынка и тестирование торговых стратегий без риска.",
-                workingOn: "Над чем работает сейчас: Мониторинг импульсов BTC/ETH/SOL, фильтрация ложных пробоев и расчёт математического ожидания сделок.",
+                workingOn: "Статус: локальный сервер :8060 остановлен; стратегии BTC/ETH/SOL готовы в папке Юра.",
                 presetCmd: "Тим, покажи текущий отчёт и параметры риск-менеджмента по AI Crypto Trading Bot в папке Юра",
                 project: "Юра"
             },
             {
                 name: "🤝 VIP-Канал & Монетизация Прогнозов Агент",
-                badge: "🟢 В работе 24/7",
+                badge: "☁️ Готов в облаке",
                 desc: "Упаковка верифицированной статистики и подготовка ежедневных утренних рассылок.",
                 workingOn: "Над чем работает сейчас: Подготовка шаблонов отчётов для VIP-подписчиков (3 900 ₽/мес) и учёт банка.",
                 presetCmd: "Тим, подготовь утренний пост со статистикой побед КХЛ Бота (82.9%) для VIP-канала",
@@ -16434,7 +16532,7 @@ window.submitAuthLogin = async function() {
                 );
                 showAuthFeedback(
                     "❌ Неверный пароль для защищённого аккаунта <b>@unityspiritpartners</b>.<br>" +
-                    "Сброс пароля для @unityspiritpartners через @unitybusinessbot отключён — введите действующий пароль или используйте вкладку <b>«👑 Владелец (9/9)»</b>.",
+                    "Сброс пароля для @unityspiritpartners через @unitybusinessbot отключён — введите действующий пароль или используйте вкладку <b>«👑 Owner (9/9)»</b>.",
                     "error"
                 );
                 return;
@@ -16545,7 +16643,7 @@ window.submitAuthLogin = async function() {
     } catch (e) {
         showAuthFeedback("⚠️ Ошибка входа/сети: " + escapeHtml(e.message || String(e)), "error");
     } finally {
-        if (btn) { btn.disabled = false; btn.innerText = "🔐 Войти в Виртуальный Офис"; }
+        if (btn) { btn.disabled = false; btn.innerText = "🔐 Sign In to Virtual Office"; }
     }
 };
 
@@ -16559,7 +16657,7 @@ window.submitUserResetCodeRequest = async function() {
     }
     if (isProtectedBotPwdAccount(loginVal)) {
         showAuthFeedback(
-            "🛡️ <b>Аккаунт @unityspiritpartners защищён:</b> обновление и смена его пароля через @unitybusinessbot запрещены. Используйте вкладку <b>«👑 Владелец (9/9)»</b>.",
+            "🛡️ <b>Аккаунт @unityspiritpartners защищён:</b> обновление и смена его пароля через @unitybusinessbot запрещены. Используйте вкладку <b>«👑 Owner (9/9)»</b>.",
             "error"
         );
         return;
@@ -16575,7 +16673,7 @@ window.submitUserResetCodeRequest = async function() {
         }
         if (isProtectedBotPwdAccount(u.login)) {
             showAuthFeedback(
-                "🛡️ <b>Аккаунт @unityspiritpartners защищён:</b> обновление и смена его пароля через @unitybusinessbot запрещены. Используйте вкладку <b>«👑 Владелец (9/9)»</b>.",
+                "🛡️ <b>Аккаунт @unityspiritpartners защищён:</b> обновление и смена его пароля через @unitybusinessbot запрещены. Используйте вкладку <b>«👑 Owner (9/9)»</b>.",
                 "error"
             );
             return;
