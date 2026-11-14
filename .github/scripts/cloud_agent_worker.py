@@ -33,6 +33,7 @@ GITHUB_API = "https://api.github.com"
 GEMINI_OPENAI_API = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 GEMINI_NATIVE_API = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 GITHUB_MODELS_API = "https://models.github.ai/inference/chat/completions"
+GITHUB_AZURE_MODELS_API = "https://models.inference.ai.azure.com/chat/completions"
 DEFAULT_ARGON_MODEL = (os.environ.get("GEMINI_ARGON_MODEL") or "gemini-4-argon").strip()
 DEFAULT_HYDROGEN_MODEL = (os.environ.get("GEMINI_HYDROGEN_MODEL") or "gemini-4-hydrogen").strip()
 DEFAULT_CARBON_MODEL = (os.environ.get("GEMINI_CARBON_MODEL") or "gemini-4-carbon").strip()
@@ -72,6 +73,9 @@ _RUNTIME_EVAL_STATS = {
     "promo_urls_filtered": 0,
     "youtube_oembed_hits": 0,
     "rag_facts_injected": 0,
+    "llm_calls_attempted": 0,
+    "llm_live_ok": False,
+    "last_llm_error": "",
 }
 
 SKIP_ISSUE_PREFIXES = (
@@ -471,7 +475,7 @@ def select_antigravity_tier(prov, persona_name="", task_text="", mode="task"):
     return "hydrogen", prov["model"], t_lvl
 
 
-def _call_openai_compat(base_url, api_key, model, system_prompt, user_prompt, thinking_level=None, provider="gemini"):
+def _call_openai_compat(base_url, api_key, model, system_prompt, user_prompt, thinking_level=None, provider="gemini", max_tokens=2500):
     payload = {
         "model": model,
         "messages": [
@@ -479,7 +483,7 @@ def _call_openai_compat(base_url, api_key, model, system_prompt, user_prompt, th
             {"role": "user", "content": user_prompt},
         ],
         "temperature": 0.35,
-        "max_tokens": 2500,
+        "max_tokens": max_tokens,
     }
     if provider == "gemini" and thinking_level:
         payload["reasoning_effort"] = thinking_level
@@ -493,12 +497,23 @@ def _call_openai_compat(base_url, api_key, model, system_prompt, user_prompt, th
             "User-Agent": f"GSG-Antigravity-2.31/{OFFICE_VERSION}",
         },
     )
-    with urllib.request.urlopen(req, timeout=40) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-        choices = data.get("choices") or []
-        if choices:
-            return (choices[0].get("message") or {}).get("content", "").strip()
-    return ""
+    try:
+        with urllib.request.urlopen(req, timeout=40) as resp:
+            raw_body = resp.read().decode("utf-8", errors="replace").strip()
+            if not raw_body:
+                raise RuntimeError(f"Empty body HTTP {getattr(resp, 'status', '?')}")
+            data = json.loads(raw_body)
+            choices = data.get("choices") or []
+            if choices:
+                return (choices[0].get("message") or {}).get("content", "").strip()
+            raise RuntimeError("No choices in response")
+    except urllib.error.HTTPError as he:
+        err_snip = ""
+        try:
+            err_snip = sanitize_untrusted_text(he.read().decode("utf-8", errors="replace").strip())[:140]
+        except Exception:
+            err_snip = str(he.reason)
+        raise RuntimeError(f"HTTP {he.code}: {err_snip}")
 
 
 def _call_gemini_native(api_key, model, system_prompt, user_prompt, thinking_level="high"):
@@ -536,8 +551,11 @@ def _call_gemini_native(api_key, model, system_prompt, user_prompt, thinking_lev
 
 def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona_name="", task_text="", mode="task"):
     """Execute Antigravity 2.31 Orchestrator (Gemini 4 -> OpenAI -> GitHub Models -> structured analyzer)."""
+    _RUNTIME_EVAL_STATS["llm_calls_attempted"] += 1
     prov = resolve_llm_provider(models_token=models_token)
     if not prov:
+        _RUNTIME_EVAL_STATS["llm_live_ok"] = False
+        _RUNTIME_EVAL_STATS["last_llm_error"] = "no_api_key"
         return None, "structured-cloud-analyzer", "LLM-токен не настроен (structured fallback)", "none", "none"
 
     tier_name, primary_model, thinking_level = select_antigravity_tier(prov, persona_name=persona_name, task_text=task_text, mode=mode)
@@ -557,10 +575,26 @@ def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona
             if txt:
                 txt = sanitize_untrusted_text(txt)
                 lbl = f"{c_model} (tier: {c_tier}, thinking: {thinking_level})" if prov["provider"] == "gemini" else f"{c_model} (via {prov['provider']}, tier: {c_tier})"
+                _RUNTIME_EVAL_STATS["llm_live_ok"] = True
+                _RUNTIME_EVAL_STATS["last_llm_error"] = ""
                 return txt, lbl, "ok", c_tier, prov["provider"]
         except Exception as exc:
             last_err = f"{c_model} [{prov['provider']}]: {str(exc)[:90]}"
             print(f"[Orchestrator warn] {last_err}", flush=True)
+
+        if prov["provider"] == "github_models":
+            azure_model = c_model.split("/")[-1]
+            try:
+                txt = _call_openai_compat(GITHUB_AZURE_MODELS_API, prov["api_key"], azure_model, system_prompt, user_prompt, thinking_level=None, provider="github_azure")
+                if txt:
+                    txt = sanitize_untrusted_text(txt)
+                    lbl = f"{azure_model} (via github_azure, tier: {c_tier})"
+                    _RUNTIME_EVAL_STATS["llm_live_ok"] = True
+                    _RUNTIME_EVAL_STATS["last_llm_error"] = ""
+                    return txt, lbl, "ok", c_tier, "github_azure"
+            except Exception as exc:
+                last_err = f"{azure_model} [github_azure]: {str(exc)[:90]}"
+                print(f"[Orchestrator azure warn] {last_err}", flush=True)
 
         if prov["provider"] == "gemini":
             try:
@@ -568,11 +602,15 @@ def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona
                 if txt:
                     txt = sanitize_untrusted_text(txt)
                     lbl = f"{c_model} (tier: {c_tier}, thinking: {thinking_level}, native)"
+                    _RUNTIME_EVAL_STATS["llm_live_ok"] = True
+                    _RUNTIME_EVAL_STATS["last_llm_error"] = ""
                     return txt, lbl, "ok", c_tier, "gemini_native"
             except Exception as exc:
                 last_err = f"{c_model} [native]: {str(exc)[:90]}"
                 print(f"[Orchestrator native warn] {last_err}", flush=True)
 
+    _RUNTIME_EVAL_STATS["llm_live_ok"] = False
+    _RUNTIME_EVAL_STATS["last_llm_error"] = sanitize_untrusted_text(last_err)[:140]
     return None, "structured-cloud-analyzer", last_err, tier_name, "fallback"
 
 
@@ -985,14 +1023,16 @@ def handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id):
 def sync_cloud_status_registries(repo, gh_token, mem, prov_info, telemetry, local_daemon_online):
     """Keep legacy status.json and agents.json in sync with real 24/7 cloud & local daemon truth."""
     now_iso = utc_now_iso()
-    active_prov = prov_info["provider"] if prov_info else "structured"
+    llm_ready = bool((telemetry or {}).get("llm_ready"))
+    active_prov = (telemetry or {}).get("provider") or (prov_info["provider"] if (prov_info and llm_ready) else "structured")
+    model_engine_label = (telemetry or {}).get("model_engine") or "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
     router_meta = {
         "preferred_provider": "gemini",
-        "configured_providers": [active_prov] if prov_info else [],
+        "configured_providers": [active_prov] if llm_ready else [],
         "active_mode": (
             f"Antigravity 2.31 [{active_prov}] ({prov_info['argon_model']} / {prov_info['carbon_model']} / {prov_info['model']})"
-            if prov_info
-            else "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
+            if (prov_info and llm_ready)
+            else model_engine_label
         ),
         "vps_ready": False,
         "cost_architecture": "Antigravity 2.31 Tiered Routing (Gemini 4 -> OpenAI -> GitHub Models + 8-Layer Guard)",
@@ -1014,7 +1054,7 @@ def sync_cloud_status_registries(repo, gh_token, mem, prov_info, telemetry, loca
             "platform": "github-actions+windows-local",
             "cycle_count": mem.get("cycle_count", 0),
             "memory_facts_count": len(mem.get("learned_facts") or []),
-            "llm_ready": bool(prov_info),
+            "llm_ready": llm_ready,
             "model_router": router_meta,
         })
         if local_daemon_online:
@@ -1184,23 +1224,50 @@ def main():
         print(f"[Memory save warn] {exc}", flush=True)
 
     prov_info = resolve_llm_provider(models_token=models_token)
+    if prov_info and _RUNTIME_EVAL_STATS.get("llm_calls_attempted", 0) == 0 and event_name == "workflow_dispatch":
+        call_hydrogen_orchestrator(models_token, "Reply with one word: OK.", "Health check", persona_name="healthcheck", task_text="ping", mode="task")
     local_daemon_online = tg_poll_status.get("reason") == "local_daemon_online"
     active_tier = executed_tasks[0].get("tier") if executed_tasks else (study_result.get("tier") if study_result else ("argon+hydrogen" if prov_info else "fallback"))
-    transport_used = executed_tasks[0].get("transport") if executed_tasks else (study_result.get("transport") if study_result else (prov_info["provider"] if prov_info else "structured"))
-    model_engine = (
-        f"{prov_info['argon_model']} / {prov_info['model']} (via {prov_info['provider']})"
-        if prov_info
-        else "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
+    if executed_tasks:
+        transport_used = executed_tasks[0].get("transport")
+    elif study_result:
+        transport_used = study_result.get("transport")
+    elif _RUNTIME_EVAL_STATS.get("llm_calls_attempted", 0) > 0:
+        transport_used = prov_info["provider"] if (_RUNTIME_EVAL_STATS.get("llm_live_ok") and prov_info) else "fallback"
+    else:
+        transport_used = prov_info["provider"] if prov_info else "structured"
+
+    llm_calls_n = _RUNTIME_EVAL_STATS.get("llm_calls_attempted", 0)
+    llm_live_ok = bool(_RUNTIME_EVAL_STATS.get("llm_live_ok"))
+    llm_ready_actual = bool(prov_info) and (
+        transport_used not in ("fallback", "none", "structured")
+    ) and (
+        llm_live_ok if llm_calls_n > 0 else prov_info["provider"] in ("gemini", "openai")
     )
+    if llm_ready_actual and prov_info:
+        effective_provider = prov_info["provider"] if transport_used not in ("gemini_native", "github_azure") else transport_used
+        model_engine = f"{prov_info['argon_model']} / {prov_info['model']} (via {effective_provider})"
+    elif prov_info and not llm_live_ok and llm_calls_n > 0:
+        effective_provider = "structured_fallback"
+        transport_used = "fallback"
+        err_note = (_RUNTIME_EVAL_STATS.get("last_llm_error") or "API unavailable")[:60]
+        model_engine = f"structured-cloud-analyzer (fallback: {err_note}; awaiting GEMINI_API_KEY)"
+    elif prov_info and prov_info["provider"] == "github_models":
+        effective_provider = "github_models_unverified"
+        model_engine = f"structured-cloud-analyzer ({prov_info['model']} unverified — awaiting GEMINI_API_KEY)"
+    else:
+        effective_provider = "structured"
+        model_engine = "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
+
     telemetry = {
         "version": OFFICE_VERSION,
         "status": "online_24_7",
         "orchestrator_mode": "Antigravity 2.31 (Argon <-> Carbon <-> Hydrogen + 8-Layer Guard)",
         "model_engine": model_engine,
-        "provider": prov_info["provider"] if prov_info else "structured",
+        "provider": effective_provider,
         "active_tier": active_tier,
         "transport": transport_used,
-        "llm_ready": bool(prov_info),
+        "llm_ready": llm_ready_actual,
         "local_daemon_online": local_daemon_online,
         "last_cycle_iso": utc_now_iso(),
         "cycle_count": mem["cycle_count"],
