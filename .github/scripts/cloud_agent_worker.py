@@ -24,13 +24,17 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-AGENT_MARKER = "<!-- cloud-agent-v33 -->"
+AGENT_MARKER = "<!-- cloud-agent-v34 -->"
+OFFICE_VERSION = (os.environ.get("OFFICE_VERSION") or "34.0").strip()
 DATA_BRANCH = "data"
 GITHUB_API = "https://api.github.com"
-# Note: GitHub Models (models.github.ai) was retired July 30, 2026; primary cloud engine is Google Gemini 4 Hydrogen + Antigravity 2.0 Orchestrator
+# Antigravity 2.31 Three-Tier Orchestrator: Google Gemini 4 Argon <-> Carbon <-> Hydrogen (1M context)
 GEMINI_OPENAI_API = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
-DEFAULT_HYDROGEN_MODEL = "gemini-4-hydrogen"
-DEFAULT_CARBON_MODEL = "gemini-4-carbon"
+GEMINI_NATIVE_API = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+DEFAULT_ARGON_MODEL = (os.environ.get("GEMINI_ARGON_MODEL") or "gemini-4-argon").strip()
+DEFAULT_HYDROGEN_MODEL = (os.environ.get("GEMINI_HYDROGEN_MODEL") or "gemini-4-hydrogen").strip()
+DEFAULT_CARBON_MODEL = (os.environ.get("GEMINI_CARBON_MODEL") or "gemini-4-carbon").strip()
+DEFAULT_THINKING_LEVEL = (os.environ.get("GEMINI_THINKING_LEVEL") or "high").strip()
 MODELS_API = GEMINI_OPENAI_API
 DEFAULT_MODEL = DEFAULT_HYDROGEN_MODEL
 
@@ -40,6 +44,26 @@ SKIP_ISSUE_PREFIXES = (
     "[VAULT_",
     "[SYSTEM_",
     "[HEARTBEAT",
+)
+
+AD_TRACKER_HOST_SUFFIXES = (
+    "adsrvr.org",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "px.ads.linkedin.com",
+    "connect.facebook.net",
+    "analytics.tiktok.com",
+    "adservice.google.com",
+    "analytics.twitter.com",
+    "bat.bing.com",
+    "mc.yandex.ru",
+    "googletagmanager.com",
+)
+
+SKIP_EXT_SUFFIXES = (
+    ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico",
+    ".pdf", ".mp4", ".mp3", ".woff", ".woff2", ".css", ".zip",
 )
 
 URL_RE = re.compile(r"https?://[^\s<>\"')\]}]+", re.IGNORECASE)
@@ -55,15 +79,33 @@ def esc_html(val):
     return html.escape(str(val or ""), quote=True)
 
 
+def is_tracker_or_media_url(url):
+    low = (url or "").strip().lower()
+    if not low:
+        return True
+    try:
+        parsed = urllib.parse.urlparse(low)
+        host = (parsed.hostname or "").rstrip(".")
+        path = parsed.path or ""
+    except Exception:
+        return True
+    if "api.telegram.org" in host:
+        return True
+    if any(host == suf or host.endswith("." + suf) for suf in AD_TRACKER_HOST_SUFFIXES):
+        return True
+    if ("facebook.com" in host and path.startswith("/tr")) or path.endswith("/pixel"):
+        return True
+    if any(path.endswith(ext) or (ext + "?") in low for ext in SKIP_EXT_SUFFIXES):
+        return True
+    return False
+
+
 def extract_urls(text):
     seen = set()
     out = []
     for raw in URL_RE.findall(text or ""):
         u = raw.rstrip(".,;:!?)")
-        if u in seen:
-            continue
-        low = u.lower()
-        if any(ext in low for ext in (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", "api.telegram.org")):
+        if u in seen or is_tracker_or_media_url(u):
             continue
         seen.add(u)
         out.append(u)
@@ -74,7 +116,7 @@ def extract_urls(text):
         if any(low.endswith(ext) for ext in (".json", ".py", ".md", ".html", ".js", ".css", ".txt", ".log", ".png", ".jpg")):
             continue
         full = "https://" + candidate
-        if full not in seen and ("http://" + candidate) not in seen and all(candidate not in x for x in out):
+        if full not in seen and ("http://" + candidate) not in seen and not is_tracker_or_media_url(full) and all(candidate not in x for x in out):
             seen.add(full)
             out.append(full)
     return out
@@ -109,6 +151,8 @@ def is_public_ip_host(hostname):
 
 def fetch_public_url_preview(url, max_chars=2400):
     try:
+        if is_tracker_or_media_url(url):
+            return {"url": url, "ok": False, "error": "skipped_tracker_or_media"}
         parsed = urllib.parse.urlparse(url)
         if parsed.scheme not in ("http", "https") or not is_public_ip_host(parsed.hostname):
             return {"url": url, "ok": False, "error": "blocked_non_public_host"}
@@ -124,23 +168,23 @@ def fetch_public_url_preview(url, max_chars=2400):
         req = urllib.request.Request(
             url,
             headers={
-                "User-Agent": "GSG-CloudAgent/33.0-Hydrogen (+https://globalteampartners.github.io/remote-agents-control/)",
+                "User-Agent": "GSG-CloudAgent/34.0-Antigravity231 (+https://globalteampartners.github.io/remote-agents-control/)",
                 "Accept": "text/html,application/json,text/plain;q=0.9",
                 "Accept-Encoding": "gzip, deflate",
             },
         )
-        with opener.open(req, timeout=10) as resp:
+        with opener.open(req, timeout=12) as resp:
             ctype = (resp.headers.get("Content-Type") or "").lower()
             if ctype and not any(t in ctype for t in ("text/", "html", "json", "xml", "javascript")):
                 return {"url": url, "ok": False, "error": f"non_text_content_type:{ctype.split(';')[0]}"}
-            raw_bytes = resp.read(160000)
+            raw_bytes = resp.read(524288)
             enc = (resp.headers.get("Content-Encoding") or "").lower()
             if "gzip" in enc or raw_bytes[:2] == b"\x1f\x8b":
                 import gzip
                 try:
                     raw_bytes = gzip.decompress(raw_bytes)
                 except Exception:
-                    pass
+                    return {"url": url, "ok": False, "error": "corrupt_or_truncated_gzip"}
             elif "deflate" in enc:
                 import zlib
                 try:
@@ -149,7 +193,7 @@ def fetch_public_url_preview(url, max_chars=2400):
                     try:
                         raw_bytes = zlib.decompress(raw_bytes, -zlib.MAX_WBITS)
                     except Exception:
-                        pass
+                        return {"url": url, "ok": False, "error": "corrupt_deflate_stream"}
             charset = resp.headers.get_content_charset()
             if not charset:
                 head_ascii = raw_bytes[:2048].decode("ascii", errors="ignore")
@@ -169,6 +213,10 @@ def fetch_public_url_preview(url, max_chars=2400):
         cleaned = SCRIPT_STYLE_RE.sub(" ", raw)
         cleaned = html.unescape(TAG_RE.sub(" ", cleaned))
         cleaned = re.sub(r"\s+", " ", cleaned).strip()
+        if cleaned.count("\ufffd") > max(15, len(cleaned) * 0.08):
+            return {"url": url, "ok": False, "error": "binary_or_mojibake_body"}
+        if len(cleaned) < 20 and not title:
+            return {"url": url, "ok": False, "error": "empty_page_body"}
         return {
             "url": url,
             "ok": True,
@@ -191,7 +239,7 @@ def gh_request(path, token, method="GET", body=None, timeout=18):
             "Authorization": f"token {token}",
             "Accept": "application/vnd.github.v3+json",
             "Content-Type": "application/json",
-            "User-Agent": "GSG-CloudAgent/32.0",
+            "User-Agent": f"GSG-CloudAgent/{OFFICE_VERSION}",
         },
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -243,7 +291,7 @@ def call_telegram(bot_token, method, data=None):
     req = urllib.request.Request(
         f"https://api.telegram.org/bot{bot_token}/{method}",
         data=json.dumps(data or {}).encode("utf-8"),
-        headers={"Content-Type": "application/json", "User-Agent": "GSG-CloudAgent/32.0"},
+        headers={"Content-Type": "application/json", "User-Agent": f"GSG-CloudAgent/{OFFICE_VERSION}"},
     )
     try:
         with urllib.request.urlopen(req, timeout=12) as resp:
@@ -254,82 +302,156 @@ def call_telegram(bot_token, method, data=None):
 
 
 def resolve_llm_provider():
-    """Select active Antigravity 2.0 LLM provider (ignores GitHub PAT tokens; models.github.ai retired July 30, 2026)."""
+    """Select active Antigravity 2.31 LLM provider (Argon <-> Carbon <-> Hydrogen 1M context)."""
     gemini_key = (os.environ.get("GEMINI_API_KEY") or "").strip()
     if gemini_key:
         return {
             "provider": "gemini",
             "api_key": gemini_key,
             "base_url": GEMINI_OPENAI_API,
-            "model": (os.environ.get("GEMINI_HYDROGEN_MODEL") or DEFAULT_HYDROGEN_MODEL).strip(),
-            "carbon_model": (os.environ.get("GEMINI_CARBON_MODEL") or DEFAULT_CARBON_MODEL).strip(),
+            "argon_model": DEFAULT_ARGON_MODEL,
+            "model": DEFAULT_HYDROGEN_MODEL,
+            "carbon_model": DEFAULT_CARBON_MODEL,
+            "thinking_level": DEFAULT_THINKING_LEVEL,
         }
     openai_key = (os.environ.get("OPENAI_API_KEY") or "").strip()
     base_url = (os.environ.get("LLM_BASE_URL") or "https://api.openai.com/v1/chat/completions").strip()
     if openai_key and not openai_key.startswith(("ghp_", "github_pat_")):
+        compat_m = (os.environ.get("LLM_MODEL") or "gpt-4o-mini").strip()
+        compat_big = (os.environ.get("LLM_FRONTIER_MODEL") or "gpt-4o").strip()
         return {
             "provider": "openai_compat",
             "api_key": openai_key,
             "base_url": base_url,
-            "model": (os.environ.get("LLM_MODEL") or "gpt-4o-mini").strip(),
-            "carbon_model": (os.environ.get("LLM_MODEL") or "gpt-4o").strip(),
+            "argon_model": compat_big,
+            "model": compat_m,
+            "carbon_model": compat_big,
+            "thinking_level": DEFAULT_THINKING_LEVEL,
         }
     return None
 
 
-def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona_name="", task_text="", mode="task"):
-    """Execute Antigravity 2.0 Orchestrator (Gemini 4 Hydrogen + dynamic thinking_level) when API key is present."""
-    prov = resolve_llm_provider()
-    if not prov:
-        return None, "structured-cloud-analyzer", "GEMINI_API_KEY не задан в GitHub Secrets"
-
+def select_antigravity_tier(prov, persona_name="", task_text="", mode="task"):
+    """Route across Antigravity 2.31 Gemini 4 tiers: Carbon (architecture/audit), Argon (strategy/RAG), Hydrogen (fast exec)."""
     low = f"{persona_name} {task_text}".lower()
-    is_heavy = any(k in low for k in ("ceo", "критик", "/critic", "архитект", "notebooklm_rag", "стратег"))
-    thinking_level = (os.environ.get("GEMINI_THINKING_LEVEL") or ("xhigh" if is_heavy else ("medium" if mode == "study" else "high"))).strip()
-    target_model = prov["model"]
-    if prov["provider"] == "gemini" and is_heavy and os.environ.get("ENABLE_CARBON_ROUTING") == "1":
-        target_model = prov["carbon_model"]
+    enable_carbon = (os.environ.get("ENABLE_CARBON_ROUTING", "true").lower() in ("1", "true", "yes"))
+    enable_argon = (os.environ.get("ENABLE_ARGON_ROUTING", "true").lower() in ("1", "true", "yes"))
+    carbon_kws = ("/critic", "критик", "безопас", "аудит", "security", "архитект", "debug", "three.js", "отлад", "уязвим", "nethunter", "exploit")
+    argon_kws = ("/ceo", "/strategy", "/expert", "notebooklm", "стратег", "roi", "воронка", "profitroom", "pivex", "alberta", "b2b", "altadesk", "монетиз")
+    if enable_carbon and any(k in low for k in carbon_kws):
+        return "carbon", prov["carbon_model"], "xhigh"
+    if enable_argon and any(k in low for k in argon_kws):
+        return "argon", prov["argon_model"], "high"
+    t_lvl = prov.get("thinking_level") or ("medium" if mode == "study" else "high")
+    return "hydrogen", prov["model"], t_lvl
 
+
+def _call_openai_compat(base_url, api_key, model, system_prompt, user_prompt, thinking_level=None, provider="gemini"):
     payload = {
-        "model": target_model,
+        "model": model,
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
         "temperature": 0.35,
-        "max_tokens": 1100,
+        "max_tokens": 2500,
     }
-    if prov["provider"] == "gemini":
+    if provider == "gemini" and thinking_level:
         payload["reasoning_effort"] = thinking_level
-
     req = urllib.request.Request(
-        prov["base_url"],
+        base_url,
         data=json.dumps(payload).encode("utf-8"),
         headers={
-            "Authorization": f"Bearer {prov['api_key']}",
+            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "User-Agent": "GSG-Antigravity-2.0-Hydrogen/33.0",
+            "User-Agent": f"GSG-Antigravity-2.31/{OFFICE_VERSION}",
         },
     )
-    try:
-        with urllib.request.urlopen(req, timeout=35) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            choices = data.get("choices") or []
-            if choices:
-                txt = (choices[0].get("message") or {}).get("content", "").strip()
+    with urllib.request.urlopen(req, timeout=40) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+        choices = data.get("choices") or []
+        if choices:
+            return (choices[0].get("message") or {}).get("content", "").strip()
+    return ""
+
+
+def _call_gemini_native(api_key, model, system_prompt, user_prompt, thinking_level="high"):
+    url = GEMINI_NATIVE_API.format(model=urllib.parse.quote(model, safe="-_."))
+    payload = {
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
+        "generationConfig": {
+            "temperature": 0.35,
+            "maxOutputTokens": 2500,
+            "thinkingConfig": {"thinkingLevel": thinking_level.upper()},
+        },
+    }
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "x-goog-api-key": api_key,
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": f"GSG-Antigravity-2.31-Native/{OFFICE_VERSION}",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=40) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+        cands = data.get("candidates") or []
+        if cands:
+            parts = ((cands[0].get("content") or {}).get("parts") or [])
+            txt = "\n".join(p.get("text", "") for p in parts if not p.get("thought") and p.get("text")).strip()
+            if not txt:
+                txt = "\n".join(p.get("text", "") for p in parts if p.get("text")).strip()
+            return txt
+    return ""
+
+
+def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona_name="", task_text="", mode="task"):
+    """Execute Antigravity 2.31 Orchestrator (Argon <-> Carbon <-> Hydrogen + OpenAI/Native cascade)."""
+    prov = resolve_llm_provider()
+    if not prov:
+        return None, "structured-cloud-analyzer", "GEMINI_API_KEY не задан в GitHub Secrets", "none", "none"
+
+    tier_name, primary_model, thinking_level = select_antigravity_tier(prov, persona_name=persona_name, task_text=task_text, mode=mode)
+    cascade = []
+    for t_name, m_name in (
+        (tier_name, primary_model),
+        ("argon", prov["argon_model"]),
+        ("hydrogen", prov["model"]),
+    ):
+        if m_name and all(x[1] != m_name for x in cascade):
+            cascade.append((t_name, m_name))
+
+    last_err = "Пустой ответ API"
+    for c_tier, c_model in cascade:
+        try:
+            txt = _call_openai_compat(prov["base_url"], prov["api_key"], c_model, system_prompt, user_prompt, thinking_level=thinking_level, provider=prov["provider"])
+            if txt:
+                lbl = f"{c_model} (tier: {c_tier}, thinking: {thinking_level})" if prov["provider"] == "gemini" else c_model
+                return txt, lbl, "ok", c_tier, "openai_compat"
+        except Exception as exc:
+            last_err = f"{c_model} [openai]: {str(exc)[:90]}"
+            print(f"[Orchestrator warn] {last_err}", flush=True)
+
+        if prov["provider"] == "gemini":
+            try:
+                txt = _call_gemini_native(prov["api_key"], c_model, system_prompt, user_prompt, thinking_level=thinking_level)
                 if txt:
-                    engine_label = f"{target_model} (thinking: {thinking_level})" if prov["provider"] == "gemini" else target_model
-                    return txt, engine_label, "ok"
-    except Exception as exc:
-        print(f"[Orchestrator warn] {target_model}: {exc}", flush=True)
-        return None, "structured-cloud-analyzer", f"Ошибка API {target_model}: {str(exc)[:100]}"
-    return None, "structured-cloud-analyzer", "Пустой ответ API"
+                    lbl = f"{c_model} (tier: {c_tier}, thinking: {thinking_level}, native)"
+                    return txt, lbl, "ok", c_tier, "gemini_native"
+            except Exception as exc:
+                last_err = f"{c_model} [native]: {str(exc)[:90]}"
+                print(f"[Orchestrator native warn] {last_err}", flush=True)
+
+    return None, "structured-cloud-analyzer", last_err, tier_name, "fallback"
 
 
 def call_github_models(models_token, system_prompt, user_prompt):
-    txt, _, _ = call_hydrogen_orchestrator(models_token, system_prompt, user_prompt)
-    return txt
+    res = call_hydrogen_orchestrator(models_token, system_prompt, user_prompt)
+    return res[0]
 
 
 def detect_agent_persona(text):
@@ -349,7 +471,7 @@ def detect_agent_persona(text):
 
 def build_fallback_reply(issue_title, prompt_text, previews, persona_name, engine_note=""):
     lines = [
-        f"⚛️ **Antigravity 2.0 Cloud ({persona_name}) — структурированный разбор 24/7**",
+        f"⚛️ **Antigravity 2.31 Cloud ({persona_name}) — структурированный разбор 24/7**",
         "",
         f"**Задача:** {issue_title}",
     ]
@@ -369,22 +491,23 @@ def build_fallback_reply(issue_title, prompt_text, previews, persona_name, engin
                 lines.append(f"- ⚠️ Не удалось открыть `{p['url']}` ({p.get('error', 'error')})")
     lines.extend([
         "",
-        "**Прикладной план и внедрение (Carbon ↔ Hydrogen):**",
+        "**Прикладной план и внедрение (Argon ↔ Carbon ↔ Hydrogen):**",
         "1. Контекст задачи и извлечённые материалы сохранены в облачную память офиса (`office_memory.json`).",
-        "2. Оцените применимость для ключевых воронок (B2B AI Voice AltaDesk / Traffic / COMSS AI 2.0 / 12 Mini Apps) и добавьте в комментарий команду (`/ceo`, `/strategy`, `/viral`, `/expert`) для продолжения.",
+        "2. Оцените применимость для ключевых воронок (B2B AI Voice AltaDesk / Traffic / COMSS AI 2.0 / 12 Mini Apps) и добавьте в комментарий команду (`/ceo`, `/strategy`, `/viral`, `/expert`, `/critic`) для продолжения.",
     ])
     if engine_note:
-        lines.append(f"3. _Статус облачной LLM:_ `{engine_note}` — добавьте секрет `GEMINI_API_KEY` в GitHub Actions для живой генерации `gemini-4-hydrogen`.")
+        lines.append(f"3. _Статус облачной LLM:_ `{engine_note}` — добавьте секрет `GEMINI_API_KEY` в GitHub Actions для живой генерации `gemini-4-argon` / `gemini-4-carbon` / `gemini-4-hydrogen`.")
     return "\n".join(lines)
 
 
 def default_office_memory():
     return {
-        "version": "33.0",
+        "version": OFFICE_VERSION,
         "updated_at": utc_now_iso(),
         "cycle_count": 0,
         "processed_triggers": [],
         "studied_urls": [],
+        "failed_urls": {},
         "learned_facts": [],
         "projects": {},
         "recent_events": [],
@@ -420,16 +543,32 @@ def should_skip_issue(issue):
     return any(upper.startswith(pref) for pref in SKIP_ISSUE_PREFIXES)
 
 
+def record_failed_url(mem, url, err_msg):
+    failed = mem.setdefault("failed_urls", {})
+    prev = failed.get(url) if isinstance(failed.get(url), dict) else {}
+    failed[url] = {
+        "retries": int(prev.get("retries") or 0) + 1,
+        "last_error": str(err_msg or "error")[:140],
+        "last_try": utc_now_iso(),
+    }
+    if len(failed) > 120:
+        for old_k in list(failed.keys())[:-120]:
+            failed.pop(old_k, None)
+
+
 def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigger_key):
     num = issue["number"]
     title = issue.get("title") or f"Задача #{num}"
     body = issue.get("body") or ""
-    human_comments = [c for c in comments if AGENT_MARKER not in (c.get("body") or "")]
+    human_comments = [c for c in comments if "<!-- cloud-agent-v" not in (c.get("body") or "")]
     latest_human = human_comments[-1].get("body", "") if human_comments else ""
 
     source_text = f"{title}\n\n{body}\n\nПоследний запрос: {latest_human}"
-    urls = extract_urls(source_text)[:2]
+    urls = extract_urls(source_text)[:3]
     previews = [fetch_public_url_preview(u) for u in urls]
+    for p in previews:
+        if not p.get("ok"):
+            record_failed_url(mem, p["url"], p.get("error", ""))
 
     persona_name, persona_goal = detect_agent_persona(latest_human or body or title)
     recent_facts = "\n".join(
@@ -442,7 +581,7 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
     )
 
     system_prompt = (
-        f"Ты — {persona_name} в системе Global Spirit Group ★ Virtual Office. "
+        f"Ты — {persona_name} в системе Global Spirit Group ★ Virtual Office (Antigravity 2.31). "
         f"Отвечай чётко на русском языке, структурированно, практически и с фокусом на измеримый результат. "
         f"{persona_goal}"
     )
@@ -454,16 +593,16 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
         f"Содержимое ссылок:\n{url_ctx or 'ссылок нет'}"
     )
 
-    ai_text, used_model, engine_note = call_hydrogen_orchestrator(
+    ai_text, used_model, engine_note, tier_used, transport_used = call_hydrogen_orchestrator(
         models_token, system_prompt, user_prompt, persona_name=persona_name, task_text=f"{title} {latest_human}", mode="task"
     )
     if not ai_text:
         ai_text = build_fallback_reply(title, latest_human or body, previews, persona_name, engine_note=engine_note)
 
     final_comment = (
-        f"⚛️ **{persona_name} · Antigravity 2.0 Cloud ({used_model})**\n\n"
+        f"⚛️ **{persona_name} · Antigravity 2.31 Cloud ({used_model})**\n\n"
         f"{ai_text}\n\n"
-        f"---\n_Память офиса обновлена · Работа выполнена автономно в облаке_ {AGENT_MARKER}"
+        f"---\n_Память офиса v{OFFICE_VERSION} обновлена · Работа выполнена автономно в облаке ({tier_used}/{transport_used})_ {AGENT_MARKER}"
     )
 
     gh_request(f"/repos/{repo}/issues/{num}/comments", gh_token, method="POST", body={"body": final_comment})
@@ -475,6 +614,7 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
     for p in previews:
         if p.get("ok") and p["url"] not in mem.setdefault("studied_urls", []):
             mem["studied_urls"].append(p["url"])
+            mem.get("failed_urls", {}).pop(p["url"], None)
     mem["studied_urls"] = mem.get("studied_urls", [])[-200:]
 
     append_learned_fact(mem, f"Задача #{num}: {title}", ai_text[:450], source=f"issue #{num}")
@@ -484,27 +624,32 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
         "title": title,
         "persona": persona_name,
         "model": used_model,
+        "tier": tier_used,
+        "transport": transport_used,
         "preview": ai_text[:300],
     }
 
 
 def run_cloud_study_cycle(repo, gh_token, models_token, mem):
-    # v33.0: Read knowledge_base from crm_data.json (fallback to knowledge_base_global.json)
+    # v34.0: Read knowledge_base from crm_data.json (fallback to knowledge_base_global.json), retry failed URLs cleanly
     crm_obj, _ = fetch_data_json(repo, gh_token, "crm_data.json", default_val=dict)
     kb = crm_obj.get("knowledge_base", []) if isinstance(crm_obj, dict) else []
     if not kb:
         kb, _ = fetch_data_json(repo, gh_token, "knowledge_base_global.json", default_val=list)
     studied = set(mem.get("studied_urls") or [])
+    failed_map = mem.get("failed_urls") or {}
     candidates = []
     items_iter = kb if isinstance(kb, list) else (kb.get("items", []) if isinstance(kb, dict) else [])
     for item in items_iter:
         if not isinstance(item, dict):
             continue
         url = (item.get("source_url") or item.get("url") or item.get("link") or "").strip()
-        low_u = url.lower()
-        if any(low_u.endswith(ext) or (ext + "?") in low_u for ext in (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".pdf", ".mp4", ".mp3")):
+        if not url or is_tracker_or_media_url(url) or url in studied:
             continue
-        if url and url not in studied and is_public_ip_host(urllib.parse.urlparse(url).hostname):
+        fail_rec = failed_map.get(url)
+        if isinstance(fail_rec, dict) and int(fail_rec.get("retries") or 0) >= 3:
+            continue
+        if is_public_ip_host(urllib.parse.urlparse(url).hostname):
             candidates.append((item.get("title") or url, url, item.get("category") or ""))
 
     if not candidates:
@@ -514,15 +659,18 @@ def run_cloud_study_cycle(repo, gh_token, models_token, mem):
     candidates.sort(key=lambda c: (1 if ("youtu.be" in c[1] or "youtube.com" in c[1]) else 0))
     for title, url, category in candidates[:4]:
         preview = fetch_public_url_preview(url)
-        mem.setdefault("studied_urls", []).append(url)
-        mem["studied_urls"] = mem["studied_urls"][-200:]
         if not preview.get("ok"):
+            record_failed_url(mem, url, preview.get("error", ""))
             append_memory_event(mem, "study_skip", f"URL недоступен: {url} ({preview.get('error', '')})", url=url)
             continue
 
-        summary, used_model, engine_note = call_hydrogen_orchestrator(
+        mem.setdefault("studied_urls", []).append(url)
+        mem["studied_urls"] = mem["studied_urls"][-200:]
+        failed_map.pop(url, None)
+
+        summary, used_model, engine_note, tier_used, transport_used = call_hydrogen_orchestrator(
             models_token,
-            "Ты — ИИ-аналитик Базы Знаний Virtual Office (Gemini 4 Hydrogen). Сделай выжимку из страницы на русском языке (3-5 буллетов: главная суть, идеи заработка, как применить в наших проектах).",
+            "Ты — ИИ-аналитик Базы Знаний Virtual Office (Antigravity 2.31). Сделай выжимку из страницы на русском языке (3-5 буллетов: главная суть, идеи заработка, как применить в наших проектах).",
             f"Материал: {title}\nКатегория: {category}\nURL: {url}\nЗаголовок: {preview.get('title')}\nТекст:\n{preview.get('excerpt', '')[:2400]}",
             persona_name="Knowledge Analyst",
             task_text=title,
@@ -534,7 +682,7 @@ def run_cloud_study_cycle(repo, gh_token, models_token, mem):
 
         append_learned_fact(mem, title, summary, source=url)
         append_memory_event(mem, "cloud_study", f"Изучен материал ({used_model}): {title}", url=url)
-        return {"title": title, "url": url, "model": used_model, "summary": summary[:320]}
+        return {"title": title, "url": url, "model": used_model, "tier": tier_used, "transport": transport_used, "summary": summary[:320]}
     return None
 
 
@@ -655,9 +803,77 @@ def handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id):
 
     if dirty:
         access["cloud_tg_offset"] = offset
-        write_data_json(repo, gh_token, "bot_access_registry.json", access, "Cloud 24/7 bot gate sync [v32.0]", sha=sha)
+        write_data_json(repo, gh_token, "bot_access_registry.json", access, f"Cloud 24/7 bot gate sync [v{OFFICE_VERSION}]", sha=sha)
 
     return {"polled": True, "updates": len(updates), "handled": handled}
+
+
+def sync_cloud_status_registries(repo, gh_token, mem, prov_info, telemetry, local_daemon_online):
+    """Keep legacy status.json and agents.json in sync with real 24/7 cloud & local daemon truth."""
+    now_iso = utc_now_iso()
+    router_meta = {
+        "preferred_provider": "gemini",
+        "configured_providers": [prov_info["provider"]] if prov_info else [],
+        "active_mode": (
+            f"Antigravity 2.31 ({DEFAULT_ARGON_MODEL} / {DEFAULT_CARBON_MODEL} / {DEFAULT_HYDROGEN_MODEL})"
+            if prov_info
+            else "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
+        ),
+        "vps_ready": False,
+        "cost_architecture": "Antigravity 2.31 Tiered Routing (Argon <-> Carbon <-> Hydrogen 1M)",
+        "argon_model": DEFAULT_ARGON_MODEL,
+        "carbon_model": DEFAULT_CARBON_MODEL,
+        "hydrogen_model": DEFAULT_HYDROGEN_MODEL,
+    }
+    try:
+        st_obj, st_sha = fetch_data_json(repo, gh_token, "status.json", default_val=dict)
+        if not isinstance(st_obj, dict):
+            st_obj = {}
+        st_obj.update({
+            "updated_at": now_iso,
+            "cloud_last_cycle": now_iso,
+            "cloud_status": "online_24_7",
+            "local_daemon_online": local_daemon_online,
+            "waiting_for_agent": 0,
+            "worker_version": f"{OFFICE_VERSION}-antigravity-2.31-cloud",
+            "platform": "github-actions+windows-local",
+            "cycle_count": mem.get("cycle_count", 0),
+            "memory_facts_count": len(mem.get("learned_facts") or []),
+            "llm_ready": bool(prov_info),
+            "model_router": router_meta,
+        })
+        if local_daemon_online:
+            st_obj["last_seen"] = now_iso
+        write_data_json(repo, gh_token, "status.json", st_obj, f"Sync status.json [v{OFFICE_VERSION}]", sha=st_sha)
+    except Exception as exc:
+        print(f"[status.json sync warn] {exc}", flush=True)
+
+    try:
+        ag_obj, ag_sha = fetch_data_json(repo, gh_token, "agents.json", default_val=dict)
+        if isinstance(ag_obj, dict):
+            ag_obj["updated"] = now_iso
+            ag_obj["model_router"] = router_meta
+            daemons = ag_obj.setdefault("daemons", {})
+            for local_key in ("laptop_worker", "khl_live_service", "khl_auto_learning", "channel_watcher"):
+                if isinstance(daemons.get(local_key), dict):
+                    daemons[local_key]["status"] = "paused_offline_local"
+            daemons["github_cloud_24_7"] = {
+                "name": f"Cloud 24/7 Orchestrator v{OFFICE_VERSION}",
+                "emoji": "☁️",
+                "project": "Global Spirit Group",
+                "status": "online",
+                "detail": f"GitHub Actions 24/7: Argon / Carbon / Hydrogen · цикл #{mem.get('cycle_count', 0)}",
+            }
+            daemons["tg_bot_poller"] = {
+                "name": f"Telegram HQ Poller v{OFFICE_VERSION} (@unitybusinessbot)",
+                "emoji": "🤖",
+                "project": "Главный Штаб",
+                "status": "online" if local_daemon_online else "offline_local",
+                "detail": "Онлайн на ПК" if local_daemon_online else "Офлайн — перехвачен облачным fallback 24/7",
+            }
+            write_data_json(repo, gh_token, "agents.json", ag_obj, f"Sync agents.json [v{OFFICE_VERSION}]", sha=ag_sha)
+    except Exception as exc:
+        print(f"[agents.json sync warn] {exc}", flush=True)
 
 
 def main():
@@ -694,6 +910,8 @@ def main():
     mem, mem_sha = fetch_data_json(repo, gh_token, "office_memory.json", default_val=default_office_memory)
     if not isinstance(mem, dict):
         mem = default_office_memory()
+    mem["version"] = OFFICE_VERSION
+    mem.setdefault("failed_urls", {})
     mem["cycle_count"] = int(mem.get("cycle_count") or 0) + 1
     mem["updated_at"] = utc_now_iso()
 
@@ -764,20 +982,30 @@ def main():
     except Exception as exc:
         print(f"[TG offline fallback error] {exc}", flush=True)
 
-    # 5. Persist Office Memory + Cloud Telemetry + Work Report
+    # 5. Persist Office Memory + Cloud Telemetry + Work Report + Legacy Sync
     try:
-        write_data_json(repo, gh_token, "office_memory.json", mem, f"Cloud 24/7 memory cycle #{mem['cycle_count']} [v33.0]", sha=mem_sha)
+        write_data_json(repo, gh_token, "office_memory.json", mem, f"Cloud 24/7 memory cycle #{mem['cycle_count']} [v{OFFICE_VERSION}]", sha=mem_sha)
     except Exception as exc:
         print(f"[Memory save warn] {exc}", flush=True)
 
     prov_info = resolve_llm_provider()
-    model_engine = f"{prov_info['model']} (Antigravity 2.0)" if prov_info else "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
+    local_daemon_online = tg_poll_status.get("reason") == "local_daemon_online"
+    active_tier = executed_tasks[0].get("tier") if executed_tasks else (study_result.get("tier") if study_result else ("argon+hydrogen" if prov_info else "fallback"))
+    transport_used = executed_tasks[0].get("transport") if executed_tasks else (study_result.get("transport") if study_result else ("api" if prov_info else "structured"))
+    model_engine = (
+        f"{prov_info['argon_model']} / {prov_info['model']} (Antigravity 2.31)"
+        if prov_info
+        else "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
+    )
     telemetry = {
-        "version": "33.0",
+        "version": OFFICE_VERSION,
         "status": "online_24_7",
-        "orchestrator_mode": "Antigravity 2.0 (Carbon <-> Hydrogen)",
+        "orchestrator_mode": "Antigravity 2.31 (Argon <-> Carbon <-> Hydrogen)",
         "model_engine": model_engine,
+        "active_tier": active_tier,
+        "transport": transport_used,
         "llm_ready": bool(prov_info),
+        "local_daemon_online": local_daemon_online,
         "last_cycle_iso": utc_now_iso(),
         "cycle_count": mem["cycle_count"],
         "event": event_name,
@@ -785,13 +1013,16 @@ def main():
         "studied_this_cycle": bool(study_result),
         "memory_facts_count": len(mem.get("learned_facts") or []),
         "studied_urls_count": len(mem.get("studied_urls") or []),
+        "failed_urls_count": len(mem.get("failed_urls") or {}),
         "bot_gate_mode": "request_only_by_@unityspiritpartners",
         "tg_offline_fallback": tg_poll_status,
     }
     try:
-        write_data_json(repo, gh_token, "cloud_agents_telemetry.json", telemetry, f"Cloud telemetry cycle #{mem['cycle_count']} [v33.0]")
+        write_data_json(repo, gh_token, "cloud_agents_telemetry.json", telemetry, f"Cloud telemetry cycle #{mem['cycle_count']} [v{OFFICE_VERSION}]")
     except Exception as exc:
         print(f"[Telemetry save warn] {exc}", flush=True)
+
+    sync_cloud_status_registries(repo, gh_token, mem, prov_info, telemetry, local_daemon_online)
 
     if executed_tasks or study_result or event_name == "workflow_dispatch":
         rep, rep_sha = fetch_data_json(repo, gh_token, "agent_work_report.json", default_val=list)
@@ -800,15 +1031,16 @@ def main():
         rep.append({
             "at": utc_now_iso(),
             "source": "github_actions_cloud_24_7",
-            "version": "33.0",
+            "version": OFFICE_VERSION,
             "model_engine": model_engine,
+            "active_tier": active_tier,
             "cycle": mem["cycle_count"],
             "tasks": executed_tasks,
             "study": study_result,
         })
         rep = rep[-60:]
         try:
-            write_data_json(repo, gh_token, "agent_work_report.json", rep, f"Cloud work report cycle #{mem['cycle_count']} [v33.0]", sha=rep_sha)
+            write_data_json(repo, gh_token, "agent_work_report.json", rep, f"Cloud work report cycle #{mem['cycle_count']} [v{OFFICE_VERSION}]", sha=rep_sha)
         except Exception as exc:
             print(f"[Report save warn] {exc}", flush=True)
 
@@ -816,9 +1048,9 @@ def main():
     should_notify = bool(executed_tasks or study_result or event_name == "workflow_dispatch" or (mem["cycle_count"] % 16 == 0))
     if should_notify and bot_token and owner_chat_id:
         tg_lines = [
-            f"⚛️ <b>ОТЧЁТ ANTIGRAVITY 2.0 HYDROGEN 24/7 (Цикл #{mem['cycle_count']})</b>",
+            f"⚛️ <b>ОТЧЁТ ANTIGRAVITY 2.31 CLOUD 24/7 (v{OFFICE_VERSION} · Цикл #{mem['cycle_count']})</b>",
             f"• Режим: <b>Автономно в облаке GitHub (даже без ноутбука)</b>",
-            f"• Движок: <code>{esc_html(model_engine)}</code>",
+            f"• Движок: <code>{esc_html(model_engine)}</code> ({esc_html(active_tier)})",
             f"• Память офиса: <b>{len(mem.get('learned_facts') or [])} знаний</b> | <b>{len(mem.get('studied_urls') or [])} ссылок</b>",
         ]
         if executed_tasks:
@@ -838,7 +1070,7 @@ def main():
             "text": "\n".join(tg_lines)[:3900],
             "parse_mode": "HTML",
             "reply_markup": {"inline_keyboard": [[
-                {"text": "🏢 Открыть Офис (v33.0 Hydrogen)", "url": "https://globalteampartners.github.io/remote-agents-control/?v=33.0"}
+                {"text": f"🏢 Открыть Офис (v{OFFICE_VERSION} Antigravity 2.31)", "url": f"https://globalteampartners.github.io/remote-agents-control/?v={OFFICE_VERSION}"}
             ]]},
         })
 
