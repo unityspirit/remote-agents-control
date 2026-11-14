@@ -26,7 +26,7 @@ import urllib.request
 
 AGENT_MARKER = "<!-- cloud-agent-v34 -->"
 UI_NOTE_MARKER = "<!-- office-ui-auto-note -->"
-OFFICE_VERSION = (os.environ.get("OFFICE_VERSION") or "34.1").strip()
+OFFICE_VERSION = (os.environ.get("OFFICE_VERSION") or "34.2").strip()
 DATA_BRANCH = "data"
 GITHUB_API = "https://api.github.com"
 # Antigravity 2.31 Three-Tier Orchestrator: Google Gemini 4 Argon <-> Carbon <-> Hydrogen + GitHub Models Fallback
@@ -825,11 +825,22 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
             mem.get("failed_urls", {}).pop(p["url"], None)
     mem["studied_urls"] = mem.get("studied_urls", [])[-200:]
 
+    actor_login = ""
+    for actor_pat in (r"Исполнитель в офисе:\s*@?([A-Za-z0-9_.@-]+)", r"Отправлено\s*@?([A-Za-z0-9_.@-]+)", r"Кто:\s*@?([A-Za-z0-9_.@-]+)", r"Сохранил:\s*@?([A-Za-z0-9_.@-]+)"):
+        am = re.search(actor_pat, f"{body}\n{latest_human}", re.IGNORECASE)
+        if am:
+            actor_login = am.group(1).strip().lstrip("@").lower()
+            break
+    proj_m = re.match(r"^\s*\[([^\]]+)\]", str(title or ""))
+    task_project = proj_m.group(1).strip() if proj_m else ""
+
     append_learned_fact(mem, f"Задача #{num}: {title}", ai_text[:450], source=f"issue #{num}")
     append_memory_event(mem, "cloud_task_executed", f"#{num} ({persona_name} / {used_model}): {title}", issue_num=num)
     return {
         "issue": num,
         "title": title,
+        "project": task_project,
+        "actor_login": actor_login,
         "persona": persona_name,
         "model": used_model,
         "tier": tier_used,
