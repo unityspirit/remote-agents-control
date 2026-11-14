@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09 12:52:39",
+  "updated": "2026-11-14T00:09:56+00:00",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -202,52 +202,58 @@
       "name": "Слушатель Офиса (laptop_worker.py v18)",
       "emoji": "🔄",
       "project": "Входящие_Офис",
-      "status": "online",
-      "detail": "Слушает облачную очередь GitHub Issues и синхронизирует ветку data 24/7"
+      "status": "paused_offline_local",
+      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
+      "pid": null
     },
     "khl_live_service": {
       "name": "KHL Live Odds v17 (khl_live_service_v17.py)",
       "emoji": "🏒",
       "project": "Юра",
-      "status": "standby",
-      "detail": "Мониторинг live-коэффициентов КХЛ и отправка сигналов 24/7"
+      "status": "paused_offline_local",
+      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
+      "pid": null
     },
     "khl_auto_learning": {
       "name": "KHL Auto-Learning (khl_auto_learning_service.py)",
       "emoji": "🧬",
       "project": "Юра",
-      "status": "online",
-      "detail": "Автообучение и калибровка вероятностной модели КХЛ"
+      "status": "paused_offline_local",
+      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
+      "pid": null
     },
     "channel_watcher": {
       "name": "Монитор TG-каналов (channel_watcher.py)",
       "emoji": "📡",
       "project": "Автономная_База_Знаний_Каналов",
-      "status": "scheduled",
-      "detail": "Авто-обход @vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey каждые 45 мин"
+      "status": "paused_offline_local",
+      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
+      "pid": null
+    },
+    "github_cloud_24_7": {
+      "name": "Cloud 24/7 Orchestrator v34.0",
+      "emoji": "☁️",
+      "project": "Global Spirit Group",
+      "status": "online",
+      "detail": "GitHub Actions 24/7: Argon / Carbon / Hydrogen (Antigravity 2.31)"
+    },
+    "tg_bot_poller": {
+      "name": "Telegram HQ Poller v34.0 (@unitybusinessbot)",
+      "emoji": "🤖",
+      "project": "Главный Штаб",
+      "status": "online",
+      "detail": "Запущен локально v34.0 + защитный Cloud Fallback"
     }
   },
   "model_router": {
-    "preferred_provider": "auto",
-    "configured_providers": [
-      "gemini"
-    ],
-    "active_mode": "production_api (gemini)",
-    "vps_ready": true,
-    "cost_architecture": "Anthropic 2026 Tiered Routing (Frontier + Economy + Single-Loop)",
-    "frontier_model": "auto-frontier",
-    "economy_model": "auto-economy",
-    "metrics": {
-      "calls_total": 9,
-      "calls_by_provider": {
-        "deterministic_local_engine": 5,
-        "cloud_test_gateway": 4
-      },
-      "last_provider": "cloud_test_gateway",
-      "last_model": "openai-gateway",
-      "last_call_at": "2026-11-09T06:02:53.803041+00:00",
-      "errors_count": 23
-    }
+    "preferred_provider": "gemini",
+    "configured_providers": [],
+    "active_mode": "Antigravity 2.31 (gemini-4-argon / gemini-4-carbon / gemini-4-hydrogen)",
+    "vps_ready": false,
+    "cost_architecture": "Antigravity 2.31 Tiered Routing (Argon <-> Carbon <-> Hydrogen 1M)",
+    "argon_model": "gemini-4-argon",
+    "carbon_model": "gemini-4-carbon",
+    "hydrogen_model": "gemini-4-hydrogen"
   },
   "statuses": {
     "new": "🆕 Новый",
