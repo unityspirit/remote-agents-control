@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T20:42:24.479670+00:00",
+  "updated_at": "2026-11-15T20:42:35.115260+00:00",
   "version": "34.1",
   "knowledge_base": [
     {
@@ -1301,6 +1301,27 @@
   ],
   "store_leads": [
     {
+      "store_id": "GSG-2CE7-1115",
+      "slug": "auradesk-co-minimalist-magsafe-desk-te-2ce7",
+      "created_at": "2026-11-15T20:42:30.064258+00:00",
+      "brand_name": "AuraDesk & Co.",
+      "niche": "Minimalist MagSafe Desk Tech & GaN Gear",
+      "language": "en",
+      "currency": "USD",
+      "engine_used": "gemini/gemini-flash-lite-latest",
+      "full_name": "Global Partner",
+      "email": "partner@globalspirit.group",
+      "phone": "+1-555-0199",
+      "utm_source": "office_showcase_en",
+      "products_count": 6,
+      "avg_order_usd": 112.85,
+      "shopify_cpa_usd": 150,
+      "pro_saas_usd": 29,
+      "dfy_turnkey_usd": 750,
+      "local_dir": "C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)\\generated_stores\\auradesk-co-minimalist-magsafe-desk-te-2ce7",
+      "status": "built_ready_to_monetize"
+    },
+    {
       "store_id": "GSG-62F3-1115",
       "slug": "lumiaura-labs-peptidnyy-uhod-za-kozhey-62f3",
       "created_at": "2026-11-15T20:42:19.844762+00:00",
@@ -1365,9 +1386,9 @@
     }
   ],
   "revenue_pipeline": {
-    "updated_at": "2026-11-15T20:42:24.479670+00:00",
-    "store_leads_count": 3,
-    "estimated_cpa_pool_usd": 450.0,
-    "estimated_mrr_usd": 87.0
+    "updated_at": "2026-11-15T20:42:35.115260+00:00",
+    "store_leads_count": 4,
+    "estimated_cpa_pool_usd": 600.0,
+    "estimated_mrr_usd": 116.0
   }
 }
