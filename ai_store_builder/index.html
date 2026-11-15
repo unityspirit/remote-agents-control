@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Open V3 AI Store Builder — Shopify + Telegram Mini App за 15 мин | Global Spirit Group</title>
+<style>
+  :root {
+    --bg: #070a12;
+    --panel: #0f172a;
+    --card: #151e32;
+    --card2: #1c2842;
+    --border: rgba(148, 163, 184, 0.18);
+    --text: #f8fafc;
+    --dim: #94a3b8;
+    --accent: #38bdf8;
+    --emerald: #10b981;
+    --purple: #a855f7;
+    --amber: #f59e0b;
+    --rose: #f43f5e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background: var(--bg); color: var(--text); line-height: 1.5; padding-bottom: 84px; overflow-x: hidden; }
+  .topbar {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(7, 10, 18, 0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); padding: 10px 16px;
+    display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .brand-pill { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.92rem; }
+  .brand-logo { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, #38bdf8, #a855f7); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .top-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .btn-nav {
+    text-decoration: none; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35);
+    color: var(--accent); padding: 6px 11px; border-radius: 9px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
+  }
+  .btn-nav.em { background: rgba(16, 185, 129, 0.14); border-color: rgba(16, 185, 129, 0.4); color: #34d399; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .tabs-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+  .tab-btn {
+    background: var(--panel); border: 1px solid var(--border); color: var(--dim);
+    border-radius: 11px; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+  }
+  .tab-btn.active { background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(168,85,247,0.22)); border-color: var(--accent); color: #fff; }
+  .tab-pane { display: none; flex-direction: column; gap: 16px; }
+  .tab-pane.active { display: flex; }
+
+  .hero {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.14), rgba(168, 85, 247, 0.14), rgba(16, 185, 129, 0.1));
+    border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 20px; padding: 22px 20px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.45);
+    color: #34d399; font-size: 0.71rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .hero h1 { font-size: clamp(1.35rem, 3vw, 1.95rem); font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+  .hero p { font-size: 0.9rem; color: #cbd5e1; max-width: 820px; }
+
+  .funnel-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; align-items: start; }
+  @media (max-width: 860px) { .funnel-grid { grid-template-columns: 1fr; } }
+
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .card h2 { font-size: 1.02rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+
+  .vsl-screen {
+    background: radial-gradient(circle at top right, #1e1b4b, #090d16 72%);
+    border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 14px; padding: 16px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .vsl-stage-pill { display: flex; gap: 6px; flex-wrap: wrap; }
+  .stage-dot {
+    background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px;
+    padding: 5px 9px; font-size: 0.72rem; color: var(--dim); cursor: pointer; font-weight: 700;
+  }
+  .stage-dot.active { background: rgba(56,189,248,0.22); border-color: var(--accent); color: #fff; }
+  .stage-dot.done { background: rgba(16,185,129,0.2); border-color: var(--emerald); color: #34d399; }
+  .vsl-monitor {
+    background: rgba(8, 11, 18, 0.75); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 14px; min-height: 122px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px;
+  }
+  .progress-track { height: 7px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 20%; background: linear-gradient(90deg, #38bdf8, #10b981); transition: width 0.35s ease; }
+
+  .niche-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .niche-chip {
+    background: var(--card); border: 1px solid var(--border); color: #cbd5e1;
+    border-radius: 999px; padding: 5px 10px; font-size: 0.74rem; font-weight: 700; cursor: pointer;
+  }
+  .niche-chip:hover, .niche-chip.active { border-color: var(--accent); background: rgba(56,189,248,0.18); color: #fff; }
+
+  .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 520px) { .form-row-2 { grid-template-columns: 1fr; } }
+  .field { display: flex; flex-direction: column; gap: 4px; }
+  .field label { font-size: 0.74rem; font-weight: 700; color: var(--dim); }
+  .field input, .field select, .field textarea {
+    background: #080c16; border: 1px solid var(--border); color: var(--text);
+    border-radius: 10px; padding: 10px 12px; font-size: 0.86rem; outline: none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); }
+
+  .consent-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.73rem; color: var(--dim); }
+  .consent-row input { width: 17px; height: 17px; accent-color: var(--emerald); margin-top: 2px; flex-shrink: 0; }
+
+  .cta-main {
+    width: 100%; border: none; border-radius: 12px; padding: 13px 18px;
+    background: linear-gradient(135deg, #10b981, #059669); color: #fff;
+    font-size: 0.95rem; font-weight: 900; cursor: pointer;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.28); transition: transform 0.15s;
+  }
+  .cta-main:hover { transform: translateY(-1px); }
+  .cta-sec {
+    border: 1px solid rgba(56,189,248,0.45); background: rgba(56,189,248,0.14); color: var(--accent);
+    border-radius: 10px; padding: 9px 13px; font-size: 0.8rem; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; justify-content: center;
+  }
+  .cta-purple { border-color: rgba(168,85,247,0.5); background: rgba(168,85,247,0.16); color: #e9d5ff; }
+  .cta-amber { border-color: rgba(245,158,11,0.5); background: rgba(245,158,11,0.16); color: #fde68a; }
+
+  .output-shell { display: none; flex-direction: column; gap: 16px; }
+  .output-shell.visible { display: flex; }
+  .kpi-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+  .kpi-box { background: var(--card); border: 1px solid var(--border); border-radius: 13px; padding: 12px; }
+  .kpi-lbl { font-size: 0.72rem; color: var(--dim); }
+  .kpi-val { font-size: 1.2rem; font-weight: 900; color: var(--accent); margin-top: 3px; }
+
+  .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .cred-item { background: #090d16; border: 1px solid var(--border); border-radius: 11px; padding: 10px 12px; font-size: 0.79rem; }
+  .cred-item code { color: #34d399; font-weight: 700; word-break: break-all; }
+
+  .dl-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .preview-frame { width: 100%; height: 540px; border: 1px solid var(--border); border-radius: 14px; background: #080b12; }
+
+  .monetize-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .m-card { background: var(--card); border: 1px solid var(--border); border-radius: 15px; padding: 16px; display: flex; flex-direction: column; gap: 8px; justify-content: space-between; }
+  .m-price { font-size: 1.3rem; font-weight: 900; color: #34d399; }
+
+  .slider-row { display: flex; flex-direction: column; gap: 4px; }
+  .slider-head { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; }
+  input[type="range"] { width: 100%; accent-color: var(--emerald); }
+
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  table.ledger th, table.ledger td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--border); }
+  table.ledger th { color: var(--dim); font-size: 0.71rem; text-transform: uppercase; }
+  .script-box { background: #080c16; border: 1px solid var(--border); border-radius: 12px; padding: 12px; font-size: 0.8rem; white-space: pre-wrap; color: #e2e8f0; }
+  .toast {
+    position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+    background: #0f172a; border: 1px solid var(--emerald); color: #fff;
+    padding: 10px 16px; border-radius: 12px; font-size: 0.82rem; font-weight: 700;
+    z-index: 99; display: none; box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-pill">
+    <div class="brand-logo">🛍️</div>
+    <div>
+      <div>Open V3 · AI Store &amp; TMA Builder</div>
+      <div style="font-size:0.68rem;color:var(--dim);" id="hdr-sub">Global Spirit Group · Монетизация и автоворонка #147</div>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button class="btn-nav" onclick="toggleLang()" id="btn-lang">🌐 EN / RU</button>
+    <a href="../index.html" class="btn-nav" id="link-back-office">← В Офис CRM</a>
+    <a href="https://t.me/unitybusinessbot" target="_blank" class="btn-nav em">🤖 @unitybusinessbot</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="switchView('builder', this)" data-i18n="tab_builder">⚡ 1. Воронка Open V3 &amp; AI-Билдер</button>
+    <button class="tab-btn" onclick="switchView('revenue', this)" data-i18n="tab_revenue">💰 2. Калькулятор Выручки &amp; CRM Лидов</button>
+    <button class="tab-btn" onclick="switchView('traffic', this)" data-i18n="tab_traffic">🎬 3. Скрипты Рекламы &amp; B2B Офферы</button>
+  </div>
+
+  <!-- VIEW 1: OPEN V3 CONVERSION FUNNEL & LIVE GENERATOR -->
+  <section class="tab-pane active" id="view-builder">
+    <div class="hero">
+      <div class="eyebrow" id="hero-eyebrow">⚡ ШАГ 1 · КАРТА НЕ НУЖНА · СБОРКА ЗА 15 МИНУТ</div>
+      <h1 id="hero-title">Создайте бесплатный аккаунт — и наш ИИ соберёт вам Shopify + Telegram магазин прямо сейчас!</h1>
+      <p id="hero-desc">Рабочая копия и апгрейд воронки Open V3 (customaistore.com) для экосистемы Global Spirit Group: генерация бренда, 6 маржинальных товаров с ценами, интерактивная витрина, импорт CSV для Shopify OS 2.0, Telegram Mini App + 3 канала монетизации.</p>
+    </div>
+
+    <div class="funnel-grid">
+      <!-- LEFT: INTERACTIVE VIDEO WALKTHROUGH & 5-STAGE ENGINE -->
+      <div class="card">
+        <h2 id="vsl-heading">🎥 Как работает 15-минутная автосборка Open V3</h2>
+        <div class="vsl-screen">
+          <div class="vsl-stage-pill" id="stage-pills">
+            <button class="stage-dot active" onclick="showStage(0)">1. Ниша &amp; Маржа</button>
+            <button class="stage-dot" onclick="showStage(1)">2. Бренд &amp; Дизайн</button>
+            <button class="stage-dot" onclick="showStage(2)">3. 6 Хитов SKU</button>
+            <button class="stage-dot" onclick="showStage(3)">4. Корзина &amp; TMA</button>
+            <button class="stage-dot" onclick="showStage(4)">5. Запуск &amp; Деньги</button>
+          </div>
+          <div class="vsl-monitor">
+            <div>
+              <div style="font-size:0.72rem;color:var(--accent);font-weight:800;" id="stage-kicker">ЭТАП 1 ИЗ 5 · РАЗВЕДКА СПРОСА</div>
+              <div style="font-size:0.96rem;font-weight:800;margin:4px 0;" id="stage-title">AI анализирует вашу нишу и отбирает 6 товаров с маржой 70%+</div>
+              <div style="font-size:0.8rem;color:#cbd5e1;" id="stage-body">Без угадываний: алгоритмы сразу закладывают товары-трипвайеры, основные хиты и наборы для максимизации среднего чека (AOV).</div>
+            </div>
+            <div>
+              <div class="progress-track"><div class="progress-fill" id="stage-bar"></div></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:0.72rem;color:#34d399;" id="local-engine-badge">🔄 Проверка локального ИИ Офиса (127.0.0.1:18799)...</span>
+                <button class="cta-sec" onclick="toggleDemoTour()" id="btn-tour">▶ Запустить видео-тур</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:0.76rem;font-weight:700;color:var(--dim);margin-bottom:6px;" id="preset-lbl">🎯 Быстрые ниши для запуска за 1 клик:</div>
+          <div class="niche-chips">
+            <button class="niche-chip active" onclick="pickNiche(this, 'Пептидный уход за кожей и LED-гаджеты')">✨ Бьюти и Уход</button>
+            <button class="niche-chip" onclick="pickNiche(this, 'Умные MagSafe гаджеты и GaN зарядки')">⚡ Смарт-Гаджеты</button>
+            <button class="niche-chip" onclick="pickNiche(this, 'Домашний фитнес, массажеры и витамины')">💪 Фитнес &amp; Health</button>
+            <button class="niche-chip" onclick="pickNiche(this, 'Умные товары и уход за питомцами')">🐾 Зоотовары</button>
+            <button class="niche-chip" onclick="pickNiche(this, 'Капсульный streetwear оверсайз 460gsm')">👕 Одежда</button>
+            <button class="niche-chip" onclick="pickNiche(this, 'Дизайнерский свет и кофе-бар для дома')">☕ Дом &amp; Кофе</button>
+          </div>
+        </div>
+
+        <div style="background:rgba(16,185,129,0.09);border:1px solid rgba(16,185,129,0.28);border-radius:12px;padding:12px;font-size:0.78rem;color:#cbd5e1;" id="included-box">
+          <b>Что создаётся мгновенно после нажатия кнопки:</b><br>
+          ✅ Готовая интерактивная HTML/TMA витрина с корзиной и промокодом <code>WELCOME15</code><br>
+          ✅ Файл <code>shopify_products.csv</code> (готов к прямому импорту в Shopify Admin)<br>
+          ✅ Шаблон темы <code>shopify_index_os2.json</code> (Shopify Online Store 2.0)<br>
+          ✅ Логин-кит, Telegram Mini App конфиг + рекламный скрипт VSL
+        </div>
+      </div>
+
+      <!-- RIGHT: LEAD & STORE GENERATION FORM -->
+      <form class="card" id="builder-form" onsubmit="submitStoreBuild(event)">
+        <h2 id="form-heading">📝 Бесплатная регистрация и запуск AI-Сборки</h2>
+        <div class="form-row-2">
+          <div class="field">
+            <label id="lbl-fn">Имя *</label>
+            <input id="inp-fn" required placeholder="Власлав" />
+          </div>
+          <div class="field">
+            <label id="lbl-ln">Фамилия</label>
+            <input id="inp-ln" placeholder="Спирит" />
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="field">
+            <label id="lbl-email">Email для доступа и архива *</label>
+            <input id="inp-email" type="email" required placeholder="owner@company.com" />
+          </div>
+          <div class="field">
+            <label id="lbl-phone">Телефон или @Telegram</label>
+            <input id="inp-phone" placeholder="+7 999 000 00 00 / @username" />
+          </div>
+        </div>
+        <div class="field">
+          <label id="lbl-niche">Ниша или идея магазина *</label>
+          <input id="inp-niche" required value="Пептидный уход за кожей и LED-гаджеты" />
+        </div>
+        <div class="form-row-2">
+          <div class="field">
+            <label id="lbl-brand">Название бренда (необязательно)</label>
+            <input id="inp-brand" placeholder="ИИ придумает сам, если пусто" />
+          </div>
+          <div class="field">
+            <label id="lbl-curr">Валюта и Платформа</label>
+            <select id="inp-curr">
+              <option value="RUB">🇷🇺 RUB (₽) · Shopify + TMA</option>
+              <option value="USD">🌍 USD ($) · Shopify + Global</option>
+            </select>
+          </div>
+        </div>
+        <label class="consent-row">
+          <input type="checkbox" id="inp-consent" checked required />
+          <span id="lbl-consent">Согласен получить готовый AI-магазин, доступы, экспорт Shopify CSV и персональные предложения по запуску трафика (можно отписаться в любой момент).</span>
+        </label>
+        <button type="submit" class="cta-main" id="btn-build">🚀 Собрать мой AI-магазин БЕСПЛАТНО →</button>
+        <div style="font-size:0.74rem;color:var(--dim);text-align:center;" id="build-status-line">
+          ⚡ Без привязки банковской карты · Занимает 1–3 секунды
+        </div>
+      </form>
+    </div>
+
+    <!-- LIVE GENERATED OUTPUT WORKSPACE -->
+    <div class="output-shell" id="output-shell">
+      <div class="card" style="border-color:rgba(16,185,129,0.45);">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+          <div>
+            <div style="font-size:0.72rem;font-weight:800;color:#34d399;text-transform:uppercase;" id="out-engine-tag">🎉 ГОТОВО · СОБРАНО ИИ OPEN V3</div>
+            <h2 style="font-size:1.25rem;margin-top:2px;" id="out-brand-title">Brand Name</h2>
+          </div>
+          <div class="dl-row">
+            <button class="cta-sec" onclick="downloadArtifact('shopify_products.csv')">⬇ Shopify CSV</button>
+            <button class="cta-sec cta-purple" onclick="downloadArtifact('shopify_index_os2.json')">⬇ OS 2.0 JSON</button>
+            <button class="cta-sec" onclick="downloadArtifact('standalone_storefront.html')">⬇ HTML Витрина</button>
+            <button class="cta-sec cta-amber" onclick="downloadArtifact('telegram_mini_app_config.json')">⬇ TMA JSON</button>
+          </div>
+        </div>
+
+        <div class="kpi-4">
+          <div class="kpi-box"><div class="kpi-lbl">Store ID</div><div class="kpi-val" id="out-store-id">—</div></div>
+          <div class="kpi-box"><div class="kpi-lbl">SKU в каталоге</div><div class="kpi-val" id="out-sku-count">6</div></div>
+          <div class="kpi-box"><div class="kpi-lbl">Средний чек / Маржа</div><div class="kpi-val" id="out-aov-margin">—</div></div>
+          <div class="kpi-box"><div class="kpi-lbl">Прогноз GMV / мес</div><div class="kpi-val" style="color:#34d399;" id="out-gmv">—</div></div>
+        </div>
+
+        <div class="cred-grid">
+          <div class="cred-item"><b>Admin Email:</b><br><code id="out-cred-email">—</code></div>
+          <div class="cred-item"><b>Generated Temp Password:</b><br><code id="out-cred-pass">—</code></div>
+          <div class="cred-item"><b>Promo Code (-15%):</b><br><code id="out-cred-promo">WELCOME15</code></div>
+          <div class="cred-item"><b>Telegram Bot Activation:</b><br><a id="out-tg-link" href="https://t.me/unitybusinessbot" target="_blank" style="color:var(--accent);font-weight:800;">Открыть в @unitybusinessbot ↗</a></div>
+        </div>
+      </div>
+
+      <!-- DUAL MONETIZATION ACTION STRIP -->
+      <div class="monetize-3">
+        <div class="m-card" style="border-color:rgba(16,185,129,0.45);">
+          <div>
+            <div style="font-size:0.71rem;font-weight:800;color:#34d399;">ПОТОК 1 · PARTNER BOUNTY</div>
+            <h3>🛍️ Активировать на Shopify</h3>
+            <div class="m-price">$150 CPA</div>
+            <p style="font-size:0.78rem;color:var(--dim);">Загрузите скачанный <code>shopify_products.csv</code> в 1 клик. Ссылка ведёт через вашу партнёрскую программу Shopify.</p>
+          </div>
+          <a id="btn-shopify-cta" href="https://www.shopify.com/free-trial" target="_blank" class="cta-sec" style="background:rgba(16,185,129,0.2);border-color:var(--emerald);color:#fff;">🚀 Запустить Shopify ($1/мес) ↗</a>
+        </div>
+
+        <div class="m-card" style="border-color:rgba(56,189,248,0.45);">
+          <div>
+            <div style="font-size:0.71rem;font-weight:800;color:var(--accent);">ПОТОК 2 · SAAS ПОДПИСКА</div>
+            <h3>⚡ Open V3 Pro + AI-Бот</h3>
+            <div class="m-price">1 490 ₽ / $29 в мес</div>
+            <p style="font-size:0.78rem;color:var(--dim);">Авто-реклама, Telegram Mini App с оплатой ЮKassa/Stars и дожим брошенных корзин.</p>
+          </div>
+          <a id="btn-pro-cta" href="https://t.me/unitybusinessbot?start=pro_v3" target="_blank" class="cta-sec">💳 Подключить Pro в Telegram ↗</a>
+        </div>
+
+        <div class="m-card" style="border-color:rgba(168,85,247,0.45);">
+          <div>
+            <div style="font-size:0.71rem;font-weight:800;color:#d8b4fe;">ПОТОК 3 · DONE-FOR-YOU АГЕНТСТВО</div>
+            <h3>👑 Под ключ + Трафик + AltaDesk AI</h3>
+            <div class="m-price">75 000 ₽ / $750+</div>
+            <p style="font-size:0.78rem;color:var(--dim);">Настроим платёжки, зальём YouTube/Reels трафик и подключим голосового ИИ-менеджера.</p>
+          </div>
+          <a id="btn-dfy-cta" href="https://t.me/unitybusinessbot?start=dfy_v3" target="_blank" class="cta-sec cta-purple">🔥 Заказать запуск под ключ ↗</a>
+        </div>
+      </div>
+
+      <!-- LIVE INTERACTIVE IFRAME PREVIEW -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+          <h2>📱 Живая интерактивная витрина (можно кликать товары и корзину!)</h2>
+          <button class="cta-sec" onclick="openPreviewNewTab()">↗ Открыть на весь экран</button>
+        </div>
+        <iframe id="preview-iframe" class="preview-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW 2: REVENUE CALCULATOR & OFFICE PIPELINE -->
+  <section class="tab-pane" id="view-revenue">
+    <div class="card" style="border-color:rgba(16,185,129,0.4);">
+      <h2>🧮 Калькулятор монетизации воронки Open V3 + Офиса</h2>
+      <p style="font-size:0.8rem;color:var(--dim);">Рассчитайте доход связки как у customaistore.com + наши SaaS &amp; DFY допродажи Виртуального Офиса:</p>
+      <div class="funnel-grid">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="slider-row">
+            <div class="slider-head"><span>Клики из YouTube Ads / Reels в месяц:</span><span id="rv-clicks-lbl" style="color:var(--accent);">5 000 кликов</span></div>
+            <input type="range" id="rv-clicks" min="500" max="50000" step="500" value="5000" oninput="calcRevenue()" />
+          </div>
+          <div class="slider-row">
+            <div class="slider-head"><span>Конверсия в заявку «Собрать AI-магазин»:</span><span id="rv-optin-lbl" style="color:var(--emerald);">18%</span></div>
+            <input type="range" id="rv-optin" min="5" max="45" step="1" value="18" oninput="calcRevenue()" />
+          </div>
+          <div class="slider-row">
+            <div class="slider-head"><span>Активация Shopify Partner (CPA $150):</span><span id="rv-cpa-lbl" style="color:var(--amber);">8% от лидов</span></div>
+            <input type="range" id="rv-cpa" min="1" max="25" step="1" value="8" oninput="calcRevenue()" />
+          </div>
+          <div class="slider-row">
+            <div class="slider-head"><span>Апсейл в Open V3 Pro ($29/мес) &amp; DFY ($750):</span><span id="rv-upsell-lbl" style="color:#d8b4fe;">3% Pro / 0.5% DFY</span></div>
+            <input type="range" id="rv-upsell" min="1" max="15" step="1" value="3" oninput="calcRevenue()" />
+          </div>
+        </div>
+        <div class="kpi-4" style="grid-template-columns:1fr 1fr;">
+          <div class="kpi-box"><div class="kpi-lbl">Бесплатных сборок / лидов</div><div class="kpi-val" id="rv-leads">900</div></div>
+          <div class="kpi-box"><div class="kpi-lbl">Shopify CPA выплаты</div><div class="kpi-val" style="color:#34d399;" id="rv-cpa-sum">$10,800</div></div>
+          <div class="kpi-box"><div class="kpi-lbl">Pro SaaS MRR (добавка/мес)</div><div class="kpi-val" style="color:var(--accent);" id="rv-mrr-sum">$783</div></div>
+          <div class="kpi-box" style="border-color:rgba(16,185,129,0.55);"><div class="kpi-lbl">ИТОГО В МЕСЯЦ (USD / RUB)</div><div class="kpi-val" style="color:#34d399;" id="rv-total">$14,958</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNER LINKS CONFIGURATION -->
+    <div class="card">
+      <h2>🔗 Настройка ваших партнёрских и платёжных ссылок (Сохраняются в Офисе)</h2>
+      <div class="form-row-2">
+        <div class="field">
+          <label>Shopify Partner Referral URL ($150 CPA):</label>
+          <input id="cfg-shopify-url" placeholder="https://shopify.pxf.io/ВАШ_ПАРТНЕРСКИЙ_ID" />
+        </div>
+        <div class="field">
+          <label>Ссылка оплаты Pro / DFY (ЮKassa / Prodamus / Stripe / TG):</label>
+          <input id="cfg-pay-url" placeholder="https://t.me/unitybusinessbot?start=pay_pro" />
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="cta-sec" onclick="savePartnerConfig()">💾 Сохранить ссылки в Офисе</button>
+        <button class="cta-sec cta-purple" onclick="loadLivePipeline(true)">🔄 Обновить лиды с сервера Офиса</button>
+      </div>
+    </div>
+
+    <!-- LIVE PIPELINE TABLE -->
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <h2>📊 Живой реестр сгенерированных магазинов и лидов</h2>
+        <span style="font-size:0.75rem;color:#34d399;font-weight:800;" id="pipe-kpi-pill">Лидов: 0</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="ledger">
+          <thead>
+            <tr><th>Дата</th><th>Store ID</th><th>Бренд / Ниша</th><th>Клиент</th><th>Движок</th><th>Потенциал</th></tr>
+          </thead>
+          <tbody id="pipe-tbody">
+            <tr><td colspan="6" style="color:var(--dim);">Пока нет записей — создайте первый магазин на вкладке 1.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW 3: TRAFFIC & OUTREACH KIT -->
+  <section class="tab-pane" id="view-traffic">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <h2>🎬 Готовый комплект рекламы и продаж для последнего магазина</h2>
+        <button class="cta-sec" onclick="refreshTrafficKit()">⚡ Перегенерировать под текущую нишу</button>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:0.82rem;color:var(--accent);">1. Скрипт YouTube Ads / Reels VSL (45 сек, стиль Open V3)</b>
+          <button class="btn-nav" onclick="copyById('kit-vsl')">📋 Копировать</button>
+        </div>
+        <div class="script-box" id="kit-vsl">Сначала соберите любой магазин на 1-й вкладке или нажмите «Перегенерировать».</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:0.82rem;color:#34d399;">2. Пост для Telegram-канала / воронки лидогенерации</b>
+          <button class="btn-nav" onclick="copyById('kit-tg')">📋 Копировать</button>
+        </div>
+        <div class="script-box" id="kit-tg">—</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:0.82rem;color:#d8b4fe;">3. Холодный B2B DM-оффер владельцам бизнеса (под ключ 75 000 ₽ / $750)</b>
+          <button class="btn-nav" onclick="copyById('kit-b2b')">📋 Копировать</button>
+        </div>
+        <div class="script-box" id="kit-b2b">—</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const LOCAL_API = "http://127.0.0.1:18799";
+let CURRENT_LANG = (new URLSearchParams(location.search).get("lang") === "en" || localStorage.getItem("unity_office_lang") === "en") ? "en" : "ru";
+let CURRENT_BUNDLE = null;
+let TOUR_TIMER = null;
+let CURRENT_STAGE = 0;
+
+const STAGES_I18N = {
+  ru: [
+    ["ЭТАП 1 ИЗ 5 · РАЗВЕДКА СПРОСА", "AI анализирует вашу нишу и отбирает 6 товаров с маржой 70%+", "Без угадываний: алгоритмы сразу закладывают товары-трипвайеры, основные хиты и наборы для максимизации среднего чека (AOV)."],
+    ["ЭТАП 2 ИЗ 5 · АЙДЕНТИКА И БРЕНД", "Генерируется уникальное имя, слоган, палитра и UTP-бейджи", "Магазин выглядит как бренд за $3,000+ от дизайн-студии, а не шаблонный дропшиппинг."],
+    ["ЭТАП 3 ИЗ 5 · КАТАЛОГ И SHOPIFY CSV", "Формируется 6 продающих карточек и официальный Shopify CSV", "Цены, скидки Compare-At, себестоимость COGS и SEO-теги сразу готовы к загрузке в Shopify Admin за 10 секунд."],
+    ["ЭТАП 4 ИЗ 5 · ВИТРИНА + TELEGRAM MINI APP", "Собирается живая HTML5-витрина с корзиной и промокодом WELCOME15", "Работает и как самостоятельный сайт, и внутри Telegram-бота @unitybusinessbot с приёмом оплаты."],
+    ["ЭТАП 5 ИЗ 5 · ТРАФИК И МОНЕТИЗАЦИЯ", "Вы получаете VSL-скрипт, посты и готовую воронку прибыли", "Партнёрка Shopify $150 CPA + подписка Open V3 Pro + DFY услуги агентства в едином конвейере."]
+  ],
+  en: [
+    ["STEP 1 OF 5 · DEMAND INTEL", "AI scans your niche & selects 6 products with 70%+ gross margin", "Zero guesswork: blends impulse tripwires, flagship winners, and high-AOV bundles automatically."],
+    ["STEP 2 OF 5 · BRAND & THEME", "Generates brand identity, color system, hero hook & trust pills", "Instant custom brand polish designed to convert cold YouTube & Reels traffic from day 1."],
+    ["STEP 3 OF 5 · SHOPIFY CSV & OS 2.0", "Builds official Shopify Product CSV + Online Store 2.0 theme JSON", "Import all SKUs, compare-at pricing, COGS, and layouts into Shopify Admin in 10 seconds."],
+    ["STEP 4 OF 5 · LIVE STOREFRONT + TMA", "Compiles standalone interactive HTML5 Store + Telegram Mini App", "Live cart drawer, coupon code WELCOME15, and mobile checkout built cleanly."],
+    ["STEP 5 OF 5 · TRAFFIC & MONETIZATION", "Unlocks custom YouTube VSL script, ad headlines & 3 profit streams", "Earn via $150 Shopify CPA bounties, $29/mo Pro SaaS, and $750+ Turnkey DFY upsells."]
+  ]
+};
+
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.style.display = "block";
+  clearTimeout(t._tm);
+  t._tm = setTimeout(() => { t.style.display = "none"; }, 3200);
+}
+
+function switchView(name, btn) {
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.querySelectorAll(".tab-pane").forEach(p => p.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  document.getElementById("view-" + name).classList.add("active");
+  if (name === "revenue") loadLivePipeline(false);
+}
+
+function showStage(idx) {
+  CURRENT_STAGE = idx;
+  const arr = STAGES_I18N[CURRENT_LANG] || STAGES_I18N.ru;
+  const item = arr[idx] || arr[0];
+  document.getElementById("stage-kicker").textContent = item[0];
+  document.getElementById("stage-title").textContent = item[1];
+  document.getElementById("stage-body").textContent = item[2];
+  document.getElementById("stage-bar").style.width = ((idx + 1) * 20) + "%";
+  document.querySelectorAll("#stage-pills .stage-dot").forEach((el, i) => {
+    el.classList.toggle("active", i === idx);
+    el.classList.toggle("done", i < idx);
+  });
+}
+
+function toggleDemoTour() {
+  if (TOUR_TIMER) {
+    clearInterval(TOUR_TIMER);
+    TOUR_TIMER = null;
+    document.getElementById("btn-tour").textContent = CURRENT_LANG === "en" ? "▶ Play Guided Tour" : "▶ Запустить видео-тур";
+    return;
+  }
+  document.getElementById("btn-tour").textContent = CURRENT_LANG === "en" ? "⏸ Pause Tour" : "⏸ Пауза тура";
+  showStage(0);
+  TOUR_TIMER = setInterval(() => {
+    CURRENT_STAGE = (CURRENT_STAGE + 1) % 5;
+    showStage(CURRENT_STAGE);
+  }, 2400);
+}
+
+function pickNiche(el, text) {
+  document.querySelectorAll(".niche-chip").forEach(c => c.classList.remove("active"));
+  if (el) el.classList.add("active");
+  document.getElementById("inp-niche").value = text;
+}
+
+function toggleLang() {
+  CURRENT_LANG = CURRENT_LANG === "ru" ? "en" : "ru";
+  localStorage.setItem("unity_office_lang", CURRENT_LANG);
+  applyLang();
+}
+
+function applyLang() {
+  const en = CURRENT_LANG === "en";
+  document.getElementById("hero-eyebrow").textContent = en ? "⚡ STEP 1 · NO CREDIT CARD · READY IN 15 MINUTES" : "⚡ ШАГ 1 · КАРТА НЕ НУЖНА · СБОРКА ЗА 15 МИНУТ";
+  document.getElementById("hero-title").textContent = en ? "Create Your Free Account & Our A.I. Will Build Your Shopify + Telegram Store Now!" : "Создайте бесплатный аккаунт — и наш ИИ соберёт вам Shopify + Telegram магазин прямо сейчас!";
+  document.getElementById("hero-desc").textContent = en
+    ? "Live upgraded Open V3 Engine (customaistore.com benchmark) inside Global Spirit Group: custom brand, 6 high-margin SKUs, live interactive storefront, official Shopify CSV + OS 2.0 JSON + Telegram Mini App + 3 monetization rails."
+    : "Рабочая копия и апгрейд воронки Open V3 (customaistore.com) для экосистемы Global Spirit Group: генерация бренда, 6 маржинальных товаров с ценами, интерактивная витрина, импорт CSV для Shopify OS 2.0, Telegram Mini App + 3 канала монетизации.";
+  document.getElementById("vsl-heading").textContent = en ? "🎥 Inside the 15-Min Autonomous AI Store Assembly" : "🎥 Как работает 15-минутная автосборка Open V3";
+  document.getElementById("form-heading").textContent = en ? "📝 Free Registration & Instant AI Build" : "📝 Бесплатная регистрация и запуск AI-Сборки";
+  document.getElementById("btn-build").textContent = en ? "🚀 Build My FREE AI Store →" : "🚀 Собрать мой AI-магазин БЕСПЛАТНО →";
+  document.getElementById("link-back-office").href = en ? "../index_en.html" : "../index.html";
+  document.getElementById("link-back-office").textContent = en ? "← Back to Office CRM" : "← В Офис CRM";
+  showStage(CURRENT_STAGE);
+}
+
+// --- Client-Side Offline Fallback Engine (Zero Dead-Ends from Any Device) ---
+function slugify(txt) {
+  const tr = {"а":"a","б":"b","в":"v","г":"g","д":"d","е":"e","ё":"e","ж":"zh","з":"z","и":"i","й":"y","к":"k","л":"l","м":"m","н":"n","о":"o","п":"p","р":"r","с":"s","т":"t","у":"u","ф":"f","х":"h","ц":"ts","ч":"ch","ш":"sh","щ":"sch","ъ":"","ы":"y","ь":"","э":"e","ю":"yu","я":"ya"};
+  return (txt || "ai-store").toLowerCase().split("").map(c => tr[c] ?? c).join("").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 34) || "ai-store";
+}
+
+function escHtml(s) {
+  return String(s || "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[m]));
+}
+
+function buildClientSideBundle(payload) {
+  const niche = payload.niche || "Smart Tech & Lifestyle";
+  const lang = payload.language || CURRENT_LANG;
+  const curr = payload.currency || (lang === "ru" ? "RUB" : "USD");
+  const isRu = lang === "ru";
+  const low = niche.toLowerCase();
+  const isBeauty = /beaut|skin|косм|уход|крас/.test(low);
+  const isFit = /fit|gym|спорт|здор|массаж/.test(low);
+  const isPet = /pet|dog|cat|питом|зоо/.test(low);
+  const accent = isBeauty ? "#ec4899" : isFit ? "#10b981" : isPet ? "#f59e0b" : "#38bdf8";
+  const brand = payload.brand_name || (isBeauty ? "AuraSkin Lab" : isFit ? "ApexPulse Gear" : isPet ? "PawNest Club" : "VoltEdge Studio");
+  const hex = Math.random().toString(16).slice(2, 6).toUpperCase();
+  const slug = slugify(brand + "-" + niche) + "-" + hex.toLowerCase();
+  const storeId = "GSG-" + hex + "-WEB";
+
+  const catalogTemplates = isBeauty ? [
+    ["Peptide Barrier Serum 30ml", "Пептидная сыворотка Barrier 30мл", "Serums", 49, 82, "Best Seller"],
+    ["Cryo-Peptide Eye Roller", "Крио-роллер с кофеином для глаз", "Eye Care", 36, 58, "Viral Hit"],
+    ["LED Microcurrent Glow Wand", "LED-массажёр микротоки 4-в-1", "Devices", 89, 149, "High Ticket"],
+    ["Ceramide Cloud Cleanser", "Пенка для умывания с церамидами", "Cleansers", 28, 44, "Daily"],
+    ["SPF50 Silk Fluid", "Невидимый SPF50 флюид", "Sun Care", 34, 54, "Clean Beauty"],
+    ["14-Day Glass Skin Kit", "Полный курс «Сияющая кожа» 14 дней", "Bundles", 119, 195, "Max AOV"]
+  ] : [
+    ["MagSafe 3-in-1 Aluminum Dock", "Алюминиевый док MagSafe 3-в-1", "Charging", 64, 99, "Best Seller"],
+    ["Studio ANC Wireless Earbuds", "Наушники ANC 48dB Hi-Res", "Audio", 79, 129, "Top Margin"],
+    ["100W GaN Pocket Charger", "Зарядка GaN 100W на 4 порта", "Power", 48, 78, "Travel Hit"],
+    ["Magnetic Monitor Light AI", "Умная LED-лампа на монитор", "Workspace", 54, 89, "Viral"],
+    ["USB-C 11-in-1 NVMe Hub", "Док USB-C + отсек NVMe SSD", "Pro Gear", 92, 145, "Pro Pick"],
+    ["Creator Desk Ultimate Kit", "Полный комплект рабочего стола", "Bundles", 149, 239, "Max AOV"]
+  ];
+
+  const products = catalogTemplates.map((t, i) => ({
+    sku: `GSG-${hex}-0${i + 1}`,
+    handle: slugify(isRu ? t[1] : t[0]),
+    title: isRu ? t[1] : t[0],
+    category: t[2],
+    tagline: `${t[5]} · ${niche}`,
+    description: isRu ? `${t[1]} — высокомаржинальный хит категории ${t[2]} для запуска рекламы.` : `${t[0]} — curated high-margin winner in ${t[2]}.`,
+    price_usd: t[3],
+    compare_at_usd: t[4],
+    cogs_usd: Math.round(t[3] * 0.24 * 100) / 100,
+    price_rub: Math.round(t[3] * 9.5) * 10,
+    compare_at_rub: Math.round(t[4] * 9.5) * 10,
+    margin_pct: 76
+  }));
+
+  const csvRows = ["Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Price,Variant Compare At Price,Status"];
+  products.forEach(p => {
+    const pr = curr === "RUB" ? p.price_rub : p.price_usd;
+    const cm = curr === "RUB" ? p.compare_at_rub : p.compare_at_usd;
+    csvRows.push(`"${p.handle}","${p.title.replace(/"/g, '""')}","<p>${p.description.replace(/"/g, '""')}</p>","${brand}","${niche}","${p.category}","open-v3,ai-built","TRUE","Title","Default Title","${p.sku}",${pr.toFixed(2)},${cm.toFixed(2)},active`);
+  });
+
+  const os2Json = JSON.stringify({
+    sections: {
+      hero: { type: "image-banner", settings: { heading: `${brand}: ${niche}`, subtext: isRu ? "Гарантия 30 дней · Промокод WELCOME15 (-15%)" : "30-Day Guarantee · Use code WELCOME15 (-15%)" } },
+      collection: { type: "featured-collection", settings: { title: `${brand} Bestsellers`, products_to_show: 6 } }
+    },
+    order: ["hero", "collection"]
+  }, null, 2);
+
+  const sym = curr === "RUB" ? "₽" : "$";
+  const storefrontHtml = `<!DOCTYPE html><html lang="${lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escHtml(brand)}</title><style>*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}body{background:#080b12;color:#f8fafc;padding:16px}.anno{background:${accent};color:#04101d;font-weight:800;font-size:12px;text-align:center;padding:7px;border-radius:10px;margin-bottom:14px}.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.hero{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px;margin-bottom:16px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px}.card{background:#111827;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px}.btn{background:${accent};color:#04101d;border:none;border-radius:9px;padding:8px;font-weight:800;cursor:pointer;margin-top:auto}.cart{margin-top:18px;background:#0f172a;border:1px solid ${accent};border-radius:14px;padding:14px}</style></head><body><div class="anno">🎁 ${isRu ? "Промокод WELCOME15 даёт скидку -15%!" : "Use WELCOME15 for 15% OFF today!"}</div><div class="hdr"><h2>${escHtml(brand)}</h2><span id="c-pill">🛒 0</span></div><div class="hero"><h1>${escHtml(brand)} — ${escHtml(niche)}</h1><p style="color:#94a3b8;font-size:13px;margin-top:6px;">${isRu ? "Собрано автономным ИИ Open V3 · Прямой заказ" : "Built by Open V3 AI · Direct Checkout"}</p></div><div class="grid">${products.map((p, i) => `<div class="card"><div style="font-size:11px;color:${accent};font-weight:700;">${escHtml(p.category)}</div><b>${escHtml(p.title)}</b><div style="font-size:16px;font-weight:900;color:${accent};">${curr === "RUB" ? p.price_rub + " ₽" : "$" + p.price_usd}</div><button class="btn" onclick="add(${i})">+ ${isRu ? "В корзину" : "Add to Cart"}</button></div>`).join("")}</div><div class="cart" id="cart-box"><b>🛒 ${isRu ? "Корзина" : "Cart"}:</b> <span id="cart-msg">${isRu ? "Выберите товар выше" : "Tap any item to test cart"}</span> <button class="btn" style="margin-left:10px;padding:6px 12px;" onclick="disc=0.15;upd()">WELCOME15 (-15%)</button></div><script>const P=${JSON.stringify(products.map(p => ({ t: p.title, pr: curr === "RUB" ? p.price_rub : p.price_usd })))};let cnt=0,tot=0,disc=0;function add(i){cnt++;tot+=P[i].pr;upd();}function upd(){const s=Math.round(tot*(1-disc));document.getElementById("c-pill").textContent="🛒 "+cnt;document.getElementById("cart-msg").textContent=cnt+" шт · ${sym}"+s+(disc?" (-15%)":"");}</` + `script></body></html>`;
+
+  const tmaJson = JSON.stringify({ app_name: brand, store_id: storeId, slug, currency: curr, products }, null, 2);
+  const spec = {
+    store_id: storeId, slug, created_at: new Date().toISOString(), engine_used: "open_v3_client_engine",
+    language: lang, currency: curr, niche, brand_name: brand, promo_code: "WELCOME15",
+    products,
+    lead: { full_name: `${payload.first_name || ""} ${payload.last_name || ""}`.trim() || "Client", email: payload.email, phone: payload.phone || "" },
+    admin_credentials: {
+      admin_email: payload.email,
+      temp_password: "GSG!" + hex + "9x",
+      shopify_partner_trial_url: localStorage.getItem("gsg_shopify_ref_url") || "https://www.shopify.com/free-trial",
+      telegram_bot_deeplink: `https://t.me/unitybusinessbot?start=store_${slug}`
+    },
+    unit_economics: { avg_order_usd: 74, margin_pct: 76, projected_monthly_gmv_usd: 4810, office_monetization: { shopify_cpa_usd: 150, pro_saas_usd: 29, dfy_turnkey_usd: 750 } }
+  };
+
+  return {
+    spec,
+    artifacts: {
+      "shopify_products.csv": csvRows.join("\n"),
+      "shopify_index_os2.json": os2Json,
+      "standalone_storefront.html": storefrontHtml,
+      "telegram_mini_app_config.json": tmaJson
+    },
+    traffic_kit: {
+      vsl_script_45s: isRu
+        ? `[ХУК 0-5с]: Зачем платить 150 000 ₽ студии, если наш ИИ собирает магазин «${brand}» в нише «${niche}» за 15 минут?\n[ОФФЕР]: Переходите по ссылке и забирайте 6 маржинальных товаров + Shopify CSV бесплатно.`
+        : `[HOOK 0-5s]: Why pay agencies $2,500 when Open V3 AI builds '${brand}' for ${niche} in 15 minutes?\n[OFFER]: Claim your store + Shopify CSV + Promo WELCOME15 with zero card today.`,
+      telegram_post: `🛍️ ${brand} (${niche}) собран за 15 мин! Забрать воронку: ${location.href}`,
+      b2b_outreach_dm: `Привет! Собрал AI-прототип магазина «${brand}» для ниши «${niche}». Отправить готовый архив для Shopify и Telegram бесплатно?`
+    }
+  };
+}
+
+async function pingOfficeLocalEngine() {
+  const badge = document.getElementById("local-engine-badge");
+  try {
+    const ctrl = new AbortController();
+    setTimeout(() => ctrl.abort(), 1600);
+    const r = await fetch(LOCAL_API + "/api/health", { signal: ctrl.signal });
+    const data = await r.json();
+    if (data && data.ok) {
+      const modes = [];
+      if (data.gemini_configured) modes.push("Gemini 2.5");
+      if (data.ollama_models && data.ollama_models.length) modes.push(data.ollama_models[0]);
+      badge.textContent = `🟢 ИИ Офиса онлайн (${modes.join(" + ") || "Structured"} · CRM готов)`;
+      return true;
+    }
+  } catch (e) {}
+  badge.textContent = "🌐 Автономный веб-режим Open V3 (готов 24/7 с телефона)";
+  return false;
+}
+
+async function submitGuestIssueIfOfficeAuth(spec) {
+  const tok = localStorage.getItem("ecc_gh_token");
+  const repo = localStorage.getItem("ecc_gh_repo") || "GlobalTeamPartners/remote-agents-control";
+  if (!tok) return;
+  try {
+    await fetch(`https://api.github.com/repos/${repo}/issues`, {
+      method: "POST",
+      headers: { "Authorization": "token " + tok, "Accept": "application/vnd.github.v3+json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: `CMD: GUEST_LEAD: Open V3 Store ${spec.brand_name} (${spec.niche.slice(0, 30)}) | PROJ: 12 IT Продуктов (Короче Капитан)`,
+        body: `### 🛍️ Заявка Open V3 AI Store (${spec.store_id})\n- Клиент: ${spec.lead.full_name} (${spec.lead.email} / ${spec.lead.phone || "-"})\n- Ниша: ${spec.niche}\n- Платформа: Shopify OS 2.0 + Telegram Mini App`
+      })
+    });
+  } catch (e) {}
+}
+
+async function submitStoreBuild(ev) {
+  ev.preventDefault();
+  const btn = document.getElementById("btn-build");
+  btn.disabled = true;
+  btn.textContent = CURRENT_LANG === "en" ? "⏳ Building your AI Store..." : "⏳ ИИ генерирует магазин и товары...";
+
+  const payload = {
+    first_name: document.getElementById("inp-fn").value.trim(),
+    last_name: document.getElementById("inp-ln").value.trim(),
+    email: document.getElementById("inp-email").value.trim(),
+    phone: document.getElementById("inp-phone").value.trim(),
+    niche: document.getElementById("inp-niche").value.trim(),
+    brand_name: document.getElementById("inp-brand").value.trim(),
+    currency: document.getElementById("inp-curr").value,
+    language: CURRENT_LANG,
+    open_issue: true
+  };
+
+  let bundle = null;
+  try {
+    const ctrl = new AbortController();
+    setTimeout(() => ctrl.abort(), 9000);
+    const resp = await fetch(LOCAL_API + "/api/store-build", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: ctrl.signal
+    });
+    const resJson = await resp.json();
+    if (resJson && resJson.ok && resJson.bundle) {
+      bundle = resJson.bundle;
+      showToast("✅ Магазин собран через локальный ИИ Офиса и сохранён в CRM!");
+    }
+  } catch (e) {}
+
+  if (!bundle) {
+    bundle = buildClientSideBundle(payload);
+    submitGuestIssueIfOfficeAuth(bundle.spec);
+    showToast("✅ Магазин собран и готов к экспорту в Shopify / Telegram!");
+  }
+
+  CURRENT_BUNDLE = bundle;
+  persistLocalLead(bundle.spec);
+  renderBuiltOutput(bundle);
+
+  btn.disabled = false;
+  btn.textContent = CURRENT_LANG === "en" ? "🚀 Build My FREE AI Store →" : "🚀 Собрать мой AI-магазин БЕСПЛАТНО →";
+}
+
+function renderBuiltOutput(bundle) {
+  const s = bundle.spec;
+  document.getElementById("output-shell").classList.add("visible");
+  document.getElementById("out-engine-tag").textContent = `🎉 ГОТОВО · ДВИЖОК: ${s.engine_used} · OPEN V3`;
+  document.getElementById("out-brand-title").textContent = `${s.brand_name} — ${s.niche}`;
+  document.getElementById("out-store-id").textContent = s.store_id;
+  document.getElementById("out-sku-count").textContent = String((s.products || []).length);
+  const econ = s.unit_economics || {};
+  document.getElementById("out-aov-margin").textContent = `$${econ.avg_order_usd || 74} / ${econ.margin_pct || 76}%`;
+  document.getElementById("out-gmv").textContent = `$${Number(econ.projected_monthly_gmv_usd || 4800).toLocaleString()}`;
+  document.getElementById("out-cred-email").textContent = (s.admin_credentials || {}).admin_email || s.lead.email;
+  document.getElementById("out-cred-pass").textContent = (s.admin_credentials || {}).temp_password || "GSG-Auto2026";
+  document.getElementById("out-cred-promo").textContent = s.promo_code || "WELCOME15";
+  document.getElementById("out-tg-link").href = (s.admin_credentials || {}).telegram_bot_deeplink || "https://t.me/unitybusinessbot";
+
+  const savedShopify = localStorage.getItem("gsg_shopify_ref_url");
+  if (savedShopify) document.getElementById("btn-shopify-cta").href = savedShopify;
+  else if ((s.admin_credentials || {}).shopify_partner_trial_url) document.getElementById("btn-shopify-cta").href = s.admin_credentials.shopify_partner_trial_url;
+
+  const savedPay = localStorage.getItem("gsg_payment_url");
+  if (savedPay) document.getElementById("btn-pro-cta").href = savedPay;
+
+  document.getElementById("preview-iframe").srcdoc = bundle.artifacts["standalone_storefront.html"];
+  refreshTrafficKit();
+  document.getElementById("output-shell").scrollIntoView({ behavior: "smooth" });
+}
+
+function downloadArtifact(filename) {
+  if (!CURRENT_BUNDLE || !CURRENT_BUNDLE.artifacts[filename]) return;
+  const blob = new Blob([CURRENT_BUNDLE.artifacts[filename]], { type: "text/plain;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${CURRENT_BUNDLE.spec.slug}_${filename}`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast("⬇ Скачан файл: " + filename);
+}
+
+function openPreviewNewTab() {
+  if (!CURRENT_BUNDLE) return;
+  const blob = new Blob([CURRENT_BUNDLE.artifacts["standalone_storefront.html"]], { type: "text/html;charset=utf-8" });
+  window.open(URL.createObjectURL(blob), "_blank");
+}
+
+function refreshTrafficKit() {
+  const kit = CURRENT_BUNDLE ? CURRENT_BUNDLE.traffic_kit : buildClientSideBundle({
+    niche: document.getElementById("inp-niche").value,
+    language: CURRENT_LANG
+  }).traffic_kit;
+  document.getElementById("kit-vsl").textContent = kit.vsl_script_45s || "—";
+  document.getElementById("kit-tg").textContent = kit.telegram_post || "—";
+  document.getElementById("kit-b2b").textContent = kit.b2b_outreach_dm || "—";
+}
+
+function copyById(id) {
+  navigator.clipboard.writeText(document.getElementById(id).textContent || "").then(() => showToast("📋 Скопировано в буфер!"));
+}
+
+function calcRevenue() {
+  const clicks = Number(document.getElementById("rv-clicks").value);
+  const optin = Number(document.getElementById("rv-optin").value) / 100;
+  const cpaRate = Number(document.getElementById("rv-cpa").value) / 100;
+  const proRate = Number(document.getElementById("rv-upsell").value) / 100;
+
+  const leads = Math.round(clicks * optin);
+  const cpaPaid = Math.round(leads * cpaRate * 150);
+  const proMrr = Math.round(leads * proRate * 29);
+  const dfyRev = Math.round(leads * (proRate / 6) * 750);
+  const totalUsd = cpaPaid + proMrr + dfyRev;
+
+  document.getElementById("rv-clicks-lbl").textContent = clicks.toLocaleString() + " кликов";
+  document.getElementById("rv-optin-lbl").textContent = Math.round(optin * 100) + "%";
+  document.getElementById("rv-cpa-lbl").textContent = Math.round(cpaRate * 100) + "% от лидов";
+  document.getElementById("rv-upsell-lbl").textContent = `${Math.round(proRate * 100)}% Pro / DFY`;
+  document.getElementById("rv-leads").textContent = leads.toLocaleString();
+  document.getElementById("rv-cpa-sum").textContent = "$" + cpaPaid.toLocaleString();
+  document.getElementById("rv-mrr-sum").textContent = "$" + proMrr.toLocaleString();
+  document.getElementById("rv-total").textContent = `$${totalUsd.toLocaleString()} (${Math.round(totalUsd * 95 / 1000)}k ₽)`;
+}
+
+function savePartnerConfig() {
+  const sUrl = document.getElementById("cfg-shopify-url").value.trim();
+  const pUrl = document.getElementById("cfg-pay-url").value.trim();
+  if (sUrl) localStorage.setItem("gsg_shopify_ref_url", sUrl);
+  if (pUrl) localStorage.setItem("gsg_payment_url", pUrl);
+  showToast("✅ Партнёрские ссылки сохранены!");
+}
+
+function persistLocalLead(spec) {
+  const arr = JSON.parse(localStorage.getItem("gsg_open_v3_leads") || "[]");
+  arr.unshift({
+    created_at: spec.created_at,
+    store_id: spec.store_id,
+    brand_name: spec.brand_name,
+    niche: spec.niche,
+    full_name: (spec.lead || {}).full_name || "Visitor",
+    email: (spec.lead || {}).email || "",
+    engine_used: spec.engine_used,
+    potential: "$150 CPA + $29 MRR"
+  });
+  localStorage.setItem("gsg_open_v3_leads", JSON.stringify(arr.slice(0, 40)));
+}
+
+async function loadLivePipeline(notify) {
+  let rows = JSON.parse(localStorage.getItem("gsg_open_v3_leads") || "[]");
+  try {
+    const r = await fetch(LOCAL_API + "/api/revenue-summary");
+    const j = await r.json();
+    if (j && j.ok && Array.isArray(j.recent_leads) && j.recent_leads.length) {
+      rows = j.recent_leads;
+    }
+  } catch (e) {}
+
+  document.getElementById("pipe-kpi-pill").textContent = `Лидов / сборок: ${rows.length}`;
+  const tbody = document.getElementById("pipe-tbody");
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="6" style="color:var(--dim);">Пока нет записей — создайте первый магазин на вкладке 1.</td></tr>`;
+  } else {
+    tbody.innerHTML = rows.map(r => `
+      <tr>
+        <td>${escHtml(String(r.created_at || "").slice(0, 16).replace("T", " "))}</td>
+        <td><code>${escHtml(r.store_id)}</code></td>
+        <td><b>${escHtml(r.brand_name)}</b><br><span style="color:var(--dim);font-size:0.71rem;">${escHtml(r.niche)}</span></td>
+        <td>${escHtml(r.full_name)}<br><span style="color:var(--dim);font-size:0.71rem;">${escHtml(r.email)}</span></td>
+        <td><code>${escHtml(r.engine_used)}</code></td>
+        <td style="color:#34d399;font-weight:800;">$${r.shopify_cpa_usd || 150} CPA + $${r.pro_saas_usd || 29}/м</td>
+      </tr>`).join("");
+  }
+  if (notify) showToast("🔄 Реестр лидов обновлён (" + rows.length + ")");
+}
+
+(function init() {
+  applyLang();
+  calcRevenue();
+  refreshTrafficKit();
+  document.getElementById("cfg-shopify-url").value = localStorage.getItem("gsg_shopify_ref_url") || "";
+  document.getElementById("cfg-pay-url").value = localStorage.getItem("gsg_payment_url") || "";
+  pingOfficeLocalEngine();
+})();
+</script>
+</body>
+</html>
