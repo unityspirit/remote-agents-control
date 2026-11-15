@@ -2802,6 +2802,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-15 13:45:58",
+          "from": "antigravity",
+          "to": "implemented_open_v3",
+          "note": "Реализован Open V3 AI Store & TMA Builder, NLU + API 18799 + 3 рельса монетизации"
         }
       ],
       "evidence": {
@@ -2809,16 +2815,16 @@
         "reason": "",
         "chars": 2298
       },
-      "title": "https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaignid=24312469597&utm_adsetid=200338473563&utm_adid=8265265750",
+      "title": "Open V3 AI Store & TMA Builder (customaistore.com) — Запущено и Монетизируется",
       "urls": [
         "https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaignid=24312469597&utm_adsetid=200338473563&utm_adid=826526575099&utm_placement=youtube.com&gad_source=2&gad_campaignid=24312469597"
       ],
-      "project": "Входящие_Офис",
+      "project": "12 IT Продуктов (Короче Капитан)",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "need_project",
-      "updated": "2026-10-26 11:11:20",
+      "owner": "tim",
+      "status": "approved",
+      "updated": "2026-11-15 13:45:58",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -2827,8 +2833,8 @@
       "pending_file": "Карточка_147_https___www_customaistore_co.md",
       "raw_file": "raw_147_20261026_111048_https___www_customaistore_co.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #147 → …»"
+        "who": "growth_engine",
+        "what": "Open V3 Funnel Live (/ai_store_builder/), /store bot, $150 CPA + $29 SaaS + $750 DFY"
       }
     },
     "155": {
