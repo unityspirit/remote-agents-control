@@ -564,6 +564,7 @@ def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona
         (tier_name, primary_model),
         ("argon", prov["argon_model"]),
         ("hydrogen", prov["model"]),
+        *((("flash_lite", "gemini-flash-lite-latest"), ("argon_backup", "gemini-3.1-pro-preview")) if prov["provider"] == "gemini" else ()),
     ):
         if m_name and all(x[1] != m_name for x in cascade):
             cascade.append((t_name, m_name))
@@ -579,22 +580,11 @@ def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona
                 _RUNTIME_EVAL_STATS["last_llm_error"] = ""
                 return txt, lbl, "ok", c_tier, prov["provider"]
         except Exception as exc:
-            last_err = f"{c_model} [{prov['provider']}]: {str(exc)[:90]}"
+            err_s = str(exc)[:90]
+            last_err = f"{c_model} [{prov['provider']}]: {err_s}"
             print(f"[Orchestrator warn] {last_err}", flush=True)
-
-        if prov["provider"] == "github_models":
-            azure_model = c_model.split("/")[-1]
-            try:
-                txt = _call_openai_compat(GITHUB_AZURE_MODELS_API, prov["api_key"], azure_model, system_prompt, user_prompt, thinking_level=None, provider="github_azure")
-                if txt:
-                    txt = sanitize_untrusted_text(txt)
-                    lbl = f"{azure_model} (via github_azure, tier: {c_tier})"
-                    _RUNTIME_EVAL_STATS["llm_live_ok"] = True
-                    _RUNTIME_EVAL_STATS["last_llm_error"] = ""
-                    return txt, lbl, "ok", c_tier, "github_azure"
-            except Exception as exc:
-                last_err = f"{azure_model} [github_azure]: {str(exc)[:90]}"
-                print(f"[Orchestrator azure warn] {last_err}", flush=True)
+            if prov["provider"] == "github_models" and ("Expecting value" in err_s or "OK" in err_s or "HTTP 410" in err_s):
+                break
 
         if prov["provider"] == "gemini":
             try:
@@ -776,6 +766,13 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
             record_failed_url(mem, p["url"], p.get("error", ""))
 
     persona_name, persona_goal = detect_agent_persona(latest_human or body or title)
+    if any(k in f"{title} {body}".lower() for k in ("lead_store_v3", "open v3", "customaistore", "ai-магазин")):
+        persona_name = "Open V3 E-Commerce & TMA Architect"
+        persona_goal = (
+            "Подготовь готовый план запуска AI-магазина за 15 минут: 6 маржинальных SKU, "
+            "экспорт в Shopify OS 2.0 CSV + Telegram Mini App, а также связку монетизации "
+            "(Shopify Partner CPA $150 + Pro $29/мес + Turnkey DFY $750)."
+        )
     matched_facts = retrieve_relevant_facts(mem, f"{title} {latest_human} {primary_body}", limit=6)
     recent_facts = "\n".join(
         f"- [{f.get('topic')}]: {f.get('insight', '')[:220]}"
