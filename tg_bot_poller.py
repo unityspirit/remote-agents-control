@@ -65,7 +65,7 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.2"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.3"
 LOCAL_BOT_ACCESS_FILE = os.path.join(BASE_DIR, ".bot_access_registry.json")
 _cached_bot_access = None
 _cached_bot_access_ts = 0.0
@@ -184,6 +184,7 @@ def log_throttled_err(prefix, err):
 
 
 import bot_mesh_hub
+import director_nlu_engine
 
 _TG_COOLDOWN_UNTIL = {}
 
@@ -202,6 +203,7 @@ def _get_mesh_ctx():
     return {
         "primary_repo": GTP_REPO,
         "gh_token": GTP_TOKEN,
+        "gemini_api_key": GEMINI_API_KEY,
         "tg_bot_token": TG_BOT_TOKEN,
         "owner_chat_id": OWNER_TG_CHAT_ID,
         "personal_bot_tokens": PERSONAL_BOT_TOKENS,
@@ -214,6 +216,7 @@ def _get_mesh_ctx():
         "is_owner_chat": is_owner_chat,
         "is_owner_login": _is_owner_login,
         "create_issue": _mesh_create_issue,
+        "create_issue_full": create_github_issue_task,
         "record_action": record_director_action_and_mirror,
     }
 
@@ -950,7 +953,14 @@ def poll_personal_user_bots():
                         "parse_mode": "HTML",
                         "reply_markup": build_director_inline_keyboard(default_proj)
                     }, bot_token=b_tok)
-                elif data.startswith("pdir:"):
+                elif data.startswith("dact:") or data.startswith("pdir:"):
+                    if director_nlu_engine.handle_director_callback(
+                        _get_mesh_ctx(), u, c_id, data, cq_id,
+                        is_owner=False, default_project=default_proj,
+                        bot_token=b_tok, bot_label=bot_uname,
+                        reply_markup_fn=bot_mesh_hub.build_mesh_director_keyboard,
+                    ):
+                        continue
                     parts = data.split(":", 2)
                     act = parts[1] if len(parts) > 1 else "status"
                     proj = parts[2] if len(parts) > 2 else default_proj
@@ -994,13 +1004,17 @@ def poll_personal_user_bots():
                             "reply_markup": build_director_inline_keyboard(default_proj)
                         }, bot_token=b_tok)
                 else:
-                    reply_html = generate_director_reply(u, "custom", default_proj, custom_text=text)
-                    call_tg("sendMessage", {
-                        "chat_id": c_id,
-                        "text": reply_html,
-                        "parse_mode": "HTML",
-                        "reply_markup": build_director_inline_keyboard(default_proj)
-                    }, bot_token=b_tok)
+                    director_nlu_engine.handle_director_text(
+                        _get_mesh_ctx(),
+                        u,
+                        c_id,
+                        text,
+                        is_owner=False,
+                        default_project=default_proj,
+                        bot_token=b_tok,
+                        bot_label=bot_uname,
+                        reply_markup_fn=bot_mesh_hub.build_mesh_director_keyboard,
+                    )
 
     if offsets_changed:
         save_user_bot_offsets(offsets)
@@ -1188,14 +1202,14 @@ def send_hq_home_menu(chat_id, from_user=None):
     active_bots = [u for u in users if ((u.get("personal_bot") or {}).get("bot_token") or PERSONAL_BOT_TOKENS.get(norm_login(u.get("login")))) and (u.get("personal_bot") or {}).get("control_status") == "active"]
 
     txt = (
-        f"👑 <b>ГЛАВНЫЙ БОТ ШТАБА (@unitybusinessbot v34.2 · Antigravity 2.31)</b>\n\n"
+        f"👑 <b>ГЛАВНЫЙ БОТ ШТАБА (@unitybusinessbot v34.3 · Antigravity 2.31)</b>\n\n"
         f"• Сотрудников в реестре: <b>{len(users)}</b>\n"
         f"• Заявок на вход / сброс пароля: <b>{len(pending) + len(resets)}</b>\n"
         f"• Личных ботов активно / ждут одобрения: <b>{len(active_bots)}</b> / <b>{len(pend_bots)}</b>\n"
         f"• 🤝 Межботовые мосты A↔B и связь со Штабом: <b>активно</b> (<code>/bridges</code>)\n"
-        f"• ⚛️ Движок: <b>Antigravity 2.31 (Argon ↔ Carbon ↔ Hydrogen)</b> (команда <code>/antigravity</code> / <code>/hydrogen</code>)\n"
+        f"• 🧠 <b>Директор Тим NLU (RU/EN):</b> понимает задачи, контекст, ссылки и проверяет статус (<code>/tasks</code>)\n"
         f"• 🛡️ Защита: смена пароля через бота разрешена <b>всем, кроме @unityspiritpartners</b>\n\n"
-        f"Выберите действие кнопкой ниже:"
+        f"Выберите действие кнопкой ниже или просто напишите задачу:"
     )
     kb = []
     for u in resets[:4]:
@@ -1222,15 +1236,16 @@ def send_hq_home_menu(chat_id, from_user=None):
     ])
     kb.extend([
         [
+            {"text": "📋 Проверить задачи (/tasks)", "callback_data": "dact:tasks:Главный Штаб"},
             {"text": "🚀 План Главного Штаба", "callback_data": "pdir:next:Главный Штаб"},
-            {"text": "🔒 Доступ в бот (По запросу)", "callback_data": "cmd:botaccess"},
         ],
         [
-            {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
+            {"text": "🔒 Доступ в бот (По запросу)", "callback_data": "cmd:botaccess"},
             {"text": "📊 Аудит работы", "callback_data": "cmd:audit"},
         ],
         [
-            {"text": "🏢 Главный Офис (v34.2)", "url": OFFICE_URL},
+            {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
+            {"text": "🏢 Главный Офис (v34.3)", "url": OFFICE_URL},
         ],
     ])
     call_tg("sendMessage", {
@@ -1453,13 +1468,13 @@ def send_bot_access_menu(chat_id):
 def touch_local_heartbeat_if_due(force=False):
     global _last_heartbeat_push_ts
     now = time.time()
-    if not force and (now - _last_heartbeat_push_ts < 90):
+    if not force and (now - _last_heartbeat_push_ts < 60):
         return
     _last_heartbeat_push_ts = now
     hb_payload = {
         "ts": now,
         "iso": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "version": "34.2",
+        "version": "34.3",
         "status": "online"
     }
     def _write_hb(obj):
@@ -1467,7 +1482,7 @@ def touch_local_heartbeat_if_due(force=False):
         obj.update(hb_payload)
         return True
     try:
-        mutate_json_across_repos("local_daemon_heartbeat.json", _write_hb, "Heartbeat local daemon [v34.2]", branches=["data"], default_factory=dict)
+        mutate_json_across_repos("local_daemon_heartbeat.json", _write_hb, "Heartbeat local daemon [v34.3]", branches=["data"], default_factory=dict)
     except Exception:
         pass
 
@@ -1964,17 +1979,27 @@ def handle_hq_callback(cq):
         ul = data.split("bot_log:", 1)[1]
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"Лог Директора @{ul}"})
         send_directors_log_menu(c_id, filter_login=ul)
-    elif data.startswith("pdir:"):
-        parts = data.split(":", 2)
-        act = parts[1] if len(parts) > 1 else "status"
-        proj = parts[2] if len(parts) > 2 else "Главный Штаб"
-        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "⚡ Выполняю..."})
+    elif data.startswith("dact:") or data.startswith("pdir:"):
         if is_owner:
             actor_u = {"login": "unityspiritpartners", "full_name": "Власлав (Главный Штаб)", "personal_bot": {"director_name": "Тим"}}
+            def_proj = "Главный Штаб"
         else:
             reg_d = fetch_registry(force=False)
             matched_d = find_users_by_tg_sender(reg_d, from_user, c_id)
             actor_u = matched_d[0] if matched_d else {"login": user_name, "full_name": user_name, "personal_bot": {"director_name": "Тим"}}
+            assg = [p for p in (actor_u.get("assigned_projects") or []) if p != "*"]
+            def_proj = assg[0] if assg else f"Личный Офис: @{actor_u.get('login')}"
+        if director_nlu_engine.handle_director_callback(
+            _get_mesh_ctx(), actor_u, c_id, data, cq_id,
+            is_owner=is_owner, default_project=def_proj,
+            bot_token=TG_BOT_TOKEN, bot_label="main_hq",
+            reply_markup_fn=bot_mesh_hub.build_mesh_director_keyboard,
+        ):
+            return
+        parts = data.split(":", 2)
+        act = parts[1] if len(parts) > 1 else "status"
+        proj = parts[2] if len(parts) > 2 else def_proj
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "⚡ Выполняю..."})
         reply_html = generate_director_reply(actor_u, act, proj)
         call_tg("sendMessage", {
             "chat_id": c_id,
@@ -2188,25 +2213,35 @@ def handle_hq_text(msg):
     else:
         if is_owner:
             actor_u = {"login": sender_username or "unityspiritpartners", "full_name": "Власлав (Главный Штаб)", "personal_bot": {"director_name": "Тим"}}
-            reply_html = generate_director_reply(actor_u, "custom", "Главный Штаб", custom_text=text)
-            call_tg("sendMessage", {
-                "chat_id": c_id,
-                "text": reply_html,
-                "parse_mode": "HTML",
-                "reply_markup": build_director_inline_keyboard("Главный Штаб")
-            })
+            director_nlu_engine.handle_director_text(
+                _get_mesh_ctx(),
+                actor_u,
+                c_id,
+                text,
+                is_owner=True,
+                default_project="Главный Штаб",
+                bot_token=TG_BOT_TOKEN,
+                bot_label="main_hq",
+                reply_markup_fn=bot_mesh_hub.build_mesh_director_keyboard,
+            )
         else:
             reg = fetch_registry(force=False)
             matched = find_users_by_tg_sender(reg, from_user, c_id)
             if matched:
                 u0 = matched[0]
-                reply_html = generate_director_reply(u0, "custom", f"Личный Офис: @{u0.get('login')}", custom_text=text)
-                call_tg("sendMessage", {
-                    "chat_id": c_id,
-                    "text": reply_html,
-                    "parse_mode": "HTML",
-                    "reply_markup": build_director_inline_keyboard(f"Личный Офис: @{u0.get('login')}")
-                })
+                assg = [p for p in (u0.get("assigned_projects") or []) if p != "*"]
+                def_proj = assg[0] if assg else f"Личный Офис: @{u0.get('login')}"
+                director_nlu_engine.handle_director_text(
+                    _get_mesh_ctx(),
+                    u0,
+                    c_id,
+                    text,
+                    is_owner=False,
+                    default_project=def_proj,
+                    bot_token=TG_BOT_TOKEN,
+                    bot_label="main_hq",
+                    reply_markup_fn=bot_mesh_hub.build_mesh_director_keyboard,
+                )
             else:
                 send_member_home_menu(c_id, from_user)
 
@@ -2234,7 +2269,7 @@ def run_loop(single_run=False):
         print("Another tg_bot_poller.py instance is already active (port 47934 locked). Exiting cleanly.", flush=True)
         return
     offset = get_persisted_offset()
-    print(f"Telegram Multi-Bot Poller Daemon v34.2 (Antigravity 2.31 + Inter-Bot Mesh) started (offset={offset})...", flush=True)
+    print(f"Telegram Multi-Bot Poller Daemon v34.3 (Director NLU + Antigravity 2.31 + Mesh) started (offset={offset})...", flush=True)
     touch_local_heartbeat_if_due(force=True)
 
     while True:
