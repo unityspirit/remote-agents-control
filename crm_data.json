@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T15:36:46.784869Z",
+  "updated_at": "2026-11-15T20:39:39.960917+00:00",
   "version": "34.1",
   "knowledge_base": [
     {
@@ -1298,5 +1298,34 @@
       "scope": "global",
       "last_updated": "2026-10-19T11:34:42.324403"
     }
-  ]
+  ],
+  "store_leads": [
+    {
+      "store_id": "GSG-A5F0-1115",
+      "slug": "auraskin-ai-lab-peptidnyy-uhod-za-kozh-a5f0",
+      "created_at": "2026-11-15T20:39:33.671792+00:00",
+      "brand_name": "AuraSkin AI Lab",
+      "niche": "Пептидный уход за кожей и LED гаджеты (Beauty)",
+      "language": "ru",
+      "currency": "RUB",
+      "engine_used": "curated_engine",
+      "full_name": "Vlaslav Owner",
+      "email": "unityspiritteam@gmail.com",
+      "phone": "@unityspiritpartners",
+      "utm_source": "office_showcase_ru",
+      "products_count": 6,
+      "avg_order_usd": 75.73,
+      "shopify_cpa_usd": 150,
+      "pro_saas_usd": 29,
+      "dfy_turnkey_usd": 750,
+      "local_dir": "C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)\\generated_stores\\auraskin-ai-lab-peptidnyy-uhod-za-kozh-a5f0",
+      "status": "built_ready_to_monetize"
+    }
+  ],
+  "revenue_pipeline": {
+    "updated_at": "2026-11-15T20:39:39.960917+00:00",
+    "store_leads_count": 1,
+    "estimated_cpa_pool_usd": 150.0,
+    "estimated_mrr_usd": 29.0
+  }
 }
