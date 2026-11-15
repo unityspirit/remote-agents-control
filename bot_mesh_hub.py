@@ -249,6 +249,9 @@ def _extract_project_from_issue(title, body=""):
     m = re.match(r"^\s*\[([^\]]+)\]", str(title or ""))
     if m:
         return m.group(1).strip()
+    pm = re.search(r"\|\s*PROJ:\s*([^|\r\n]+)", str(title or ""), re.IGNORECASE)
+    if pm:
+        return pm.group(1).strip()
     for pat in (r"Проект:\s*([^\n\r]+)", r"Папка:\s*([^\n\r]+)"):
         bm = re.search(pat, str(body or ""), re.IGNORECASE)
         if bm:
@@ -261,11 +264,11 @@ def build_mesh_director_keyboard(project_name="Мой Офис", extra_row=None)
     kb = [
         [
             {"text": "⚡ Шаг #1 сейчас", "callback_data": f"pdir:exec:{p}"},
-            {"text": "📊 Сводка Офиса", "callback_data": f"pdir:status:{p}"},
+            {"text": "📋 Свежие задачи", "callback_data": f"dact:tasks:{p[:20]}"},
         ],
         [
+            {"text": "📊 Сводка Офиса", "callback_data": f"pdir:status:{p}"},
             {"text": "💡 Что дальше?", "callback_data": f"pdir:next:{p}"},
-            {"text": "🎯 Главный фокус", "callback_data": f"pdir:priority:{p}"},
         ],
         [
             {"text": "🏛️ В Главный Штаб", "callback_data": "pdir:hqask"},
@@ -273,7 +276,7 @@ def build_mesh_director_keyboard(project_name="Мой Офис", extra_row=None)
         ],
         [
             {"text": "📥 Входящие", "callback_data": "pdir:inbox"},
-            {"text": "🌐 Веб-Офис v34.2", "url": "https://globalteampartners.github.io/remote-agents-control/?v=34.2"},
+            {"text": "🌐 Веб-Офис v34.3", "url": "https://globalteampartners.github.io/remote-agents-control/?v=34.3"},
         ],
     ]
     if extra_row:
