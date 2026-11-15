@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1794766197992",
+      "ts": "2026-11-15T18:09:57.992433+00:00",
+      "time_local": "11:09:57",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "next",
+      "project": "Главный Штаб",
+      "summary": "Сформирован план из 3 шагов для «Главный Штаб»",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1794766175581",
       "ts": "2026-11-15T18:09:35.580625+00:00",
       "time_local": "11:09:35",
@@ -41,5 +54,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-15T18:09:35.580625+00:00"
+  "updated_at": "2026-11-15T18:09:57.992433+00:00"
 }
