@@ -26,7 +26,7 @@ import urllib.request
 
 AGENT_MARKER = "<!-- cloud-agent-v34 -->"
 UI_NOTE_MARKER = "<!-- office-ui-auto-note -->"
-OFFICE_VERSION = (os.environ.get("OFFICE_VERSION") or "34.2").strip()
+OFFICE_VERSION = (os.environ.get("OFFICE_VERSION") or "34.3").strip()
 DATA_BRANCH = "data"
 GITHUB_API = "https://api.github.com"
 # Antigravity 2.31 Three-Tier Orchestrator: Google Gemini 4 Argon <-> Carbon <-> Hydrogen + GitHub Models Fallback
@@ -831,7 +831,9 @@ def execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trigg
         if am:
             actor_login = am.group(1).strip().lstrip("@").lower()
             break
-    proj_m = re.match(r"^\s*\[([^\]]+)\]", str(title or ""))
+    proj_m = re.match(r"^\s*\[([^\]]+)\]", str(title or "")) or re.search(r"\|\s*PROJ:\s*([^|\r\n]+)", str(title or ""), re.IGNORECASE)
+    if not proj_m:
+        proj_m = re.search(r"(?:Проект|Папка):\s*([^\n\r]+)", str(body or ""), re.IGNORECASE)
     task_project = proj_m.group(1).strip() if proj_m else ""
 
     append_learned_fact(mem, f"Задача #{num}: {title}", ai_text[:450], source=f"issue #{num}")
@@ -917,7 +919,7 @@ def handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id):
     hb, _ = fetch_data_json(repo, gh_token, "local_daemon_heartbeat.json", default_val=dict)
     now_ts = time.time()
     hb_ts = float((hb or {}).get("ts") or 0)
-    if hb_ts and (now_ts - hb_ts) <= 180:
+    if hb_ts and (now_ts - hb_ts) <= 240:
         return {"polled": False, "reason": "local_daemon_online"}
 
     access, sha = fetch_data_json(
