@@ -529,8 +529,37 @@ def _call_ollama_chat(model_name, messages, max_tokens=1400, temperature=0.25, t
     return txt
 
 
+def _resolve_runtime_gemini_key(ctx_val=""):
+    if ctx_val and str(ctx_val).strip():
+        return str(ctx_val).strip()
+    env_k = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or "").strip()
+    if env_k:
+        return env_k
+    cfg_p = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".tg_daemon_config.json")
+    if os.path.exists(cfg_p):
+        try:
+            with open(cfg_p, "r", encoding="utf-8-sig") as f:
+                k = str(json.load(f).get("gemini_api_key") or "").strip()
+                if k:
+                    return k
+        except Exception:
+            pass
+    strike_env = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Рязань", "Страйк", ".env")
+    if os.path.exists(strike_env):
+        try:
+            with open(strike_env, "r", encoding="utf-8-sig", errors="ignore") as f:
+                for line in f:
+                    if "=" in line and not line.lstrip().startswith("#"):
+                        k, v = line.split("=", 1)
+                        if k.strip() == "GEMINI_API_KEY" and v.strip():
+                            return v.strip().strip('"').strip("'")
+        except Exception:
+            pass
+    return ""
+
+
 def _call_gemini_openai_compat(gemini_key, messages, max_tokens=1500, temperature=0.25, timeout=25, json_mode=False):
-    for gm in ("gemini-2.5-flash", "gemini-2.0-flash"):
+    for gm in ("gemini-flash-lite-latest", "gemini-4-hydrogen", "gemini-3.1-flash-lite-preview", "gemini-2.5-flash-lite"):
         body = {"model": gm, "messages": messages, "max_tokens": max_tokens, "temperature": temperature}
         if json_mode:
             body["response_format"] = {"type": "json_object"}
@@ -556,10 +585,10 @@ def call_ai_router(ctx_or_token, messages, fast=False, max_tokens=1400, temperat
     gemini_key = ""
     gh_token = ""
     if isinstance(ctx_or_token, dict):
-        gemini_key = str(ctx_or_token.get("gemini_api_key") or os.environ.get("GEMINI_API_KEY") or "").strip()
+        gemini_key = _resolve_runtime_gemini_key(ctx_or_token.get("gemini_api_key"))
         gh_token = str(ctx_or_token.get("gh_token") or "").strip()
     else:
-        gemini_key = str(os.environ.get("GEMINI_API_KEY") or "").strip()
+        gemini_key = _resolve_runtime_gemini_key()
         gh_token = str(ctx_or_token or "").strip()
 
     errors = []
@@ -1334,6 +1363,51 @@ def handle_director_text(
         msg = f"📁 <b>Директор «{_esc(dir_name)}»:</b> активная папка переключена на <b>«{_esc(proj)}»</b>.\n\n<i>Теперь все запросы и анализ привязаны к «{_esc(proj)}». Пишите любую задачу!</i>"
         send_tg_smart(ctx, tok, chat_id, msg, reply_markup=reply_markup_fn(proj), bot_label=bot_label, as_markdown=False)
         return True
+
+    if re.search(r"(?:^/store\b|создай\s+(?:ai[- ]?)?магазин|собери\s+(?:ai[- ]?)?магазин|сделай\s+витрину|build\s+(?:my\s+)?store|open\s*v3\s*store)", clean_text, re.IGNORECASE):
+        try:
+            import store_builder_engine
+            niche = re.sub(r"^(?:/store|создай\s+(?:ai[- ]?)?магазин|собери\s+(?:ai[- ]?)?магазин|сделай\s+витрину|build\s+(?:my\s+)?store|open\s*v3\s*store)\s*", "", clean_text, flags=re.IGNORECASE).strip() or "Smart Tech & Lifestyle"
+            built = store_builder_engine.build_and_persist_store(
+                {
+                    "first_name": (user_obj or {}).get("full_name") or login,
+                    "email": f"{login}@globalspirit.group",
+                    "phone": f"@{login}",
+                    "niche": niche,
+                    "language": "en" if re.search(r"\b(?:build|store|english)\b", clean_text, re.IGNORECASE) and not re.search(r"[а-яА-ЯёЁ]", clean_text) else "ru",
+                    "utm_source": f"tg_director_{bot_key}",
+                },
+                sync_github=True,
+                notify_telegram=False,
+            )
+            sp = built["bundle"]["spec"]
+            kit = built["bundle"]["traffic_kit"]
+            msg_out = (
+                f"🛍️ <b>OPEN V3 AI-МАГАЗИН СОБРАН ({_esc(sp['store_id'])})!</b>\n\n"
+                f"• <b>Бренд:</b> {_esc(sp['brand_name'])} (<i>{_esc(sp['niche'])}</i>)\n"
+                f"• <b>Движок:</b> <code>{_esc(str(sp['engine_used']))}</code>\n"
+                f"• <b>Товаров:</b> {len(sp['products'])} SKU | Промокод: <code>{sp['promo_code']}</code>\n"
+                f"• <b>Воронка дохода:</b> Shopify CPA $150 + Pro $29/мес + DFY $750\n"
+                f"• <b>Папка с файлами на ПК:</b> <code>{_esc(built['saved_dir'])}</code>\n\n"
+                f"🎬 <b>Хук рекламы:</b>\n<code>{_esc(kit['vsl_script_45s'][:240])}</code>"
+            )
+            kb = {
+                "inline_keyboard": [
+                    [{"text": "🛍️ Открыть Web-билдер Open V3", "url": store_builder_engine.OPEN_V3_WEB_URL}],
+                    [{"text": "💰 Выручка и Лиды Офиса", "callback_data": "cmd:revenue"}],
+                ]
+            }
+            send_tg_smart(ctx, tok, chat_id, msg_out, reply_markup=kb, bot_label=bot_label, as_markdown=False)
+            if callable(ctx.get("send_document")):
+                out_p = built["saved_dir"]
+                for fn in ("standalone_storefront.html", "shopify_products.csv"):
+                    fp = os.path.join(out_p, fn)
+                    if os.path.exists(fp):
+                        ctx["send_document"](chat_id, fp, caption=f"🛍️ {sp['brand_name']} — {fn}", bot_token=tok)
+            update_chat_context(bot_key, chat_id, last_answer_preview=msg_out[:350])
+            return True
+        except Exception as _st_err:
+            pass
 
     if intent == "check_tasks":
         ans_md, kb_row = _build_check_tasks_reply(ctx, user_obj, is_owner, nlu, dir_name, proj, gh_token)
