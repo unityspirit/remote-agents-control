@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T20:40:31.699794+00:00",
+  "updated_at": "2026-11-15T20:42:24.479670+00:00",
   "version": "34.1",
   "knowledge_base": [
     {
@@ -1301,6 +1301,27 @@
   ],
   "store_leads": [
     {
+      "store_id": "GSG-62F3-1115",
+      "slug": "lumiaura-labs-peptidnyy-uhod-za-kozhey-62f3",
+      "created_at": "2026-11-15T20:42:19.844762+00:00",
+      "brand_name": "LumiAura Labs",
+      "niche": "Пептидный уход за кожей и LED гаджеты (Beauty)",
+      "language": "ru",
+      "currency": "RUB",
+      "engine_used": "gemini/gemini-flash-lite-latest",
+      "full_name": "Vlaslav Owner",
+      "email": "unityspiritteam@gmail.com",
+      "phone": "@unityspiritpartners",
+      "utm_source": "office_showcase_ru",
+      "products_count": 6,
+      "avg_order_usd": 154.45,
+      "shopify_cpa_usd": 150,
+      "pro_saas_usd": 29,
+      "dfy_turnkey_usd": 750,
+      "local_dir": "C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)\\generated_stores\\lumiaura-labs-peptidnyy-uhod-za-kozhey-62f3",
+      "status": "built_ready_to_monetize"
+    },
+    {
       "store_id": "GSG-1071-1115",
       "slug": "voltedge-studio-minimalist-magsafe-des-1071",
       "created_at": "2026-11-15T20:40:26.970618+00:00",
@@ -1344,9 +1365,9 @@
     }
   ],
   "revenue_pipeline": {
-    "updated_at": "2026-11-15T20:40:31.699794+00:00",
-    "store_leads_count": 2,
-    "estimated_cpa_pool_usd": 300.0,
-    "estimated_mrr_usd": 58.0
+    "updated_at": "2026-11-15T20:42:24.479670+00:00",
+    "store_leads_count": 3,
+    "estimated_cpa_pool_usd": 450.0,
+    "estimated_mrr_usd": 87.0
   }
 }
