@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T20:39:39.960917+00:00",
+  "updated_at": "2026-11-15T20:40:31.699794+00:00",
   "version": "34.1",
   "knowledge_base": [
     {
@@ -1301,6 +1301,27 @@
   ],
   "store_leads": [
     {
+      "store_id": "GSG-1071-1115",
+      "slug": "voltedge-studio-minimalist-magsafe-des-1071",
+      "created_at": "2026-11-15T20:40:26.970618+00:00",
+      "brand_name": "VoltEdge Studio",
+      "niche": "Minimalist MagSafe Desk Tech & GaN Gear",
+      "language": "en",
+      "currency": "USD",
+      "engine_used": "curated_engine",
+      "full_name": "Global Partner",
+      "email": "partner@globalspirit.group",
+      "phone": "+1-555-0199",
+      "utm_source": "office_showcase_en",
+      "products_count": 6,
+      "avg_order_usd": 103.68,
+      "shopify_cpa_usd": 150,
+      "pro_saas_usd": 29,
+      "dfy_turnkey_usd": 750,
+      "local_dir": "C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)\\generated_stores\\voltedge-studio-minimalist-magsafe-des-1071",
+      "status": "built_ready_to_monetize"
+    },
+    {
       "store_id": "GSG-A5F0-1115",
       "slug": "auraskin-ai-lab-peptidnyy-uhod-za-kozh-a5f0",
       "created_at": "2026-11-15T20:39:33.671792+00:00",
@@ -1323,9 +1344,9 @@
     }
   ],
   "revenue_pipeline": {
-    "updated_at": "2026-11-15T20:39:39.960917+00:00",
-    "store_leads_count": 1,
-    "estimated_cpa_pool_usd": 150.0,
-    "estimated_mrr_usd": 29.0
+    "updated_at": "2026-11-15T20:40:31.699794+00:00",
+    "store_leads_count": 2,
+    "estimated_cpa_pool_usd": 300.0,
+    "estimated_mrr_usd": 58.0
   }
 }
