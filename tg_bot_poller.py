@@ -46,9 +46,24 @@ def _load_config():
         "gtp_token": os.environ.get("GTP_TOKEN") or cfg.get("gtp_token", ""),
         "u_repo": cfg.get("u_repo", "unityspirit/remote-agents-control"),
         "gtp_repo": cfg.get("gtp_repo", "GlobalTeamPartners/remote-agents-control"),
-        "gemini_api_key": (os.environ.get("GEMINI_API_KEY") or cfg.get("gemini_api_key") or "").strip(),
+        "gemini_api_key": (os.environ.get("GEMINI_API_KEY") or cfg.get("gemini_api_key") or _resolve_fallback_gemini_key() or "").strip(),
         "personal_bot_tokens": cfg.get("personal_bot_tokens", {}),
     }
+
+
+def _resolve_fallback_gemini_key():
+    strike_env = os.path.join(os.path.dirname(BASE_DIR), "Рязань", "Страйк", ".env")
+    if os.path.exists(strike_env):
+        try:
+            with open(strike_env, "r", encoding="utf-8-sig", errors="ignore") as f:
+                for ln in f:
+                    if "=" in ln and not ln.lstrip().startswith("#"):
+                        k, v = ln.split("=", 1)
+                        if k.strip() == "GEMINI_API_KEY" and v.strip():
+                            return v.strip().strip('"').strip("'")
+        except Exception:
+            pass
+    return ""
 
 _CFG = _load_config()
 TG_BOT_TOKEN = _CFG["tg_bot_token"]
@@ -218,7 +233,37 @@ def _get_mesh_ctx():
         "create_issue": _mesh_create_issue,
         "create_issue_full": create_github_issue_task,
         "record_action": record_director_action_and_mirror,
+        "send_document": call_tg_send_document,
     }
+
+
+def call_tg_send_document(chat_id, file_path, caption="", bot_token=TG_BOT_TOKEN):
+    """Upload a real storefront/CSV deliverable directly into Telegram chat."""
+    if not bot_token or not os.path.exists(file_path):
+        return None
+    boundary = f"----GSGForm{secrets.token_hex(8)}"
+    filename = os.path.basename(file_path)
+    with open(file_path, "rb") as fh:
+        file_bytes = fh.read()
+    parts = [
+        f"--{boundary}\r\nContent-Disposition: form-data; name=\"chat_id\"\r\n\r\n{chat_id}\r\n".encode("utf-8"),
+        f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption[:900]}\r\n".encode("utf-8"),
+        f"--{boundary}\r\nContent-Disposition: form-data; name=\"document\"; filename=\"{filename}\"\r\nContent-Type: application/octet-stream\r\n\r\n".encode("utf-8"),
+        file_bytes,
+        f"\r\n--{boundary}--\r\n".encode("utf-8"),
+    ]
+    body = b"".join(parts)
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{bot_token}/sendDocument",
+        data=body,
+        headers={"Content-Type": f"multipart/form-data; boundary={boundary}", "Connection": "close"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except Exception:
+        return None
 
 
 def call_tg(method, data=None, bot_token=TG_BOT_TOKEN, retries=2, bot_label=""):
@@ -1244,6 +1289,10 @@ def send_hq_home_menu(chat_id, from_user=None):
             {"text": "📊 Аудит работы", "callback_data": "cmd:audit"},
         ],
         [
+            {"text": "🛍️ AI-Магазин (Open V3)", "callback_data": "cmd:store_menu"},
+            {"text": "💰 Выручка и Лиды", "callback_data": "cmd:revenue"},
+        ],
+        [
             {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
             {"text": "🏢 Главный Офис (v34.3)", "url": OFFICE_URL},
         ],
@@ -1662,6 +1711,16 @@ def handle_hq_callback(cq):
     elif data == "cmd:dirlog":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "👁️ Загружаю журнал..."})
         send_directors_log_menu(c_id)
+    elif data == "cmd:store_menu":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🛍️ Open V3 AI-Билдер"})
+        send_store_builder_menu(c_id)
+    elif data == "cmd:revenue":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "💰 Сводка выручки Офиса"})
+        send_revenue_summary_menu(c_id)
+    elif data.startswith("store_quick:"):
+        niche_Pick = data.split("store_quick:", 1)[1].strip()
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"🛍️ Собираю магазин: {niche_Pick[:25]}..."})
+        _execute_store_build_from_tg(c_id, niche_Pick)
     elif data.startswith("pwd_pick:"):
         ul = data.split("pwd_pick:", 1)[1]
         reg = fetch_registry(force=True)
@@ -2073,6 +2132,83 @@ def _process_bot_reset_command(c_id, from_user, target, new_pwd):
     _notify_owner_bot_pwd_request(target, code, c_id, tg_u)
 
 
+def send_store_builder_menu(chat_id):
+    import store_builder_engine
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": (
+            "🛍️ <b>OPEN V3 AI STORE &amp; TELEGRAM MINI APP БИЛДЕР (#147)</b>\n\n"
+            "Выберите нишу ниже для моментальной генерации магазина (бренд + 6 SKU + Shopify CSV + OS 2.0 JSON + живая HTML витрина + рекламный VSL скрипт)\n"
+            "либо напишите команду: <code>/store ваша ниша</code>"
+        ),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": [
+            [{"text": "✨ Бьюти и Пептиды", "callback_data": "store_quick:Пептидный уход и LED beauty"}, {"text": "⚡ Смарт-Гаджеты", "callback_data": "store_quick:Умные MagSafe и GaN гаджеты"}],
+            [{"text": "💪 Фитнес & Recovery", "callback_data": "store_quick:Домашний фитнес и массажеры"}, {"text": "🐾 Умные Зоотовары", "callback_data": "store_quick:Умные товары для питомцев"}],
+            [{"text": "🌐 Открыть Open V3 Web-Билдер", "url": store_builder_engine.OPEN_V3_WEB_URL}],
+            [{"text": "⬅️ Главное меню", "callback_data": "cmd:home"}],
+        ]},
+    })
+
+
+def send_revenue_summary_menu(chat_id):
+    import store_builder_engine
+    rev = store_builder_engine.get_revenue_summary()
+    lines = [
+        "💰 <b>ВОРОНКА ВЫРУЧКИ И ЛИДОВ ОФИСА (OPEN V3)</b>\n",
+        f"• Собрано магазинов / лидов: <b>{rev['total_leads']}</b>",
+        f"• Пул Shopify Partner CPA ($150/триал): <b>${rev['shopify_cpa_pool_usd']:,.0f}</b>",
+        f"• Потенциал Pro SaaS ($29/мес): <b>${rev['pro_mrr_pool_usd']:,.0f}/мес</b>",
+        f"• Прогноз Turnkey DFY ($750, 15%): <b>${rev['projected_dfy_usd']:,.0f}</b>\n",
+    ]
+    recent = rev.get("recent_leads") or []
+    if recent:
+        lines.append("<b>Последние сборки:</b>")
+        for r in recent[:5]:
+            lines.append(f"• <code>{_esc_h(r.get('store_id'))}</code> — <b>{_esc_h(r.get('brand_name'))}</b> ({_esc_h(r.get('niche'))})")
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": "\n".join(lines),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": [
+            [{"text": "🛍️ Собрать новый AI-магазин", "callback_data": "cmd:store_menu"}],
+            [{"text": "🌐 Калькулятор и CRM Воронки", "url": store_builder_engine.OPEN_V3_WEB_URL}],
+            [{"text": "⬅️ Главное меню", "callback_data": "cmd:home"}],
+        ]},
+    })
+
+
+def _execute_store_build_from_tg(chat_id, niche):
+    import store_builder_engine
+    res = store_builder_engine.build_and_persist_store(
+        {"first_name": "Vlaslav", "email": "unityspiritteam@gmail.com", "phone": "@unityspiritpartners", "niche": niche, "language": "ru", "utm_source": "tg_hq_quick"},
+        sync_github=True,
+        notify_telegram=False,
+    )
+    sp = res["bundle"]["spec"]
+    kit = res["bundle"]["traffic_kit"]
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": (
+            f"✅ <b>Магазин «{_esc_h(sp['brand_name'])}» собран ({_esc_h(sp['store_id'])})!</b>\n"
+            f"• ИИ-движок: <code>{_esc_h(str(sp['engine_used']))}</code>\n"
+            f"• Товаров: <b>{len(sp['products'])}</b> | Средний чек: <b>${sp['unit_economics']['avg_order_usd']}</b>\n"
+            f"• Папка: <code>{_esc_h(res['saved_dir'])}</code>\n\n"
+            f"🎬 <b>VSL Хук:</b>\n<code>{_esc_h(kit['vsl_script_45s'][:240])}</code>"
+        ),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": [
+            [{"text": "🌐 Открыть Web-превью Open V3", "url": store_builder_engine.OPEN_V3_WEB_URL}],
+            [{"text": "💰 Статистика лидов", "callback_data": "cmd:revenue"}],
+        ]},
+    })
+    out_dir = res["saved_dir"]
+    for fn in ("standalone_storefront.html", "shopify_products.csv"):
+        fp = os.path.join(out_dir, fn)
+        if os.path.exists(fp):
+            call_tg_send_document(chat_id, fp, caption=f"🛍️ {sp['brand_name']} — {fn}")
+
+
 def handle_hq_text(msg):
     text = msg["text"].strip()
     c_id = str(msg["chat"]["id"])
@@ -2174,6 +2310,14 @@ def handle_hq_text(msg):
             "parse_mode": "HTML",
             "reply_markup": {"inline_keyboard": [[{"text": "🏢 Открыть v34.0 (Antigravity 2.31)", "url": OFFICE_URL}]]},
         })
+    elif text.startswith("/store"):
+        niche_arg = text.split(None, 1)[1].strip() if len(text.split(None, 1)) > 1 else ""
+        if niche_arg:
+            _execute_store_build_from_tg(c_id, niche_arg)
+        else:
+            send_store_builder_menu(c_id)
+    elif text.startswith("/revenue"):
+        send_revenue_summary_menu(c_id)
     elif text.startswith("/bots"):
         if not is_owner:
             call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Раздел управления ботами команды доступен только Главному Штабу. Для смены своего пароля нажмите /passwords."})
@@ -2268,6 +2412,15 @@ def run_loop(single_run=False):
     if not single_run and not _acquire_single_instance_lock():
         print("Another tg_bot_poller.py instance is already active (port 47934 locked). Exiting cleanly.", flush=True)
         return
+    try:
+        sys1_dir = os.path.join(os.path.dirname(BASE_DIR), "System 1")
+        if os.path.isdir(sys1_dir) and sys1_dir not in sys.path:
+            sys.path.insert(0, sys1_dir)
+        import office_money_engine
+        if office_money_engine.start_background_money_server(18799):
+            print("[MoneyEngine] Local Open V3 & Office HTTP API bound on http://127.0.0.1:18799", flush=True)
+    except Exception as _me_err:
+        print(f"[MoneyEngine warn] {_me_err}", flush=True)
     offset = get_persisted_offset()
     print(f"Telegram Multi-Bot Poller Daemon v34.3 (Director NLU + Antigravity 2.31 + Mesh) started (offset={offset})...", flush=True)
     touch_local_heartbeat_if_due(force=True)
