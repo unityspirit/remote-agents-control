@@ -559,7 +559,7 @@ def _resolve_runtime_gemini_key(ctx_val=""):
 
 
 def _call_gemini_openai_compat(gemini_key, messages, max_tokens=1500, temperature=0.25, timeout=25, json_mode=False):
-    for gm in ("gemini-flash-lite-latest", "gemini-4-hydrogen", "gemini-3.1-flash-lite-preview", "gemini-2.5-flash-lite"):
+    for gm in ("gemini-flash-lite-latest", "gemini-3.1-flash-lite-preview", "gemini-flash-latest", "gemini-2.5-flash-lite"):
         body = {"model": gm, "messages": messages, "max_tokens": max_tokens, "temperature": temperature}
         if json_mode:
             body["response_format"] = {"type": "json_object"}
@@ -1106,10 +1106,54 @@ def _build_check_tasks_reply(ctx, user_obj, is_owner, nlu, dir_name, proj, gh_to
     return "\n".join(lines), kb_row
 
 
+def _get_user_director_persona(login, project_name=""):
+    lg = str(login or "").strip().lower().lstrip("@")
+    proj_low = str(project_name or "").strip().lower()
+    if lg in ("aliashirani", "alberta_shirani", "alberta") or "alberta" in proj_low or "альберт" in proj_low:
+        return (
+            "Специализация: направление Alberta Shirani (`Alberta` / `Личный Офис: @aliashirani`).\n"
+            "Ключевые проекты: Закрытый женский клуб 30–50 лет «Трансформация» (опора, уверенность, стиль, доход, отношения, снятие тревожности) + VIP 99k–150k ₽, "
+            "мини-продукт «Возврат Опоры за 72 часа», Telegram-воронка подписки (ЮKassa/Prodamus), хабы alberta-hub и Международный Штаб 5-в-1, 7 Reels / VEO 3.1."
+        )
+    if lg in ("yvyatkin", "jv", "yura") or proj_low == "юра":
+        return (
+            "Специализация: направление Юрия Вяткина (`Юра` / `Личный Офис: @yvyatkin`).\n"
+            "Ключевые проекты: аналитика и VIP-канал прогнозов (отбор событий, критерий Келли, авто-подписка в Telegram), AI-криптомониторинг импульсов BTC/ETH/SOL (алерты UptrendDipVol), "
+            "облачные ИИ-воронки и автоматизация отчётов (старые локальные ПК-воркеры KHL/Freqtrade на паузе)."
+        )
+    return f"Специализация: контур «{project_name or 'Офис'}» Global Spirit Group."
+
+
+def get_personal_start_greeting(user_obj, default_proj="Мой Офис"):
+    login = str((user_obj or {}).get("login") or "").strip().lower().lstrip("@")
+    pb = (user_obj or {}).get("personal_bot") or {}
+    dir_name = pb.get("director_name") or "Тим"
+    full_name = user_obj.get("full_name") or login
+    if login in ("aliashirani", "alberta_shirani", "alberta"):
+        focus = (
+            "• 🎯 <b>Ваши проекты:</b> Закрытый клуб 30–50 «Трансформация», мини-продукт, Telegram-воронка подписки, хаб <code>alberta-hub</code> и контент Reels/VEO.\n"
+            "• 💡 Напишите любую задачу (например: <i>«сделай оффер для клуба», «проверь задачи», «разбери ссылку»</i>) — сразу подключу весь Офис."
+        )
+    elif login in ("yvyatkin", "jv", "yura"):
+        focus = (
+            "• 🎯 <b>Ваш контур «Юра»:</b> VIP-канал и аналитика, AI-криптомониторинг импульсов/алертов, Telegram-воронки и облачные агенты 24/7.\n"
+            "• 💡 Напишите любую задачу (например: <i>«проверь мои задачи», «идеи роста VIP-подписки», «разбери ссылку»</i>) — сразу запущу в работу."
+        )
+    else:
+        focus = "• 💬 <i>Выберите действие кнопкой ниже или напишите любую задачу, вопрос или ссылку:</i>"
+    return (
+        f"👑 <b>Здравствуйте, {_esc(full_name)}!</b>\n"
+        f"Я — ваш Личный AI-Директор <b>«{_esc(dir_name)}»</b> (активирован Главным Штабом @unitybusinessbot).\n\n"
+        f"📁 Активная папка: <b>«{_esc(default_proj)}»</b>\n"
+        f"{focus}"
+    )
+
+
 def _handle_direct_chat_sync(ctx, user_obj, is_owner, nlu, clean_text, chat_ctx, dir_name, proj, bot_key, chat_id, bot_token, bot_label, reply_markup, gh_token):
     lang = nlu.get("lang") or "ru"
     mem_facts = _fetch_office_memory_summary(ctx, proj)
     nlm_st = check_nlm_status()
+    persona_ctx = _get_user_director_persona((user_obj or {}).get("login"), proj)
     recent = []
     for t in (chat_ctx.get("turns") or [])[-6:]:
         recent.append({"role": "user" if t.get("role") == "user" else "assistant", "content": str(t.get("text") or "")[:500]})
@@ -1117,6 +1161,7 @@ def _handle_direct_chat_sync(ctx, user_obj, is_owner, nlu, clean_text, chat_ctx,
     sys_p = (
         f"Ты — Личный ИИ-Директор «{dir_name}» в Global Spirit Group ★ Виртуальный Офис v34.3.\n"
         f"Роль пользователя: {'Владелец Главного Штаба (@unityspiritpartners)' if is_owner else '@' + str((user_obj or {}).get('login') or '')}.\n"
+        f"{persona_ctx}\n"
         f"Активная папка: {proj}. Текущая задача в контексте: #{chat_ctx.get('last_issue_number')} ({chat_ctx.get('last_topic')}).\n"
         f"Статус локального NotebookLM (`nlm`): {'Авторизован' if nlm_st.get('authenticated') else 'Установлен, но не авторизован (нужен 1x `nlm login`)'}.\n"
         f"Память Офиса:\n{mem_facts or 'Нет недавних записей.'}\n\n"
@@ -1204,15 +1249,17 @@ def _run_background_execution(
 
         urls_block = json.dumps(url_findings, ensure_ascii=False, indent=2)[:2800] if url_findings else "Ссылки не переданы"
         prev_topic = chat_ctx.get("last_topic") or ""
+        persona_ctx = _get_user_director_persona((user_obj or {}).get("login"), proj)
         sys_p = (
             f"Ты — «{dir_name}», Личный ИИ-Директор в Global Spirit Group ★ Виртуальный Офис (v34.3).\n"
             f"Язык ответа: {'English' if lang == 'en' else 'Русский'}.\n"
             f"Папка: {proj}. Задача #{issue_num or 'в контексте'}.\n"
+            f"{persona_ctx}\n"
             "КРИТИЧЕСКИЕ ПРАВИЛА:\n"
             "1. Дай КОНКРЕТНЫЙ, глубокий и сразу применимый ответ по сути запроса пользователя — НИКАКИХ отписок 'принял поручение'.\n"
             "2. Ничего не выдумывай про содержимое видео/страниц, если в извлечённых данных URL этого нет: честно укажи, что именно удалось прочитать по ссылке (Final URL, og:title, og:description), а по самому запросу пользователя дай проверенную экспертизу и инструменты.\n"
-            "3. Если пользователь просил NotebookLM, а профиль `nlm` не авторизован — прямо в 1 строке отметь, что нужно 1 раз выполнить `nlm login` на ПК, и дай полноценный разбор силами GPT-4.1 + Памяти Офиса.\n"
-            "4. В конце предложи 1–3 чётких следующих шага применительно к бизнесу Global Spirit Group (без воды)."
+            "3. Если пользователь просил NotebookLM, а профиль `nlm` не авторизован — прямо в 1 строке отметь, что нужно 1 раз выполнить `nlm login` на ПК, и дай полноценный разбор силами Gemini / локальной ИИ-модели + Памяти Офиса.\n"
+            "4. В конце предложи 1–3 чётких следующих шага применительно к контуру пользователя/бизнеса (без воды)."
         )
         user_p = (
             f"Запрос пользователя: {clean_text}\n"
