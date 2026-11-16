@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-15T23:21:06.872452Z",
+  "updated_at": "2026-11-16T22:13:18.583115Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -234,6 +234,13 @@
       "project": "Главный Штаб",
       "issue": 69,
       "summary": "https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==: Здравия! Тим на связи. Штаб, Задача #69.\n\n### Анализ ссылки из Instagram\nПо ссылке на Instagram Reel (автор *@thevibefounder* / Ajay Yadav) извлечены следующие данные:\n* **Заголовок/Описание:** Инструмент для синхронизации памяти AI-агентов через единый репозиторий. Позволяет Cla"
+    },
+    {
+      "id": "fact-dir-v343-iss77",
+      "ts": "2026-11-16T22:13:07.442843Z",
+      "project": "Главный Штаб",
+      "issue": 77,
+      "summary": "https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5: Здравия! Тим на связи. Анализ задачи #77 завершен.\n\n### Анализ контента\nПо ссылке `https://www.instagram.com/reel/DfQWuxWTUul/` (автор: *tonythetechie*):\n* **Суть:** Видео является манифестом «от идеи к реализации». Автор проводит параллель между подростковым увлечением кастомиза"
     }
   ],
   "projects": {
