@@ -602,6 +602,20 @@ def handle_password_reset_in_github(login_target, approve_bool, explicit_new_pas
     return mutate_registry_across_repos(_mutate, f"{act}: {norm_login(login_target)} via @unitybusinessbot [v34.0]")
 
 
+_PAIRED_ACCOUNT_GROUPS = (
+    ("aliashirani", "alberta_shirani"),
+    ("yvyatkin", "jv"),
+)
+
+
+def _paired_logins_for(login_val):
+    nl = norm_login(login_val)
+    for grp in _PAIRED_ACCOUNT_GROUPS:
+        if nl in grp:
+            return list(grp)
+    return [nl] if nl else []
+
+
 def update_user_bot_control(login_target, action, bot_token=None, director_name=None):
     now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
     now_ts = int(time.time())
@@ -610,41 +624,60 @@ def update_user_bot_control(login_target, action, bot_token=None, director_name=
         me = call_tg("getMe", bot_token=bot_token)
         if me and me.get("ok"):
             bot_username = me["result"].get("username", "")
+    if action == "set_token" and not bot_username:
+        return False, "invalid_token"
+
+    pair_list = _paired_logins_for(login_target)
 
     def _mutate(reg):
-        u = find_user_in_registry(reg, login_target)
-        if not u:
+        targets = []
+        for candidate in pair_list:
+            u_hit = find_user_in_registry(reg, candidate)
+            if u_hit and all(x is not u_hit for x in targets):
+                targets.append(u_hit)
+        if not targets:
+            u0 = find_user_in_registry(reg, login_target)
+            if u0:
+                targets.append(u0)
+        if not targets:
             return False
-        pb = u.setdefault("personal_bot", {
-            "director_name": "Тим",
-            "bot_token": "",
-            "bot_username": "",
-            "chat_id": "",
-            "auto_send_reports": True,
-            "control_status": "not_configured"
-        })
-        if action == "approve":
-            pb["control_status"] = "active"
-            pb["approved_by_owner_at"] = now_iso
-        elif action == "pause":
-            pb["control_status"] = "paused"
-        elif action == "disable":
-            pb["control_status"] = "disabled"
-            pb["bot_token"] = ""
-            pb["bot_username"] = ""
-        elif action == "set_token":
-            pb["bot_token"] = (bot_token or "").strip()
-            if bot_username:
+
+        for u in targets:
+            pb = u.setdefault("personal_bot", {
+                "director_name": "Тим",
+                "bot_token": "",
+                "bot_username": "",
+                "chat_id": "",
+                "auto_send_reports": True,
+                "control_status": "not_configured"
+            })
+            if action == "approve":
+                pb["control_status"] = "active"
+                pb["approved_by_owner_at"] = now_iso
+            elif action == "pause":
+                pb["control_status"] = "paused"
+            elif action == "disable":
+                pb["control_status"] = "disabled"
+                pb["bot_token"] = ""
+                pb["bot_username"] = ""
+            elif action == "set_token":
+                pb["bot_token"] = (bot_token or "").strip()
                 pb["bot_username"] = "@" + bot_username
-            pb["control_status"] = "active"
-            pb["approved_by_owner_at"] = now_iso
-        elif action == "set_director" and director_name:
-            pb["director_name"] = director_name.strip()
-        pb["updated_at"] = now_iso
-        u["owner_action_stamp"] = f"bot-{action}-{now_ts}"
+                pb["control_status"] = "active"
+                pb["approved_by_owner_at"] = now_iso
+            elif action == "set_director" and director_name:
+                pb["director_name"] = director_name.strip()
+            pb["updated_at"] = now_iso
+            u["owner_action_stamp"] = f"bot-{action}-{now_ts}"
         return True
 
-    ok = mutate_registry_across_repos(_mutate, f"bot-ctrl({action}): {norm_login(login_target)} via @unitybusinessbot [v34.0]")
+    ok = mutate_registry_across_repos(_mutate, f"bot-ctrl({action}): {norm_login(login_target)} via @unitybusinessbot [v34.3]")
+    if ok and action == "set_token":
+        for candidate in pair_list or [login_target]:
+            _persist_personal_bot_token_local(candidate, bot_token)
+    elif ok and action == "disable":
+        for candidate in pair_list or [login_target]:
+            _persist_personal_bot_token_local(candidate, "")
     return ok, bot_username
 
 
@@ -928,14 +961,17 @@ def poll_personal_user_bots():
 
             if c_id and str(pb.get("chat_id") or "") != c_id:
                 pb["chat_id"] = c_id
-                mutate_registry_across_repos(
-                    lambda r: any(
-                        (x.setdefault("personal_bot", {}).update({"chat_id": c_id}) or True)
-                        for x in r.get("users", [])
-                        if norm_login(x.get("login")) == u_login
-                    ),
-                    f"feat(bot): auto-link chat_id {c_id} for {u_login}"
-                )
+                pair_set = set(_paired_logins_for(u_login))
+                def _link_cid(r):
+                    did = False
+                    for x in r.get("users", []):
+                        if norm_login(x.get("login")) in pair_set:
+                            x.setdefault("personal_bot", {})["chat_id"] = c_id
+                            if not is_owner_chat(c_id):
+                                x["verified_bot_chat_id"] = c_id
+                            did = True
+                    return did
+                mutate_registry_across_repos(_link_cid, f"feat(bot): auto-link chat_id {c_id} for {u_login}")
 
             # Enforce Owner Primary Control!
             if u.get("role") != "owner" and ctrl_status != "active":
@@ -1023,17 +1059,12 @@ def poll_personal_user_bots():
                     continue
                 text = item["message"]["text"].strip()
                 if text.startswith("/start"):
-                    reply_html = (
-                        f"👑 <b>Здравствуйте, {_esc_h(u.get('full_name') or u_login)}!</b>\n"
-                        f"Я — ваш Личный AI-Директор <b>«{_esc_h(dir_name)}»</b> (одобрен Главным Штабом).\n\n"
-                        f"📁 Ваша папка: <b>«{_esc_h(default_proj)}»</b>\n"
-                        f"💬 <i>Выберите команду ниже или напишите любую задачу:</i>"
-                    )
+                    reply_html = director_nlu_engine.get_personal_start_greeting(u, default_proj)
                     call_tg("sendMessage", {
                         "chat_id": c_id,
                         "text": reply_html,
                         "parse_mode": "HTML",
-                        "reply_markup": build_director_inline_keyboard(default_proj)
+                        "reply_markup": bot_mesh_hub.build_mesh_director_keyboard(default_proj)
                     }, bot_token=b_tok)
                     record_director_action_and_mirror(u, "start", default_proj, f"Открыт личный бот пользователем @{u_login}")
                 elif text.startswith("/name"):
@@ -1968,14 +1999,16 @@ def handle_hq_callback(cq):
             ],
             [{"text": "⬅️ Все боты команды", "callback_data": "cmd:bots"}]
         ]}
+        b_un = str(pb.get("bot_username") or "").strip().lstrip("@")
+        b_link = f"@{_esc_h(b_un)} (<a href=\"https://t.me/{_esc_h(b_un)}\">t.me/{_esc_h(b_un)}</a>)" if b_un else "— <i>токен не подключён (нажмите «🔑 Назначить Bot Token» после создания в @BotFather)</i>"
         call_tg("sendMessage", {
             "chat_id": c_id,
             "text": (
                 f"🤖 <b>КОНТРОЛЬ БОТА СОТРУДНИКА <code>@{_esc_h(ul)}</code></b>\n\n"
                 f"• <b>Статус контроля:</b> <code>{_esc_h(st)}</code>\n"
                 f"• <b>Имя Директора:</b> «<b>{_esc_h(dir_n)}</b>»\n"
-                f"• <b>Бот:</b> {_esc_h(pb.get('bot_username') or '—')} (Токен: <code>{_esc_h(tok_mask)}</code>)\n"
-                f"• <b>Chat ID:</b> <code>{_esc_h(pb.get('chat_id') or 'не привязан')}</code>"
+                f"• <b>Бот:</b> {b_link}\n"
+                f"• <b>Токен:</b> <code>{_esc_h(tok_mask)}</code> | <b>Chat ID:</b> <code>{_esc_h(pb.get('chat_id') or 'не привязан')}</code>"
             ),
             "parse_mode": "HTML",
             "reply_markup": kb
@@ -2240,9 +2273,15 @@ def handle_hq_text(msg):
             return
         elif mode == "set_bot_token" and is_owner:
             ok, b_uname = update_user_bot_control(target, "set_token", bot_token=text)
+            b_clean = str(b_uname or "").lstrip("@")
+            msg_tok = (
+                f"✅ Бот <a href=\"https://t.me/{_esc_h(b_clean)}\">@{_esc_h(b_clean)}</a> привязан к <code>@{_esc_h(target)}</code> и сразу запущен!\n\nПередайте ссылку сотруднику: https://t.me/{_esc_h(b_clean)}"
+                if ok and b_clean
+                else f"⚠️ Токен не прошёл проверку Telegram API (`getMe`) для <code>@{_esc_h(target)}</code>. Проверьте токен из @BotFather."
+            )
             call_tg("sendMessage", {
                 "chat_id": c_id,
-                "text": f"✅ Бот @{_esc_h(b_uname or 'TelegramBot')} привязан к <code>@{_esc_h(target)}</code> и активирован!" if ok else f"⚠️ Не удалось привязать токен для <code>@{_esc_h(target)}</code>.",
+                "text": msg_tok,
                 "parse_mode": "HTML"
             })
             return
@@ -2323,6 +2362,27 @@ def handle_hq_text(msg):
             call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Раздел управления ботами команды доступен только Главному Штабу. Для смены своего пароля нажмите /passwords."})
             return
         send_bots_control_menu(c_id)
+    elif text.startswith("/set_bot"):
+        if not is_owner:
+            call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Привязка токенов ботов доступна только Главному Штабу (@unityspiritpartners)."})
+            return
+        parts = text.split(None, 2)
+        if len(parts) < 3:
+            call_tg("sendMessage", {
+                "chat_id": c_id,
+                "text": "🔑 Формат: <code>/set_bot логин токен_из_BotFather</code>\nПример для Юрия: <code>/set_bot yvyatkin 123456:ABC...</code>\nЛибо откройте /bots и нажмите <b>🔑 Назначить Bot Token</b>.",
+                "parse_mode": "HTML"
+            })
+            return
+        t_login, t_tok = parts[1].strip(), parts[2].strip()
+        ok, b_uname = update_user_bot_control(t_login, "set_token", bot_token=t_tok)
+        b_clean = str(b_uname or "").lstrip("@")
+        msg_sb = (
+            f"✅ Бот <a href=\"https://t.me/{_esc_h(b_clean)}\">@{_esc_h(b_clean)}</a> привязан к <code>@{_esc_h(t_login)}</code> (и связанному профилю) и активирован!\nСсылка для входа: https://t.me/{_esc_h(b_clean)}"
+            if ok and b_clean
+            else f"⚠️ Не удалось привязать токен для <code>@{_esc_h(t_login)}</code> (проверьте логин или токен @BotFather)."
+        )
+        call_tg("sendMessage", {"chat_id": c_id, "text": msg_sb, "parse_mode": "HTML"})
     elif text.startswith("/logs"):
         if not is_owner:
             call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Журнал Директоров доступен только Главному Штабу. Для смены своего пароля нажмите /passwords."})
