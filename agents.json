@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:03:19",
+  "updated": "2026-11-17 15:04:10",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -10,9 +10,9 @@
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
       "tasks_completed": 60,
-      "last_task": "Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business",
-      "last_project": "Белый Доминикана",
-      "updated_at": "2026-11-17 15:03:10"
+      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-17 15:04:01"
     },
     "strategist": {
       "name": "Стратег",
@@ -23,9 +23,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business",
-      "last_project": "Белый Доминикана",
-      "updated_at": "2026-11-17 15:03:10"
+      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-17 15:04:01"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -36,9 +36,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 43,
-      "last_task": "Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business",
-      "last_project": "Белый Доминикана",
-      "updated_at": "2026-11-17 15:03:10"
+      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-17 15:04:01"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -49,9 +49,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business",
-      "last_project": "Белый Доминикана",
-      "updated_at": "2026-11-17 15:03:10"
+      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-17 15:04:01"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 142,
+      "tasks_completed": 143,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 60,
-      "last_task": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 15:01:29"
+      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-17 15:04:01"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 142,
+      "tasks_completed": 143,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 60,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 142,
+      "tasks_completed": 143,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 85,
+      "tasks_completed": 86,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 85,
+      "tasks_completed": 86,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:03:19"
+      "updated_at": "2026-11-17 15:04:10"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-17T22:02:22.484324+00:00",
-      "errors_count": 24
+      "errors_count": 25
     }
   },
   "statuses": {
