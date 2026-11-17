@@ -6,6 +6,7 @@ window.forceHardRefreshApp = function() {
     try {
         localStorage.removeItem("gsg_app_v32_0_loaded");
         localStorage.removeItem("gsg_app_v34_0_loaded");
+        localStorage.removeItem("gsg_app_v34_4_loaded");
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function(regs) {
                 for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -23,9 +24,9 @@ window.forceHardRefreshApp = function() {
 };
 (function() {
     try {
-        var v = localStorage.getItem("gsg_app_v34_0_loaded");
+        var v = localStorage.getItem("gsg_app_v34_4_loaded");
         if (v !== "true") {
-            localStorage.setItem("gsg_app_v34_0_loaded", "true");
+            localStorage.setItem("gsg_app_v34_4_loaded", "true");
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(regs) {
                     for (var i = 0; i < regs.length; i++) regs[i].unregister();
@@ -99,6 +100,7 @@ window.forceHardRefreshApp = function() {
         html, body {
             width: 100%;
             max-width: 100vw;
+            height: 100vh;
             height: 100dvh;
             overflow: hidden;
             overflow-x: clip;
@@ -106,6 +108,11 @@ window.forceHardRefreshApp = function() {
             background-color: var(--bg-main);
             color: var(--text-main);
             -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
         }
 
         .tabular {
@@ -116,7 +123,8 @@ window.forceHardRefreshApp = function() {
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 100dvh;
+            flex: 1 1 0%;
+            min-height: 0;
             overflow: hidden;
         }
 
@@ -125,13 +133,15 @@ window.forceHardRefreshApp = function() {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 6px 12px;
+            padding: 7px 14px;
             background: var(--bg-panel);
             border-bottom: 1px solid var(--border);
             flex-shrink: 0;
             z-index: 30;
-            gap: 8px;
-            min-height: 44px;
+            gap: 10px;
+            min-height: 48px;
+            max-width: 100%;
+            overflow: visible;
         }
 
         .brand-row {
@@ -139,6 +149,7 @@ window.forceHardRefreshApp = function() {
             align-items: center;
             gap: 9px;
             min-width: 0;
+            flex: 0 1 auto;
         }
 
         .brand-logo {
@@ -190,14 +201,18 @@ window.forceHardRefreshApp = function() {
         .topbar-actions {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
             gap: 6px;
-            flex-shrink: 0;
+            flex: 1 1 auto;
+            min-width: 0;
+            max-width: 100%;
+            flex-wrap: wrap;
         }
 
         .icon-btn {
             min-width: 36px;
             min-height: 36px;
-            padding: 0 9px;
+            padding: 0 10px;
             border-radius: 10px;
             border: 1px solid var(--border);
             background: var(--bg-card);
@@ -207,8 +222,10 @@ window.forceHardRefreshApp = function() {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 5px;
             cursor: pointer;
+            flex: 0 0 auto;
+            white-space: nowrap;
         }
 
         .icon-btn:active {
@@ -266,11 +283,13 @@ window.forceHardRefreshApp = function() {
 
         /* MAIN BODY */
         .main-body {
-            flex: 1;
+            flex: 1 1 0%;
             display: flex;
             min-height: 0;
+            max-width: 100%;
             position: relative;
             overflow: hidden;
+            overflow-x: clip;
         }
 
         .nav-pane {
@@ -281,16 +300,21 @@ window.forceHardRefreshApp = function() {
             display: flex;
             flex-direction: column;
             min-height: 0;
+            overflow: hidden;
             flex-shrink: 0;
         }
 
         .tab-view {
             display: none;
             flex-direction: column;
-            flex: 1;
+            flex: 1 1 0%;
             min-height: 0;
             overflow-y: auto;
-            padding: 12px;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
+            overscroll-behavior-y: contain;
+            padding: 12px 12px 20px;
             gap: 10px;
         }
 
@@ -302,10 +326,11 @@ window.forceHardRefreshApp = function() {
             display: flex;
             gap: 8px;
             position: sticky;
-            top: 0;
+            top: -12px;
             z-index: 5;
             background: var(--bg-panel);
-            padding-bottom: 6px;
+            padding: 6px 0 8px;
+            margin-top: -6px;
         }
 
         .search-input {
@@ -325,9 +350,14 @@ window.forceHardRefreshApp = function() {
             display: flex;
             gap: 6px;
             overflow-x: auto;
-            padding-bottom: 4px;
+            overflow-y: hidden;
+            padding: 2px 0 6px;
             scrollbar-width: none;
             flex-shrink: 0;
+            align-items: center;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x pan-y;
         }
 
         .filter-row::-webkit-scrollbar {
@@ -348,6 +378,7 @@ window.forceHardRefreshApp = function() {
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            flex: 0 0 auto;
         }
 
         .chip.active {
@@ -403,7 +434,8 @@ window.forceHardRefreshApp = function() {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 8px;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
         .p-card-name {
@@ -505,12 +537,17 @@ window.forceHardRefreshApp = function() {
             display: flex;
             gap: 6px;
             overflow-x: auto;
-            padding-bottom: 6px;
+            overflow-y: hidden;
+            padding: 2px 0 6px;
             margin-bottom: 8px;
             scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x pan-y;
+            max-width: 100%;
         }
         .cal-day-chip {
-            padding: 6px 12px;
+            flex: 0 0 auto;
+            padding: 7px 12px;
             border-radius: 999px;
             font-size: 0.75rem;
             font-weight: 700;
@@ -520,6 +557,9 @@ window.forceHardRefreshApp = function() {
             color: var(--text-dim);
             white-space: nowrap;
             transition: all 0.2s;
+            min-height: 34px;
+            display: inline-flex;
+            align-items: center;
         }
         .cal-day-chip:hover {
             background: rgba(255, 255, 255, 0.12);
@@ -727,17 +767,30 @@ window.forceHardRefreshApp = function() {
             background: var(--bg-main);
             min-width: 0;
             min-height: 0;
+            overflow: hidden;
         }
 
         .ws-header {
-            padding: 10px 14px;
+            padding: 9px 14px;
             background: var(--bg-panel);
             border-bottom: 1px solid var(--border);
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            gap: 7px;
             flex-shrink: 0;
+            height: auto;
+            overflow: visible;
+        }
+
+        .ws-filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 0;
+            align-items: center;
+            max-width: 100%;
         }
 
         .ws-title-group {
@@ -745,6 +798,7 @@ window.forceHardRefreshApp = function() {
             align-items: center;
             gap: 8px;
             min-width: 0;
+            width: 100%;
         }
 
         .back-btn {
@@ -782,9 +836,14 @@ window.forceHardRefreshApp = function() {
         }
 
         .ws-feed {
-            flex: 1;
+            flex: 1 1 0%;
+            min-height: 0;
             overflow-y: auto;
-            padding: 14px;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
+            overscroll-behavior-y: contain;
+            padding: 14px 14px 20px;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -944,6 +1003,7 @@ window.forceHardRefreshApp = function() {
 
         .reply-controls {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             gap: 8px;
@@ -956,12 +1016,14 @@ window.forceHardRefreshApp = function() {
             color: var(--text-main);
             font-size: 0.73rem;
             padding: 6px 10px;
+            min-height: 32px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 4px;
+            flex-shrink: 0;
         }
 
         .mini-btn.accent {
@@ -994,7 +1056,7 @@ window.forceHardRefreshApp = function() {
         .proposals-chips {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
         }
 
         .proposal-chip {
@@ -1002,7 +1064,8 @@ window.forceHardRefreshApp = function() {
             border: 1px solid rgba(139, 92, 246, 0.3);
             color: var(--text-main);
             border-radius: 7px;
-            padding: 5px 8px;
+            padding: 6px 10px;
+            min-height: 34px;
             font-size: 0.72rem;
             font-weight: 600;
             cursor: pointer;
@@ -1058,18 +1121,21 @@ window.forceHardRefreshApp = function() {
 
         .quick-skill-pills {
             display: flex;
-            gap: 5px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .skill-mini-tag {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.68rem;
+            font-size: 0.69rem;
             font-weight: 700;
             color: #38bdf8;
             background: rgba(56, 189, 248, 0.1);
             border: 1px solid rgba(56, 189, 248, 0.25);
-            padding: 2px 6px;
+            padding: 4px 8px;
+            min-height: 28px;
+            display: inline-flex;
+            align-items: center;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -1134,10 +1200,15 @@ window.forceHardRefreshApp = function() {
 
         .quick-pills {
             display: flex;
+            flex-wrap: nowrap;
             gap: 6px;
             overflow-x: auto;
+            overflow-y: hidden;
             scrollbar-width: none;
-            padding-bottom: 2px;
+            padding: 2px 0 4px;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x pan-y;
         }
 
         .quick-pills::-webkit-scrollbar {
@@ -1145,7 +1216,9 @@ window.forceHardRefreshApp = function() {
         }
 
         .q-pill {
-            flex-shrink: 0;
+            flex: 0 0 auto;
+            white-space: nowrap;
+            min-height: 34px;
             padding: 7px 11px;
             border-radius: 10px;
             background: var(--bg-card);
@@ -1299,12 +1372,20 @@ window.forceHardRefreshApp = function() {
             .workspace-pane {
                 position: absolute;
                 inset: 0;
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
                 z-index: 25;
                 transform: translateX(100%);
-                transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+                pointer-events: none;
+                visibility: hidden;
+                transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.22s;
             }
             .workspace-pane.mobile-open {
                 transform: translateX(0);
+                pointer-events: auto;
+                visibility: visible;
+                transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
             }
             .back-btn {
                 display: inline-flex;
@@ -1312,40 +1393,41 @@ window.forceHardRefreshApp = function() {
         }
 
         @media (max-width: 768px) {
-            /* === v25.9 ULTRA-COMPACT MOBILE LAYOUT: MAXIMIZING SCREEN MIDDLE ESTATE === */
+            /* === v34.4 RESPONSIVE MOBILE LAYOUT: ZERO OVERLAP + SMOOTH SCROLL + REAL HIT TARGETS === */
             .topbar {
-                padding: 4px 8px !important;
+                padding: 6px 10px !important;
                 display: flex !important;
-                flex-direction: row !important;
-                align-items: center !important;
-                justify-content: space-between !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                justify-content: flex-start !important;
                 gap: 6px !important;
-                height: 40px !important;
-                min-height: 40px !important;
-                overflow: hidden !important;
+                height: auto !important;
+                min-height: 0 !important;
+                overflow: visible !important;
                 flex-shrink: 0 !important;
                 box-sizing: border-box !important;
             }
             .brand-row {
                 display: flex !important;
                 align-items: center !important;
+                width: 100% !important;
                 min-width: 0 !important;
-                flex: 1 1 auto !important;
-                gap: 6px !important;
+                flex: none !important;
+                gap: 8px !important;
             }
             .brand-logo {
                 width: 26px !important;
                 height: 26px !important;
                 min-width: 26px !important;
-                border-radius: 6px !important;
+                border-radius: 7px !important;
             }
             .brand-titles {
                 min-width: 0 !important;
                 flex: 1 !important;
             }
             .brand-titles h1 {
-                font-size: 0.82rem !important;
-                line-height: 1.15 !important;
+                font-size: 0.84rem !important;
+                line-height: 1.2 !important;
                 margin: 0 !important;
                 white-space: nowrap !important;
                 overflow: hidden !important;
@@ -1354,23 +1436,25 @@ window.forceHardRefreshApp = function() {
                 color: var(--text-main) !important;
             }
             .worker-pill {
-                display: none !important; /* Hide secondary sub-pill on mobile to save vertical height */
+                display: none !important;
             }
-            /* Single inline horizontal icon strip on the right */
+            /* Dedicated full-width scrollable topbar button row (never collides with logo) */
             .topbar-actions {
-                width: auto !important;
-                flex: 0 0 auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                flex: none !important;
                 display: flex !important;
                 flex-direction: row !important;
                 flex-wrap: nowrap !important;
                 align-items: center !important;
-                justify-content: flex-end !important;
-                gap: 4px !important;
+                justify-content: flex-start !important;
+                gap: 6px !important;
                 overflow-x: auto !important;
                 overflow-y: hidden !important;
                 white-space: nowrap !important;
-                padding: 0 !important;
+                padding: 2px 0 !important;
                 -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-x pan-y !important;
                 scrollbar-width: none !important;
                 -ms-overflow-style: none !important;
             }
@@ -1380,105 +1464,152 @@ window.forceHardRefreshApp = function() {
             .topbar-actions .icon-btn {
                 flex: 0 0 auto !important;
                 min-width: unset !important;
-                height: 28px !important;
-                padding: 0 7px !important;
-                font-size: 0.70rem !important;
-                font-weight: 750 !important;
+                min-height: 34px !important;
+                height: 34px !important;
+                padding: 0 10px !important;
+                font-size: 0.74rem !important;
+                font-weight: 700 !important;
                 border-radius: 9999px !important;
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                gap: 3px !important;
+                gap: 4px !important;
                 white-space: nowrap !important;
                 box-sizing: border-box !important;
             }
-            /* Ultra-slim single-line Quick Save Banner (32px) */
+            /* Quick Save Banner: wraps cleanly without clipping Save button */
             .quick-save-banner {
-                padding: 3px 8px !important;
-                gap: 5px !important;
-                height: 32px !important;
-                min-height: 32px !important;
-                flex-wrap: nowrap !important;
-                overflow: hidden !important;
+                padding: 6px 10px !important;
+                gap: 6px !important;
+                height: auto !important;
+                min-height: 42px !important;
+                flex-wrap: wrap !important;
+                overflow: visible !important;
                 box-sizing: border-box !important;
             }
             .quick-save-banner .icon-btn {
-                height: 26px !important;
-                padding: 0 6px !important;
-                font-size: 0.68rem !important;
+                flex: 0 0 auto !important;
+                min-height: 36px !important;
+                height: 36px !important;
+                padding: 0 10px !important;
+                font-size: 0.74rem !important;
             }
             .quick-save-input {
-                height: 26px !important;
-                font-size: 0.74rem !important;
-                padding: 0 8px !important;
-                border-radius: 7px !important;
+                flex: 1 1 140px !important;
+                min-width: 120px !important;
+                height: 36px !important;
+                font-size: 16px !important;
+                padding: 0 10px !important;
+                border-radius: 8px !important;
             }
             .quick-save-btn {
-                height: 26px !important;
-                padding: 0 8px !important;
-                font-size: 0.70rem !important;
-                border-radius: 7px !important;
+                flex: 0 0 auto !important;
+                min-height: 36px !important;
+                height: 36px !important;
+                padding: 0 12px !important;
+                font-size: 0.76rem !important;
+                border-radius: 8px !important;
                 white-space: nowrap !important;
             }
-            /* Action strip takes 0 space when decisions are resolved */
+            /* Action strip */
             .human-action-strip {
-                padding: 4px 8px !important;
-                font-size: 0.70rem !important;
-                gap: 4px !important;
-                height: 24px !important;
-                min-height: 24px !important;
+                padding: 5px 10px !important;
+                font-size: 0.72rem !important;
+                gap: 6px !important;
+                height: auto !important;
+                min-height: 32px !important;
                 box-sizing: border-box !important;
             }
-            /* Compact Bottom Navigation (42px) */
+            /* Horizontally scrollable Bottom Navigation with comfortable touch height */
             .bottom-nav {
-                height: 42px !important;
-                min-height: 42px !important;
-                padding-bottom: max(2px, env(safe-area-inset-bottom)) !important;
+                height: auto !important;
+                min-height: 52px !important;
+                max-width: 100% !important;
+                padding: 4px 8px calc(5px + var(--safe-bottom)) !important;
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                justify-content: flex-start !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                gap: 6px !important;
+                -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-x pan-y !important;
+                scrollbar-width: none !important;
+            }
+            .bottom-nav::-webkit-scrollbar {
+                display: none !important;
             }
             .b-tab {
-                min-height: 38px !important;
-                height: 38px !important;
-                font-size: 0.60rem !important;
-                gap: 1px !important;
-                padding: 1px !important;
+                flex: 0 0 auto !important;
+                min-width: 68px !important;
+                min-height: 46px !important;
+                height: auto !important;
+                font-size: 0.68rem !important;
+                gap: 3px !important;
+                padding: 5px 10px !important;
+                white-space: nowrap !important;
             }
             .b-tab .b-icon {
-                font-size: 1rem !important;
+                font-size: 1.08rem !important;
                 line-height: 1 !important;
             }
-            /* Discreet corner docking for floating AI button */
-            
-            
-            /* Maximize Middle Workspace Area */
+            /* Maximize Middle Workspace Area with clean non-overlapping header + horizontal chip scroll */
             .main-body {
-                flex: 1 1 auto !important;
+                flex: 1 1 0% !important;
+                min-height: 0 !important;
                 height: auto !important;
                 overflow: hidden !important;
+                overflow-x: clip !important;
             }
             .workspace-pane {
                 padding: 0 !important;
             }
             .ws-header {
-                height: 36px !important;
-                padding: 4px 10px !important;
-            }
-            .workspace-feed {
-                padding: 6px 8px !important;
+                height: auto !important;
+                min-height: 44px !important;
+                padding: 7px 10px !important;
                 gap: 6px !important;
+                overflow: visible !important;
+            }
+            .ws-header .filter-row,
+            .ws-filter-row,
+            .tier-quick-strip,
+            #plan-sub-filters,
+            #reports-sub-filters {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                gap: 6px !important;
+                padding: 2px 0 4px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-x pan-y !important;
+                scrollbar-width: none !important;
+            }
+            .ws-header .filter-row::-webkit-scrollbar,
+            .ws-filter-row::-webkit-scrollbar,
+            .tier-quick-strip::-webkit-scrollbar {
+                display: none !important;
+            }
+            .ws-feed {
+                padding: 8px 10px 18px !important;
+                gap: 10px !important;
             }
             .project-card, .crm-task-card {
-                padding: 8px 10px !important;
-                margin-bottom: 5px !important;
+                padding: 10px 11px !important;
+                margin-bottom: 6px !important;
                 border-radius: 10px !important;
             }
             .strip-text {
-                white-space: normal;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                font-size: 0.73rem;
-                line-height: 1.3;
-                min-width: 180px;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                -webkit-line-clamp: 1 !important;
+                font-size: 0.72rem !important;
+                line-height: 1.3 !important;
+                min-width: 0 !important;
             }
             .dialogue-input-row {
                 flex-direction: column;
@@ -1486,14 +1617,30 @@ window.forceHardRefreshApp = function() {
             .dialogue-input-row .mini-btn {
                 width: 100%;
                 justify-content: center;
-                padding: 8px;
+                padding: 9px 10px;
+                min-height: 38px;
             }
-            .plan-footer {
-                flex-wrap: wrap;
+            .plan-footer,
+            .reply-controls,
+            .card-ctrl-strip {
+                flex-wrap: wrap !important;
+                gap: 6px !important;
             }
             .plan-footer .mini-btn {
-                flex: 1;
+                flex: 1 1 auto;
+                min-height: 36px;
                 justify-content: center;
+            }
+            .composer-row {
+                gap: 5px !important;
+            }
+            .composer-input {
+                font-size: 16px !important;
+                padding: 0 10px !important;
+            }
+            .send-btn {
+                padding: 0 12px !important;
+                font-size: 0.8rem !important;
             }
         }
 
@@ -1789,29 +1936,29 @@ window.forceHardRefreshApp = function() {
         }
         @media (max-width: 440px) {
             .brand-titles h1 {
-                font-size: 0.88rem !important;
+                font-size: 0.80rem !important;
             }
             .worker-pill {
-                max-width: 155px !important;
-                font-size: 0.6rem !important;
+                display: none !important;
             }
             .b-tab {
-                font-size: 0.58rem !important;
-                padding: 0 1px !important;
+                min-width: 64px !important;
+                font-size: 0.66rem !important;
+                padding: 5px 8px !important;
             }
             .b-tab .b-icon {
-                font-size: 1.0rem !important;
+                font-size: 1.05rem !important;
             }
             .topbar-actions {
                 gap: 5px !important;
             }
             .topbar-actions .icon-btn {
-                height: 30px !important;
-                padding: 0 8px !important;
-                font-size: 0.7rem !important;
+                min-height: 34px !important;
+                height: 34px !important;
+                padding: 0 9px !important;
+                font-size: 0.72rem !important;
                 gap: 4px !important;
             }
-            
         }
         .study-drawer-box {
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.98));
@@ -2099,39 +2246,46 @@ window.forceHardRefreshApp = function() {
         }
         body.guest-preview-mode #guest-portal-view {
             display: block !important;
+            flex: 1 1 0%;
+            min-height: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
         }
 
     
-/* v25.9: Sleek Side-Docked AI Navigator ("Выглядывает сбоку когда требуется") */
+/* v34.4: AI Navigator lives cleanly in .topbar-actions (never covers cards or scrollbars); bottom-right badge only in guest portal */
+body:not(.guest-preview-mode) #btn-floating-guest-ai {
+    display: none !important;
+}
 #btn-floating-guest-ai {
     position: fixed !important;
-    right: 0 !important;
-    top: 50% !important;
-    bottom: auto !important;
-    transform: translateY(-50%) !important;
-    width: 38px !important;
-    height: 62px !important;
-    min-width: 38px !important;
+    right: 14px !important;
+    bottom: calc(16px + var(--safe-bottom)) !important;
+    top: auto !important;
+    transform: none !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
     padding: 0 !important;
-    border-radius: 14px 0 0 14px !important;
-    border: 1px solid rgba(56, 189, 248, 0.45) !important;
-    border-right: none !important;
-    background: linear-gradient(135deg, rgba(2, 132, 199, 0.95), rgba(139, 92, 246, 0.95)) !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(56, 189, 248, 0.55) !important;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.96), rgba(139, 92, 246, 0.96)) !important;
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(14px) !important;
-    box-shadow: -4px 0 20px rgba(2, 132, 199, 0.45) !important;
+    box-shadow: 0 6px 22px rgba(2, 132, 199, 0.45) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 3px !important;
+    gap: 2px !important;
     z-index: 25000 !important;
     cursor: pointer !important;
     transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease !important;
 }
 #btn-floating-guest-ai:hover, #btn-floating-guest-ai:active {
-    transform: translateY(-50%) translateX(-5px) !important;
-    box-shadow: -7px 0 28px rgba(2, 132, 199, 0.65) !important;
+    transform: translateY(-2px) scale(1.04) !important;
+    box-shadow: 0 8px 28px rgba(2, 132, 199, 0.65) !important;
 }
 #btn-floating-guest-ai #floating-ai-label {
     display: none !important;
@@ -2189,6 +2343,30 @@ window.forceHardRefreshApp = function() {
     background: transparent !important;
 }
 
+#ai-nav-pills-row,
+#ai-chat-starters-row {
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x pan-y !important;
+}
+#ai-nav-pills-row .choice-btn,
+#ai-chat-starters-row .choice-btn {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    min-height: 34px !important;
+}
+#quick-web-apps-box .icon-btn,
+.ws-feed .icon-btn,
+.ws-feed .btn-action,
+.tab-view .icon-btn,
+.modal-card .icon-btn {
+    white-space: normal !important;
+    text-align: center;
+    line-height: 1.25;
+    height: auto;
+    min-height: 36px;
+    max-width: 100%;
+}
+
 </style>
 
 <!-- WORLD-CLASS VIRTUAL OFFICE ENHANCEMENTS (ROAM / GATHER / DEVIN LEVEL) -->
@@ -2227,14 +2405,18 @@ body.member-nodel #crm-user-filters {
     display: flex;
     gap: 6px;
     overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: wrap;
     padding: 4px 0 6px 0;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
 }
 .tier-chip {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 5px 10px;
+    padding: 6px 11px;
     border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.14);
     background: rgba(15,23,42,0.65);
@@ -2244,6 +2426,8 @@ body.member-nodel #crm-user-filters {
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.16s ease;
+    flex: 0 0 auto;
+    min-height: 34px;
 }
 .tier-chip:hover {
     border-color: rgba(255,255,255,0.32);
@@ -2300,14 +2484,19 @@ body.member-nodel #crm-user-filters {
 }
 .telemetry-pills {
     display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
     align-items: center;
     gap: 7px;
     overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
 }
 .telemetry-pills::-webkit-scrollbar { display: none; }
 .telemetry-pill {
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -2345,21 +2534,27 @@ body.member-nodel #crm-user-filters {
     justify-content: space-between;
     background: var(--dock-bg);
     border-top: 1px solid var(--dock-border);
-    padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px)) 6px;
+    padding: 5px 8px calc(5px + env(safe-area-inset-bottom, 0px)) 8px;
     flex-shrink: 0;
     z-index: 35;
     overflow-x: auto;
-    gap: 2px;
+    overflow-y: hidden;
+    gap: 4px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    max-width: 100%;
 }
 .b-tab {
-    flex: 1;
-    min-width: 48px;
-    min-height: 46px;
-    padding: 4px 4px;
+    flex: 1 1 0;
+    min-width: 72px;
+    min-height: 48px;
+    padding: 5px 6px;
     border-radius: 10px;
     transition: all 0.16s ease;
     touch-action: manipulation;
     cursor: pointer;
+    white-space: nowrap;
+    gap: 3px;
 }
 .b-tab:active {
     transform: scale(0.94);
@@ -2499,8 +2694,8 @@ textarea.task-inline-input {
             <span>🚀 MVP: Голосовой ИИ (94%)</span>
         </div>
     </div>
-    <div style="font-size:0.75rem; color:#94a3b8; font-weight:600; display:flex; gap:6px; align-items:center;">
-        <span id="version-badge-label">v34.0 Antigravity 2.31</span>
+    <div style="font-size:0.74rem; color:#94a3b8; font-weight:600; display:flex; gap:6px; align-items:center; flex-shrink:0; white-space:nowrap;">
+        <span id="version-badge-label">v34.4 Antigravity 2.31</span>
     </div>
 </div>
 
@@ -2530,7 +2725,7 @@ textarea.task-inline-input {
     <!-- ========================================================================= -->
     <!-- === v25.9: DEDICATED VISITOR GUEST PORTAL (QUIZ + LIVE WORKING AI)     === -->
     <!-- ========================================================================= -->
-    <section id="guest-portal-view" style="display:none !important;" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 90px;">
+    <section id="guest-portal-view" style="display:none; width:100%; max-width:980px; margin:0 auto; padding:16px 14px 96px;">
         <!-- Guest Welcome Card -->
         <div style="background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(139,92,246,0.18)); border:1px solid rgba(56,189,248,0.4); border-radius:18px; padding:18px; margin-bottom:16px; text-align:center;">
             <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:8px;">
@@ -2648,8 +2843,9 @@ textarea.task-inline-input {
                 </div>
             </div>
         </div>
-        <div class="topbar-actions" style="overflow-x:auto;">
+        <div class="topbar-actions">
             <button class="icon-btn" onclick="toggleLanguage()" id="btn-top-lang-switch" title="Сменить язык / Switch language (RU / EN)" style="background:rgba(99,102,241,0.22); border-color:rgba(129,140,248,0.6); color:#a5b4fc; font-weight:800; cursor:pointer;">🌐 <span id="current-lang-label">RU</span></button>
+            <button class="icon-btn" onclick="toggleGuestAiChatModal()" id="btn-top-ai-navigator" title="ИИ-Навигатор и Ассистент по офису" style="background:linear-gradient(135deg,rgba(2,132,199,0.26),rgba(139,92,246,0.26)); border-color:rgba(56,189,248,0.6); color:#7dd3fc; font-weight:800;">🤖 <span id="lbl-top-ai">ИИ-Гид</span></button>
             <button class="icon-btn" style="background:linear-gradient(135deg,rgba(37,99,235,0.26),rgba(124,58,237,0.26)); border-color:rgba(96,165,250,0.6); color:#93c5fd; font-weight:800;" onclick="smartTopbarInstallClick()" id="btn-top-install-app" title="Установить приложение на телефон / ПК или отправить на любое устройство">📲 <span id="lbl-top-app">Приложение</span> <span id="pwa-ready-dot" style="display:none; width:7px; height:7px; border-radius:50%; background:#34d399;"></span></button>
             <button class="icon-btn" style="display:none; background:rgba(245,158,11,0.18); border-color:rgba(245,158,11,0.55); color:#fbbf24; font-weight:800;" onclick="openSecuredVaultModal()" id="btn-top-secured-vault" title="Секретная папка логинов/паролей, одобрение @unityspiritpartners, назначение папок и 30-дневный контроль">🔒 <span id="lbl-top-vault">Сейф & Админ</span> (<span id="topbar-pending-reg-cnt">0</span>)</button>
             <button class="icon-btn" style="display:none; font-weight:700;" onclick="openUserProfileMenu()" id="btn-top-user-chip" title="Профиль / GTA-Досье">👤</button>
@@ -2663,11 +2859,11 @@ textarea.task-inline-input {
     </header>
 
     <!-- INSTANT SAVE + PHOTO & TEXT STUDY BAR (WORKS 24/7 IN EVERY TAB) -->
-    <div class="quick-save-banner" style="flex-wrap:wrap;">
+    <div class="quick-save-banner">
         <input type="file" id="global-photo-input" accept="image/*" multiple style="display:none;" onchange="handlePhotoFilesSelected('global', this.files); this.value='';">
-        <button class="icon-btn" onclick="triggerPhotoPicker('global', true)" title="Добавить фото / скриншоты для изучения" style="height:38px; padding:0 10px; border-color:rgba(139,92,246,0.55); background:rgba(139,92,246,0.14); color:#c084fc; font-weight:700; flex-shrink:0;">📷 Фото <span id="global-photo-cnt" style="display:none; background:#8b5cf6; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem;">0</span></button>
-        <button class="icon-btn" onclick="toggleGlobalStudyDrawer()" id="btn-global-study-toggle" title="Открыть поле текста и фото для изучения в любой папке" style="height:38px; padding:0 10px; border-color:rgba(59,130,246,0.45); color:#93c5fd; font-weight:700; flex-shrink:0;">📝 Текст+</button>
-        <input type="text" class="quick-save-input" id="instant-kb-input" style="min-width:160px;" placeholder="📥 Сохранить ссылку, фото (Ctrl+V) или текст на изучение..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
+        <button class="icon-btn" onclick="triggerPhotoPicker('global', true)" title="Добавить фото / скриншоты для изучения" style="padding:0 10px; border-color:rgba(139,92,246,0.55); background:rgba(139,92,246,0.14); color:#c084fc; font-weight:700; flex-shrink:0;">📷 Фото <span id="global-photo-cnt" style="display:none; background:#8b5cf6; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem;">0</span></button>
+        <button class="icon-btn" onclick="toggleGlobalStudyDrawer()" id="btn-global-study-toggle" title="Открыть поле текста и фото для изучения в любой папке" style="padding:0 10px; border-color:rgba(59,130,246,0.45); color:#93c5fd; font-weight:700; flex-shrink:0;">📝 Текст+</button>
+        <input type="text" class="quick-save-input" id="instant-kb-input" placeholder="📥 Сохранить ссылку, фото (Ctrl+V) или текст на изучение..." oninput="updateQuickSavePreview(this.value)" onkeypress="if(event.key==='Enter') instantSaveToPoznovalka()">
         <button class="quick-save-btn" id="instant-kb-btn" onclick="instantSaveToPoznovalka()">📥 Сохранить</button>
     </div>
     <!-- LIVE SMART ROUTE & INTERCONNECTION PREVIEW -->
@@ -2743,7 +2939,7 @@ textarea.task-inline-input {
 
                 <div class="tab-study-quickbar">
                     <span style="font-size:0.75rem; font-weight:700; color:var(--text-main);">📷 Фото + 📝 Текст на изучение в любую папку:</span>
-                    <div style="display:flex; gap:6px;">
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
                         <button class="mini-btn accent" onclick="openStudyStudioForProject(currentProject)">📷 Добавить фото и текст</button>
                         <button class="mini-btn" style="color:#34d399; border-color:rgba(16,185,129,0.45);" onclick="openWorkReportTab()">📊 Отчёт работ</button>
                     </div>
@@ -3183,7 +3379,7 @@ textarea.task-inline-input {
                         <div class="ws-subtitle" id="ws-project-sub">Отправляйте ссылки и задачи — сохраняется автономно 24/7</div>
                     </div>
                 </div>
-                <div class="filter-row" style="padding:0; flex-wrap:wrap; gap:4px;">
+                <div class="filter-row ws-filter-row">
                     <button class="chip active" id="ws-flt-all" onclick="setWsFilter('all')">Все</button>
                     <button class="chip" id="ws-flt-open" onclick="setWsFilter('open')">⏳</button>
                     <button class="chip" id="ws-flt-closed" onclick="setWsFilter('closed')">✅</button>
@@ -7484,7 +7680,7 @@ textarea.task-inline-input {
                 '<div style="font-size:0.75rem; color:#bfdbfe; font-weight:700;">' +
                     '👑 <b>Управление доступом Главного Штаба:</b>' +
                 '</div>' +
-                '<div style="display:flex; gap:6px;">' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
                     '<button class="mini-btn accent" onclick="openAssignProjectModal(\'' + escapeHtml(currentProject).replace(/'/g, "\\'") + '\')">👥 Назначить сотрудникам</button>' +
                     '<button class="mini-btn" onclick="openMoveMaterialsModal(\'' + escapeHtml(currentProject).replace(/'/g, "\\'") + '\')">📦 Переместить материалы</button>' +
                 '</div>' +
@@ -11108,6 +11304,7 @@ function sendQuickGuestPromptPortal(txt) {
         if (el("lbl-top-report")) el("lbl-top-report").innerText = d.btn_report;
         if (el("lbl-top-actions")) el("lbl-top-actions").innerText = d.btn_actions;
         if (el("lbl-top-folder")) el("lbl-top-folder").innerText = d.btn_folder;
+        if (el("lbl-top-ai")) el("lbl-top-ai").innerText = isEn ? "AI Guide" : "ИИ-Гид";
         if (el("current-lang-label")) el("current-lang-label").innerText = d.btn_lang;
 
         // Quick Save Banner
@@ -11510,7 +11707,7 @@ function enterPendingWaitingRoom(userObj) {
         });
         const tabsBar = document.getElementById("auth-main-tabs-row");
         if (tabsBar) {
-            tabsBar.style.display = (tabName === "register" || tabName === "login") ? "grid" : "none";
+            tabsBar.style.display = (tabName === "register" || tabName === "login") ? "flex" : "none";
         }
         const msg = document.getElementById("auth-feedback-box");
         if (msg) msg.style.display = "none";
