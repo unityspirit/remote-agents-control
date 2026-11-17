@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:52:50",
+  "updated": "2026-11-17 14:53:34",
   "kpis": {
-    "total_completed_works": 270,
-    "tim_master_reports": 53,
+    "total_completed_works": 272,
+    "tim_master_reports": 54,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "updated_at": "2026-11-17 14:52:39"
+      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "updated_at": "2026-11-17 14:53:23"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 130,
+      "tasks_completed": 131,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:52:48"
+      "updated_at": "2026-11-17 14:53:33"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 130,
+      "tasks_completed": 131,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:52:48"
+      "updated_at": "2026-11-17 14:53:33"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 130,
+      "tasks_completed": 131,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:52:48"
+      "updated_at": "2026-11-17 14:53:33"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 77,
+      "tasks_completed": 78,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:52:48"
+      "updated_at": "2026-11-17 14:53:33"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 77,
+      "tasks_completed": 78,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:52:48"
+      "updated_at": "2026-11-17 14:53:33"
     },
     {
       "key": "researcher",
@@ -914,7 +914,7 @@
       "tasks_completed": 52,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:52:48"
+      "updated_at": "2026-11-17 14:53:33"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "updated_at": "2026-11-17 14:52:39"
+      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "updated_at": "2026-11-17 14:53:23"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 43,
+      "tasks_completed": 44,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "updated_at": "2026-11-17 14:52:39"
+      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "updated_at": "2026-11-17 14:53:23"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 37,
+      "tasks_completed": 38,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "updated_at": "2026-11-17 14:52:39"
+      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "updated_at": "2026-11-17 14:53:23"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-64",
+      "issue_number": 64,
+      "date": "2026-11-17 14:53:26",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#64 TIM: [Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_145307",
+      "issue_number": 64,
+      "date": "2026-11-17 14:53:07",
+      "project": "Главный Штаб",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "summary": "Мы превратим уроки BlackNevas и The Gentlemen в монетизируемый сервис: 1) Создадим SaaS‑платформу «SecureMgmt» для управления per‑host credentials, execInstalledOnly и изоляции mgmt‑сети, продавая подписку 3 000 ₽/мес/узел. 2) Предложим ауд",
+      "human_action": "Подтвердить бюджет 300 000 ₽ на MVP‑аудит и одобрить запуск рекламной кампании.",
+      "status": "done"
+    },
     {
       "id": "card-65",
       "issue_number": 65,
@@ -1733,30 +1757,6 @@
       "agent": "🛡 Контролёр",
       "title": "#31 AUTH_SYNC: Быстрая заявка REQ-657806 (@tatianaknyazeva777 / @tatianaknyazeva777)",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-168",
-      "issue_number": 168,
-      "date": "2026-11-03 11:57:29",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#168 TIM: Найди все что мы делали для tentorium.ru Татьяна",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261103_115708",
-      "issue_number": 168,
-      "date": "2026-11-03 11:57:08",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "Найди все что мы делали для tentorium.ru Татьяна",
-      "summary": "Мы создали и оптимизировали маркетинговую воронку для tentorium.ru, внедрили Telegram Mini App для удобного взаимодействия пользователей и интегрировали API для автоматизации продаж. В результате увеличили конверсию на 35 % и выручку на 22 ",
-      "human_action": "Подтвердить бюджет в размере 1 200 000 ₽ для запуска рекламных кампаний и интеграции Telegram Mini App.",
       "status": "done"
     }
   ]
