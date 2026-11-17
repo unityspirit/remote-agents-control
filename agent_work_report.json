@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-17 15:06:39",
+  "updated": "2026-11-17 15:07:44",
   "kpis": {
-    "total_completed_works": 290,
+    "total_completed_works": 291,
     "tim_master_reports": 60,
     "active_projects_count": 58,
     "total_saved_photos": 1,
@@ -731,60 +731,6 @@
       }
     },
     {
-      "project": "Личное — обучение и релокация",
-      "folder": "Личное — обучение и релокация",
-      "lead_agent": "Education & Global Mobility Lead",
-      "priority_score": 68,
-      "revenue_potential": "Поступление в Hive Helsinki (бесплатное обучение) и получение студенческого ВНЖ Финляндии с правом работы.",
-      "why_first": "Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ.",
-      "human_action": "Пройти 2-часовой онлайн-тест на память и логику на сайте hive.fi.",
-      "counts": {
-        "completed_works": 1,
-        "open_tasks": 0,
-        "tim_reports": 1,
-        "saved_photos": 0,
-        "files_on_disk": 3,
-        "size_kb": 12,
-        "ai_analyses": 0,
-        "research_notes": 0
-      },
-      "continue_first": {
-        "title": "Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ.",
-        "cmd": "TIM: Изучи текущее состояние папки «Личное — обучение и релокация», оцени потенциал заработка и выполни первоочередной шаг: Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ."
-      },
-      "recommended_agents": [
-        {
-          "key": "tim",
-          "label": "👑 Директор Тим (План и запуск)",
-          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Личное — обучение и релокация"
-        },
-        {
-          "key": "researcher",
-          "label": "🔎 Разведчик (Аудит папки)",
-          "cmd": "STATUS: Полный статус и инвентаризация файлов Личное — обучение и релокация"
-        },
-        {
-          "key": "marketer",
-          "label": "📈 Маркетолог (Оффер и воронка)",
-          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Личное — обучение и релокация"
-        }
-      ],
-      "research_topic": "Личное — обучение и релокация рынок конкуренты кейсы монетизации 2026",
-      "last_work": {
-        "id": "tim-20261023_161241",
-        "issue_number": 129,
-        "date": "2026-10-23 16:12:41",
-        "project": "Личное — обучение и релокация",
-        "type": "tim_report",
-        "agent": "👑 Директор Тим",
-        "departments": "🔎 Аналитик & Разведчик, 💻 Главный Разработчик, 📊 Стратег, 📈 Маркетолог & Трафик",
-        "title": "Разбор вакансии Digital Marketing Assistant (Remote, AED 5,000/мес) от Jimmy Dante для Vladislav Tundas",
-        "summary": "Тим скоординировал 4 отделов (Аналитик & Разведчик, Главный Разработчик, Стратег, Маркетолог & Трафик) для проекта Личное — обучение и релокация.",
-        "human_action": "",
-        "status": "done"
-      }
-    },
-    {
       "project": "AI Skills & Nobel Stabilization",
       "folder": "AI Skills & Nobel Stabilization",
       "lead_agent": "Macroeconomic Risk & Skills Orchestrator",
@@ -825,6 +771,48 @@
       ],
       "research_topic": "AI Skills & Nobel Stabilization рынок конкуренты кейсы монетизации 2026",
       "last_work": null
+    },
+    {
+      "project": "Alex Brus Питер",
+      "folder": "Alex Brus Питер",
+      "lead_agent": "Construction Quiz & Lead Qualifier",
+      "priority_score": 68,
+      "revenue_potential": "Квиз-калькулятор сметы загородного дома с прогревом лидов и передачей в отдел продаж.",
+      "why_first": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
+      "human_action": "Сверить актуальные расценки за кубометр бруса для калькулятора сметы.",
+      "counts": {
+        "completed_works": 0,
+        "open_tasks": 0,
+        "tim_reports": 0,
+        "saved_photos": 0,
+        "files_on_disk": 1890,
+        "size_kb": 199937,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
+        "cmd": "TIM: Изучи текущее состояние папки «Alex Brus Питер», оцени потенциал заработка и выполни первоочередной шаг: Расчет динамической сметы, сбор контактных данных и квалификация лидов."
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Alex Brus Питер"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Alex Brus Питер"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Alex Brus Питер"
+        }
+      ],
+      "research_topic": "Alex Brus Питер рынок конкуренты кейсы монетизации 2026",
+      "last_work": null
     }
   ],
   "by_agent": [
@@ -835,9 +823,9 @@
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
       "tasks_completed": 60,
-      "last_project": "Alberta",
-      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-      "updated_at": "2026-11-17 15:06:28"
+      "last_project": "Входящие_Офис",
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "updated_at": "2026-11-17 15:07:34"
     },
     {
       "key": "intake",
@@ -845,10 +833,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 145,
+      "tasks_completed": 146,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     {
       "key": "router",
@@ -856,10 +844,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 145,
+      "tasks_completed": 146,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +855,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 145,
+      "tasks_completed": 146,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     {
       "key": "scribe",
@@ -878,10 +866,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     {
       "key": "project_lead",
@@ -889,10 +877,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     {
       "key": "researcher",
@@ -900,10 +888,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 60,
-      "last_project": "Alberta",
-      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
-      "updated_at": "2026-11-17 15:04:01"
+      "tasks_completed": 61,
+      "last_project": "Входящие_Офис",
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "updated_at": "2026-11-17 15:07:34"
     },
     {
       "key": "analyst",
@@ -911,10 +899,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 60,
+      "tasks_completed": 61,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     {
       "key": "developer",
@@ -923,9 +911,9 @@
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
       "tasks_completed": 50,
-      "last_project": "Alberta",
-      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "updated_at": "2026-11-17 15:05:37"
+      "last_project": "Входящие_Офис",
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "updated_at": "2026-11-17 15:07:34"
     },
     {
       "key": "strategist",
@@ -934,9 +922,9 @@
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
       "tasks_completed": 49,
-      "last_project": "Alberta",
-      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-      "updated_at": "2026-11-17 15:06:28"
+      "last_project": "Входящие_Офис",
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "updated_at": "2026-11-17 15:07:34"
     },
     {
       "key": "marketer",
@@ -945,9 +933,9 @@
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
       "tasks_completed": 45,
-      "last_project": "Alberta",
-      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-      "updated_at": "2026-11-17 15:06:28"
+      "last_project": "Входящие_Офис",
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "updated_at": "2026-11-17 15:07:34"
     },
     {
       "key": "creative_producer",
@@ -984,6 +972,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-46",
+      "issue_number": 46,
+      "date": "2026-11-17 15:07:36",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#46 TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to ",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_150705",
+      "issue_number": 46,
+      "date": "2026-11-17 15:07:05",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make ",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "tim-20261117_150606",
       "issue_number": 47,
@@ -1739,30 +1751,6 @@
       "title": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систе",
       "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-180",
-      "issue_number": 180,
-      "date": "2026-11-06 09:22:30",
-      "project": "Юра",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#180 TIM: https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261106_092206",
-      "issue_number": 180,
-      "date": "2026-11-06 09:22:06",
-      "project": "Юра",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Юра». Сформирована прикладная связка монетизации, воронки привлечения и технической сб",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Юра».",
       "status": "done"
     }
   ]
