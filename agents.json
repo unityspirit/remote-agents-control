@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T00:09:56+00:00",
+  "updated": "2026-11-17 14:38:33",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 40,
-      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-08 23:02:03"
+      "tasks_completed": 42,
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-17 14:38:16"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 32,
-      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-08 23:02:03"
+      "tasks_completed": 34,
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-17 14:38:16"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 27,
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "last_project": "Thought/Мысль",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 28,
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-17 14:38:16"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 33,
-      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-08 23:02:03"
+      "tasks_completed": 35,
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-17 14:38:16"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 122,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 47,
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-09 12:40:34"
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-17 14:38:16"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 122,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 47,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 122,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 69,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 69,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     }
   },
   "daemons": {
@@ -202,58 +202,49 @@
       "name": "Слушатель Офиса (laptop_worker.py v18)",
       "emoji": "🔄",
       "project": "Входящие_Офис",
-      "status": "paused_offline_local",
-      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
-      "pid": null
+      "status": "online",
+      "detail": "Слушает облачную очередь GitHub Issues и синхронизирует ветку data 24/7"
     },
     "khl_live_service": {
       "name": "KHL Live Odds v17 (khl_live_service_v17.py)",
       "emoji": "🏒",
       "project": "Юра",
-      "status": "paused_offline_local",
-      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
-      "pid": null
+      "status": "standby",
+      "detail": "Мониторинг live-коэффициентов КХЛ и отправка сигналов 24/7"
     },
     "khl_auto_learning": {
       "name": "KHL Auto-Learning (khl_auto_learning_service.py)",
       "emoji": "🧬",
       "project": "Юра",
-      "status": "paused_offline_local",
-      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
-      "pid": null
+      "status": "standby",
+      "detail": "Автообучение и калибровка вероятностной модели КХЛ"
     },
     "channel_watcher": {
       "name": "Монитор TG-каналов (channel_watcher.py)",
       "emoji": "📡",
       "project": "Автономная_База_Знаний_Каналов",
-      "status": "paused_offline_local",
-      "detail": "Остановлен на ПК (архив v34.0, не запущен в фоне Windows)",
-      "pid": null
-    },
-    "github_cloud_24_7": {
-      "name": "Cloud 24/7 Orchestrator v34.0",
-      "emoji": "☁️",
-      "project": "Global Spirit Group",
-      "status": "online",
-      "detail": "GitHub Actions 24/7: Argon / Carbon / Hydrogen (Antigravity 2.31)"
-    },
-    "tg_bot_poller": {
-      "name": "Telegram HQ Poller v34.0 (@unitybusinessbot)",
-      "emoji": "🤖",
-      "project": "Главный Штаб",
-      "status": "online",
-      "detail": "Запущен локально v34.0 + защитный Cloud Fallback"
+      "status": "scheduled",
+      "detail": "Авто-обход @vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey каждые 45 мин"
     }
   },
   "model_router": {
-    "preferred_provider": "gemini",
-    "configured_providers": [],
-    "active_mode": "Antigravity 2.31 (gemini-4-argon / gemini-4-carbon / gemini-4-hydrogen)",
-    "vps_ready": false,
-    "cost_architecture": "Antigravity 2.31 Tiered Routing (Argon <-> Carbon <-> Hydrogen 1M)",
-    "argon_model": "gemini-4-argon",
-    "carbon_model": "gemini-4-carbon",
-    "hydrogen_model": "gemini-4-hydrogen"
+    "preferred_provider": "auto",
+    "configured_providers": [
+      "gemini"
+    ],
+    "active_mode": "production_api (gemini)",
+    "vps_ready": true,
+    "cost_architecture": "Anthropic 2026 Tiered Routing (Frontier + Economy + Single-Loop)",
+    "frontier_model": "auto-frontier",
+    "economy_model": "auto-economy",
+    "metrics": {
+      "calls_total": 0,
+      "calls_by_provider": {},
+      "last_provider": "auto_standby",
+      "last_model": "auto",
+      "last_call_at": null,
+      "errors_count": 1
+    }
   },
   "statuses": {
     "new": "🆕 Новый",
