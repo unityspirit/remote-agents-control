@@ -16128,6 +16128,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:52:41"
+    },
+    "64": {
+      "id": 64,
+      "created": "2026-11-17 14:53:07",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:53:07",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:53:26",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: [Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+      "urls": [],
+      "project": "Главный Штаб",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:53:26"
     }
   }
 }
