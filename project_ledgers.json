@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:47:18",
+  "updated": "2026-11-17 14:50:36",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3270,9 +3270,9 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Главный Штаб»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 1,
-        "open_tasks": 1,
-        "tim_reports": 1,
+        "completed_works": 6,
+        "open_tasks": 2,
+        "tim_reports": 4,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3308,6 +3308,78 @@
       "research_topic": "Главный Штаб рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-67",
+          "issue_number": 67,
+          "date": "2026-11-17 14:50:27",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#67 TIM: [Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
+          "status": "not_studied"
+        },
+        {
+          "id": "tim-20261117_144946",
+          "issue_number": 67,
+          "date": "2026-11-17 14:49:46",
+          "project": "Главный Штаб",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+          "summary": "Запустить dropshipping‑платформу за 65 секунд, используя готовый SaaS‑решение (например, Shopify + Oberlo/DSers) и интегрировать его в Telegram Mini App для мгновенного заказа. Прибыль: 30‑40 % маржи на товаре, 10 % комиссии за обработку за",
+          "human_action": "Утвердить бюджет в размере $5 000/мес на рекламу и разработку, а также подписать NDA с выбранной dropshipping‑платформой.",
+          "status": "done"
+        },
+        {
+          "id": "card-68",
+          "issue_number": 68,
+          "date": "2026-11-17 14:49:18",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#68 TIM: [Тим] Новая задача как использовать и подключить space bunny model to our system?",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_144844",
+          "issue_number": 68,
+          "date": "2026-11-17 14:48:44",
+          "project": "Главный Штаб",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+          "status": "done"
+        },
+        {
+          "id": "card-69",
+          "issue_number": 69,
+          "date": "2026-11-17 14:48:17",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#69 TIM: [Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_144738",
+          "issue_number": 69,
+          "date": "2026-11-17 14:47:38",
+          "project": "Главный Штаб",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+          "status": "done"
+        },
         {
           "id": "card-77",
           "issue_number": 77,
@@ -4087,7 +4159,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 6,
+        "open_tasks": 5,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -4120,7 +4192,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-9",
+          "id": "hist-8",
           "date": "28.10.2026 07:53",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4130,7 +4202,7 @@
           "status": "done"
         },
         {
-          "id": "hist-10",
+          "id": "hist-9",
           "date": "21.10.2026 08:44",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4206,17 +4278,6 @@
           "status": "not_studied"
         },
         {
-          "id": "card-67",
-          "issue_number": 67,
-          "date": "2026-10-22 08:18:47",
-          "project": "Позновалка",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#67 https://www.instagram.com/p/DdlzMA8iXG7/?psln=dXFjenR2enBlODU= learn and tell me what repos are they talking about? And how do we implement ",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
-          "status": "not_studied"
-        },
-        {
           "id": "card-47",
           "issue_number": 47,
           "date": "2026-10-22 08:18:47",
@@ -4228,7 +4289,7 @@
           "status": "not_studied"
         },
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "20.10.2026 10:45",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4238,7 +4299,7 @@
           "status": "done"
         },
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "19.10.2026 14:58",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4248,7 +4309,7 @@
           "status": "done"
         },
         {
-          "id": "hist-8",
+          "id": "hist-7",
           "date": "05.11.2026 03:27",
           "project": "Позновалка",
           "type": "ai_study",
