@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:04:10",
+  "updated": "2026-11-17 15:05:00",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -10,9 +10,9 @@
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
       "tasks_completed": 60,
-      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:04:01"
+      "last_task": "1. Продукт & Закрытый Клуб",
+      "last_project": "Traffic",
+      "updated_at": "2026-11-17 15:04:52"
     },
     "strategist": {
       "name": "Стратег",
@@ -23,9 +23,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:04:01"
+      "last_task": "1. Продукт & Закрытый Клуб",
+      "last_project": "Traffic",
+      "updated_at": "2026-11-17 15:04:52"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 43,
-      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:04:01"
+      "tasks_completed": 44,
+      "last_task": "1. Продукт & Закрытый Клуб",
+      "last_project": "Traffic",
+      "updated_at": "2026-11-17 15:04:52"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -49,9 +49,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:04:01"
+      "last_task": "1. Продукт & Закрытый Клуб",
+      "last_project": "Traffic",
+      "updated_at": "2026-11-17 15:04:52"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -61,7 +61,7 @@
       "gives": "готовые КП и скрипты закрытия сделок",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 3,
+      "tasks_completed": 2,
       "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
       "last_project": "Unity Inc",
       "updated_at": "2026-11-02 12:38:26"
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 143,
+      "tasks_completed": 144,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 143,
+      "tasks_completed": 144,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 60,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 143,
+      "tasks_completed": 144,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 86,
+      "tasks_completed": 87,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 86,
+      "tasks_completed": 87,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:04:10"
+      "updated_at": "2026-11-17 15:05:00"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-17T22:02:22.484324+00:00",
-      "errors_count": 25
+      "errors_count": 26
     }
   },
   "statuses": {
