@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-17 15:35:46",
+  "updated": "2026-11-17 15:40:54",
   "kpis": {
-    "total_completed_works": 296,
+    "total_completed_works": 297,
     "tim_master_reports": 60,
     "active_projects_count": 58,
     "total_saved_photos": 7,
@@ -17,9 +17,9 @@
       "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
       "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
       "counts": {
-        "completed_works": 8,
+        "completed_works": 7,
         "open_tasks": 1,
-        "tim_reports": 4,
+        "tim_reports": 3,
         "saved_photos": 1,
         "files_on_disk": 47,
         "size_kb": 328,
@@ -49,7 +49,7 @@
       ],
       "research_topic": "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars кейсы выручки",
       "last_work": {
-        "id": "hist-7",
+        "id": "hist-6",
         "date": "29.10.2026 20:12",
         "project": "12 IT Продуктов (Короче Капитан)",
         "type": "ai_study",
@@ -823,9 +823,9 @@
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
       "tasks_completed": 60,
-      "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
-      "updated_at": "2026-11-17 15:09:34"
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "updated_at": "2026-11-17 15:40:42"
     },
     {
       "key": "intake",
@@ -833,10 +833,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 148,
+      "tasks_completed": 149,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:35:44"
+      "updated_at": "2026-11-17 15:40:52"
     },
     {
       "key": "router",
@@ -844,10 +844,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 148,
+      "tasks_completed": 149,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:35:44"
+      "updated_at": "2026-11-17 15:40:52"
     },
     {
       "key": "gatekeeper",
@@ -855,10 +855,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 148,
+      "tasks_completed": 149,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:35:44"
+      "updated_at": "2026-11-17 15:40:52"
     },
     {
       "key": "scribe",
@@ -866,10 +866,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 91,
+      "tasks_completed": 92,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:35:44"
+      "updated_at": "2026-11-17 15:40:52"
     },
     {
       "key": "project_lead",
@@ -877,10 +877,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 91,
+      "tasks_completed": 92,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:35:44"
+      "updated_at": "2026-11-17 15:40:52"
     },
     {
       "key": "researcher",
@@ -888,10 +888,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 62,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-17 15:22:23"
+      "tasks_completed": 63,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "updated_at": "2026-11-17 15:40:42"
     },
     {
       "key": "analyst",
@@ -899,10 +899,21 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 62,
+      "tasks_completed": 63,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:35:44"
+      "updated_at": "2026-11-17 15:40:52"
+    },
+    {
+      "key": "strategist",
+      "name": "Стратег",
+      "emoji": "📊",
+      "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
+      "state": "online",
+      "tasks_completed": 50,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "updated_at": "2026-11-17 15:40:42"
     },
     {
       "key": "developer",
@@ -911,20 +922,9 @@
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
       "tasks_completed": 50,
-      "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
-      "updated_at": "2026-11-17 15:09:34"
-    },
-    {
-      "key": "strategist",
-      "name": "Стратег",
-      "emoji": "📊",
-      "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
-      "state": "online",
-      "tasks_completed": 49,
-      "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
-      "updated_at": "2026-11-17 15:09:34"
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "updated_at": "2026-11-17 15:40:42"
     },
     {
       "key": "marketer",
@@ -932,10 +932,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 45,
-      "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
-      "updated_at": "2026-11-17 15:09:34"
+      "tasks_completed": 46,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "updated_at": "2026-11-17 15:40:42"
     },
     {
       "key": "creative_producer",
@@ -972,6 +972,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-78",
+      "issue_number": 78,
+      "date": "2026-11-17 15:40:44",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#78 TIM: [Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_154009",
+      "issue_number": 78,
+      "date": "2026-11-17 15:40:09",
+      "project": "Главный Штаб",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+      "status": "done"
+    },
     {
       "id": "card-43",
       "issue_number": 43,
@@ -1727,30 +1751,6 @@
       "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
       "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Белый Доминикана». Сформирована прикладная связка монетизации, воронки привлечения и т",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Белый Доминикана».",
-      "status": "done"
-    },
-    {
-      "id": "card-186",
-      "issue_number": 186,
-      "date": "2026-11-08 18:39:46",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#186 TIM: https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261108_183925",
-      "issue_number": 186,
-      "date": "2026-11-08 18:39:25",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
       "status": "done"
     }
   ]
