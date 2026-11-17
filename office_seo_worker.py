@@ -214,6 +214,7 @@ def run_claude_seo_script(script_name: str, args: list[str], timeout: int = 45) 
             cmd,
             cwd=str(CLAUDE_SEO_SCRIPTS),
             env=env,
+            stdin=subprocess.DEVNULL,
             capture_output=True,
             text=True,
             encoding="utf-8",
@@ -262,120 +263,123 @@ def compute_seo_score(page_check: dict[str, Any], parse_data: dict[str, Any] | N
     return max(0, min(100, int(score)))
 
 
+def _audit_single_local_html(item: tuple[str, str]) -> dict[str, Any]:
+    rel_path, base_url = item
+    full_path = OFFICE_DIR / rel_path
+    if not full_path.is_file():
+        return {"file": rel_path, "url": base_url, "error": "file missing"}
+    pc = run_claude_seo_script(
+        "page_checks.py",
+        ["--file", str(full_path), "--base-url", base_url],
+        timeout=25,
+    )
+    ph = run_claude_seo_script(
+        "parse_html.py",
+        [str(full_path), "--json"],
+        timeout=25,
+    )
+    summary = pc.get("summary") or {}
+    findings = pc.get("findings") or []
+    return {
+        "file": rel_path,
+        "url": base_url,
+        "score": compute_seo_score(pc, ph),
+        "title": ph.get("title") or "",
+        "has_description": bool(ph.get("meta_description")),
+        "has_canonical": bool(ph.get("canonical")),
+        "has_og": bool(ph.get("open_graph")),
+        "schema_types": [s.get("@type") for s in (ph.get("schema") or []) if isinstance(s, dict)],
+        "summary": summary,
+        "top_findings": [f.get("id") for f in findings[:6] if isinstance(f, dict)],
+        "error": pc.get("error") or ph.get("error") or "",
+    }
+
+
 def audit_local_html_files() -> list[dict[str, Any]]:
-    """Run Claude SEO page_checks.py & parse_html.py against every Office HTML page."""
-    results = []
-    for rel_path, base_url in LOCAL_HTML_TARGETS:
-        full_path = OFFICE_DIR / rel_path
-        if not full_path.is_file():
-            results.append({"file": rel_path, "url": base_url, "error": "file missing"})
-            continue
-        pc = run_claude_seo_script(
-            "page_checks.py",
-            ["--file", str(full_path), "--base-url", base_url],
-            timeout=30,
-        )
-        ph = run_claude_seo_script(
-            "parse_html.py",
-            [str(full_path), "--json"],
-            timeout=30,
-        )
-        summary = pc.get("summary") or {}
-        findings = pc.get("findings") or []
-        results.append(
-            {
-                "file": rel_path,
-                "url": base_url,
-                "score": compute_seo_score(pc, ph),
-                "title": ph.get("title") or "",
-                "has_description": bool(ph.get("meta_description")),
-                "has_canonical": bool(ph.get("canonical")),
-                "has_og": bool(ph.get("open_graph")),
-                "schema_types": [s.get("@type") for s in (ph.get("schema") or []) if isinstance(s, dict)],
-                "summary": summary,
-                "top_findings": [f.get("id") for f in findings[:6] if isinstance(f, dict)],
-                "error": pc.get("error") or ph.get("error") or "",
-            }
-        )
-    return results
+    """Run Claude SEO page_checks.py & parse_html.py in parallel against every Office HTML page."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        return list(pool.map(_audit_single_local_html, LOCAL_HTML_TARGETS))
+
+
+def _audit_single_live_url(t: dict[str, str]) -> dict[str, Any]:
+    url = t["url"]
+    root = t.get("root") or ""
+    pc = run_claude_seo_script("page_checks.py", ["--url", url], timeout=25)
+    ph = run_claude_seo_script("parse_html.py", ["--url", url, "--json"], timeout=25)
+    score = compute_seo_score(pc, ph)
+    summary = pc.get("summary") or {}
+    findings = [f for f in (pc.get("findings") or []) if isinstance(f, dict)]
+
+    agentic = {}
+    sitemap_info = {}
+    if root:
+        ag = run_claude_seo_script("agentic_check.py", [root, "--json"], timeout=30)
+        sm = run_claude_seo_script("sitemap_discovery.py", [root, "--json"], timeout=25)
+        ag_data = ag.get("data") if isinstance(ag.get("data"), dict) else {}
+        rob = ag_data.get("robots") or {}
+        llms_obj = ag_data.get("llms") or {}
+        pg = ag_data.get("page") or {}
+        robots_found = (rob.get("status") == 200)
+        llms_found = (llms_obj.get("status") == 200)
+        found_sitemaps = sm.get("found") if isinstance(sm.get("found"), list) else []
+
+        def _probe_subpath(rel_file: str) -> bool:
+            try:
+                req = urllib.request.Request(f"{root.rstrip('/')}/{rel_file}", headers={"User-Agent": "GSG-SEO-Probe"})
+                with urllib.request.urlopen(req, timeout=8) as r:
+                    return r.status == 200
+            except Exception:
+                return False
+
+        if not robots_found and urlparse(root).path.strip("/"):
+            robots_found = _probe_subpath("robots.txt")
+        if not llms_found and urlparse(root).path.strip("/"):
+            llms_found = _probe_subpath("llms.txt")
+        if not found_sitemaps and urlparse(root).path.strip("/") and _probe_subpath("sitemap.xml"):
+            found_sitemaps = [{"url": f"{root.rstrip('/')}/sitemap.xml", "status_code": 200, "kind": "urlset"}]
+
+        agentic = {
+            "robots_found": robots_found,
+            "llms_found": llms_found,
+            "llms_verdict": llms_obj.get("lighthouse") or "",
+            "server_words": pg.get("words_without_js"),
+            "error": ag.get("error") or "",
+        }
+        sitemap_info = {
+            "count": len(found_sitemaps),
+            "first_status": found_sitemaps[0].get("status_code") if found_sitemaps else None,
+            "first_url": found_sitemaps[0].get("url") if found_sitemaps else "",
+            "error": sm.get("error") or "",
+        }
+
+    return {
+        "name": t.get("name") or url,
+        "url": url,
+        "role": t.get("role") or "custom",
+        "status_code": pc.get("status_code"),
+        "score": score,
+        "title": ph.get("title") or "",
+        "has_description": bool(ph.get("meta_description")),
+        "has_canonical": bool(ph.get("canonical")),
+        "has_og": bool(ph.get("open_graph")),
+        "schema_count": len(ph.get("schema") or []),
+        "summary": summary,
+        "top_findings": [f.get("id") for f in findings[:6]],
+        "agentic": agentic,
+        "sitemap": sitemap_info,
+        "error": pc.get("error") or ph.get("error") or "",
+    }
 
 
 def audit_live_urls(targets: list[dict[str, str]] | None = None) -> list[dict[str, Any]]:
-    """Audit live Office and Brand domains via page_checks, agentic_check, sitemap_discovery."""
+    """Audit live Office and Brand domains in parallel via page_checks, parse_html, agentic_check, sitemap_discovery."""
+    from concurrent.futures import ThreadPoolExecutor
+
     targets = targets or LIVE_SITE_TARGETS
-    results = []
-    for t in targets:
-        url = t["url"]
-        root = t.get("root") or ""
-        pc = run_claude_seo_script("page_checks.py", ["--url", url], timeout=35)
-        ph = run_claude_seo_script("parse_html.py", ["--url", url, "--json"], timeout=35)
-        score = compute_seo_score(pc, ph)
-        summary = pc.get("summary") or {}
-        findings = [f for f in (pc.get("findings") or []) if isinstance(f, dict)]
-
-        agentic = {}
-        sitemap_info = {}
-        if root:
-            ag = run_claude_seo_script("agentic_check.py", [root, "--json"], timeout=40)
-            sm = run_claude_seo_script("sitemap_discovery.py", [root, "--json"], timeout=35)
-            ag_data = ag.get("data") if isinstance(ag.get("data"), dict) else {}
-            rob = ag_data.get("robots") or {}
-            llms_obj = ag_data.get("llms") or {}
-            pg = ag_data.get("page") or {}
-            robots_found = (rob.get("status") == 200)
-            llms_found = (llms_obj.get("status") == 200)
-            found_sitemaps = sm.get("found") if isinstance(sm.get("found"), list) else []
-
-            # GitHub Pages project sites serve robots/llms/sitemap under their subpath (<root>/...)
-            def _probe_subpath(rel_file: str) -> bool:
-                try:
-                    req = urllib.request.Request(f"{root.rstrip('/')}/{rel_file}", headers={"User-Agent": "GSG-SEO-Probe"})
-                    with urllib.request.urlopen(req, timeout=8) as r:
-                        return r.status == 200
-                except Exception:
-                    return False
-
-            if not robots_found and urlparse(root).path.strip("/"):
-                robots_found = _probe_subpath("robots.txt")
-            if not llms_found and urlparse(root).path.strip("/"):
-                llms_found = _probe_subpath("llms.txt")
-            if not found_sitemaps and urlparse(root).path.strip("/") and _probe_subpath("sitemap.xml"):
-                found_sitemaps = [{"url": f"{root.rstrip('/')}/sitemap.xml", "status_code": 200, "kind": "urlset"}]
-
-            agentic = {
-                "robots_found": robots_found,
-                "llms_found": llms_found,
-                "llms_verdict": llms_obj.get("lighthouse") or "",
-                "server_words": pg.get("words_without_js"),
-                "error": ag.get("error") or "",
-            }
-            sitemap_info = {
-                "count": len(found_sitemaps),
-                "first_status": found_sitemaps[0].get("status_code") if found_sitemaps else None,
-                "first_url": found_sitemaps[0].get("url") if found_sitemaps else "",
-                "error": sm.get("error") or "",
-            }
-
-        results.append(
-            {
-                "name": t.get("name") or url,
-                "url": url,
-                "role": t.get("role") or "custom",
-                "status_code": pc.get("status_code"),
-                "score": score,
-                "title": ph.get("title") or "",
-                "has_description": bool(ph.get("meta_description")),
-                "has_canonical": bool(ph.get("canonical")),
-                "has_og": bool(ph.get("open_graph")),
-                "schema_count": len(ph.get("schema") or []),
-                "summary": summary,
-                "top_findings": [f.get("id") for f in findings[:6]],
-                "agentic": agentic,
-                "sitemap": sitemap_info,
-                "error": pc.get("error") or ph.get("error") or "",
-            }
-        )
-    return results
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        return list(pool.map(_audit_single_live_url, targets))
 
 
 def sync_local_sitemap_and_llms() -> dict[str, Any]:
