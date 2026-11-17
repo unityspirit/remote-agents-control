@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T21:54:50.317751+00:00",
+  "updated_at": "2026-11-17T21:55:56.197074+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3801,9 +3801,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 250,
+      "evidence_count": 251,
       "scope": "global",
-      "last_updated": "2026-11-17T14:54:48.368661"
+      "last_updated": "2026-11-17T14:55:53.944924"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -3811,9 +3811,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 117,
+      "evidence_count": 118,
       "scope": "global",
-      "last_updated": "2026-11-17T14:53:03.434531"
+      "last_updated": "2026-11-17T14:55:53.945530"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -3831,9 +3831,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 158,
+      "evidence_count": 159,
       "scope": "global",
-      "last_updated": "2026-11-17T14:54:48.371247"
+      "last_updated": "2026-11-17T14:55:53.947917"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -3881,9 +3881,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 277,
+      "evidence_count": 278,
       "scope": "global",
-      "last_updated": "2026-11-17T14:54:48.372099"
+      "last_updated": "2026-11-17T14:55:53.947917"
     },
     {
       "id": "task-custom-request",
