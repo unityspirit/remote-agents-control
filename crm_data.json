@@ -1,7 +1,26 @@
 {
-  "updated_at": "2026-11-17 15:08:19",
+  "updated_at": "2026-11-17 15:08:22",
   "version": "10.0",
   "knowledge_base": [
+    {
+      "id": "kb-20261117_150822",
+      "issue": "Auto",
+      "category": "Проект: True 1 Team",
+      "title": "📷 Изучить фото (3 шт.) для True 1 Team",
+      "source_url": "",
+      "secondary_url": "",
+      "date": "17.11.2026",
+      "summary": "📷 Сохранение и распознавание прикреплённых фотографий\n\n 📷 Фото 1: photo_45_1.jpg\n- Сохранено в папку: C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_1.jpg\n- Облачное превью: ![Фото 1](https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg)\n- Распознанный с фото текст (OCR):\n\nРазмер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d bluepr",
+      "agent": "Autonomous Project Agent",
+      "domain": "[[экосистема-ai-агентов-alberta-ruflo]]",
+      "related_projects": [
+        "Позновалка"
+      ],
+      "action_items": [
+        "Сохранено в Note_20261117_150822.md",
+        "Ведущий агент: Autonomous Project Agent"
+      ]
+    },
     {
       "id": "kb-20261117_150819",
       "issue": "Auto",
