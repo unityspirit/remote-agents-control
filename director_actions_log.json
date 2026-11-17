@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1794959721311",
+      "ts": "2026-11-17T23:55:21.311827+00:00",
+      "time_local": "16:55:21",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_follow_up_step",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#79): Как нашей компании это выгодно — контекст: https://www.outsource.gov.uz/en?fbclid=IwVERTSAVpyANleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABH30T3YAMFKa3svSf7JLOuE8bxh2S",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1794959544009",
       "ts": "2026-11-17T23:52:24.009888+00:00",
       "time_local": "16:52:24",
@@ -145,5 +158,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-17T23:52:24.009888+00:00"
+  "updated_at": "2026-11-17T23:55:21.311827+00:00"
 }
