@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:59:27",
+  "updated": "2026-11-17 15:00:30",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 57,
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+      "tasks_completed": 58,
+      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:58:15"
+      "updated_at": "2026-11-17 15:00:22"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 47,
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+      "tasks_completed": 48,
+      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:58:15"
+      "updated_at": "2026-11-17 15:00:22"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 40,
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+      "tasks_completed": 41,
+      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:58:15"
+      "updated_at": "2026-11-17 15:00:22"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 47,
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+      "tasks_completed": 48,
+      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:58:15"
+      "updated_at": "2026-11-17 15:00:22"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 138,
+      "tasks_completed": 139,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 57,
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+      "tasks_completed": 58,
+      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:58:15"
+      "updated_at": "2026-11-17 15:00:22"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 138,
+      "tasks_completed": 139,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 57,
+      "tasks_completed": 58,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 138,
+      "tasks_completed": 139,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 82,
+      "tasks_completed": 83,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 82,
+      "tasks_completed": 83,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:59:27"
+      "updated_at": "2026-11-17 15:00:30"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-17T21:59:19.219782+00:00",
-      "errors_count": 20
+      "errors_count": 21
     }
   },
   "statuses": {
