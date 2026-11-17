@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:55:39",
+  "updated": "2026-11-17 14:56:12",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3025,7 +3025,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 46,
-        "open_tasks": 37,
+        "open_tasks": 38,
         "tim_reports": 20,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -3062,6 +3062,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-61",
+          "issue_number": 61,
+          "date": "2026-11-17 14:56:05",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#61 https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #61 → Traffic» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
         {
           "id": "card-62",
           "issue_number": 62,
@@ -3263,19 +3274,6 @@
           "agent": "🛡 Контролёр",
           "title": "#186 TIM: https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&",
           "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261108_183925",
-          "issue_number": 186,
-          "date": "2026-11-08 18:39:25",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
-          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
           "status": "done"
         }
       ]
