@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-17 14:55:39",
+  "updated": "2026-11-17 14:56:12",
   "kpis": {
     "total_completed_works": 278,
     "tim_master_reports": 55,
     "active_projects_count": 58,
     "total_saved_photos": 1,
-    "awaiting_human_count": 50
+    "awaiting_human_count": 51
   },
   "priority_continuations": [
     {
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 133,
+      "tasks_completed": 134,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 133,
+      "tasks_completed": 134,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 133,
+      "tasks_completed": 134,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 80,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 80,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     {
       "key": "researcher",
@@ -900,7 +900,7 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_project": "Входящие_Офис",
       "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
       "updated_at": "2026-11-17 14:55:24"
@@ -911,10 +911,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     {
       "key": "strategist",
@@ -984,6 +984,17 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-61",
+      "issue_number": 61,
+      "date": "2026-11-17 14:56:05",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#61 https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #61 → Traffic» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
     {
       "id": "card-62",
       "issue_number": 62,
@@ -1746,19 +1757,6 @@
       "agent": "🛡 Контролёр",
       "title": "#33 TIM: Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261103_235819",
-      "issue_number": 33,
-      "date": "2026-11-03 23:58:19",
-      "project": "Alberta",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
-      "title": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
-      "summary": "Мы будем монетизировать контент и данные из папки, создавая платный сервис аналитики и подписку на эксклюзивные видео и вебинары. В течение 30 дней реализуем MVP, привлекем 200 подписчиков и достигнем оборота 500 000 ₽. Далее масштабируем ч",
-      "human_action": "Утвердить бюджет 200 000 ₽ на исследовательскую и стратегическую работу и назначить ответственного.",
       "status": "done"
     }
   ]
