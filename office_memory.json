@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-16T22:35:26.407334Z",
+  "updated_at": "2026-11-17T22:40:16.881818Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -241,6 +241,13 @@
       "project": "Главный Штаб",
       "issue": 77,
       "summary": "https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5: Здравия! Тим на связи. Анализ задачи #77 завершен.\n\n### Анализ контента\nПо ссылке `https://www.instagram.com/reel/DfQWuxWTUul/` (автор: *tonythetechie*):\n* **Суть:** Видео является манифестом «от идеи к реализации». Автор проводит параллель между подростковым увлечением кастомиза"
+    },
+    {
+      "id": "fact-dir-v343-iss78",
+      "ts": "2026-11-17T22:40:12.111123Z",
+      "project": "Главный Штаб",
+      "issue": 78,
+      "summary": "https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3: Здравия! Тим на связи. Главный Штаб, Задача #78.\n\nПоскольку автоматический парсер Instagram вернул ошибку **HTTP 429 (Too Many Requests)**, прямое чтение содержимого ссылки `https://www.instagram.com/reel/DfzPj_5NrgN/` в моменте заблокировано защитой платформы от частых запросов."
     }
   ],
   "projects": {
