@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-17T22:40:16.881818Z",
+  "updated_at": "2026-11-17T23:52:22.341249Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -248,6 +248,13 @@
       "project": "Главный Штаб",
       "issue": 78,
       "summary": "https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3: Здравия! Тим на связи. Главный Штаб, Задача #78.\n\nПоскольку автоматический парсер Instagram вернул ошибку **HTTP 429 (Too Many Requests)**, прямое чтение содержимого ссылки `https://www.instagram.com/reel/DfzPj_5NrgN/` в моменте заблокировано защитой платформы от частых запросов."
+    },
+    {
+      "id": "fact-dir-v343-iss79",
+      "ts": "2026-11-17T23:52:18.230686Z",
+      "project": "Главный Штаб",
+      "issue": 79,
+      "summary": "https://www.outsource.gov.uz/en?fbclid=IwVERTSAVpyANleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABH30T3YAMFKa3svSf7JLOuE8bxh2StjQC9LlOkxjIgaTAEyNusazZflTlPLgi_aem_eiT-O1t22-dAudlzRwVrEw: Здравия! Тим на связи. Главный Штаб, Задача #79.\n\nПо ссылке `outsource.gov.uz/en` загружен официальный национальный портал **IT Outsourcing & BPO Portal | Outsource to Uzbekistan** (подразделение IT Park Uzbekistan). \n\n### Ключевые данные с портала:\n* "
     }
   ],
   "projects": {
