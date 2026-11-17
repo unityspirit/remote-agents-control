@@ -16182,6 +16182,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:54:27"
+    },
+    "62": {
+      "id": 62,
+      "created": "2026-11-17 14:54:52",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:54:52",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:55:29",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "urls": [
+        "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:55:29"
     }
   }
 }
