@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:40:38",
+  "updated": "2026-11-17 14:42:22",
   "kpis": {
-    "total_completed_works": 253,
-    "tim_master_reports": 43,
+    "total_completed_works": 255,
+    "tim_master_reports": 44,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 43,
+      "tasks_completed": 44,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
-      "updated_at": "2026-11-17 14:40:19"
+      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "updated_at": "2026-11-17 14:42:10"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 123,
+      "tasks_completed": 124,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:40:36"
+      "updated_at": "2026-11-17 14:42:21"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 123,
+      "tasks_completed": 124,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:40:36"
+      "updated_at": "2026-11-17 14:42:21"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 123,
+      "tasks_completed": 124,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:40:36"
+      "updated_at": "2026-11-17 14:42:21"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 70,
+      "tasks_completed": 71,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:40:36"
+      "updated_at": "2026-11-17 14:42:21"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 70,
+      "tasks_completed": 71,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:40:36"
+      "updated_at": "2026-11-17 14:42:21"
     },
     {
       "key": "researcher",
@@ -900,10 +900,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
-      "updated_at": "2026-11-17 14:40:20"
+      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "updated_at": "2026-11-17 14:42:10"
     },
     {
       "key": "analyst",
@@ -911,10 +911,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:40:36"
+      "updated_at": "2026-11-17 14:42:21"
     },
     {
       "key": "developer",
@@ -961,6 +961,17 @@
       "updated_at": "2026-11-02 12:30:45"
     },
     {
+      "key": "creative_producer",
+      "name": "Креативный Продюсер",
+      "emoji": "🎬",
+      "role": "Media Director: сценарии, Google VEO 3.1 видеопромпты, международная дистрибуция треков и кино Светланы.",
+      "state": "online",
+      "tasks_completed": 4,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "updated_at": "2026-11-17 14:42:10"
+    },
+    {
       "key": "sales_closer",
       "name": "B2B Продажи & Офферы",
       "emoji": "🤝",
@@ -970,20 +981,33 @@
       "last_project": "Unity Inc",
       "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
       "updated_at": "2026-11-02 12:38:26"
-    },
-    {
-      "key": "creative_producer",
-      "name": "Креативный Продюсер",
-      "emoji": "🎬",
-      "role": "Media Director: сценарии, Google VEO 3.1 видеопромпты, международная дистрибуция треков и кино Светланы.",
-      "state": "online",
-      "tasks_completed": 3,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
-      "updated_at": "2026-11-08 13:26:30"
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-75",
+      "issue_number": 75,
+      "date": "2026-11-17 14:42:14",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#75 TIM: https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_144135",
+      "issue_number": 75,
+      "date": "2026-11-17 14:41:35",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
+      "title": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-76",
       "issue_number": 76,
@@ -1718,30 +1742,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#12 TIM: Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261102_124527",
-      "issue_number": 12,
-      "date": "2026-11-02 12:45:27",
-      "project": "Alberta",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик",
-      "title": "Собери план запуска и монетизации воронки Alberta Shirani на эту неделю",
-      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Стратег, Маркетолог & Трафик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
-      "status": "done"
-    },
-    {
-      "id": "card-13",
-      "issue_number": 13,
-      "date": "2026-11-02 12:43:12",
-      "project": "Alberta",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#13 TIM: Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
       "summary": "✅ Готово",
       "status": "done"
     }
