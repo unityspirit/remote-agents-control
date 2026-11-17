@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:50:36",
+  "updated": "2026-11-17 14:52:50",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3270,13 +3270,13 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Главный Штаб»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 6,
+        "completed_works": 9,
         "open_tasks": 2,
-        "tim_reports": 4,
+        "tim_reports": 5,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 0,
+        "ai_analyses": 2,
         "research_notes": 0
       },
       "continue_first": {
@@ -3308,6 +3308,41 @@
       "research_topic": "Главный Штаб рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-65",
+          "issue_number": 65,
+          "date": "2026-11-17 14:52:41",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#65 TIM: [Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_145201",
+          "issue_number": 65,
+          "date": "2026-11-17 14:52:01",
+          "project": "Главный Штаб",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+          "status": "done"
+        },
+        {
+          "id": "card-66",
+          "issue_number": 66,
+          "date": "2026-11-17 14:51:31",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#66 DIRECTOR_ТИМ: Выполнение шага #1 (Главный Штаб)",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
         {
           "id": "card-67",
           "issue_number": 67,
@@ -3402,6 +3437,16 @@
           "title": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
           "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+          "status": "done"
+        },
+        {
+          "id": "hist-11",
+          "date": "17.11.2026 14:51",
+          "project": "Главный Штаб",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "DIRECTOR_ТИМ: Выполнение шага #1 (Главный Штаб)",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
           "status": "done"
         }
       ]
