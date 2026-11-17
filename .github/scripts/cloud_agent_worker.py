@@ -561,11 +561,16 @@ def call_hydrogen_orchestrator(models_token, system_prompt, user_prompt, persona
     tier_name, primary_model, thinking_level = select_antigravity_tier(prov, persona_name=persona_name, task_text=task_text, mode=mode)
     cascade = []
     for t_name, m_name in (
+        ("flash", "gemini-flash-latest"),
+        ("flash_lite", "gemini-flash-lite-latest"),
+        ("carbon_lite", "gemini-3.1-flash-lite-preview"),
         (tier_name, primary_model),
         ("argon", prov["argon_model"]),
         ("hydrogen", prov["model"]),
-        *((("flash_lite", "gemini-flash-lite-latest"), ("argon_backup", "gemini-3.1-pro-preview")) if prov["provider"] == "gemini" else ()),
+        *((("argon_backup", "gemini-3.1-pro-preview"),) if prov["provider"] == "gemini" else ()),
     ):
+        if prov["provider"] != "gemini" and str(m_name).startswith("gemini-"):
+            continue
         if m_name and all(x[1] != m_name for x in cascade):
             cascade.append((t_name, m_name))
 
@@ -1159,11 +1164,21 @@ def main():
     except Exception:
         pass
 
+    local_daemon_online = False
+    try:
+        hb_pre, _ = fetch_data_json(repo, gh_token, "local_daemon_heartbeat.json", default_val=dict)
+        hb_pre_ts = float((hb_pre or {}).get("ts") or 0)
+        local_daemon_online = bool(hb_pre_ts and (time.time() - hb_pre_ts) <= 240)
+    except Exception:
+        local_daemon_online = False
+
     executed_tasks = []
     study_result = None
 
     # 1. Handle immediate issue / issue_comment / targeted workflow_dispatch
     target_issue_nums = []
+    trigger_comment_body = str((event_payload.get("comment") or {}).get("body") or "")
+    has_explicit_directive = any(k in trigger_comment_body.lower() for k in ("/ceo", "/critic", "/viral", "/strategy", "/expert"))
     if event_name in ("issues", "issue_comment") and event_payload.get("issue"):
         target_issue_nums.append((event_payload["issue"]["number"], event_payload.get("comment", {}).get("id")))
     elif dispatch_issue.isdigit():
@@ -1174,10 +1189,26 @@ def main():
             issue = gh_request(f"/repos/{repo}/issues/{num}", gh_token)
             if should_skip_issue(issue):
                 continue
+            if event_name in ("issues", "issue_comment"):
+                if issue.get("state") == "closed" and not has_explicit_directive:
+                    print(f"[Skip closed issue #{num}] no explicit directive", flush=True)
+                    continue
+                if "ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ ДИРЕКТОРА ТИМА" in trigger_comment_body or "<!-- director-v34" in trigger_comment_body:
+                    print(f"[Skip automated Director report on #{num}]", flush=True)
+                    continue
+                if event_name == "issues" and local_daemon_online and "<!-- NLU_GOAL:" in (issue.get("body") or ""):
+                    print(f"[Defer #{num}] local daemon v34.3 online for NLU_GOAL task", flush=True)
+                    continue
             trig = f"issue:{num}:comment:{cid or 'open'}"
             if trig in (mem.get("processed_triggers") or []):
                 continue
             comments = gh_request(f"/repos/{repo}/issues/{num}/comments?per_page=30", gh_token)
+            if event_name == "issues" and any("<!-- director-v34" in (c.get("body") or "") or "ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ ДИРЕКТОРА ТИМА" in (c.get("body") or "") for c in comments):
+                print(f"[Skip #{num}] already answered by Director deliverable", flush=True)
+                continue
+            if event_name == "issue_comment" and not has_explicit_directive and any("<!-- director-v34" in (c.get("body") or "") for c in comments):
+                print(f"[Skip comment on #{num}] Director deliverable already present and no slash directive", flush=True)
+                continue
             res = execute_issue_task(repo, gh_token, models_token, issue, comments, mem, trig)
             executed_tasks.append(res)
         except Exception as exc:
@@ -1198,7 +1229,7 @@ def main():
                 last_agent_idx = -1
                 for idx, cm in enumerate(comments):
                     cm_b = cm.get("body") or ""
-                    if "<!-- cloud-agent-v" in cm_b:
+                    if "<!-- cloud-agent-v" in cm_b or "<!-- director-v34" in cm_b or "ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ ДИРЕКТОРА ТИМА" in cm_b:
                         last_agent_idx = idx
                     elif UI_NOTE_MARKER not in cm_b:
                         last_human_idx = idx
@@ -1236,7 +1267,7 @@ def main():
     prov_info = resolve_llm_provider(models_token=models_token)
     if prov_info and _RUNTIME_EVAL_STATS.get("llm_calls_attempted", 0) == 0 and event_name == "workflow_dispatch":
         call_hydrogen_orchestrator(models_token, "Reply with one word: OK.", "Health check", persona_name="healthcheck", task_text="ping", mode="task")
-    local_daemon_online = tg_poll_status.get("reason") == "local_daemon_online"
+    local_daemon_online = local_daemon_online or (tg_poll_status.get("reason") == "local_daemon_online")
     active_tier = executed_tasks[0].get("tier") if executed_tasks else (study_result.get("tier") if study_result else ("argon+hydrogen" if prov_info else "fallback"))
     if executed_tasks:
         transport_used = executed_tasks[0].get("transport")
@@ -1260,11 +1291,10 @@ def main():
     elif prov_info and not llm_live_ok and llm_calls_n > 0:
         effective_provider = "structured_fallback"
         transport_used = "fallback"
-        err_note = (_RUNTIME_EVAL_STATS.get("last_llm_error") or "API unavailable")[:60]
-        model_engine = f"structured-cloud-analyzer (fallback: {err_note}; awaiting GEMINI_API_KEY)"
+        model_engine = "structured-cloud-analyzer (добавьте GEMINI_API_KEY в GitHub Secrets)"
     elif prov_info and prov_info["provider"] == "github_models":
         effective_provider = "github_models_unverified"
-        model_engine = f"structured-cloud-analyzer ({prov_info['model']} unverified — awaiting GEMINI_API_KEY)"
+        model_engine = "structured-cloud-analyzer (добавьте GEMINI_API_KEY в GitHub Secrets)"
     else:
         effective_provider = "structured"
         model_engine = "structured-cloud-analyzer (awaiting GEMINI_API_KEY)"
@@ -1319,8 +1349,15 @@ def main():
         except Exception as exc:
             print(f"[Report save warn] {exc}", flush=True)
 
-    # 6. Notify @unitybusinessbot with completed work / study report
-    should_notify = bool(executed_tasks or study_result or event_name == "workflow_dispatch" or (mem["cycle_count"] % 16 == 0))
+    # 6. Notify @unitybusinessbot with completed work / study report (avoid noisy fallback spam when local daemon is online)
+    has_live_exec = any(t.get("transport") not in ("fallback", "none", "structured") for t in executed_tasks)
+    should_notify = bool(
+        has_live_exec
+        or (executed_tasks and not local_daemon_online)
+        or (study_result and not local_daemon_online)
+        or event_name == "workflow_dispatch"
+        or (mem["cycle_count"] % 16 == 0)
+    )
     if should_notify and bot_token and owner_chat_id:
         tg_lines = [
             f"⚛️ <b>ОТЧЁТ ANTIGRAVITY 2.31 CLOUD 24/7 (v{OFFICE_VERSION} · Цикл #{mem['cycle_count']})</b>",
