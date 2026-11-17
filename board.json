@@ -16214,6 +16214,77 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:55:29"
+    },
+    "61": {
+      "id": 61,
+      "created": "2026-11-17 14:55:58",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:55:58",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:55:59",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-17 14:56:00",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-17 14:56:02",
+          "from": "router",
+          "to": "analyst",
+          "note": "Проект: Traffic (уверенность high)"
+        },
+        {
+          "t": "2026-11-17 14:56:02",
+          "from": "analyst",
+          "to": "human",
+          "note": "Предложение готово — ждёт утверждения"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 5413
+      },
+      "title": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
+      "urls": [
+        "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 14:56:05",
+      "suggested_project": "Traffic",
+      "route": {
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Traffic",
+            39
+          ],
+          [
+            "Белый Доминикана",
+            14
+          ]
+        ]
+      },
+      "pending_file": "Карточка_61_https___go_shadowpages_io_th.md",
+      "raw_file": "raw_61_20261117_145559_https___go_shadowpages_io_th.md",
+      "next": {
+        "who": "human",
+        "what": "«✅ Утверждаю #61 → Traffic» или выбрать другой проект"
+      }
     }
   }
 }
