@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-17 15:08:32",
+  "updated": "2026-11-17 15:09:44",
   "kpis": {
-    "total_completed_works": 295,
+    "total_completed_works": 296,
     "tim_master_reports": 60,
     "active_projects_count": 58,
     "total_saved_photos": 7,
@@ -120,9 +120,9 @@
       "why_first": "Единый двигатель продаж всего холдинга: связка автоворонок, холодного аутрича и коротких Reels/Shorts питает лидами B2B сайты, Доминикану и Micro-SaaS.",
       "human_action": "Выбрать приоритетную нишу для холодного аутрича и утвердить оффер с гарантией.",
       "counts": {
-        "completed_works": 12,
+        "completed_works": 11,
         "open_tasks": 0,
-        "tim_reports": 3,
+        "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 16,
         "size_kb": 210,
@@ -152,7 +152,7 @@
       ],
       "research_topic": "B2B лидогенерация Pay on Results холодный аутрич Telegram конверсионные связки 2026",
       "last_work": {
-        "id": "hist-12",
+        "id": "hist-11",
         "date": "23.10.2026 19:09",
         "project": "Traffic",
         "type": "ai_study",
@@ -824,8 +824,8 @@
       "state": "online",
       "tasks_completed": 60,
       "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
-      "updated_at": "2026-11-17 15:07:34"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
+      "updated_at": "2026-11-17 15:09:34"
     },
     {
       "key": "intake",
@@ -833,10 +833,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 147,
+      "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:08:31"
+      "updated_at": "2026-11-17 15:09:43"
     },
     {
       "key": "router",
@@ -844,10 +844,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 147,
+      "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:08:31"
+      "updated_at": "2026-11-17 15:09:43"
     },
     {
       "key": "gatekeeper",
@@ -855,10 +855,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 147,
+      "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:08:31"
+      "updated_at": "2026-11-17 15:09:43"
     },
     {
       "key": "scribe",
@@ -866,10 +866,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 90,
+      "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:08:31"
+      "updated_at": "2026-11-17 15:09:43"
     },
     {
       "key": "project_lead",
@@ -877,10 +877,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 90,
+      "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:08:31"
+      "updated_at": "2026-11-17 15:09:43"
     },
     {
       "key": "researcher",
@@ -888,10 +888,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 61,
-      "last_project": "True 1 Team",
-      "last_task": "Изучено фото (3 шт.): 📷 Изучить фото (3 шт.) для True 1 Team",
-      "updated_at": "2026-11-17 15:08:12"
+      "tasks_completed": 62,
+      "last_project": "Входящие_Офис",
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
+      "updated_at": "2026-11-17 15:09:34"
     },
     {
       "key": "analyst",
@@ -899,10 +899,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 61,
+      "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:08:31"
+      "updated_at": "2026-11-17 15:09:43"
     },
     {
       "key": "developer",
@@ -912,8 +912,8 @@
       "state": "online",
       "tasks_completed": 50,
       "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
-      "updated_at": "2026-11-17 15:07:34"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
+      "updated_at": "2026-11-17 15:09:34"
     },
     {
       "key": "strategist",
@@ -923,8 +923,8 @@
       "state": "online",
       "tasks_completed": 49,
       "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
-      "updated_at": "2026-11-17 15:07:34"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
+      "updated_at": "2026-11-17 15:09:34"
     },
     {
       "key": "marketer",
@@ -934,8 +934,8 @@
       "state": "online",
       "tasks_completed": 45,
       "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
-      "updated_at": "2026-11-17 15:07:34"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
+      "updated_at": "2026-11-17 15:09:34"
     },
     {
       "key": "creative_producer",
@@ -972,6 +972,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-43",
+      "issue_number": 43,
+      "date": "2026-11-17 15:09:36",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#43 TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_150859",
+      "issue_number": 43,
+      "date": "2026-11-17 15:08:59",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_sour",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-45",
       "issue_number": 45,
@@ -1726,30 +1750,6 @@
       "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
       "title": "https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&gad_c",
       "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-185",
-      "issue_number": 185,
-      "date": "2026-11-08 16:38:06",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#185 TIM: https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тож",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261108_163746",
-      "issue_number": 185,
-      "date": "2026-11-08 16:37:46",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
-      "title": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
-      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
       "status": "done"
     }
