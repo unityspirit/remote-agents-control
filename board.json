@@ -15916,6 +15916,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:40:25"
+    },
+    "75": {
+      "id": 75,
+      "created": "2026-11-17 14:41:02",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:41:02",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:42:14",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "urls": [
+        "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:42:14"
     }
   }
 }
