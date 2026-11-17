@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:58:25",
+  "updated": "2026-11-17 14:59:28",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3025,7 +3025,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 50,
-        "open_tasks": 39,
+        "open_tasks": 40,
         "tim_reports": 22,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -3062,6 +3062,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-57",
+          "issue_number": 57,
+          "date": "2026-11-17 14:59:21",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#57 https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue",
+          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #57 → …»",
+          "status": "need_project"
+        },
         {
           "id": "card-58",
           "issue_number": 58,
@@ -3262,19 +3273,6 @@
           "title": "#74 TIM: https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html l",
           "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»",
           "status": "not_studied"
-        },
-        {
-          "id": "tim-20261117_144301",
-          "issue_number": 74,
-          "date": "2026-11-17 14:43:01",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
-          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
         }
       ]
     },
