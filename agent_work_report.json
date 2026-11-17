@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:49:27",
+  "updated": "2026-11-17 14:50:36",
   "kpis": {
-    "total_completed_works": 266,
-    "tim_master_reports": 51,
+    "total_completed_works": 267,
+    "tim_master_reports": 52,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -534,7 +534,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 6,
+        "open_tasks": 5,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -565,7 +565,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-9",
+        "id": "hist-8",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
-      "updated_at": "2026-11-17 14:49:16"
+      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "updated_at": "2026-11-17 14:50:25"
     },
     {
       "key": "intake",
@@ -848,7 +848,7 @@
       "tasks_completed": 128,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:49:25"
+      "updated_at": "2026-11-17 14:50:35"
     },
     {
       "key": "router",
@@ -859,7 +859,7 @@
       "tasks_completed": 128,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:49:25"
+      "updated_at": "2026-11-17 14:50:35"
     },
     {
       "key": "gatekeeper",
@@ -870,7 +870,7 @@
       "tasks_completed": 128,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:49:25"
+      "updated_at": "2026-11-17 14:50:35"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 75,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:49:25"
+      "updated_at": "2026-11-17 14:50:35"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 75,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:49:25"
+      "updated_at": "2026-11-17 14:50:35"
     },
     {
       "key": "researcher",
@@ -914,7 +914,7 @@
       "tasks_completed": 51,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:49:25"
+      "updated_at": "2026-11-17 14:50:35"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 42,
+      "tasks_completed": 43,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
-      "updated_at": "2026-11-17 14:49:16"
+      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "updated_at": "2026-11-17 14:50:25"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 41,
+      "tasks_completed": 42,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
-      "updated_at": "2026-11-17 14:49:16"
+      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "updated_at": "2026-11-17 14:50:25"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 35,
+      "tasks_completed": 36,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
-      "updated_at": "2026-11-17 14:49:16"
+      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "updated_at": "2026-11-17 14:50:25"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,19 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "tim-20261117_144946",
+      "issue_number": 67,
+      "date": "2026-11-17 14:49:46",
+      "project": "Главный Штаб",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "summary": "Запустить dropshipping‑платформу за 65 секунд, используя готовый SaaS‑решение (например, Shopify + Oberlo/DSers) и интегрировать его в Telegram Mini App для мгновенного заказа. Прибыль: 30‑40 % маржи на товаре, 10 % комиссии за обработку за",
+      "human_action": "Утвердить бюджет в размере $5 000/мес на рекламу и разработку, а также подписать NDA с выбранной dropshipping‑платформой.",
+      "status": "done"
+    },
     {
       "id": "card-68",
       "issue_number": 68,
@@ -1743,17 +1756,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#1 AUTH_SYNC: Быстрая заявка REQ-610711 (Plus / @gmail)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-2",
-      "issue_number": 2,
-      "date": "2026-11-02 13:39:05",
-      "project": "Лиды_Гости",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#2 GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
       "summary": "✅ Готово",
       "status": "done"
     }
