@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:40:38",
+  "updated": "2026-11-17 14:42:22",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3003,9 +3003,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 35,
+        "completed_works": 37,
         "open_tasks": 34,
-        "tim_reports": 13,
+        "tim_reports": 14,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3041,6 +3041,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-75",
+          "issue_number": 75,
+          "date": "2026-11-17 14:42:14",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#75 TIM: https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_144135",
+          "issue_number": 75,
+          "date": "2026-11-17 14:41:35",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
+          "title": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-76",
           "issue_number": 76,
@@ -3228,28 +3252,6 @@
           "title": "#179 True 1, Тебе изменяют!",
           "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #179»",
           "status": "not_studied"
-        },
-        {
-          "id": "card-177",
-          "issue_number": 177,
-          "date": "2026-11-05 17:36:15",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#177 https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #177 → Unity Inc» или выбрать другой проект",
-          "status": "awaiting_approval"
-        },
-        {
-          "id": "card-176",
-          "issue_number": 176,
-          "date": "2026-11-05 16:27:37",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#176 TIM: https://go.thoughtspot.com/ebook-8-embedded-ai-agent-use-cases.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_EMEA_-_TSE_-_Awa",
-          "summary": "✅ Готово",
-          "status": "done"
         }
       ]
     },
