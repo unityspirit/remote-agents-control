@@ -16373,6 +16373,38 @@
         "who": "human",
         "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #59»"
       }
+    },
+    "58": {
+      "id": 58,
+      "created": "2026-11-17 14:57:55",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:57:55",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:58:17",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
+      "urls": [
+        "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:58:17"
     }
   }
 }
