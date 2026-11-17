@@ -2450,22 +2450,42 @@ def handle_hq_text(msg):
                 send_member_home_menu(c_id, from_user)
 
 
-_INSTANCE_LOCK_SOCK = None
+_INSTANCE_LOCK_HANDLE = None
 
 
-def _acquire_single_instance_lock(port=47934):
-    """Ensure only one tg_bot_poller.py runs per host (prevents Telegram 409 getUpdates conflict)."""
-    global _INSTANCE_LOCK_SOCK
+def _acquire_single_instance_lock(port=None):
+    """Ensure only one tg_bot_poller.py runs per host (Windows Named Mutex, immune to Hyper-V excluded ports)."""
+    global _INSTANCE_LOCK_HANDLE
+    if os.name == "nt":
+        try:
+            import ctypes
+            kernel32 = ctypes.windll.kernel32
+            mutex = kernel32.CreateMutexW(None, False, "Local\\GSG_UnityBusinessBot_Poller_V34")
+            last_err = kernel32.GetLastError()
+            if not mutex:
+                return True  # Fail-open only if OS cannot create mutex handle
+            if last_err == 183:  # ERROR_ALREADY_EXISTS
+                kernel32.CloseHandle(mutex)
+                return False
+            _INSTANCE_LOCK_HANDLE = mutex
+            return True
+        except Exception:
+            pass
+    lock_path = os.path.join(BASE_DIR, ".tg_poller.pid")
     try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        if hasattr(socket, "SO_EXCLUSIVEADDRUSE"):
-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
-        sock.bind(("127.0.0.1", port))
-        sock.listen(1)
-        _INSTANCE_LOCK_SOCK = sock
+        if os.path.exists(lock_path):
+            old_pid = int((open(lock_path, "r", encoding="utf-8").read() or "0").strip() or 0)
+            if old_pid > 0 and old_pid != os.getpid():
+                try:
+                    os.kill(old_pid, 0)
+                    return False
+                except OSError:
+                    pass
+        with open(lock_path, "w", encoding="utf-8") as lf:
+            lf.write(str(os.getpid()))
         return True
-    except OSError:
-        return False
+    except Exception:
+        return True
 
 
 def run_loop(single_run=False):
