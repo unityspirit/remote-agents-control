@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:44:17",
+  "updated": "2026-11-17 14:44:49",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3003,9 +3003,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 40,
+        "completed_works": 42,
         "open_tasks": 35,
-        "tim_reports": 16,
+        "tim_reports": 17,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3041,6 +3041,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-72",
+          "issue_number": 72,
+          "date": "2026-11-17 14:44:41",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#72 TIM: Claude is paying to learn the skills how much? How can I make money by learning?",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_144434",
+          "issue_number": 72,
+          "date": "2026-11-17 14:44:34",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Claude is paying to learn the skills how much? How can I make money by learning?",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-73",
           "issue_number": 73,
@@ -3230,30 +3254,6 @@
           "title": "#42 Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
           "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #42 → Личное — обучение и релокация» или выбрать другой проект",
           "status": "awaiting_approval"
-        },
-        {
-          "id": "card-41",
-          "issue_number": 41,
-          "date": "2026-11-06 14:56:36",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#41 TIM: https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261106_145557",
-          "issue_number": 41,
-          "date": "2026-11-06 14:55:57",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=192207876",
-          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
         }
       ]
     },
