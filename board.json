@@ -16493,6 +16493,39 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 15:00:24"
+    },
+    "55": {
+      "id": 55,
+      "created": "2026-11-17 15:00:48",
+      "handoffs": [
+        {
+          "t": "2026-11-17 15:00:48",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 15:01:31",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "urls": [
+        "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+        "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm_type=demgen&utm_acc=3067916666&gad_source=2&gad_campaignid=24417053234&pivex_attribution_id=617592ba-d561-4eca-801e-483d299214de&pageindex=landing"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 15:01:31"
     }
   }
 }
