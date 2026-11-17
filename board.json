@@ -16096,6 +16096,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:51:31"
+    },
+    "65": {
+      "id": 65,
+      "created": "2026-11-17 14:51:56",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:51:56",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:52:41",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: [Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "urls": [
+        "https://www.facebook.com/share/v/19w2zTMQpv/"
+      ],
+      "project": "Главный Штаб",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:52:41"
     }
   }
 }
