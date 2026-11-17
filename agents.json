@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:55:37",
+  "updated": "2026-11-17 14:56:11",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 133,
+      "tasks_completed": 134,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,7 +113,7 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
       "last_project": "Входящие_Офис",
       "updated_at": "2026-11-17 14:55:24"
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 133,
+      "tasks_completed": 134,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 53,
+      "tasks_completed": 54,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 133,
+      "tasks_completed": 134,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 80,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 80,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:55:37"
+      "updated_at": "2026-11-17 14:56:11"
     }
   },
   "daemons": {
@@ -238,15 +238,15 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 4,
+      "calls_total": 5,
       "calls_by_provider": {
         "cloud_test_gateway": 2,
-        "deterministic_local_engine": 2
+        "deterministic_local_engine": 3
       },
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
-      "last_call_at": "2026-11-17T21:54:22.258013+00:00",
-      "errors_count": 16
+      "last_call_at": "2026-11-17T21:56:02.929000+00:00",
+      "errors_count": 17
     }
   },
   "statuses": {
