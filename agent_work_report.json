@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 15:00:31",
+  "updated": "2026-11-17 15:01:39",
   "kpis": {
-    "total_completed_works": 284,
-    "tim_master_reports": 58,
+    "total_completed_works": 286,
+    "tim_master_reports": 59,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 53
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 58,
+      "tasks_completed": 59,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
-      "updated_at": "2026-11-17 15:00:22"
+      "last_task": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "updated_at": "2026-11-17 15:01:29"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 139,
+      "tasks_completed": 140,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:00:30"
+      "updated_at": "2026-11-17 15:01:38"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 139,
+      "tasks_completed": 140,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:00:30"
+      "updated_at": "2026-11-17 15:01:38"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 139,
+      "tasks_completed": 140,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:00:30"
+      "updated_at": "2026-11-17 15:01:38"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 83,
+      "tasks_completed": 84,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:00:30"
+      "updated_at": "2026-11-17 15:01:38"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 83,
+      "tasks_completed": 84,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:00:30"
+      "updated_at": "2026-11-17 15:01:38"
     },
     {
       "key": "researcher",
@@ -900,10 +900,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 58,
+      "tasks_completed": 59,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
-      "updated_at": "2026-11-17 15:00:22"
+      "last_task": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "updated_at": "2026-11-17 15:01:29"
     },
     {
       "key": "analyst",
@@ -911,10 +911,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 58,
+      "tasks_completed": 59,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:00:30"
+      "updated_at": "2026-11-17 15:01:38"
     },
     {
       "key": "strategist",
@@ -922,10 +922,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
-      "updated_at": "2026-11-17 15:00:22"
+      "last_task": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "updated_at": "2026-11-17 15:01:29"
     },
     {
       "key": "developer",
@@ -933,10 +933,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
-      "updated_at": "2026-11-17 15:00:22"
+      "last_task": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "updated_at": "2026-11-17 15:01:29"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 41,
+      "tasks_completed": 42,
       "last_project": "Входящие_Офис",
-      "last_task": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
-      "updated_at": "2026-11-17 15:00:22"
+      "last_task": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "updated_at": "2026-11-17 15:01:29"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-55",
+      "issue_number": 55,
+      "date": "2026-11-17 15:01:31",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#55 TIM: https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=83019097984",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_150103",
+      "issue_number": 55,
+      "date": "2026-11-17 15:01:03",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://pivex.com/h?prc_id=1204&utm_source=google&utm_medium=cpc&utm_campaign=24417053234&utm_adgroupid=201559059573&utm_ad=830190979841&utm",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-56",
       "issue_number": 56,
@@ -1736,28 +1760,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#38 RESEARCH_MORE: personal knowledge management AI second brain monetization workflows",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-37",
-      "issue_number": 37,
-      "date": "2026-11-05 03:07:46",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#37 AUTH_SYNC: Быстрая заявка REQ-252172 (@yvyatkin / @yvyatkin)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-172",
-      "issue_number": 172,
-      "date": "2026-11-04 13:58:53",
-      "project": "Traffic",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#172 https://www.instagram.com/reel/DeMoUFfOMdR/?rpxt=MWFuc3lpczNrc2pseA== изучи как это они делают и на чем зарабатывают деньги как работает эта",
       "summary": "✅ Готово",
       "status": "done"
     }
