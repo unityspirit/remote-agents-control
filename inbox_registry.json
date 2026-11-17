@@ -1,7 +1,20 @@
 {
-  "updated_at": "2026-11-08 13:25:13",
+  "updated_at": "2026-11-17 14:56:02",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-61",
+      "card": 61,
+      "timestamp": "2026-11-17 14:56:02",
+      "source_text": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
+      "urls": [
+        "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527"
+      ],
+      "status": "awaiting_approval",
+      "suggested_project": "Traffic",
+      "pending_file": "Карточка_61_https___go_shadowpages_io_th.md",
+      "raw_file": "raw_61_20261117_145559_https___go_shadowpages_io_th.md"
+    },
     {
       "id": "card-184",
       "card": 184,
@@ -226,10 +239,12 @@
       "urls": [
         "https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaignid=24312469597&utm_adsetid=200338473563&utm_adid=826526575099&utm_placement=youtube.com&gad_source=2&gad_campaignid=24312469597"
       ],
-      "status": "need_project",
-      "suggested_project": null,
+      "status": "implemented_and_automated",
+      "suggested_project": "12 IT Продуктов (Короче Капитан)",
       "pending_file": "Карточка_147_https___www_customaistore_co.md",
-      "raw_file": "raw_147_20261026_111048_https___www_customaistore_co.md"
+      "raw_file": "raw_147_20261026_111048_https___www_customaistore_co.md",
+      "approved_project": "Open V3 AI Store Builder",
+      "completed_at": "2026-11-15 13:38:40"
     },
     {
       "id": "card-148",
