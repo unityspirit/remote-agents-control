@@ -15884,6 +15884,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-08 23:02:59"
+    },
+    "76": {
+      "id": 76,
+      "created": "2026-11-17 14:39:10",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:39:10",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:40:25",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
+      "urls": [
+        "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw=="
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:40:25"
     }
   }
 }
