@@ -16405,6 +16405,62 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:58:17"
+    },
+    "57": {
+      "id": 57,
+      "created": "2026-11-17 14:58:56",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:58:56",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:58:57",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-17 14:58:59",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: studied"
+        },
+        {
+          "t": "2026-11-17 14:59:19",
+          "from": "router",
+          "to": "human",
+          "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": "",
+        "chars": 810
+      },
+      "title": "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue",
+      "urls": [
+        "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "need_project",
+      "updated": "2026-11-17 14:59:21",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_57_https___www_instagram_com_re.md",
+      "raw_file": "raw_57_20261117_145857_https___www_instagram_com_re.md",
+      "next": {
+        "who": "human",
+        "what": "Выбрать проект кнопкой «✅ Утверждаю #57 → …»"
+      }
     }
   }
 }
