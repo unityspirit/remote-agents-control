@@ -16155,6 +16155,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:53:26"
+    },
+    "63": {
+      "id": 63,
+      "created": "2026-11-17 14:53:51",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:53:51",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:54:27",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "/expert Глубокий экспертный разбор: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "urls": [],
+      "project": "True 1 Team",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:54:27"
     }
   }
 }
