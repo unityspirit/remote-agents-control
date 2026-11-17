@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:06:38",
+  "updated": "2026-11-17 15:07:43",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -10,9 +10,9 @@
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
       "tasks_completed": 60,
-      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:06:28"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 15:07:34"
     },
     "strategist": {
       "name": "Стратег",
@@ -23,9 +23,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 49,
-      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:06:28"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 15:07:34"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -36,9 +36,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 45,
-      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:06:28"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 15:07:34"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -49,9 +49,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:05:37"
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 15:07:34"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 145,
+      "tasks_completed": 146,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 60,
-      "last_task": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:04:01"
+      "tasks_completed": 61,
+      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 15:07:34"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 145,
+      "tasks_completed": 146,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 60,
+      "tasks_completed": 61,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 145,
+      "tasks_completed": 146,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 88,
+      "tasks_completed": 89,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:06:38"
+      "updated_at": "2026-11-17 15:07:43"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
       "last_call_at": "2026-11-17T22:05:37.761608+00:00",
-      "errors_count": 28
+      "errors_count": 29
     }
   },
   "statuses": {
