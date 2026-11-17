@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Disallow: /.claude/
+Disallow: /_office/
+Disallow: /data/
+
+# Search & AI Answer Engine Crawlers (explicitly permitted for public Office & Open V3 storefront pages)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://globalteampartners.github.io/remote-agents-control/sitemap.xml
