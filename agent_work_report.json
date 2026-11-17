@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:20:43",
+  "updated": "2026-11-17 15:25:43",
   "kpis": {
     "total_completed_works": 296,
     "tim_master_reports": 60,
@@ -836,7 +836,7 @@
       "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:20:41"
+      "updated_at": "2026-11-17 15:25:41"
     },
     {
       "key": "router",
@@ -847,7 +847,7 @@
       "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:20:41"
+      "updated_at": "2026-11-17 15:25:41"
     },
     {
       "key": "gatekeeper",
@@ -858,7 +858,7 @@
       "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:20:41"
+      "updated_at": "2026-11-17 15:25:41"
     },
     {
       "key": "scribe",
@@ -869,7 +869,7 @@
       "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:20:41"
+      "updated_at": "2026-11-17 15:25:41"
     },
     {
       "key": "project_lead",
@@ -880,7 +880,7 @@
       "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:20:41"
+      "updated_at": "2026-11-17 15:25:41"
     },
     {
       "key": "researcher",
@@ -889,9 +889,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 62,
-      "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_source=go",
-      "updated_at": "2026-11-17 15:09:34"
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "updated_at": "2026-11-17 15:22:23"
     },
     {
       "key": "analyst",
@@ -902,7 +902,7 @@
       "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:20:41"
+      "updated_at": "2026-11-17 15:25:41"
     },
     {
       "key": "developer",
