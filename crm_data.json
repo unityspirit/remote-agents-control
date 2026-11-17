@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T21:46:03.365967+00:00",
+  "updated_at": "2026-11-17T21:47:33.715659+00:00",
   "version": "34.1",
   "knowledge_base": [
     {
@@ -1154,9 +1154,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 240,
+      "evidence_count": 241,
       "scope": "global",
-      "last_updated": "2026-11-17T14:46:02.056893"
+      "last_updated": "2026-11-17T14:47:32.366657"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -1184,9 +1184,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 150,
+      "evidence_count": 151,
       "scope": "global",
-      "last_updated": "2026-11-17T14:46:02.059158"
+      "last_updated": "2026-11-17T14:47:32.368261"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -1194,9 +1194,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 183,
+      "evidence_count": 184,
       "scope": "global",
-      "last_updated": "2026-11-17T14:46:02.060282"
+      "last_updated": "2026-11-17T14:47:32.369333"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -1234,9 +1234,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 267,
+      "evidence_count": 268,
       "scope": "global",
-      "last_updated": "2026-11-17T14:46:02.060852"
+      "last_updated": "2026-11-17T14:47:32.372170"
     },
     {
       "id": "task-custom-request",
