@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:56:12",
+  "updated": "2026-11-17 14:57:37",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3024,9 +3024,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 46,
-        "open_tasks": 38,
-        "tim_reports": 20,
+        "completed_works": 48,
+        "open_tasks": 39,
+        "tim_reports": 21,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3062,6 +3062,41 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-59",
+          "issue_number": 59,
+          "date": "2026-11-17 14:57:30",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#59 https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #59»",
+          "status": "not_studied"
+        },
+        {
+          "id": "card-60",
+          "issue_number": 60,
+          "date": "2026-11-17 14:56:46",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#60 TIM: https://plan.muscle-booster.io/ what are they making money on ?",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_145635",
+          "issue_number": 60,
+          "date": "2026-11-17 14:56:35",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://plan.muscle-booster.io/ what are they making money on ?",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-61",
           "issue_number": 61,
@@ -3239,41 +3274,6 @@
           "title": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
           "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-76",
-          "issue_number": 76,
-          "date": "2026-11-17 14:40:25",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#76 TIM: https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261117_143914",
-          "issue_number": 76,
-          "date": "2026-11-17 14:39:14",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
-          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-186",
-          "issue_number": 186,
-          "date": "2026-11-08 18:39:46",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#186 TIM: https://my-eurodrive.com/?utm_source=tv_youtufi&utm_medium=YT_FI_driver&utm_campaign=tv_my-eurodrive_fi_eng&utm_term=ads3&gad_source=2&",
-          "summary": "✅ Готово",
           "status": "done"
         }
       ]
