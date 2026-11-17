@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:45:47",
+  "updated": "2026-11-17 14:47:16",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 48,
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "tasks_completed": 49,
+      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:45:38"
+      "updated_at": "2026-11-17 14:47:07"
     },
     "strategist": {
       "name": "Стратег",
@@ -74,10 +74,10 @@
       "gives": "раскадровка, видео и музыкальные релизы",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 4,
-      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "tasks_completed": 5,
+      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:42:10"
+      "updated_at": "2026-11-17 14:47:07"
     },
     "vibe_coder": {
       "name": "Вайбкодер & Micro-SaaS",
@@ -103,7 +103,7 @@
       "tasks_completed": 126,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:45:38"
+      "updated_at": "2026-11-17 14:47:07"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 126,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 50,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 126,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     }
   },
   "daemons": {
@@ -243,7 +243,7 @@
       "last_provider": "auto_standby",
       "last_model": "auto",
       "last_call_at": null,
-      "errors_count": 7
+      "errors_count": 8
     }
   },
   "statuses": {
