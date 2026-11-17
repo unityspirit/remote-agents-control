@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-17 15:07:44",
+  "updated": "2026-11-17 15:08:32",
   "kpis": {
-    "total_completed_works": 291,
+    "total_completed_works": 295,
     "tim_master_reports": 60,
     "active_projects_count": 58,
-    "total_saved_photos": 1,
+    "total_saved_photos": 7,
     "awaiting_human_count": 54
   },
   "priority_continuations": [
@@ -833,10 +833,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 146,
+      "tasks_completed": 147,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:07:43"
+      "updated_at": "2026-11-17 15:08:31"
     },
     {
       "key": "router",
@@ -844,10 +844,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 146,
+      "tasks_completed": 147,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:07:43"
+      "updated_at": "2026-11-17 15:08:31"
     },
     {
       "key": "gatekeeper",
@@ -855,10 +855,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 146,
+      "tasks_completed": 147,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:07:43"
+      "updated_at": "2026-11-17 15:08:31"
     },
     {
       "key": "scribe",
@@ -866,10 +866,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 89,
+      "tasks_completed": 90,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:07:43"
+      "updated_at": "2026-11-17 15:08:31"
     },
     {
       "key": "project_lead",
@@ -877,10 +877,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 89,
+      "tasks_completed": 90,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:07:43"
+      "updated_at": "2026-11-17 15:08:31"
     },
     {
       "key": "researcher",
@@ -889,9 +889,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 61,
-      "last_project": "Входящие_Офис",
-      "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
-      "updated_at": "2026-11-17 15:07:34"
+      "last_project": "True 1 Team",
+      "last_task": "Изучено фото (3 шт.): 📷 Изучить фото (3 шт.) для True 1 Team",
+      "updated_at": "2026-11-17 15:08:12"
     },
     {
       "key": "analyst",
@@ -902,7 +902,7 @@
       "tasks_completed": 61,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:07:43"
+      "updated_at": "2026-11-17 15:08:31"
     },
     {
       "key": "developer",
@@ -972,6 +972,89 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-45",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:24",
+      "project": "True 1 Team",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#45 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_45_3.jpg",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:04",
+      "project": "True 1 Team",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search after each room, give а fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst i",
+      "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_45_2.jpg",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:04",
+      "project": "True 1 Team",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search rooms -4 check the geometry against the original plan and its dimensions use blender with python for the scene and three.js for the browser viewer bake the ligh",
+      "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_45_1.jpg",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:04",
+      "project": "True 1 Team",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "Размер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d blueprint and turn it into а full 3d walkthrough уои сап actually explore. these sell for $5k to $10k per plan. and the buyers are already out ",
+      "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_45_3.jpg",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:04",
+      "project": "Личный Офис: @true1team",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search after each room, give а fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst i",
+      "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_45_2.jpg",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:04",
+      "project": "Личный Офис: @true1team",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search rooms -4 check the geometry against the original plan and its dimensions use blender with python for the scene and three.js for the browser viewer bake the ligh",
+      "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+      "status": "done"
+    },
+    {
+      "id": "photo-photo_45_1.jpg",
+      "issue_number": 45,
+      "date": "2026-11-17 15:08:04",
+      "project": "Личный Офис: @true1team",
+      "type": "photo_study",
+      "agent": "📷 Vision & OCR Агент",
+      "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+      "summary": "Размер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d blueprint and turn it into а full 3d walkthrough уои сап actually explore. these sell for $5k to $10k per plan. and the buyers are already out ",
+      "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+      "status": "done"
+    },
     {
       "id": "card-46",
       "issue_number": 46,
@@ -1666,89 +1749,6 @@
       "agent": "👑 Директор Тим",
       "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
       "title": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
-      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-183",
-      "issue_number": 183,
-      "date": "2026-11-08 13:26:30",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#183 TIM: https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261108_132615",
-      "issue_number": 183,
-      "date": "2026-11-08 13:26:15",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
-      "title": "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
-      "summary": "Мы создаём SaaS‑платформу «AppXray», которая использует AI‑инструмент для глубинного анализа любых приложений и выдаёт отчёты о структуре, уязвимостях и оптимизации. При подписке в 49 ₽/мес платформа генерирует 10 отчётов/мес, а при корпора",
-      "human_action": "Одобрить бюджет в 2 млн ₽ на разработку MVP и запуск маркетинговой кампании.",
-      "status": "done"
-    },
-    {
-      "id": "card-42",
-      "issue_number": 42,
-      "date": "2026-11-07 04:16:20",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#42 Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #42 → Личное — обучение и релокация» или выбрать другой проект",
-      "status": "awaiting_approval"
-    },
-    {
-      "id": "card-41",
-      "issue_number": 41,
-      "date": "2026-11-06 14:56:36",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#41 TIM: https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=1922",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261106_145557",
-      "issue_number": 41,
-      "date": "2026-11-06 14:55:57",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://www.altahq.com/lp/ai-calling-agent?utm_term=&utm_campaign=DemandGen_RestOfEurope&utm_source=adwords&utm_medium=ppc&hsa_acc=192207876",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-181",
-      "issue_number": 181,
-      "date": "2026-11-06 10:30:04",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#181 TIM: https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту ",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261106_102914",
-      "issue_number": 181,
-      "date": "2026-11-06 10:29:14",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
-      "title": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систе",
       "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
       "status": "done"
