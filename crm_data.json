@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T21:53:04.888607+00:00",
+  "updated_at": "2026-11-17T21:53:49.268421+00:00",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -3753,9 +3753,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 192,
+      "evidence_count": 193,
       "scope": "global",
-      "last_updated": "2026-11-17T14:53:03.431841"
+      "last_updated": "2026-11-17T14:53:47.764592"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -3763,9 +3763,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 247,
+      "evidence_count": 248,
       "scope": "global",
-      "last_updated": "2026-11-17T14:53:03.433450"
+      "last_updated": "2026-11-17T14:53:47.765712"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -3783,9 +3783,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 88,
+      "evidence_count": 89,
       "scope": "global",
-      "last_updated": "2026-11-17T14:50:51.991262"
+      "last_updated": "2026-11-17T14:53:47.766852"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -3793,9 +3793,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 156,
+      "evidence_count": 157,
       "scope": "global",
-      "last_updated": "2026-11-17T14:53:03.435663"
+      "last_updated": "2026-11-17T14:53:47.767840"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -3843,9 +3843,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 274,
+      "evidence_count": 275,
       "scope": "global",
-      "last_updated": "2026-11-17T14:53:03.437384"
+      "last_updated": "2026-11-17T14:53:47.768950"
     },
     {
       "id": "task-custom-request",
