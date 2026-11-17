@@ -16069,6 +16069,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:49:18"
+    },
+    "66": {
+      "id": 66,
+      "created": "2026-11-17 14:50:55",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:50:55",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:51:31",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "DIRECTOR_ТИМ: Выполнение шага #1 (Главный Штаб)",
+      "urls": [],
+      "project": "Главный Штаб",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:51:31"
     }
   }
 }
