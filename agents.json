@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:42:21",
+  "updated": "2026-11-17 14:43:27",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 44,
-      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "tasks_completed": 45,
+      "last_task": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:42:10"
+      "updated_at": "2026-11-17 14:43:17"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 35,
-      "last_task": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
+      "tasks_completed": 36,
+      "last_task": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:40:20"
+      "updated_at": "2026-11-17 14:43:17"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 29,
-      "last_task": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
+      "tasks_completed": 30,
+      "last_task": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:40:20"
+      "updated_at": "2026-11-17 14:43:17"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 36,
-      "last_task": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
+      "tasks_completed": 37,
+      "last_task": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:40:20"
+      "updated_at": "2026-11-17 14:43:17"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 124,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 49,
-      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
+      "last_task": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:42:10"
+      "updated_at": "2026-11-17 14:43:17"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 124,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 49,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 124,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 71,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 71,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:42:21"
+      "updated_at": "2026-11-17 14:43:27"
     }
   },
   "daemons": {
@@ -243,7 +243,7 @@
       "last_provider": "auto_standby",
       "last_model": "auto",
       "last_call_at": null,
-      "errors_count": 3
+      "errors_count": 4
     }
   },
   "statuses": {
