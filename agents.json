@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:56:11",
+  "updated": "2026-11-17 14:56:54",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 55,
-      "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "tasks_completed": 56,
+      "last_task": "https://plan.muscle-booster.io/ what are they making money on ?",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:55:24"
+      "updated_at": "2026-11-17 14:56:44"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 45,
-      "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "tasks_completed": 46,
+      "last_task": "https://plan.muscle-booster.io/ what are they making money on ?",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:55:24"
+      "updated_at": "2026-11-17 14:56:44"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 38,
-      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
-      "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:53:23"
+      "tasks_completed": 39,
+      "last_task": "https://plan.muscle-booster.io/ what are they making money on ?",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 14:56:44"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 45,
-      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
-      "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:53:23"
+      "tasks_completed": 46,
+      "last_task": "https://plan.muscle-booster.io/ what are they making money on ?",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-17 14:56:44"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 134,
+      "tasks_completed": 135,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 54,
-      "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "tasks_completed": 55,
+      "last_task": "https://plan.muscle-booster.io/ what are they making money on ?",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:55:24"
+      "updated_at": "2026-11-17 14:56:44"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 134,
+      "tasks_completed": 135,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 54,
+      "tasks_completed": 55,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 134,
+      "tasks_completed": 135,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 80,
+      "tasks_completed": 81,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 80,
+      "tasks_completed": 81,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:56:11"
+      "updated_at": "2026-11-17 14:56:54"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-17T21:56:02.929000+00:00",
-      "errors_count": 17
+      "errors_count": 18
     }
   },
   "statuses": {
