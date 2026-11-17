@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:03:20",
+  "updated": "2026-11-17 15:04:11",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -378,9 +378,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 14,
+        "completed_works": 16,
         "open_tasks": 1,
-        "tim_reports": 5,
+        "tim_reports": 6,
         "saved_photos": 0,
         "files_on_disk": 46,
         "size_kb": 9622,
@@ -416,6 +416,30 @@
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-50",
+          "issue_number": 50,
+          "date": "2026-11-17 15:04:02",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#50 TIM: Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадка",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_150339",
+          "issue_number": 50,
+          "date": "2026-11-17 15:03:39",
+          "project": "Alberta",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и техническо",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+          "status": "done"
+        },
         {
           "id": "card-39",
           "issue_number": 39,
@@ -592,7 +616,7 @@
           "status": "blocked_human"
         },
         {
-          "id": "hist-15",
+          "id": "hist-17",
           "date": "04.11.2026 00:04",
           "project": "Alberta",
           "type": "ai_study",
@@ -1848,9 +1872,9 @@
       "why_first": "Единый двигатель продаж всего холдинга: связка автоворонок, холодного аутрича и коротких Reels/Shorts питает лидами B2B сайты, Доминикану и Micro-SaaS.",
       "human_action": "Выбрать приоритетную нишу для холодного аутрича и утвердить оффер с гарантией.",
       "counts": {
-        "completed_works": 12,
+        "completed_works": 11,
         "open_tasks": 0,
-        "tim_reports": 3,
+        "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 16,
         "size_kb": 210,
@@ -1887,7 +1911,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "23.10.2026 19:09",
           "project": "Traffic",
           "type": "ai_study",
@@ -1897,7 +1921,7 @@
           "status": "done"
         },
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "23.10.2026 19:06",
           "project": "Traffic",
           "type": "ai_study",
@@ -1907,7 +1931,7 @@
           "status": "done"
         },
         {
-          "id": "hist-13",
+          "id": "hist-12",
           "date": "23.10.2026 18:25",
           "project": "Traffic",
           "type": "ai_study",
@@ -1917,7 +1941,7 @@
           "status": "done"
         },
         {
-          "id": "hist-14",
+          "id": "hist-13",
           "date": "22.10.2026 08:21",
           "project": "Traffic",
           "type": "ai_study",
@@ -2019,19 +2043,6 @@
           "status": "done"
         },
         {
-          "id": "tim-1792716593",
-          "issue_number": null,
-          "date": "2026-10-22 18:49:53",
-          "project": "Traffic",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "README",
-          "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
-          "human_action": "",
-          "status": "done"
-        },
-        {
           "id": "card-128",
           "issue_number": 128,
           "date": "2026-10-22 08:21:09",
@@ -2043,7 +2054,7 @@
           "status": "done"
         },
         {
-          "id": "hist-10",
+          "id": "hist-9",
           "date": "02.11.2026 13:27",
           "project": "Traffic",
           "type": "ai_study",
