@@ -318,18 +318,41 @@ def audit_live_urls(targets: list[dict[str, str]] | None = None) -> list[dict[st
         if root:
             ag = run_claude_seo_script("agentic_check.py", [root, "--json"], timeout=40)
             sm = run_claude_seo_script("sitemap_discovery.py", [root, "--json"], timeout=35)
+            ag_data = ag.get("data") if isinstance(ag.get("data"), dict) else {}
+            rob = ag_data.get("robots") or {}
+            llms_obj = ag_data.get("llms") or {}
+            pg = ag_data.get("page") or {}
+            robots_found = (rob.get("status") == 200)
+            llms_found = (llms_obj.get("status") == 200)
+            found_sitemaps = sm.get("found") if isinstance(sm.get("found"), list) else []
+
+            # GitHub Pages project sites serve robots/llms/sitemap under their subpath (<root>/...)
+            def _probe_subpath(rel_file: str) -> bool:
+                try:
+                    req = urllib.request.Request(f"{root.rstrip('/')}/{rel_file}", headers={"User-Agent": "GSG-SEO-Probe"})
+                    with urllib.request.urlopen(req, timeout=8) as r:
+                        return r.status == 200
+                except Exception:
+                    return False
+
+            if not robots_found and urlparse(root).path.strip("/"):
+                robots_found = _probe_subpath("robots.txt")
+            if not llms_found and urlparse(root).path.strip("/"):
+                llms_found = _probe_subpath("llms.txt")
+            if not found_sitemaps and urlparse(root).path.strip("/") and _probe_subpath("sitemap.xml"):
+                found_sitemaps = [{"url": f"{root.rstrip('/')}/sitemap.xml", "status_code": 200, "kind": "urlset"}]
+
             agentic = {
-                "robots_found": bool((ag.get("robots_txt") or {}).get("present")),
-                "llms_found": bool((ag.get("llms_txt") or {}).get("present")),
-                "llms_verdict": (ag.get("llms_txt") or {}).get("verdict") or "",
-                "server_words": (ag.get("server_rendered") or {}).get("visible_words"),
+                "robots_found": robots_found,
+                "llms_found": llms_found,
+                "llms_verdict": llms_obj.get("lighthouse") or "",
+                "server_words": pg.get("words_without_js"),
                 "error": ag.get("error") or "",
             }
-            sitemaps = sm.get("sitemaps") or []
             sitemap_info = {
-                "count": len(sitemaps),
-                "first_status": sitemaps[0].get("status") if sitemaps else None,
-                "first_url": sitemaps[0].get("url") if sitemaps else "",
+                "count": len(found_sitemaps),
+                "first_status": found_sitemaps[0].get("status_code") if found_sitemaps else None,
+                "first_url": found_sitemaps[0].get("url") if found_sitemaps else "",
                 "error": sm.get("error") or "",
             }
 
