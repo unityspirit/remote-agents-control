@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:59:28",
+  "updated": "2026-11-17 15:00:31",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3024,9 +3024,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 50,
+        "completed_works": 52,
         "open_tasks": 40,
-        "tim_reports": 22,
+        "tim_reports": 23,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3062,6 +3062,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-56",
+          "issue_number": 56,
+          "date": "2026-11-17 15:00:24",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#56 TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_145955",
+          "issue_number": 56,
+          "date": "2026-11-17 14:59:55",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-57",
           "issue_number": 57,
@@ -3249,30 +3273,6 @@
           "title": "#73 TIM: https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&u",
           "summary": "✅ Готово",
           "status": "done"
-        },
-        {
-          "id": "tim-20261117_144355",
-          "issue_number": 73,
-          "date": "2026-11-17 14:43:55",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-74",
-          "issue_number": 74,
-          "date": "2026-11-17 14:43:19",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#74 TIM: https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html l",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»",
-          "status": "not_studied"
         }
       ]
     },
