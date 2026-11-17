@@ -80,7 +80,7 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.3"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.5"
 LOCAL_BOT_ACCESS_FILE = os.path.join(BASE_DIR, ".bot_access_registry.json")
 _cached_bot_access = None
 _cached_bot_access_ts = 0.0
@@ -1324,8 +1324,11 @@ def send_hq_home_menu(chat_id, from_user=None):
             {"text": "💰 Выручка и Лиды", "callback_data": "cmd:revenue"},
         ],
         [
+            {"text": "🔎 SEO-Автопилот (/seo)", "callback_data": "cmd:seo"},
             {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
-            {"text": "🏢 Главный Офис (v34.3)", "url": OFFICE_URL},
+        ],
+        [
+            {"text": "🏢 Главный Офис (v34.5)", "url": OFFICE_URL},
         ],
     ])
     call_tg("sendMessage", {
@@ -1748,6 +1751,9 @@ def handle_hq_callback(cq):
     elif data == "cmd:revenue":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "💰 Сводка выручки Офиса"})
         send_revenue_summary_menu(c_id)
+    elif data == "cmd:seo":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔎 Запускаю Claude SEO-аудит..."})
+        _trigger_seo_from_tg(c_id, "")
     elif data.startswith("store_quick:"):
         niche_Pick = data.split("store_quick:", 1)[1].strip()
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"🛍️ Собираю магазин: {niche_Pick[:25]}..."})
@@ -2242,6 +2248,50 @@ def _execute_store_build_from_tg(chat_id, niche):
             call_tg_send_document(chat_id, fp, caption=f"🛍️ {sp['brand_name']} — {fn}")
 
 
+def _trigger_seo_from_tg(chat_id, arg_text=""):
+    import re
+    import threading
+    import office_seo_worker
+
+    clean = str(arg_text or "").strip()
+    low = clean.lower()
+    if low in ("status", "статус", "info"):
+        call_tg("sendMessage", {
+            "chat_id": chat_id,
+            "text": office_seo_worker.format_status_for_telegram(),
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": [
+                [{"text": "🔎 Запустить /seo аудит сейчас", "callback_data": "cmd:seo"}],
+                [{"text": "⬅️ Главное меню", "callback_data": "cmd:home"}],
+            ]},
+        })
+        return
+
+    urls = re.findall(r"https?://[^\s<>'\"]+", clean)
+    target_url = urls[0] if urls else ""
+    if clean and low not in ("run", "audit", "аудит", "запуск"):
+        office_seo_worker.queue_seo_task(clean, url=target_url, priority="high", source="telegram")
+
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": (
+            f"{office_seo_worker.format_status_for_telegram()}\n\n"
+            "⏳ <i>Запускаю полный цикл Claude SEO (47 проверок + Agentic GEO + задачи)... Пришлю свежий отчёт через ~15 сек!</i>"
+        ),
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": [[{"text": "⬅️ Главное меню", "callback_data": "cmd:home"}]]},
+    })
+
+    def _worker():
+        try:
+            only_url = target_url if (target_url and len(clean.split()) <= 2) else ""
+            office_seo_worker.run_seo_cycle(trigger="telegram_cmd", force=True, notify=True, single_url=only_url)
+        except Exception as _seo_err:
+            log_throttled_err("Telegram SEO trigger", _seo_err)
+
+    threading.Thread(target=_worker, daemon=True).start()
+
+
 def handle_hq_text(msg):
     text = msg["text"].strip()
     c_id = str(msg["chat"]["id"])
@@ -2357,6 +2407,9 @@ def handle_hq_text(msg):
             send_store_builder_menu(c_id)
     elif text.startswith("/revenue"):
         send_revenue_summary_menu(c_id)
+    elif text.startswith("/seo"):
+        seo_arg = text.split(None, 1)[1].strip() if len(text.split(None, 1)) > 1 else ""
+        _trigger_seo_from_tg(c_id, seo_arg)
     elif text.startswith("/bots"):
         if not is_owner:
             call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Раздел управления ботами команды доступен только Главному Штабу. Для смены своего пароля нажмите /passwords."})
@@ -2488,7 +2541,7 @@ def _acquire_single_instance_lock(port=None):
         return True
 
 
-def run_loop(single_run=False):
+def run_loop(single_run=False, skip_startup_seo=False):
     if not single_run and not _acquire_single_instance_lock():
         print("Another tg_bot_poller.py instance is already active (port 47934 locked). Exiting cleanly.", flush=True)
         return
@@ -2501,13 +2554,41 @@ def run_loop(single_run=False):
             print("[MoneyEngine] Local Open V3 & Office HTTP API bound on http://127.0.0.1:18799", flush=True)
     except Exception as _me_err:
         print(f"[MoneyEngine warn] {_me_err}", flush=True)
+    if not single_run and not skip_startup_seo:
+        try:
+            import threading
+            import office_seo_worker
+
+            def _boot_seo_first():
+                try:
+                    office_seo_worker.run_seo_cycle(trigger="poller_startup", force=False, notify=True)
+                except Exception as _seo_err:
+                    log_throttled_err("Startup SEO runner", _seo_err)
+
+            threading.Thread(target=_boot_seo_first, daemon=True).start()
+            print("[SEO-FIRST] Priority Claude SEO startup thread launched first.", flush=True)
+        except Exception as _seo_init_err:
+            print(f"[SEO-FIRST warn] {_seo_init_err}", flush=True)
     offset = get_persisted_offset()
-    print(f"Telegram Multi-Bot Poller Daemon v34.3 (Director NLU + Antigravity 2.31 + Mesh) started (offset={offset})...", flush=True)
+    print(f"Telegram Multi-Bot Poller Daemon v34.5 (Director NLU + Claude SEO + Antigravity 2.31 + Mesh) started (offset={offset})...", flush=True)
     touch_local_heartbeat_if_due(force=True)
+    last_periodic_seo_ts = time.time()
 
     while True:
         try:
             touch_local_heartbeat_if_due(force=False)
+            if not single_run and (time.time() - last_periodic_seo_ts) >= 21600:
+                last_periodic_seo_ts = time.time()
+                try:
+                    import threading
+                    import office_seo_worker
+                    threading.Thread(
+                        target=office_seo_worker.run_seo_cycle,
+                        kwargs={"trigger": "periodic_6h", "force": False, "notify": True},
+                        daemon=True,
+                    ).start()
+                except Exception as _pseo_err:
+                    log_throttled_err("Periodic SEO check", _pseo_err)
             updates = call_tg("getUpdates", {"offset": offset, "timeout": 4}, retries=1, bot_label="main_hq")
             if updates and updates.get("ok"):
                 for item in updates.get("result", []):
@@ -2531,4 +2612,5 @@ def run_loop(single_run=False):
 
 if __name__ == "__main__":
     is_single = "--single" in sys.argv
-    run_loop(single_run=is_single)
+    skip_seo = "--skip-startup-seo" in sys.argv
+    run_loop(single_run=is_single, skip_startup_seo=skip_seo)
