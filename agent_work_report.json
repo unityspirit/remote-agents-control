@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:44:49",
+  "updated": "2026-11-17 14:45:48",
   "kpis": {
-    "total_completed_works": 260,
-    "tim_master_reports": 47,
+    "total_completed_works": 261,
+    "tim_master_reports": 48,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -534,7 +534,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 8,
+        "open_tasks": 7,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -565,7 +565,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-11",
+        "id": "hist-10",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 47,
+      "tasks_completed": 48,
       "last_project": "Входящие_Офис",
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
-      "updated_at": "2026-11-17 14:44:39"
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "updated_at": "2026-11-17 14:45:38"
     },
     {
       "key": "intake",
@@ -848,7 +848,7 @@
       "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     {
       "key": "router",
@@ -859,7 +859,7 @@
       "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     {
       "key": "gatekeeper",
@@ -870,7 +870,7 @@
       "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     {
       "key": "researcher",
@@ -902,8 +902,8 @@
       "state": "online",
       "tasks_completed": 50,
       "last_project": "Входящие_Офис",
-      "last_task": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-      "updated_at": "2026-11-17 14:44:06"
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "updated_at": "2026-11-17 14:45:38"
     },
     {
       "key": "analyst",
@@ -914,7 +914,7 @@
       "tasks_completed": 50,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 39,
+      "tasks_completed": 40,
       "last_project": "Входящие_Офис",
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
-      "updated_at": "2026-11-17 14:44:39"
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "updated_at": "2026-11-17 14:45:38"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 38,
+      "tasks_completed": 39,
       "last_project": "Входящие_Офис",
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
-      "updated_at": "2026-11-17 14:44:39"
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "updated_at": "2026-11-17 14:45:38"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 32,
+      "tasks_completed": 33,
       "last_project": "Входящие_Офис",
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
-      "updated_at": "2026-11-17 14:44:39"
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "updated_at": "2026-11-17 14:45:38"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,19 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "tim-20261117_144509",
+      "issue_number": 71,
+      "date": "2026-11-17 14:45:09",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-72",
       "issue_number": 72,
@@ -1735,17 +1748,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#7 GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-8",
-      "issue_number": 8,
-      "date": "2026-11-02 13:03:58",
-      "project": "Unity Inc",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#8 AUTH_SYNC: Быстрая заявка REQ-382737 (@globalplusteam / @globalplusteam)",
       "summary": "✅ Готово",
       "status": "done"
     }
