@@ -16461,6 +16461,38 @@
         "who": "human",
         "what": "Выбрать проект кнопкой «✅ Утверждаю #57 → …»"
       }
+    },
+    "56": {
+      "id": 56,
+      "created": "2026-11-17 14:59:46",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:59:46",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 15:00:24",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
+      "urls": [
+        "https://www.comss.ru/page.php?id=22854"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 15:00:24"
     }
   }
 }
