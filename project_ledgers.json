@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-09 12:52:41",
-  "projects_count": 60,
+  "updated": "2026-11-17 14:38:43",
+  "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
       "project": "12 IT Продуктов (Короче Капитан)",
@@ -2276,9 +2276,9 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 99,
+        "completed_works": 100,
         "open_tasks": 0,
-        "tim_reports": 2,
+        "tim_reports": 3,
         "saved_photos": 0,
         "files_on_disk": 15,
         "size_kb": 283201,
@@ -2315,13 +2315,26 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-11",
+          "id": "hist-12",
           "date": "23.10.2026 18:20",
           "project": "Unity Inc",
           "type": "ai_study",
           "agent": "🧠 ИИ-Аналитик папки",
           "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для продажи B2B кли",
           "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261109_130500",
+          "issue_number": null,
+          "date": "2026-11-09 13:05:00",
+          "project": "Unity Inc",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
+          "title": "Детально изучить всё, что делает Ярослав Сажнев (https://t.me/yaroslavsazhnev), применить в автономную Базу Знаний виртуального офиса, найти",
+          "summary": "Мастер-отчёт Директора Тима для проекта Unity Inc.",
+          "human_action": "",
           "status": "done"
         },
         {
@@ -2428,7 +2441,7 @@
           "status": "done"
         },
         {
-          "id": "hist-9",
+          "id": "hist-10",
           "date": "02.11.2026 12:50",
           "project": "Unity Inc",
           "type": "ai_study",
@@ -2438,7 +2451,7 @@
           "status": "done"
         },
         {
-          "id": "hist-10",
+          "id": "hist-11",
           "date": "02.11.2026 12:22",
           "project": "Unity Inc",
           "type": "ai_study",
@@ -3240,6 +3253,81 @@
         }
       ]
     },
+    "Главный Штаб": {
+      "project": "Главный Штаб",
+      "folder": "Главный Штаб",
+      "state": "active",
+      "last_change": "2026-11-17",
+      "lead_agent": "Autonomous Project Agent",
+      "priority_score": 55,
+      "revenue_potential": "Развитие направления «Главный Штаб» в связке с экосистемой Виртуального Офиса.",
+      "why_first": "Провести аудит файлов и определить первый денежный шаг по «Главный Штаб»",
+      "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
+      "counts": {
+        "completed_works": 1,
+        "open_tasks": 1,
+        "tim_reports": 1,
+        "saved_photos": 0,
+        "files_on_disk": 0,
+        "size_kb": 0,
+        "ai_analyses": 0,
+        "research_notes": 0
+      },
+      "continue_first": {
+        "title": "Провести аудит файлов и определить первый денежный шаг по «Главный Штаб»",
+        "cmd": "TIM: Изучи текущее состояние папки «Главный Штаб», оцени потенциал заработка и выполни первоочередной шаг: Провести аудит файлов и определить первый денежный шаг по «Главный Штаб»"
+      },
+      "recommended_agents": [
+        {
+          "key": "tim",
+          "label": "👑 Директор Тим (План и запуск)",
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Главный Штаб"
+        },
+        {
+          "key": "researcher",
+          "label": "🔎 Разведчик (Аудит папки)",
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Главный Штаб"
+        },
+        {
+          "key": "marketer",
+          "label": "📈 Маркетолог (Оффер и воронка)",
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Главный Штаб"
+        },
+        {
+          "key": "developer",
+          "label": "💻 Разработчик (Тех. ревизия)",
+          "cmd": "NEXT_STEPS: Первоочередные технические задачи по Главный Штаб"
+        }
+      ],
+      "research_topic": "Главный Штаб рынок конкуренты кейсы монетизации 2026",
+      "media_items": [],
+      "work_items": [
+        {
+          "id": "card-77",
+          "issue_number": 77,
+          "date": "2026-11-17 14:38:20",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🤖 agent",
+          "title": "#77 TIM: [Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Повторить разбор: «🔁 Повторить разбор #77»",
+          "status": "not_studied"
+        },
+        {
+          "id": "tim-20261117_143726",
+          "issue_number": 77,
+          "date": "2026-11-17 14:37:26",
+          "project": "Главный Штаб",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+          "status": "done"
+        }
+      ]
+    },
     "Дима Верхняя Синичиха Алапаевск": {
       "project": "Дима Верхняя Синичиха Алапаевск",
       "folder": "Дима Верхняя Синичиха Алапаевск",
@@ -3993,7 +4081,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 10,
+        "open_tasks": 9,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -4026,7 +4114,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-13",
+          "id": "hist-12",
           "date": "28.10.2026 07:53",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4036,7 +4124,7 @@
           "status": "done"
         },
         {
-          "id": "hist-14",
+          "id": "hist-13",
           "date": "21.10.2026 08:44",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4112,17 +4200,6 @@
           "status": "not_studied"
         },
         {
-          "id": "card-77",
-          "issue_number": 77,
-          "date": "2026-10-22 08:18:47",
-          "project": "Позновалка",
-          "type": "board_card",
-          "agent": "🤖 agent",
-          "title": "#77 https://www.hostinger.com/vps-hosting?utm_source=google&utm_medium=cpc&utm_id=22770842092&utm_campaign=Intent-VAC-DemandGen-VPS|NT:YouTube|L",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Повторить разбор: «🔁 Повторить разбор #77»",
-          "status": "not_studied"
-        },
-        {
           "id": "card-74",
           "issue_number": 74,
           "date": "2026-10-22 08:18:47",
@@ -4178,7 +4255,7 @@
           "status": "not_studied"
         },
         {
-          "id": "hist-15",
+          "id": "hist-14",
           "date": "20.10.2026 10:45",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4188,7 +4265,7 @@
           "status": "done"
         },
         {
-          "id": "hist-16",
+          "id": "hist-15",
           "date": "19.10.2026 14:58",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4198,7 +4275,7 @@
           "status": "done"
         },
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "05.11.2026 03:27",
           "project": "Позновалка",
           "type": "ai_study",
