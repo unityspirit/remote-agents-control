@@ -16620,6 +16620,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 15:03:12"
+    },
+    "50": {
+      "id": 50,
+      "created": "2026-11-17 15:03:37",
+      "handoffs": [
+        {
+          "t": "2026-11-17 15:03:37",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 15:04:02",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: Выяви главный триггер женщин 30-50 лет по одной из перечисленных ранее тем, проанализируй для этого все запросы на всех онлайн-площадках и с",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 15:04:02"
     }
   }
 }
