@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:51:39",
+  "updated": "2026-11-17 14:52:50",
   "kpis": {
-    "total_completed_works": 268,
-    "tim_master_reports": 52,
+    "total_completed_works": 270,
+    "tim_master_reports": 53,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
-      "updated_at": "2026-11-17 14:50:25"
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "updated_at": "2026-11-17 14:52:39"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 129,
+      "tasks_completed": 130,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 129,
+      "tasks_completed": 130,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 129,
+      "tasks_completed": 130,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     {
       "key": "researcher",
@@ -900,10 +900,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
-      "updated_at": "2026-11-17 14:48:13"
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "updated_at": "2026-11-17 14:52:39"
     },
     {
       "key": "analyst",
@@ -911,10 +911,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 43,
+      "tasks_completed": 44,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
-      "updated_at": "2026-11-17 14:50:25"
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "updated_at": "2026-11-17 14:52:39"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 42,
+      "tasks_completed": 43,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
-      "updated_at": "2026-11-17 14:50:25"
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "updated_at": "2026-11-17 14:52:39"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 36,
+      "tasks_completed": 37,
       "last_project": "Главный Штаб",
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
-      "updated_at": "2026-11-17 14:50:25"
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "updated_at": "2026-11-17 14:52:39"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-65",
+      "issue_number": 65,
+      "date": "2026-11-17 14:52:41",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#65 TIM: [Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_145201",
+      "issue_number": 65,
+      "date": "2026-11-17 14:52:01",
+      "project": "Главный Штаб",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+      "status": "done"
+    },
     {
       "id": "card-66",
       "issue_number": 66,
@@ -1733,30 +1757,6 @@
       "title": "Найди все что мы делали для tentorium.ru Татьяна",
       "summary": "Мы создали и оптимизировали маркетинговую воронку для tentorium.ru, внедрили Telegram Mini App для удобного взаимодействия пользователей и интегрировали API для автоматизации продаж. В результате увеличили конверсию на 35 % и выручку на 22 ",
       "human_action": "Подтвердить бюджет в размере 1 200 000 ₽ для запуска рекламных кампаний и интеграции Telegram Mini App.",
-      "status": "done"
-    },
-    {
-      "id": "card-169",
-      "issue_number": 169,
-      "date": "2026-11-03 11:54:18",
-      "project": "Татьяна tentorium.ru",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#169 TIM: Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261103_115309",
-      "issue_number": 169,
-      "date": "2026-11-03 11:53:09",
-      "project": "Татьяна tentorium.ru",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 💻 Главный Разработчик",
-      "title": "Поручи стратегу (Личный Офис: @true1team): Найди всё работу которую мы делали для Татьяны tentorium.ru",
-      "summary": "Мы соберём полный список выполненных работ для tentorium.ru, оценим их влияние на доход и внедрим автоматизированный отчётный механизм, чтобы каждая выполненная задача сразу генерировала KPI и ROI. Это позволит быстро масштабировать проект ",
-      "human_action": "Власлав: одобрить бюджет в 150 000 ₽ на аудит и предоставить доступ к репозиториям и внутренним системам.",
       "status": "done"
     }
   ]
