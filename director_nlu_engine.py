@@ -1411,6 +1411,36 @@ def handle_director_text(
         send_tg_smart(ctx, tok, chat_id, msg, reply_markup=reply_markup_fn(proj), bot_label=bot_label, as_markdown=False)
         return True
 
+    if re.search(r"(?:^/seo\b|\bseo[- ]?(?:аудит|проверк|анализ|задач|скилл|audit|check|tasks?|autopilot)\b|(?:проверь|запусти|сделай|выполни)\s+seo\b)", clean_text, re.IGNORECASE):
+        try:
+            import office_seo_worker
+
+            urls_seo = nlu.get("urls") or extract_urls(clean_text)
+            q_task = office_seo_worker.queue_seo_task(clean_text, url=urls_seo[0] if urls_seo else "", priority="high", source=f"director_{login}")
+            ack_seo = (
+                f"🔎 <b>Директор «{_esc(dir_name)}» запустил Claude SEO-Агент (Задача <code>{_esc(q_task['id'])}</code>)</b>\n\n"
+                + office_seo_worker.format_status_for_telegram()
+                + "\n\n<i>⏳ Выполняю SEO-проверку и задачи прямо сейчас в фоне...</i>"
+            )
+            send_tg_smart(ctx, tok, chat_id, ack_seo, reply_markup=reply_markup_fn(proj), bot_label=bot_label, as_markdown=False)
+
+            def _dir_seo_job():
+                try:
+                    office_seo_worker.run_seo_cycle(
+                        trigger=f"director_{login}",
+                        force=True,
+                        notify=True,
+                        single_url=urls_seo[0] if (urls_seo and len(clean_text.split()) <= 4) else "",
+                    )
+                except Exception:
+                    pass
+
+            threading.Thread(target=_dir_seo_job, daemon=True).start()
+            update_chat_context(bot_key, chat_id, last_answer_preview=ack_seo[:350])
+            return True
+        except Exception:
+            pass
+
     if re.search(r"(?:^/store\b|создай\s+(?:ai[- ]?)?магазин|собери\s+(?:ai[- ]?)?магазин|сделай\s+витрину|build\s+(?:my\s+)?store|open\s*v3\s*store)", clean_text, re.IGNORECASE):
         try:
             import store_builder_engine
