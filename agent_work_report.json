@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-09 12:52:41",
+  "updated": "2026-11-17 14:38:43",
   "kpis": {
-    "total_completed_works": 249,
-    "tim_master_reports": 40,
-    "active_projects_count": 57,
+    "total_completed_works": 251,
+    "tim_master_reports": 42,
+    "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
   },
@@ -171,9 +171,9 @@
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 99,
+        "completed_works": 100,
         "open_tasks": 0,
-        "tim_reports": 2,
+        "tim_reports": 3,
         "saved_photos": 0,
         "files_on_disk": 15,
         "size_kb": 283201,
@@ -203,7 +203,7 @@
       ],
       "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
       "last_work": {
-        "id": "hist-11",
+        "id": "hist-12",
         "date": "23.10.2026 18:20",
         "project": "Unity Inc",
         "type": "ai_study",
@@ -534,7 +534,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 10,
+        "open_tasks": 9,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -565,7 +565,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-13",
+        "id": "hist-12",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 40,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "updated_at": "2026-11-08 23:02:03"
+      "tasks_completed": 42,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "updated_at": "2026-11-17 14:38:16"
     },
     {
       "key": "intake",
@@ -848,7 +848,7 @@
       "tasks_completed": 122,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     {
       "key": "router",
@@ -859,7 +859,7 @@
       "tasks_completed": 122,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     {
       "key": "gatekeeper",
@@ -870,7 +870,7 @@
       "tasks_completed": 122,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 69,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     {
       "key": "researcher",
@@ -901,9 +901,9 @@
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
       "tasks_completed": 47,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "updated_at": "2026-11-09 12:40:34"
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "updated_at": "2026-11-17 14:38:16"
     },
     {
       "key": "analyst",
@@ -914,7 +914,7 @@
       "tasks_completed": 47,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-09 12:52:39"
+      "updated_at": "2026-11-17 14:38:33"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 33,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "updated_at": "2026-11-08 23:02:03"
+      "tasks_completed": 35,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "updated_at": "2026-11-17 14:38:16"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 32,
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "last_task": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "updated_at": "2026-11-08 23:02:03"
+      "tasks_completed": 34,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "updated_at": "2026-11-17 14:38:16"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 27,
-      "last_project": "Thought/Мысль",
-      "last_task": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "updated_at": "2026-11-08 23:00:53"
+      "tasks_completed": 28,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "updated_at": "2026-11-17 14:38:16"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,32 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "tim-20261117_143726",
+      "issue_number": 77,
+      "date": "2026-11-17 14:37:26",
+      "project": "Главный Штаб",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261109_130500",
+      "issue_number": null,
+      "date": "2026-11-09 13:05:00",
+      "project": "Unity Inc",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
+      "title": "Детально изучить всё, что делает Ярослав Сажнев (https://t.me/yaroslavsazhnev), применить в автономную Базу Знаний виртуального офиса, найти",
+      "summary": "Мастер-отчёт Директора Тима для проекта Unity Inc.",
+      "human_action": "",
+      "status": "done"
+    },
     {
       "id": "card-190",
       "issue_number": 190,
@@ -1717,30 +1743,6 @@
       "agent": "🛡 Контролёр",
       "title": "#14 GUEST_LEAD: Покажи отчёт о проделанной работе и статус задач",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-15",
-      "issue_number": 15,
-      "date": "2026-11-02 12:38:26",
-      "project": "Unity Inc",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#15 TIM: Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261102_123801",
-      "issue_number": 15,
-      "date": "2026-11-02 12:38:01",
-      "project": "Unity Inc",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📈 Маркетолог & Трафик, 🤝 B2B Продажи & Офферы",
-      "title": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
-      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Маркетолог & Трафик, B2B Продажи & Офферы) в рамках проекта «Unity Inc». Сформирована прикладная связка монетизации, воронки привлечения и технической сбор",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Unity Inc».",
       "status": "done"
     }
   ]
