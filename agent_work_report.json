@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:45:48",
+  "updated": "2026-11-17 14:47:18",
   "kpis": {
-    "total_completed_works": 261,
-    "tim_master_reports": 48,
+    "total_completed_works": 262,
+    "tim_master_reports": 49,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -534,7 +534,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 7,
+        "open_tasks": 6,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -565,7 +565,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-10",
+        "id": "hist-9",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 48,
+      "tasks_completed": 49,
       "last_project": "Входящие_Офис",
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "updated_at": "2026-11-17 14:45:38"
+      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+      "updated_at": "2026-11-17 14:47:07"
     },
     {
       "key": "intake",
@@ -848,7 +848,7 @@
       "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     {
       "key": "router",
@@ -859,7 +859,7 @@
       "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     {
       "key": "gatekeeper",
@@ -870,7 +870,7 @@
       "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     {
       "key": "researcher",
@@ -902,8 +902,8 @@
       "state": "online",
       "tasks_completed": 50,
       "last_project": "Входящие_Офис",
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "updated_at": "2026-11-17 14:45:38"
+      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+      "updated_at": "2026-11-17 14:47:07"
     },
     {
       "key": "analyst",
@@ -914,7 +914,7 @@
       "tasks_completed": 50,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:45:47"
+      "updated_at": "2026-11-17 14:47:16"
     },
     {
       "key": "developer",
@@ -966,10 +966,10 @@
       "emoji": "🎬",
       "role": "Media Director: сценарии, Google VEO 3.1 видеопромпты, международная дистрибуция треков и кино Светланы.",
       "state": "online",
-      "tasks_completed": 4,
+      "tasks_completed": 5,
       "last_project": "Входящие_Офис",
-      "last_task": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
-      "updated_at": "2026-11-17 14:42:10"
+      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+      "updated_at": "2026-11-17 14:47:07"
     },
     {
       "key": "sales_closer",
@@ -984,6 +984,19 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "tim-20261117_144620",
+      "issue_number": 70,
+      "date": "2026-11-17 14:46:20",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
+      "title": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "tim-20261117_144509",
       "issue_number": 71,
@@ -1737,17 +1750,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#6 AUTH_SYNC: Быстрая заявка REQ-015916 (@codeplz / @codeplz)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-7",
-      "issue_number": 7,
-      "date": "2026-11-02 13:10:15",
-      "project": "Лиды_Гости",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#7 GUEST_LEAD_QUIZ: Разработка Telegram Mini Apps & IT-Продукты",
       "summary": "✅ Готово",
       "status": "done"
     }
