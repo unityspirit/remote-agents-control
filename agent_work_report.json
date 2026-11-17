@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:09:44",
+  "updated": "2026-11-17 15:10:07",
   "kpis": {
     "total_completed_works": 296,
     "tim_master_reports": 60,
@@ -21,8 +21,8 @@
         "open_tasks": 1,
         "tim_reports": 4,
         "saved_photos": 1,
-        "files_on_disk": 23,
-        "size_kb": 176,
+        "files_on_disk": 47,
+        "size_kb": 328,
         "ai_analyses": 4,
         "research_notes": 0
       },
@@ -124,8 +124,8 @@
         "open_tasks": 0,
         "tim_reports": 2,
         "saved_photos": 0,
-        "files_on_disk": 16,
-        "size_kb": 210,
+        "files_on_disk": 17,
+        "size_kb": 216,
         "ai_analyses": 9,
         "research_notes": 0
       },
@@ -175,8 +175,8 @@
         "open_tasks": 0,
         "tim_reports": 3,
         "saved_photos": 0,
-        "files_on_disk": 15,
-        "size_kb": 283201,
+        "files_on_disk": 24,
+        "size_kb": 283323,
         "ai_analyses": 96,
         "research_notes": 1
       },
@@ -329,8 +329,8 @@
         "open_tasks": 1,
         "tim_reports": 3,
         "saved_photos": 0,
-        "files_on_disk": 2086,
-        "size_kb": 304535,
+        "files_on_disk": 2087,
+        "size_kb": 304542,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -381,8 +381,8 @@
         "open_tasks": 2,
         "tim_reports": 8,
         "saved_photos": 0,
-        "files_on_disk": 46,
-        "size_kb": 9622,
+        "files_on_disk": 60,
+        "size_kb": 9816,
         "ai_analyses": 6,
         "research_notes": 0
       },
@@ -434,7 +434,7 @@
         "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 4122,
-        "size_kb": 170246,
+        "size_kb": 170272,
         "ai_analyses": 0,
         "research_notes": 0
       },
@@ -485,8 +485,8 @@
         "open_tasks": 0,
         "tim_reports": 1,
         "saved_photos": 0,
-        "files_on_disk": 85,
-        "size_kb": 848,
+        "files_on_disk": 126,
+        "size_kb": 1447,
         "ai_analyses": 2,
         "research_notes": 0
       },
@@ -537,8 +537,8 @@
         "open_tasks": 4,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 197,
-        "size_kb": 1261,
+        "files_on_disk": 203,
+        "size_kb": 1295,
         "ai_analyses": 29,
         "research_notes": 1
       },
@@ -836,7 +836,7 @@
       "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:09:43"
+      "updated_at": "2026-11-17 15:10:04"
     },
     {
       "key": "router",
@@ -847,7 +847,7 @@
       "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:09:43"
+      "updated_at": "2026-11-17 15:10:04"
     },
     {
       "key": "gatekeeper",
@@ -858,7 +858,7 @@
       "tasks_completed": 148,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:09:43"
+      "updated_at": "2026-11-17 15:10:04"
     },
     {
       "key": "scribe",
@@ -869,7 +869,7 @@
       "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:09:43"
+      "updated_at": "2026-11-17 15:10:04"
     },
     {
       "key": "project_lead",
@@ -880,7 +880,7 @@
       "tasks_completed": 91,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:09:43"
+      "updated_at": "2026-11-17 15:10:04"
     },
     {
       "key": "researcher",
@@ -902,7 +902,7 @@
       "tasks_completed": 62,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:09:43"
+      "updated_at": "2026-11-17 15:10:04"
     },
     {
       "key": "developer",
