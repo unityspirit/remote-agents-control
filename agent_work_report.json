@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:44:17",
+  "updated": "2026-11-17 14:44:49",
   "kpis": {
-    "total_completed_works": 258,
-    "tim_master_reports": 46,
+    "total_completed_works": 260,
+    "tim_master_reports": 47,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 46,
+      "tasks_completed": 47,
       "last_project": "Входящие_Офис",
-      "last_task": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-      "updated_at": "2026-11-17 14:44:06"
+      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "updated_at": "2026-11-17 14:44:39"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 125,
+      "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:15"
+      "updated_at": "2026-11-17 14:44:48"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 125,
+      "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:15"
+      "updated_at": "2026-11-17 14:44:48"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 125,
+      "tasks_completed": 126,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:15"
+      "updated_at": "2026-11-17 14:44:48"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:15"
+      "updated_at": "2026-11-17 14:44:48"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 72,
+      "tasks_completed": 73,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:15"
+      "updated_at": "2026-11-17 14:44:48"
     },
     {
       "key": "researcher",
@@ -914,7 +914,7 @@
       "tasks_completed": 50,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:44:15"
+      "updated_at": "2026-11-17 14:44:48"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 38,
+      "tasks_completed": 39,
       "last_project": "Входящие_Офис",
-      "last_task": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-      "updated_at": "2026-11-17 14:44:06"
+      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "updated_at": "2026-11-17 14:44:39"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 37,
+      "tasks_completed": 38,
       "last_project": "Входящие_Офис",
-      "last_task": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-      "updated_at": "2026-11-17 14:44:06"
+      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "updated_at": "2026-11-17 14:44:39"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 31,
+      "tasks_completed": 32,
       "last_project": "Входящие_Офис",
-      "last_task": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-      "updated_at": "2026-11-17 14:44:06"
+      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "updated_at": "2026-11-17 14:44:39"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-72",
+      "issue_number": 72,
+      "date": "2026-11-17 14:44:41",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#72 TIM: Claude is paying to learn the skills how much? How can I make money by learning?",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_144434",
+      "issue_number": 72,
+      "date": "2026-11-17 14:44:34",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-73",
       "issue_number": 73,
@@ -1722,28 +1746,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#8 AUTH_SYNC: Быстрая заявка REQ-382737 (@globalplusteam / @globalplusteam)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-9",
-      "issue_number": 9,
-      "date": "2026-11-02 12:57:55",
-      "project": "Unity Inc",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#9 NEW_MEMBER_PROJECT: Проект компании по интересу: Фермы контента",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-10",
-      "issue_number": 10,
-      "date": "2026-11-02 12:50:54",
-      "project": "Unity Inc",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#10 RESEARCH_MORE: Фермы контента рынок конкуренты кейсы монетизации 2026",
       "summary": "✅ Готово",
       "status": "done"
     }
