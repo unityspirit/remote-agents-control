@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:05:46",
+  "updated": "2026-11-17 15:06:38",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -10,9 +10,9 @@
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
       "tasks_completed": 60,
-      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
       "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:05:37"
+      "updated_at": "2026-11-17 15:06:28"
     },
     "strategist": {
       "name": "Стратег",
@@ -23,9 +23,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 49,
-      "last_task": "1. Продукт & Закрытый Клуб",
-      "last_project": "Traffic",
-      "updated_at": "2026-11-17 15:04:52"
+      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-17 15:06:28"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 44,
-      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+      "tasks_completed": 45,
+      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
       "last_project": "Alberta",
-      "updated_at": "2026-11-17 15:05:37"
+      "updated_at": "2026-11-17 15:06:28"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -87,7 +87,7 @@
       "gives": "работающий Micro-SaaS, TMA бот, лендинг с 3D сценой без техдолга",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 5,
+      "tasks_completed": 4,
       "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
       "last_project": "Личный Офис: @true1team",
       "updated_at": "2026-11-02 12:30:45"
@@ -103,7 +103,7 @@
       "tasks_completed": 145,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     "researcher": {
       "name": "Разведчик",
@@ -129,7 +129,7 @@
       "tasks_completed": 145,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 60,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 145,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 88,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 88,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
       "last_call_at": "2026-11-17T22:05:37.761608+00:00",
-      "errors_count": 27
+      "errors_count": 28
     }
   },
   "statuses": {
