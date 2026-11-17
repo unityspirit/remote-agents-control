@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:07:44",
+  "updated": "2026-11-17 15:09:44",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -1849,9 +1849,9 @@
       "why_first": "Единый двигатель продаж всего холдинга: связка автоворонок, холодного аутрича и коротких Reels/Shorts питает лидами B2B сайты, Доминикану и Micro-SaaS.",
       "human_action": "Выбрать приоритетную нишу для холодного аутрича и утвердить оффер с гарантией.",
       "counts": {
-        "completed_works": 12,
+        "completed_works": 11,
         "open_tasks": 0,
-        "tim_reports": 3,
+        "tim_reports": 2,
         "saved_photos": 0,
         "files_on_disk": 16,
         "size_kb": 210,
@@ -1888,7 +1888,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "23.10.2026 19:09",
           "project": "Traffic",
           "type": "ai_study",
@@ -1898,7 +1898,7 @@
           "status": "done"
         },
         {
-          "id": "hist-13",
+          "id": "hist-12",
           "date": "23.10.2026 19:06",
           "project": "Traffic",
           "type": "ai_study",
@@ -1908,7 +1908,7 @@
           "status": "done"
         },
         {
-          "id": "hist-14",
+          "id": "hist-13",
           "date": "23.10.2026 18:25",
           "project": "Traffic",
           "type": "ai_study",
@@ -1918,7 +1918,7 @@
           "status": "done"
         },
         {
-          "id": "hist-15",
+          "id": "hist-14",
           "date": "22.10.2026 08:21",
           "project": "Traffic",
           "type": "ai_study",
@@ -1987,19 +1987,6 @@
           "status": "done"
         },
         {
-          "id": "tim-20261025_153816",
-          "issue_number": null,
-          "date": "2026-10-25 15:38:16",
-          "project": "Traffic",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-          "title": "Отчет_Tim_20261025_153816_Аудит_Автономных_Задач_И_Новые_Запросы",
-          "summary": "Мастер-отчёт Директора Тима для проекта Traffic.",
-          "human_action": "",
-          "status": "done"
-        },
-        {
           "id": "card-133",
           "issue_number": 133,
           "date": "2026-10-23 19:09:53",
@@ -2055,7 +2042,7 @@
           "status": "done"
         },
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "02.11.2026 13:27",
           "project": "Traffic",
           "type": "ai_study",
@@ -2127,13 +2114,13 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «True 1 Team»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 4,
+        "completed_works": 6,
         "open_tasks": 0,
         "tim_reports": 0,
-        "saved_photos": 0,
+        "saved_photos": 3,
         "files_on_disk": 5,
         "size_kb": 5085,
-        "ai_analyses": 4,
+        "ai_analyses": 6,
         "research_notes": 0
       },
       "continue_first": {
@@ -2163,8 +2150,86 @@
         }
       ],
       "research_topic": "True 1 Team рынок конкуренты кейсы монетизации 2026",
-      "media_items": [],
+      "media_items": [
+        {
+          "filename": "photo_45_3.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_3.jpg",
+          "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg",
+          "issue": 45,
+          "project": "True 1 Team",
+          "timestamp": "2026-11-17 15:08:04",
+          "caption": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "ocr_text": "Размер: 612x1360 px\n[ru] 12:20 э Search after each room, give а fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. “looks right\" isn't а measurement. б. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: “how тапу other plans do уои have?\" agree оп scope, revisions, asset permissions and hosting before уои build. then start with опе builder. опе plan. three rooms. show them their own kitchen before уои ask for the sale. follow те for practical А workflows for revenue and profit. оо:оо Repost Watch again\n[en-US] 12:20 Q Search after each room, give a fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. \"looks right\" isn't a measurement. 6. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: \"how many other plans do you have?\" agree on scope, revisions, asset permissions and hosting before you build. then start with one builder. one plan. three rooms. show them their own kitchen before you ask for the sale. follow me for practical Al workflows for revenue and profit. oo:oo (ZJ Repost Watch again"
+        },
+        {
+          "filename": "photo_45_2.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_2.jpg",
+          "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+          "issue": 45,
+          "project": "True 1 Team",
+          "timestamp": "2026-11-17 15:08:04",
+          "caption": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "ocr_text": "Размер: 612x1360 px\n[ru] 12:20 э Search rooms -4 check the geometry against the original plan and its dimensions use blender with python for the scene and three.js for the browser viewer bake the lighting so it loads without rendering the whole scene live let buyers explore approved finishes and upgrades -9 connect their selections to а lead form -9 host it and test it оп а phone the deliverable is а LIVE PAGE. not another video the buyer watches опсе. they сап walk into the kitchen, try а different finish and send ап inquiry showing exactly what they liked. 5. таКе the builder and the critic separate. after each room, give а fresh critic the render and the client's references. ask for pass ог fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. “looks right\" isn't а measurement. б. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: “how тапу other plans do уои have?\" пп есппе reviqinne narmiqeinnq апн hnqfin6 Ноте Jobs Му Network Notifications More\n[en-US] 12:20 Q Search rooms -4 check the geometry against the original plan and its dimensions -+ use blender with python for the scene and three.js for the browser viewer -+ bake the lighting so it loads without rendering the whole scene live -+ let buyers explore approved finishes and upgrades -+ connect their selections to a lead form host it and test it on a phone the deliverable is a LIVE PAGE. not another video the buyer watches once. they can walk into the kitchen, try a different finish and send an inquiry showing exactly what they liked. 5. make the builder and the critic separate. after each room, give a fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. \"looks right\" isn't a measurement. 6. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: \"how many other plans do you have?\" nn revieinnq narmiqeinnq and Home Jobs My Network Notifications More"
+        },
+        {
+          "filename": "photo_45_1.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_1.jpg",
+          "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+          "issue": 45,
+          "project": "True 1 Team",
+          "timestamp": "2026-11-17 15:08:04",
+          "caption": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "ocr_text": "Размер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d blueprint and turn it into а full 3d walkthrough уои сап actually explore. these sell for $5k to $10k per plan. and the buyers are already out there: -9 home builders selling houses before they're built architects pitching а design to а client -9 interior designers selling а renovation developers selling apartments off plan kitchen and bath remodelers presenting upgrades they already have the drawings. уои give them something their customers сап walk through. here's how to turn this into а business: 1. pick 0NE niche. find businesses with floor plans and reference photos оп their websites, but по interactive walkthrough. 2. build the sample before the pitch. give fable their blueprint and photos. have it create three room renders with gpt image 2.5 or а short preview with seedance. З. show them their 0WN project. “i made а preview of your [рип пате]. want to see what the full walkthrough could look like?\" the sample does the selling. 4. опсе they рау, build the real experience. trace the drawing into structured walls, openings and rooms Ноте Jobs Му Network Notifications More\n[en-US] 12:18 e Q Search it can take a 2d blueprint and turn it into a full 3d walkthrough you can actually explore. these sell for $5k to $10k per plan. and the buyers are already out there: -+ home builders selling houses before they're built architects pitching a design to a client interior designers selling a renovation developers selling apartments off plan kitchen and bath remodelers presenting upgrades they already have the drawings. you give them something their customers can walk through. here's how to turn this into a business: I. pick ONE niche. find businesses with floor plans and reference photos on their websites, but no interactive walkthrough. 2. build the sample before the pitch. give fable their blueprint and photos. have it create three room renders with gpt image 2.5 or a short preview with seedance. 3. show them their OWN project. \"i made a preview of your [plan name]. want to see what the full walkthrough could look like?\" the sample does the selling. 4. once they pay, build the real experience. -+ trace the drawing into structured walls, openings and rooms Home Jobs My Network Notifications More"
+        }
+      ],
       "work_items": [
+        {
+          "id": "card-45",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:24",
+          "project": "True 1 Team",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#45 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "photo-photo_45_3.jpg",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:04",
+          "project": "True 1 Team",
+          "type": "photo_study",
+          "agent": "📷 Vision & OCR Агент",
+          "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search after each room, give а fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst i",
+          "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg",
+          "status": "done"
+        },
+        {
+          "id": "photo-photo_45_2.jpg",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:04",
+          "project": "True 1 Team",
+          "type": "photo_study",
+          "agent": "📷 Vision & OCR Агент",
+          "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search rooms -4 check the geometry against the original plan and its dimensions use blender with python for the scene and three.js for the browser viewer bake the ligh",
+          "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+          "status": "done"
+        },
+        {
+          "id": "photo-photo_45_1.jpg",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:04",
+          "project": "True 1 Team",
+          "type": "photo_study",
+          "agent": "📷 Vision & OCR Агент",
+          "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Размер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d blueprint and turn it into а full 3d walkthrough уои сап actually explore. these sell for $5k to $10k per plan. and the buyers are already out ",
+          "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+          "status": "done"
+        },
         {
           "id": "card-63",
           "issue_number": 63,
@@ -2177,7 +2242,27 @@
           "status": "done"
         },
         {
-          "id": "hist-1",
+          "id": "hist-2",
+          "date": "17.11.2026 15:08",
+          "project": "True 1 Team",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-3",
+          "date": "17.11.2026 15:08",
+          "project": "True 1 Team",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "📷 Фото (3 шт.) + 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-4",
           "date": "17.11.2026 14:54",
           "project": "True 1 Team",
           "type": "ai_study",
@@ -2187,7 +2272,7 @@
           "status": "done"
         },
         {
-          "id": "hist-2",
+          "id": "hist-5",
           "date": "02.11.2026 12:36",
           "project": "True 1 Team",
           "type": "ai_study",
@@ -3060,10 +3145,10 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 56,
+        "completed_works": 58,
         "open_tasks": 41,
-        "tim_reports": 25,
-        "saved_photos": 1,
+        "tim_reports": 26,
+        "saved_photos": 4,
         "files_on_disk": 0,
         "size_kb": 0,
         "ai_analyses": 0,
@@ -3098,6 +3183,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-43",
+          "issue_number": 43,
+          "date": "2026-11-17 15:09:36",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#43 TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_150859",
+          "issue_number": 43,
+          "date": "2026-11-17 15:08:59",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.optimizely.com/campaigns/who-is-mark-eting?utm_sour",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-46",
           "issue_number": 46,
@@ -3283,30 +3392,6 @@
           "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
           "title": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
           "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-70",
-          "issue_number": 70,
-          "date": "2026-11-17 14:47:10",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#70 TIM: https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #70»",
-          "status": "not_studied"
-        },
-        {
-          "id": "tim-20261117_144620",
-          "issue_number": 70,
-          "date": "2026-11-17 14:46:20",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
-          "title": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
-          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
           "status": "done"
         }
@@ -4089,20 +4174,20 @@
       "project": "Личный Офис: @true1team",
       "folder": "Личный Офис: @true1team",
       "state": "active",
-      "last_change": "2026-11-02",
+      "last_change": "2026-11-17",
       "lead_agent": "Autonomous Project Agent",
       "priority_score": 55,
       "revenue_potential": "Развитие направления «Личный Офис: @true1team» в связке с экосистемой Виртуального Офиса.",
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Личный Офис: @true1team»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 5,
+        "completed_works": 7,
         "open_tasks": 0,
         "tim_reports": 1,
-        "saved_photos": 0,
+        "saved_photos": 3,
         "files_on_disk": 0,
         "size_kb": 0,
-        "ai_analyses": 4,
+        "ai_analyses": 6,
         "research_notes": 0
       },
       "continue_first": {
@@ -4132,8 +4217,75 @@
         }
       ],
       "research_topic": "Личный Офис: @true1team рынок конкуренты кейсы монетизации 2026",
-      "media_items": [],
+      "media_items": [
+        {
+          "filename": "photo_45_3.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_3.jpg",
+          "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg",
+          "issue": 45,
+          "project": "True 1 Team",
+          "timestamp": "2026-11-17 15:08:04",
+          "caption": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "ocr_text": "Размер: 612x1360 px\n[ru] 12:20 э Search after each room, give а fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. “looks right\" isn't а measurement. б. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: “how тапу other plans do уои have?\" agree оп scope, revisions, asset permissions and hosting before уои build. then start with опе builder. опе plan. three rooms. show them their own kitchen before уои ask for the sale. follow те for practical А workflows for revenue and profit. оо:оо Repost Watch again\n[en-US] 12:20 Q Search after each room, give a fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. \"looks right\" isn't a measurement. 6. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: \"how many other plans do you have?\" agree on scope, revisions, asset permissions and hosting before you build. then start with one builder. one plan. three rooms. show them their own kitchen before you ask for the sale. follow me for practical Al workflows for revenue and profit. oo:oo (ZJ Repost Watch again"
+        },
+        {
+          "filename": "photo_45_2.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_2.jpg",
+          "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+          "issue": 45,
+          "project": "True 1 Team",
+          "timestamp": "2026-11-17 15:08:04",
+          "caption": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "ocr_text": "Размер: 612x1360 px\n[ru] 12:20 э Search rooms -4 check the geometry against the original plan and its dimensions use blender with python for the scene and three.js for the browser viewer bake the lighting so it loads without rendering the whole scene live let buyers explore approved finishes and upgrades -9 connect their selections to а lead form -9 host it and test it оп а phone the deliverable is а LIVE PAGE. not another video the buyer watches опсе. they сап walk into the kitchen, try а different finish and send ап inquiry showing exactly what they liked. 5. таКе the builder and the critic separate. after each room, give а fresh critic the render and the client's references. ask for pass ог fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. “looks right\" isn't а measurement. б. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: “how тапу other plans do уои have?\" пп есппе reviqinne narmiqeinnq апн hnqfin6 Ноте Jobs Му Network Notifications More\n[en-US] 12:20 Q Search rooms -4 check the geometry against the original plan and its dimensions -+ use blender with python for the scene and three.js for the browser viewer -+ bake the lighting so it loads without rendering the whole scene live -+ let buyers explore approved finishes and upgrades -+ connect their selections to a lead form host it and test it on a phone the deliverable is a LIVE PAGE. not another video the buyer watches once. they can walk into the kitchen, try a different finish and send an inquiry showing exactly what they liked. 5. make the builder and the critic separate. after each room, give a fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst issue first. render again. repeat within your budget. check scale against actual dimensions. \"looks right\" isn't a measurement. 6. sell the rest of the catalog. the first plan proves the workflow. the next conversation is: \"how many other plans do you have?\" nn revieinnq narmiqeinnq and Home Jobs My Network Notifications More"
+        },
+        {
+          "filename": "photo_45_1.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\True 1 Team\\_office\\media\\photo_45_1.jpg",
+          "url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+          "issue": 45,
+          "project": "True 1 Team",
+          "timestamp": "2026-11-17 15:08:04",
+          "caption": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "ocr_text": "Размер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d blueprint and turn it into а full 3d walkthrough уои сап actually explore. these sell for $5k to $10k per plan. and the buyers are already out there: -9 home builders selling houses before they're built architects pitching а design to а client -9 interior designers selling а renovation developers selling apartments off plan kitchen and bath remodelers presenting upgrades they already have the drawings. уои give them something their customers сап walk through. here's how to turn this into а business: 1. pick 0NE niche. find businesses with floor plans and reference photos оп their websites, but по interactive walkthrough. 2. build the sample before the pitch. give fable their blueprint and photos. have it create three room renders with gpt image 2.5 or а short preview with seedance. З. show them their 0WN project. “i made а preview of your [рип пате]. want to see what the full walkthrough could look like?\" the sample does the selling. 4. опсе they рау, build the real experience. trace the drawing into structured walls, openings and rooms Ноте Jobs Му Network Notifications More\n[en-US] 12:18 e Q Search it can take a 2d blueprint and turn it into a full 3d walkthrough you can actually explore. these sell for $5k to $10k per plan. and the buyers are already out there: -+ home builders selling houses before they're built architects pitching a design to a client interior designers selling a renovation developers selling apartments off plan kitchen and bath remodelers presenting upgrades they already have the drawings. you give them something their customers can walk through. here's how to turn this into a business: I. pick ONE niche. find businesses with floor plans and reference photos on their websites, but no interactive walkthrough. 2. build the sample before the pitch. give fable their blueprint and photos. have it create three room renders with gpt image 2.5 or a short preview with seedance. 3. show them their OWN project. \"i made a preview of your [plan name]. want to see what the full walkthrough could look like?\" the sample does the selling. 4. once they pay, build the real experience. -+ trace the drawing into structured walls, openings and rooms Home Jobs My Network Notifications More"
+        }
+      ],
       "work_items": [
+        {
+          "id": "photo-photo_45_3.jpg",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:04",
+          "project": "Личный Офис: @true1team",
+          "type": "photo_study",
+          "agent": "📷 Vision & OCR Агент",
+          "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search after each room, give а fresh critic the render and the client's references. ask for pass or fail, the five biggest problems and specific fixes. fix the worst i",
+          "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg",
+          "status": "done"
+        },
+        {
+          "id": "photo-photo_45_2.jpg",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:04",
+          "project": "Личный Офис: @true1team",
+          "type": "photo_study",
+          "agent": "📷 Vision & OCR Агент",
+          "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Размер: 612x1360 px\n[ru] 12:20 э Search rooms -4 check the geometry against the original plan and its dimensions use blender with python for the scene and three.js for the browser viewer bake the ligh",
+          "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+          "status": "done"
+        },
+        {
+          "id": "photo-photo_45_1.jpg",
+          "issue_number": 45,
+          "date": "2026-11-17 15:08:04",
+          "project": "Личный Офис: @true1team",
+          "type": "photo_study",
+          "agent": "📷 Vision & OCR Агент",
+          "title": "Фото изучено: 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Размер: 612x1360 px\n[ru] 12:18 э Search it сап take а 2d blueprint and turn it into а full 3d walkthrough уои сап actually explore. these sell for $5k to $10k per plan. and the buyers are already out ",
+          "image_url": "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+          "status": "done"
+        },
         {
           "id": "card-16",
           "issue_number": 16,
@@ -4182,6 +4334,26 @@
         },
         {
           "id": "hist-4",
+          "date": "17.11.2026 15:08",
+          "project": "Личный Офис: @true1team",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-5",
+          "date": "17.11.2026 15:08",
+          "project": "Личный Офис: @true1team",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки",
+          "title": "📷 Фото (3 шт.) + 📷 Изучить фото (3 шт.) для True 1 Team",
+          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
+          "status": "done"
+        },
+        {
+          "id": "hist-6",
           "date": "17.11.2026 14:54",
           "project": "Личный Офис: @true1team",
           "type": "ai_study",
@@ -4191,7 +4363,7 @@
           "status": "done"
         },
         {
-          "id": "hist-5",
+          "id": "hist-7",
           "date": "02.11.2026 12:36",
           "project": "Личный Офис: @true1team",
           "type": "ai_study",
