@@ -16732,6 +16732,43 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 15:07:36"
+    },
+    "45": {
+      "id": 45,
+      "created": "2026-11-17 15:08:03",
+      "handoffs": [
+        {
+          "t": "2026-11-17 15:08:03",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 15:08:24",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "📷 Изучить фото (3 шт.) для True 1 Team",
+      "urls": [
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg"
+      ],
+      "project": "True 1 Team",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 15:08:24",
+      "image_urls": [
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_1.jpg",
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_2.jpg",
+        "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data/uploads/true_1_team/1794435793338_3.jpg"
+      ],
+      "has_study_notes": true
     }
   }
 }
