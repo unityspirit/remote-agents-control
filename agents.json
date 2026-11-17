@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:51:37",
+  "updated": "2026-11-17 14:52:48",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 52,
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "tasks_completed": 53,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:50:25"
+      "updated_at": "2026-11-17 14:52:39"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 42,
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "tasks_completed": 43,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:50:25"
+      "updated_at": "2026-11-17 14:52:39"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 36,
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "tasks_completed": 37,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:50:25"
+      "updated_at": "2026-11-17 14:52:39"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 43,
-      "last_task": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "tasks_completed": 44,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:50:25"
+      "updated_at": "2026-11-17 14:52:39"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 129,
+      "tasks_completed": 130,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 51,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "tasks_completed": 52,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:48:13"
+      "updated_at": "2026-11-17 14:52:39"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 129,
+      "tasks_completed": 130,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 51,
+      "tasks_completed": 52,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 129,
+      "tasks_completed": 130,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 76,
+      "tasks_completed": 77,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:51:37"
+      "updated_at": "2026-11-17 14:52:48"
     }
   },
   "daemons": {
@@ -246,7 +246,7 @@
       "last_provider": "deterministic_local_engine",
       "last_model": "structured-v18",
       "last_call_at": "2026-11-17T21:51:25.389231+00:00",
-      "errors_count": 12
+      "errors_count": 13
     }
   },
   "statuses": {
