@@ -16647,6 +16647,33 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 15:04:02"
+    },
+    "49": {
+      "id": 49,
+      "created": "2026-11-17 15:04:29",
+      "handoffs": [
+        {
+          "t": "2026-11-17 15:04:29",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 15:04:53",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: 1. Продукт & Закрытый Клуб",
+      "urls": [],
+      "project": "Traffic",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 15:04:53"
     }
   }
 }
