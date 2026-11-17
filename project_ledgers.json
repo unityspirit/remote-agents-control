@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:42:22",
+  "updated": "2026-11-17 14:43:29",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3003,9 +3003,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 37,
-        "open_tasks": 34,
-        "tim_reports": 14,
+        "completed_works": 38,
+        "open_tasks": 35,
+        "tim_reports": 15,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3041,6 +3041,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-74",
+          "issue_number": 74,
+          "date": "2026-11-17 14:43:19",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#74 TIM: https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html l",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»",
+          "status": "not_studied"
+        },
+        {
+          "id": "tim-20261117_144301",
+          "issue_number": 74,
+          "date": "2026-11-17 14:43:01",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-75",
           "issue_number": 75,
@@ -3228,30 +3252,6 @@
           "title": "#181 TIM: https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту ",
           "summary": "✅ Готово",
           "status": "done"
-        },
-        {
-          "id": "tim-20261106_102914",
-          "issue_number": 181,
-          "date": "2026-11-06 10:29:14",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
-          "title": "https://thecode.media/vesa-kimi-k31-pro-otkryli-dlya-vseh-model-oboshla-gpt-6-astra-v-kodinge/ изучи и составь план как подключить эту систе",
-          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
-          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-179",
-          "issue_number": 179,
-          "date": "2026-11-06 03:52:59",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#179 True 1, Тебе изменяют!",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #179»",
-          "status": "not_studied"
         }
       ]
     },
@@ -4083,7 +4083,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 9,
+        "open_tasks": 8,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -4116,7 +4116,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "28.10.2026 07:53",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4126,7 +4126,7 @@
           "status": "done"
         },
         {
-          "id": "hist-13",
+          "id": "hist-12",
           "date": "21.10.2026 08:44",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4202,17 +4202,6 @@
           "status": "not_studied"
         },
         {
-          "id": "card-74",
-          "issue_number": 74,
-          "date": "2026-10-22 08:18:47",
-          "project": "Позновалка",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#74 https://youtube.com/shorts/6EMZ5GWt0q0?is=W_F2LA0BsHkHfbj_ learn and dothe",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»",
-          "status": "not_studied"
-        },
-        {
           "id": "card-71",
           "issue_number": 71,
           "date": "2026-10-22 08:18:47",
@@ -4257,7 +4246,7 @@
           "status": "not_studied"
         },
         {
-          "id": "hist-14",
+          "id": "hist-13",
           "date": "20.10.2026 10:45",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4267,7 +4256,7 @@
           "status": "done"
         },
         {
-          "id": "hist-15",
+          "id": "hist-14",
           "date": "19.10.2026 14:58",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4277,7 +4266,7 @@
           "status": "done"
         },
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "05.11.2026 03:27",
           "project": "Позновалка",
           "type": "ai_study",
