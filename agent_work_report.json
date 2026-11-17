@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:47:18",
+  "updated": "2026-11-17 14:48:25",
   "kpis": {
-    "total_completed_works": 262,
-    "tim_master_reports": 49,
+    "total_completed_works": 264,
+    "tim_master_reports": 50,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 49,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
-      "updated_at": "2026-11-17 14:47:07"
+      "tasks_completed": 50,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "updated_at": "2026-11-17 14:48:13"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 126,
+      "tasks_completed": 127,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:47:16"
+      "updated_at": "2026-11-17 14:48:24"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 126,
+      "tasks_completed": 127,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:47:16"
+      "updated_at": "2026-11-17 14:48:24"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 126,
+      "tasks_completed": 127,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:47:16"
+      "updated_at": "2026-11-17 14:48:24"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 73,
+      "tasks_completed": 74,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:47:16"
+      "updated_at": "2026-11-17 14:48:24"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 73,
+      "tasks_completed": 74,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:47:16"
+      "updated_at": "2026-11-17 14:48:24"
     },
     {
       "key": "researcher",
@@ -900,10 +900,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 50,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
-      "updated_at": "2026-11-17 14:47:07"
+      "tasks_completed": 51,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "updated_at": "2026-11-17 14:48:13"
     },
     {
       "key": "analyst",
@@ -911,10 +911,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 50,
+      "tasks_completed": 51,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:47:16"
+      "updated_at": "2026-11-17 14:48:24"
     },
     {
       "key": "developer",
@@ -922,10 +922,10 @@
       "emoji": "💻",
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
-      "tasks_completed": 40,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "updated_at": "2026-11-17 14:45:38"
+      "tasks_completed": 41,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "updated_at": "2026-11-17 14:48:13"
     },
     {
       "key": "strategist",
@@ -933,10 +933,10 @@
       "emoji": "📊",
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
-      "tasks_completed": 39,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "updated_at": "2026-11-17 14:45:38"
+      "tasks_completed": 40,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "updated_at": "2026-11-17 14:48:13"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 33,
-      "last_project": "Входящие_Офис",
-      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "updated_at": "2026-11-17 14:45:38"
+      "tasks_completed": 34,
+      "last_project": "Главный Штаб",
+      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "updated_at": "2026-11-17 14:48:13"
     },
     {
       "key": "vibe_coder",
@@ -984,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-69",
+      "issue_number": 69,
+      "date": "2026-11-17 14:48:17",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#69 TIM: [Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_144738",
+      "issue_number": 69,
+      "date": "2026-11-17 14:47:38",
+      "project": "Главный Штаб",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+      "title": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
+      "status": "done"
+    },
     {
       "id": "tim-20261117_144620",
       "issue_number": 70,
@@ -1728,28 +1752,6 @@
       "type": "board_card",
       "agent": "🛡 Контролёр",
       "title": "#4 GUEST_LEAD_QUIZ: AI-Маркетинг & Pay-on-Results Воронки",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-5",
-      "issue_number": 5,
-      "date": "2026-11-02 13:21:15",
-      "project": "Alberta",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#5 AUTH_SYNC: Быстрая заявка REQ-388120 (Alberta / Alberta)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-6",
-      "issue_number": 6,
-      "date": "2026-11-02 13:15:33",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#6 AUTH_SYNC: Быстрая заявка REQ-015916 (@codeplz / @codeplz)",
       "summary": "✅ Готово",
       "status": "done"
     }
