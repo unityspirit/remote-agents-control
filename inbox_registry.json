@@ -1,7 +1,18 @@
 {
-  "updated_at": "2026-11-17 14:56:02",
+  "updated_at": "2026-11-17 14:57:27",
   "version": "1.0",
   "items": [
+    {
+      "id": "card-59",
+      "card": 59,
+      "status": "not_studied",
+      "source_text": "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service",
+      "urls": [
+        "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7"
+      ],
+      "pending_file": "Карточка_59_https___youtube_com_shorts_u.md",
+      "raw_file": "raw_59_20261117_145713_https___youtube_com_shorts_u.md"
+    },
     {
       "id": "card-61",
       "card": 61,
