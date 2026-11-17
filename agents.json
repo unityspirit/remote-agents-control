@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:48:24",
+  "updated": "2026-11-17 14:49:25",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 50,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "tasks_completed": 51,
+      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:48:13"
+      "updated_at": "2026-11-17 14:49:16"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 40,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "tasks_completed": 41,
+      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:48:13"
+      "updated_at": "2026-11-17 14:49:16"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 34,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "tasks_completed": 35,
+      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:48:13"
+      "updated_at": "2026-11-17 14:49:16"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 41,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "tasks_completed": 42,
+      "last_task": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
       "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 14:48:13"
+      "updated_at": "2026-11-17 14:49:16"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 127,
+      "tasks_completed": 128,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     },
     "researcher": {
       "name": "Разведчик",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 127,
+      "tasks_completed": 128,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 51,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 127,
+      "tasks_completed": 128,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 74,
+      "tasks_completed": 75,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 74,
+      "tasks_completed": 75,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:48:24"
+      "updated_at": "2026-11-17 14:49:25"
     }
   },
   "daemons": {
@@ -243,7 +243,7 @@
       "last_provider": "auto_standby",
       "last_model": "auto",
       "last_call_at": null,
-      "errors_count": 9
+      "errors_count": 10
     }
   },
   "statuses": {
