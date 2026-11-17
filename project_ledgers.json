@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:05:01",
+  "updated": "2026-11-17 15:05:47",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -13,9 +13,9 @@
       "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
       "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
       "counts": {
-        "completed_works": 10,
+        "completed_works": 9,
         "open_tasks": 1,
-        "tim_reports": 6,
+        "tim_reports": 5,
         "saved_photos": 1,
         "files_on_disk": 23,
         "size_kb": 176,
@@ -63,7 +63,7 @@
       ],
       "work_items": [
         {
-          "id": "hist-9",
+          "id": "hist-8",
           "date": "29.10.2026 20:12",
           "project": "12 IT Продуктов (Короче Капитан)",
           "type": "ai_study",
@@ -73,7 +73,7 @@
           "status": "done"
         },
         {
-          "id": "hist-10",
+          "id": "hist-9",
           "date": "29.10.2026 20:12",
           "project": "12 IT Продуктов (Короче Капитан)",
           "type": "ai_study",
@@ -83,7 +83,7 @@
           "status": "done"
         },
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "21.10.2026 08:45",
           "project": "12 IT Продуктов (Короче Капитан)",
           "type": "ai_study",
@@ -188,19 +188,6 @@
           "departments": "📊 Стратег, ⚡ Вайбкодер & Micro-SaaS",
           "title": "ПЛАН_МОНЕТИЗАЦИИ_VIBECODING_2026",
           "summary": "Мастер-отчёт Директора Тима для проекта 12 IT Продуктов (Короче Капитан).",
-          "human_action": "",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261022_202215",
-          "issue_number": null,
-          "date": "2026-10-22 20:22:15",
-          "project": "12 IT Продуктов (Короче Капитан)",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "💻 Главный Разработчик, 📈 Маркетолог & Трафик, 🔎 Аналитик & Разведчик, ⚡ Вайбкодер & Micro-SaaS, 📊 Стратег",
-          "title": "Тим, изучи канал https://t.me/vibecodings (Станислав Быстрицкий), внедри его инструменты вайбкодинга и составь мастер-план монетизации для х",
-          "summary": "Тим скоординировал 5 отделов (Главный Разработчик, Маркетолог & Трафик, Аналитик & Разведчик, Вайбкодер & Micro-SaaS, Стратег) для проекта 12 IT Продуктов (Короче Капитан).",
           "human_action": "",
           "status": "done"
         },
@@ -378,9 +365,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 16,
+        "completed_works": 18,
         "open_tasks": 1,
-        "tim_reports": 6,
+        "tim_reports": 7,
         "saved_photos": 0,
         "files_on_disk": 46,
         "size_kb": 9622,
@@ -416,6 +403,30 @@
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-48",
+          "issue_number": 48,
+          "date": "2026-11-17 15:05:39",
+          "project": "Alberta",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#48 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_150519",
+          "issue_number": 48,
+          "date": "2026-11-17 15:05:19",
+          "project": "Alberta",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
+          "summary": "Создадим Telegram‑бота с Mini App‑навигацией, интегрируем автоматический лид‑квалификатор и систему QR‑кодов для повторных продаж. Воронка: бесплатный 40‑мин разбор → платный аудит → подписка на пакет услуг. Приём 1 000 000 ₽ будет достигну",
+          "human_action": "Подтвердить бюджет 200 000 ₽ на рекламные кампании и предоставить доступ к корпоративному Telegram‑каналу Alberta.",
+          "status": "done"
+        },
         {
           "id": "card-50",
           "issue_number": 50,
@@ -602,27 +613,6 @@
           "title": "Финализируй структуру PDF лид-магнита, 9 промптов VEO 3.1 и сценарий Telegram-бота квалификации лидов для Alberta",
           "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Маркетолог & Трафик, Главный Разработчик, Креативный Продюсер & Медиа) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической ",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
-          "status": "done"
-        },
-        {
-          "id": "card-9005",
-          "issue_number": 9005,
-          "date": "2026-10-22 08:18:48",
-          "project": "Alberta",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#9005 💳 Ключи ЮKassa/Prodamus для трипваера 490 ₽",
-          "summary": "🧑 Ждёт вашего действия · Далее: Передать API-ключи боту",
-          "status": "blocked_human"
-        },
-        {
-          "id": "hist-17",
-          "date": "04.11.2026 00:04",
-          "project": "Alberta",
-          "type": "ai_study",
-          "agent": "🧠 ИИ-Аналитик папки",
-          "title": "Сформировать контент-план и оффер закрытого клуба Alberta Shirani",
-          "summary": "Сохранено в память папки (AI_Analysis_History.md)",
           "status": "done"
         }
       ]
