@@ -16317,6 +16317,62 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:56:46"
+    },
+    "59": {
+      "id": 59,
+      "created": "2026-11-17 14:57:12",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:57:12",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:57:13",
+          "from": "intake",
+          "to": "researcher",
+          "note": "Открываю источники, фото и читаю текст"
+        },
+        {
+          "t": "2026-11-17 14:57:27",
+          "from": "researcher",
+          "to": "router",
+          "note": "Доказательства: title_only (известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google))"
+        },
+        {
+          "t": "2026-11-17 14:57:27",
+          "from": "router",
+          "to": "human",
+          "note": "Источник недоступен — нужна помощь человека"
+        }
+      ],
+      "evidence": {
+        "level": "title_only",
+        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
+        "chars": 509
+      },
+      "title": "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service",
+      "urls": [
+        "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "human",
+      "status": "not_studied",
+      "updated": "2026-11-17 14:57:30",
+      "suggested_project": null,
+      "route": {
+        "confidence": "none",
+        "alternatives": []
+      },
+      "pending_file": "Карточка_59_https___youtube_com_shorts_u.md",
+      "raw_file": "raw_59_20261117_145713_https___youtube_com_shorts_u.md",
+      "next": {
+        "who": "human",
+        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #59»"
+      }
     }
   }
 }
