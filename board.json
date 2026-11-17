@@ -217,12 +217,10 @@
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
         }
       ],
-      "title": "https://www.instagram.com/p/DdlzMA8iXG7/?psln=dXFjenR2enBlODU= learn and tell me what repos are they talking about? And how do we implement it to our favor!",
-      "project": "Позновалка",
-      "kind": "link",
-      "urls": [
-        "https://www.instagram.com/p/DdlzMA8iXG7/?psln=dXFjenR2enBlODU="
-      ],
+      "title": "TIM: [Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "project": "Главный Штаб",
+      "kind": "command",
+      "urls": [],
       "evidence": {
         "level": "partial",
         "reason": "прочитана подпись; содержимое слайдов недоступно"
@@ -233,7 +231,8 @@
         "who": "human",
         "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
       },
-      "updated": "2026-10-22 08:18:47"
+      "updated": "2026-11-17 14:50:27",
+      "refers_to": null
     },
     "71": {
       "id": 71,
