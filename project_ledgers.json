@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:02:31",
+  "updated": "2026-11-17 15:03:20",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2802,9 +2802,9 @@
       "why_first": "Готова концепция прямого бронирования вилл (Profitroom + WhatsApp): владельцы вилл в Лас-Терренас теряют 15–18% на OTA и охотно идут на прямые заявки.",
       "human_action": "Подтвердить номер WhatsApp / CRM для прямого приема бронирований от туристов.",
       "counts": {
-        "completed_works": 4,
+        "completed_works": 6,
         "open_tasks": 1,
-        "tim_reports": 2,
+        "tim_reports": 3,
         "saved_photos": 0,
         "files_on_disk": 2086,
         "size_kb": 304535,
@@ -2840,6 +2840,30 @@
       "research_topic": "Las Terrenas Dominican Republic luxury villa rentals direct booking market 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-53",
+          "issue_number": 53,
+          "date": "2026-11-17 15:03:12",
+          "project": "Белый Доминикана",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#53 TIM: Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity busi",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_150248",
+          "issue_number": 53,
+          "date": "2026-11-17 15:02:48",
+          "project": "Белый Доминикана",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "Profitroom.com study learn copy system and let's implement make money! And give feedback in the spikebot unityspiritpartners unity business",
+          "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Белый Доминикана». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без ",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Белый Доминикана».",
+          "status": "done"
+        },
         {
           "id": "card-187",
           "issue_number": 187,
