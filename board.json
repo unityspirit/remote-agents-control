@@ -188,12 +188,10 @@
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
         }
       ],
-      "title": "https://www.instagram.com/p/DeJ53nTAJOd/?img_index=8&dlrf=MTNybjN6Z3F3aTk3ZA== изучи о чём этот репозиторий!",
-      "project": "Позновалка",
-      "kind": "link",
-      "urls": [
-        "https://www.instagram.com/p/DeJ53nTAJOd/?img_index=8&dlrf=MTNybjN6Z3F3aTk3ZA=="
-      ],
+      "title": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "project": "Alberta",
+      "kind": "command",
+      "urls": [],
       "evidence": {
         "level": "partial",
         "reason": "прочитана подпись; содержимое слайдов недоступно"
@@ -204,7 +202,8 @@
         "who": "human",
         "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
       },
-      "updated": "2026-10-22 08:18:47"
+      "updated": "2026-11-17 15:06:31",
+      "refers_to": null
     },
     "67": {
       "id": 67,
