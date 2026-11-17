@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17 14:54:34",
+  "updated": "2026-11-17 14:55:39",
   "kpis": {
-    "total_completed_works": 276,
-    "tim_master_reports": 54,
+    "total_completed_works": 278,
+    "tim_master_reports": 55,
     "active_projects_count": 58,
     "total_saved_photos": 1,
     "awaiting_human_count": 50
@@ -834,10 +834,10 @@
       "emoji": "👑",
       "role": "Генеральный AI-Директор холдинга: принимает поручения от Власлава, координирует 7 отделов (стратегия, маркетинг, разработка, продажи, медиа, вайбкодинг, разведка) и формирует мастер-отчёты.",
       "state": "online",
-      "tasks_completed": 54,
-      "last_project": "Главный Штаб",
-      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
-      "updated_at": "2026-11-17 14:53:23"
+      "tasks_completed": 55,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "updated_at": "2026-11-17 14:55:24"
     },
     {
       "key": "intake",
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 132,
+      "tasks_completed": 133,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:54:33"
+      "updated_at": "2026-11-17 14:55:37"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 132,
+      "tasks_completed": 133,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:54:33"
+      "updated_at": "2026-11-17 14:55:37"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 132,
+      "tasks_completed": 133,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:54:33"
+      "updated_at": "2026-11-17 14:55:37"
     },
     {
       "key": "scribe",
@@ -878,10 +878,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 79,
+      "tasks_completed": 80,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:54:33"
+      "updated_at": "2026-11-17 14:55:37"
     },
     {
       "key": "project_lead",
@@ -889,10 +889,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 79,
+      "tasks_completed": 80,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:54:33"
+      "updated_at": "2026-11-17 14:55:37"
     },
     {
       "key": "researcher",
@@ -900,10 +900,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 52,
-      "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "updated_at": "2026-11-17 14:52:39"
+      "tasks_completed": 53,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "updated_at": "2026-11-17 14:55:24"
     },
     {
       "key": "analyst",
@@ -911,10 +911,21 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 52,
+      "tasks_completed": 53,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:54:33"
+      "updated_at": "2026-11-17 14:55:37"
+    },
+    {
+      "key": "strategist",
+      "name": "Стратег",
+      "emoji": "📊",
+      "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
+      "state": "online",
+      "tasks_completed": 45,
+      "last_project": "Входящие_Офис",
+      "last_task": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "updated_at": "2026-11-17 14:55:24"
     },
     {
       "key": "developer",
@@ -923,17 +934,6 @@
       "role": "Fullstack & TMA Lead: архитектура Telegram Mini Apps, веб-платформ (Filmtools, KHL), базы данных и API.",
       "state": "online",
       "tasks_completed": 45,
-      "last_project": "Главный Штаб",
-      "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
-      "updated_at": "2026-11-17 14:53:23"
-    },
-    {
-      "key": "strategist",
-      "name": "Стратег",
-      "emoji": "📊",
-      "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
-      "state": "online",
-      "tasks_completed": 44,
       "last_project": "Главный Штаб",
       "last_task": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
       "updated_at": "2026-11-17 14:53:23"
@@ -984,6 +984,30 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-62",
+      "issue_number": 62,
+      "date": "2026-11-17 14:55:29",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#62 https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "summary": "✅ Готово",
+      "status": "done"
+    },
+    {
+      "id": "tim-20261117_145503",
+      "issue_number": 62,
+      "date": "2026-11-17 14:55:03",
+      "project": "Входящие_Офис",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
+      "title": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
+      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+      "status": "done"
+    },
     {
       "id": "card-63",
       "issue_number": 63,
@@ -1735,28 +1759,6 @@
       "title": "Изучи состояние папки «Личный Офис: @aliashirani», оцени быстрый путь к деньгам и сформируй план действий отделов",
       "summary": "Мы будем монетизировать контент и данные из папки, создавая платный сервис аналитики и подписку на эксклюзивные видео и вебинары. В течение 30 дней реализуем MVP, привлекем 200 подписчиков и достигнем оборота 500 000 ₽. Далее масштабируем ч",
       "human_action": "Утвердить бюджет 200 000 ₽ на исследовательскую и стратегическую работу и назначить ответственного.",
-      "status": "done"
-    },
-    {
-      "id": "card-34",
-      "issue_number": 34,
-      "date": "2026-11-03 23:54:38",
-      "project": "Alberta",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#34 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-30",
-      "issue_number": 30,
-      "date": "2026-11-03 15:52:11",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#30 AUTH_SYNC: Быстрая заявка REQ-506276 (Tatianaknyazeva777 / Tatianaknyazeva777)",
-      "summary": "✅ Готово",
       "status": "done"
     }
   ]
