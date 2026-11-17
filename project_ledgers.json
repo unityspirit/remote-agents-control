@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:44:49",
+  "updated": "2026-11-17 14:45:48",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3003,9 +3003,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 42,
-        "open_tasks": 35,
-        "tim_reports": 17,
+        "completed_works": 43,
+        "open_tasks": 36,
+        "tim_reports": 18,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3041,6 +3041,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-71",
+          "issue_number": 71,
+          "date": "2026-11-17 14:45:40",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#71 TIM: https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
+          "status": "not_studied"
+        },
+        {
+          "id": "tim-20261117_144509",
+          "issue_number": 71,
+          "date": "2026-11-17 14:45:09",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+          "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-72",
           "issue_number": 72,
@@ -3232,28 +3256,6 @@
           "summary": "Мы создаём SaaS‑платформу «AppXray», которая использует AI‑инструмент для глубинного анализа любых приложений и выдаёт отчёты о структуре, уязвимостях и оптимизации. При подписке в 49 ₽/мес платформа генерирует 10 отчётов/мес, а при корпора",
           "human_action": "Одобрить бюджет в 2 млн ₽ на разработку MVP и запуск маркетинговой кампании.",
           "status": "done"
-        },
-        {
-          "id": "card-184",
-          "issue_number": 184,
-          "date": "2026-11-08 13:25:16",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#184 https://www.etoro.com/?utm_source=55386&utm_campaign=CAMP24426321014|AG206924747412|Devicem|KW|MT|Target|Targetid|Creative830550792632&Task=",
-          "summary": "🧭 Уточните проект · Далее: Выбрать проект кнопкой «✅ Утверждаю #184 → …»",
-          "status": "need_project"
-        },
-        {
-          "id": "card-42",
-          "issue_number": 42,
-          "date": "2026-11-07 04:16:20",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#42 Даже мощные LLM теряются в длинных текстах. Исследователи выяснили почему / Habr https://share.google/awZh7BQB5WAIKYyCg",
-          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #42 → Личное — обучение и релокация» или выбрать другой проект",
-          "status": "awaiting_approval"
         }
       ]
     },
@@ -4085,7 +4087,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 8,
+        "open_tasks": 7,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -4118,7 +4120,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "28.10.2026 07:53",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4128,7 +4130,7 @@
           "status": "done"
         },
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "21.10.2026 08:44",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4204,17 +4206,6 @@
           "status": "not_studied"
         },
         {
-          "id": "card-71",
-          "issue_number": 71,
-          "date": "2026-10-22 08:18:47",
-          "project": "Позновалка",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#71 https://www.instagram.com/p/DeBnQdxFCbE/?img_index=4&vrfl=MWszbXZpbG9lYzNwZg== now learn from this slides how do we generat unlimited conten",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
-          "status": "not_studied"
-        },
-        {
           "id": "card-70",
           "issue_number": 70,
           "date": "2026-10-22 08:18:47",
@@ -4248,7 +4239,7 @@
           "status": "not_studied"
         },
         {
-          "id": "hist-13",
+          "id": "hist-12",
           "date": "20.10.2026 10:45",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4258,7 +4249,7 @@
           "status": "done"
         },
         {
-          "id": "hist-14",
+          "id": "hist-13",
           "date": "19.10.2026 14:58",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4268,7 +4259,7 @@
           "status": "done"
         },
         {
-          "id": "hist-10",
+          "id": "hist-9",
           "date": "05.11.2026 03:27",
           "project": "Позновалка",
           "type": "ai_study",
