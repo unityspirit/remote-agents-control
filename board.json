@@ -16700,6 +16700,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 15:05:39"
+    },
+    "46": {
+      "id": 46,
+      "created": "2026-11-17 15:06:57",
+      "handoffs": [
+        {
+          "t": "2026-11-17 15:06:57",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 15:07:36",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.softswiss.com/ learn from this project how to make money",
+      "urls": [
+        "https://www.softswiss.com/"
+      ],
+      "project": "Входящие_Офис",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 15:07:36"
     }
   }
 }
