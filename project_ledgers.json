@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:45:48",
+  "updated": "2026-11-17 14:47:18",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3003,9 +3003,9 @@
       "why_first": "Анализ материала, подготовка оффера на утверждение, перенос в целевой проект после подтверждения.",
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
-        "completed_works": 43,
-        "open_tasks": 36,
-        "tim_reports": 18,
+        "completed_works": 44,
+        "open_tasks": 37,
+        "tim_reports": 19,
         "saved_photos": 1,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3041,6 +3041,30 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-70",
+          "issue_number": 70,
+          "date": "2026-11-17 14:47:10",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#70 TIM: https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #70»",
+          "status": "not_studied"
+        },
+        {
+          "id": "tim-20261117_144620",
+          "issue_number": 70,
+          "date": "2026-11-17 14:46:20",
+          "project": "Входящие_Офис",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
+          "title": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+          "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
+          "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
+          "status": "done"
+        },
         {
           "id": "card-71",
           "issue_number": 71,
@@ -3231,30 +3255,6 @@
           "title": "https://www.instagram.com/p/DeupBrDDMET/?cplk=MWZwbDhlcmluM3FuZw== изучи эту карусель каждое фото и создай план как это сделать нам тоже сам",
           "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-183",
-          "issue_number": 183,
-          "date": "2026-11-08 13:26:30",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#183 TIM: https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
-          "summary": "✅ Готово",
-          "status": "done"
-        },
-        {
-          "id": "tim-20261108_132615",
-          "issue_number": 183,
-          "date": "2026-11-08 13:26:15",
-          "project": "Входящие_Офис",
-          "type": "tim_report",
-          "agent": "👑 Директор Тим",
-          "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
-          "title": "https://youtube.com/shorts/PjmxIcJkYAg?is=M48QOhr442FOxhsC",
-          "summary": "Мы создаём SaaS‑платформу «AppXray», которая использует AI‑инструмент для глубинного анализа любых приложений и выдаёт отчёты о структуре, уязвимостях и оптимизации. При подписке в 49 ₽/мес платформа генерирует 10 отчётов/мес, а при корпора",
-          "human_action": "Одобрить бюджет в 2 млн ₽ на разработку MVP и запуск маркетинговой кампании.",
           "status": "done"
         }
       ]
@@ -4087,7 +4087,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 7,
+        "open_tasks": 6,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -4120,7 +4120,7 @@
       "media_items": [],
       "work_items": [
         {
-          "id": "hist-10",
+          "id": "hist-9",
           "date": "28.10.2026 07:53",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4130,7 +4130,7 @@
           "status": "done"
         },
         {
-          "id": "hist-11",
+          "id": "hist-10",
           "date": "21.10.2026 08:44",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4206,17 +4206,6 @@
           "status": "not_studied"
         },
         {
-          "id": "card-70",
-          "issue_number": 70,
-          "date": "2026-10-22 08:18:47",
-          "project": "Позновалка",
-          "type": "board_card",
-          "agent": "🧑 Власлав",
-          "title": "#70 https://youtu.be/Hgd1rxrIYGM?is=9vpq9S1p-C8lo_3K learn what he says and let's make a special folder for you to learn from and continue work ",
-          "summary": "⛔ Не изучено — нужна помощь · Далее: Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #70»",
-          "status": "not_studied"
-        },
-        {
           "id": "card-67",
           "issue_number": 67,
           "date": "2026-10-22 08:18:47",
@@ -4239,7 +4228,7 @@
           "status": "not_studied"
         },
         {
-          "id": "hist-12",
+          "id": "hist-11",
           "date": "20.10.2026 10:45",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4249,7 +4238,7 @@
           "status": "done"
         },
         {
-          "id": "hist-13",
+          "id": "hist-12",
           "date": "19.10.2026 14:58",
           "project": "Позновалка",
           "type": "ai_study",
@@ -4259,7 +4248,7 @@
           "status": "done"
         },
         {
-          "id": "hist-9",
+          "id": "hist-8",
           "date": "05.11.2026 03:27",
           "project": "Позновалка",
           "type": "ai_study",
