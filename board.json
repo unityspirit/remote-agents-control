@@ -16011,6 +16011,38 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 14:44:41"
+    },
+    "69": {
+      "id": 69,
+      "created": "2026-11-17 14:47:35",
+      "handoffs": [
+        {
+          "t": "2026-11-17 14:47:35",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-17 14:48:17",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        }
+      ],
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
+      "title": "TIM: [Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
+      "urls": [
+        "https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg=="
+      ],
+      "project": "Главный Штаб",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 14:48:17"
     }
   }
 }
