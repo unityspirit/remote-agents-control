@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:01:39",
+  "updated": "2026-11-17 15:02:31",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3025,7 +3025,7 @@
       "human_action": "Ознакомиться с предложением агента и нажать «✅ Утверждаю» в Офисе для внедрения в проект.",
       "counts": {
         "completed_works": 54,
-        "open_tasks": 40,
+        "open_tasks": 41,
         "tim_reports": 24,
         "saved_photos": 1,
         "files_on_disk": 0,
@@ -3062,6 +3062,17 @@
       "research_topic": "Входящие_Офис рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-54",
+          "issue_number": 54,
+          "date": "2026-11-17 15:02:25",
+          "project": "Входящие_Офис",
+          "type": "board_card",
+          "agent": "🧑 Власлав",
+          "title": "#54 https://www.reptbattero.com/",
+          "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #54 → Traffic» или выбрать другой проект",
+          "status": "awaiting_approval"
+        },
         {
           "id": "card-55",
           "issue_number": 55,
@@ -3261,17 +3272,6 @@
           "title": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
           "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
           "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-          "status": "done"
-        },
-        {
-          "id": "card-72",
-          "issue_number": 72,
-          "date": "2026-11-17 14:44:41",
-          "project": "Входящие_Офис",
-          "type": "board_card",
-          "agent": "🛡 Контролёр",
-          "title": "#72 TIM: Claude is paying to learn the skills how much? How can I make money by learning?",
-          "summary": "✅ Готово",
           "status": "done"
         }
       ]
