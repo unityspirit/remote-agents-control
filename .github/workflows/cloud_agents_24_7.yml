@@ -2,7 +2,7 @@ name: Cloud Agents 24/7 Autonomous Office
 
 on:
   issues:
-    types: [opened, edited, reopened]
+    types: [opened, reopened]
   issue_comment:
     types: [created]
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
     if: >
       github.event_name == 'schedule' ||
       github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'issue_comment' && !contains(github.event.comment.body, '<!-- cloud-agent-v') && !contains(github.event.comment.body, '<!-- office-ui-auto-note -->')) ||
+      (github.event_name == 'issue_comment' && !contains(github.event.comment.body, '<!-- cloud-agent-v') && !contains(github.event.comment.body, '<!-- office-ui-auto-note -->') && !contains(github.event.comment.body, '<!-- director-v34') && !contains(github.event.comment.body, 'ИСПОЛНИТЕЛЬНЫЙ ОТЧЁТ ДИРЕКТОРА ТИМА')) ||
       github.event_name == 'issues'
     steps:
       - name: Checkout repository
@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync (v34.2 Antigravity 2.31 + Inter-Bot Mesh)
+      - name: Run 24/7 Cloud Autonomous Agents & Office Memory Sync (v34.3 Antigravity 2.31 + Inter-Bot Mesh)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GTP_SYNC_TOKEN: ${{ secrets.GTP_SYNC_TOKEN }}
@@ -57,13 +57,13 @@ jobs:
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           ENABLE_ARGON_ROUTING: "true"
           ENABLE_CARBON_ROUTING: "true"
-          GEMINI_ARGON_MODEL: "gemini-4-argon"
-          GEMINI_CARBON_MODEL: "gemini-4-carbon"
-          GEMINI_HYDROGEN_MODEL: "gemini-4-hydrogen"
+          GEMINI_ARGON_MODEL: "gemini-flash-lite-latest"
+          GEMINI_CARBON_MODEL: "gemini-3.1-flash-lite-preview"
+          GEMINI_HYDROGEN_MODEL: "gemini-flash-latest"
           GITHUB_MODELS_FRONTIER: "openai/gpt-4o"
           GITHUB_MODELS_FAST: "openai/gpt-4o-mini"
           GEMINI_THINKING_LEVEL: "high"
-          OFFICE_VERSION: "34.2"
+          OFFICE_VERSION: "34.3"
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}
