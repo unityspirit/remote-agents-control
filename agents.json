@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:44:48",
+  "updated": "2026-11-17 14:45:47",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 47,
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "tasks_completed": 48,
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:44:39"
+      "updated_at": "2026-11-17 14:45:38"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 38,
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "tasks_completed": 39,
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:44:39"
+      "updated_at": "2026-11-17 14:45:38"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 32,
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "tasks_completed": 33,
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:44:39"
+      "updated_at": "2026-11-17 14:45:38"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 39,
-      "last_task": "Claude is paying to learn the skills how much? How can I make money by learning?",
+      "tasks_completed": 40,
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:44:39"
+      "updated_at": "2026-11-17 14:45:38"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 126,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 50,
-      "last_task": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
+      "last_task": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
       "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:44:06"
+      "updated_at": "2026-11-17 14:45:38"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 126,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 50,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 126,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 73,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 14:44:48"
+      "updated_at": "2026-11-17 14:45:47"
     }
   },
   "daemons": {
@@ -243,7 +243,7 @@
       "last_provider": "auto_standby",
       "last_model": "auto",
       "last_call_at": null,
-      "errors_count": 6
+      "errors_count": 7
     }
   },
   "statuses": {
