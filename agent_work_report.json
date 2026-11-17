@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-17 14:58:25",
+  "updated": "2026-11-17 14:59:28",
   "kpis": {
     "total_completed_works": 282,
     "tim_master_reports": 57,
     "active_projects_count": 58,
     "total_saved_photos": 1,
-    "awaiting_human_count": 52
+    "awaiting_human_count": 53
   },
   "priority_continuations": [
     {
@@ -845,10 +845,10 @@
       "emoji": "📥",
       "role": "Принимает каждый запрос из Офиса, создаёт карточку, определяет тип (ссылка / команда / утверждение).",
       "state": "online",
-      "tasks_completed": 137,
+      "tasks_completed": 138,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:58:24"
+      "updated_at": "2026-11-17 14:59:27"
     },
     {
       "key": "router",
@@ -856,10 +856,10 @@
       "emoji": "🧭",
       "role": "Выбирает проект и ведущего агента по онтологии. При низкой уверенности не угадывает, а предлагает до 3 вариантов.",
       "state": "online",
-      "tasks_completed": 137,
+      "tasks_completed": 138,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:58:24"
+      "updated_at": "2026-11-17 14:59:27"
     },
     {
       "key": "gatekeeper",
@@ -867,10 +867,10 @@
       "emoji": "🛡",
       "role": "Не даёт написать «выполнено» без доказательств; проверяет, что карточка и ответ согласованы.",
       "state": "online",
-      "tasks_completed": 137,
+      "tasks_completed": 138,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:58:24"
+      "updated_at": "2026-11-17 14:59:27"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 82,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:58:24"
+      "updated_at": "2026-11-17 14:59:27"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 82,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:58:24"
+      "updated_at": "2026-11-17 14:59:27"
     },
     {
       "key": "researcher",
@@ -900,7 +900,7 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_project": "Входящие_Офис",
       "last_task": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0",
       "updated_at": "2026-11-17 14:58:15"
@@ -911,10 +911,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 56,
+      "tasks_completed": 57,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 14:58:24"
+      "updated_at": "2026-11-17 14:59:27"
     },
     {
       "key": "strategist",
