@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 15:05:47",
+  "updated": "2026-11-17 15:06:39",
   "kpis": {
     "total_completed_works": 290,
     "tim_master_reports": 60,
@@ -17,9 +17,9 @@
       "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
       "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
       "counts": {
-        "completed_works": 9,
+        "completed_works": 8,
         "open_tasks": 1,
-        "tim_reports": 5,
+        "tim_reports": 4,
         "saved_photos": 1,
         "files_on_disk": 23,
         "size_kb": 176,
@@ -49,7 +49,7 @@
       ],
       "research_topic": "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars кейсы выручки",
       "last_work": {
-        "id": "hist-8",
+        "id": "hist-7",
         "date": "29.10.2026 20:12",
         "project": "12 IT Продуктов (Короче Капитан)",
         "type": "ai_study",
@@ -377,9 +377,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 18,
-        "open_tasks": 1,
-        "tim_reports": 7,
+        "completed_works": 19,
+        "open_tasks": 2,
+        "tim_reports": 8,
         "saved_photos": 0,
         "files_on_disk": 46,
         "size_kb": 9622,
@@ -409,15 +409,15 @@
       ],
       "research_topic": "kinfolk aesthetic personal brand funnel high ticket coaching landing page conversion",
       "last_work": {
-        "id": "card-48",
-        "issue_number": 48,
-        "date": "2026-11-17 15:05:39",
+        "id": "card-47",
+        "issue_number": 47,
+        "date": "2026-11-17 15:06:31",
         "project": "Alberta",
         "type": "board_card",
-        "agent": "🛡 Контролёр",
-        "title": "#48 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-        "summary": "✅ Готово",
-        "status": "done"
+        "agent": "🧑 Власлав",
+        "title": "#47 RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+        "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
+        "status": "not_studied"
       }
     },
     {
@@ -534,7 +534,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 5,
+        "open_tasks": 4,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 197,
@@ -565,7 +565,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-8",
+        "id": "hist-7",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -836,8 +836,8 @@
       "state": "online",
       "tasks_completed": 60,
       "last_project": "Alberta",
-      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "updated_at": "2026-11-17 15:05:37"
+      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "updated_at": "2026-11-17 15:06:28"
     },
     {
       "key": "intake",
@@ -848,7 +848,7 @@
       "tasks_completed": 145,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     {
       "key": "router",
@@ -859,7 +859,7 @@
       "tasks_completed": 145,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     {
       "key": "gatekeeper",
@@ -870,7 +870,7 @@
       "tasks_completed": 145,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     {
       "key": "scribe",
@@ -881,7 +881,7 @@
       "tasks_completed": 88,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     {
       "key": "project_lead",
@@ -892,7 +892,7 @@
       "tasks_completed": 88,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     {
       "key": "researcher",
@@ -914,7 +914,7 @@
       "tasks_completed": 60,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 15:05:46"
+      "updated_at": "2026-11-17 15:06:38"
     },
     {
       "key": "developer",
@@ -934,9 +934,9 @@
       "role": "Chief Strategy Officer: бизнес-моделирование, unit-экономика, анализ рисков и приоритизация шагов.",
       "state": "online",
       "tasks_completed": 49,
-      "last_project": "Traffic",
-      "last_task": "1. Продукт & Закрытый Клуб",
-      "updated_at": "2026-11-17 15:04:52"
+      "last_project": "Alberta",
+      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "updated_at": "2026-11-17 15:06:28"
     },
     {
       "key": "marketer",
@@ -944,10 +944,10 @@
       "emoji": "📈",
       "role": "Performance Lead: офферы, воронки лидогенерации (Pay-on-Results), связки трафика и лид-магниты.",
       "state": "online",
-      "tasks_completed": 44,
+      "tasks_completed": 45,
       "last_project": "Alberta",
-      "last_task": "Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "updated_at": "2026-11-17 15:05:37"
+      "last_task": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "updated_at": "2026-11-17 15:06:28"
     },
     {
       "key": "creative_producer",
@@ -966,7 +966,7 @@
       "emoji": "⚡",
       "role": "AI Fullstack Rapid Prototyper: экспресс-сборка Micro-SaaS, парсеров и Telegram Mini Apps за 24 часа через связку Claude Code + Claude Design (HANDOFF.md), 3D WebGL и Next.js.",
       "state": "online",
-      "tasks_completed": 5,
+      "tasks_completed": 4,
       "last_project": "Личный Офис: @true1team",
       "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
       "updated_at": "2026-11-02 12:30:45"
@@ -984,6 +984,19 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "tim-20261117_150606",
+      "issue_number": 47,
+      "date": "2026-11-17 15:06:06",
+      "project": "Alberta",
+      "type": "tim_report",
+      "agent": "👑 Директор Тим",
+      "departments": "📊 Стратег, 📈 Маркетолог & Трафик",
+      "title": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Стратег, Маркетолог & Трафик) в рамках проекта «Alberta». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
+      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Alberta».",
+      "status": "done"
+    },
     {
       "id": "card-48",
       "issue_number": 48,
@@ -1750,17 +1763,6 @@
       "title": "https://heeipaw.com/products/high-speed-portable-ssd-massive-storage-for-photos-videos-games-files_pxqt?HW-EU-DG-261104--%E7%A1%AC%E7%9B%98&",
       "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Юра». Сформирована прикладная связка монетизации, воронки привлечения и технической сб",
       "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Юра».",
-      "status": "done"
-    },
-    {
-      "id": "card-39",
-      "issue_number": 39,
-      "date": "2026-11-06 03:51:33",
-      "project": "Alberta",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#39 Собрать архитектуру Telegram-бота и воронки подписки для Alberta Shirani на 1 000 000 ₽",
-      "summary": "✅ Готово",
       "status": "done"
     }
   ]
