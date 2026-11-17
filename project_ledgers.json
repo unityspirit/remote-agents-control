@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 14:52:50",
+  "updated": "2026-11-17 14:53:34",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -3270,9 +3270,9 @@
       "why_first": "Провести аудит файлов и определить первый денежный шаг по «Главный Штаб»",
       "human_action": "Проверить отчёт агентов и подтвердить приоритетный вектор.",
       "counts": {
-        "completed_works": 9,
+        "completed_works": 11,
         "open_tasks": 2,
-        "tim_reports": 5,
+        "tim_reports": 6,
         "saved_photos": 0,
         "files_on_disk": 0,
         "size_kb": 0,
@@ -3308,6 +3308,30 @@
       "research_topic": "Главный Штаб рынок конкуренты кейсы монетизации 2026",
       "media_items": [],
       "work_items": [
+        {
+          "id": "card-64",
+          "issue_number": 64,
+          "date": "2026-11-17 14:53:26",
+          "project": "Главный Штаб",
+          "type": "board_card",
+          "agent": "🛡 Контролёр",
+          "title": "#64 TIM: [Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+          "summary": "✅ Готово",
+          "status": "done"
+        },
+        {
+          "id": "tim-20261117_145307",
+          "issue_number": 64,
+          "date": "2026-11-17 14:53:07",
+          "project": "Главный Штаб",
+          "type": "tim_report",
+          "agent": "👑 Директор Тим",
+          "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
+          "title": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
+          "summary": "Мы превратим уроки BlackNevas и The Gentlemen в монетизируемый сервис: 1) Создадим SaaS‑платформу «SecureMgmt» для управления per‑host credentials, execInstalledOnly и изоляции mgmt‑сети, продавая подписку 3 000 ₽/мес/узел. 2) Предложим ауд",
+          "human_action": "Подтвердить бюджет 300 000 ₽ на MVP‑аудит и одобрить запуск рекламной кампании.",
+          "status": "done"
+        },
         {
           "id": "card-65",
           "issue_number": 65,
@@ -3440,7 +3464,7 @@
           "status": "done"
         },
         {
-          "id": "hist-11",
+          "id": "hist-13",
           "date": "17.11.2026 14:51",
           "project": "Главный Штаб",
           "type": "ai_study",
