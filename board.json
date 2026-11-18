@@ -454,20 +454,23 @@
           "from": "gatekeeper",
           "to": "project_lead",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:48:33",
+          "from": "project_lead",
+          "to": "owner",
+          "note": "Оффер 4 LIFE (80/20, без DocuSign) перепроверен и готов к отправке"
         }
       ],
       "title": "Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)",
       "project": "Ghost Ghetto Child (Музыка)",
       "kind": "task",
       "urls": [],
-      "evidence": null,
-      "owner": "project_lead",
-      "status": "in_progress",
-      "next": {
-        "who": "agent",
-        "what": "Подготовить финальный текст оффера для отправки"
-      },
-      "updated": "2026-10-22 08:18:48",
+      "evidence": "Ghost Ghetto Child (Музыка)/ОФФЕР_ДЛЯ_ОТПРАВКИ_2026.md (verified against tg_ghostghettochild.txt)",
+      "owner": "owner",
+      "status": "awaiting_approval",
+      "next": "Проверить и отправить готовый 80/20 оффер в @ghostghettochild (см. Ghost Ghetto Child (Музыка)/ОФФЕР_ДЛЯ_ОТПРАВКИ_2026.md)",
+      "updated": "2026-11-17 21:48:33",
       "skills_applied": [
         "pricing",
         "offers",
