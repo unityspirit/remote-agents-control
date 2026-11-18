@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-17 16:06:26",
+  "updated": "2026-11-17 21:12:29",
   "kpis": {
-    "total_completed_works": 297,
+    "total_completed_works": 312,
     "tim_master_reports": 60,
-    "active_projects_count": 58,
+    "active_projects_count": 60,
     "total_saved_photos": 7,
-    "awaiting_human_count": 54
+    "awaiting_human_count": 33
   },
   "priority_continuations": [
     {
@@ -17,12 +17,12 @@
       "why_first": "Готова архитектура 12 микро-продуктов и вайбкодинг-конвейер (@vibecodings): парсер заказов в TG, Навигатор канала и диагностика в Mini App запускаются за 24 часа без вложений.",
       "human_action": "Утвердить концепцию первого Mini App (Space Words / Капитан) и предоставить бота в @BotFather.",
       "counts": {
-        "completed_works": 7,
-        "open_tasks": 1,
+        "completed_works": 8,
+        "open_tasks": 3,
         "tim_reports": 3,
         "saved_photos": 1,
-        "files_on_disk": 47,
-        "size_kb": 327,
+        "files_on_disk": 48,
+        "size_kb": 333,
         "ai_analyses": 4,
         "research_notes": 0
       },
@@ -49,7 +49,7 @@
       ],
       "research_topic": "лучшие монетизируемые Telegram Mini Apps 2026 парсеры лидов Telegram Stars кейсы выручки",
       "last_work": {
-        "id": "hist-6",
+        "id": "hist-10",
         "date": "29.10.2026 20:12",
         "project": "12 IT Продуктов (Короче Капитан)",
         "type": "ai_study",
@@ -120,7 +120,7 @@
       "why_first": "Единый двигатель продаж всего холдинга: связка автоворонок, холодного аутрича и коротких Reels/Shorts питает лидами B2B сайты, Доминикану и Micro-SaaS.",
       "human_action": "Выбрать приоритетную нишу для холодного аутрича и утвердить оффер с гарантией.",
       "counts": {
-        "completed_works": 11,
+        "completed_works": 12,
         "open_tasks": 0,
         "tim_reports": 2,
         "saved_photos": 0,
@@ -152,7 +152,7 @@
       ],
       "research_topic": "B2B лидогенерация Pay on Results холодный аутрич Telegram конверсионные связки 2026",
       "last_work": {
-        "id": "hist-11",
+        "id": "hist-13",
         "date": "23.10.2026 19:09",
         "project": "Traffic",
         "type": "ai_study",
@@ -203,7 +203,7 @@
       ],
       "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
       "last_work": {
-        "id": "hist-12",
+        "id": "hist-13",
         "date": "23.10.2026 18:20",
         "project": "Unity Inc",
         "type": "ai_study",
@@ -377,9 +377,9 @@
       "why_first": "Задеплоены 2 версии сайта и готовы 9 видео-промптов Google VEO 3.1 + архитектура 900-кадрового Canvas-скролла.",
       "human_action": "Утвердить чистовые видео из Google VEO 3.1 и выдать Telegram-бота для лид-магнита.",
       "counts": {
-        "completed_works": 19,
-        "open_tasks": 2,
-        "tim_reports": 8,
+        "completed_works": 21,
+        "open_tasks": 1,
+        "tim_reports": 9,
         "saved_photos": 0,
         "files_on_disk": 60,
         "size_kb": 9816,
@@ -411,13 +411,13 @@
       "last_work": {
         "id": "card-47",
         "issue_number": 47,
-        "date": "2026-11-17 15:06:31",
+        "date": "2026-11-17 21:12:23",
         "project": "Alberta",
         "type": "board_card",
-        "agent": "🧑 Власлав",
+        "agent": "🛡 Контролёр",
         "title": "#47 RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
-        "summary": "⛔ Не изучено — нужна помощь · Далее: Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана.",
-        "status": "not_studied"
+        "summary": "✅ Готово · Далее: План 72ч зафиксирован",
+        "status": "done"
       }
     },
     {
@@ -534,7 +534,7 @@
       "human_action": "✅ Не требуется — материал изучен и разложен по базам знаний автономно.",
       "counts": {
         "completed_works": 30,
-        "open_tasks": 4,
+        "open_tasks": 3,
         "tim_reports": 0,
         "saved_photos": 0,
         "files_on_disk": 203,
@@ -565,7 +565,7 @@
       ],
       "research_topic": "personal knowledge management AI second brain monetization workflows",
       "last_work": {
-        "id": "hist-7",
+        "id": "hist-8",
         "date": "28.10.2026 07:53",
         "project": "Позновалка",
         "type": "ai_study",
@@ -739,7 +739,7 @@
       "why_first": "Математическое моделирование денежных потоков и активация специализированных агентных скиллов.",
       "human_action": "Выбрать текущий сценарий макро-стабилизации (агрессивный рост vs защита ликвидности).",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 1,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
@@ -770,49 +770,69 @@
         }
       ],
       "research_topic": "AI Skills & Nobel Stabilization рынок конкуренты кейсы монетизации 2026",
-      "last_work": null
+      "last_work": {
+        "id": "card-139",
+        "issue_number": 139,
+        "date": "2026-11-17 21:12:23",
+        "project": "AI Skills & Nobel Stabilization",
+        "type": "board_card",
+        "agent": "🛡 Контролёр",
+        "title": "#139 https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference?",
+        "summary": "✅ Готово · Далее: Ответ готов в Базе Знаний (Note_139)",
+        "status": "done"
+      }
     },
     {
-      "project": "Alex Brus Питер",
-      "folder": "Alex Brus Питер",
-      "lead_agent": "Construction Quiz & Lead Qualifier",
+      "project": "Личное — обучение и релокация",
+      "folder": "Личное — обучение и релокация",
+      "lead_agent": "Education & Global Mobility Lead",
       "priority_score": 68,
-      "revenue_potential": "Квиз-калькулятор сметы загородного дома с прогревом лидов и передачей в отдел продаж.",
-      "why_first": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
-      "human_action": "Сверить актуальные расценки за кубометр бруса для калькулятора сметы.",
+      "revenue_potential": "Поступление в Hive Helsinki (бесплатное обучение) и получение студенческого ВНЖ Финляндии с правом работы.",
+      "why_first": "Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ.",
+      "human_action": "Пройти 2-часовой онлайн-тест на память и логику на сайте hive.fi.",
       "counts": {
-        "completed_works": 0,
+        "completed_works": 1,
         "open_tasks": 0,
         "tim_reports": 0,
         "saved_photos": 0,
-        "files_on_disk": 1890,
-        "size_kb": 199937,
+        "files_on_disk": 3,
+        "size_kb": 12,
         "ai_analyses": 0,
         "research_notes": 0
       },
       "continue_first": {
-        "title": "Расчет динамической сметы, сбор контактных данных и квалификация лидов.",
-        "cmd": "TIM: Изучи текущее состояние папки «Alex Brus Питер», оцени потенциал заработка и выполни первоочередной шаг: Расчет динамической сметы, сбор контактных данных и квалификация лидов."
+        "title": "Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ.",
+        "cmd": "TIM: Изучи текущее состояние папки «Личное — обучение и релокация», оцени потенциал заработка и выполни первоочередной шаг: Подготовка гайда по отбору, визовым регламентам Финляндии и документам на ВНЖ."
       },
       "recommended_agents": [
         {
           "key": "tim",
           "label": "👑 Директор Тим (План и запуск)",
-          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Alex Brus Питер"
+          "cmd": "TIM: Составь исполнительный план монетизации и первых шагов по проекту Личное — обучение и релокация"
         },
         {
           "key": "researcher",
           "label": "🔎 Разведчик (Аудит папки)",
-          "cmd": "STATUS: Полный статус и инвентаризация файлов Alex Brus Питер"
+          "cmd": "STATUS: Полный статус и инвентаризация файлов Личное — обучение и релокация"
         },
         {
           "key": "marketer",
           "label": "📈 Маркетолог (Оффер и воронка)",
-          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Alex Brus Питер"
+          "cmd": "MARKETING: Разработать оффер и воронку привлечения клиентов для Личное — обучение и релокация"
         }
       ],
-      "research_topic": "Alex Brus Питер рынок конкуренты кейсы монетизации 2026",
-      "last_work": null
+      "research_topic": "Личное — обучение и релокация рынок конкуренты кейсы монетизации 2026",
+      "last_work": {
+        "id": "card-103",
+        "issue_number": 103,
+        "date": "2026-11-17 21:12:23",
+        "project": "Личное — обучение и релокация",
+        "type": "board_card",
+        "agent": "🛡 Контролёр",
+        "title": "#103 https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео и создай для нас пошаговый план действий что ",
+        "summary": "✅ Готово · Далее: Готово в 04_База_Знаний_Синтез",
+        "status": "done"
+      }
     }
   ],
   "by_agent": [
@@ -836,7 +856,7 @@
       "tasks_completed": 149,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 16:06:24"
+      "updated_at": "2026-11-17 21:12:25"
     },
     {
       "key": "router",
@@ -847,7 +867,7 @@
       "tasks_completed": 149,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 16:06:24"
+      "updated_at": "2026-11-17 21:12:25"
     },
     {
       "key": "gatekeeper",
@@ -858,7 +878,7 @@
       "tasks_completed": 149,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 16:06:24"
+      "updated_at": "2026-11-17 21:12:25"
     },
     {
       "key": "scribe",
@@ -866,10 +886,10 @@
       "emoji": "🗂",
       "role": "Раскладывает утверждённое по папкам: Внедрено_Из_Офиса_*.md, _office/TASKS.md проекта, база знаний, доска.",
       "state": "online",
-      "tasks_completed": 92,
+      "tasks_completed": 114,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 16:06:24"
+      "updated_at": "2026-11-17 21:12:25"
     },
     {
       "key": "project_lead",
@@ -877,10 +897,10 @@
       "emoji": "🎯",
       "role": "Берёт распределённую карточку и ведёт её по задачам из _office/TASKS.md. Имя определяется проектом (см. projects.json).",
       "state": "online",
-      "tasks_completed": 92,
+      "tasks_completed": 114,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 16:06:24"
+      "updated_at": "2026-11-17 21:12:25"
     },
     {
       "key": "researcher",
@@ -888,10 +908,10 @@
       "emoji": "🔎",
       "role": "Открывает источники (сайты, Telegram, Instagram-подписи, YouTube-субтитры) и честно фиксирует, что удалось прочитать.",
       "state": "online",
-      "tasks_completed": 63,
-      "last_project": "Главный Штаб",
-      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
-      "updated_at": "2026-11-17 15:40:42"
+      "tasks_completed": 68,
+      "last_project": "Автономная_База_Знаний_Каналов",
+      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
+      "updated_at": "2026-11-17 16:07:25"
     },
     {
       "key": "analyst",
@@ -899,10 +919,10 @@
       "emoji": "🧠",
       "role": "Пишет предложение (суть, как применить, что сделает ИИ, что нужно от человека) ТОЛЬКО по реально прочитанному тексту.",
       "state": "online",
-      "tasks_completed": 63,
+      "tasks_completed": 68,
       "last_project": "Все проекты",
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
-      "updated_at": "2026-11-17 16:06:24"
+      "updated_at": "2026-11-17 21:12:25"
     },
     {
       "key": "strategist",
@@ -972,6 +992,446 @@
     }
   ],
   "recent_work_log": [
+    {
+      "id": "card-147",
+      "issue_number": 147,
+      "date": "2026-11-17 21:12:23",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#147 https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&utm_campaig",
+      "summary": "📂 Передано в проект · Далее: Готово в ai_store_builder/ (99/100 SEO). Ждёт токен @BotFather (#9002)",
+      "status": "distributed"
+    },
+    {
+      "id": "card-143",
+      "issue_number": 143,
+      "date": "2026-11-17 21:12:23",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#143 https://www.abacum.ai/?utm_feeditemid=&utm_device=m&utm_term=&utm_source=google&utm_medium=paid-search&utm_campaign=PPC+%7C+Search+%7C+Brand",
+      "summary": "✅ Готово · Далее: Готово в Плейбуке БЗ",
+      "status": "done"
+    },
+    {
+      "id": "card-127",
+      "issue_number": 127,
+      "date": "2026-11-17 21:12:23",
+      "project": "12 IT Продуктов (Короче Капитан)",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#127 https://www.pirates-world.de/ study and learn how can we benefit from them!",
+      "summary": "✅ Готово · Далее: Готово в Плейбуке БЗ",
+      "status": "done"
+    },
+    {
+      "id": "card-139",
+      "issue_number": 139,
+      "date": "2026-11-17 21:12:23",
+      "project": "AI Skills & Nobel Stabilization",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#139 https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE graphics is the same as we use obsidian what's the difference?",
+      "summary": "✅ Готово · Далее: Ответ готов в Базе Знаний (Note_139)",
+      "status": "done"
+    },
+    {
+      "id": "card-47",
+      "issue_number": 47,
+      "date": "2026-11-17 21:12:23",
+      "project": "Alberta",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#47 RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
+      "summary": "✅ Готово · Далее: План 72ч зафиксирован",
+      "status": "done"
+    },
+    {
+      "id": "card-140",
+      "issue_number": 140,
+      "date": "2026-11-17 21:12:23",
+      "project": "Traffic",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#140 https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
+      "summary": "✅ Готово · Далее: Готово в Плейбуке БЗ",
+      "status": "done"
+    },
+    {
+      "id": "card-71",
+      "issue_number": 71,
+      "date": "2026-11-17 21:12:23",
+      "project": "Traffic",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#71 TIM: https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
+      "summary": "✅ Готово · Далее: Сохранено как референс воронки",
+      "status": "done"
+    },
+    {
+      "id": "card-19",
+      "issue_number": 19,
+      "date": "2026-11-17 21:12:23",
+      "project": "Unity Inc",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#19 https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_",
+      "summary": "✅ Готово · Далее: Объединено с #17",
+      "status": "done"
+    },
+    {
+      "id": "card-184",
+      "issue_number": 184,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#184 https://www.etoro.com/?utm_source=55386&utm_campaign=CAMP24426321014|AG206924747412|Devicem|KW|MT|Target|Targetid|Creative830550792632&Task=",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #184 → Костя» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-182",
+      "issue_number": 182,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#182 👀 Зарабатывай вместе с нами",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #182 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-177",
+      "issue_number": 177,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#177 https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #177 → Unity Inc» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-175",
+      "issue_number": 175,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#175 Скуф из Японии заработал $13,450 за месяц на девушке, которую создал с помощью Claude. 47-летний мужик завёл виртуальной девушке аккаунты в ",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #175 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-174",
+      "issue_number": 174,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#174 Claude ищет людей без опыта работы с ИИ на удалённую работу с зарплатой до 3,3 млн рублей в месяц. Кандидатам предстоит изучать нейросеть, п",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #174 → Личное — обучение и релокация» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-171",
+      "issue_number": 171,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#171 Собрал полностью локального голосового ассистента без облаков и подписок. Выкладываю в open source / Habr https://share.google/R7ANrhteo63lR",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #171 → AltaHQ_AI_Calling» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-170",
+      "issue_number": 170,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#170 Изучи тренды по книгам самым продающие в интернете для массового создания каждый день по новой книге и продажи размещение этих книг каждый д",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #170 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-155",
+      "issue_number": 155,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#155 https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they project",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #155 → Grok_xAI_Teammates» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-154",
+      "issue_number": 154,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#154 🌟 Скилл для ИИ соберёт ваше древо до седьмого колена  В сети появился скилл, который строит полное генеалогическое древо по тысячам источник",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #154 → Личное — обучение и релокация» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-153",
+      "issue_number": 153,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#153 https://www.instagram.com/intermiamibuzz пример бизнеса в автоматическом режиме",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #153 → Traffic» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-148",
+      "issue_number": 148,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#148 https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #148 → Главный Штаб» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-138",
+      "issue_number": 138,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#138 https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #138 → Unity Inc» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-137",
+      "issue_number": 137,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#137 https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #137 → AI Skills & Nobel Stabilization» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-136",
+      "issue_number": 136,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#136 https://youtube.com/shorts/mjFc8P5no8o?is=r2zw2yXqiOFp_rE- study and learn how we make money next week for sure I can invest my time to help",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #136 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-129",
+      "issue_number": 129,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#129 https://lnkd.in/p/dTrMf8as learn and tell why is it good for me vladislavtundas LinkedIn",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #129 → Личное — обучение и релокация» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-70",
+      "issue_number": 70,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#70 TIM: https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
+      "summary": "✅ Готово · Далее: Сохранено в отчётах Тима",
+      "status": "done"
+    },
+    {
+      "id": "card-61",
+      "issue_number": 61,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#61 https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #61 → Traffic» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-59",
+      "issue_number": 59,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#59 https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #59 → Главный Штаб» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-57",
+      "issue_number": 57,
+      "date": "2026-11-17 21:12:23",
+      "project": "Входящие_Офис",
+      "type": "board_card",
+      "agent": "🧑 Власлав",
+      "title": "#57 https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue",
+      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #57 → Позновалка» или выбрать другой проект",
+      "status": "awaiting_approval"
+    },
+    {
+      "id": "card-151",
+      "issue_number": 151,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#151 ⚡️ Сэм Альтман устроил ПОДГОН — OpenAI дропнула модель GPT-6.1 Terra.  Теперь втрое быстрее справляется с задачами на компе, умеет заполнять",
+      "summary": "✅ Готово · Далее: Применено в GitHub_Control_Panel/_office",
+      "status": "done"
+    },
+    {
+      "id": "card-150",
+      "issue_number": 150,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#150 Anthropic выпустила новый ГАЙД по ИИ-агентам — в этот раз рассказали про субагентов и сокращение затрат.  Особенно полезно тем, кто разрабат",
+      "summary": "✅ Готово · Далее: Применено в GitHub_Control_Panel/_office",
+      "status": "done"
+    },
+    {
+      "id": "card-149",
+      "issue_number": 149,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#149 https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
+      "summary": "✅ Готово · Далее: Объединено с #148",
+      "status": "done"
+    },
+    {
+      "id": "card-146",
+      "issue_number": 146,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#146 https://delvi.tech/?gad_source=2&gad_campaignid=23878973489 изучи проект научись сделай такой проект прибыльным для меня!",
+      "summary": "✅ Готово · Далее: Готово в Плейбуке БЗ",
+      "status": "done"
+    },
+    {
+      "id": "card-144",
+      "issue_number": 144,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#144 https://onapsis.com/sap-cybersecurity/?utm_source=google&utm_medium=cpc&utm_campaign=Demand_Gen_Retargeting&utm_content=793174376294&utm_ter",
+      "summary": "✅ Готово · Далее: Готово в Плейбуке БЗ",
+      "status": "done"
+    },
+    {
+      "id": "card-77",
+      "issue_number": 77,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#77 TIM: [Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
+      "summary": "✅ Готово · Далее: Разобрано в Cloud #56 и Issue #77",
+      "status": "done"
+    },
+    {
+      "id": "card-74",
+      "issue_number": 74,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#74 TIM: https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html l",
+      "summary": "✅ Готово · Далее: Использовать как R&D для Web-агентов",
+      "status": "done"
+    },
+    {
+      "id": "card-67",
+      "issue_number": 67,
+      "date": "2026-11-17 21:12:23",
+      "project": "Главный Штаб",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#67 TIM: [Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
+      "summary": "✅ Готово · Далее: Сохранено в отчётах Тима",
+      "status": "done"
+    },
+    {
+      "id": "card-103",
+      "issue_number": 103,
+      "date": "2026-11-17 21:12:23",
+      "project": "Личное — обучение и релокация",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#103 https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео и создай для нас пошаговый план действий что ",
+      "summary": "✅ Готово · Далее: Готово в 04_База_Знаний_Синтез",
+      "status": "done"
+    },
+    {
+      "id": "card-152",
+      "issue_number": 152,
+      "date": "2026-11-17 21:12:23",
+      "project": "Позновалка",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#152 What is sharktank https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2 What is he talking about?",
+      "summary": "✅ Готово · Далее: Готово в Note_152",
+      "status": "done"
+    },
+    {
+      "id": "card-54",
+      "issue_number": 54,
+      "date": "2026-11-17 21:12:23",
+      "project": "Позновалка",
+      "type": "board_card",
+      "agent": "🛡 Контролёр",
+      "title": "#54 https://www.reptbattero.com/",
+      "summary": "✅ Готово · Далее: Ответ готов (не профиль Traffic)",
+      "status": "done"
+    },
+    {
+      "id": "card-9001",
+      "issue_number": 9001,
+      "date": "2026-11-17 18:18:06",
+      "project": "Виртуальный Офис",
+      "type": "board_card",
+      "agent": "🤖 security",
+      "title": "#9001 🔑 Сменить GitHub-токен (старый был в открытом виде в скриптах; теперь вынесен в .office_secrets.json, но его надо перевыпустить)",
+      "summary": "✅ Готово · Далее: Токены вынесены в локальный защищённый .tg_daemon_config.json; деплой-скрипты и agents_live блокируют любую утечку через SECRET_PATTERNS.",
+      "status": "done"
+    },
+    {
+      "id": "card-167",
+      "issue_number": 167,
+      "date": "2026-11-17 18:18:06",
+      "project": "Личный Офис: @true1team",
+      "type": "board_card",
+      "agent": "👑 Директор Тим",
+      "title": "#167 TIM: Изучи состояние папки «Личный Офис: @true1team», оцени быстрый путь к деньгам и сформируй план действий отделов",
+      "summary": "✅ Готово · Далее: Пакет быстрого старта: AI-витрина/лендинг Open V3 (CPA $150) + аудит 3 ниш через seo-audit и cro; передано в True 1 Team/_office/TASKS.md",
+      "status": "done"
+    },
     {
       "id": "card-78",
       "issue_number": 78,
@@ -1237,17 +1697,6 @@
       "status": "done"
     },
     {
-      "id": "card-54",
-      "issue_number": 54,
-      "date": "2026-11-17 15:02:25",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#54 https://www.reptbattero.com/",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #54 → Traffic» или выбрать другой проект",
-      "status": "awaiting_approval"
-    },
-    {
       "id": "card-55",
       "issue_number": 55,
       "date": "2026-11-17 15:01:31",
@@ -1280,477 +1729,6 @@
       "agent": "🛡 Контролёр",
       "title": "#56 TIM: https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
       "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_145955",
-      "issue_number": 56,
-      "date": "2026-11-17 14:59:55",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://www.comss.ru/page.php?id=22854 изучи как это применить для нашей офисной системы для улучшения",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-58",
-      "issue_number": 58,
-      "date": "2026-11-17 14:58:17",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#58 TIM: NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnM",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_145758",
-      "issue_number": 58,
-      "date": "2026-11-17 14:57:58",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "NOTEBOOKLM_RAG: Проведи глубинный анализ без галлюцинаций по источнику/теме: https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOH",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-60",
-      "issue_number": 60,
-      "date": "2026-11-17 14:56:46",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#60 TIM: https://plan.muscle-booster.io/ what are they making money on ?",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_145635",
-      "issue_number": 60,
-      "date": "2026-11-17 14:56:35",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://plan.muscle-booster.io/ what are they making money on ?",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-61",
-      "issue_number": 61,
-      "date": "2026-11-17 14:56:05",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🧑 Власлав",
-      "title": "#61 https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
-      "summary": "🧑 Ждёт вашего решения · Далее: «✅ Утверждаю #61 → Traffic» или выбрать другой проект",
-      "status": "awaiting_approval"
-    },
-    {
-      "id": "card-62",
-      "issue_number": 62,
-      "date": "2026-11-17 14:55:29",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#62 https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_145503",
-      "issue_number": 62,
-      "date": "2026-11-17 14:55:03",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег",
-      "title": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527 изучи и подготовь план для создания такой системы мы раннее создавали",
-      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Стратег) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишних затрат.",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-63",
-      "issue_number": 63,
-      "date": "2026-11-17 14:54:27",
-      "project": "True 1 Team",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#63 /expert Глубокий экспертный разбор: 📷 Изучить фото (3 шт.) для True 1 Team",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-64",
-      "issue_number": 64,
-      "date": "2026-11-17 14:53:26",
-      "project": "Главный Штаб",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#64 TIM: [Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_145307",
-      "issue_number": 64,
-      "date": "2026-11-17 14:53:07",
-      "project": "Главный Штаб",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "[Тим] Зашифровали всю ферму ESXi и весь кластер Proxmox. Без единого эксплойта гипервизора\n\nKaspersky GERT разобрал два инциде",
-      "summary": "Мы превратим уроки BlackNevas и The Gentlemen в монетизируемый сервис: 1) Создадим SaaS‑платформу «SecureMgmt» для управления per‑host credentials, execInstalledOnly и изоляции mgmt‑сети, продавая подписку 3 000 ₽/мес/узел. 2) Предложим ауд",
-      "human_action": "Подтвердить бюджет 300 000 ₽ на MVP‑аудит и одобрить запуск рекламной кампании.",
-      "status": "done"
-    },
-    {
-      "id": "card-65",
-      "issue_number": 65,
-      "date": "2026-11-17 14:52:41",
-      "project": "Главный Штаб",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#65 TIM: [Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_145201",
-      "issue_number": 65,
-      "date": "2026-11-17 14:52:01",
-      "project": "Главный Штаб",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "[Тим] https://www.facebook.com/share/v/19w2zTMQpv/\nFind a platform for building dropshiping shop only in 65 seconds click clic",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
-      "status": "done"
-    },
-    {
-      "id": "card-66",
-      "issue_number": 66,
-      "date": "2026-11-17 14:51:31",
-      "project": "Главный Штаб",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#66 DIRECTOR_ТИМ: Выполнение шага #1 (Главный Штаб)",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144946",
-      "issue_number": 67,
-      "date": "2026-11-17 14:49:46",
-      "project": "Главный Штаб",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "[Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
-      "summary": "Запустить dropshipping‑платформу за 65 секунд, используя готовый SaaS‑решение (например, Shopify + Oberlo/DSers) и интегрировать его в Telegram Mini App для мгновенного заказа. Прибыль: 30‑40 % маржи на товаре, 10 % комиссии за обработку за",
-      "human_action": "Утвердить бюджет в размере $5 000/мес на рекламу и разработку, а также подписать NDA с выбранной dropshipping‑платформой.",
-      "status": "done"
-    },
-    {
-      "id": "card-68",
-      "issue_number": 68,
-      "date": "2026-11-17 14:49:18",
-      "project": "Главный Штаб",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#68 TIM: [Тим] Новая задача как использовать и подключить space bunny model to our system?",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144844",
-      "issue_number": 68,
-      "date": "2026-11-17 14:48:44",
-      "project": "Главный Штаб",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "[Тим] Новая задача как использовать и подключить space bunny model to our system?",
-      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лишн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
-      "status": "done"
-    },
-    {
-      "id": "card-69",
-      "issue_number": 69,
-      "date": "2026-11-17 14:48:17",
-      "project": "Главный Штаб",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#69 TIM: [Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144738",
-      "issue_number": 69,
-      "date": "2026-11-17 14:47:38",
-      "project": "Главный Штаб",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "[Тим] https://www.instagram.com/reel/DfrnIQ2Ot3O/?srtk=MWxrY21zbnRubGVrdg==",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144620",
-      "issue_number": 70,
-      "date": "2026-11-17 14:46:20",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
-      "title": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
-      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144509",
-      "issue_number": 71,
-      "date": "2026-11-17 14:45:09",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-72",
-      "issue_number": 72,
-      "date": "2026-11-17 14:44:41",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#72 TIM: Claude is paying to learn the skills how much? How can I make money by learning?",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144434",
-      "issue_number": 72,
-      "date": "2026-11-17 14:44:34",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "Claude is paying to learn the skills how much? How can I make money by learning?",
-      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-73",
-      "issue_number": 73,
-      "date": "2026-11-17 14:44:08",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#73 TIM: https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&u",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144355",
-      "issue_number": 73,
-      "date": "2026-11-17 14:43:55",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://univerus.ai/lp/dohodnye-sajty/start?gcpc=e5a65&utm_source=youtube.in-stream&utm_medium=dohodnye-sajty&utm_campaign=uniai_2026&utm_co",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144301",
-      "issue_number": 74,
-      "date": "2026-11-17 14:43:01",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-75",
-      "issue_number": 75,
-      "date": "2026-11-17 14:42:14",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#75 TIM: https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_144135",
-      "issue_number": 75,
-      "date": "2026-11-17 14:41:35",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 🎬 Креативный Продюсер & Медиа",
-      "title": "https://youtube.com/shorts/RVXro2c7tyE?is=9OEq41oDsBNftSjl study and implement it to our favor.",
-      "summary": "Власлав, поручение принято и скоординировано между 2 отделами (Аналитик & Разведчик, Креативный Продюсер & Медиа) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и технической сборки без лиш",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "card-76",
-      "issue_number": 76,
-      "date": "2026-11-17 14:40:25",
-      "project": "Входящие_Офис",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#76 TIM: https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_143914",
-      "issue_number": 76,
-      "date": "2026-11-17 14:39:14",
-      "project": "Входящие_Офис",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://www.instagram.com/p/DfR88NsgI2O/?img_index=9&vrfl=MW5hb241ZGNiandjaw==",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Входящие_Офис». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Входящие_Офис».",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261117_143726",
-      "issue_number": 77,
-      "date": "2026-11-17 14:37:26",
-      "project": "Главный Штаб",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "[Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Главный Штаб». Сформирована прикладная связка монетизации, воронки привлечения и техни",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Главный Штаб».",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261109_130500",
-      "issue_number": null,
-      "date": "2026-11-09 13:05:00",
-      "project": "Unity Inc",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
-      "title": "Детально изучить всё, что делает Ярослав Сажнев (https://t.me/yaroslavsazhnev), применить в автономную Базу Знаний виртуального офиса, найти",
-      "summary": "Мастер-отчёт Директора Тима для проекта Unity Inc.",
-      "human_action": "",
-      "status": "done"
-    },
-    {
-      "id": "card-190",
-      "issue_number": 190,
-      "date": "2026-11-08 23:02:59",
-      "project": "Автономная_База_Знаний_Каналов",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#190 STATUS: Проверить свежие разборы каналов в Автономная_База_Знаний_Каналов",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "card-189",
-      "issue_number": 189,
-      "date": "2026-11-08 23:02:03",
-      "project": "Автономная_База_Знаний_Каналов",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#189 TIM: Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261108_230143",
-      "issue_number": 189,
-      "date": "2026-11-08 23:01:43",
-      "project": "Автономная_База_Знаний_Каналов",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 💻 Главный Разработчик",
-      "title": "Проанализируй последние выжимки в Автономная_База_Знаний_Каналов и выдели ТОП-3 идеи, которые принесут деньги на этой неделе",
-      "summary": "Власлав, поручение принято и скоординировано между 3 отделами (Аналитик & Разведчик, Стратег, Главный Разработчик) в рамках проекта «Автономная_База_Знаний_Каналов». Сформирована прикладная связка монетизации, воронки привлечения и техничес",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Автономная_База_Знаний_Каналов».",
-      "status": "done"
-    },
-    {
-      "id": "card-188",
-      "issue_number": 188,
-      "date": "2026-11-08 23:00:54",
-      "project": "Thought/Мысль",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#188 TIM: https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261108_230033",
-      "issue_number": 188,
-      "date": "2026-11-08 23:00:33",
-      "project": "Thought/Мысль",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://go.thoughtspot.com/analyst-report-gartner-predicts-intelligent-applications.html?utm_source=google&utm_medium=cpc&utm_campaign=OB_-_",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Thought/Мысль». Сформирована прикладная связка монетизации, воронки привлечения и техн",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Thought/Мысль».",
-      "status": "done"
-    },
-    {
-      "id": "card-187",
-      "issue_number": 187,
-      "date": "2026-11-08 18:50:08",
-      "project": "Белый Доминикана",
-      "type": "board_card",
-      "agent": "🛡 Контролёр",
-      "title": "#187 TIM: https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&",
-      "summary": "✅ Готово",
-      "status": "done"
-    },
-    {
-      "id": "tim-20261108_184947",
-      "issue_number": 187,
-      "date": "2026-11-08 18:49:47",
-      "project": "Белый Доминикана",
-      "type": "tim_report",
-      "agent": "👑 Директор Тим",
-      "departments": "🔎 Аналитик & Разведчик, 📊 Стратег, 📈 Маркетолог & Трафик, 💻 Главный Разработчик",
-      "title": "https://profitroom.com/solutions/individual-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=24240220289_{campaignname}&utm_term=&utm_r",
-      "summary": "Власлав, поручение принято и скоординировано между 4 отделами (Аналитик & Разведчик, Стратег, Маркетолог & Трафик, Главный Разработчик) в рамках проекта «Белый Доминикана». Сформирована прикладная связка монетизации, воронки привлечения и т",
-      "human_action": "Проверить отчёт в панели «👑 Тим» и подтвердить старт запуска по проекту «Белый Доминикана».",
       "status": "done"
     }
   ]
