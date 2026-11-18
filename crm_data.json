@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-18T15:51:26.168508Z",
+  "updated_at": "2026-11-18T16:17:08.515708Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_181152",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181152.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_180923",
       "issue": "Auto",
@@ -2828,6 +2808,15 @@
       "source_url": "",
       "summary": "Здравия! Тим на связи. Главный Штаб, Задача #84.\n\nИнтеграция моделей **DeepSeek (V3 / R1)** в архитектуру **Harness CI/CD** (или кастомный оркестратор агентов/хазнеса) в рамках контура Global Spirit Group — это мощный шаг к автоматизации пайплайнов, код-ревью и генерации инфраструктурного кода (Terraform/Ansible) с минимальной стоимостью токенов.\n\nНиже собрана база знаний из наших предыдущих обсуждений по применению DeepSeek, а также готовый архитектурный план внедрения в связке с Harness.\n\n---\n\n### 1. Что мы ранее изучали и фиксировали по DeepSeek в задачах Штаба:\n* **Экономика токенов и кэши",
       "updated_at": "2026-11-18T15:51:21.193543Z"
+    },
+    {
+      "id": "kb-bot-85",
+      "issue": 85,
+      "category": "Проект: Главный Штаб",
+      "title": "https://youtu.be/I-lJCF2HPSA?is=78ZDOQJpolH1nkL9",
+      "source_url": "https://youtu.be/I-lJCF2HPSA?is=78ZDOQJpolH1nkL9",
+      "summary": "Tim here. Reporting for Global Spirit Group, HQ.\n\n### 1. Analysis of the Video (I-lJCF2HPSA)\nThe video \"Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude\" discusses the shift in the LLM landscape where open-weights models (like DeepSeek) are rapidly closing the gap with proprietary models (Claude/GPT-4o). The core takeaway is the **democratization of high-level reasoning capabilities**, which directly supports our strategy to move away from vendor lock-in and toward self-hosted/API-agnostic infrastructure.\n\n### 2. DeepSeek + Harness Integration (Expertise)\nPer your previous tasks (#84",
+      "updated_at": "2026-11-18T16:17:03.082176Z"
     }
   ],
   "global_plus_matrix": [
