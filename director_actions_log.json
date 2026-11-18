@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1794968278857",
+      "ts": "2026-11-18T02:17:58.857181+00:00",
+      "time_local": "19:17:58",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#81): https://www.outsource.gov.uz/en?fbclid=IwVERDUAVp6epleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHwLWH0ulQFCPNCt2zHCOLCWgPTn7JRn43tiOq7bgbCEZbiVFupzLXXGMmUGK_aem_4preRR",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1794968146927",
       "ts": "2026-11-18T02:15:46.927385+00:00",
       "time_local": "19:15:46",
@@ -171,5 +184,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-18T02:15:46.927385+00:00"
+  "updated_at": "2026-11-18T02:17:58.857181+00:00"
 }
