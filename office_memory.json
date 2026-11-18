@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-18T15:51:08.242033Z",
+  "updated_at": "2026-11-18T16:16:42.680593Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -290,6 +290,13 @@
       "project": "Главный Штаб",
       "issue": 84,
       "summary": "Как нам применить дипсик для нашей системы подключить харнес найди что ты до этого изучал по дипсику когда я ставил задачи: Здравия! Тим на связи. Главный Штаб, Задача #84.\n\nИнтеграция моделей **DeepSeek (V3 / R1)** в архитектуру **Harness CI/CD** (или кастомный оркестратор агентов/хазнеса) в рамках контура Global Spirit Group — это мощный шаг к автоматизации пайплайнов, код-ревью и генерации инфрастр"
+    },
+    {
+      "id": "fact-dir-v343-iss85",
+      "ts": "2026-11-18T16:16:37.584943Z",
+      "project": "Главный Штаб",
+      "issue": 85,
+      "summary": "https://youtu.be/I-lJCF2HPSA?is=78ZDOQJpolH1nkL9: Tim here. Reporting for Global Spirit Group, HQ.\n\n### 1. Analysis of the Video (I-lJCF2HPSA)\nThe video \"Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude\" discusses the shift in the LLM landscape where open-weights models (like DeepSeek) are rapidly closing the gap with "
     }
   ],
   "projects": {
