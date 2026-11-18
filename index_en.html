@@ -2687,6 +2687,27 @@ textarea.task-inline-input {
     display: flex;
 }
 @media (max-width: 768px) {
+    .telemetry-bar-top {
+        flex-wrap: wrap !important;
+        padding: 5px 8px !important;
+        gap: 4px !important;
+    }
+    .telemetry-pills {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        order: 2 !important;
+        padding-right: 12px !important;
+    }
+    #world-telemetry-right-label {
+        width: 100% !important;
+        justify-content: flex-end !important;
+        order: 1 !important;
+        font-size: 0.68rem !important;
+        line-height: 1.15 !important;
+    }
+    .topbar-actions, .bottom-nav {
+        padding-right: 12px !important;
+    }
     body.mobile-kb-open .telemetry-bar-top,
     body.mobile-kb-open .bottom-nav {
         display: none !important;
@@ -2708,7 +2729,7 @@ textarea.task-inline-input {
 
 <!-- LIVE WORLD-CLASS TELEMETRY HEADER -->
 <div class="telemetry-bar-top" id="world-telemetry-bar">
-    <div class="telemetry-pills">
+    <div class="telemetry-pills" id="world-telemetry-pills">
         <div class="telemetry-pill" onclick="openAgentsStatusModal()" title="Office Core Status">
             <span class="pulse-indicator"></span>
             <span>OFFICE ONLINE 24/7</span>
@@ -2726,8 +2747,8 @@ textarea.task-inline-input {
             <span>🚀 MVP: Voice AI (94%)</span>
         </div>
     </div>
-    <div style="font-size:0.74rem; color:#94a3b8; font-weight:600; display:flex; gap:6px; align-items:center; flex-shrink:0; white-space:nowrap;">
-        <span id="version-badge-label">v34.4 Antigravity 2.31</span>
+    <div id="world-telemetry-right-label" style="font-size:0.74rem; color:#94a3b8; font-weight:600; display:flex; gap:6px; align-items:center; flex-shrink:0; white-space:nowrap;">
+        <span id="version-badge-label">v34.7 Antigravity 2.31</span>
     </div>
 </div>
 
@@ -5272,7 +5293,7 @@ textarea.task-inline-input {
             const safeUrl = url.replace(/'/g, "%27");
             const idx = imgPlaceholders.length;
             imgPlaceholders.push(
-                '<div style="margin:6px 0;"><img src="' + url + '" alt="' + (alt || "Фото") + '" class="office-inline-photo" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + safeUrl + '\')"></div>'
+                '<div style="margin:6px 0;"><img src="' + url + '" alt="' + (alt || "Фото") + '" class="office-inline-photo" loading="lazy" onerror="this.parentElement.style.display=\'none\'" onclick="event.stopPropagation(); openPhotoLightbox(\'' + safeUrl + '\')"></div>'
             );
             return "%%OFFICE_IMG_" + idx + "%%";
         });
@@ -5283,7 +5304,7 @@ textarea.task-inline-input {
             if (isImg) {
                 const safeUrl = cleanU.replace(/'/g, "%27");
                 return '<a href="' + cleanU + '" target="_blank" rel="noopener" style="color:#c084fc; text-decoration:underline;">📷 Открыть фото ↗</a>' +
-                    '<div><img src="' + cleanU + '" alt="Фото" class="office-inline-photo" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + safeUrl + '\')"></div>';
+                    '<div><img src="' + cleanU + '" alt="Фото" class="office-inline-photo" loading="lazy" onerror="this.parentElement.style.display=\'none\'" onclick="event.stopPropagation(); openPhotoLightbox(\'' + safeUrl + '\')"></div>';
             }
             return '<a href="' + url + '" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">' + url + '</a>';
         });
@@ -7636,10 +7657,11 @@ textarea.task-inline-input {
 
             const actionsHtml = (item.action_items || []).map(a => '<li>' + escapeHtml(a) + '</li>').join("");
             const safeTitle = escapeHtml(item.title).replace(/'/g, "\\'");
-            const kbPhotosHtml = Array.isArray(item.images) && item.images.length > 0
-                ? ('<div style="display:flex; gap:6px; flex-wrap:wrap; margin:6px 0;">' + item.images.map(u => {
+            const validKbImgs = (Array.isArray(item.images) ? item.images : []).filter(u => u && !/youtube\.com|youtu\.be|t\.me|instagram\.com\/(?:reel|p)\//i.test(String(u)));
+            const kbPhotosHtml = validKbImgs.length > 0
+                ? ('<div style="display:flex; gap:6px; flex-wrap:wrap; margin:6px 0;">' + validKbImgs.map(u => {
                     const su = String(u).replace(/'/g, "%27");
-                    return '<img src="' + escapeHtml(u) + '" alt="Фото" class="office-inline-photo" style="max-height:140px;" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + su + '\')">';
+                    return '<img src="' + escapeHtml(u) + '" alt="Фото" class="office-inline-photo" style="max-height:140px;" loading="lazy" onerror="this.style.display=\'none\'" onclick="event.stopPropagation(); openPhotoLightbox(\'' + su + '\')">';
                 }).join("") + '</div>')
                 : '';
             html += '<div class="kb-card">' +
@@ -9204,7 +9226,7 @@ textarea.task-inline-input {
             out += '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
                 imgMatches.map(u => {
                     const su = u.replace(/'/g, "%27");
-                    return '<img src="' + escapeHtml(u) + '" alt="Фото" class="office-inline-photo" loading="lazy" onclick="event.stopPropagation(); openPhotoLightbox(\'' + su + '\')">';
+                    return '<img src="' + escapeHtml(u) + '" alt="Фото" class="office-inline-photo" loading="lazy" onerror="this.style.display=\'none\'" onclick="event.stopPropagation(); openPhotoLightbox(\'' + su + '\')">';
                 }).join("") +
             '</div>';
         }
@@ -9665,7 +9687,7 @@ textarea.task-inline-input {
                 '<span style="font-size:0.71rem; color:#c084fc; font-weight:700;">📷 Фото в папке:</span>' +
                 led.photo_urls.map(u => {
                     const su = u.replace(/'/g, "%27");
-                    return '<img src="' + escapeHtml(u) + '" alt="Фото папки" style="width:44px; height:44px; border-radius:8px; object-fit:cover; cursor:zoom-in; border:1px solid rgba(139,92,246,0.5);" onclick="openPhotoLightbox(\'' + su + '\')">';
+                    return '<img src="' + escapeHtml(u) + '" alt="Фото папки" style="width:44px; height:44px; border-radius:8px; object-fit:cover; cursor:zoom-in; border:1px solid rgba(139,92,246,0.5);" onerror="this.style.display=\'none\'" onclick="openPhotoLightbox(\'' + su + '\')">';
                 }).join("") +
                '</div>')
             : '';
