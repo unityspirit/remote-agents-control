@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-18T11:09:19.324684Z",
+  "updated_at": "2026-11-18T11:09:24.771098Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_181413",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181413.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_181307",
       "issue": "Auto",
@@ -2850,6 +2830,15 @@
       "source_url": "https://www.outsource.gov.uz/en?fbclid=IwVERDUAVp6epleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHwLWH0ulQFCPNCt2zHCOLCWgPTn7JRn43tiOq7bgbCEZbiVFupzLXXGMmUGK_aem_4preRRiNE3Y5JjCINYpD5w",
       "summary": "Здравия! Тим на связи. Главный Штаб, Задача #82.\n\nОсновываясь на официальных данных извлеченного текста страницы `https://www.outsource.gov.uz/en` (Национальный портал IT Outsourcing & BPO Узбекистана, поддерживаемый IT Park Uzbekistan), ниже подан глубокий структурный анализ того, что представляет собой этот ресурс, какие решения в нем реализованы и в чем заключаются его ключевые преимущества для бизнеса.\n\n---\n\n### 1. Что делает этот сайт (Суть и назначение)\nСайт **Outsource to Uzbekistan** — это государственный B2B-портал «единого окна», созданный для привлечения прямых иностранных инвестици",
       "updated_at": "2026-11-18T11:09:13.878929Z"
+    },
+    {
+      "id": "kb-bot-83",
+      "issue": 83,
+      "category": "Проект: Главный Штаб",
+      "title": "https://quasarlab.dev/",
+      "source_url": "https://quasarlab.dev/",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #83. \n\nИсходя извлечённых данных по ссылке `https://quasarlab.dev/`, вот детальный разбор студии **Quasar Lab**, их стека технологий, преимуществ и того, как этот опыт применим в контуре Global Spirit Group.\n\n---\n\n### 1. Что делает сайт и какова его суть?\n**Quasar Lab** позиционирует себя как *Creative Development Studio* (креативная студия разработки), которая специализируется на создании цифровых продуктов полного цикла: от концепта до production-релиза. \n\n**Ключевые направления деятельности:**\n* **Web Development:** Высокобюджетные лендинги, иммер",
+      "updated_at": "2026-11-18T11:09:17.965550Z"
     }
   ],
   "global_plus_matrix": [
