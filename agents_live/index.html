@@ -280,7 +280,7 @@
         </div>
 
         <div id="tasks-toolbar" style="display:none; padding:10px 14px; border-bottom:1px solid var(--border); flex-direction:column; gap:8px;">
-          <input type="text" class="cmd-input" id="task-search" placeholder="🔍 Фильтр по задаче, человеку, проекту, скиллу..." oninput="renderRightPanel()">
+          <input type="text" class="cmd-input" id="task-search" style="flex:0 0 auto; width:100%;" placeholder="🔍 Фильтр по задаче, человеку, проекту, скиллу..." oninput="renderRightPanel()">
           <div id="status-filters" style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="chip active" onclick="setTaskStatusFilter('all', this)">Все</button>
             <button class="chip" onclick="setTaskStatusFilter('in_progress', this)">🟢 В работе</button>
@@ -822,7 +822,7 @@ function renderRightPanel() {
           <div class="item-title">⚡ Активная база Офиса v34.7 (${esc(totalCnt)} скиллов + ${ag.length} агентов)</div>
           <span class="badge b-in_progress">synced</span>
         </div>
-        <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.4;">Установлены 4 набора: Marketing &amp; CRO (coreyhaines31), Semrush SEO, Claude SEO v2.6.2 и System 1 Research/Automation.</div>
+        <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.4;">Установлены 4 набора (53 Marketing/CRO + 8 Semrush + 35 Claude SEO + 63 Automation/Research + 8 базовых = 167 скиллов и 21 сабагент).</div>
       </div>
       <div class="item-card">
         <div class="item-title">📈 Marketing, CRO, Pricing &amp; Growth (${mktSk.length})</div>
