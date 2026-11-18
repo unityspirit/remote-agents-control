@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-17T23:55:19.638556Z",
+  "updated_at": "2026-11-18T02:15:45.118487Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -255,6 +255,13 @@
       "project": "Главный Штаб",
       "issue": 79,
       "summary": "https://www.outsource.gov.uz/en?fbclid=IwVERTSAVpyANleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABH30T3YAMFKa3svSf7JLOuE8bxh2StjQC9LlOkxjIgaTAEyNusazZflTlPLgi_aem_eiT-O1t22-dAudlzRwVrEw: Здравия! Тим на связи. Главный Штаб, Задача #79.\n\nПо ссылке `outsource.gov.uz/en` загружен официальный национальный портал **IT Outsourcing & BPO Portal | Outsource to Uzbekistan** (подразделение IT Park Uzbekistan). \n\n### Ключевые данные с портала:\n* "
+    },
+    {
+      "id": "fact-dir-v343-iss80",
+      "ts": "2026-11-18T02:15:40.919842Z",
+      "project": "Главный Штаб",
+      "issue": 80,
+      "summary": "https://youtu.be/I-lJCF2HPSA?is=V4bsXJ_nU9mi3-dg изучи и применить реа: Здравия! Тим на связи. Главный Штаб, Задача #80.\n\nПоскольку автоматический парсер выдал ошибку `fetch_failed` для YouTube-ссылки `https://youtu.be/I-lJCF2HPSA`, прямое скачивание субтитров или метаданных этого конкретного видео в моменте недоступно. *Примечание по NotebookLM: про"
     }
   ],
   "projects": {
