@@ -934,6 +934,7 @@ def _persist_bot_work_to_local_and_crm(ctx, issue_num, project_name, goal_text, 
                 c_obj["status"] = "done"
                 c_obj["owner"] = "gatekeeper"
                 c_obj["updated"] = now_s
+                c_obj["next"] = {"who": "done", "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"}
                 c_obj.setdefault("handoffs", []).append({"t": now_s, "from": "tg_director", "to": "gatekeeper", "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"})
                 with open(board_path, "w", encoding="utf-8") as bf:
                     json.dump(bd, bf, ensure_ascii=False, indent=2)
