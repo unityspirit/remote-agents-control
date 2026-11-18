@@ -136,10 +136,10 @@
   @media (max-width: 640px) { .graph-stage { height: 420px; } }
   canvas#agentGraphCanvas { width: 100%; height: 100%; display: block; }
   .graph-controls {
-    position: absolute; right: 12px; bottom: 12px; display: flex; gap: 6px; flex-wrap: wrap; z-index: 10;
+    position: absolute; right: 12px; top: 12px; display: flex; gap: 6px; flex-wrap: wrap; z-index: 10;
   }
   .graph-legend {
-    position: absolute; left: 12px; bottom: 12px; background: rgba(7,11,20,0.82); backdrop-filter: blur(8px);
+    position: absolute; left: 12px; bottom: 10px; right: 12px; max-width: fit-content; background: rgba(7,11,20,0.84); backdrop-filter: blur(8px);
     border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px;
     display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.69rem; color: var(--muted); pointer-events: none;
   }
@@ -437,7 +437,7 @@ function getVisibleNodesAndEdges() {
   };
 }
 
-function layoutGraphNodes() {
+function layoutGraphNodes(fitCamera = false) {
   const canvas = document.getElementById("agentGraphCanvas");
   const w = canvas.clientWidth || 760;
   const h = canvas.clientHeight || 520;
@@ -445,21 +445,29 @@ function layoutGraphNodes() {
   const byTier = { 0: [], 1: [], 2: [], 3: [], 4: [] };
   nodes.forEach(n => (byTier[n.tier] || byTier[4]).push(n));
 
-  const tierY = [46, 130, 218, 326, 438];
+  const tierY = [64, 146, 232, 336, 444];
+  let maxSpan = Math.max(w - 60, 620);
   Object.keys(byTier).forEach(tStr => {
     const t = Number(tStr);
     const list = byTier[t];
     if (!list.length) return;
     const span = Math.max(w - 80, list.length * 145);
+    if (span + 120 > maxSpan) maxSpan = span + 120;
     const startX = (w - span) / 2 + span / (list.length * 2);
     const stepX = span / list.length;
     list.forEach((n, idx) => {
       if (!nodePositions[n.id] || !nodePositions[n.id].pinned) {
         const wave = t >= 3 && idx % 2 === 1 ? 18 : 0;
-        nodePositions[n.id] = { x: startX + idx * stepX, y: (tierY[t] || 438) + wave, pinned: false };
+        nodePositions[n.id] = { x: startX + idx * stepX, y: (tierY[t] || 444) + wave, pinned: false };
       }
     });
   });
+  if (fitCamera || !cam._initialized) {
+    cam.scale = Math.max(0.32, Math.min(1, (w - 24) / maxSpan));
+    cam.x = 0;
+    cam.y = 0;
+    cam._initialized = true;
+  }
 }
 
 function nodeColor(n) {
@@ -665,13 +673,12 @@ function setupGraphEvents() {
 }
 
 function zoomGraph(factor) {
-  cam.scale = Math.max(0.45, Math.min(2.2, cam.scale * factor));
+  cam.scale = Math.max(0.28, Math.min(2.2, cam.scale * factor));
 }
 
 function resetCamera() {
-  cam.x = 0; cam.y = 0; cam.scale = 1;
   nodePositions = {};
-  layoutGraphNodes();
+  layoutGraphNodes(true);
 }
 
 function setGraphFilter(mode, btn) {
@@ -679,7 +686,7 @@ function setGraphFilter(mode, btn) {
   document.querySelectorAll("#graph-filters .chip").forEach(c => c.classList.remove("active"));
   if (btn) btn.classList.add("active");
   nodePositions = {};
-  layoutGraphNodes();
+  layoutGraphNodes(true);
 }
 
 /* ---------- RIGHT PANEL RENDERING ---------- */
