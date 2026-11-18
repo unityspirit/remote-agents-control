@@ -17672,6 +17672,32 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "83": {
+      "id": 83,
+      "gh_issue": 83,
+      "created": "2026-11-18 04:09:08",
+      "handoffs": [
+        {
+          "t": "2026-11-18 04:09:08",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "https://quasarlab.dev/",
+      "urls": [
+        "https://quasarlab.dev/"
+      ],
+      "project": "Главный Штаб",
+      "kind": "link",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-18 04:09:08",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
