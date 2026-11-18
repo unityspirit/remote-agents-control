@@ -80,7 +80,7 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.5"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.6"
 LOCAL_BOT_ACCESS_FILE = os.path.join(BASE_DIR, ".bot_access_registry.json")
 _cached_bot_access = None
 _cached_bot_access_ts = 0.0
@@ -1328,7 +1328,8 @@ def send_hq_home_menu(chat_id, from_user=None):
             {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
         ],
         [
-            {"text": "🏢 Главный Офис (v34.5)", "url": OFFICE_URL},
+            {"text": "🏢 Главный Офис (v34.6)", "url": OFFICE_URL},
+            {"text": "🕸️ Граф Агентов (Live)", "url": "https://globalteampartners.github.io/remote-agents-control/agents_live/"},
         ],
     ])
     call_tg("sendMessage", {
@@ -2262,6 +2263,7 @@ def _trigger_seo_from_tg(chat_id, arg_text=""):
             "parse_mode": "HTML",
             "reply_markup": {"inline_keyboard": [
                 [{"text": "🔎 Запустить /seo аудит сейчас", "callback_data": "cmd:seo"}],
+                [{"text": "🕸️ Открыть Граф Агентов Live", "url": "https://globalteampartners.github.io/remote-agents-control/agents_live/"}],
                 [{"text": "⬅️ Главное меню", "callback_data": "cmd:home"}],
             ]},
         })
