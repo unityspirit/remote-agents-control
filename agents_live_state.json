@@ -1,12 +1,12 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-18T04:44:10Z",
+  "generated_at": "2026-11-18T04:49:09Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
   },
   "user_counts": {
-    "vlaslav": 146,
+    "vlaslav": 147,
     "alberta": 16,
     "yura": 2,
     "true1team": 9,
@@ -219,14 +219,14 @@
     "open_issues": 1,
     "closed_issues": 29,
     "board_total_cards": 152,
-    "tasks_in_progress": 5,
+    "tasks_in_progress": 4,
     "tasks_queued": 1,
-    "tasks_attention": 34,
-    "tasks_done": 146
+    "tasks_attention": 35,
+    "tasks_done": 147
   },
   "seo_health": {
-    "last_run_iso": "2026-11-18T03:55:41Z",
-    "trigger": "manual",
+    "last_run_iso": "2026-11-18T04:49:03Z",
+    "trigger": "post_v347_verify",
     "domains": [
       {
         "name": "Virtual Office HQ (Primary RU)",
@@ -457,6 +457,32 @@
           "https://unityspiritpartners.com/": 100
         },
         "drifts": []
+      },
+      {
+        "ts": "2026-11-18T04:47:46Z",
+        "local_avg": 95.3,
+        "live_avg": 81.7,
+        "local_scores": {
+          "index.html": 96,
+          "index_en.html": 95,
+          "ai_store_builder/index.html": 99,
+          "Traffic/index.html": 99,
+          "12_IT_Products/index.html": 98,
+          "AI_Skills_And_Macro_Stabilization/index.html": 94,
+          "globalfilms/index.html": 96,
+          "agents_live/index.html": 87,
+          "Unity_Office_App_Installer.html": 94
+        },
+        "live_scores": {
+          "https://globalteampartners.github.io/remote-agents-control/": 96,
+          "https://globalteampartners.github.io/remote-agents-control/index_en.html": 95,
+          "https://globalteampartners.github.io/remote-agents-control/ai_store_builder/": 99,
+          "https://unityspirit.github.io/remote-agents-control/": 82,
+          "https://unityspirit.github.io/alberta-hub/": 100,
+          "https://globalplus.tech/": 0,
+          "https://unityspiritpartners.com/": 100
+        },
+        "drifts": []
       }
     ],
     "skills": [
@@ -545,9 +571,9 @@
   ],
   "agent_task_counts": {
     "agent_seo": {
-      "total": 21,
+      "total": 22,
       "active": 3,
-      "done": 17,
+      "done": 18,
       "attention": 1
     },
     "agent_traffic": {
@@ -564,9 +590,9 @@
     },
     "agent_research": {
       "total": 116,
-      "active": 2,
+      "active": 1,
       "done": 85,
-      "attention": 29
+      "attention": 30
     },
     "agent_apps": {
       "total": 2,
@@ -665,7 +691,7 @@
           "seo-dataforseo",
           "seo-drift"
         ],
-        "details": "Запускается ПЕРВЫМ при старте Windows и каждые 6ч. Последний цикл: 2026-11-18T03:55:41Z. Выполняет 47 on-page проверок, GEO/llms.txt, Schema, Sitemap и Drift."
+        "details": "Запускается ПЕРВЫМ при старте Windows и каждые 6ч. Последний цикл: 2026-11-18T04:49:03Z. Выполняет 47 on-page проверок, GEO/llms.txt, Schema, Sitemap и Drift."
       },
       {
         "id": "agent_cloud",
@@ -784,23 +810,6 @@
       },
       {
         "id": "task_node_2",
-        "label": "CARD-109",
-        "sub": "Ghost Ghetto Child: переписать оффер по реал",
-        "tier": 4,
-        "kind": "task",
-        "status": "in_progress",
-        "metric": "P1",
-        "skills": [
-          "pricing",
-          "offers",
-          "launch",
-          "copywriting"
-        ],
-        "url": "",
-        "details": "Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)\n\nНавыки: pricing, offers, launch, copywriting\nРезультат: Статус на доске: in_progress (owner=project_lead)"
-      },
-      {
-        "id": "task_node_3",
         "label": "CARD-147",
         "sub": "https://www.customaistore.com/launch?v=803&g",
         "tier": 4,
@@ -818,7 +827,7 @@
         "details": "https://www.customaistore.com/launch?v=803&gc_id=24312469597&h_ad_id=826526575099&utm_source=YouTube&utm_medium=paid&utm_term=TM&u\n\nНавыки: seo-audit, seo-technical, seo-geo, cro, ads\nРезультат: Статус на доске: distributed (owner=human)"
       },
       {
-        "id": "task_node_4",
+        "id": "task_node_3",
         "label": "CARD-79",
         "sub": "TIM: outsource.gov.uz — IT Park Uzbekistan (",
         "tier": 4,
@@ -835,7 +844,7 @@
         "details": "TIM: outsource.gov.uz — IT Park Uzbekistan (0% налог + 4 модели заработка)\n\nНавыки: market-research, pricing, seo-audit, lead-intelligence\nРезультат: Статус на доске: in_progress (owner=director_tim)"
       },
       {
-        "id": "task_node_5",
+        "id": "task_node_4",
         "label": "Global Plus Tech: SEO ",
         "sub": "Global Plus Tech: SEO 0/100 (HTTP ERR)",
         "tier": 4,
@@ -852,7 +861,7 @@
         "details": "Global Plus Tech: SEO 0/100 (HTTP ERR)\n\nНавыки: seo-audit, seo-technical, cro, copywriting\nРезультат: SSL/HTTPS ошибка — требуется обновление сертификата"
       },
       {
-        "id": "task_node_6",
+        "id": "task_node_5",
         "label": "CARD-84",
         "sub": "https://youtube.com/shorts/hRdxDtdz6RA?is=GJ",
         "tier": 4,
@@ -870,7 +879,7 @@
         "details": "https://youtube.com/shorts/hRdxDtdz6RA?is=GJ9t98y5nuWZTIx4 30 skills 4 you to install!\n\nНавыки: seo-audit, seo-technical, seo-geo, cro, ads\nРезультат: Статус на доске: not_studied (owner=human)"
       },
       {
-        "id": "task_node_7",
+        "id": "task_node_6",
         "label": "CARD-102",
         "sub": "https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9",
         "tier": 4,
@@ -888,7 +897,7 @@
         "details": "https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h изучи и примени инструменты и создай план для нас по этим действиям что выгодно д\n\nНавыки: seo-audit, seo-technical, seo-geo, cro, market-research\nРезультат: Статус на доске: not_studied (owner=human)"
       },
       {
-        "id": "task_node_8",
+        "id": "task_node_7",
         "label": "CARD-123",
         "sub": "https://youtube.com/shorts/ioyg0pYqzlI?is=el",
         "tier": 4,
@@ -904,6 +913,23 @@
         ],
         "url": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH",
         "details": "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH what is he talking about learn and tell me how we make millions of doll\n\nНавыки: seo-audit, seo-technical, seo-geo, cro, pricing\nРезультат: Статус на доске: not_studied (owner=human)"
+      },
+      {
+        "id": "task_node_8",
+        "label": "CARD-109",
+        "sub": "Ghost Ghetto Child: переписать оффер по реал",
+        "tier": 4,
+        "kind": "task",
+        "status": "attention",
+        "metric": "P1",
+        "skills": [
+          "pricing",
+          "offers",
+          "launch",
+          "copywriting"
+        ],
+        "url": "",
+        "details": "Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)\n\nНавыки: pricing, offers, launch, copywriting\nРезультат: Статус на доске: awaiting_approval (owner=owner)"
       },
       {
         "id": "task_node_9",
@@ -991,25 +1017,25 @@
         "active": true
       },
       {
-        "from": "agent_research",
-        "to": "task_node_2",
-        "label": "pricing",
-        "active": true
-      },
-      {
         "from": "agent_store",
-        "to": "task_node_3",
+        "to": "task_node_2",
         "label": "seo-audit",
         "active": true
       },
       {
         "from": "agent_seo",
-        "to": "task_node_4",
+        "to": "task_node_3",
         "label": "market-research",
         "active": true
       },
       {
         "from": "agent_seo",
+        "to": "task_node_4",
+        "label": "seo-audit",
+        "active": true
+      },
+      {
+        "from": "agent_research",
         "to": "task_node_5",
         "label": "seo-audit",
         "active": true
@@ -1029,7 +1055,7 @@
       {
         "from": "agent_research",
         "to": "task_node_8",
-        "label": "seo-audit",
+        "label": "pricing",
         "active": true
       },
       {
@@ -1042,7 +1068,7 @@
   },
   "tasks": [
     {
-      "id": "seo-auto-1794973992",
+      "id": "seo-auto-1794977220",
       "source": "seo_autopilot",
       "title": "Scheduled startup SEO + GEO drift audit across Office & Brand domains",
       "url": "",
@@ -1058,10 +1084,32 @@
         "seo-sitemap"
       ],
       "result": "",
-      "updated_at": "2026-11-18T03:53:12Z",
+      "updated_at": "2026-11-18T04:47:00Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
+    },
+    {
+      "id": "seo-auto-1794973992",
+      "source": "seo_autopilot",
+      "title": "Scheduled startup SEO + GEO drift audit across Office & Brand domains",
+      "url": "",
+      "project": "SEO-Автопилот (35 скиллов)",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_seo",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-sitemap"
+      ],
+      "result": "Local Office SEO maintenance completed (0 updates)",
+      "updated_at": "2026-11-18T04:47:00Z",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
       "id": "seo-auto-1794964971",
@@ -1212,7 +1260,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 96/100 · HTTP 200",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1234,7 +1282,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 95/100 · HTTP 200",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1256,7 +1304,7 @@
         "seo-ecommerce"
       ],
       "result": "Оценка 99/100 · HTTP 200",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1278,7 +1326,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 82/100 · HTTP 200",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1300,7 +1348,7 @@
         "seo-local"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "alberta",
       "user_label": "💎 Альберта",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1321,7 +1369,7 @@
         "copywriting"
       ],
       "result": "SSL/HTTPS ошибка — требуется обновление сертификата",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
@@ -1342,7 +1390,7 @@
         "copywriting"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-18T03:55:41Z",
+      "updated_at": "2026-11-18T04:49:03Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1899,7 +1947,7 @@
       "title": "Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)",
       "url": "",
       "project": "Ghost Ghetto Child (Музыка)",
-      "status": "in_progress",
+      "status": "attention",
       "priority": "P1",
       "agent_id": "agent_research",
       "skills": [
@@ -1909,8 +1957,8 @@
         "copywriting"
       ],
       "action_plan_ru": "Подготовить финальный текст оффера для отправки",
-      "result": "Статус на доске: in_progress (owner=project_lead)",
-      "updated_at": "2026-10-22 08:18:48",
+      "result": "Статус на доске: awaiting_approval (owner=owner)",
+      "updated_at": "2026-11-17 21:48:33",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)"
     },
@@ -5073,10 +5121,10 @@
   ],
   "live_feed": [
     {
-      "ts": "2026-11-18T03:55:41Z",
+      "ts": "2026-11-18T04:49:03Z",
       "actor": "Claude SEO-Автопилот",
       "kind": "seo",
-      "text": "Выполнен цикл (manual): локал 95.3/100, домены 81.7/100, задач: 1"
+      "text": "Выполнен цикл (post_v347_verify): локал 95.3/100, домены 81.7/100, задач: 1"
     },
     {
       "ts": "2026-11-14T23:32:44.925245+00:00",
