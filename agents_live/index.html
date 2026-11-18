@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>Живой Граф Агентов &amp; Задачи Офиса | Global Spirit Group</title>
+<meta name="description" content="Интерактивная визуализация иерархии Офиса Global Spirit Group: Вы → @unitybusinessbot → Директор Тим → подчинённые агенты и Claude SEO-автопилот (35 скиллов) в реальном времени.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://globalteampartners.github.io/remote-agents-control/agents_live/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Живой Граф Агентов &amp; Задачи Офиса | Global Spirit Group">
+<meta property="og:description" content="Живой мониторинг работы агентов под управлением Директора Тима через Telegram-бот, список всех задач, SEO-скиллы и состояние доменов 24/7.">
+<meta property="og:url" content="https://globalteampartners.github.io/remote-agents-control/agents_live/">
+<meta property="og:image" content="https://globalteampartners.github.io/remote-agents-control/icons/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="../icons/favicon-64.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Global Spirit Group Live Agent Command Graph",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://globalteampartners.github.io/remote-agents-control/agents_live/",
+  "inLanguage": "ru"
+}
+</script>
+<style>
+  :root {
+    --bg: #070b14;
+    --panel: rgba(15, 23, 42, 0.92);
+    --card: #131c31;
+    --card2: #19243e;
+    --border: rgba(148, 163, 184, 0.18);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --cyan: #38bdf8;
+    --emerald: #10b981;
+    --purple: #a855f7;
+    --amber: #f59e0b;
+    --rose: #f43f5e;
+    --blue: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  body {
+    background-image:
+      radial-gradient(circle at 12% 10%, rgba(56,189,248,0.10) 0%, transparent 42%),
+      radial-gradient(circle at 88% 85%, rgba(16,185,129,0.09) 0%, transparent 45%);
+    padding-bottom: 42px;
+  }
+  /* TOPBAR */
+  .topbar {
+    position: sticky; top: 0; z-index: 80;
+    background: rgba(7, 11, 20, 0.94); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 14px;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  }
+  .brand-wrap { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .brand-icon {
+    width: 36px; height: 36px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
+    border: 1px solid rgba(56,189,248,0.4); box-shadow: 0 4px 14px rgba(56,189,248,0.22);
+  }
+  .brand-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .brand-text h1 { font-size: 0.98rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+  .live-pill {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 3px;
+    font-size: 0.71rem; color: var(--emerald); font-weight: 700;
+  }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--emerald);
+    box-shadow: 0 0 10px var(--emerald); animation: pulseDot 1.6s infinite;
+  }
+  @keyframes pulseDot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.35); opacity: 0.55; } }
+  .top-btns { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    min-height: 36px; padding: 7px 12px; border-radius: 10px; font-size: 0.78rem; font-weight: 700;
+    border: 1px solid var(--border); background: var(--card); color: var(--text);
+    cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform 0.12s, border-color 0.15s;
+  }
+  .btn:hover { border-color: rgba(56,189,248,0.55); transform: translateY(-1px); }
+  .btn.primary { background: linear-gradient(135deg, rgba(16,185,129,0.24), rgba(56,189,248,0.24)); border-color: rgba(16,185,129,0.6); color: #fff; }
+  .btn.accent { background: rgba(56,189,248,0.16); border-color: rgba(56,189,248,0.5); color: #7dd3fc; }
+  .btn.purple { background: rgba(168,85,247,0.16); border-color: rgba(168,85,247,0.5); color: #d8b4fe; }
+
+  .shell { max-width: 1460px; margin: 0 auto; padding: 14px; display: flex; flex-direction: column; gap: 14px; }
+
+  /* KPI ROW */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .kpi-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .kpi-val { font-size: 1.35rem; font-weight: 900; color: var(--cyan); line-height: 1.1; }
+  .kpi-lbl { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+
+  /* QUICK COMMAND BAR */
+  .cmd-bar {
+    background: linear-gradient(135deg, rgba(19,28,49,0.95), rgba(15,23,42,0.95));
+    border: 1px solid rgba(56,189,248,0.32); border-radius: 16px; padding: 12px 14px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .cmd-input {
+    flex: 1 1 240px; min-width: 180px; background: #090e1a; border: 1px solid var(--border);
+    color: var(--text); border-radius: 10px; padding: 9px 12px; font-size: 0.84rem; outline: none;
+  }
+  .cmd-input:focus { border-color: var(--cyan); }
+  .cmd-status { width: 100%; font-size: 0.74rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+
+  /* MAIN 2-COLUMN WORKSPACE */
+  .workspace { display: grid; grid-template-columns: 1.25fr 1fr; gap: 14px; align-items: start; }
+  @media (max-width: 1080px) { .workspace { grid-template-columns: 1fr; } }
+
+  .panel-box {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 18px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .panel-head {
+    padding: 12px 14px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+  }
+  .panel-title { font-size: 0.92rem; font-weight: 800; display: flex; align-items: center; gap: 7px; }
+  .chip-row { display: flex; gap: 6px; overflow-x: auto; padding: 8px 14px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .chip {
+    background: var(--card); border: 1px solid var(--border); color: var(--muted);
+    padding: 6px 11px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+  }
+  .chip.active { background: rgba(56,189,248,0.18); border-color: var(--cyan); color: #fff; }
+
+  /* INTERACTIVE CANVAS STAGE */
+  .graph-stage { position: relative; width: 100%; height: 520px; background: radial-gradient(circle at center, #0e172a 0%, #070b14 100%); cursor: grab; touch-action: none; }
+  .graph-stage:active { cursor: grabbing; }
+  @media (max-width: 640px) { .graph-stage { height: 420px; } }
+  canvas#agentGraphCanvas { width: 100%; height: 100%; display: block; }
+  .graph-controls {
+    position: absolute; right: 12px; bottom: 12px; display: flex; gap: 6px; flex-wrap: wrap; z-index: 10;
+  }
+  .graph-legend {
+    position: absolute; left: 12px; bottom: 12px; background: rgba(7,11,20,0.82); backdrop-filter: blur(8px);
+    border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px;
+    display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.69rem; color: var(--muted); pointer-events: none;
+  }
+  .leg-item { display: inline-flex; align-items: center; gap: 4px; }
+  .leg-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  /* INSPECTOR BOX BELOW GRAPH */
+  .inspector {
+    padding: 14px; border-top: 1px solid var(--border); background: rgba(11, 16, 29, 0.9);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-pill {
+    font-size: 0.71rem; font-weight: 700; padding: 3px 8px; border-radius: 7px;
+    background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.4); color: #e9d5ff;
+  }
+
+  /* RIGHT COLUMN TABS + CARDS */
+  .tab-bar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--border); overflow-x: auto; flex-wrap: wrap; }
+  .tab-btn {
+    background: var(--card); border: 1px solid var(--border); color: var(--muted);
+    padding: 7px 12px; border-radius: 10px; font-size: 0.77rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+  }
+  .tab-btn.active { background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(16,185,129,0.22)); border-color: var(--cyan); color: #fff; }
+  .tab-body { padding: 12px 14px; max-height: 680px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+
+  .item-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 13px; padding: 11px 13px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .item-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .item-title { font-size: 0.84rem; font-weight: 700; line-height: 1.35; color: #f8fafc; word-break: break-word; }
+  .badge {
+    font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+    border: 1px solid var(--border);
+  }
+  .b-active, .b-in_progress { background: rgba(16,185,129,0.18); border-color: rgba(16,185,129,0.5); color: #6ee7b7; }
+  .b-queued { background: rgba(56,189,248,0.16); border-color: rgba(56,189,248,0.45); color: #7dd3fc; }
+  .b-attention { background: rgba(244,63,94,0.18); border-color: rgba(244,63,94,0.55); color: #fda4af; }
+  .b-done { background: rgba(99,102,241,0.16); border-color: rgba(129,140,248,0.45); color: #c7d2fe; }
+  .meta-line { font-size: 0.74rem; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .meta-line a { color: var(--cyan); text-decoration: none; font-weight: 700; }
+  .meta-line a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-icon"><img src="../icons/icon-192.png" alt="GSG"></div>
+      <div class="brand-text">
+        <h1 id="ui-page-title">🕸️ Живой Граф Агентов &amp; Задачи Офиса</h1>
+        <div class="live-pill">
+          <span class="live-dot" id="live-dot"></span>
+          <span id="live-source-text">Подключение к живому потоку Офиса...</span>
+        </div>
+      </div>
+    </div>
+    <div class="top-btns">
+      <button class="btn" onclick="toggleLang()" id="btn-lang">🌐 RU</button>
+      <button class="btn accent" onclick="loadAllLiveData(true)">🔄 Обновить</button>
+      <button class="btn primary" onclick="triggerSeoNow()">🔎 Запустить SEO</button>
+      <a class="btn purple" href="https://t.me/unitybusinessbot" target="_blank" rel="noopener">🤖 @unitybusinessbot</a>
+      <a class="btn" href="../index.html" id="btn-back-office">⬅️ Назад в Офис</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- KPI CARDS -->
+    <section class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-val" id="kpi-agents">6</div><div class="kpi-lbl" id="lbl-k-agents">Подчинённых ИИ-агентов</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--purple);" id="kpi-skills">35 + 21</div><div class="kpi-lbl" id="lbl-k-skills">Claude SEO Скиллов + Сабагентов</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--emerald);" id="kpi-local-seo">96.4</div><div class="kpi-lbl" id="lbl-k-lseo">SEO балл Офиса (/100)</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--amber);" id="kpi-active-tasks">0</div><div class="kpi-lbl" id="lbl-k-active">В работе / Очередь</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--rose);" id="kpi-attention">0</div><div class="kpi-lbl" id="lbl-k-att">Требуют внимания (SSL/SEO)</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:#a5b4fc;" id="kpi-cloud-cycle">#71</div><div class="kpi-lbl" id="lbl-k-cycle">Облачный цикл 24/7 + Задачи</div></div>
+    </section>
+
+    <!-- DIRECT COMMAND BAR -->
+    <section class="cmd-bar">
+      <input type="text" class="cmd-input" id="direct-task-input" placeholder="💬 Поставить задачу Директору Тиму или SEO-агенту (напр.: Проверь SEO https://unityspiritpartners.com)..." onkeypress="if(event.key==='Enter') submitAgentTask()">
+      <button class="btn primary" onclick="submitAgentTask()" id="btn-send-task">⚡ Отправить в работу</button>
+      <div class="cmd-status">
+        <span id="local-api-badge">💻 Локальный API ПК (127.0.0.1:18799): проверка...</span>
+        <span id="last-sync-badge">⏱️ Обновление: —</span>
+      </div>
+    </section>
+
+    <!-- MAIN 2-COLUMN LIVE INTERFACE -->
+    <section class="workspace">
+      <!-- LEFT: INTERACTIVE HIERARCHY GRAPH -->
+      <div class="panel-box">
+        <div class="panel-head">
+          <div class="panel-title" id="lbl-graph-title">🕸️ Интерактивная Графа: Вы → Бот → Директор Тим → Агенты → Задачи</div>
+          <span style="font-size:0.72rem; color:var(--muted);" id="lbl-graph-hint">Клик по узлу — детали · Перетаскивание и зум</span>
+        </div>
+        <div class="chip-row" id="graph-filters">
+          <button class="chip active" onclick="setGraphFilter('all', this)">🌐 Вся иерархия</button>
+          <button class="chip" onclick="setGraphFilter('command', this)">👑 Бот → Директор → Агенты</button>
+          <button class="chip" onclick="setGraphFilter('seo', this)">🔎 SEO &amp; Домены</button>
+          <button class="chip" onclick="setGraphFilter('active', this)">🔥 Активные &amp; Внимание</button>
+        </div>
+        <div class="graph-stage" id="graphStage">
+          <canvas id="agentGraphCanvas"></canvas>
+          <div class="graph-legend">
+            <span class="leg-item"><span class="leg-dot" style="background:#f59e0b;"></span> Вы / Директор</span>
+            <span class="leg-item"><span class="leg-dot" style="background:#38bdf8;"></span> Бот / Очередь</span>
+            <span class="leg-item"><span class="leg-dot" style="background:#10b981;"></span> Активный агент</span>
+            <span class="leg-item"><span class="leg-dot" style="background:#a855f7;"></span> Выполняется SEO</span>
+            <span class="leg-item"><span class="leg-dot" style="background:#f43f5e;"></span> Нужен фикс</span>
+          </div>
+          <div class="graph-controls">
+            <button class="btn" style="min-height:32px; padding:4px 10px;" onclick="zoomGraph(1.18)">➕</button>
+            <button class="btn" style="min-height:32px; padding:4px 10px;" onclick="zoomGraph(0.84)">➖</button>
+            <button class="btn" style="min-height:32px; padding:4px 10px;" onclick="resetCamera()">⟲ Сброс</button>
+          </div>
+        </div>
+        <div class="inspector" id="nodeInspector">
+          <div class="item-top">
+            <div>
+              <div style="font-size:0.95rem; font-weight:800;" id="insp-title">🔎 Директор «Тим» &amp; Подчинённые Агенты</div>
+              <div style="font-size:0.75rem; color:var(--cyan);" id="insp-sub">Выберите любой узел на графе выше чтобы увидеть задачи и скиллы</div>
+            </div>
+            <span class="badge b-active" id="insp-badge">LIVE</span>
+          </div>
+          <div style="font-size:0.8rem; color:#cbd5e1; white-space:pre-line; line-height:1.45;" id="insp-desc">Все команды из Telegram (@unitybusinessbot) проходят через NLU Директора Тима и распределяются между SEO-автопилотом, Cloud 24/7, Open V3 Store и Research-агентами.</div>
+          <div class="skill-pills" id="insp-skills"></div>
+          <div class="meta-line" id="insp-links"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE OPERATIONS + FULL TASK QUEUE + SEO DOMAINS + SKILLS -->
+      <div class="panel-box">
+        <div class="tab-bar" id="right-tabs">
+          <button class="tab-btn active" onclick="switchRightTab('feed', this)">⚡ Что происходит сейчас</button>
+          <button class="tab-btn" onclick="switchRightTab('tasks', this)">📋 Все задачи (<span id="tab-cnt-tasks">0</span>)</button>
+          <button class="tab-btn" onclick="switchRightTab('domains', this)">🌐 SEO Домены</button>
+          <button class="tab-btn" onclick="switchRightTab('skills', this)">🧠 Скиллы (35)</button>
+        </div>
+
+        <div id="tasks-toolbar" style="display:none; padding:10px 14px; border-bottom:1px solid var(--border); flex-direction:column; gap:8px;">
+          <input type="text" class="cmd-input" id="task-search" placeholder="🔍 Фильтр задач по названию, проекту, SEO-скиллу..." oninput="renderRightPanel()">
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button class="chip active" onclick="setTaskStatusFilter('all', this)">Все</button>
+            <button class="chip" onclick="setTaskStatusFilter('in_progress', this)">🟢 В работе</button>
+            <button class="chip" onclick="setTaskStatusFilter('attention', this)">🚨 Внимание</button>
+            <button class="chip" onclick="setTaskStatusFilter('queued', this)">🟡 Очередь</button>
+            <button class="chip" onclick="setTaskStatusFilter('done', this)">✅ Готово</button>
+          </div>
+        </div>
+
+        <div class="tab-body" id="rightTabBody">
+          <div class="item-card"><div class="item-title">Загрузка живых данных из Офиса и GitHub...</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+const RAW_BASE = "https://raw.githubusercontent.com/GlobalTeamPartners/remote-agents-control/data";
+const GH_ISSUES_API = "https://api.github.com/repos/GlobalTeamPartners/remote-agents-control/issues?state=all&per_page=30";
+const LOCAL_API = "http://127.0.0.1:18799";
+
+let LIVE_SNAP = null;
+let LOCAL_ONLINE = false;
+let CURRENT_LANG = "ru";
+let GRAPH_FILTER = "all";
+let RIGHT_TAB = "feed";
+let TASK_FILTER = "all";
+let SELECTED_NODE_ID = "agent_seo";
+
+// Canvas camera & interaction state
+const cam = { x: 0, y: 0, scale: 1 };
+let draggingCam = false;
+let dragNode = null;
+let lastPtr = { x: 0, y: 0 };
+let nodePositions = {};
+let animPhase = 0;
+
+function esc(str) {
+  return String(str == null ? "" : str)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function toggleLang() {
+  CURRENT_LANG = CURRENT_LANG === "ru" ? "en" : "ru";
+  document.getElementById("btn-lang").textContent = CURRENT_LANG === "ru" ? "🌐 RU" : "🌐 EN";
+  document.getElementById("ui-page-title").textContent = CURRENT_LANG === "ru"
+    ? "🕸️ Живой Граф Агентов & Задачи Офиса"
+    : "🕸️ Live Agent Command Graph & Tasks";
+  document.getElementById("btn-back-office").textContent = CURRENT_LANG === "ru" ? "⬅️ Назад в Офис" : "⬅️ Back to Office";
+  document.getElementById("btn-back-office").href = CURRENT_LANG === "ru" ? "../index.html" : "../index_en.html";
+  renderRightPanel();
+}
+
+async function fetchJsonSafe(url, timeoutMs = 7000) {
+  const ctrl = new AbortController();
+  const id = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { signal: ctrl.signal, cache: "no-store" });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (_) {
+    return null;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
+async function loadAllLiveData(manual = false) {
+  const t = Date.now();
+  // 1) Try Local API on Laptop (127.0.0.1:18799) cleanly first
+  const localUrl = LOCAL_API + "/api/agents-live" + (manual ? "?remote=1&t=" + t : "?t=" + t);
+  const localRes = await fetchJsonSafe(localUrl, 2200);
+  if (localRes && localRes.ok && localRes.snapshot) {
+    LOCAL_ONLINE = true;
+    LIVE_SNAP = localRes.snapshot;
+    document.getElementById("local-api-badge").innerHTML = "💻 <b>Локальный API ПК (127.0.0.1:18799):</b> ✅ Подключён — управление SEO и задачами в 1 клик";
+    document.getElementById("live-source-text").textContent = "LIVE · ПК Демон 18799 + GitHub Sync (" + new Date().toLocaleTimeString() + ")";
+  } else {
+    LOCAL_ONLINE = false;
+    document.getElementById("local-api-badge").innerHTML = "☁️ <b>Облачный режим (GitHub Data + Issues):</b> авто-обновление каждые 20 сек";
+    const ghSnap = await fetchJsonSafe(RAW_BASE + "/agents_live_state.json?t=" + t, 8000);
+    if (ghSnap) {
+      LIVE_SNAP = ghSnap;
+      document.getElementById("live-source-text").textContent = "LIVE · GitHub Облако 24/7 (" + new Date().toLocaleTimeString() + ")";
+    }
+  }
+
+  // Merge ultra-fresh telemetry & issues directly in case static snapshot is a few minutes behind
+  const [tel, dirLog, ghIssues] = await Promise.all([
+    fetchJsonSafe(RAW_BASE + "/cloud_agents_telemetry.json?t=" + t, 6000),
+    fetchJsonSafe(RAW_BASE + "/director_actions_log.json?t=" + t, 6000),
+    fetchJsonSafe(GH_ISSUES_API, 6000),
+  ]);
+
+  if (LIVE_SNAP) {
+    if (tel && tel.cycle_count) LIVE_SNAP.kpis.cloud_cycle = tel.cycle_count;
+    if (Array.isArray(ghIssues) && ghIssues.length) {
+      const pure = ghIssues.filter(x => !x.pull_request);
+      LIVE_SNAP.kpis.open_issues = pure.filter(x => x.state === "open").length;
+      LIVE_SNAP.kpis.closed_issues = pure.filter(x => x.state === "closed").length;
+    }
+    if (dirLog) {
+      const acts = dirLog.actions || dirLog.events || (Array.isArray(dirLog) ? dirLog : []);
+      if (acts.length && Array.isArray(LIVE_SNAP.live_feed)) {
+        const latestDir = acts.slice(-5).reverse().map(a => ({
+          ts: a.ts || a.t || "",
+          actor: "Директор (" + (a.project || "Офис") + ")",
+          kind: a.action || "director",
+          text: String(a.summary || a.text || ""),
+        }));
+        const existingTxt = new Set(LIVE_SNAP.live_feed.map(x => x.text));
+        latestDir.forEach(item => {
+          if (item.text && !existingTxt.has(item.text)) LIVE_SNAP.live_feed.unshift(item);
+        });
+      }
+    }
+    updateKpis();
+    layoutGraphNodes();
+    inspectNode(SELECTED_NODE_ID);
+    renderRightPanel();
+    document.getElementById("last-sync-badge").textContent = "⏱️ Снимок от: " + String(LIVE_SNAP.generated_at || "").replace("T", " ").replace("Z", " UTC");
+  }
+}
+
+function updateKpis() {
+  if (!LIVE_SNAP) return;
+  const k = LIVE_SNAP.kpis || {};
+  document.getElementById("kpi-agents").textContent = k.agents_online ?? 6;
+  document.getElementById("kpi-skills").textContent = (k.seo_skills_installed ?? 35) + " + " + (k.seo_agents_installed ?? 21);
+  document.getElementById("kpi-local-seo").textContent = k.local_seo_score ?? "96.4";
+  document.getElementById("kpi-active-tasks").textContent = (k.tasks_in_progress || 0) + (k.tasks_queued || 0);
+  document.getElementById("kpi-attention").textContent = k.tasks_attention ?? 0;
+  document.getElementById("kpi-cloud-cycle").textContent = "#" + (k.cloud_cycle || 71);
+  document.getElementById("tab-cnt-tasks").textContent = (LIVE_SNAP.tasks || []).length;
+}
+
+/* ---------- HIERARCHICAL INTERACTIVE GRAPH ---------- */
+function getVisibleNodesAndEdges() {
+  if (!LIVE_SNAP || !LIVE_SNAP.graph) return { nodes: [], edges: [] };
+  const allNodes = LIVE_SNAP.graph.nodes || [];
+  const allEdges = LIVE_SNAP.graph.edges || [];
+  let keepIds = new Set(allNodes.map(n => n.id));
+  if (GRAPH_FILTER === "command") {
+    keepIds = new Set(allNodes.filter(n => n.tier <= 3).map(n => n.id));
+  } else if (GRAPH_FILTER === "seo") {
+    keepIds = new Set(allNodes.filter(n => n.tier <= 2 || ["agent_seo", "agent_traffic"].includes(n.id) || n.kind === "domain" || (n.skills || []).some(s => s.startsWith("seo"))).map(n => n.id));
+  } else if (GRAPH_FILTER === "active") {
+    keepIds = new Set(allNodes.filter(n => n.tier <= 2 || ["active", "working", "attention", "in_progress", "queued"].includes(n.status)).map(n => n.id));
+  }
+  return {
+    nodes: allNodes.filter(n => keepIds.has(n.id)),
+    edges: allEdges.filter(e => keepIds.has(e.from) && keepIds.has(e.to)),
+  };
+}
+
+function layoutGraphNodes() {
+  const canvas = document.getElementById("agentGraphCanvas");
+  const w = canvas.clientWidth || 760;
+  const h = canvas.clientHeight || 520;
+  const { nodes } = getVisibleNodesAndEdges();
+  const byTier = { 0: [], 1: [], 2: [], 3: [], 4: [] };
+  nodes.forEach(n => (byTier[n.tier] || byTier[4]).push(n));
+
+  const tierY = [46, 130, 218, 326, 438];
+  Object.keys(byTier).forEach(tStr => {
+    const t = Number(tStr);
+    const list = byTier[t];
+    if (!list.length) return;
+    const span = Math.max(w - 80, list.length * 145);
+    const startX = (w - span) / 2 + span / (list.length * 2);
+    const stepX = span / list.length;
+    list.forEach((n, idx) => {
+      if (!nodePositions[n.id] || !nodePositions[n.id].pinned) {
+        const wave = t >= 3 && idx % 2 === 1 ? 18 : 0;
+        nodePositions[n.id] = { x: startX + idx * stepX, y: (tierY[t] || 438) + wave, pinned: false };
+      }
+    });
+  });
+}
+
+function nodeColor(n) {
+  if (n.kind === "owner" || n.kind === "director") return "#f59e0b";
+  if (n.kind === "bot") return "#38bdf8";
+  if (n.status === "attention") return "#f43f5e";
+  if (n.id === "agent_seo" || (n.skills || []).includes("seo-technical")) return "#a855f7";
+  if (n.status === "in_progress" || n.status === "working" || n.status === "active") return "#10b981";
+  return "#6366f1";
+}
+
+function drawGraphFrame() {
+  const canvas = document.getElementById("agentGraphCanvas");
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.clientWidth;
+  const h = canvas.clientHeight;
+  if (canvas.width !== Math.floor(w * dpr) || canvas.height !== Math.floor(h * dpr)) {
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+  }
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+
+  ctx.save();
+  ctx.translate(w / 2 + cam.x, h / 2 + cam.y);
+  ctx.scale(cam.scale, cam.scale);
+  ctx.translate(-w / 2, -h / 2);
+
+  const { nodes, edges } = getVisibleNodesAndEdges();
+  animPhase = (animPhase + 0.012) % 1;
+
+  // Draw edges + animated energy pulses
+  edges.forEach((e, idx) => {
+    const a = nodePositions[e.from];
+    const b = nodePositions[e.to];
+    if (!a || !b) return;
+    const isSel = e.from === SELECTED_NODE_ID || e.to === SELECTED_NODE_ID;
+    ctx.beginPath();
+    const midY = (a.y + b.y) / 2;
+    ctx.moveTo(a.x, a.y);
+    ctx.bezierCurveTo(a.x, midY, b.x, midY, b.x, b.y);
+    ctx.strokeStyle = isSel ? "rgba(56,189,248,0.85)" : (e.active ? "rgba(16,185,129,0.45)" : "rgba(148,163,184,0.22)");
+    ctx.lineWidth = isSel ? 2.6 : 1.5;
+    ctx.stroke();
+
+    if (e.active) {
+      const t = (animPhase + idx * 0.17) % 1;
+      const omt = 1 - t;
+      const px = omt*omt*omt*a.x + 3*omt*omt*t*a.x + 3*omt*t*t*b.x + t*t*t*b.x;
+      const py = omt*omt*omt*a.y + 3*omt*omt*t*midY + 3*omt*t*t*midY + t*t*t*b.y;
+      ctx.beginPath();
+      ctx.arc(px, py, isSel ? 4.2 : 3.1, 0, Math.PI * 2);
+      ctx.fillStyle = "#38bdf8";
+      ctx.fill();
+    }
+  });
+
+  // Draw nodes as rounded glass pills
+  nodes.forEach(n => {
+    const pos = nodePositions[n.id];
+    if (!pos) return;
+    const col = nodeColor(n);
+    const isSel = n.id === SELECTED_NODE_ID;
+    const boxW = n.tier <= 2 ? 156 : (n.tier === 3 ? 148 : 132);
+    const boxH = n.tier <= 3 ? 50 : 42;
+    const rx = pos.x - boxW / 2;
+    const ry = pos.y - boxH / 2;
+
+    ctx.save();
+    if (isSel) {
+      ctx.shadowColor = col;
+      ctx.shadowBlur = 18;
+    }
+    ctx.fillStyle = isSel ? "rgba(25, 38, 68, 0.98)" : "rgba(15, 23, 42, 0.94)";
+    ctx.strokeStyle = isSel ? "#fff" : col;
+    ctx.lineWidth = isSel ? 2.4 : 1.5;
+    roundRect(ctx, rx, ry, boxW, boxH, 11);
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+
+    // Status LED dot
+    ctx.beginPath();
+    ctx.arc(rx + 12, ry + boxH / 2 - 7, 4.2, 0, Math.PI * 2);
+    ctx.fillStyle = col;
+    ctx.fill();
+
+    // Title & subtitle
+    ctx.fillStyle = "#f8fafc";
+    ctx.font = "700 11.5px Inter, -apple-system, sans-serif";
+    ctx.textBaseline = "middle";
+    ctx.fillText(truncateCanvasText(n.label, 19), rx + 21, ry + 16);
+
+    ctx.fillStyle = "#94a3b8";
+    ctx.font = "500 9.5px Inter, -apple-system, sans-serif";
+    ctx.fillText(truncateCanvasText(n.sub || n.metric || "", 23), rx + 11, ry + boxH - 12);
+  });
+
+  ctx.restore();
+  requestAnimationFrame(drawGraphFrame);
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function truncateCanvasText(txt, maxLen) {
+  const s = String(txt || "");
+  return s.length > maxLen ? s.slice(0, maxLen - 1) + "…" : s;
+}
+
+function screenToWorld(sx, sy) {
+  const canvas = document.getElementById("agentGraphCanvas");
+  const rect = canvas.getBoundingClientRect();
+  const w = canvas.clientWidth;
+  const h = canvas.clientHeight;
+  const x = sx - rect.left;
+  const y = sy - rect.top;
+  return {
+    x: (x - (w / 2 + cam.x)) / cam.scale + w / 2,
+    y: (y - (h / 2 + cam.y)) / cam.scale + h / 2,
+  };
+}
+
+function findNodeAt(wx, wy) {
+  const { nodes } = getVisibleNodesAndEdges();
+  for (let i = nodes.length - 1; i >= 0; i--) {
+    const n = nodes[i];
+    const pos = nodePositions[n.id];
+    if (!pos) continue;
+    const bw = n.tier <= 2 ? 156 : (n.tier === 3 ? 148 : 132);
+    const bh = n.tier <= 3 ? 50 : 42;
+    if (wx >= pos.x - bw / 2 && wx <= pos.x + bw / 2 && wy >= pos.y - bh / 2 && wy <= pos.y + bh / 2) {
+      return n;
+    }
+  }
+  return null;
+}
+
+function inspectNode(nodeId) {
+  if (!LIVE_SNAP || !LIVE_SNAP.graph) return;
+  const node = (LIVE_SNAP.graph.nodes || []).find(n => n.id === nodeId) || (LIVE_SNAP.graph.nodes || [])[0];
+  if (!node) return;
+  SELECTED_NODE_ID = node.id;
+  document.getElementById("insp-title").textContent = node.label;
+  document.getElementById("insp-sub").textContent = (node.sub || "") + (node.metric ? " · " + node.metric : "");
+  const badge = document.getElementById("insp-badge");
+  badge.textContent = String(node.status || "active").toUpperCase();
+  badge.className = "badge b-" + (node.status || "active");
+  document.getElementById("insp-desc").textContent = node.details || "";
+  document.getElementById("insp-skills").innerHTML = (node.skills || []).map(s => `<span class="skill-pill">${esc(s)}</span>`).join("");
+
+  const links = [];
+  if (node.url) links.push(`<a href="${esc(node.url)}" target="_blank" rel="noopener">🔗 Открыть целевую ссылку ↗</a>`);
+  if (node.id === "agent_seo") links.push(`<a href="javascript:void(0)" onclick="triggerSeoNow()">▶ Запустить SEO-цикл прямо сейчас</a>`);
+  const matchedTasks = (LIVE_SNAP.tasks || []).filter(t => t.agent_id === node.id || t.id === node.label);
+  if (matchedTasks.length) {
+    links.push(`<span>📋 Связанных задач: <b>${matchedTasks.length}</b></span>`);
+  }
+  document.getElementById("insp-links").innerHTML = links.join("");
+}
+
+function setupGraphEvents() {
+  const stage = document.getElementById("graphStage");
+  stage.addEventListener("pointerdown", ev => {
+    lastPtr = { x: ev.clientX, y: ev.clientY };
+    const wpt = screenToWorld(ev.clientX, ev.clientY);
+    const hit = findNodeAt(wpt.x, wpt.y);
+    if (hit) {
+      dragNode = hit.id;
+      inspectNode(hit.id);
+    } else {
+      draggingCam = true;
+    }
+    stage.setPointerCapture(ev.pointerId);
+  });
+  stage.addEventListener("pointermove", ev => {
+    const dx = ev.clientX - lastPtr.x;
+    const dy = ev.clientY - lastPtr.y;
+    lastPtr = { x: ev.clientX, y: ev.clientY };
+    if (dragNode && nodePositions[dragNode]) {
+      nodePositions[dragNode].x += dx / cam.scale;
+      nodePositions[dragNode].y += dy / cam.scale;
+      nodePositions[dragNode].pinned = true;
+    } else if (draggingCam) {
+      cam.x += dx;
+      cam.y += dy;
+    }
+  });
+  stage.addEventListener("pointerup", () => { dragNode = null; draggingCam = false; });
+  stage.addEventListener("wheel", ev => {
+    ev.preventDefault();
+    zoomGraph(ev.deltaY < 0 ? 1.09 : 0.91);
+  }, { passive: false });
+}
+
+function zoomGraph(factor) {
+  cam.scale = Math.max(0.45, Math.min(2.2, cam.scale * factor));
+}
+
+function resetCamera() {
+  cam.x = 0; cam.y = 0; cam.scale = 1;
+  nodePositions = {};
+  layoutGraphNodes();
+}
+
+function setGraphFilter(mode, btn) {
+  GRAPH_FILTER = mode;
+  document.querySelectorAll("#graph-filters .chip").forEach(c => c.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  nodePositions = {};
+  layoutGraphNodes();
+}
+
+/* ---------- RIGHT PANEL RENDERING ---------- */
+function switchRightTab(tab, btn) {
+  RIGHT_TAB = tab;
+  document.querySelectorAll("#right-tabs .tab-btn").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  document.getElementById("tasks-toolbar").style.display = tab === "tasks" ? "flex" : "none";
+  renderRightPanel();
+}
+
+function setTaskStatusFilter(st, btn) {
+  TASK_FILTER = st;
+  document.querySelectorAll("#tasks-toolbar .chip").forEach(c => c.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  renderRightPanel();
+}
+
+function renderRightPanel() {
+  const box = document.getElementById("rightTabBody");
+  if (!LIVE_SNAP) return;
+
+  if (RIGHT_TAB === "feed") {
+    const botsHtml = (LIVE_SNAP.team_bots || []).filter(b => b.status === "active" || b.bot_username !== "pending_setup").map(b =>
+      `<span class="skill-pill" style="background:rgba(56,189,248,0.14); border-color:rgba(56,189,248,0.4); color:#7dd3fc;">🤖 ${esc(b.director_name)} (${esc(b.bot_username)})</span>`
+    ).join("");
+    const feed = (LIVE_SNAP.live_feed || []).map(f => `
+      <div class="item-card">
+        <div class="item-top">
+          <div class="item-title">${esc(f.actor)}</div>
+          <span class="badge b-queued">${esc(f.kind)}</span>
+        </div>
+        <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.4;">${esc(f.text)}</div>
+        <div class="meta-line"><span>🕒 ${esc(String(f.ts || "").replace("T", " ").slice(0, 19))}</span></div>
+      </div>
+    `).join("");
+    box.innerHTML = `
+      <div class="item-card" style="border-color:rgba(16,185,129,0.4);">
+        <div class="item-title">🤝 Активные Боты &amp; Директора Подключены к Штабу</div>
+        <div class="skill-pills">${botsHtml || '<span class="skill-pill">🤖 Директор Тим (@unitybusinessbot)</span>'}</div>
+      </div>
+      ${feed || '<div class="item-card"><div class="item-title">Лента событий пока пуста</div></div>'}
+    `;
+    return;
+  }
+
+  if (RIGHT_TAB === "tasks") {
+    const q = (document.getElementById("task-search").value || "").trim().toLowerCase();
+    const list = (LIVE_SNAP.tasks || []).filter(t => {
+      if (TASK_FILTER !== "all" && t.status !== TASK_FILTER) return false;
+      if (q) {
+        const hay = `${t.id} ${t.title} ${t.project} ${(t.skills || []).join(" ")} ${t.result || ""}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    box.innerHTML = list.map(t => `
+      <div class="item-card">
+        <div class="item-top">
+          <div class="item-title">[${esc(t.id)}] ${esc(t.title)}</div>
+          <span class="badge b-${esc(t.status)}">${esc(t.status)}</span>
+        </div>
+        <div class="skill-pills">${(t.skills || []).map(s => `<span class="skill-pill">${esc(s)}</span>`).join("")}</div>
+        <div style="font-size:0.77rem; color:#cbd5e1;">${esc(t.result || "")}</div>
+        <div class="meta-line">
+          <span>📁 ${esc(t.project)}</span>
+          <span>🤖 ${esc(t.agent_id)}</span>
+          ${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">🔗 Открыть ↗</a>` : ""}
+        </div>
+      </div>
+    `).join("") || `<div class="item-card"><div class="item-title">Нет задач по выбранному фильтру</div></div>`;
+    return;
+  }
+
+  if (RIGHT_TAB === "domains") {
+    const doms = (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.domains) || [];
+    box.innerHTML = doms.map(d => {
+      const sc = Number(d.score || 0);
+      const bCls = sc >= 90 ? "b-active" : (sc >= 70 ? "b-queued" : "b-attention");
+      return `
+        <div class="item-card">
+          <div class="item-top">
+            <div class="item-title">${esc(d.name)}</div>
+            <span class="badge ${bCls}">${sc}/100 · HTTP ${esc(d.status_code || "ERR")}</span>
+          </div>
+          <div class="meta-line">
+            <a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.url)} ↗</a>
+          </div>
+        </div>
+      `;
+    }).join("") || `<div class="item-card"><div class="item-title">Нет данных по доменам</div></div>`;
+    return;
+  }
+
+  if (RIGHT_TAB === "skills") {
+    const sk = (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.skills) || [];
+    const ag = (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.subagents) || [];
+    box.innerHTML = `
+      <div class="item-card">
+        <div class="item-title">🧠 Установленные Claude SEO Скиллы (${sk.length})</div>
+        <div class="skill-pills">${sk.map(s => `<span class="skill-pill">${esc(s)}</span>`).join("")}</div>
+      </div>
+      <div class="item-card">
+        <div class="item-title">🤖 Специализированные SEO Сабагенты (${ag.length})</div>
+        <div class="skill-pills">${ag.map(a => `<span class="skill-pill" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.45); color:#6ee7b7;">${esc(a)}</span>`).join("")}</div>
+      </div>
+    `;
+  }
+}
+
+/* ---------- INTERACTIVE ACTIONS ---------- */
+async function triggerSeoNow() {
+  if (!LOCAL_ONLINE) {
+    window.open("https://t.me/unitybusinessbot", "_blank", "noopener");
+    return;
+  }
+  const res = await fetch(LOCAL_API + "/api/seo-run", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({}),
+  });
+  const data = await res.json();
+  document.getElementById("local-api-badge").innerHTML = data.ok
+    ? "⚡ <b>SEO-Автопилот запущен!</b> Идёт проверка локальных страниц, доменов и задач (~30 сек)..."
+    : "⚠️ Ошибка запуска SEO-цикла";
+  setTimeout(() => loadAllLiveData(true), 5000);
+}
+
+async function submitAgentTask() {
+  const inp = document.getElementById("direct-task-input");
+  const txt = (inp.value || "").trim();
+  if (!txt) return;
+  if (!LOCAL_ONLINE) {
+    alert("Ваш ПК сейчас недоступен локально — отправьте эту задачу Директору Тиму в @unitybusinessbot!");
+    window.open("https://t.me/unitybusinessbot", "_blank", "noopener");
+    return;
+  }
+  const res = await fetch(LOCAL_API + "/api/agent-task", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ task: txt }),
+  });
+  const data = await res.json();
+  if (data.ok) {
+    inp.value = "";
+    if (data.snapshot) { LIVE_SNAP = data.snapshot; updateKpis(); layoutGraphNodes(); renderRightPanel(); }
+    document.getElementById("local-api-badge").innerHTML = "✅ <b>Задача поставлена агентам:</b> " + esc(txt.slice(0, 70));
+  }
+}
+
+setupGraphEvents();
+loadAllLiveData(false);
+requestAnimationFrame(drawGraphFrame);
+setInterval(() => loadAllLiveData(false), 20000);
+</script>
+</body>
+</html>
