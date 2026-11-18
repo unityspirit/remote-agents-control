@@ -106,7 +106,7 @@ SKIP_EXT_SUFFIXES = (
     ".pdf", ".mp4", ".mp3", ".woff", ".woff2", ".css", ".zip",
 )
 
-URL_RE = re.compile(r"https?://[^\s<>\"')\]}]+", re.IGNORECASE)
+URL_RE = re.compile(r"https?://[^\s<>\"')\]}«»]+", re.IGNORECASE)
 TAG_RE = re.compile(r"<[^>]+>")
 SCRIPT_STYLE_RE = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.IGNORECASE | re.DOTALL)
 
@@ -177,14 +177,14 @@ def extract_urls(text):
     seen = set()
     out = []
     for raw in URL_RE.findall(text or ""):
-        u = raw.rstrip(".,;:!?)")
+        u = raw.rstrip(".,;:!?)]}»«\"'")
         if u in seen or is_tracker_or_media_url(u):
             continue
         seen.add(u)
         out.append(u)
     # Also detect bare domain references like Profitroom.com
-    for m in re.findall(r"\b([a-zA-Z0-9-]{2,}\.(?:com|ru|io|ai|org|net|app|dev)(?:/[^\s<>\"']*)?)", text or ""):
-        candidate = m.rstrip(".,;:!?)")
+    for m in re.findall(r"\b([a-zA-Z0-9-]{2,}\.(?:com|ru|io|ai|org|net|app|dev)(?:/[^\s<>\"'«»]*)?)", text or ""):
+        candidate = m.rstrip(".,;:!?)]}»«\"'")
         low = candidate.lower()
         if any(low.endswith(ext) for ext in (".json", ".py", ".md", ".html", ".js", ".css", ".txt", ".log", ".png", ".jpg")):
             continue
