@@ -17531,6 +17531,100 @@
       "owner": "gatekeeper",
       "status": "done",
       "updated": "2026-11-17 15:40:44"
+    },
+    "79": {
+      "id": 79,
+      "gh_issue": 79,
+      "created": "2026-11-17 21:39:09",
+      "updated": "2026-11-17 21:39:09",
+      "handoffs": [
+        {
+          "t": "2026-11-17 21:39:09",
+          "from": "tg_director",
+          "to": "owner",
+          "note": "Разбор #79 и #81 консолидирован в Note_Bot_79_IT_Park_Uzbekistan.md"
+        }
+      ],
+      "title": "TIM: outsource.gov.uz — IT Park Uzbekistan (0% налог + 4 модели заработка)",
+      "project": "Главный Штаб",
+      "kind": "link",
+      "urls": [
+        "https://www.outsource.gov.uz/en"
+      ],
+      "evidence": "GitHub Issue #79 & #81; Note_Bot_79_IT_Park_Uzbekistan.md (SEO 88/100)",
+      "owner": "director_tim",
+      "status": "in_progress",
+      "next": "Ожидает выбора Владельца: B2B-лидген vs продажа AI-витрин Open V3 резидентам IT Park",
+      "refers_to": [],
+      "skills_applied": [
+        "market-research",
+        "pricing",
+        "seo-audit",
+        "lead-intelligence"
+      ],
+      "ai_solution": "# IT Park Uzbekistan (`outsource.gov.uz/en`) — Консолидация #79 и #81\n\n- **Источники:** https://www.outsource.gov.uz/en (Задачи `#79` и `#81`)\n- **Проект:** `Главный Штаб`\n- **SEO & GEO аудит (Claude SEO Autopilot):** HTTP 200 · `88/100` (`robots.txt=False`, `llms.txt=False`, `JSON-LD=0`, `multiple-h1`)\n\n## Ключевые факты\n- 4,200+ резидентских техно-компаний, $2.8B экспортной выручки, 25,000+ IT-выпускников/год.\n- **0% Corporate Tax** на экспорт IT/AI/BPO-услуг и SaaS (льгота резидента IT Park).\n- **Zero-Risk Subsidies:** компенсация офисов до 12–36 мес., частичное возмещение ФОТ до 15%, регистрация за 3 рабочих дня.\n\n## 4 Модели Монетизации / Рекламы для Global Spirit Group\n1. **B2B Lead Ge"
+    },
+    "80": {
+      "id": 80,
+      "gh_issue": 80,
+      "created": "2026-11-17 21:39:09",
+      "updated": "2026-11-17 21:39:09",
+      "handoffs": [
+        {
+          "t": "2026-11-17 21:39:09",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Изучен ролик @aiBoomb I-lJCF2HPSA; внедрён oEmbed + мультимодельная защита"
+        }
+      ],
+      "title": "TIM: YouTube I-lJCF2HPSA — Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude.",
+      "project": "Главный Штаб",
+      "kind": "link",
+      "urls": [
+        "https://youtu.be/I-lJCF2HPSA"
+      ],
+      "evidence": "GitHub Issue #80 (closed); Note_Bot_80_Anthropic_Claude_Risk_MultiModel_Routing.md",
+      "owner": "gatekeeper",
+      "status": "done",
+      "next": "При необходимости добавить GEMINI_API_KEY в GitHub Secrets и local config для ускорения облачного анализа",
+      "refers_to": [],
+      "skills_applied": [
+        "research-ops",
+        "ai-first-engineering"
+      ],
+      "ai_solution": "# Разбор YouTube #80: «Anthropic только что уничтожил причину пользоваться Claude» (`I-lJCF2HPSA`)\n\n- **Видео:** https://youtu.be/I-lJCF2HPSA\n- **Извлечённый заголовок (`oEmbed`):** Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude.\n- **Канал:** YouTube: Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude. · Канал: ИИ МАСТОДОНТ (https://www.youtube.com/@aiBoomb)\n- **Проект:** `Главный Штаб`\n\n## Суть материала\n1. Anthropic ужесточила антифрод-блокировки аккаунтов (включая VPN/регионы) и перекрыла использование потребительских OAuth/подписочных токенов внутри сторонних клиентов/обёрток вместо официального биллингового API.\n2. Зависимость операционного контура от одного ИИ-прова"
+    },
+    "81": {
+      "id": 81,
+      "gh_issue": 81,
+      "created": "2026-11-17 21:39:09",
+      "updated": "2026-11-17 21:39:09",
+      "handoffs": [
+        {
+          "t": "2026-11-17 21:39:09",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "Консолидировано с #79"
+        }
+      ],
+      "title": "Дубликат #79: Реклама и монетизация IT Park Uzbekistan (outsource.gov.uz)",
+      "project": "Главный Штаб",
+      "kind": "link",
+      "urls": [
+        "https://www.outsource.gov.uz/en"
+      ],
+      "evidence": "Merged into #79 & Note_Bot_79_IT_Park_Uzbekistan.md",
+      "owner": "gatekeeper",
+      "status": "done",
+      "next": "См. карточку #79",
+      "refers_to": [
+        79
+      ],
+      "skills_applied": [
+        "seo-audit",
+        "market-research"
+      ],
+      "ai_solution": "Консолидировано в #79."
     }
   }
 }
