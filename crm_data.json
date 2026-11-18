@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-18T04:39:24.526571Z",
+  "updated_at": "2026-11-18T11:09:19.324684Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_181852",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_181852.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_181413",
       "issue": "Auto",
@@ -2861,6 +2841,15 @@
       "source_url": "https://youtu.be/I-lJCF2HPSA",
       "summary": "# Разбор YouTube #80: «Anthropic только что уничтожил причину пользоваться Claude» (`I-lJCF2HPSA`)\n\n- **Видео:** https://youtu.be/I-lJCF2HPSA\n- **Извлечённый заголовок (`oEmbed`):** Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude.\n- **Канал:** YouTube: Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude. · Канал: ИИ МАСТОДОНТ (https://www.youtube.com/@aiBoomb)\n- **Проект:** `Главный Штаб`\n\n## Суть материала\n1. Anthropic ужесточила антифрод-блокировки аккаунтов (включая VPN/регионы) и перекрыла использование потребительских OAu",
       "updated_at": "2026-11-18T04:39:19.625454Z"
+    },
+    {
+      "id": "kb-bot-82",
+      "issue": 82,
+      "category": "Проект: Главный Штаб",
+      "title": "Детально посмотри что делает этот сайт и что сделанно, какие разработки использует и в чём преимущества",
+      "source_url": "https://www.outsource.gov.uz/en?fbclid=IwVERDUAVp6epleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHwLWH0ulQFCPNCt2zHCOLCWgPTn7JRn43tiOq7bgbCEZbiVFupzLXXGMmUGK_aem_4preRRiNE3Y5JjCINYpD5w",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #82.\n\nОсновываясь на официальных данных извлеченного текста страницы `https://www.outsource.gov.uz/en` (Национальный портал IT Outsourcing & BPO Узбекистана, поддерживаемый IT Park Uzbekistan), ниже подан глубокий структурный анализ того, что представляет собой этот ресурс, какие решения в нем реализованы и в чем заключаются его ключевые преимущества для бизнеса.\n\n---\n\n### 1. Что делает этот сайт (Суть и назначение)\nСайт **Outsource to Uzbekistan** — это государственный B2B-портал «единого окна», созданный для привлечения прямых иностранных инвестици",
+      "updated_at": "2026-11-18T11:09:13.878929Z"
     }
   ],
   "global_plus_matrix": [
