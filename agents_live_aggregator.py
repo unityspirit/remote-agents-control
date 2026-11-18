@@ -83,22 +83,58 @@ def _fetch_gh_data_file(repo: str, path: str, token: str = "") -> Any:
     return json.loads(base64.b64decode(raw).decode("utf-8"))
 
 
+USER_LABELS = {
+    "vlaslav": "👑 Власлав (Штаб)",
+    "alberta": "💎 Альберта",
+    "yura": "🏒 Юрий (КХЛ)",
+    "true1team": "🔥 @true1team",
+    "tatiana": "🐝 Татьяна",
+    "dominicana": "🏝️ Доминикана",
+    "dima": "🏭 Дима Урал",
+    "svetlana": "🎬 Светлана (GlobalFilms)",
+}
+
+
+def infer_user_owner_for_task(title: str, body: str = "", project: str = "", raw_owner: str = "") -> tuple[str, str]:
+    """Identify which human stakeholder or team owns a task for per-user filtering."""
+    low = f"{title}\n{body}\n{project}\n{raw_owner}".lower()
+    if re.search(r"alberta|альберт|lermontov|aliashirani|лид-магн|490|точка опоры|#9005", low):
+        return "alberta", USER_LABELS["alberta"]
+    if re.search(r"yura|юра|юрий|yvyatkin|khl|кхл", low):
+        return "yura", USER_LABELS["yura"]
+    if re.search(r"true1team|true 1 team|\b#?167\b", low):
+        return "true1team", USER_LABELS["true1team"]
+    if re.search(r"tatiana|татьяна|tentorium|тенториум", low):
+        return "tatiana", USER_LABELS["tatiana"]
+    if re.search(r"dominicana|доминикан|las terrenas|белый|profitroom|вилл|#9004", low):
+        return "dominicana", USER_LABELS["dominicana"]
+    if re.search(r"дима|dima|синичих|алапаевск|щебен|щебень|zksk|ural|урал|#9003", low):
+        return "dima", USER_LABELS["dima"]
+    if re.search(r"светлан|svetlana|globalfilms|global films|#9006", low):
+        return "svetlana", USER_LABELS["svetlana"]
+    return "vlaslav", USER_LABELS["vlaslav"]
+
+
 def infer_seo_skills_for_task(title: str, body: str = "", url: str = "") -> tuple[str, list[str]]:
-    """Map any Office task or URL to the most relevant Subordinate Agent and Claude SEO skills."""
+    """Map any Office task or URL to the most relevant Subordinate Agent and installed skills (SEO, Marketing/CRO, Semrush, Research)."""
     low = f"{title}\n{body}\n{url}".lower()
     skills: list[str] = []
     if re.search(r"https?://|сайт|магазин|landing|лендинг|shopify|store|domain|домен", low):
-        skills.extend(["seo-audit", "seo-technical", "seo-geo"])
+        skills.extend(["seo-audit", "seo-technical", "cro", "copywriting"])
     if re.search(r"store|shopify|товар|product|market|ebay|customaistore|open v3", low):
-        skills.extend(["seo-ecommerce", "seo-schema", "seo-competitor-pages"])
-    if re.search(r"контент|instagram|youtube|reel|video|vsl|пост|content|traf|трафик|ad", low):
-        skills.extend(["seo-content", "seo-content-brief", "seo-sxo"])
-    if re.search(r"alberta|location|local|москв|рязан|доминикан|урал|city|map|карт", low):
-        skills.extend(["seo-local", "seo-maps"])
+        skills.extend(["seo-ecommerce", "seo-schema", "pricing", "launch"])
+    if re.search(r"контент|instagram|youtube|reel|video|vsl|пост|content|traf|трафик|ad|tentorium", low):
+        skills.extend(["seo-content", "ads", "emails", "free-tools"])
+    if re.search(r"alberta|location|local|москв|рязан|доминикан|урал|city|map|карт|щебень|вилла", low):
+        skills.extend(["seo-local", "seo-maps", "lead-intelligence", "offers"])
     if re.search(r"ssl|sitemap|robots|llms|canonical|redirect|drift", low):
         skills.extend(["seo-sitemap", "seo-agentic", "seo-drift"])
-    if re.search(r"outsource\.gov|competitor|анализ|research|платформ|strategy|план", low):
-        skills.extend(["seo-plan", "seo-competitor-pages", "seo-cluster"])
+    if re.search(r"outsource\.gov|competitor|анализ|research|платформ|strategy|план|khl|кхл|saas|ai", low):
+        skills.extend(["semrush-competitor-gap", "semrush-serp-analysis", "deep-research", "pricing"])
+    if re.search(r"инвест|investor|b2b|кп|whatsapp|pitch|cold", low):
+        skills.extend(["cold-email", "investor-outreach", "lead-intelligence"])
+    if re.search(r"workflow|daemon|agent|облак|hydrogen|argon|carbon|автопилот", low):
+        skills.extend(["continuous-agent-loop", "semrush-keyword-research"])
 
     # Deduplicate preserving priority order
     seen: set[str] = set()
@@ -108,23 +144,50 @@ def infer_seo_skills_for_task(title: str, body: str = "", url: str = "") -> tupl
             seen.add(sk)
             clean_skills.append(sk)
     if not clean_skills:
-        clean_skills = ["seo-plan", "seo-content-brief"]
+        clean_skills = ["seo-plan", "cro", "deep-research", "semrush-keyword-research"]
 
     # Determine primary subordinate agent owner
     if re.search(r"\bseo\b|sitemap|robots|llms|canonical|ssl|outsource\.gov|audit", low):
         agent_id = "agent_seo"
     elif re.search(r"open v3|store|магазин|shopify|12 it|mini app", low):
         agent_id = "agent_store"
-    elif re.search(r"traffic|profitroom|alberta|lead|лид|реклам|globalplus|unityspiritpartners", low):
+    elif re.search(r"traffic|profitroom|alberta|lead|лид|реклам|globalplus|unityspiritpartners|доминикан|урал|tentorium", low):
         agent_id = "agent_traffic"
     elif re.search(r"film|cinema|globalfilms|video|30 навыков|stabilization", low):
         agent_id = "agent_apps"
-    elif re.search(r"cloud|hydrogen|argon|carbon|облак|workflow", low):
+    elif re.search(r"cloud|hydrogen|argon|carbon|облак|workflow|khl|кхл", low):
         agent_id = "agent_cloud"
     else:
         agent_id = "agent_research"
 
-    return agent_id, clean_skills[:4]
+    return agent_id, clean_skills[:5]
+
+
+def infer_action_plan_ru(title: str, project: str = "", skills: list[str] | None = None, user_key: str = "vlaslav", status: str = "") -> str:
+    """Provide a crisp, actionable Russian explanation of AI benefit and next concrete move."""
+    sk_str = ", ".join((skills or [])[:3])
+    if status == "done":
+        return f"Выполнено и учтено в системе знаний Офиса (скиллы: {sk_str})."
+    if user_key == "alberta":
+        return "Трипваер 490 ₽ -> клуб 1M ₽: применить CRO/Copywriting/SEO-Local, подключить ЮKassa/Prodamus и /start в @lermontovplusbot."
+    if user_key == "yura":
+        return "Упаковка КХЛ-аналитики: бесплатный утренний дайджест (lead-magnet) -> платная подписка Live-сигналов + /set_bot yvyatkin."
+    if user_key == "dima":
+        return "B2B Урал (щебень): рассылка 10 КП директорам заводов Свердловской обл. (готовый текст в отчёте ALL_USERS_TASKS)."
+    if user_key == "dominicana":
+        return "Доминикана (виллы): прямое бронирование без 15-18% комиссии Airbnb — готовый WhatsApp-оффер в отчёте."
+    if user_key == "tatiana":
+        return "Tentorium: 3-шаговая автоцепочка повторных заказов + акционные наборы для роста LTV клиентов."
+    if user_key == "true1team":
+        return "Быстрые деньги @true1team: продажа витрин Open V3 ($150 CPA / $750 DFY) + AI/SEO-аудит локальному бизнесу."
+    if user_key == "svetlana":
+        return "GlobalFilms (SEO 96/100): мобильный тест фильтров каталога и конверсия в заявки."
+    low = f"{title} {project}".lower()
+    if "outsource.gov" in low or "#79" in low:
+        return "IT Park Uzbekistan (0% налога на экспорт): 3 шага запуска и выгода для компании опубликованы в Issue #79."
+    if "seo" in low or "sitemap" in low or "canonical" in low or "alberta-hub" in low:
+        return f"Автопилот SEO применяет [{sk_str}] для роста индексации и органического трафика без бюджета на рекламу."
+    return f"Агенты применяют [{sk_str}] для монетизации, оптимизации воронки и сокращения ручной рутины."
 
 
 def _parse_local_seo_queue() -> list[dict[str, Any]]:
@@ -302,6 +365,7 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
         norm_st = "attention" if st in ("blocked_human", "awaiting_approval", "failed") else (
             "in_progress" if st in ("in_progress", "approved") else "queued"
         )
+        card_skills = list(c.get("skills_applied") or []) or skills
         unified_tasks.append({
             "id": t_id,
             "source": "office_board",
@@ -311,7 +375,9 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
             "status": norm_st,
             "priority": "P1" if norm_st in ("attention", "in_progress") else "normal",
             "agent_id": agent_id,
-            "skills": skills,
+            "skills": card_skills[:5],
+            "action_plan_ru": str(c.get("ai_solution") or ""),
+            "raw_owner": str(c.get("owner") or ""),
             "result": f"Статус на доске: {st} (owner={c.get('owner') or 'agent'})",
             "updated_at": str(c.get("updated") or _utc_iso()),
         })
@@ -508,18 +574,48 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
             "text": f"Автономный цикл #{cycle_num} ({telemetry.get('orchestrator_mode') or 'Hydrogen'}): фактов {telemetry.get('memory_facts_count', 0)}, ссылок {telemetry.get('studied_urls_count', 0)}",
         })
 
-    # Summary KPIs
+    # Summary KPIs & per-user enrichment
     status_counts = {"in_progress": 0, "queued": 0, "attention": 0, "done": 0}
+    user_counts: dict[str, int] = {k: 0 for k in USER_LABELS}
     for tk in unified_tasks:
         status_counts[tk["status"]] = status_counts.get(tk["status"], 0) + 1
+        raw_owner = str(tk.pop("raw_owner", "") or "")
+        u_key, u_label = infer_user_owner_for_task(
+            tk.get("title", ""),
+            tk.get("result", ""),
+            tk.get("project", ""),
+            raw_owner,
+        )
+        tk["user_key"] = u_key
+        tk["user_label"] = u_label
+        user_counts[u_key] = user_counts.get(u_key, 0) + 1
+        if not tk.get("action_plan_ru"):
+            tk["action_plan_ru"] = infer_action_plan_ru(
+                tk.get("title", ""),
+                tk.get("project", ""),
+                tk.get("skills", []),
+                u_key,
+                tk.get("status", ""),
+            )
 
+    total_skills_installed = int(manifest.get("total_installed_skills_count") or manifest.get("skills_count") or 167)
     snapshot = {
-        "schema_version": "34.6",
+        "schema_version": "34.7",
         "generated_at": _utc_iso(),
         "repos": {"primary": gtp_repo, "mirror": u_repo},
+        "user_counts": user_counts,
+        "skill_suites": {
+            "claude_seo": list(manifest.get("skills") or []),
+            "seo_agents": list(manifest.get("agents") or []),
+            "marketing_cro": list(manifest.get("marketing_cro_skills") or []),
+            "semrush": list(manifest.get("semrush_skills") or []),
+            "automation_research": list(manifest.get("automation_research_skills") or []),
+            "total_installed_skills_count": total_skills_installed,
+        },
         "kpis": {
             "agents_online": 6,
             "seo_skills_installed": int(manifest.get("skills_count") or 35),
+            "total_skills_installed": total_skills_installed,
             "seo_agents_installed": int(manifest.get("agents_count") or 21),
             "local_seo_score": seo_state.get("local_avg_score") or 96.4,
             "live_seo_score": seo_state.get("live_avg_score") or 73.7,
