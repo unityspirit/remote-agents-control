@@ -307,8 +307,8 @@ def audit_local_html_files() -> list[dict[str, Any]]:
 def _audit_single_live_url(t: dict[str, str]) -> dict[str, Any]:
     url = t["url"]
     root = t.get("root") or ""
-    pc = run_claude_seo_script("page_checks.py", ["--url", url], timeout=25)
-    ph = run_claude_seo_script("parse_html.py", ["--url", url, "--json"], timeout=25)
+    pc = run_claude_seo_script("page_checks.py", ["--url", url], timeout=50)
+    ph = run_claude_seo_script("parse_html.py", ["--url", url, "--json"], timeout=50)
     score = compute_seo_score(pc, ph)
     summary = pc.get("summary") or {}
     findings = [f for f in (pc.get("findings") or []) if isinstance(f, dict)]
@@ -734,7 +734,7 @@ def audit_and_process_office_tasks() -> dict[str, Any]:
         t_url = str(tk.get("target_url") or tk.get("url") or "").strip()
         if not t_url or "github.com/" in t_url or "instagram.com" in t_url or "youtu" in t_url or "facebook.com" in t_url:
             continue
-        clean_u = t_url.split("#")[0]
+        clean_u = t_url.split("#")[0].rstrip(".,);\"'<>")
         if clean_u in seen_urls:
             continue
         if tk.get("status") in ("in_progress", "queued", "attention") or len(target_items) < 4:
