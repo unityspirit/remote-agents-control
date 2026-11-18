@@ -210,7 +210,7 @@
     <!-- KPI CARDS -->
     <section class="kpi-grid">
       <div class="kpi-card"><div class="kpi-val" id="kpi-agents">6</div><div class="kpi-lbl" id="lbl-k-agents">Подчинённых ИИ-агентов</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--purple);" id="kpi-skills">35 + 21</div><div class="kpi-lbl" id="lbl-k-skills">Claude SEO Скиллов + Сабагентов</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--purple);" id="kpi-skills">167 + 21</div><div class="kpi-lbl" id="lbl-k-skills">Скиллов (SEO/CRO/Semrush) + Агентов</div></div>
       <div class="kpi-card"><div class="kpi-val" style="color:var(--emerald);" id="kpi-local-seo">96.4</div><div class="kpi-lbl" id="lbl-k-lseo">SEO балл Офиса (/100)</div></div>
       <div class="kpi-card"><div class="kpi-val" style="color:var(--amber);" id="kpi-active-tasks">0</div><div class="kpi-lbl" id="lbl-k-active">В работе / Очередь</div></div>
       <div class="kpi-card"><div class="kpi-val" style="color:var(--rose);" id="kpi-attention">0</div><div class="kpi-lbl" id="lbl-k-att">Требуют внимания (SSL/SEO)</div></div>
@@ -276,17 +276,28 @@
           <button class="tab-btn active" onclick="switchRightTab('feed', this)">⚡ Что происходит сейчас</button>
           <button class="tab-btn" onclick="switchRightTab('tasks', this)">📋 Все задачи (<span id="tab-cnt-tasks">0</span>)</button>
           <button class="tab-btn" onclick="switchRightTab('domains', this)">🌐 SEO Домены</button>
-          <button class="tab-btn" onclick="switchRightTab('skills', this)">🧠 Скиллы (35)</button>
+          <button class="tab-btn" onclick="switchRightTab('skills', this)">🧠 Скиллы (<span id="tab-cnt-skills">167</span>)</button>
         </div>
 
         <div id="tasks-toolbar" style="display:none; padding:10px 14px; border-bottom:1px solid var(--border); flex-direction:column; gap:8px;">
-          <input type="text" class="cmd-input" id="task-search" placeholder="🔍 Фильтр задач по названию, проекту, SEO-скиллу..." oninput="renderRightPanel()">
-          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <input type="text" class="cmd-input" id="task-search" placeholder="🔍 Фильтр по задаче, человеку, проекту, скиллу..." oninput="renderRightPanel()">
+          <div id="status-filters" style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="chip active" onclick="setTaskStatusFilter('all', this)">Все</button>
             <button class="chip" onclick="setTaskStatusFilter('in_progress', this)">🟢 В работе</button>
             <button class="chip" onclick="setTaskStatusFilter('attention', this)">🚨 Внимание</button>
             <button class="chip" onclick="setTaskStatusFilter('queued', this)">🟡 Очередь</button>
             <button class="chip" onclick="setTaskStatusFilter('done', this)">✅ Готово</button>
+          </div>
+          <div id="user-filters" style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button class="chip active" onclick="setUserFilter('all', this)">👥 Все люди</button>
+            <button class="chip" onclick="setUserFilter('vlaslav', this)">👑 Власлав</button>
+            <button class="chip" onclick="setUserFilter('alberta', this)">💎 Альберта</button>
+            <button class="chip" onclick="setUserFilter('yura', this)">🏒 Юрий</button>
+            <button class="chip" onclick="setUserFilter('true1team', this)">🔥 @true1team</button>
+            <button class="chip" onclick="setUserFilter('tatiana', this)">🐝 Татьяна</button>
+            <button class="chip" onclick="setUserFilter('dominicana', this)">🏝️ Доминикана</button>
+            <button class="chip" onclick="setUserFilter('dima', this)">🏭 Дима Урал</button>
+            <button class="chip" onclick="setUserFilter('svetlana', this)">🎬 Светлана</button>
           </div>
         </div>
 
@@ -308,6 +319,7 @@ let CURRENT_LANG = "ru";
 let GRAPH_FILTER = "all";
 let RIGHT_TAB = "feed";
 let TASK_FILTER = "all";
+let USER_FILTER = "all";
 let SELECTED_NODE_ID = "agent_seo";
 
 // Canvas camera & interaction state
@@ -410,7 +422,10 @@ function updateKpis() {
   if (!LIVE_SNAP) return;
   const k = LIVE_SNAP.kpis || {};
   document.getElementById("kpi-agents").textContent = k.agents_online ?? 6;
-  document.getElementById("kpi-skills").textContent = (k.seo_skills_installed ?? 35) + " + " + (k.seo_agents_installed ?? 21);
+  const totalSk = k.total_skills_installed ?? k.seo_skills_installed ?? 167;
+  document.getElementById("kpi-skills").textContent = totalSk + " + " + (k.seo_agents_installed ?? 21);
+  const tabSk = document.getElementById("tab-cnt-skills");
+  if (tabSk) tabSk.textContent = totalSk;
   document.getElementById("kpi-local-seo").textContent = k.local_seo_score ?? "96.4";
   document.getElementById("kpi-active-tasks").textContent = (k.tasks_in_progress || 0) + (k.tasks_queued || 0);
   document.getElementById("kpi-attention").textContent = k.tasks_attention ?? 0;
@@ -700,7 +715,14 @@ function switchRightTab(tab, btn) {
 
 function setTaskStatusFilter(st, btn) {
   TASK_FILTER = st;
-  document.querySelectorAll("#tasks-toolbar .chip").forEach(c => c.classList.remove("active"));
+  document.querySelectorAll("#status-filters .chip").forEach(c => c.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  renderRightPanel();
+}
+
+function setUserFilter(uKey, btn) {
+  USER_FILTER = uKey;
+  document.querySelectorAll("#user-filters .chip").forEach(c => c.classList.remove("active"));
   if (btn) btn.classList.add("active");
   renderRightPanel();
 }
@@ -737,8 +759,9 @@ function renderRightPanel() {
     const q = (document.getElementById("task-search").value || "").trim().toLowerCase();
     const list = (LIVE_SNAP.tasks || []).filter(t => {
       if (TASK_FILTER !== "all" && t.status !== TASK_FILTER) return false;
+      if (USER_FILTER !== "all" && (t.user_key || "vlaslav") !== USER_FILTER) return false;
       if (q) {
-        const hay = `${t.id} ${t.title} ${t.project} ${(t.skills || []).join(" ")} ${t.result || ""}`.toLowerCase();
+        const hay = `${t.id} ${t.title} ${t.project} ${t.user_label || ""} ${t.action_plan_ru || ""} ${(t.skills || []).join(" ")} ${t.result || ""}`.toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -749,8 +772,12 @@ function renderRightPanel() {
           <div class="item-title">[${esc(t.id)}] ${esc(t.title)}</div>
           <span class="badge b-${esc(t.status)}">${esc(t.status)}</span>
         </div>
-        <div class="skill-pills">${(t.skills || []).map(s => `<span class="skill-pill">${esc(s)}</span>`).join("")}</div>
+        <div class="skill-pills">
+          ${t.user_label ? `<span class="skill-pill" style="background:rgba(56,189,248,0.16); border-color:rgba(56,189,248,0.45); color:#7dd3fc;">👤 ${esc(t.user_label)}</span>` : ""}
+          ${(t.skills || []).map(s => `<span class="skill-pill">${esc(s)}</span>`).join("")}
+        </div>
         <div style="font-size:0.77rem; color:#cbd5e1;">${esc(t.result || "")}</div>
+        ${t.action_plan_ru ? `<div style="margin-top:6px; padding:6px 8px; border-radius:6px; background:rgba(16,185,129,0.10); border:1px solid rgba(16,185,129,0.28); font-size:0.75rem; color:#a7f3d0; line-height:1.35;">💡 ${esc(t.action_plan_ru)}</div>` : ""}
         <div class="meta-line">
           <span>📁 ${esc(t.project)}</span>
           <span>🤖 ${esc(t.agent_id)}</span>
@@ -782,12 +809,36 @@ function renderRightPanel() {
   }
 
   if (RIGHT_TAB === "skills") {
-    const sk = (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.skills) || [];
-    const ag = (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.subagents) || [];
+    const suites = LIVE_SNAP.skill_suites || {};
+    const seoSk = suites.claude_seo || (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.skills) || [];
+    const mktSk = suites.marketing_cro || [];
+    const semSk = suites.semrush || [];
+    const autoSk = suites.automation_research || [];
+    const ag = suites.seo_agents || (LIVE_SNAP.seo_health && LIVE_SNAP.seo_health.subagents) || [];
+    const totalCnt = suites.total_installed_skills_count || (LIVE_SNAP.kpis && LIVE_SNAP.kpis.total_skills_installed) || (seoSk.length + mktSk.length + semSk.length + autoSk.length);
     box.innerHTML = `
       <div class="item-card">
-        <div class="item-title">🧠 Установленные Claude SEO Скиллы (${sk.length})</div>
-        <div class="skill-pills">${sk.map(s => `<span class="skill-pill">${esc(s)}</span>`).join("")}</div>
+        <div class="item-top">
+          <div class="item-title">⚡ Активная база Офиса v34.7 (${esc(totalCnt)} скиллов + ${ag.length} агентов)</div>
+          <span class="badge b-in_progress">synced</span>
+        </div>
+        <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.4;">Установлены 4 набора: Marketing &amp; CRO (coreyhaines31), Semrush SEO, Claude SEO v2.6.2 и System 1 Research/Automation.</div>
+      </div>
+      <div class="item-card">
+        <div class="item-title">📈 Marketing, CRO, Pricing &amp; Growth (${mktSk.length})</div>
+        <div class="skill-pills">${mktSk.map(s => `<span class="skill-pill" style="background:rgba(245,158,11,0.14); border-color:rgba(245,158,11,0.4); color:#fcd34d;">${esc(s)}</span>`).join("")}</div>
+      </div>
+      <div class="item-card">
+        <div class="item-title">🔎 Semrush Competitive &amp; SERP (${semSk.length})</div>
+        <div class="skill-pills">${semSk.map(s => `<span class="skill-pill" style="background:rgba(239,68,68,0.14); border-color:rgba(239,68,68,0.4); color:#fca5a5;">${esc(s)}</span>`).join("")}</div>
+      </div>
+      <div class="item-card">
+        <div class="item-title">🧠 Установленные Claude SEO Скиллы (${seoSk.length})</div>
+        <div class="skill-pills">${seoSk.map(s => `<span class="skill-pill">${esc(s)}</span>`).join("")}</div>
+      </div>
+      <div class="item-card">
+        <div class="item-title">⚙️ Автоматизация, Исследования &amp; Графы (${autoSk.length})</div>
+        <div class="skill-pills">${autoSk.map(s => `<span class="skill-pill" style="background:rgba(56,189,248,0.14); border-color:rgba(56,189,248,0.4); color:#7dd3fc;">${esc(s)}</span>`).join("")}</div>
       </div>
       <div class="item-card">
         <div class="item-title">🤖 Специализированные SEO Сабагенты (${ag.length})</div>
