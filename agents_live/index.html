@@ -212,9 +212,9 @@
       <div class="kpi-card"><div class="kpi-val" id="kpi-agents">6</div><div class="kpi-lbl" id="lbl-k-agents">Подчинённых ИИ-агентов</div></div>
       <div class="kpi-card"><div class="kpi-val" style="color:var(--purple);" id="kpi-skills">167 + 21</div><div class="kpi-lbl" id="lbl-k-skills">Скиллов (SEO/CRO/Semrush) + Агентов</div></div>
       <div class="kpi-card"><div class="kpi-val" style="color:var(--emerald);" id="kpi-local-seo">96.4</div><div class="kpi-lbl" id="lbl-k-lseo">SEO балл Офиса (/100)</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--amber);" id="kpi-active-tasks">0</div><div class="kpi-lbl" id="lbl-k-active">В работе / Очередь</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--rose);" id="kpi-attention">0</div><div class="kpi-lbl" id="lbl-k-att">Требуют внимания (SSL/SEO)</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:#a5b4fc;" id="kpi-cloud-cycle">#71</div><div class="kpi-lbl" id="lbl-k-cycle">Облачный цикл 24/7 + Задачи</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--amber);" id="kpi-active-tasks">…</div><div class="kpi-lbl" id="lbl-k-active">В работе / Очередь</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:var(--rose);" id="kpi-attention">…</div><div class="kpi-lbl" id="lbl-k-att">Требуют внимания (SSL/SEO)</div></div>
+      <div class="kpi-card"><div class="kpi-val" style="color:#a5b4fc;" id="kpi-cloud-cycle">#77</div><div class="kpi-lbl" id="lbl-k-cycle">Облачный цикл 24/7 + Задачи</div></div>
     </section>
 
     <!-- DIRECT COMMAND BAR -->
@@ -381,11 +381,12 @@ async function loadAllLiveData(manual = false) {
     }
   }
 
-  // Merge ultra-fresh telemetry & issues directly in case static snapshot is a few minutes behind
+  // Merge ultra-fresh telemetry & issues without hitting unauthenticated api.github.com 403 rate limits unnecessarily
+  const needGhApi = !LOCAL_ONLINE && (!LIVE_SNAP || !Array.isArray(LIVE_SNAP.tasks) || LIVE_SNAP.tasks.length === 0);
   const [tel, dirLog, ghIssues] = await Promise.all([
     fetchJsonSafe(RAW_BASE + "/cloud_agents_telemetry.json?t=" + t, 6000),
     fetchJsonSafe(RAW_BASE + "/director_actions_log.json?t=" + t, 6000),
-    fetchJsonSafe(GH_ISSUES_API, 6000),
+    needGhApi ? fetchJsonSafe(GH_ISSUES_API, 6000) : Promise.resolve(null),
   ]);
 
   if (LIVE_SNAP) {
