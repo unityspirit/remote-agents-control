@@ -1,18 +1,20 @@
 {
-  "updated": "2026-11-17 16:06:26",
+  "updated": "2026-11-17 21:12:28",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
       "project": "12 IT Продуктов (Короче Капитан)",
       "state": "active",
-      "files": 47,
-      "size_kb": 327,
+      "files": 48,
+      "size_kb": 333,
       "last_change": "2026-11-17",
       "lead_agent": "Telegram Mini Apps & Micro-SaaS Architect",
       "next_who": "human",
       "next_what": "Создать бота в @BotFather и выбрать нишу Mini App #1.",
       "open_cards": [
-        9002
+        9002,
+        147,
+        157
       ]
     },
     {
@@ -50,7 +52,6 @@
       "next_who": "agent",
       "next_what": "Папка пуста: перенести исходники из Alberta_Workspace или зафиксировать путь в реестре.",
       "open_cards": [
-        47,
         9005
       ]
     },
@@ -84,7 +85,7 @@
       "state": "active",
       "files": 8,
       "size_kb": 39,
-      "last_change": "2026-11-09",
+      "last_change": "2026-11-17",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
@@ -156,8 +157,8 @@
       "folder": "GitHub_Control_Panel",
       "project": "GitHub_Control_Panel",
       "state": "active",
-      "files": 407,
-      "size_kb": 7604,
+      "files": 974,
+      "size_kb": 13278,
       "last_change": "2026-11-17",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -327,7 +328,7 @@
       "project": "True 1 Team",
       "state": "active",
       "files": 9,
-      "size_kb": 5450,
+      "size_kb": 5451,
       "last_change": "2026-11-17",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -430,10 +431,7 @@
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
       "next_what": "Определить цель и ответственного.",
-      "open_cards": [
-        67,
-        77
-      ]
+      "open_cards": []
     },
     {
       "folder": "Дима Верхняя Синичиха Алапаевск",
@@ -557,7 +555,6 @@
       "next_what": "Единая база знаний: перепрогнать нечитанные материалы (YouTube) после входа в Google.",
       "open_cards": [
         102,
-        103,
         123,
         107
       ]
