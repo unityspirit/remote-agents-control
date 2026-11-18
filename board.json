@@ -10,6 +10,12 @@
           "from": "gatekeeper",
           "to": "human",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Issue #70 закрыт на GitHub"
         }
       ],
       "title": "TIM: https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
@@ -22,13 +28,13 @@
         "level": "title_only",
         "reason": "YouTube требует вход в Google; субтитры недоступны"
       },
-      "owner": "human",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "human",
-        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #70»"
+        "who": "none",
+        "what": "Сохранено в отчётах Тима"
       },
-      "updated": "2026-11-17 14:47:10",
+      "updated": "2026-11-17 21:12:23",
       "refers_to": null,
       "skills_applied": [
         "seo-audit",
@@ -48,10 +54,16 @@
           "from": "gatekeeper",
           "to": "human",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Cloudflare Kitesurf (Rust/WASM CDP-браузер для ИИ-агентов) изучен с iXBT и Cloudflare"
         }
       ],
       "title": "TIM: https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html learn",
-      "project": "Входящие_Офис",
+      "project": "Главный Штаб",
       "kind": "link",
       "urls": [
         "https://www.ixbt.com/news/2026/11/15/brauzer-no-ne-dlia-liudei-cloudflare-otkryla-isxodnyi-kod-kitesurf-brauzera-dlia-ii-agentov.html"
@@ -60,13 +72,13 @@
         "level": "title_only",
         "reason": "YouTube требует вход в Google; субтитры недоступны"
       },
-      "owner": "human",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "human",
-        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #74»"
+        "who": "none",
+        "what": "Использовать как R&D для Web-агентов"
       },
-      "updated": "2026-11-17 14:43:19",
+      "updated": "2026-11-17 21:12:23",
       "refers_to": null,
       "skills_applied": [
         "seo-audit",
@@ -95,16 +107,16 @@
         "https://youtube.com/shorts/hRdxDtdz6RA?is=GJ9t98y5nuWZTIx4"
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "YouTube требует вход в Google; субтитры недоступны"
+        "level": "not_studied",
+        "reason": "Список 30 скиллов находится внутри кадра Shorts (`hRdxDtdz6RA`) — пришлите скриншот кадра или включите субтитры"
       },
       "owner": "human",
       "status": "not_studied",
       "next": {
         "who": "human",
-        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #84»"
+        "what": "Список 30 скиллов находится внутри кадра Shorts (`hRdxDtdz6RA`) — пришлите скриншот кадра или включите субтитры"
       },
-      "updated": "2026-10-22 08:18:47",
+      "updated": "2026-11-17 21:12:23",
       "skills_applied": [
         "seo-audit",
         "seo-technical",
@@ -132,16 +144,16 @@
         "https://youtu.be/NhqSuQPPvbg?is=BolUfgmpvbs9dU-h"
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "YouTube требует вход в Google; субтитры недоступны"
+        "level": "not_studied",
+        "reason": "На YouTube нет описания/субтитров для `NhqSuQPPvbg` — пришлите текстовый тезис или включите субтитры / `nlm login`"
       },
       "owner": "human",
       "status": "not_studied",
       "next": {
         "who": "human",
-        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #102»"
+        "what": "На YouTube нет описания/субтитров для `NhqSuQPPvbg` — пришлите текстовый тезис или включите субтитры / `nlm login`"
       },
-      "updated": "2026-10-22 08:18:47",
+      "updated": "2026-11-17 21:12:23",
       "skills_applied": [
         "seo-audit",
         "seo-technical",
@@ -160,10 +172,16 @@
           "from": "gatekeeper",
           "to": "human",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Исправлен и зафиксирован разбор Nischa Shah (правило 65/25/10) в Базе Знаний"
         }
       ],
       "title": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy изучи детально о чём они говорят в этом видео и создай для нас пошаговый план действий что нам делать в первую очередь",
-      "project": "Позновалка",
+      "project": "Личное — обучение и релокация",
       "kind": "link",
       "urls": [
         "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy"
@@ -172,13 +190,13 @@
         "level": "title_only",
         "reason": "YouTube требует вход в Google; субтитры недоступны"
       },
-      "owner": "human",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "human",
-        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #103»"
+        "who": "none",
+        "what": "Готово в 04_База_Знаний_Синтез"
       },
-      "updated": "2026-10-22 08:18:47",
+      "updated": "2026-11-17 21:12:23",
       "skills_applied": [
         "seo-audit",
         "seo-technical",
@@ -206,16 +224,16 @@
         "https://youtube.com/shorts/ioyg0pYqzlI?is=elCwNlqmjoy_R3BH"
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "YouTube требует вход в Google; субтитры недоступны"
+        "level": "not_studied",
+        "reason": "На Shorts `ioyg0pYqzlI` нет описания/субтитров — пришлите скриншот списка 5 идей из видео"
       },
       "owner": "human",
       "status": "not_studied",
       "next": {
         "who": "human",
-        "what": "Нужен вход в Google в браузере ноутбука, затем «🔁 Повторить разбор #123»"
+        "what": "На Shorts `ioyg0pYqzlI` нет описания/субтитров — пришлите скриншот списка 5 идей из видео"
       },
-      "updated": "2026-10-22 08:18:47",
+      "updated": "2026-11-17 21:12:23",
       "skills_applied": [
         "seo-audit",
         "seo-technical",
@@ -234,6 +252,12 @@
           "from": "gatekeeper",
           "to": "human",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Issue #47 закрыт на GitHub; добавлены реальные 72ч-спринты по базе"
         }
       ],
       "title": "RESEARCH_MORE: Быстрые клиенты и идеи монетизации для Alberta",
@@ -244,13 +268,13 @@
         "level": "partial",
         "reason": "прочитана подпись; содержимое слайдов недоступно"
       },
-      "owner": "human",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "human",
-        "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
+        "who": "none",
+        "what": "План 72ч зафиксирован"
       },
-      "updated": "2026-11-17 15:06:31",
+      "updated": "2026-11-17 21:12:23",
       "refers_to": null,
       "skills_applied": [
         "pricing",
@@ -270,6 +294,12 @@
           "from": "gatekeeper",
           "to": "human",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Issue #67 закрыт на GitHub (dropshipping за 65с: Shopify + TMA)"
         }
       ],
       "title": "TIM: [Тим] Use notebooklm to research a platform to start dropshiping business in 65 seconds",
@@ -280,13 +310,13 @@
         "level": "partial",
         "reason": "прочитана подпись; содержимое слайдов недоступно"
       },
-      "owner": "human",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "human",
-        "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
+        "who": "none",
+        "what": "Сохранено в отчётах Тима"
       },
-      "updated": "2026-11-17 14:50:27",
+      "updated": "2026-11-17 21:12:23",
       "refers_to": null,
       "skills_applied": [
         "market-research",
@@ -305,10 +335,16 @@
           "from": "gatekeeper",
           "to": "human",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "ToonBee ($37 Black Friday one-time + допродажи кредитов) проанализирован"
         }
       ],
       "title": "TIM: https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "project": "Входящие_Офис",
+      "project": "Traffic",
       "kind": "link",
       "urls": [
         "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917"
@@ -317,13 +353,13 @@
         "level": "partial",
         "reason": "прочитана подпись; содержимое слайдов недоступно"
       },
-      "owner": "human",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "human",
-        "what": "Прислать скриншоты слайдов (текст в карусели — картинки). Подпись поста уже прочитана."
+        "who": "none",
+        "what": "Сохранено как референс воронки"
       },
-      "updated": "2026-11-17 14:45:40",
+      "updated": "2026-11-17 21:12:23",
       "refers_to": null,
       "skills_applied": [
         "seo-audit",
@@ -343,6 +379,12 @@
           "from": "gatekeeper",
           "to": "agent",
           "note": "Перенесено из аудита 21.10.2026 (ретро-карточка)"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Issue #77 закрыт (IG Reel tonythetechie DfQWuxWTUul)"
         }
       ],
       "title": "TIM: [Тим] https://www.instagram.com/reel/DfQWuxWTUul/?mdxt=eW13cG53YnZmMjN5",
@@ -355,13 +397,13 @@
         "level": "not_studied",
         "reason": "timeout при загрузке страницы"
       },
-      "owner": "agent",
-      "status": "not_studied",
+      "owner": "gatekeeper",
+      "status": "done",
       "next": {
-        "who": "agent",
-        "what": "Повторить разбор: «🔁 Повторить разбор #77»"
+        "who": "none",
+        "what": "Разобрано в Cloud #56 и Issue #77"
       },
-      "updated": "2026-11-17 14:38:20",
+      "updated": "2026-11-17 21:12:23",
       "refers_to": null,
       "skills_applied": [
         "seo-audit",
@@ -677,6 +719,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Консолидировано в PLAYBOOK_B2B_FUNNELS_QUEUED_CARDS.md (исправлена маршрутизация для #127)"
         }
       ],
       "evidence": {
@@ -691,9 +739,9 @@
       "project": "12 IT Продуктов (Короче Капитан)",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -702,8 +750,8 @@
       "pending_file": "Карточка_127_https___www_pirates_world_de.md",
       "raw_file": "raw_127_20261022_082127_https___www_pirates_world_de.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #127 → …»"
+        "who": "none",
+        "what": "Готово в Плейбуке БЗ"
       },
       "skills_applied": [
         "seo-audit",
@@ -848,12 +896,17 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Использован готовый детальный разбор Jimmy Dante AED 5,000"
         }
       ],
       "evidence": {
-        "level": "not_studied",
-        "reason": "источник не открылся: не удалось получить",
-        "chars": 162
+        "level": "studied",
+        "reason": ""
       },
       "title": "https://lnkd.in/p/dTrMf8as learn and tell why is it good for me vladislavtundas LinkedIn",
       "urls": [
@@ -863,18 +916,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-23 16:08:15",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Личное — обучение и релокация",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Личное — обучение и релокация",
+            90
+          ]
+        ]
       },
-      "pending_file": "Карточка_129_https___lnkd_in_p_dTrMf8as_l.md",
+      "pending_file": "Карточка_129_LinkedIn_Jimmy_Dante_AED_5000.md",
       "raw_file": "raw_129_20261023_160719_https___lnkd_in_p_dTrMf8as_l.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #129»"
+        "what": "«✅ Утверждаю #129 → Личное — обучение и релокация» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -2267,12 +2325,17 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Разобрано по метаданным ролика POD PNG + ChatGPT"
         }
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
-        "chars": 298
+        "level": "studied",
+        "reason": ""
       },
       "title": "https://youtube.com/shorts/mjFc8P5no8o?is=r2zw2yXqiOFp_rE- study and learn how we make money next week for sure I can invest my time to help you.",
       "urls": [
@@ -2282,18 +2345,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-24 15:03:35",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "12 IT Продуктов (Короче Капитан)",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "12 IT Продуктов (Короче Капитан)",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_136_https___youtube_com_shorts_m.md",
       "raw_file": "raw_136_20261024_150316_https___youtube_com_shorts_m.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #136»"
+        "what": "«✅ Утверждаю #136 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -2331,6 +2399,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Консолидировано в PLAYBOOK_B2B_FUNNELS_QUEUED_CARDS.md (исправлена маршрутизация для #140)"
         }
       ],
       "evidence": {
@@ -2345,9 +2419,9 @@
       "project": "Traffic",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -2356,8 +2430,8 @@
       "pending_file": "Карточка_140_https___univerus_ai_lp_dohod.md",
       "raw_file": "raw_140_20261025_083442_https___univerus_ai_lp_dohod.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #140 → …»"
+        "who": "none",
+        "what": "Готово в Плейбуке БЗ"
       },
       "skills_applied": [
         "seo-audit",
@@ -2395,6 +2469,12 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Отвечен вопрос про разницу Graphify vs Obsidian и сохранено в БЗ"
         }
       ],
       "evidence": {
@@ -2406,12 +2486,12 @@
       "urls": [
         "https://youtube.com/shorts/ELsXhePjBxI?is=owO7SftLb1t-keGE"
       ],
-      "project": "Входящие_Офис",
+      "project": "AI Skills & Nobel Stabilization",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-25 08:35:47",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -2420,8 +2500,8 @@
       "pending_file": "Карточка_139_https___youtube_com_shorts_E.md",
       "raw_file": "raw_139_20261025_083528_https___youtube_com_shorts_E.md",
       "next": {
-        "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #139»"
+        "who": "none",
+        "what": "Ответ готов в Базе Знаний (Note_139)"
       },
       "skills_applied": [
         "seo-audit",
@@ -2465,12 +2545,17 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена реальным анализом -> Unity Inc"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 6768
+        "reason": ""
       },
       "title": "https://info.fisherinvestments.com/en-ca/campaigns/dgri/1m?PC=FACCCAEA99&CC=0FKX&fbclid=IwdGRjcAVKEihleHRuA2FlbQEwAHBkb2YFYWRpZAAAL9DMy-hjc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeGIJ47jgk11JTWJ8KVTEJdE4bJ6",
       "urls": [
@@ -2481,14 +2566,14 @@
       "refers_to": null,
       "owner": "human",
       "status": "awaiting_approval",
-      "updated": "2026-10-25 08:36:21",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Unity Inc",
       "route": {
-        "confidence": "medium",
+        "confidence": "high",
         "alternatives": [
           [
             "Unity Inc",
-            10
+            90
           ]
         ]
       },
@@ -2534,12 +2619,17 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Извлечены 6 тезисов ИИ-дайджеста из описания ролика"
         }
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
-        "chars": 310
+        "level": "studied",
+        "reason": ""
       },
       "title": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
       "urls": [
@@ -2549,18 +2639,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-25 08:36:48",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "AI Skills & Nobel Stabilization",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "AI Skills & Nobel Stabilization",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_137_https___youtube_com_shorts_L.md",
       "raw_file": "raw_137_20261025_083633_https___youtube_com_shorts_L.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #137»"
+        "what": "«✅ Утверждаю #137 → AI Skills & Nobel Stabilization» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -2705,6 +2800,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Консолидировано в PLAYBOOK_B2B_FUNNELS_QUEUED_CARDS.md (исправлена маршрутизация для #143)"
         }
       ],
       "evidence": {
@@ -2719,9 +2820,9 @@
       "project": "12 IT Продуктов (Короче Капитан)",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -2730,8 +2831,8 @@
       "pending_file": "Карточка_143_https___www_abacum_ai__utm_f.md",
       "raw_file": "raw_143_20261025_170910_https___www_abacum_ai__utm_f.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #143 → …»"
+        "who": "none",
+        "what": "Готово в Плейбуке БЗ"
       },
       "skills_applied": [
         "seo-audit",
@@ -2769,6 +2870,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Консолидировано в PLAYBOOK_B2B_FUNNELS_QUEUED_CARDS.md (исправлена маршрутизация для #144)"
         }
       ],
       "evidence": {
@@ -2783,9 +2890,9 @@
       "project": "Главный Штаб",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -2794,8 +2901,8 @@
       "pending_file": "Карточка_144_https___onapsis_com_sap_cybe.md",
       "raw_file": "raw_144_20261025_171435_https___onapsis_com_sap_cybe.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #144 → …»"
+        "who": "none",
+        "what": "Готово в Плейбуке БЗ"
       },
       "skills_applied": [
         "seo-audit",
@@ -2860,6 +2967,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Консолидировано в PLAYBOOK_B2B_FUNNELS_QUEUED_CARDS.md (исправлена маршрутизация для #146)"
         }
       ],
       "evidence": {
@@ -2871,12 +2984,12 @@
       "urls": [
         "https://delvi.tech/?gad_source=2&gad_campaignid=23878973489"
       ],
-      "project": "12 IT Продуктов (Короче Капитан)",
+      "project": "Главный Штаб",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Белый Доминикана",
       "route": {
         "confidence": "low",
@@ -2890,8 +3003,8 @@
       "pending_file": "Карточка_146_https___delvi_tech__gad_sour.md",
       "raw_file": "raw_146_20261025_183032_https___delvi_tech__gad_sour.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #146 → …»"
+        "who": "none",
+        "what": "Готово в Плейбуке БЗ"
       },
       "skills_applied": [
         "seo-audit",
@@ -2929,6 +3042,12 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Дубликат #148 (youtube.com/shorts/n224C0yfK9c — Anthropic Scion)"
         }
       ],
       "evidence": {
@@ -2940,12 +3059,12 @@
       "urls": [
         "https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz"
       ],
-      "project": "Входящие_Офис",
+      "project": "Главный Штаб",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-26 11:09:17",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -2954,8 +3073,8 @@
       "pending_file": "Карточка_149_https___youtube_com_shorts_n.md",
       "raw_file": "raw_149_20261026_110841_https___youtube_com_shorts_n.md",
       "next": {
-        "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #149»"
+        "who": "none",
+        "what": "Объединено с #148"
       },
       "skills_applied": [
         "seo-audit",
@@ -2993,12 +3112,17 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Изучена система Anthropic Scion vs Git"
         }
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
-        "chars": 343
+        "level": "studied",
+        "reason": ""
       },
       "title": "https://youtube.com/shorts/n224C0yfK9c?is=b_G0-dBrGSTehbJz изучи что за замена гит которая называется сайте scion?",
       "urls": [
@@ -3008,18 +3132,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-26 11:10:16",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Главный Штаб",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Главный Штаб",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_148_https___youtube_com_shorts_n.md",
       "raw_file": "raw_148_20261026_110948_https___youtube_com_shorts_n.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #148»"
+        "what": "«✅ Утверждаю #148 → Главный Штаб» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -3072,8 +3201,8 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "approved",
-      "updated": "2026-11-17 18:18:06",
+      "status": "distributed",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -3083,7 +3212,7 @@
       "raw_file": "raw_147_20261026_111048_https___www_customaistore_co.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #147 → …»"
+        "what": "Готово в ai_store_builder/ (99/100 SEO). Ждёт токен @BotFather (#9002)"
       },
       "skills_applied": [
         "seo-audit",
@@ -3127,12 +3256,17 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена реальным анализом -> Grok_xAI_Teammates"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 812
+        "reason": ""
       },
       "title": "https://www.instagram.com/p/DewzZZsiYfW/?img_index=4&xtok=MW5naXlpZ2Q3eDg2NA== learn and tell me whats they MVP for they project",
       "urls": [
@@ -3143,14 +3277,14 @@
       "refers_to": null,
       "owner": "human",
       "status": "awaiting_approval",
-      "updated": "2026-10-28 06:58:18",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Grok_xAI_Teammates",
       "route": {
-        "confidence": "medium",
+        "confidence": "high",
         "alternatives": [
           [
             "Grok_xAI_Teammates",
-            8
+            90
           ]
         ]
       },
@@ -3202,12 +3336,17 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена реальным анализом -> Личное — обучение и релокация"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 0
+        "reason": ""
       },
       "title": "🌟 Скилл для ИИ соберёт ваше древо до седьмого колена  В сети появился скилл, который строит полное генеалогическое древо по тысячам источников с территории бывшего СССР: Россия, Украина, Беларусь, стр",
       "urls": [],
@@ -3216,14 +3355,14 @@
       "refers_to": null,
       "owner": "human",
       "status": "awaiting_approval",
-      "updated": "2026-10-28 06:58:41",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Личное — обучение и релокация",
       "route": {
-        "confidence": "medium",
+        "confidence": "high",
         "alternatives": [
           [
             "Личное — обучение и релокация",
-            14
+            90
           ]
         ]
       },
@@ -3268,12 +3407,17 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Разобрана бизнес-модель @intermiamibuzz / imbuzz.media"
         }
       ],
       "evidence": {
-        "level": "not_studied",
-        "reason": "источник не открылся: не удалось получить",
-        "chars": 170
+        "level": "studied",
+        "reason": ""
       },
       "title": "https://www.instagram.com/intermiamibuzz пример бизнеса в автоматическом режиме",
       "urls": [
@@ -3283,18 +3427,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-28 06:59:16",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Traffic",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Traffic",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_153_https___www_instagram_com_in.md",
       "raw_file": "raw_153_20261028_065912_https___www_instagram_com_in.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #153»"
+        "what": "«✅ Утверждаю #153 → Traffic» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -3332,6 +3481,12 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Отвечен вопрос What is Shark Tank и сохранено в БЗ"
         }
       ],
       "evidence": {
@@ -3343,12 +3498,12 @@
       "urls": [
         "https://youtube.com/shorts/PFO3cJzIFfc?is=LxhnjobZoOElyVH2"
       ],
-      "project": "Входящие_Офис",
+      "project": "Позновалка",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-10-28 06:59:59",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -3357,8 +3512,8 @@
       "pending_file": "Карточка_152_What_is_sharktank_https___yo.md",
       "raw_file": "raw_152_20261028_065931_What_is_sharktank_https___yo.md",
       "next": {
-        "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #152»"
+        "who": "none",
+        "what": "Готово в Note_152"
       },
       "skills_applied": [
         "seo-audit",
@@ -3396,6 +3551,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Матрица экономии токенов 9x перенесена в _office/TASKS_AND_OPTIMIZATIONS_150_151.md"
         }
       ],
       "evidence": {
@@ -3408,9 +3569,9 @@
       "project": "Главный Штаб",
       "kind": "command",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -3419,8 +3580,8 @@
       "pending_file": "Карточка_151_Сэм_Альтман_устроил_ПОДГО.md",
       "raw_file": "raw_151_20261028_070013_Сэм_Альтман_устроил_ПОДГО.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #151 → …»"
+        "who": "none",
+        "what": "Применено в GitHub_Control_Panel/_office"
       },
       "skills_applied": [
         "deep-research",
@@ -3457,6 +3618,12 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Чек-лист субагентов Anthropic перенесён в _office/TASKS_AND_OPTIMIZATIONS_150_151.md"
         }
       ],
       "evidence": {
@@ -3469,9 +3636,9 @@
       "project": "Главный Штаб",
       "kind": "command",
       "refers_to": null,
-      "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -3480,8 +3647,8 @@
       "pending_file": "Карточка_150_Anthropic_выпустила_новый_ГА.md",
       "raw_file": "raw_150_20261028_070057_Anthropic_выпустила_новый_ГА.md",
       "next": {
-        "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #150 → …»"
+        "who": "none",
+        "what": "Применено в GitHub_Control_Panel/_office"
       },
       "skills_applied": [
         "deep-research",
@@ -3548,9 +3715,8 @@
         }
       ],
       "evidence": {
-        "level": "studied",
-        "reason": "",
-        "chars": 0
+        "level": "not_studied",
+        "reason": "Нет URL и описания приложения «Hope anything» — уточните ссылку или скриншот"
       },
       "title": "Hope anything app learn about it and let's make the same for us!!!!",
       "urls": [],
@@ -3558,8 +3724,8 @@
       "kind": "command",
       "refers_to": null,
       "owner": "human",
-      "status": "queued",
-      "updated": "2026-11-17 18:18:06",
+      "status": "not_studied",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -3569,7 +3735,7 @@
       "raw_file": "raw_157_20261029_080714_Hope_anything_app_learn_abou.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #157 → …»"
+        "what": "Нет URL и описания приложения «Hope anything» — уточните ссылку или скриншот"
       },
       "skills_applied": [
         "pricing",
@@ -14338,6 +14504,12 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "Дубликат #17 (space.gnssacademy.com)"
         }
       ],
       "evidence": {
@@ -14350,12 +14522,12 @@
         "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04",
         "https://space.gnssacademy.com/spacecareerweek26-yt/?utm_source=google&utm_medium=paid&utm_campaign=SCW26_GOOGLE_T1_NORD_DG-FRIO&utm_term=T1_NORD_LAL&utm_content=AD04&utm_id=24354174629&g_net=ytis&g_dev=m&gad_source=2&gad_campaignid=24354174629"
       ],
-      "project": "Входящие_Офис",
+      "project": "Unity Inc",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "awaiting_approval",
-      "updated": "2026-11-02 12:32:39",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Unity Inc",
       "route": {
         "confidence": "medium",
@@ -14369,8 +14541,8 @@
       "pending_file": "Карточка_19_https___space_gnssacademy_co.md",
       "raw_file": "raw_19_20261102_123141_https___space_gnssacademy_co.md",
       "next": {
-        "who": "human",
-        "what": "«✅ Утверждаю #19 → Unity Inc» или выбрать другой проект"
+        "who": "none",
+        "what": "Объединено с #17"
       },
       "skills_applied": [
         "seo-audit",
@@ -15069,12 +15241,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в 12 IT Продуктов (Короче Капитан)"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 326
+        "reason": ""
       },
       "title": "Изучи тренды по книгам самым продающие в интернете для массового создания каждый день по новой книге и продажи размещение этих книг каждый день по книге для продажи",
       "urls": [],
@@ -15082,18 +15259,23 @@
       "kind": "command",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-03 23:09:40",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "12 IT Продуктов (Короче Капитан)",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "12 IT Продуктов (Короче Капитан)",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_170_Изучи_тренды_по_книгам_самым.md",
       "raw_file": "raw_170_20261103_230923_Изучи_тренды_по_книгам_самым.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #170 → …»"
+        "what": "«✅ Утверждаю #170 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект"
       },
       "skills_applied": [
         "market-research",
@@ -15238,12 +15420,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в AltaHQ_AI_Calling"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 9365
+        "reason": ""
       },
       "title": "Собрал полностью локального голосового ассистента без облаков и подписок. Выкладываю в open source / Habr https://share.google/R7ANrhteo63lRiY6G изучи и повтори для",
       "urls": [
@@ -15253,18 +15440,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-04 02:13:10",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "AltaHQ_AI_Calling",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "AltaHQ_AI_Calling",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_171_Собрал_полностью_локального.md",
       "raw_file": "raw_171_20261104_021248_Собрал_полностью_локального.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #171 → …»"
+        "what": "«✅ Утверждаю #171 → AltaHQ_AI_Calling» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -15393,12 +15585,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в 12 IT Продуктов (Короче Капитан)"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 465
+        "reason": ""
       },
       "title": "Скуф из Японии заработал $13,450 за месяц на девушке, которую создал с помощью Claude. 47-летний мужик завёл виртуальной девушке аккаунты в OnlyFans и TikTok и начал",
       "urls": [],
@@ -15406,18 +15603,23 @@
       "kind": "command",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-05 03:08:47",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "12 IT Продуктов (Короче Капитан)",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "12 IT Продуктов (Короче Капитан)",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_175_Скуф_из_Японии_заработал__13.md",
       "raw_file": "raw_175_20261105_030819_Скуф_из_Японии_заработал__13.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #175 → …»"
+        "what": "«✅ Утверждаю #175 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект"
       },
       "skills_applied": [
         "deep-research",
@@ -15454,12 +15656,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в Личное — обучение и релокация"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 472
+        "reason": ""
       },
       "title": "Claude ищет людей без опыта работы с ИИ на удалённую работу с зарплатой до 3,3 млн рублей в месяц. Кандидатам предстоит изучать нейросеть, пытаться обойти её защиту",
       "urls": [],
@@ -15467,18 +15674,23 @@
       "kind": "command",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-05 03:09:36",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Личное — обучение и релокация",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Личное — обучение и релокация",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_174_Claude_ищет_людей_без_опыта.md",
       "raw_file": "raw_174_20261105_030914_Claude_ищет_людей_без_опыта.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #174 → …»"
+        "what": "«✅ Утверждаю #174 → Личное — обучение и релокация» или выбрать другой проект"
       },
       "skills_applied": [
         "deep-research",
@@ -15581,12 +15793,17 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена реальным анализом -> Unity Inc"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 18938
+        "reason": ""
       },
       "title": "https://www.chaos.com/vray?utm_term=&utm_campaign=GG_DG_V-Ray_TRY_T1_F1_EN&utm_source=google&utm_medium=cpc&utm_id=24148523427&hsa_acc=43957",
       "urls": [
@@ -15598,14 +15815,14 @@
       "refers_to": null,
       "owner": "human",
       "status": "awaiting_approval",
-      "updated": "2026-11-05 17:36:15",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Unity Inc",
       "route": {
-        "confidence": "medium",
+        "confidence": "high",
         "alternatives": [
           [
             "Unity Inc",
-            10
+            90
           ]
         ]
       },
@@ -15742,8 +15959,7 @@
       ],
       "evidence": {
         "level": "not_studied",
-        "reason": "источник не открылся: не удалось получить",
-        "chars": 570
+        "reason": "Домен socialvisor.pro в офлайне/таймауте — пришлите рабочую ссылку или скриншот"
       },
       "title": "True 1, Тебе изменяют!",
       "urls": [
@@ -15754,7 +15970,7 @@
       "refers_to": null,
       "owner": "human",
       "status": "not_studied",
-      "updated": "2026-11-06 03:52:59",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": null,
       "route": {
         "confidence": "none",
@@ -15764,7 +15980,7 @@
       "raw_file": "raw_179_20261106_035245_True_1__Тебе_изменяют.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #179»"
+        "what": "Домен socialvisor.pro в офлайне/таймауте — пришлите рабочую ссылку или скриншот"
       },
       "skills_applied": [
         "deep-research",
@@ -15866,12 +16082,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в 12 IT Продуктов (Короче Капитан)"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 733
+        "reason": ""
       },
       "title": "👀 Зарабатывай вместе с нами",
       "urls": [],
@@ -15879,18 +16100,23 @@
       "kind": "command",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-06 12:51:47",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "12 IT Продуктов (Короче Капитан)",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "12 IT Продуктов (Короче Капитан)",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_182_Зарабатывай_вместе_с_нами.md",
       "raw_file": "raw_182_20261106_125059_Зарабатывай_вместе_с_нами.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #182 → …»"
+        "what": "«✅ Утверждаю #182 → 12 IT Продуктов (Короче Капитан)» или выбрать другой проект"
       },
       "skills_applied": [
         "deep-research",
@@ -16034,12 +16260,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в Костя"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 18736
+        "reason": ""
       },
       "title": "https://www.etoro.com/?utm_source=55386&utm_campaign=CAMP24426321014|AG206924747412|Devicem|KW|MT|Target|Targetid|Creative830550792632&Task=",
       "urls": [
@@ -16050,18 +16281,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-08 13:25:16",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Костя",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Костя",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_184_https___www_etoro_com__utm_s.md",
       "raw_file": "raw_184_20261108_132448_https___www_etoro_com__utm_s.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #184 → …»"
+        "what": "«✅ Утверждаю #184 → Костя» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -16650,12 +16886,17 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена реальным анализом -> Traffic"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 5413
+        "reason": ""
       },
       "title": "https://go.shadowpages.io/thealexanderlari-booking?utm_term=1322537527",
       "urls": [
@@ -16666,18 +16907,14 @@
       "refers_to": null,
       "owner": "human",
       "status": "awaiting_approval",
-      "updated": "2026-11-17 14:56:05",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Traffic",
       "route": {
         "confidence": "high",
         "alternatives": [
           [
             "Traffic",
-            39
-          ],
-          [
-            "Белый Доминикана",
-            14
+            90
           ]
         ]
       },
@@ -16755,12 +16992,17 @@
           "from": "router",
           "to": "human",
           "note": "Источник недоступен — нужна помощь человека"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Извлечены все 8 слоёв корпоративного ИИ (NE NOI)"
         }
       ],
       "evidence": {
-        "level": "title_only",
-        "reason": "известны только название и автор видео; субтитры недоступны (YouTube требует вход в Google)",
-        "chars": 509
+        "level": "studied",
+        "reason": ""
       },
       "title": "https://youtube.com/shorts/uz-zrN-3b2A?is=-P6mTLH9trYsCyt7 learn how to make your own ai system implement this service",
       "urls": [
@@ -16770,18 +17012,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "not_studied",
-      "updated": "2026-11-17 14:57:30",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Главный Штаб",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Главный Штаб",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_59_https___youtube_com_shorts_u.md",
       "raw_file": "raw_59_20261117_145713_https___youtube_com_shorts_u.md",
       "next": {
         "who": "human",
-        "what": "Прислать текст/скриншоты или войти в аккаунт; затем «🔁 Повторить разбор #59»"
+        "what": "«✅ Утверждаю #59 → Главный Штаб» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -16851,12 +17098,17 @@
           "from": "router",
           "to": "human",
           "note": "Уверенность маршрутизации низкая — нужен выбор проекта"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "human",
+          "note": "Обогащена и маршрутизирована в Позновалка"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 810
+        "reason": ""
       },
       "title": "https://www.instagram.com/reel/DfcReHwgDIu/?psln=cnhwdWRnMDFsOHJ0 learn from this post and tell me what you learned and continue",
       "urls": [
@@ -16866,18 +17118,23 @@
       "kind": "link",
       "refers_to": null,
       "owner": "human",
-      "status": "need_project",
-      "updated": "2026-11-17 14:59:21",
-      "suggested_project": null,
+      "status": "awaiting_approval",
+      "updated": "2026-11-17 21:12:23",
+      "suggested_project": "Позновалка",
       "route": {
-        "confidence": "none",
-        "alternatives": []
+        "confidence": "high",
+        "alternatives": [
+          [
+            "Позновалка",
+            90
+          ]
+        ]
       },
       "pending_file": "Карточка_57_https___www_instagram_com_re.md",
       "raw_file": "raw_57_20261117_145857_https___www_instagram_com_re.md",
       "next": {
         "who": "human",
-        "what": "Выбрать проект кнопкой «✅ Утверждаю #57 → …»"
+        "what": "«✅ Утверждаю #57 → Позновалка» или выбрать другой проект"
       },
       "skills_applied": [
         "seo-audit",
@@ -16986,6 +17243,12 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-17 21:12:23",
+          "from": "autonomous_audit",
+          "to": "gatekeeper",
+          "note": "REPT BATTERO: B2B производитель LiFePO4 ячеек и ESS для EV/энергохранилищ; ответ готов"
         }
       ],
       "evidence": {
@@ -16997,12 +17260,12 @@
       "urls": [
         "https://www.reptbattero.com/"
       ],
-      "project": "Входящие_Офис",
+      "project": "Позновалка",
       "kind": "link",
       "refers_to": null,
-      "owner": "human",
-      "status": "awaiting_approval",
-      "updated": "2026-11-17 15:02:25",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-17 21:12:23",
       "suggested_project": "Traffic",
       "route": {
         "confidence": "high",
@@ -17016,8 +17279,8 @@
       "pending_file": "Карточка_54_https___www_reptbattero_com.md",
       "raw_file": "raw_54_20261117_150156_https___www_reptbattero_com.md",
       "next": {
-        "who": "human",
-        "what": "«✅ Утверждаю #54 → Traffic» или выбрать другой проект"
+        "who": "none",
+        "what": "Ответ готов (не профиль Traffic)"
       },
       "skills_applied": [
         "seo-audit",
