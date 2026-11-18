@@ -1,6 +1,6 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-18T04:49:09Z",
+  "generated_at": "2026-11-18T04:51:03Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
@@ -1958,7 +1958,7 @@
       ],
       "action_plan_ru": "Подготовить финальный текст оффера для отправки",
       "result": "Статус на доске: awaiting_approval (owner=owner)",
-      "updated_at": "2026-11-17 21:48:33",
+      "updated_at": "2026-11-17 21:49:34",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)"
     },
