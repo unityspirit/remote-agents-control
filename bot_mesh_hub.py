@@ -276,7 +276,7 @@ def build_mesh_director_keyboard(project_name="Мой Офис", extra_row=None)
         ],
         [
             {"text": "📥 Входящие", "callback_data": "pdir:inbox"},
-            {"text": "🌐 Веб-Офис v34.3", "url": "https://globalteampartners.github.io/remote-agents-control/?v=34.3"},
+            {"text": "🌐 Веб-Офис v34.7", "url": "https://globalteampartners.github.io/remote-agents-control/?v=34.7"},
         ],
     ]
     if extra_row:
