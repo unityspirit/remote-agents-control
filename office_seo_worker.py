@@ -67,6 +67,7 @@ LOCAL_HTML_TARGETS = [
         "https://globalteampartners.github.io/remote-agents-control/AI_Skills_And_Macro_Stabilization/",
     ),
     ("globalfilms/index.html", "https://globalteampartners.github.io/remote-agents-control/globalfilms/"),
+    ("agents_live/index.html", "https://globalteampartners.github.io/remote-agents-control/agents_live/"),
     ("Unity_Office_App_Installer.html", "https://globalteampartners.github.io/remote-agents-control/Unity_Office_App_Installer.html"),
 ]
 
@@ -669,7 +670,10 @@ def send_telegram_seo_brief(
             "reply_markup": {
                 "inline_keyboard": [
                     [{"text": "🔎 Запустить /seo аудит сейчас", "callback_data": "cmd:seo"}],
-                    [{"text": "🏢 Открыть Главный Офис", "url": "https://globalteampartners.github.io/remote-agents-control/?v=34.5"}],
+                    [
+                        {"text": "🕸️ Граф Агентов (Live)", "url": "https://globalteampartners.github.io/remote-agents-control/agents_live/"},
+                        {"text": "🏢 Главный Офис", "url": "https://globalteampartners.github.io/remote-agents-control/?v=34.6"},
+                    ],
                 ]
             },
         }
@@ -705,6 +709,139 @@ def launch_office_poller_detached() -> None:
         _log("Handed off cleanly to tg_bot_poller.py (--skip-startup-seo).")
     except OSError as exc:
         _log(f"Failed to start tg_bot_poller.py: {exc}")
+
+
+def audit_and_process_office_tasks() -> dict[str, Any]:
+    """Audit open/active Office tasks with installed Claude SEO skills & enrich GitHub issues."""
+    try:
+        import agents_live_aggregator
+    except Exception as exc:
+        return {"error": str(exc), "audited_urls": 0}
+
+    cfg = _load_json(CONFIG_FILE, {})
+    gtp_repo = (cfg.get("gtp_repo") or "GlobalTeamPartners/remote-agents-control").strip()
+    gtp_tok = (cfg.get("gtp_token") or "").strip()
+
+    snap = agents_live_aggregator.build_live_snapshot(include_remote=True)
+    tasks = snap.get("tasks") or []
+
+    # Collect target URLs from open GitHub issues & top pending website tasks
+    target_items: list[dict[str, Any]] = []
+    seen_urls: set[str] = set()
+    for tk in tasks:
+        if tk.get("source") == "seo_domain_health":
+            continue
+        t_url = str(tk.get("target_url") or tk.get("url") or "").strip()
+        if not t_url or "github.com/" in t_url or "instagram.com" in t_url or "youtu" in t_url or "facebook.com" in t_url:
+            continue
+        clean_u = t_url.split("#")[0]
+        if clean_u in seen_urls:
+            continue
+        if tk.get("status") in ("in_progress", "queued", "attention") or len(target_items) < 4:
+            seen_urls.add(clean_u)
+            target_items.append({"task": tk, "url": clean_u})
+        if len(target_items) >= 5:
+            break
+
+    audited: list[dict[str, Any]] = []
+    if target_items:
+        live_targets = [
+            {
+                "name": x["task"]["id"],
+                "url": x["url"],
+                "root": f"{urlparse(x['url']).scheme}://{urlparse(x['url']).netloc}",
+                "role": "office_task",
+            }
+            for x in target_items
+        ]
+        res_list = audit_live_urls(live_targets)
+        for item, res in zip(target_items, res_list):
+            tk = item["task"]
+            audited.append({"task": tk, "audit": res})
+            # Comment concise SEO Skill audit onto open GitHub issue once
+            if tk.get("id", "").startswith("GH-") and tk.get("status") == "in_progress" and gtp_tok:
+                issue_num = tk["id"].split("-", 1)[1]
+                _post_seo_comment_if_missing(gtp_repo, gtp_tok, issue_num, tk, res)
+
+    # Write detailed All Tasks + Claude SEO Skill Audit Markdown report
+    INBOX_SEO_DIR.mkdir(parents=True, exist_ok=True)
+    day_slug = datetime.date.today().strftime("%Y-%m-%d")
+    task_rep = INBOX_SEO_DIR / f"All_Tasks_SEO_Audit_{day_slug}.md"
+    latest_task_rep = INBOX_SEO_DIR / "LATEST_TASKS_SEO_AUDIT.md"
+    lines = [
+        f"# Аудит всех задач Офиса с новыми скиллами Claude SEO ({_local_stamp()})",
+        "",
+        f"- **Всего задач в едином реестре Офиса:** **{len(tasks)}**",
+        f"- **В работе:** {snap['kpis'].get('tasks_in_progress', 0)} | **В очереди:** {snap['kpis'].get('tasks_queued', 0)} | **Требуют внимания:** {snap['kpis'].get('tasks_attention', 0)} | **Выполнено:** {snap['kpis'].get('tasks_done', 0)}",
+        "",
+        "## 1. Живая проверка веб-задач Офиса (Issue / Доска) через Claude SEO",
+    ]
+    for a in audited:
+        tk = a["task"]
+        r = a["audit"]
+        ag = r.get("agentic") or {}
+        sk_list = ", ".join(tk.get("skills") or [])
+        top_f = ", ".join(r.get("top_findings") or ["clean"])
+        lines.append(
+            f"- **{tk['id']}** (`{r['url']}`) -> HTTP `{r.get('status_code')}` | Score **{r['score']}/100** | "
+            f"robots=`{ag.get('robots_found')}` | llms=`{ag.get('llms_found')}` | Скиллы: `{sk_list}` | Находки: {top_f}"
+        )
+    if not audited:
+        lines.append("- Открытых внешних веб-задач с доступными HTTP-сайтами не найдено.")
+
+    lines.extend(["", "## 2. Матрица активных и приоритетных задач по агентам и SEO-скиллам"])
+    for tk in tasks[:35]:
+        lines.append(
+            f"- `[{tk['status']}]` **{tk['id']}** ({tk['agent_id']}) · `{', '.join(tk.get('skills') or [])}` — {tk['title']}"
+        )
+
+    md = "\n".join(lines) + "\n"
+    task_rep.write_text(md, encoding="utf-8", newline="\n")
+    latest_task_rep.write_text(md, encoding="utf-8", newline="\n")
+    return {"total_tasks": len(tasks), "audited_web_tasks": len(audited), "report_path": str(latest_task_rep)}
+
+
+def _post_seo_comment_if_missing(repo: str, token: str, issue_num: str, tk: dict[str, Any], res: dict[str, Any]) -> None:
+    hdr = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+        "User-Agent": "GSG-Claude-SEO-Worker",
+    }
+    marker = "<!-- claude-seo-task-audit -->"
+    try:
+        with urllib.request.urlopen(urllib.request.Request(f"https://api.github.com/repos/{repo}/issues/{issue_num}/comments", headers=hdr), timeout=12) as cr:
+            comments = json.loads(cr.read().decode("utf-8"))
+        if any(marker in (c.get("body") or "") for c in comments):
+            return
+    except Exception:
+        return
+
+    ag = res.get("agentic") or {}
+    sm = res.get("sitemap") or {}
+    findings = ", ".join(res.get("top_findings") or ["нет критических замечаний"])
+    skills_txt = ", ".join(f"`{s}`" for s in (tk.get("skills") or []))
+    body_md = (
+        f"🔎 **Claude SEO-Автопилот (`v34.6`): Авто-разбор открытой задачи #{issue_num}**\n\n"
+        f"- **Целевой сайт:** {res.get('url')}\n"
+        f"- **Назначенные скиллы:** {skills_txt}\n"
+        f"- **HTTP / SEO Оценка:** `HTTP {res.get('status_code')}` · **{res.get('score')}/100**\n"
+        f"- **Мета-теги / GEO:** Title=`{str(res.get('title') or '')[:80]}`, MetaDesc=`{res.get('has_description')}`, Canonical=`{res.get('has_canonical')}`, OpenGraph=`{res.get('has_og')}`, JSON-LD=`{res.get('schema_count')}`\n"
+        f"- **Индексация ИИ-краулерами:** `robots.txt={ag.get('robots_found')}` · `llms.txt={ag.get('llms_found')}` · `sitemaps={sm.get('count', 0)}`\n"
+        f"- **Основные находки:** {findings}\n\n"
+        f"🕸️ Живой статус и граф агентов: https://globalteampartners.github.io/remote-agents-control/agents_live/\n\n"
+        f"{marker}"
+    )
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/issues/{issue_num}/comments",
+            data=json.dumps({"body": body_md}).encode("utf-8"),
+            headers=hdr,
+            method="POST",
+        )
+        urllib.request.urlopen(req, timeout=12).close()
+    except Exception:
+        pass
 
 
 def run_seo_cycle(
@@ -743,6 +880,7 @@ def run_seo_cycle(
 
     packs = generate_external_remediation_packs(live_res)
     drift = update_drift_history(local_res, live_res)
+    office_tasks_res = audit_and_process_office_tasks() if not single_url else {"audited_web_tasks": 0}
     report_path = write_markdown_report(trigger, doctor_res, sm_sync, queued_done, local_res, live_res, packs, drift)
 
     summary_state = {
@@ -753,7 +891,9 @@ def run_seo_cycle(
         "local_avg_score": drift.get("local_avg"),
         "live_avg_score": drift.get("live_avg"),
         "report_path": str(report_path),
+        "tasks_audit_report": office_tasks_res.get("report_path") or "",
         "queued_completed": len(queued_done),
+        "office_web_tasks_audited": office_tasks_res.get("audited_web_tasks", 0),
         "packs_generated": len(packs),
         "live_summary": [
             {"name": r["name"], "url": r["url"], "status_code": r.get("status_code"), "score": r["score"]}
@@ -761,6 +901,15 @@ def run_seo_cycle(
         ],
     }
     _save_json(STATE_FILE, summary_state)
+
+    try:
+        import agents_live_aggregator
+        snap = agents_live_aggregator.build_live_snapshot(include_remote=True)
+        agents_live_aggregator.push_live_snapshot_to_github(snap)
+        summary_state["live_graph_synced"] = True
+    except Exception as _gl_err:
+        _log(f"Live graph snapshot sync warn: {_gl_err}")
+        summary_state["live_graph_synced"] = False
 
     tg_sent = False
     if notify:
