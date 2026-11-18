@@ -326,7 +326,7 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
         num = it.get("number")
         title = _scrub_secrets(str(it.get("title") or ""))
         body = _scrub_secrets(str(it.get("body") or ""))
-        urls = [u.rstrip(".,);\"'<>") for u in re.findall(r"https?://[^\s<>'\"]+", f"{title}\n{body}")]
+        urls = [u.rstrip(".,;:!?)]}»«\"'<>") for u in re.findall(r"https?://[^\s<>'\"«»]+", f"{title}\n{body}")]
         proj_m = re.search(r"PROJ:\s*([^\n|]+)", title)
         proj = proj_m.group(1).strip() if proj_m else "Главный Штаб"
         agent_id, skills = infer_seo_skills_for_task(title, body, urls[0] if urls else "")
@@ -346,24 +346,30 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
             "updated_at": it.get("updated_at") or _utc_iso(),
         })
 
-    # 4) Board non-done cards & key active cards
-    for c in board_cards:
+    # 4) Board cards (active first + completed board history so all 152+ cards appear in 'Все задачи')
+    def _card_prio(c_item):
+        st0 = str(c_item.get("status") or "done")
+        return 0 if st0 != "done" else 1
+
+    for c in sorted(board_cards, key=_card_prio):
         if not isinstance(c, dict):
             continue
         cid = c.get("id") or c.get("card")
         st = str(c.get("status") or "done")
-        if st == "done" and str(cid) != "147":
-            continue
         t_id = f"CARD-{cid}"
         if t_id in seen_task_keys:
             continue
         seen_task_keys.add(t_id)
         title = _scrub_secrets(str(c.get("title") or f"Card #{cid}"))
         proj = str(c.get("project") or "Входящие_Офис")
-        urls = re.findall(r"https?://[^\s<>'\"]+", str(c))
+        urls = [u.rstrip(".,;:!?)]}»«\"'<>") for u in re.findall(r"https?://[^\s<>'\"«»]+", str(c))]
         agent_id, skills = infer_seo_skills_for_task(title, "", urls[0] if urls else "")
-        norm_st = "attention" if st in ("blocked_human", "awaiting_approval", "failed") else (
-            "in_progress" if st in ("in_progress", "approved") else "queued"
+        norm_st = (
+            "done" if st == "done" else (
+                "attention" if st in ("blocked_human", "awaiting_approval", "need_project", "not_studied", "failed") else (
+                    "in_progress" if st in ("in_progress", "approved", "distributed") else "queued"
+                )
+            )
         )
         card_skills = list(c.get("skills_applied") or []) or skills
         unified_tasks.append({
@@ -373,7 +379,7 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
             "url": urls[0] if urls else "",
             "project": proj,
             "status": norm_st,
-            "priority": "P1" if norm_st in ("attention", "in_progress") else "normal",
+            "priority": "P1" if norm_st in ("attention", "in_progress") else ("done" if norm_st == "done" else "normal"),
             "agent_id": agent_id,
             "skills": card_skills[:5],
             "action_plan_ru": str(c.get("ai_solution") or ""),
