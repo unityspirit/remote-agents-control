@@ -1,12 +1,12 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-18T08:56:23Z",
+  "generated_at": "2026-11-18T10:52:59Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
   },
   "user_counts": {
-    "vlaslav": 148,
+    "vlaslav": 149,
     "alberta": 16,
     "yura": 2,
     "true1team": 9,
@@ -222,11 +222,11 @@
     "tasks_in_progress": 4,
     "tasks_queued": 1,
     "tasks_attention": 35,
-    "tasks_done": 148
+    "tasks_done": 149
   },
   "seo_health": {
-    "last_run_iso": "2026-11-18T08:55:55Z",
-    "trigger": "4h_check_report",
+    "last_run_iso": "2026-11-18T10:52:48Z",
+    "trigger": "periodic_6h",
     "domains": [
       {
         "name": "Virtual Office HQ (Primary RU)",
@@ -272,34 +272,6 @@
       }
     ],
     "drift_runs": [
-      {
-        "ts": "2026-11-17T23:09:22Z",
-        "local_avg": 96.4,
-        "live_avg": 73.7,
-        "local_scores": {
-          "index.html": 96,
-          "index_en.html": 95,
-          "ai_store_builder/index.html": 99,
-          "Traffic/index.html": 99,
-          "12_IT_Products/index.html": 98,
-          "AI_Skills_And_Macro_Stabilization/index.html": 94,
-          "globalfilms/index.html": 96,
-          "Unity_Office_App_Installer.html": 94
-        },
-        "live_scores": {
-          "https://globalteampartners.github.io/remote-agents-control/": 96,
-          "https://globalteampartners.github.io/remote-agents-control/index_en.html": 95,
-          "https://globalteampartners.github.io/remote-agents-control/ai_store_builder/": 99,
-          "https://unityspirit.github.io/remote-agents-control/": 82,
-          "https://unityspirit.github.io/alberta-hub/": 69,
-          "https://globalplus.tech/": 0,
-          "https://unityspiritpartners.com/": 75
-        },
-        "drifts": [
-          "https://unityspirit.github.io/alberta-hub/: 78 -> 69",
-          "https://unityspiritpartners.com/: 80 -> 75"
-        ]
-      },
       {
         "ts": "2026-11-17T23:11:20Z",
         "local_avg": 96.4,
@@ -484,6 +456,32 @@
           "https://unityspiritpartners.com/": 100
         },
         "drifts": []
+      },
+      {
+        "ts": "2026-11-18T10:51:30Z",
+        "local_avg": 95.3,
+        "live_avg": 81.7,
+        "local_scores": {
+          "index.html": 96,
+          "index_en.html": 95,
+          "ai_store_builder/index.html": 99,
+          "Traffic/index.html": 99,
+          "12_IT_Products/index.html": 98,
+          "AI_Skills_And_Macro_Stabilization/index.html": 94,
+          "globalfilms/index.html": 96,
+          "agents_live/index.html": 87,
+          "Unity_Office_App_Installer.html": 94
+        },
+        "live_scores": {
+          "https://globalteampartners.github.io/remote-agents-control/": 96,
+          "https://globalteampartners.github.io/remote-agents-control/index_en.html": 95,
+          "https://globalteampartners.github.io/remote-agents-control/ai_store_builder/": 99,
+          "https://unityspirit.github.io/remote-agents-control/": 82,
+          "https://unityspirit.github.io/alberta-hub/": 100,
+          "https://globalplus.tech/": 0,
+          "https://unityspiritpartners.com/": 100
+        },
+        "drifts": []
       }
     ],
     "skills": [
@@ -572,9 +570,9 @@
   ],
   "agent_task_counts": {
     "agent_seo": {
-      "total": 23,
+      "total": 24,
       "active": 3,
-      "done": 19,
+      "done": 20,
       "attention": 1
     },
     "agent_traffic": {
@@ -692,7 +690,7 @@
           "seo-dataforseo",
           "seo-drift"
         ],
-        "details": "Запускается ПЕРВЫМ при старте Windows и каждые 6ч. Последний цикл: 2026-11-18T08:55:55Z. Выполняет 47 on-page проверок, GEO/llms.txt, Schema, Sitemap и Drift."
+        "details": "Запускается ПЕРВЫМ при старте Windows и каждые 6ч. Последний цикл: 2026-11-18T10:52:48Z. Выполняет 47 on-page проверок, GEO/llms.txt, Schema, Sitemap и Drift."
       },
       {
         "id": "agent_cloud",
@@ -1069,7 +1067,7 @@
   },
   "tasks": [
     {
-      "id": "seo-auto-1794992022",
+      "id": "seo-auto-1794999050",
       "source": "seo_autopilot",
       "title": "Scheduled startup SEO + GEO drift audit across Office & Brand domains",
       "url": "",
@@ -1085,10 +1083,32 @@
         "seo-sitemap"
       ],
       "result": "",
-      "updated_at": "2026-11-18T08:53:42Z",
+      "updated_at": "2026-11-18T10:50:50Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
+    },
+    {
+      "id": "seo-auto-1794992022",
+      "source": "seo_autopilot",
+      "title": "Scheduled startup SEO + GEO drift audit across Office & Brand domains",
+      "url": "",
+      "project": "SEO-Автопилот (35 скиллов)",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_seo",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-sitemap"
+      ],
+      "result": "Local Office SEO maintenance completed (0 updates)",
+      "updated_at": "2026-11-18T10:50:50Z",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
       "id": "seo-auto-1794977220",
@@ -1283,7 +1303,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 96/100 · HTTP 200",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1305,7 +1325,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 95/100 · HTTP 200",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1327,7 +1347,7 @@
         "seo-ecommerce"
       ],
       "result": "Оценка 99/100 · HTTP 200",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1349,7 +1369,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 82/100 · HTTP 200",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1371,7 +1391,7 @@
         "seo-local"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "alberta",
       "user_label": "💎 Альберта",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1392,7 +1412,7 @@
         "copywriting"
       ],
       "result": "SSL/HTTPS ошибка — требуется обновление сертификата",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
@@ -1413,7 +1433,7 @@
         "copywriting"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-18T08:55:55Z",
+      "updated_at": "2026-11-18T10:52:48Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -5144,10 +5164,10 @@
   ],
   "live_feed": [
     {
-      "ts": "2026-11-18T08:55:55Z",
+      "ts": "2026-11-18T10:52:48Z",
       "actor": "Claude SEO-Автопилот",
       "kind": "seo",
-      "text": "Выполнен цикл (4h_check_report): локал 95.3/100, домены 81.7/100, задач: 1"
+      "text": "Выполнен цикл (periodic_6h): локал 95.3/100, домены 81.7/100, задач: 1"
     },
     {
       "ts": "2026-11-14T23:32:44.925245+00:00",
