@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-18T04:39:04.942890+00:00",
+  "updated_at": "2026-11-18T11:09:01.673277Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -269,6 +269,13 @@
       "project": "Главный Штаб",
       "issue": 81,
       "summary": "https://www.outsource.gov.uz/en?fbclid=IwVERDUAVp6epleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHwLWH0ulQFCPNCt2zHCOLCWgPTn7JRn43tiOq7bgbCEZbiVFupzLXXGMmUGK_aem_4preRRiNE3Y5JjCINYpD5w res: Здравия! Тим на связи. Главный Штаб, Задача #81. \n\n*(Примечание: `nlm.exe` на ПК не авторизован — для работы с NotebookLM выполните 1 раз `nlm login` в окне Chrome. Ниже дан глубокий анализ силами Gemini и Памяти Офиса).*\n\nИсходя из извлеченных дан"
+    },
+    {
+      "id": "fact-dir-v343-iss82",
+      "ts": "2026-11-18T11:08:57.288609Z",
+      "project": "Главный Штаб",
+      "issue": 82,
+      "summary": "Директор понял, что нужно детально проанализировать сайт из последней ссылки, изучить его функционал, используемые разработки и преимущества.: Здравия! Тим на связи. Главный Штаб, Задача #82.\n\nОсновываясь на официальных данных извлеченного текста страницы `https://www.outsource.gov.uz/en` (Национальный портал IT Outsourcing & BPO Узбекистана, поддерживаемый IT Park Uzbekistan), ниже подан глубокий структурный анализ тог"
     }
   ],
   "projects": {
