@@ -80,7 +80,7 @@ _cached_registry_ts = 0
 _last_net_err_print_ts = 0
 _chat_states = {}  # chat_id -> {"mode": ..., "login": ..., "ts": ...}
 
-OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.6"
+OFFICE_URL = "https://globalteampartners.github.io/remote-agents-control/?v=34.7"
 LOCAL_BOT_ACCESS_FILE = os.path.join(BASE_DIR, ".bot_access_registry.json")
 _cached_bot_access = None
 _cached_bot_access_ts = 0.0
@@ -264,6 +264,73 @@ def call_tg_send_document(chat_id, file_path, caption="", bot_token=TG_BOT_TOKEN
             return json.loads(r.read().decode("utf-8"))
     except Exception:
         return None
+
+
+def _handle_tg_media_message(msg, bot_token, sender_login, proj, bot_label="main_hq"):
+    """Download incoming Telegram photo/document to Входящие_Офис and index in MEDIA_INDEX + crm_data.json."""
+    if not isinstance(msg, dict):
+        return "", ""
+    file_id = ""
+    raw_name = ""
+    kind_ru = ""
+    if msg.get("photo") and isinstance(msg["photo"], list):
+        best = max(msg["photo"], key=lambda p: (int(p.get("file_size") or 0), int(p.get("width") or 0)))
+        file_id = str(best.get("file_id") or "")
+        raw_name = "photo.jpg"
+        kind_ru = "Фото"
+    elif isinstance(msg.get("document"), dict):
+        doc = msg["document"]
+        file_id = str(doc.get("file_id") or "")
+        raw_name = str(doc.get("file_name") or "document.bin")
+        kind_ru = f"Файл ({raw_name})"
+    if not file_id or not bot_token:
+        return "", ""
+
+    try:
+        gf = call_tg("getFile", {"file_id": file_id}, bot_token=bot_token, retries=2, bot_label=bot_label)
+        f_path = str(((gf or {}).get("result") or {}).get("file_path") or "").strip()
+        if not f_path:
+            return "", ""
+        ext = os.path.splitext(raw_name)[1] or os.path.splitext(f_path)[1] or ".bin"
+        base_stem = re.sub(r"[^A-Za-z0-9_.\-]+", "_", os.path.splitext(raw_name)[0])[:48] or "tg_media"
+        msg_id = int(msg.get("message_id") or int(time.time()))
+        safe_fname = f"tg_{msg_id}_{base_stem}{ext}"
+        inbox_root = r"C:\Users\Vlaslav\Downloads\Входящие_Офис"
+        media_dir = os.path.join(inbox_root, "01_Необработанное", "media")
+        os.makedirs(media_dir, exist_ok=True)
+        dest_path = os.path.join(media_dir, safe_fname)
+
+        dl_url = f"https://api.telegram.org/file/bot{bot_token}/{f_path}"
+        req = urllib.request.Request(dl_url, headers={"User-Agent": "GSG-Bot-Daemon/34.7"})
+        with urllib.request.urlopen(req, timeout=22) as resp:
+            data_bytes = resp.read(20 * 1024 * 1024)
+        with open(dest_path, "wb") as out_f:
+            out_f.write(data_bytes)
+
+        rel_path = f"01_Необработанное/media/{safe_fname}"
+        caption = str(msg.get("caption") or "").strip()
+        idx_path = os.path.join(media_dir, "MEDIA_INDEX.md")
+        idx_line = (
+            f"- `{safe_fname}` → **Telegram ({proj}, @{sender_login or 'unknown'})**: "
+            + (caption[:180] if caption else f"{kind_ru} сохранено без подписи ({len(data_bytes)} байт)")
+            + "\n"
+        )
+        with open(idx_path, "a", encoding="utf-8") as mf:
+            mf.write(idx_line)
+
+        stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        note_dir = os.path.join(inbox_root, "04_База_Знаний_Синтез")
+        os.makedirs(note_dir, exist_ok=True)
+        with open(os.path.join(note_dir, f"Note_TG_Media_{msg_id}_{stamp}.md"), "w", encoding="utf-8") as nf:
+            nf.write(
+                f"# Вложение из Telegram ({proj} · @{sender_login or 'user'})\n\n"
+                f"- **Файл:** `{rel_path}` ({len(data_bytes)} байт)\n"
+                f"- **Подпись:** {caption or '(без подписи)'}\n"
+            )
+        return rel_path, kind_ru
+    except Exception as exc:
+        log_throttled_err("TG media download", exc)
+        return "", ""
 
 
 def call_tg(method, data=None, bot_token=TG_BOT_TOKEN, retries=2, bot_label=""):
@@ -1054,10 +1121,30 @@ def poll_personal_user_bots():
                         "reply_markup": build_director_inline_keyboard(proj)
                     }, bot_token=b_tok)
 
-            elif "message" in item and "text" in item["message"]:
-                if bot_mesh_hub.handle_personal_bot_mesh_interaction(_get_mesh_ctx(), item, u, b_tok, bot_uname, reg):
+            elif "message" in item and any(k in item["message"] for k in ("text", "photo", "document")):
+                if "text" in item["message"] and bot_mesh_hub.handle_personal_bot_mesh_interaction(_get_mesh_ctx(), item, u, b_tok, bot_uname, reg):
                     continue
-                text = item["message"]["text"].strip()
+                msg_obj = item["message"]
+                media_rel, media_desc = _handle_tg_media_message(msg_obj, b_tok, u_login, default_proj, bot_label=bot_uname)
+                text = (msg_obj.get("text") or msg_obj.get("caption") or "").strip()
+                if media_rel and not text:
+                    director_nlu_engine._persist_bot_work_to_local_and_crm(
+                        _get_mesh_ctx(), None, default_proj,
+                        f"Telegram вложение ({media_desc}) от @{u_login}",
+                        f"Файл сохранён в Офис: {media_rel}", urls=[],
+                    )
+                    call_tg("sendMessage", {
+                        "chat_id": c_id,
+                        "text": f"✅ <b>{media_desc} сохранено в Офис!</b>\n• Папка: <code>{_esc_h(default_proj)}</code>\n• Файл: <code>{_esc_h(media_rel)}</code>",
+                        "parse_mode": "HTML",
+                        "reply_markup": bot_mesh_hub.build_mesh_director_keyboard(default_proj),
+                    }, bot_token=b_tok)
+                    record_director_action_and_mirror(u, "media_saved", default_proj, f"Сохранено вложение @{u_login}: {media_rel}")
+                    continue
+                if media_rel and text:
+                    text = f"{text}\n\n[Вложение сохранено в Офис: {media_rel}]"
+                if not text:
+                    continue
                 if text.startswith("/start"):
                     reply_html = director_nlu_engine.get_personal_start_greeting(u, default_proj)
                     call_tg("sendMessage", {
@@ -2269,7 +2356,7 @@ def _trigger_seo_from_tg(chat_id, arg_text=""):
         })
         return
 
-    urls = re.findall(r"https?://[^\s<>'\"]+", clean)
+    urls = [u.rstrip(".,;:!?)]}»«\"'<>") for u in re.findall(r"https?://[^\s<>'\"«»]+", clean)]
     target_url = urls[0] if urls else ""
     if clean and low not in ("run", "audit", "аудит", "запуск"):
         office_seo_worker.queue_seo_task(clean, url=target_url, priority="high", source="telegram")
@@ -2295,14 +2382,39 @@ def _trigger_seo_from_tg(chat_id, arg_text=""):
 
 
 def handle_hq_text(msg):
-    text = msg["text"].strip()
+    raw_text = (msg.get("text") or msg.get("caption") or "").strip()
     c_id = str(msg["chat"]["id"])
     from_user = msg.get("from", {})
     sender_username = norm_login(from_user.get("username"))
     is_owner = is_owner_chat(c_id) or is_owner_chat(from_user.get("id"))
 
     # Strict v34.0 Gate: only @unityspiritpartners or explicitly approved chat_ids may enter @unitybusinessbot
-    if not is_owner and not check_bot_entry_gate(c_id, from_user, message_text=text):
+    if not is_owner and not check_bot_entry_gate(c_id, from_user, message_text=raw_text or "[media]"):
+        return
+
+    media_rel = ""
+    media_desc = ""
+    if "photo" in msg or "document" in msg:
+        target_proj = "Главный Штаб" if is_owner else "Входящие_Офис"
+        media_rel, media_desc = _handle_tg_media_message(
+            msg, TG_BOT_TOKEN, sender_username or "user", target_proj, bot_label="main_hq"
+        )
+        if media_rel and not raw_text:
+            director_nlu_engine._persist_bot_work_to_local_and_crm(
+                _get_mesh_ctx(), None, target_proj,
+                f"Telegram вложение ({media_desc}) от @{sender_username or c_id}",
+                f"Файл сохранён в Офис: {media_rel}", urls=[],
+            )
+            call_tg("sendMessage", {
+                "chat_id": c_id,
+                "text": f"✅ <b>{media_desc} сохранено в Офис!</b>\n• Папка: <code>{_esc_h(target_proj)}</code>\n• Файл: <code>{_esc_h(media_rel)}</code>\n\nЕсли нужно разобрать содержимое как задачу — перешлите с текстовым комментарием.",
+                "parse_mode": "HTML",
+                "reply_markup": bot_mesh_hub.build_mesh_director_keyboard(target_proj),
+            })
+            return
+
+    text = f"{raw_text}\n\n[Вложение сохранено в Офис: {media_rel}]" if (media_rel and raw_text) else raw_text
+    if not text:
         return
 
     # Allow /cancel to exit multi-step input
@@ -2597,7 +2709,7 @@ def run_loop(single_run=False, skip_startup_seo=False):
                     # Process item BEFORE committing offset if possible, retry cleanly
                     if "callback_query" in item:
                         handle_hq_callback(item["callback_query"])
-                    elif "message" in item and "text" in item["message"]:
+                    elif "message" in item and any(k in item["message"] for k in ("text", "photo", "document")):
                         handle_hq_text(item["message"])
                     offset = max(offset, item["update_id"] + 1)
                     save_persisted_offset(offset)
