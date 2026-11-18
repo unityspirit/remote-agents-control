@@ -460,6 +460,12 @@
           "from": "project_lead",
           "to": "owner",
           "note": "Оффер 4 LIFE (80/20, без DocuSign) перепроверен и готов к отправке"
+        },
+        {
+          "t": "2026-11-17 21:49:34",
+          "from": "project_lead",
+          "to": "owner",
+          "note": "Оффер 4 LIFE (80/20, без DocuSign) перепроверен и готов к отправке"
         }
       ],
       "title": "Ghost Ghetto Child: переписать оффер по реальным постам (альбом 4 LIFE), свести условия оплаты (15%/30 000 ₽ vs разово/20%)",
@@ -469,8 +475,11 @@
       "evidence": "Ghost Ghetto Child (Музыка)/ОФФЕР_ДЛЯ_ОТПРАВКИ_2026.md (verified against tg_ghostghettochild.txt)",
       "owner": "owner",
       "status": "awaiting_approval",
-      "next": "Проверить и отправить готовый 80/20 оффер в @ghostghettochild (см. Ghost Ghetto Child (Музыка)/ОФФЕР_ДЛЯ_ОТПРАВКИ_2026.md)",
-      "updated": "2026-11-17 21:48:33",
+      "next": {
+        "who": "owner",
+        "what": "Проверить и отправить готовый 80/20 оффер в @ghostghettochild (Ghost Ghetto Child (Музыка)/ОФФЕР_ДЛЯ_ОТПРАВКИ_2026.md)"
+      },
+      "updated": "2026-11-17 21:49:34",
       "skills_applied": [
         "pricing",
         "offers",
@@ -17557,7 +17566,10 @@
       "evidence": "GitHub Issue #79 & #81; Note_Bot_79_IT_Park_Uzbekistan.md (SEO 88/100)",
       "owner": "director_tim",
       "status": "in_progress",
-      "next": "Ожидает выбора Владельца: B2B-лидген vs продажа AI-витрин Open V3 резидентам IT Park",
+      "next": {
+        "who": "owner",
+        "what": "Выбрать трек по IT Park Uzbekistan (B2B-лидген vs продажа AI-витрин Open V3 резидентам)"
+      },
       "refers_to": [],
       "skills_applied": [
         "market-research",
@@ -17589,7 +17601,10 @@
       "evidence": "GitHub Issue #80 (closed); Note_Bot_80_Anthropic_Claude_Risk_MultiModel_Routing.md",
       "owner": "gatekeeper",
       "status": "done",
-      "next": "При необходимости добавить GEMINI_API_KEY в GitHub Secrets и local config для ускорения облачного анализа",
+      "next": {
+        "who": "done",
+        "what": "Мультимодельная устойчивость и YouTube oEmbed внедрены"
+      },
       "refers_to": [],
       "skills_applied": [
         "research-ops",
@@ -17619,7 +17634,10 @@
       "evidence": "Merged into #79 & Note_Bot_79_IT_Park_Uzbekistan.md",
       "owner": "gatekeeper",
       "status": "done",
-      "next": "См. карточку #79",
+      "next": {
+        "who": "done",
+        "what": "Консолидировано с #79"
+      },
       "refers_to": [
         79
       ],
