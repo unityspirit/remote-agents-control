@@ -67,11 +67,11 @@ def _esc(val):
 
 
 def extract_urls(text):
-    raw = re.findall(r"https?://[^\s<>\"'\)\]]+", str(text or ""))
+    raw = re.findall(r"https?://[^\s<>\"'\)\]}«»]+", str(text or ""))
     seen = set()
     out = []
     for u in raw:
-        cleaned = u.rstrip(".,;:!?")
+        cleaned = u.rstrip(".,;:!?»«\"')]} ")
         if cleaned and cleaned not in seen:
             seen.add(cleaned)
             out.append(cleaned)
@@ -377,6 +377,16 @@ def fetch_url_metadata_safe(url, timeout=9):
             body_clean = re.sub(r"\s+", " ", _html.unescape(body_clean)).strip()
             t_val = _html.unescape((og_title.group(1) if og_title else (title_m.group(1) if title_m else ""))).strip()
             d_val = _html.unescape((og_desc.group(1) if og_desc else (meta_desc.group(1) if meta_desc else ""))).strip()
+            if "youtube.com" in host_low or "youtu.be" in host_low:
+                yt_desc_m = re.search(r'"shortDescription":"((?:\\.|[^"\\])*)"', raw)
+                if yt_desc_m:
+                    try:
+                        yt_desc = json.loads('"' + yt_desc_m.group(1) + '"')
+                        if yt_desc and len(yt_desc) > len(d_val):
+                            d_val = yt_desc[:1400]
+                            body_clean = yt_desc[:2400] + (" " + body_clean if body_clean else "")
+                    except Exception:
+                        pass
             if not is_social or t_val or d_val:
                 return {
                     "url": url,
@@ -389,6 +399,31 @@ def fetch_url_metadata_safe(url, timeout=9):
                 }
         except Exception as e:
             last_err = str(e)
+
+    # YouTube fallback via public oEmbed API (works even when watch HTML is JS-gated)
+    if "youtube.com" in host_low or "youtu.be" in host_low:
+        try:
+            oe_url = "https://www.youtube.com/oembed?" + urllib.parse.urlencode({"url": str(url), "format": "json"})
+            req = urllib.request.Request(oe_url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
+            with opener.open(req, timeout=timeout) as resp:
+                oe = json.loads(resp.read().decode("utf-8", errors="replace"))
+            vt = str(oe.get("title") or "").strip()
+            va = str(oe.get("author_name") or "").strip()
+            vau = str(oe.get("author_url") or "").strip()
+            if vt:
+                desc_line = f"YouTube: {vt}" + (f" · Канал: {va}" if va else "") + (f" ({vau})" if vau else "")
+                return {
+                    "url": url,
+                    "final_url": url,
+                    "ok": True,
+                    "content_type": "application/json+oembed",
+                    "title": vt[:260],
+                    "description": desc_line[:700],
+                    "text_excerpt": desc_line[:2400],
+                }
+        except Exception as oe_err:
+            last_err = last_err or str(oe_err)
+
     return {"url": url, "ok": False, "error": last_err or "fetch_failed"}
 
 
@@ -820,17 +855,127 @@ def _fetch_office_memory_summary(ctx, project_name=""):
         mem = {}
     if not isinstance(mem, dict):
         return ""
-    facts = mem.get("learned_facts") or []
+    facts = [f for f in (mem.get("learned_facts") or []) if isinstance(f, dict)]
     lines = []
     proj_low = str(project_name or "").lower()
-    prioritized = [f for f in facts if isinstance(f, dict) and (not proj_low or proj_low in str(f.get("project") or "").lower())]
-    for f in (prioritized or facts)[-5:]:
-        if isinstance(f, dict):
-            lines.append(f"- [{f.get('project') or 'Офис'} #{f.get('issue') or '-'}]: {str(f.get('summary') or f.get('title') or '')[:260]}")
+    prioritized = [
+        f for f in facts
+        if not proj_low or proj_low in f"{f.get('project') or ''} {f.get('topic') or ''} {f.get('source') or ''}".lower()
+    ]
+    for f in (prioritized or facts)[-6:]:
+        label = f.get("project") or f.get("source") or "Офис"
+        iss = f" #{f.get('issue')}" if f.get("issue") else ""
+        body = f.get("summary") or f.get("insight") or f.get("topic") or f.get("title") or ""
+        if body:
+            lines.append(f"- [{label}{iss}]: {str(body)[:260]}")
     return "\n".join(lines)
 
 
-def _save_fact_to_office_memory(ctx, issue_num, project_name, summary_text):
+def _persist_bot_work_to_local_and_crm(ctx, issue_num, project_name, goal_text, ans_text, urls=None):
+    """Guarantees every Telegram Director answer/task is persisted in Входящие_Офис and crm_data.json."""
+    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    proj = project_name or "Главный Штаб"
+    urls = list(urls or [])
+    inbox_root = r"C:\Users\Vlaslav\Downloads\Входящие_Офис"
+    kb_dir = os.path.join(inbox_root, "04_База_Знаний_Синтез")
+    try:
+        os.makedirs(kb_dir, exist_ok=True)
+        note_name = f"Note_Bot_{issue_num or 'chat'}_{stamp}.md"
+        with open(os.path.join(kb_dir, note_name), "w", encoding="utf-8") as nf:
+            nf.write(
+                f"# Разбор из Telegram-бота ({proj}"
+                + (f" · #{issue_num}" if issue_num else "")
+                + f") — {datetime.datetime.now().strftime('%d.%m.%Y %H:%M')}\n\n"
+                f"**Запрос:** {goal_text}\n"
+                + (f"**Ссылки:** {', '.join(urls[:3])}\n\n" if urls else "\n")
+                + f"---\n\n{ans_text[:4500]}\n"
+            )
+    except Exception:
+        pass
+
+    # Update local _system/board.json when linked to a numeric issue
+    if issue_num:
+        try:
+            board_path = os.path.join(inbox_root, "_system", "board.json")
+            if os.path.isfile(board_path):
+                with open(board_path, "r", encoding="utf-8-sig") as bf:
+                    bd = json.load(bf)
+                cards = bd.setdefault("cards", {})
+                sid = str(issue_num)
+                now_s = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                # Avoid colliding with unrelated legacy inbox cards when issue_num matches an existing numeric key
+                target_key = next(
+                    (k for k, v in cards.items() if isinstance(v, dict) and str(v.get("gh_issue") or "") == sid),
+                    None,
+                )
+                if not target_key:
+                    existing = cards.get(sid)
+                    if isinstance(existing, dict):
+                        ex_urls = set(existing.get("urls") or [])
+                        same_url = bool(urls and ex_urls and (set(urls) & ex_urls))
+                        same_title = str(goal_text or "")[:30].lower() in str(existing.get("title") or "").lower()
+                        target_key = sid if (same_url or same_title or not existing.get("title")) else f"gh-{sid}"
+                    else:
+                        target_key = sid
+                if target_key not in cards or not isinstance(cards[target_key], dict):
+                    cards[target_key] = {
+                        "id": int(issue_num) if target_key == sid else target_key,
+                        "gh_issue": int(issue_num),
+                        "created": now_s,
+                        "handoffs": [],
+                        "title": str(goal_text or "")[:200],
+                        "urls": urls,
+                        "project": proj,
+                        "kind": "link" if urls else "command",
+                    }
+                c_obj = cards[target_key]
+                c_obj["gh_issue"] = int(issue_num)
+                c_obj["project"] = proj
+                c_obj["status"] = "done"
+                c_obj["owner"] = "gatekeeper"
+                c_obj["updated"] = now_s
+                c_obj.setdefault("handoffs", []).append({"t": now_s, "from": "tg_director", "to": "gatekeeper", "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"})
+                with open(board_path, "w", encoding="utf-8") as bf:
+                    json.dump(bd, bf, ensure_ascii=False, indent=2)
+                def _mut_board(cur):
+                    if not isinstance(cur, dict):
+                        cur = {"version": 1, "cards": {}}
+                    cur.setdefault("cards", {})[target_key] = c_obj
+                    return cur
+                ctx["mutate_repos"]("board.json", _mut_board, f"Bot issue #{sid} saved to board.json", branches=["data"], default_factory=lambda: {"version": 1, "cards": {}})
+        except Exception:
+            pass
+
+    # Persist into GitHub data/crm_data.json knowledge_base
+    try:
+        kb_id = f"kb-bot-{issue_num}" if issue_num else f"kb-bot-{int(time.time())}"
+        kb_entry = {
+            "id": kb_id,
+            "issue": issue_num or "Bot",
+            "category": f"Проект: {proj}",
+            "title": str(goal_text or ans_text or "Запись из бота")[:140],
+            "source_url": urls[0] if urls else "",
+            "summary": str(ans_text or "")[:600],
+            "updated_at": _utc_now(),
+        }
+        def _mut_crm(cur):
+            if not isinstance(cur, dict):
+                cur = {"version": "34.1", "knowledge_base": []}
+            kbs = cur.setdefault("knowledge_base", [])
+            idx = next((i for i, x in enumerate(kbs) if isinstance(x, dict) and x.get("id") == kb_id), None)
+            if idx is not None:
+                kbs[idx] = kb_entry
+            else:
+                kbs.append(kb_entry)
+            cur["knowledge_base"] = kbs[-150:]
+            cur["updated_at"] = _utc_now()
+            return cur
+        ctx["mutate_repos"]("crm_data.json", _mut_crm, f"Sync bot KB {kb_id}", branches=["data"], default_factory=dict)
+    except Exception:
+        pass
+
+
+def _save_fact_to_office_memory(ctx, issue_num, project_name, summary_text, goal_text="", urls=None, full_answer=""):
     fact_id = f"fact-dir-v343-iss{issue_num}" if issue_num else f"fact-dir-v343-{int(time.time())}"
     entry = {
         "id": fact_id,
@@ -854,6 +999,7 @@ def _save_fact_to_office_memory(ctx, issue_num, project_name, summary_text):
         ctx["mutate_repos"]("office_memory.json", _mut, f"Director v34.3 memory sync (issue #{issue_num or '-'})", branches=["data"], default_factory=dict)
     except Exception:
         pass
+    _persist_bot_work_to_local_and_crm(ctx, issue_num, project_name, goal_text or summary_text, full_answer or summary_text, urls=urls)
 
 
 # ---------------------------------------------------------------------------
@@ -1316,7 +1462,9 @@ def _run_background_execution(
                 _gh_post_issue_comment(ctx["primary_repo"], gh_token, issue_num, gh_comment)
             except Exception:
                 pass
-            _save_fact_to_office_memory(ctx, issue_num, proj, f"{nlu.get('understood_goal')}: {ans_txt[:280]}")
+            _save_fact_to_office_memory(ctx, issue_num, proj, f"{nlu.get('understood_goal')}: {ans_txt[:280]}", goal_text=clean_text, urls=urls, full_answer=ans_txt)
+        else:
+            _persist_bot_work_to_local_and_crm(ctx, None, proj, clean_text, ans_txt, urls=urls)
 
         update_chat_context(
             bot_key,
