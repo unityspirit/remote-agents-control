@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-18T16:16:42.680593Z",
+  "updated_at": "2026-11-19T22:49:50.711578Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -297,6 +297,13 @@
       "project": "Главный Штаб",
       "issue": 85,
       "summary": "https://youtu.be/I-lJCF2HPSA?is=78ZDOQJpolH1nkL9: Tim here. Reporting for Global Spirit Group, HQ.\n\n### 1. Analysis of the Video (I-lJCF2HPSA)\nThe video \"Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude\" discusses the shift in the LLM landscape where open-weights models (like DeepSeek) are rapidly closing the gap with "
+    },
+    {
+      "id": "fact-dir-v343-iss87",
+      "ts": "2026-11-19T22:49:41.992123Z",
+      "project": "Главный Штаб",
+      "issue": 87,
+      "summary": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm: Здравия! Тим на связи. Главный Штаб, Задача #87.\n\nИсходя из извлечённых данных по ссылке `https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm` (канал Kathryn Petrillo), видео озаглавлено: **«China launches advanced open-source AI beating Anthropic and OpenAI»**. \n\n*(Примеч"
     }
   ],
   "projects": {
