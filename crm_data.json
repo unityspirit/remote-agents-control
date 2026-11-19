@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-19T23:41:10.001646Z",
+  "updated_at": "2026-11-19T23:41:16.757096Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_180741",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180741.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_180611",
       "issue": "Auto",
@@ -2784,6 +2764,15 @@
       "source_url": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac",
       "summary": "### Tim AI Director Report | True 1 Team (Issue #88)\n\nBased on the provided link data (`https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac`), the scraped metadata is:\n* **Title:** Сны после маринованной утки\n* **Channel:** История одного вокалиста (`@digriz`)\n* **Content Type:** YouTube Short (humorous / lifestyle snippet related to vivid dreams after heavy late-night meals).\n\nSince direct automated transcription of YouTube Shorts isn't fetched in the raw oembed text, I am providing a direct strategic response tailored to the **True 1 Team** contour and our ongoing creative/operational",
       "updated_at": "2026-11-19T23:41:00.748971Z"
+    },
+    {
+      "id": "kb-bot-89",
+      "issue": 89,
+      "category": "Проект: Traffic",
+      "title": "Изучи что за сеть и как была сделана, что рекламирует?",
+      "source_url": "",
+      "summary": "Привет! На связи **Тим**, Личный ИИ-Директор Global Spirit Group (контур «Traffic»). \n\nПоскольку прямая ссылка на видео YouTube (`https://youtube.com/shorts/C8PkQngLV8U`) не была передана через парсер контекста в этот блок выполнения, а внешние ссылки в запросе отсутствуют, я дам экспертный разбор механики таких креативов и сетей с точки зрения арбитража трафика, performance-маркетинга и работы с вирусным контентом (Shorts/Reels/TikTok).\n\n---\n\n### Экспертный разбор: Что за «сеть» и как делаются такие ролики в Traffic\n\nВ экосистеме арбитража и digital-маркетинга подобные короткие видео (`YouTub",
+      "updated_at": "2026-11-19T23:41:08.091148Z"
     }
   ],
   "global_plus_matrix": [
