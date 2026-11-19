@@ -17817,6 +17817,32 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "88": {
+      "id": 88,
+      "gh_issue": 88,
+      "created": "2026-11-19 16:40:52",
+      "handoffs": [
+        {
+          "t": "2026-11-19 16:40:52",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac",
+      "urls": [
+        "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac"
+      ],
+      "project": "True 1 Team",
+      "kind": "link",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-19 16:40:52",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
