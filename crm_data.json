@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-19T12:38:57.459944Z",
+  "updated_at": "2026-11-19T22:50:05.711218Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_180842",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180842.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_180812",
       "issue": "Auto",
@@ -2806,6 +2786,15 @@
       "source_url": "https://www.clodix.ai/",
       "summary": "Изучен Clodix.ai ($39/мес monthly, $27 quarterly, $18 yearly; авто-календарь + SEO/GEO статьи + обложки + CMS). Собран рабочий прототип seo_content_autopilot_engine.py (Content Score 100/100, 0 руб подписок). Готов к упаковке в SaaS $29-$99/мес и DFY $350-$750.",
       "updated_at": "2026-11-19T12:38:23.253604Z"
+    },
+    {
+      "id": "kb-bot-87",
+      "issue": 87,
+      "category": "Проект: Главный Штаб",
+      "title": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
+      "source_url": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #87.\n\nИсходя из извлечённых данных по ссылке `https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm` (канал Kathryn Petrillo), видео озаглавлено: **«China launches advanced open-source AI beating Anthropic and OpenAI»**. \n\n*(Примечание: NotebookLM CLI не использован, так как профиль Google не авторизован — для его активации нужно 1 раз выполнить `nlm login` в терминале ПК. Ниже представлен глубокий экспертный разбор силами аналитики контура Главного Штаба и Памяти Офиса).*\n\n---\n\n### Экспертный анализ: Китайский прорыв в Open-Source ИИ и его влия",
+      "updated_at": "2026-11-19T22:50:01.113466Z"
     }
   ],
   "global_plus_matrix": [
