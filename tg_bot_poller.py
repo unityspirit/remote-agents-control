@@ -120,6 +120,9 @@ def _persist_personal_bot_token_local(login_val, bot_token_val):
     tok = (bot_token_val or "").strip()
     if not nl:
         return
+    prev_tok = PERSONAL_BOT_TOKENS.get(nl, "")
+    if tok == prev_tok:
+        return
     if tok:
         PERSONAL_BOT_TOKENS[nl] = tok
     else:
@@ -129,6 +132,8 @@ def _persist_personal_bot_token_local(login_val, bot_token_val):
         if os.path.exists(CONFIG_FILE):
             with open(CONFIG_FILE, "r", encoding="utf-8") as cf:
                 cfg = json.load(cf)
+        if cfg.get("personal_bot_tokens") == PERSONAL_BOT_TOKENS:
+            return
         cfg["personal_bot_tokens"] = PERSONAL_BOT_TOKENS
         with open(CONFIG_FILE, "w", encoding="utf-8") as cf:
             json.dump(cfg, cf, indent=2, ensure_ascii=False)
