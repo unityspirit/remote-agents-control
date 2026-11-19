@@ -221,13 +221,18 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
         except Exception as exc:
             errors.append(f"issues:{exc}")
 
-        try:
-            b = _fetch_gh_data_file(gtp_repo, "board.json", gtp_tok)
-            if isinstance(b, dict):
-                raw_c = b.get("cards")
-                board_cards = list(raw_c.values()) if isinstance(raw_c, dict) else (raw_c if isinstance(raw_c, list) else [])
-        except Exception as exc:
-            errors.append(f"board:{exc}")
+        local_board = _load_json(Path(r"C:\Users\Vlaslav\Downloads\Входящие_Офис\_system\board.json"), {})
+        if isinstance(local_board, dict) and local_board.get("cards"):
+            raw_lc = local_board.get("cards")
+            board_cards = list(raw_lc.values()) if isinstance(raw_lc, dict) else (raw_lc if isinstance(raw_lc, list) else [])
+        else:
+            try:
+                b = _fetch_gh_data_file(gtp_repo, "board.json", gtp_tok)
+                if isinstance(b, dict):
+                    raw_c = b.get("cards")
+                    board_cards = list(raw_c.values()) if isinstance(raw_c, dict) else (raw_c if isinstance(raw_c, list) else [])
+            except Exception as exc:
+                errors.append(f"board:{exc}")
 
         try:
             t = _fetch_gh_data_file(gtp_repo, "cloud_agents_telemetry.json", gtp_tok)
