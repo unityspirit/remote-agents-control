@@ -4043,7 +4043,8 @@ textarea.task-inline-input {
     })();
 
     function getMainBotToken() {
-        return String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
+        // v34.8 Security: main @unitybusinessbot token removed from public HTML (handled server-side only)
+        return "";
     }
 
     // =========================================================================
@@ -4159,6 +4160,10 @@ textarea.task-inline-input {
             return;
         }
         const token = getMainBotToken();
+        if (!token) {
+            showToast("🔒 Direct browser Telegram push disabled for token security. Use @unitybusinessbot directly.");
+            return;
+        }
         const chatId = 8538272428;
         const msg = "🚨 <b>ДИАГНОСТИКА GITHUB ERROR В ОФИСЕ (v26.1):</b>\n\n" +
             `• <b>Статус:</b> HTTP ${lastGhErrorDiagnostic.status}\n` +
@@ -12156,6 +12161,10 @@ function enterPendingWaitingRoom(userObj) {
 
     async function sendAntigravityTelegramReport() {
         const token = getMainBotToken();
+        if (!token) {
+            showToast("🔒 Direct browser Telegram push disabled for token security. Use @unitybusinessbot directly.");
+            return;
+        }
         const chatId = 8538272428;
         const tel = window.__gsgCloudTelemetry || {};
         const mem = window.__gsgOfficeMemory || {};
@@ -12315,7 +12324,7 @@ function enterPendingWaitingRoom(userObj) {
     
     // === v25.9: OFFICIAL TELEGRAM BOT ENGINE (@unitybusinessbot) ===
     // =========================================================================
-    const TG_BOT_TOKEN = String.fromCharCode(56,53,56,52,48,57,49,53,48,54,58,65,65,70,72,87,88,121,80,117,67,83,45,99,81,110,80,110,80,111,56,72,117,53,72,71,74,109,45,48,101,72,114,68,115,119);
+    const TG_BOT_TOKEN = ""; // v34.8 Security: removed from public HTML; notifications handled server-side
     const TG_BOT_NAME = "unitybusinessbot";
     const OWNER_TG_CHAT_ID = "8538272428"; // Verified owner chat ID for @Unityspiritpartners
 
@@ -12589,11 +12598,13 @@ function enterPendingWaitingRoom(userObj) {
                     "• Код подтверждения: " + resetCode,
                     "Ожидает вашего подтверждения в Сейфе."
                 ].join(String.fromCharCode(10));
-                fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ chat_id: OWNER_TG_CHAT_ID, text: resetMsg })
-                }).catch(() => {});
+                if (TG_BOT_TOKEN && OWNER_TG_CHAT_ID) {
+                    fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ chat_id: OWNER_TG_CHAT_ID, text: resetMsg })
+                    }).catch(() => {});
+                }
             } catch(e) {}
 
             u.pending_reset = {
@@ -16110,6 +16121,7 @@ async function fetchDirectorActionsLogFresh() {
 }
 
 async function sendMainBotInteractiveNotification(textHtml, inlineKeyboard) {
+    if (!TG_BOT_TOKEN || !OWNER_TG_CHAT_ID) return;
     try {
         const payload = {
             chat_id: OWNER_TG_CHAT_ID,
