@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T22:50:05.711218Z",
+  "updated_at": "2026-11-19T22:50:25.508690Z",
   "version": "10.0",
   "knowledge_base": [
     {
@@ -2791,10 +2791,10 @@
       "id": "kb-bot-87",
       "issue": 87,
       "category": "Проект: Главный Штаб",
-      "title": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
+      "title": "Implement this harness to our use — контекст: https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm (https://youtube.com/shorts/PXpujJZ",
       "source_url": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
-      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #87.\n\nИсходя из извлечённых данных по ссылке `https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm` (канал Kathryn Petrillo), видео озаглавлено: **«China launches advanced open-source AI beating Anthropic and OpenAI»**. \n\n*(Примечание: NotebookLM CLI не использован, так как профиль Google не авторизован — для его активации нужно 1 раз выполнить `nlm login` в терминале ПК. Ниже представлен глубокий экспертный разбор силами аналитики контура Главного Штаба и Памяти Офиса).*\n\n---\n\n### Экспертный анализ: Китайский прорыв в Open-Source ИИ и его влия",
-      "updated_at": "2026-11-19T22:50:01.113466Z"
+      "summary": "👑 **Tim here · Global Spirit Group HQ · Task #87**\n\n*(Note: NotebookLM CLI is not authorized yet — please run `nlm login` in Chrome once if deep NLM indexing of this specific video transcript is required. Operating below via Gemini-flash-lite & Office Memory regarding advanced open-source Chinese AI models, DeepSeek architecture harnesses, and local pipelines).*\n\n---\n\n### Implementation Strategy: Integrating Advanced Open-Source Chinese LLMs (DeepSeek/Qwen lineage) into Our Harness Architecture\n\nBased on the context of the video (**\"China launches advanced open-source AI beating Anthropic and ",
+      "updated_at": "2026-11-19T22:50:20.682919Z"
     }
   ],
   "global_plus_matrix": [
