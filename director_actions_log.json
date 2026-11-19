@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795131678805",
+      "ts": "2026-11-19T23:41:18.805465+00:00",
+      "time_local": "16:41:18",
+      "user_login": "true1team",
+      "full_name": "@true1team",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Traffic",
+      "summary": "Исполнен запрос (#89): Изучи что за сеть и как была сделана, что рекламирует?",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795131672317",
       "ts": "2026-11-19T23:41:12.317623+00:00",
       "time_local": "16:41:12",
@@ -275,5 +288,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-19T23:41:12.317623+00:00"
+  "updated_at": "2026-11-19T23:41:18.805465+00:00"
 }
