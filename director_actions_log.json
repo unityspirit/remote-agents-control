@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795128627555",
+      "ts": "2026-11-19T22:50:27.555221+00:00",
+      "time_local": "15:50:27",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_follow_up_step",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#87): Implement this harness to our use — контекст: https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm (https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm)",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795128607978",
       "ts": "2026-11-19T22:50:07.978274+00:00",
       "time_local": "15:50:07",
@@ -249,5 +262,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-19T22:50:07.978274+00:00"
+  "updated_at": "2026-11-19T22:50:27.555221+00:00"
 }
