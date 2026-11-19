@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-19T22:50:25.508690Z",
+  "updated_at": "2026-11-19T23:41:10.001646Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_180812",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180812.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_180741",
       "issue": "Auto",
@@ -2795,6 +2775,15 @@
       "source_url": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
       "summary": "👑 **Tim here · Global Spirit Group HQ · Task #87**\n\n*(Note: NotebookLM CLI is not authorized yet — please run `nlm login` in Chrome once if deep NLM indexing of this specific video transcript is required. Operating below via Gemini-flash-lite & Office Memory regarding advanced open-source Chinese AI models, DeepSeek architecture harnesses, and local pipelines).*\n\n---\n\n### Implementation Strategy: Integrating Advanced Open-Source Chinese LLMs (DeepSeek/Qwen lineage) into Our Harness Architecture\n\nBased on the context of the video (**\"China launches advanced open-source AI beating Anthropic and ",
       "updated_at": "2026-11-19T22:50:20.682919Z"
+    },
+    {
+      "id": "kb-bot-88",
+      "issue": 88,
+      "category": "Проект: True 1 Team",
+      "title": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac",
+      "source_url": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac",
+      "summary": "### Tim AI Director Report | True 1 Team (Issue #88)\n\nBased on the provided link data (`https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac`), the scraped metadata is:\n* **Title:** Сны после маринованной утки\n* **Channel:** История одного вокалиста (`@digriz`)\n* **Content Type:** YouTube Short (humorous / lifestyle snippet related to vivid dreams after heavy late-night meals).\n\nSince direct automated transcription of YouTube Shorts isn't fetched in the raw oembed text, I am providing a direct strategic response tailored to the **True 1 Team** contour and our ongoing creative/operational",
+      "updated_at": "2026-11-19T23:41:00.748971Z"
     }
   ],
   "global_plus_matrix": [
