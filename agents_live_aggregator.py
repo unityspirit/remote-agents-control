@@ -268,6 +268,12 @@ def build_live_snapshot(include_remote: bool = True) -> dict[str, Any]:
         except Exception as exc:
             errors.append(f"registry:{exc}")
 
+    if not board_cards:
+        local_board = _load_json(Path(r"C:\Users\Vlaslav\Downloads\Входящие_Офис\_system\board.json"), {})
+        if isinstance(local_board, dict):
+            raw_lc = local_board.get("cards")
+            board_cards = list(raw_lc.values()) if isinstance(raw_lc, dict) else (raw_lc if isinstance(raw_lc, list) else [])
+
     # Build unified task list (SEO Queue + Open/Active GitHub Issues + Actionable Board Cards)
     unified_tasks: list[dict[str, Any]] = []
     seen_task_keys: set[str] = set()
