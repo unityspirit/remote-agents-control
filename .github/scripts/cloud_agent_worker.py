@@ -930,14 +930,16 @@ def handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id):
         "bot_access_registry.json",
         default_val=lambda: {"mode": "request_only", "owner_chat_id": str(owner_chat_id), "approved": {}, "pending": {}, "banned": {}, "cloud_tg_offset": 0},
     )
-    offset = int(access.get("cloud_tg_offset") or 0)
+    hb_offset = int((hb or {}).get("tg_offset") or 0)
+    offset = max(int(access.get("cloud_tg_offset") or 0), hb_offset)
     res = call_telegram(bot_token, "getUpdates", {"offset": offset, "timeout": 1})
     if not res or not res.get("ok"):
-        return {"polled": True, "updates": 0, "reason": "tg_empty_or_busy"}
+        return {"polled": True, "updates": 0, "reason": "tg_empty_or_busy", "created_issues": []}
 
     updates = res.get("result") or []
     dirty = False
     handled = 0
+    created_issues = []
 
     for item in updates:
         offset = max(offset, int(item.get("update_id", 0)) + 1)
@@ -976,10 +978,10 @@ def handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id):
                 call_telegram(bot_token, "answerCallbackQuery", {"callback_query_id": cq_id, "text": "⏳ Вход в бот только по одобрению @unityspiritpartners.", "show_alert": True})
                 continue
 
-        if msg and "text" in msg:
+        if msg and (msg.get("text") or msg.get("caption")):
             c_id = str(msg["chat"]["id"])
             from_u = msg.get("from", {})
-            txt = msg["text"].strip()
+            txt = str(msg.get("text") or msg.get("caption") or "").strip()
             is_owner = str(c_id) == str(owner_chat_id) or str(from_u.get("id")) == str(owner_chat_id)
             if not is_owner:
                 if c_id in (access.get("banned") or {}):
@@ -1019,20 +1021,56 @@ def handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id):
                     handled += 1
                     continue
                 elif c_id in (access.get("approved") or {}):
-                    call_telegram(bot_token, "sendMessage", {
-                        "chat_id": c_id,
-                        "text": "✅ Вы авторизованы в @unitybusinessbot. Облачный режим 24/7 принял сообщение.",
-                    })
+                    uname = from_u.get("username") or c_id
+                    try:
+                        iss = gh_request(f"/repos/{repo}/issues", gh_token, method="POST", body={
+                            "title": f"CMD: TIM: [Тим] {txt[:100]} | PROJ: Входящие_Офис",
+                            "body": f"Отправлено @{uname} через @unitybusinessbot (Облако 24/7):\n\n{txt}\n\n<!-- CLOUD_TG_INGEST -->",
+                        })
+                        inum = iss.get("number")
+                        if inum:
+                            created_issues.append(inum)
+                        call_telegram(bot_token, "sendMessage", {
+                            "chat_id": c_id,
+                            "text": f"☁️ <b>Облако 24/7 приняло сообщение!</b> Задача <b>#{inum or '?'}</b> создана и сохранена в Офис.",
+                            "parse_mode": "HTML",
+                        })
+                    except Exception:
+                        call_telegram(bot_token, "sendMessage", {
+                            "chat_id": c_id,
+                            "text": "✅ Вы авторизованы в @unitybusinessbot. Облачный режим 24/7 принял сообщение.",
+                        })
                     handled += 1
             elif is_owner and txt.startswith("/status"):
-                call_telegram(bot_token, "sendMessage", {"chat_id": owner_chat_id, "text": "☁️ <b>24/7 Облачные агенты активны!</b> Ноутбук сейчас офлайн — команды и одобрения работают через облако.", "parse_mode": "HTML"})
+                call_telegram(bot_token, "sendMessage", {"chat_id": owner_chat_id, "text": "☁️ <b>24/7 Облачные агенты активны!</b> Ноутбук сейчас офлайн — все команды, ссылки и задачи автоматически сохраняются в Офис через облако.", "parse_mode": "HTML"})
+                handled += 1
+            elif is_owner and txt:
+                try:
+                    iss = gh_request(f"/repos/{repo}/issues", gh_token, method="POST", body={
+                        "title": f"CMD: TIM: [Тим] {txt[:105]} | PROJ: Главный Штаб",
+                        "body": f"Отправлено @unityspiritpartners через @unitybusinessbot (Облако 24/7 при офлайн-ПК):\n\n{txt}\n\n<!-- NLU_GOAL: {txt[:200]} -->\n<!-- CLOUD_TG_INGEST -->",
+                    })
+                    inum = iss.get("number")
+                    if inum:
+                        created_issues.append(inum)
+                    call_telegram(bot_token, "sendMessage", {
+                        "chat_id": owner_chat_id,
+                        "text": (
+                            f"☁️ <b>Облако 24/7 приняло ваш запрос!</b>\n"
+                            f"• Задача <b>#{inum or '?'}</b> создана и сохранена в Офис (ноутбук сейчас офлайн/перезагружается).\n"
+                            f"• Запускаю разбор — ответ придёт сюда автоматически."
+                        ),
+                        "parse_mode": "HTML",
+                    })
+                except Exception as exc:
+                    print(f"[Cloud TG create issue err] {exc}", flush=True)
                 handled += 1
 
     if dirty:
         access["cloud_tg_offset"] = offset
         write_data_json(repo, gh_token, "bot_access_registry.json", access, f"Cloud 24/7 bot gate sync [v{OFFICE_VERSION}]", sha=sha)
 
-    return {"polled": True, "updates": len(updates), "handled": handled}
+    return {"polled": True, "updates": len(updates), "handled": handled, "created_issues": created_issues}
 
 
 def sync_cloud_status_registries(repo, gh_token, mem, prov_info, telemetry, local_daemon_online):
@@ -1175,8 +1213,17 @@ def main():
     executed_tasks = []
     study_result = None
 
-    # 1. Handle immediate issue / issue_comment / targeted workflow_dispatch
+    # 1. Offline Telegram Bot polling fallback FIRST (so any offline owner/member messages become Issues and execute in this exact cycle!)
+    tg_poll_status = {"polled": False, "created_issues": []}
+    try:
+        tg_poll_status = handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id)
+    except Exception as exc:
+        print(f"[TG offline fallback error] {exc}", flush=True)
+
+    # 1b. Handle immediate issue / issue_comment / targeted workflow_dispatch / offline-created TG issues
     target_issue_nums = []
+    for cinum in (tg_poll_status.get("created_issues") or []):
+        target_issue_nums.append((int(cinum), "cloud_tg_ingest"))
     trigger_comment_body = str((event_payload.get("comment") or {}).get("body") or "")
     has_explicit_directive = any(k in trigger_comment_body.lower() for k in ("/ceo", "/critic", "/viral", "/strategy", "/expert"))
     if event_name in ("issues", "issue_comment") and event_payload.get("issue"):
@@ -1251,12 +1298,58 @@ def main():
         except Exception as exc:
             print(f"[Study cycle error] {exc}", flush=True)
 
-    # 4. Offline Telegram Bot Gate polling fallback
-    tg_poll_status = {"polled": False}
-    try:
-        tg_poll_status = handle_offline_telegram_fallback(repo, gh_token, bot_token, owner_chat_id)
-    except Exception as exc:
-        print(f"[TG offline fallback error] {exc}", flush=True)
+    # 4. Sync cloud-executed tasks into data/board.json and data/crm_data.json so Web Office & CRM stay 100% synced even when laptop is off
+    if executed_tasks:
+        try:
+            bd, bd_sha = fetch_data_json(repo, gh_token, "board.json", default_val=lambda: {"version": 1, "cards": {}})
+            if isinstance(bd, dict):
+                cards_m = bd.setdefault("cards", {})
+                now_s = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+                for t_ex in executed_tasks:
+                    sid = str(t_ex["issue"])
+                    tkey = sid if (sid not in cards_m or str((cards_m.get(sid) or {}).get("gh_issue") or "") == sid) else f"gh-{sid}"
+                    cards_m[tkey] = {
+                        "id": int(t_ex["issue"]) if tkey == sid else tkey,
+                        "gh_issue": int(t_ex["issue"]),
+                        "created": now_s,
+                        "updated": now_s,
+                        "handoffs": [{"t": now_s, "from": "cloud_agent_24_7", "to": "gatekeeper", "note": "Выполнено Облаком 24/7"}],
+                        "title": str(t_ex.get("title") or f"Issue #{sid}")[:200],
+                        "project": "Главный Штаб",
+                        "kind": "command",
+                        "urls": extract_urls(t_ex.get("title") or ""),
+                        "owner": "gatekeeper",
+                        "status": "done",
+                        "next": {"who": "done", "what": "Ответ сохранён Облаком 24/7 в GitHub Issue и crm_data.json"},
+                    }
+                write_data_json(repo, gh_token, "board.json", bd, f"Cloud 24/7 board sync cycle #{mem['cycle_count']}", sha=bd_sha)
+        except Exception as exc:
+            print(f"[Cloud board sync warn] {exc}", flush=True)
+        try:
+            crm, crm_sha = fetch_data_json(repo, gh_token, "crm_data.json", default_val=lambda: {"version": OFFICE_VERSION, "knowledge_base": []})
+            if isinstance(crm, dict):
+                kbs = crm.setdefault("knowledge_base", [])
+                for t_ex in executed_tasks:
+                    kbid = f"kb-bot-{t_ex['issue']}"
+                    ent = {
+                        "id": kbid,
+                        "issue": t_ex["issue"],
+                        "category": "Проект: Главный Штаб (Облако 24/7)",
+                        "title": str(t_ex.get("title") or "")[:140],
+                        "source_url": (extract_urls(t_ex.get("title") or "") or [""])[0],
+                        "summary": str(t_ex.get("preview") or "")[:600],
+                        "updated_at": utc_now_iso(),
+                    }
+                    ix = next((i for i, x in enumerate(kbs) if isinstance(x, dict) and x.get("id") == kbid), None)
+                    if ix is not None:
+                        kbs[ix] = ent
+                    else:
+                        kbs.append(ent)
+                crm["knowledge_base"] = kbs[-150:]
+                crm["updated_at"] = utc_now_iso()
+                write_data_json(repo, gh_token, "crm_data.json", crm, f"Cloud 24/7 CRM KB sync cycle #{mem['cycle_count']}", sha=crm_sha)
+        except Exception as exc:
+            print(f"[Cloud CRM sync warn] {exc}", flush=True)
 
     # 5. Persist Office Memory + Cloud Telemetry + Work Report + Legacy Sync
     try:
