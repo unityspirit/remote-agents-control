@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-19T23:40:50.719554Z",
+  "updated_at": "2026-11-19T23:40:53.146744Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -311,6 +311,13 @@
       "project": "True 1 Team",
       "issue": 88,
       "summary": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac: ### Tim AI Director Report | True 1 Team (Issue #88)\n\nBased on the provided link data (`https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac`), the scraped metadata is:\n* **Title:** Сны после маринованной утки\n* **Channel:** История одного вокалиста (`@digriz`)\n* **Content "
+    },
+    {
+      "id": "fact-dir-v343-iss89",
+      "ts": "2026-11-19T23:40:49.253941Z",
+      "project": "Traffic",
+      "issue": 89,
+      "summary": "Изучи что за сеть и как была сделана, что рекламирует?: Привет! На связи **Тим**, Личный ИИ-Директор Global Spirit Group (контур «Traffic»). \n\nПоскольку прямая ссылка на видео YouTube (`https://youtube.com/shorts/C8PkQngLV8U`) не была передана через парсер контекста в этот блок выполнения, а внешние ссылки в запросе отсутствуют, я дам"
     }
   ],
   "projects": {
