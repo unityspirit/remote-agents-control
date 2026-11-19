@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-18T16:17:08.515708Z",
+  "updated_at": "2026-11-19T12:38:57.459944Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_180923",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180923.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_180842",
       "issue": "Auto",
@@ -2817,6 +2797,15 @@
       "source_url": "https://youtu.be/I-lJCF2HPSA?is=78ZDOQJpolH1nkL9",
       "summary": "Tim here. Reporting for Global Spirit Group, HQ.\n\n### 1. Analysis of the Video (I-lJCF2HPSA)\nThe video \"Anthropic только что УНИЧТОЖИЛ причину ПОЛЬЗОВАТЬСЯ Claude\" discusses the shift in the LLM landscape where open-weights models (like DeepSeek) are rapidly closing the gap with proprietary models (Claude/GPT-4o). The core takeaway is the **democratization of high-level reasoning capabilities**, which directly supports our strategy to move away from vendor lock-in and toward self-hosted/API-agnostic infrastructure.\n\n### 2. DeepSeek + Harness Integration (Expertise)\nPer your previous tasks (#84",
       "updated_at": "2026-11-18T16:17:03.082176Z"
+    },
+    {
+      "id": "kb-bot-86",
+      "issue": 86,
+      "category": "Проект: 12 IT Продуктов (Короче Капитан)",
+      "title": "Clodix.ai — Разбор ($18-$39/мес) + Свой бесплатный SEO/GEO-автопилот и SaaS на продажу",
+      "source_url": "https://www.clodix.ai/",
+      "summary": "Изучен Clodix.ai ($39/мес monthly, $27 quarterly, $18 yearly; авто-календарь + SEO/GEO статьи + обложки + CMS). Собран рабочий прототип seo_content_autopilot_engine.py (Content Score 100/100, 0 руб подписок). Готов к упаковке в SaaS $29-$99/мес и DFY $350-$750.",
+      "updated_at": "2026-11-19T12:38:23.253604Z"
     }
   ],
   "global_plus_matrix": [
