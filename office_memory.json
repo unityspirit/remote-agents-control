@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-19T22:50:10.532361Z",
+  "updated_at": "2026-11-19T23:40:50.719554Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -304,6 +304,13 @@
       "project": "Главный Штаб",
       "issue": 87,
       "summary": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm: Здравия! Тим на связи. Главный Штаб, Задача #87.\n\nИсходя из извлечённых данных по ссылке `https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm` (канал Kathryn Petrillo), видео озаглавлено: **«China launches advanced open-source AI beating Anthropic and OpenAI»**. \n\n*(Примеч"
+    },
+    {
+      "id": "fact-dir-v343-iss88",
+      "ts": "2026-11-19T23:40:42.174021Z",
+      "project": "True 1 Team",
+      "issue": 88,
+      "summary": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac: ### Tim AI Director Report | True 1 Team (Issue #88)\n\nBased on the provided link data (`https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac`), the scraped metadata is:\n* **Title:** Сны после маринованной утки\n* **Channel:** История одного вокалиста (`@digriz`)\n* **Content "
     }
   ],
   "projects": {
