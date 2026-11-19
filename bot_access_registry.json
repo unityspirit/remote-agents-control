@@ -1,18 +1,20 @@
 {
   "mode": "request_only",
   "owner_chat_id": "8538272428",
-  "approved": {},
-  "pending": {
+  "approved": {
     "1662528725": {
       "chat_id": "1662528725",
       "username": "true1team",
       "first_name": "True 1",
       "last_text": "/start",
-      "requested_at": "2026-11-18T10:54:33.394352+00:00",
+      "requested_at": "2026-11-18T10:54:30.859831+00:00",
       "last_seen_at": "2026-11-18T10:54:33.394352+00:00",
-      "last_notified_ts": 1794999270.0169246
+      "last_notified_ts": 1794999270.0169246,
+      "approved_by": "@unityspiritpartners",
+      "approved_at": "2026-11-19T21:33:45.545995+00:00"
     }
   },
+  "pending": {},
   "banned": {},
   "cloud_tg_offset": 129582616
 }
