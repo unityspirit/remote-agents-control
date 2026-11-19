@@ -26,9 +26,37 @@ import hashlib
 import secrets
 import string
 
-sys.stdout.reconfigure(encoding="utf-8")
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Safe stdio setup: under pythonw.exe (Windows Task Scheduler / Startup), sys.stdout and sys.stderr are None!
+def _configure_safe_stdio():
+    log_dir = os.path.join(BASE_DIR, "data")
+    log_path = os.path.join(log_dir, "tg_poller_service.log")
+    if sys.stdout is None or sys.stderr is None or "--log-file" in sys.argv:
+        try:
+            os.makedirs(log_dir, exist_ok=True)
+            if os.path.exists(log_path) and os.path.getsize(log_path) > 5 * 1024 * 1024:
+                try:
+                    os.replace(log_path, log_path + ".prev")
+                except Exception:
+                    pass
+            lf = open(log_path, "a", encoding="utf-8", buffering=1)
+            if sys.stdout is None or "--log-file" in sys.argv:
+                sys.stdout = lf
+            if sys.stderr is None or "--log-file" in sys.argv:
+                sys.stderr = lf
+        except Exception:
+            pass
+    else:
+        for stream in (sys.stdout, sys.stderr):
+            if hasattr(stream, "reconfigure"):
+                try:
+                    stream.reconfigure(encoding="utf-8", errors="replace")
+                except Exception:
+                    pass
+
+_configure_safe_stdio()
+
 CONFIG_FILE = os.path.join(BASE_DIR, ".tg_daemon_config.json")
 OFFSET_FILE = os.path.join(BASE_DIR, ".tg_bot_offset.txt")
 USER_BOT_OFFSETS_FILE = os.path.join(BASE_DIR, ".tg_user_bots_offsets.json")
@@ -1645,8 +1673,9 @@ def touch_local_heartbeat_if_due(force=False):
     hb_payload = {
         "ts": now,
         "iso": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "version": "34.3",
-        "status": "online"
+        "version": "34.7",
+        "status": "online",
+        "tg_offset": get_persisted_offset(),
     }
     def _write_hb(obj):
         obj.clear()
