@@ -455,10 +455,11 @@ def try_nlm_research(question, urls=None, topic=""):
     if not st.get("authenticated"):
         return {"used": False, "status": st}
     prof = (st.get("profiles") or ["default"])[0]
+    no_window = getattr(subprocess, "CREATE_NO_WINDOW", 0x08000000) if os.name == "nt" else 0
     try:
         list_res = subprocess.run(
             [st["exe"], "notebook", "list", "--profile", prof, "--json"],
-            capture_output=True, text=True, timeout=18, stdin=subprocess.DEVNULL
+            capture_output=True, text=True, timeout=18, stdin=subprocess.DEVNULL, creationflags=no_window
         )
         if list_res.returncode != 0:
             return {"used": False, "status": {"installed": True, "authenticated": False, "reason": (list_res.stderr or list_res.stdout)[:180]}}
@@ -477,7 +478,7 @@ def try_nlm_research(question, urls=None, topic=""):
         if not nb_id:
             cr = subprocess.run(
                 [st["exe"], "notebook", "create", f"GSG Director Research {topic[:30]}".strip(), "--profile", prof, "--json"],
-                capture_output=True, text=True, timeout=20, stdin=subprocess.DEVNULL
+                capture_output=True, text=True, timeout=20, stdin=subprocess.DEVNULL, creationflags=no_window
             )
             try:
                 nb_obj = json.loads(cr.stdout or "{}")
@@ -489,11 +490,11 @@ def try_nlm_research(question, urls=None, topic=""):
         for u in (urls or [])[:2]:
             subprocess.run(
                 [st["exe"], "source", "add", str(nb_id), "--url", str(u), "--profile", prof],
-                capture_output=True, text=True, timeout=20, stdin=subprocess.DEVNULL
+                capture_output=True, text=True, timeout=20, stdin=subprocess.DEVNULL, creationflags=no_window
             )
         q_res = subprocess.run(
             [st["exe"], "notebook", "query", str(nb_id), str(question)[:600], "--profile", prof],
-            capture_output=True, text=True, timeout=45, stdin=subprocess.DEVNULL
+            capture_output=True, text=True, timeout=45, stdin=subprocess.DEVNULL, creationflags=no_window
         )
         ans = (q_res.stdout or "").strip()
         if q_res.returncode == 0 and ans:
