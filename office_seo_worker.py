@@ -210,6 +210,7 @@ def run_claude_seo_script(script_name: str, args: list[str], timeout: int = 45) 
     env["PYTHONUTF8"] = "1"
     env["PYTHONIOENCODING"] = "utf-8"
     cmd = [str(py_exe), "-X", "utf8", str(script_path), *args]
+    no_window = getattr(subprocess, "CREATE_NO_WINDOW", 0x08000000) if os.name == "nt" else 0
     try:
         res = subprocess.run(
             cmd,
@@ -220,6 +221,7 @@ def run_claude_seo_script(script_name: str, args: list[str], timeout: int = 45) 
             text=True,
             encoding="utf-8",
             errors="replace",
+            creationflags=no_window,
             timeout=timeout,
         )
     except subprocess.TimeoutExpired:
@@ -698,11 +700,14 @@ def launch_office_poller_detached() -> None:
         return
     pyw = Path(r"C:\Users\Vlaslav\AppData\Local\Programs\Python\Python312\pythonw.exe")
     exe = str(pyw if pyw.is_file() else _resolve_python_exe())
-    flags = 0x00000008 | 0x00000200 if os.name == "nt" else 0  # DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP
+    flags = (0x00000008 | 0x00000200 | 0x08000000) if os.name == "nt" else 0  # DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP | CREATE_NO_WINDOW
     try:
         subprocess.Popen(
-            [exe, "-X", "utf8", "-u", str(poller_py), "--skip-startup-seo"],
+            [exe, "-X", "utf8", "-u", str(poller_py), "--skip-startup-seo", "--log-file"],
             cwd=str(OFFICE_DIR),
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
             creationflags=flags,
             close_fds=True,
         )
