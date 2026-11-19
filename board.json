@@ -17785,6 +17785,32 @@
         "launch"
       ],
       "ai_solution": "# Разбор `clodix.ai` — Создание бесплатного SEO-автопилота для себя и SaaS на продажу\n\n- **Источник:** `https://www.clodix.ai/` и `https://www.clodix.ai/pricing` (изучено 19.11.2026)\n- **Проект:** `12 IT Продуктов (Короче Капитан)` / `Главный Штаб`\n- **Готовый рабочий прототип:** `C:\\Users\\Vlaslav\\Downloads\\12 IT Продуктов (Короче Капитан)\\seo_content_autopilot_engine.py`\n\n---\n\n## 1. Что именно делает Clodix.ai и как они зарабатывают\n\n**Clodix.ai** — это AI-автопилот SEO- и GEO-контента (*«SEO grind, handled for you»*), который обещает заменить SEO-агентство за `$5,000/мес`:\n1. **Онбординг по URL (2 минуты):** клиент вводит ссылку на свой сайт → система сама изучает бренд, тон голоса (`Tone "
+    },
+    "87": {
+      "id": 87,
+      "gh_issue": 87,
+      "created": "2026-11-19 15:49:52",
+      "handoffs": [
+        {
+          "t": "2026-11-19 15:49:52",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
+      "urls": [
+        "https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm"
+      ],
+      "project": "Главный Штаб",
+      "kind": "link",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-19 15:49:52",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
