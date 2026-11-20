@@ -2904,6 +2904,7 @@ textarea.task-inline-input {
             <button class="icon-btn" style="display:none; font-weight:700;" onclick="openUserProfileMenu()" id="btn-top-user-chip" title="Профиль / GTA-Досье">👤</button>
             <button class="icon-btn" onclick="openUserActivityMonitorModal()" id="btn-top-user-monitor" title="Мониторинг пользователей: кто что делает, задачи, процесс и когда заходили" style="background:linear-gradient(135deg, rgba(139,92,246,0.26), rgba(59,130,246,0.26)); border-color:rgba(167,139,250,0.65); color:#c4b5fd; font-weight:800; cursor:pointer;">👥 <span id="lbl-top-user-monitor">Пользователи & Процессы</span> <span id="top-users-today-badge" style="background:#ec4899; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem; margin-left:3px; font-weight:900;">2 Сегодня</span></button>
             <a href="agents_live/index.html" target="_blank" rel="noopener" class="icon-btn" id="btn-top-agents-live" title="Interactive Live Agent Command Graph, Director Tim orchestration &amp; SEO task queue" style="text-decoration:none; background:linear-gradient(135deg, rgba(16,185,129,0.22), rgba(56,189,248,0.22)); border-color:rgba(16,185,129,0.65); color:#6ee7b7; font-weight:800; cursor:pointer;">🕸️ <span id="lbl-top-agents-live">Agent Graph</span></a>
+            <button class="icon-btn" onclick="openEmailHubModal()" id="btn-top-email-hub" title="Unified Email Hub (3 Gmail accounts: Urgent, Business, Finance &amp; Labels)" style="background:linear-gradient(135deg, rgba(239,68,68,0.22), rgba(245,158,11,0.22)); border-color:rgba(248,113,113,0.65); color:#fca5a5; font-weight:800; cursor:pointer;">📧 <span id="lbl-top-email">Email</span> <span id="top-email-urgent-badge" style="display:none; background:#ef4444; color:#fff; border-radius:999px; padding:1px 6px; font-size:0.68rem; margin-left:2px; font-weight:900;">0</span></button>
             <button class="icon-btn" style="background:rgba(16,185,129,0.16); border-color:rgba(16,185,129,0.5); color:#34d399; font-weight:700;" onclick="openWorkReportTab()" id="btn-top-work-report"  title="Отчёт о проделанной работе агентами и что продолжить в первую очередь">📊 <span id="lbl-top-report">Отчёт работы</span> (<span id="topbar-work-cnt">150</span>)</button>
             <button class="icon-btn alert-pill-btn" onclick="openActionModal()" id="btn-action-needed" title="Alerts & Action Required">🚨 <span id="lbl-top-actions">Действия</span> (<span id="topbar-action-cnt">5</span>)</button>
             <button class="icon-btn" onclick="openNewFolderModal()" title="New Folder">➕ <span id="lbl-top-folder">Folder</span></button>
@@ -2989,6 +2990,7 @@ textarea.task-inline-input {
                         <a href="AI_Skills_And_Macro_Stabilization/index.html" class="icon-btn" style="text-decoration:none; font-size:0.73rem; padding:7px 8px; justify-content:center; background:var(--bg-card); border-color:rgba(245,158,11,0.45); color:var(--text-main); font-weight:700;">📈 30 Навыков</a>
                         <a href="ai_store_builder/index.html?lang=en" class="icon-btn" style="grid-column:span 2; text-decoration:none; font-size:0.75rem; padding:8px 10px; justify-content:center; background:linear-gradient(135deg, rgba(16,185,129,0.22), rgba(56,189,248,0.2)); border-color:rgba(16,185,129,0.55); color:#fff; font-weight:800;">🛍️ Open V3 · AI Shopify & TMA Store Builder ($150 CPA + SaaS)</a>
                         <a href="agents_live/index.html" target="_blank" rel="noopener" class="icon-btn" style="grid-column:span 2; text-decoration:none; font-size:0.75rem; padding:8px 10px; justify-content:center; background:linear-gradient(135deg, rgba(56,189,248,0.22), rgba(168,85,247,0.22)); border-color:rgba(56,189,248,0.55); color:#fff; font-weight:800;">🕸️ Live Agent Graph · Bot → Director Tim → Tasks &amp; SEO 24/7</a>
+                        <button type="button" onclick="openEmailHubModal()" class="icon-btn" style="grid-column:span 2; font-size:0.75rem; padding:8px 10px; justify-content:center; background:linear-gradient(135deg, rgba(239,68,68,0.22), rgba(245,158,11,0.22)); border-color:rgba(248,113,113,0.55); color:#fff; font-weight:800; cursor:pointer;">📧 3×Gmail Email Command Hub · Urgent, Business, Finance &amp; Labels</button>
                     </div>
                 </div>
 
@@ -3878,6 +3880,72 @@ textarea.task-inline-input {
     </div>
 </div>
 
+
+<!-- v34.9: UNIFIED 3x GMAIL EMAIL COMMAND HUB (PRIVACY-SAFE LOCAL TELEMETRY + QUICK LAUNCH) -->
+<div id="email-hub-modal" class="modal-overlay" style="display:none; z-index:24750;" onclick="if(event.target===this) closeEmailHubModal()">
+    <div class="modal-card" style="max-width:860px; max-height:90dvh; display:flex; flex-direction:column; border:1px solid rgba(248,113,113,0.45); box-shadow:0 12px 44px rgba(239,68,68,0.22);">
+        <div class="modal-header" style="border-bottom:1px solid var(--border); padding-bottom:12px;">
+            <div>
+                <h3 style="font-size:1.05rem; font-weight:900; color:#fca5a5; display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0;">
+                    <span>📧 Global Spirit Group Email Hub (3× Gmail)</span>
+                </h3>
+                <div style="font-size:0.75rem; color:var(--text-dim); margin-top:2px;">
+                    Unified 6-Label System (01-Urgent → 06-Newsletters) · Quick Launch for All 3 Accounts · Private Mail Stays Local-Only
+                </div>
+            </div>
+            <div style="display:flex; gap:6px; align-items:center;">
+                <button class="mini-btn" onclick="loadLocalEmailHubData(true)" style="background:rgba(248,113,113,0.18); border:1px solid rgba(248,113,113,0.55); color:#fca5a5; font-weight:800; cursor:pointer;" title="Refresh local email summary">🔄 Refresh</button>
+                <button class="modal-close" onclick="closeEmailHubModal()">✕</button>
+            </div>
+        </div>
+        <div class="modal-body" style="overflow-y:auto; max-height:76dvh; display:flex; flex-direction:column; gap:12px; padding:12px 6px;">
+            <div id="email-hub-status-banner" style="background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.35); border-radius:10px; padding:10px 12px; font-size:0.78rem; color:#cbd5e1;">
+                ⏳ Checking local Email Hub telemetry (127.0.0.1:18799)...
+            </div>
+            <div id="email-hub-kpis" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px;"></div>
+            <div style="background:rgba(15,23,42,0.55); border:1px solid var(--border); border-radius:12px; padding:12px;">
+                <div style="font-size:0.8rem; font-weight:800; color:#e2e8f0; margin-bottom:8px;">📬 Quick Launch: All 3 Connected Gmail Accounts &amp; Labels</div>
+                <div id="email-hub-accounts-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:8px;">
+                    <div style="background:var(--bg-card); border:1px solid rgba(56,189,248,0.35); border-radius:10px; padding:10px;">
+                        <div style="font-weight:800; font-size:0.82rem; color:#7dd3fc;">Account #1 · HQ &amp; Team</div>
+                        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+                            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener" class="mini-btn accent" style="text-decoration:none;">📥 Inbox</a>
+                            <a href="https://mail.google.com/mail/u/0/#label/01-Urgent-Action" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#fca5a5;">🚨 Urgent</a>
+                            <a href="https://mail.google.com/mail/u/0/#label/02-Business-Leads" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#6ee7b7;">💼 Business</a>
+                            <a href="https://mail.google.com/mail/u/0/#label/03-Finance-Billing" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#fcd34d;">💳 Finance</a>
+                        </div>
+                    </div>
+                    <div style="background:var(--bg-card); border:1px solid rgba(16,185,129,0.35); border-radius:10px; padding:10px;">
+                        <div style="font-weight:800; font-size:0.82rem; color:#6ee7b7;">Account #2 · Corporate &amp; GitHub</div>
+                        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+                            <a href="https://mail.google.com/mail/u/1/#inbox" target="_blank" rel="noopener" class="mini-btn accent" style="text-decoration:none;">📥 Inbox</a>
+                            <a href="https://mail.google.com/mail/u/1/#label/01-Urgent-Action" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#fca5a5;">🚨 Urgent</a>
+                            <a href="https://mail.google.com/mail/u/1/#label/02-Business-Leads" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#6ee7b7;">💼 Business</a>
+                            <a href="https://mail.google.com/mail/u/1/#label/04-GitHub-DevOps" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#93c5fd;">⚙️ DevOps</a>
+                        </div>
+                    </div>
+                    <div style="background:var(--bg-card); border:1px solid rgba(168,85,247,0.35); border-radius:10px; padding:10px;">
+                        <div style="font-weight:800; font-size:0.82rem; color:#d8b4fe;">Account #3 · Personal &amp; Media</div>
+                        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+                            <a href="https://mail.google.com/mail/u/2/#inbox" target="_blank" rel="noopener" class="mini-btn accent" style="text-decoration:none;">📥 Inbox</a>
+                            <a href="https://mail.google.com/mail/u/2/#label/01-Urgent-Action" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#fca5a5;">🚨 Urgent</a>
+                            <a href="https://mail.google.com/mail/u/2/#label/02-Business-Leads" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#6ee7b7;">💼 Business</a>
+                            <a href="https://mail.google.com/mail/u/2/#label/06-Newsletters-Promo" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; color:#c4b5fd;">📰 Promo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="email-hub-urgent-box" style="display:none; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.45); border-radius:12px; padding:12px;">
+                <div style="font-size:0.82rem; font-weight:900; color:#fca5a5; margin-bottom:8px;">🚨 Urgent Items Requiring Owner Action (Local Summary)</div>
+                <div id="email-hub-urgent-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+            </div>
+            <div id="email-hub-local-accounts-box" style="display:none; background:rgba(15,23,42,0.55); border:1px solid var(--border); border-radius:12px; padding:12px;">
+                <div style="font-size:0.82rem; font-weight:800; color:#e2e8f0; margin-bottom:8px;">📊 Per-Account Organization Breakdown (Before → After)</div>
+                <div id="email-hub-local-accounts-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- v34.0: GOOGLE ANTIGRAVITY 2.31 ORCHESTRATOR + GEMINI 4 ARGON/CARBON/HYDROGEN + AUTOMATIONS COCKPIT -->
 <div id="antigravity-modal" class="modal-overlay" style="display:none; z-index:24700;" onclick="if(event.target===this) closeAntigravityModal()">
@@ -11366,6 +11434,8 @@ function sendQuickGuestPromptPortal(txt) {
         if (el("lbl-top-actions")) el("lbl-top-actions").innerText = d.btn_actions;
         if (el("lbl-top-folder")) el("lbl-top-folder").innerText = d.btn_folder;
         if (el("lbl-top-ai")) el("lbl-top-ai").innerText = isEn ? "AI Guide" : "ИИ-Гид";
+        if (el("lbl-top-agents-live")) el("lbl-top-agents-live").innerText = isEn ? "Agent Graph" : "Граф Агентов";
+        if (el("lbl-top-email")) el("lbl-top-email").innerText = isEn ? "Email" : "Почта";
         if (el("current-lang-label")) el("current-lang-label").innerText = d.btn_lang;
 
         // Quick Save Banner
@@ -17760,6 +17830,109 @@ async function adminSendMessageToUserBotFromVault(loginVal, msgInpId) {
         };
     }
 })();
+
+// === v34.9: UNIFIED 3x GMAIL EMAIL HUB CONTROLLER (PRIVACY-SAFE LOCAL API) ===
+function openEmailHubModal() {
+    const m = document.getElementById("email-hub-modal");
+    if (m) m.style.display = "flex";
+    loadLocalEmailHubData(false);
+}
+
+function closeEmailHubModal() {
+    const m = document.getElementById("email-hub-modal");
+    if (m) m.style.display = "none";
+}
+
+async function loadLocalEmailHubData(forceToast) {
+    const banner = document.getElementById("email-hub-status-banner");
+    const kpisEl = document.getElementById("email-hub-kpis");
+    const urgBox = document.getElementById("email-hub-urgent-box");
+    const urgList = document.getElementById("email-hub-urgent-list");
+    const accBox = document.getElementById("email-hub-local-accounts-box");
+    const accList = document.getElementById("email-hub-local-accounts-list");
+    const badge = document.getElementById("top-email-urgent-badge");
+    const apiBase = (typeof LOCAL_TRUST_API !== "undefined" && LOCAL_TRUST_API) ? LOCAL_TRUST_API : "http://127.0.0.1:18799";
+
+    try {
+        const res = await fetch(apiBase + "/api/email-hub?t=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const payload = await res.json();
+        const data = payload && payload.data;
+        if (!data) {
+            if (banner) banner.innerHTML = "ℹ️ Local Office API connected, waiting for first email triage run (<code>gmail_office_organizer.py</code>).";
+            return;
+        }
+        const tot = data.totals || {};
+        const urgentItems = Array.isArray(data.verified_urgent_highlights) ? data.verified_urgent_highlights : [];
+        const activeUrgent = urgentItems.filter(x => String(x.severity || "").toUpperCase() !== "RESOLVED");
+        if (badge && activeUrgent.length > 0) {
+            badge.innerText = String(activeUrgent.length);
+            badge.style.display = "inline-block";
+        }
+        if (banner) {
+            banner.style.background = "rgba(16,185,129,0.14)";
+            banner.style.borderColor = "rgba(16,185,129,0.45)";
+            banner.innerHTML = "✅ <b>Local Private Summary Connected</b> · Last organized: <code>" + escapeHtml(data.generated_local || data.generated_at || "—") + "</code> · Deleted: <b>0</b> (bulk noise safely archived under labels).";
+        }
+        if (kpisEl) {
+            kpisEl.innerHTML =
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px;"><div style="font-size:0.68rem;color:var(--text-dim);">INBOX (BEFORE → AFTER)</div><div style="font-size:1.05rem;font-weight:900;color:#6ee7b7;margin-top:2px;">' + Number(tot.before_inbox_messages || 0) + ' → ' + Number(tot.after_inbox_messages || 0) + '</div></div>' +
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px;"><div style="font-size:0.68rem;color:var(--text-dim);">ARCHIVED INTO LABELS</div><div style="font-size:1.05rem;font-weight:900;color:#93c5fd;margin-top:2px;">' + Number(tot.archived_noise_total || 0) + '</div></div>' +
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px;"><div style="font-size:0.68rem;color:var(--text-dim);">URGENT (01-URGENT)</div><div style="font-size:1.05rem;font-weight:900;color:#fca5a5;margin-top:2px;">' + Number(tot.urgent_total || 0) + '</div></div>' +
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px;"><div style="font-size:0.68rem;color:var(--text-dim);">BUSINESS + FINANCE</div><div style="font-size:1.05rem;font-weight:900;color:#fcd34d;margin-top:2px;">' + Number(tot.business_total || 0) + ' + ' + Number(tot.finance_total || 0) + '</div></div>';
+        }
+        if (urgBox && urgList && urgentItems.length > 0) {
+            urgBox.style.display = "block";
+            urgList.innerHTML = urgentItems.map(item => {
+                const sev = String(item.severity || "INFO").toUpperCase();
+                const sevColor = sev === "CRITICAL" ? "#ef4444" : (sev === "HIGH" ? "#f59e0b" : (sev === "RESOLVED" ? "#10b981" : "#38bdf8"));
+                return '<div style="background:var(--bg-card);border:1px solid ' + sevColor + '66;border-radius:9px;padding:9px 11px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">' +
+                    '<div style="flex:1;min-width:220px;">' +
+                        '<div style="font-size:0.78rem;font-weight:900;color:#f8fafc;"><span style="background:' + sevColor + ';color:#090d16;border-radius:5px;padding:1px 6px;font-size:0.66rem;margin-right:6px;">' + escapeHtml(sev) + '</span>' + escapeHtml(item.title || "") + '</div>' +
+                        '<div style="font-size:0.73rem;color:#cbd5e1;margin-top:4px;">' + escapeHtml(item.detail || "") + '</div>' +
+                        '<div style="font-size:0.68rem;color:var(--text-dim);margin-top:3px;">Account: <code>' + escapeHtml(item.account || "") + '</code></div>' +
+                    '</div>' +
+                    (item.gmail_url ? ('<a href="' + escapeHtml(item.gmail_url) + '" target="_blank" rel="noopener" class="mini-btn accent" style="text-decoration:none;white-space:nowrap;">Open in Gmail ↗</a>') : '') +
+                '</div>';
+            }).join("");
+        }
+        const accs = Array.isArray(data.accounts) ? data.accounts : [];
+        if (accBox && accList && accs.length > 0) {
+            accBox.style.display = "block";
+            accList.innerHTML = accs.map(a => {
+                const b = a.before || {};
+                const af = a.after || {};
+                const lt = a.label_totals || {};
+                const uIdx = Number(a.u_index || 0);
+                return '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px;">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">' +
+                        '<div><b style="color:#f8fafc;font-size:0.84rem;">' + escapeHtml(a.email || "") + '</b> <span style="font-size:0.72rem;color:var(--text-dim);">· ' + escapeHtml(a.role || "") + '</span></div>' +
+                        '<a href="https://mail.google.com/mail/u/' + uIdx + '/#inbox" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none;">Open Inbox ↗</a>' +
+                    '</div>' +
+                    '<div style="font-size:0.74rem;color:#cbd5e1;margin-top:6px;">Inbox: <b>' + Number(b.inbox_messages || 0) + ' → ' + Number(af.inbox_messages || 0) + '</b> · Archived to labels: <b>' + Number(a.archived_noise_count || 0) + '</b></div>' +
+                    '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:0.7rem;">' +
+                        '<span style="background:rgba(239,68,68,0.2);color:#fca5a5;padding:2px 7px;border-radius:6px;">🚨 Urgent: ' + Number((lt["01-Urgent-Action"] || {}).messages || 0) + '</span>' +
+                        '<span style="background:rgba(16,185,129,0.2);color:#6ee7b7;padding:2px 7px;border-radius:6px;">💼 Business: ' + Number((lt["02-Business-Leads"] || {}).messages || 0) + '</span>' +
+                        '<span style="background:rgba(245,158,11,0.2);color:#fcd34d;padding:2px 7px;border-radius:6px;">💳 Finance: ' + Number((lt["03-Finance-Billing"] || {}).messages || 0) + '</span>' +
+                        '<span style="background:rgba(59,130,246,0.2);color:#93c5fd;padding:2px 7px;border-radius:6px;">⚙️ DevOps: ' + Number((lt["04-GitHub-DevOps"] || {}).messages || 0) + '</span>' +
+                        '<span style="background:rgba(168,85,247,0.2);color:#d8b4fe;padding:2px 7px;border-radius:6px;">📰 Promo: ' + Number((lt["06-Newsletters-Promo"] || {}).messages || 0) + '</span>' +
+                    '</div>' +
+                '</div>';
+            }).join("");
+        }
+        if (forceToast && typeof showToast === "function") showToast("✅ Email summary refreshed!");
+    } catch (e) {
+        if (banner) {
+            banner.style.background = "rgba(245,158,11,0.12)";
+            banner.style.borderColor = "rgba(245,158,11,0.4)";
+            banner.innerHTML = "🔒 <b>Private Cloud Mode:</b> private email contents are never published to GitHub Pages. Use the buttons above to jump straight into your 3 Gmail accounts &amp; labels — or open the Office on your PC with the local daemon running for live triage counts.";
+        }
+    }
+}
+
+setTimeout(function() {
+    try { loadLocalEmailHubData(false); } catch (e) {}
+}, 2200);
 </script>
 
 </body>
