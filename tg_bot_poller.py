@@ -1445,10 +1445,13 @@ def send_hq_home_menu(chat_id, from_user=None):
         ],
         [
             {"text": "🔎 SEO-Автопилот (/seo)", "callback_data": "cmd:seo"},
-            {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
+            {"text": "📈 Тренды дохода (/trends)", "callback_data": "cmd:trends"},
         ],
         [
-            {"text": "🏢 Главный Офис (v34.6)", "url": OFFICE_URL},
+            {"text": "⚛️ Antigravity 2.31", "callback_data": "cmd:antigravity"},
+            {"text": "🏢 Главный Офис (v34.7)", "url": OFFICE_URL},
+        ],
+        [
             {"text": "🕸️ Граф Агентов (Live)", "url": "https://globalteampartners.github.io/remote-agents-control/agents_live/"},
         ],
     ])
@@ -1876,6 +1879,15 @@ def handle_hq_callback(cq):
     elif data == "cmd:seo":
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔎 Запускаю Claude SEO-аудит..."})
         _trigger_seo_from_tg(c_id, "")
+    elif data == "cmd:trends":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "📈 Загружаю Money Trend Radar..."})
+        _trigger_trends_from_tg(c_id, "")
+    elif data == "cmd:trends_refresh":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "🔄 Запускаю свежий скан трендов..."})
+        _trigger_trends_from_tg(c_id, "refresh")
+    elif data == "cmd:article_alberta":
+        call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": "✍️ Генерирую статью для Alberta Hub..."})
+        _trigger_article_from_tg(c_id, "https://unityspirit.github.io/alberta-hub/")
     elif data.startswith("store_quick:"):
         niche_Pick = data.split("store_quick:", 1)[1].strip()
         call_tg("answerCallbackQuery", {"callback_query_id": cq_id, "text": f"🛍️ Собираю магазин: {niche_Pick[:25]}..."})
@@ -2415,6 +2427,127 @@ def _trigger_seo_from_tg(chat_id, arg_text=""):
     threading.Thread(target=_worker, daemon=True).start()
 
 
+def _trigger_trends_from_tg(chat_id, arg_text=""):
+    import threading
+    import office_trends_bridge
+
+    clean = str(arg_text or "").strip()
+    low = clean.lower()
+    kb_trends = {"inline_keyboard": [
+        [{"text": "🔄 Обновить скан трендов (Live)", "callback_data": "cmd:trends_refresh"}],
+        [{"text": "🔎 SEO-Автопилот (/seo)", "callback_data": "cmd:seo"}, {"text": "⬅️ Главное меню", "callback_data": "cmd:home"}],
+    ]}
+    if not clean:
+        call_tg("sendMessage", {
+            "chat_id": chat_id,
+            "text": office_trends_bridge.format_briefing_for_telegram(),
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+            "reply_markup": kb_trends,
+        })
+        return
+
+    label = clean if low not in ("refresh", "now", "scan", "обновить") else "все 5 источников"
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": f"📈 <b>Запускаю живой Money Trend Radar ({_esc_h(label)})...</b>\n<i>Сканирую Meta/Ad Library, RemoteOK/Hiring, Dev.to, Hacker News и Google Trends (~45 сек)...</i>",
+        "parse_mode": "HTML",
+    })
+
+    def _worker():
+        try:
+            res = office_trends_bridge.run_fresh_trend_scan(niche=clean)
+            if res.get("ok"):
+                call_tg("sendMessage", {
+                    "chat_id": chat_id,
+                    "text": office_trends_bridge.format_briefing_for_telegram(),
+                    "parse_mode": "HTML",
+                    "disable_web_page_preview": True,
+                    "reply_markup": kb_trends,
+                })
+            else:
+                call_tg("sendMessage", {
+                    "chat_id": chat_id,
+                    "text": f"⚠️ Money Trend Radar: <code>{_esc_h(str(res.get('error') or res.get('stderr_tail') or 'ошибка'))[:300]}</code>\n\n{office_trends_bridge.format_briefing_for_telegram(2800)}",
+                    "parse_mode": "HTML",
+                    "disable_web_page_preview": True,
+                    "reply_markup": kb_trends,
+                })
+        except Exception as _tr_err:
+            log_throttled_err("Telegram Trends trigger", _tr_err)
+
+    threading.Thread(target=_worker, daemon=True).start()
+
+
+def _trigger_article_from_tg(chat_id, arg_text=""):
+    import re
+    import threading
+
+    clean = str(arg_text or "").strip()
+    urls = [u.rstrip(".,;:!?)]}»«\"'<>") for u in re.findall(r"https?://[^\s<>'\"«»]+", clean)]
+    target_url = urls[0] if urls else (clean if "." in clean and " " not in clean else "")
+    if not target_url:
+        call_tg("sendMessage", {
+            "chat_id": chat_id,
+            "text": (
+                "✍️ <b>CLODIX $0/MO SEO ARTICLE &amp; LEAD-MAGNET GENERATOR</b>\n\n"
+                "Отправьте URL любого сайта (нашего или клиента), чтобы за ~20 сек собрать 30-дневный SEO+GEO контент-план, статью 95–100/100 и обложку SVG:\n\n"
+                "• <code>/article https://unityspiritpartners.com/</code>\n"
+                "• <code>/article https://unityspirit.github.io/alberta-hub/</code>\n"
+                "• <code>/article https://client-site.com</code>"
+            ),
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": [
+                [{"text": "✍️ Статья для Alberta Hub", "callback_data": "cmd:article_alberta"}],
+                [{"text": "🔎 SEO-Автопилот (/seo)", "callback_data": "cmd:seo"}, {"text": "⬅️ Главное меню", "callback_data": "cmd:home"}],
+            ]},
+        })
+        return
+
+    if not target_url.startswith(("http://", "https://")):
+        target_url = "https://" + target_url
+
+    call_tg("sendMessage", {
+        "chat_id": chat_id,
+        "text": f"✍️ <b>Генерирую 30-дневный SEO+GEO календарь и статью #1 для</b> <code>{_esc_h(target_url)}</code>...\n<i>Движок Clodix $0/mo (Gemini → Ollama → Structured)... ~20 сек.</i>",
+        "parse_mode": "HTML",
+    })
+
+    def _worker():
+        try:
+            seo_eng_dir = os.path.join(os.path.dirname(BASE_DIR), "12 IT Продуктов (Короче Капитан)")
+            if os.path.isdir(seo_eng_dir) and seo_eng_dir not in sys.path:
+                sys.path.insert(0, seo_eng_dir)
+            import seo_content_autopilot_engine as scae
+            res = scae.run_autopilot_for_site(target_url)
+            art = res.get("article_1") or {}
+            msg_out = (
+                f"✅ <b>SEO+GEO ПАКЕТ ГОТОВ ({_esc_h(str(res.get('brand') or target_url))})</b>\n\n"
+                f"• <b>Контент-план:</b> {res.get('calendar_days', 30)} дней\n"
+                f"• <b>Статья #1:</b> {_esc_h(str(art.get('title') or ''))}\n"
+                f"• <b>SEO Content Score:</b> <b>{art.get('content_score', '?')}/100</b> (движок: <code>{_esc_h(str(art.get('engine_used') or ''))}</code>)\n"
+                f"• <b>Папка на ПК:</b> <code>{_esc_h(str(res.get('output_dir') or ''))}</code>"
+            )
+            call_tg("sendMessage", {
+                "chat_id": chat_id,
+                "text": msg_out,
+                "parse_mode": "HTML",
+                "reply_markup": {"inline_keyboard": [[{"text": "⬅️ Главное меню", "callback_data": "cmd:home"}]]},
+            })
+            html_p = art.get("html_path")
+            if html_p and os.path.isfile(html_p):
+                call_tg_send_document(chat_id, html_p, caption=f"✍️ SEO Article ({art.get('content_score', '?')}/100) — {art.get('slug', '')}")
+        except Exception as _art_err:
+            log_throttled_err("Telegram Article trigger", _art_err)
+            call_tg("sendMessage", {
+                "chat_id": chat_id,
+                "text": f"⚠️ Ошибка генерации статьи для <code>{_esc_h(target_url)}</code>: <code>{_esc_h(str(_art_err))[:240]}</code>",
+                "parse_mode": "HTML",
+            })
+
+    threading.Thread(target=_worker, daemon=True).start()
+
+
 def handle_hq_text(msg):
     raw_text = (msg.get("text") or msg.get("caption") or "").strip()
     c_id = str(msg["chat"]["id"])
@@ -2558,6 +2691,12 @@ def handle_hq_text(msg):
     elif text.startswith("/seo"):
         seo_arg = text.split(None, 1)[1].strip() if len(text.split(None, 1)) > 1 else ""
         _trigger_seo_from_tg(c_id, seo_arg)
+    elif text.startswith("/trends"):
+        tr_arg = text.split(None, 1)[1].strip() if len(text.split(None, 1)) > 1 else ""
+        _trigger_trends_from_tg(c_id, tr_arg)
+    elif text.startswith("/article") or text.startswith("/clodix"):
+        art_arg = text.split(None, 1)[1].strip() if len(text.split(None, 1)) > 1 else ""
+        _trigger_article_from_tg(c_id, art_arg)
     elif text.startswith("/bots"):
         if not is_owner:
             call_tg("sendMessage", {"chat_id": c_id, "text": "⛔ Раздел управления ботами команды доступен только Главному Штабу. Для смены своего пароля нажмите /passwords."})
@@ -2737,6 +2876,27 @@ def run_loop(single_run=False, skip_startup_seo=False):
                     ).start()
                 except Exception as _pseo_err:
                     log_throttled_err("Periodic SEO check", _pseo_err)
+            if not single_run:
+                try:
+                    import office_trends_bridge
+                    if office_trends_bridge.should_run_daily_0930_briefing():
+                        office_trends_bridge.mark_daily_briefing_sent()
+                        def _daily_trends_job():
+                            try:
+                                office_trends_bridge.run_fresh_trend_scan()
+                                if OWNER_TG_CHAT_ID:
+                                    call_tg("sendMessage", {
+                                        "chat_id": OWNER_TG_CHAT_ID,
+                                        "text": office_trends_bridge.format_briefing_for_telegram(),
+                                        "parse_mode": "HTML",
+                                        "disable_web_page_preview": True,
+                                    })
+                            except Exception as _dtr_err:
+                                log_throttled_err("Daily 09:30 Trends job", _dtr_err)
+                        import threading
+                        threading.Thread(target=_daily_trends_job, daemon=True).start()
+                except Exception as _tr_chk_err:
+                    log_throttled_err("Daily Trends check", _tr_chk_err)
             updates = call_tg("getUpdates", {"offset": offset, "timeout": 4}, retries=1, bot_label="main_hq")
             if updates and updates.get("ok"):
                 for item in updates.get("result", []):
