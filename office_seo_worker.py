@@ -192,6 +192,26 @@ def acquire_seo_mutex() -> bool:
     return True
 
 
+def release_seo_mutex() -> None:
+    """Release the SEO worker mutex/lock so subsequent periodic or manual runs in long-lived daemons succeed."""
+    global _SEO_MUTEX_HANDLE
+    if os.name == "nt" and _SEO_MUTEX_HANDLE:
+        try:
+            import ctypes
+
+            ctypes.windll.kernel32.CloseHandle(_SEO_MUTEX_HANDLE)
+        except Exception:
+            pass
+        finally:
+            _SEO_MUTEX_HANDLE = None
+    lock_file = DATA_DIR / ".seo_worker.lock"
+    try:
+        if lock_file.is_file():
+            lock_file.unlink()
+    except OSError:
+        pass
+
+
 def _resolve_python_exe() -> Path:
     if CLAUDE_SEO_VENV_PY.is_file():
         return CLAUDE_SEO_VENV_PY
@@ -860,71 +880,74 @@ def run_seo_cycle(
         _log("Another SEO-FIRST worker is already running; skipping duplicate launch.")
         return {"skipped": True, "reason": "mutex_held"}
 
-    state = _load_json(STATE_FILE, {})
-    last_ts = float(state.get("last_run_epoch") or 0)
-    q = _load_json(QUEUE_FILE, {"tasks": []})
-    pending_count = sum(1 for t in (q.get("tasks") or []) if isinstance(t, dict) and t.get("status") == "pending")
-
-    if not force and not single_url and pending_count == 0 and (time.time() - last_ts) < cooldown_sec:
-        _log(f"Cooldown active ({int(time.time() - last_ts)}s < {cooldown_sec}s) and no urgent pending tasks.")
-        return {"skipped": True, "reason": "cooldown", "last_run_iso": state.get("last_run_iso")}
-
-    _log(f"Starting SEO autopilot cycle (trigger={trigger}, pending={pending_count})...")
-    doctor_res = run_claude_seo_script("runtime.py", ["doctor", "--json"], timeout=15)
-    sm_sync = sync_local_sitemap_and_llms()
-    queued_done = _process_queued_tasks()
-    local_res = audit_local_html_files()
-
-    if single_url:
-        host = urlparse(single_url).netloc or single_url
-        live_res = audit_live_urls(
-            [{"name": host, "url": single_url, "root": f"{urlparse(single_url).scheme}://{host}", "role": "on_demand"}]
-        )
-    else:
-        live_res = audit_live_urls(LIVE_SITE_TARGETS)
-
-    packs = generate_external_remediation_packs(live_res)
-    drift = update_drift_history(local_res, live_res)
-    office_tasks_res = audit_and_process_office_tasks() if not single_url else {"audited_web_tasks": 0}
-    report_path = write_markdown_report(trigger, doctor_res, sm_sync, queued_done, local_res, live_res, packs, drift)
-
-    summary_state = {
-        "last_run_epoch": time.time(),
-        "last_run_iso": _utc_iso(),
-        "trigger": trigger,
-        "claude_seo_ready": bool(doctor_res.get("ready")),
-        "local_avg_score": drift.get("local_avg"),
-        "live_avg_score": drift.get("live_avg"),
-        "report_path": str(report_path),
-        "tasks_audit_report": office_tasks_res.get("report_path") or "",
-        "queued_completed": len(queued_done),
-        "office_web_tasks_audited": office_tasks_res.get("audited_web_tasks", 0),
-        "packs_generated": len(packs),
-        "live_summary": [
-            {"name": r["name"], "url": r["url"], "status_code": r.get("status_code"), "score": r["score"]}
-            for r in live_res
-        ],
-    }
-    _save_json(STATE_FILE, summary_state)
-
     try:
-        import agents_live_aggregator
-        snap = agents_live_aggregator.build_live_snapshot(include_remote=True)
-        agents_live_aggregator.push_live_snapshot_to_github(snap)
-        summary_state["live_graph_synced"] = True
-    except Exception as _gl_err:
-        _log(f"Live graph snapshot sync warn: {_gl_err}")
-        summary_state["live_graph_synced"] = False
+        state = _load_json(STATE_FILE, {})
+        last_ts = float(state.get("last_run_epoch") or 0)
+        q = _load_json(QUEUE_FILE, {"tasks": []})
+        pending_count = sum(1 for t in (q.get("tasks") or []) if isinstance(t, dict) and t.get("status") == "pending")
 
-    tg_sent = False
-    if notify:
-        tg_sent = send_telegram_seo_brief(local_res, live_res, queued_done, report_path, packs, drift)
-    summary_state["telegram_notified"] = tg_sent
-    _log(
-        f"SEO cycle complete: local={drift.get('local_avg')}/100, live={drift.get('live_avg')}/100, "
-        f"tasks_done={len(queued_done)}, tg_sent={tg_sent}"
-    )
-    return summary_state
+        if not force and not single_url and pending_count == 0 and (time.time() - last_ts) < cooldown_sec:
+            _log(f"Cooldown active ({int(time.time() - last_ts)}s < {cooldown_sec}s) and no urgent pending tasks.")
+            return {"skipped": True, "reason": "cooldown", "last_run_iso": state.get("last_run_iso")}
+
+        _log(f"Starting SEO autopilot cycle (trigger={trigger}, pending={pending_count})...")
+        doctor_res = run_claude_seo_script("runtime.py", ["doctor", "--json"], timeout=15)
+        sm_sync = sync_local_sitemap_and_llms()
+        queued_done = _process_queued_tasks()
+        local_res = audit_local_html_files()
+
+        if single_url:
+            host = urlparse(single_url).netloc or single_url
+            live_res = audit_live_urls(
+                [{"name": host, "url": single_url, "root": f"{urlparse(single_url).scheme}://{host}", "role": "on_demand"}]
+            )
+        else:
+            live_res = audit_live_urls(LIVE_SITE_TARGETS)
+
+        packs = generate_external_remediation_packs(live_res)
+        drift = update_drift_history(local_res, live_res)
+        office_tasks_res = audit_and_process_office_tasks() if not single_url else {"audited_web_tasks": 0}
+        report_path = write_markdown_report(trigger, doctor_res, sm_sync, queued_done, local_res, live_res, packs, drift)
+
+        summary_state = {
+            "last_run_epoch": time.time(),
+            "last_run_iso": _utc_iso(),
+            "trigger": trigger,
+            "claude_seo_ready": bool(doctor_res.get("ready")),
+            "local_avg_score": drift.get("local_avg"),
+            "live_avg_score": drift.get("live_avg"),
+            "report_path": str(report_path),
+            "tasks_audit_report": office_tasks_res.get("report_path") or "",
+            "queued_completed": len(queued_done),
+            "office_web_tasks_audited": office_tasks_res.get("audited_web_tasks", 0),
+            "packs_generated": len(packs),
+            "live_summary": [
+                {"name": r["name"], "url": r["url"], "status_code": r.get("status_code"), "score": r["score"]}
+                for r in live_res
+            ],
+        }
+        _save_json(STATE_FILE, summary_state)
+
+        try:
+            import agents_live_aggregator
+            snap = agents_live_aggregator.build_live_snapshot(include_remote=True)
+            agents_live_aggregator.push_live_snapshot_to_github(snap)
+            summary_state["live_graph_synced"] = True
+        except Exception as _gl_err:
+            _log(f"Live graph snapshot sync warn: {_gl_err}")
+            summary_state["live_graph_synced"] = False
+
+        tg_sent = False
+        if notify:
+            tg_sent = send_telegram_seo_brief(local_res, live_res, queued_done, report_path, packs, drift)
+        summary_state["telegram_notified"] = tg_sent
+        _log(
+            f"SEO cycle complete: local={drift.get('local_avg')}/100, live={drift.get('live_avg')}/100, "
+            f"tasks_done={len(queued_done)}, tg_sent={tg_sent}"
+        )
+        return summary_state
+    finally:
+        release_seo_mutex()
 
 
 def format_status_for_telegram() -> str:
