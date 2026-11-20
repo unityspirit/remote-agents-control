@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795204976642",
+      "ts": "2026-11-20T20:02:56.642546+00:00",
+      "time_local": "13:02:56",
+      "user_login": "true1team",
+      "full_name": "@true1team",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Traffic",
+      "summary": "Исполнен запрос (#91): https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795178281741",
       "ts": "2026-11-20T12:38:01.741293+00:00",
       "time_local": "05:38:01",
@@ -314,5 +327,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-20T12:38:01.741293+00:00"
+  "updated_at": "2026-11-20T20:02:56.642546+00:00"
 }
