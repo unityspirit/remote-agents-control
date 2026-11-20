@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-20T19:55:34Z",
+  "updated_at": "2026-11-20T20:02:39.507556Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -333,6 +333,13 @@
       "source": "antigravity_director_tim_sprint",
       "topic": "v34.7 Autonomous Sprint: SEO 98/100, Mutex Fix, /trends, /article Clodix, 15 B2B Drafts",
       "summary": "Fixed office_seo_worker.py Windows mutex leak (release_seo_mutex in try/finally + regression test). Local Office HTML SEO boosted 95.3 -> 98.0/100 (index.html 100/100 live, index_en 99/100 live, agents_live 87 -> 99/100). Wired /trends + daily 09:30 Money Trend Radar & /article <url> Clodix $0/mo generator directly into @unitybusinessbot and Director Tim NLU. Added /api/harness-status and /api/money-trends on 127.0.0.1:18799. Generated 100/100 Clodix SEO packs for unityspiritpartners.com, alberta-hub, and remote-agents-control. Prepared 15 personalized B2B detailing outreach emails strictly in Gmail Drafts (unityspiritteam@gmail.com, 0 sent). Diagnosed globalplus.tech expired Let's Encrypt SSL cert (*.globalplus.tech, IP 37.140.192.174, expired 2026-08-30)."
+    },
+    {
+      "id": "fact-dir-v343-iss91",
+      "ts": "2026-11-20T20:02:31.784522Z",
+      "project": "Traffic",
+      "issue": 91,
+      "summary": "https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==: ### Analysis of the Instagram Reel (Autopolis AI City Simulation)\n\n**Extracted URL Data:**\n*   **Final URL:** `https://www.instagram.com/reel/DdU3ZaFTFC7/`\n*   **Title/Creator:** `massive.manas.exe` (Manas)\n*   **Core Concept:** \"AUTOPOLIS — AI City | AI Cyber City\". A simulation"
     }
   ],
   "projects": {
