@@ -17873,6 +17873,32 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "90": {
+      "id": 90,
+      "gh_issue": 90,
+      "created": "2026-11-20 05:37:43",
+      "handoffs": [
+        {
+          "t": "2026-11-20 05:37:43",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "https://www.instagram.com/p/Df2vZaXE7RH/?img_index=4&cnvx=MTR6NGk1MXc0NTllZw==",
+      "urls": [
+        "https://www.instagram.com/p/Df2vZaXE7RH/?img_index=4&cnvx=MTR6NGk1MXc0NTllZw=="
+      ],
+      "project": "Traffic",
+      "kind": "link",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-20 05:37:43",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
