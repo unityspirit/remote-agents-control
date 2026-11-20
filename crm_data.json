@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-19T23:59:27.673169Z",
+  "updated_at": "2026-11-20T12:37:59.297059Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_180611",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_180611.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_175443",
       "issue": "Auto",
@@ -2773,6 +2753,15 @@
       "source_url": "https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac",
       "summary": "👑 **Ответ Директора «Тим»** · Папка: `Traffic` · Задача `#89`\n\nПривет! На связи **Тим**, Личный ИИ-Директор Global Spirit Group (контур «Traffic»). \n\nПоскольку извлеченные данные по ссылке на YouTube Shorts (`https://youtube.com/shorts/C8PkQngLV8U`) содержат лишь метаданные (`og:title`: «Сны после маринованной утки» канала «История одного вокалиста»), содержимое самого видео парсер развернуть не смог. Тем не менее, **Nereo.io** — это известный в арбитражных и крипто-кругах проект, работающий по модели высокодоходных платформ (часто с элементами матричных структур, стейкинг-хайпов или арбитражн",
       "updated_at": "2026-11-19T23:59:23.164286Z"
+    },
+    {
+      "id": "kb-bot-90",
+      "issue": 90,
+      "category": "Проект: Traffic",
+      "title": "https://www.instagram.com/p/Df2vZaXE7RH/?img_index=4&cnvx=MTR6NGk1MXc0NTllZw==",
+      "source_url": "https://www.instagram.com/p/Df2vZaXE7RH/?img_index=4&cnvx=MTR6NGk1MXc0NTllZw==",
+      "summary": "### Analysis of the Provided Instagram Link\n\nBased on the extracted link data, the URL points to an Instagram post by **Марк Светозаров | Нейросети | ИИ контент-завод** (`ythemark`), published in mid-November. Due to Instagram’s strict scraping protections, the deep post body text and carousel image content (specifically `img_index=4`) are heavily restricted in the raw text excerpt, yielding only basic meta tags (`Марк Светозаров | Нейросети | ИИ контент-завод on Instagram`). \n\nHowever, connecting this to your previous context regarding **Nereo.io** and AI-driven monetization models, let's bre",
+      "updated_at": "2026-11-20T12:37:54.158254Z"
     }
   ],
   "global_plus_matrix": [
