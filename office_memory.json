@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-19T23:59:13.143724Z",
+  "updated_at": "2026-11-20T12:37:41.802017Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -318,6 +318,13 @@
       "project": "Traffic",
       "issue": 89,
       "summary": "Изучи что за сеть и как была сделана, что рекламирует?: Привет! На связи **Тим**, Личный ИИ-Директор Global Spirit Group (контур «Traffic»). \n\nПоскольку прямая ссылка на видео YouTube (`https://youtube.com/shorts/C8PkQngLV8U`) не была передана через парсер контекста в этот блок выполнения, а внешние ссылки в запросе отсутствуют, я дам"
+    },
+    {
+      "id": "fact-dir-v343-iss90",
+      "ts": "2026-11-20T12:37:36.963720Z",
+      "project": "Traffic",
+      "issue": 90,
+      "summary": "https://www.instagram.com/p/Df2vZaXE7RH/?img_index=4&cnvx=MTR6NGk1MXc0NTllZw==: ### Analysis of the Provided Instagram Link\n\nBased on the extracted link data, the URL points to an Instagram post by **Марк Светозаров | Нейросети | ИИ контент-завод** (`ythemark`), published in mid-November. Due to Instagram’s strict scraping protections, the deep post body tex"
     }
   ],
   "projects": {
