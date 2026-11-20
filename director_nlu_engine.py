@@ -869,6 +869,13 @@ def _fetch_office_memory_summary(ctx, project_name=""):
         body = f.get("summary") or f.get("insight") or f.get("topic") or f.get("title") or ""
         if body:
             lines.append(f"- [{label}{iss}]: {str(body)[:260]}")
+    try:
+        import office_trends_bridge
+        tr_snip = office_trends_bridge.get_compact_memory_snippet()
+        if tr_snip:
+            lines.append(tr_snip)
+    except Exception:
+        pass
     return "\n".join(lines)
 
 
@@ -1560,6 +1567,17 @@ def handle_director_text(
         msg = f"📁 <b>Директор «{_esc(dir_name)}»:</b> активная папка переключена на <b>«{_esc(proj)}»</b>.\n\n<i>Теперь все запросы и анализ привязаны к «{_esc(proj)}». Пишите любую задачу!</i>"
         send_tg_smart(ctx, tok, chat_id, msg, reply_markup=reply_markup_fn(proj), bot_label=bot_label, as_markdown=False)
         return True
+
+    if re.search(r"(?:^/trends\b|\bmoney\s*trends?\b|\bfacebook\s*trends?\b|\bdaily\s*trends?\b|тренды\s+(?:дохода|заработка|рынка|дня)|на\s+ч[её]м\s+заработать\s+сегодня)", clean_text, re.IGNORECASE):
+        try:
+            import office_trends_bridge
+            brief = office_trends_bridge.format_briefing_for_telegram()
+            header = f"👑 <b>Директор «{_esc(dir_name)}» · Live Money Trend Radar</b>\n\n"
+            send_tg_smart(ctx, tok, chat_id, header + brief, reply_markup=reply_markup_fn(proj), bot_label=bot_label, as_markdown=False)
+            update_chat_context(bot_key, chat_id, last_answer_preview=(header + brief)[:350])
+            return True
+        except Exception:
+            pass
 
     if re.search(r"(?:^/seo\b|\bseo[- ]?(?:аудит|проверк|анализ|задач|скилл|audit|check|tasks?|autopilot)\b|(?:проверь|запусти|сделай|выполни)\s+seo\b)", clean_text, re.IGNORECASE):
         try:
