@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795281487516",
+      "ts": "2026-11-21T17:18:07.516271+00:00",
+      "time_local": "10:18:07",
+      "user_login": "true1team",
+      "full_name": "@true1team",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Traffic",
+      "summary": "Исполнен запрос (#95): https://univerus.ai/",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795280977669",
       "ts": "2026-11-21T17:09:37.669151+00:00",
       "time_local": "10:09:37",
@@ -366,5 +379,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-21T17:09:37.669151+00:00"
+  "updated_at": "2026-11-21T17:18:07.516271+00:00"
 }
