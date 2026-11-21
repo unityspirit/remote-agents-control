@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-20T20:02:39.507556Z",
+  "updated_at": "2026-11-21T02:02:22.789396Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -340,6 +340,13 @@
       "project": "Traffic",
       "issue": 91,
       "summary": "https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==: ### Analysis of the Instagram Reel (Autopolis AI City Simulation)\n\n**Extracted URL Data:**\n*   **Final URL:** `https://www.instagram.com/reel/DdU3ZaFTFC7/`\n*   **Title/Creator:** `massive.manas.exe` (Manas)\n*   **Core Concept:** \"AUTOPOLIS — AI City | AI Cyber City\". A simulation"
+    },
+    {
+      "id": "fact-dir-v343-iss92",
+      "ts": "2026-11-21T02:02:18.258568Z",
+      "project": "Traffic",
+      "issue": 92,
+      "summary": "https://youtube.com/shorts/PXpujJZ_MWA?is=m1mnsNT_toXtsrHd: ### Analysis of the YouTube Short (`PXpujJZ_MWA`)\n\nBased on the extracted URL metadata:\n* **Final URL:** `https://youtube.com/shorts/PXpujJZ_MWA?is=m1mnsNT_toXtsrHd`\n* **Title:** *China launches advanced open-source AI beating Anthropic and #OpenAI #opensourceAI #AIinnovation*\n* "
     }
   ],
   "projects": {
