@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795292952722",
+      "ts": "2026-11-21T20:29:12.722096+00:00",
+      "time_local": "13:29:12",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_follow_up_step",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#87): Выполни конкретный Шаг #1 и дай готовый результат по запросу: Что для него сегодня было сделано? https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795281487516",
       "ts": "2026-11-21T17:18:07.516271+00:00",
       "time_local": "10:18:07",
@@ -379,5 +392,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-21T17:18:07.516271+00:00"
+  "updated_at": "2026-11-21T20:29:12.722096+00:00"
 }
