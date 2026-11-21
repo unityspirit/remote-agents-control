@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-20T20:02:54.577450Z",
+  "updated_at": "2026-11-21T02:02:45.653043Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_175417",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175417.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_175354",
       "issue": "Auto",
@@ -2751,6 +2731,15 @@
       "source_url": "https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==",
       "summary": "### Analysis of the Instagram Reel (Autopolis AI City Simulation)\n\n**Extracted URL Data:**\n*   **Final URL:** `https://www.instagram.com/reel/DdU3ZaFTFC7/`\n*   **Title/Creator:** `massive.manas.exe` (Manas)\n*   **Core Concept:** \"AUTOPOLIS — AI City | AI Cyber City\". A simulation featuring 50 autonomous AI agents interacting in a virtual city environment (Main Tower for jobs, The Institute for studying/hiring agents like Cinder, Quill, Carillon). The creator highlights that this is an *emergent behavior simulation, not scripted*.\n\n---\n\n### Traffic & Growth Expert Breakdown for Global Spirit Gr",
       "updated_at": "2026-11-20T20:02:49.733616Z"
+    },
+    {
+      "id": "kb-bot-92",
+      "issue": 92,
+      "category": "Проект: Traffic",
+      "title": "https://youtube.com/shorts/PXpujJZ_MWA?is=m1mnsNT_toXtsrHd",
+      "source_url": "https://youtube.com/shorts/PXpujJZ_MWA?is=m1mnsNT_toXtsrHd",
+      "summary": "### Analysis of the YouTube Short (`PXpujJZ_MWA`)\n\nBased on the extracted URL metadata:\n* **Final URL:** `https://youtube.com/shorts/PXpujJZ_MWA?is=m1mnsNT_toXtsrHd`\n* **Title:** *China launches advanced open-source AI beating Anthropic and #OpenAI #opensourceAI #AIinnovation*\n* **Channel:** Kathryn Petrillo (`@kathrynkrypto`)\n* **Core Subject:** The release/breakthrough of an advanced Chinese open-source AI model outperforming Western benchmarks (such as Anthropic/OpenAI equivalents), highlighting the shift in global AI dynamics toward open-weight/open-source supremacy.\n\n---\n\n### Traffic & Me",
+      "updated_at": "2026-11-21T02:02:35.334852Z"
     }
   ],
   "global_plus_matrix": [
