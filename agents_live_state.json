@@ -1,12 +1,12 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-20T19:44:31Z",
+  "generated_at": "2026-11-21T01:47:47Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
   },
   "user_counts": {
-    "vlaslav": 159,
+    "vlaslav": 161,
     "alberta": 16,
     "yura": 2,
     "true1team": 10,
@@ -214,19 +214,19 @@
     "total_skills_installed": 167,
     "seo_agents_installed": 21,
     "local_seo_score": 98.0,
-    "live_seo_score": 82.9,
-    "cloud_cycle": 97,
-    "open_issues": 10,
-    "closed_issues": 20,
-    "board_total_cards": 161,
-    "tasks_in_progress": 14,
+    "live_seo_score": 83.4,
+    "cloud_cycle": 100,
+    "open_issues": 11,
+    "closed_issues": 19,
+    "board_total_cards": 162,
+    "tasks_in_progress": 15,
     "tasks_queued": 1,
     "tasks_attention": 35,
-    "tasks_done": 150
+    "tasks_done": 151
   },
   "seo_health": {
-    "last_run_iso": "2026-11-20T19:44:27Z",
-    "trigger": "post_v34_7_sprint_verify",
+    "last_run_iso": "2026-11-21T01:47:42Z",
+    "trigger": "periodic_6h",
     "domains": [
       {
         "name": "Virtual Office HQ (Primary RU)",
@@ -250,7 +250,7 @@
         "name": "Virtual Office Mirror (UnitySpirit)",
         "url": "https://unityspirit.github.io/remote-agents-control/",
         "status_code": 200,
-        "score": 82
+        "score": 86
       },
       {
         "name": "Alberta Business Hub",
@@ -272,32 +272,6 @@
       }
     ],
     "drift_runs": [
-      {
-        "ts": "2026-11-18T00:31:32Z",
-        "local_avg": 94.9,
-        "live_avg": 73.7,
-        "local_scores": {
-          "index.html": 96,
-          "index_en.html": 95,
-          "ai_store_builder/index.html": 99,
-          "Traffic/index.html": 99,
-          "12_IT_Products/index.html": 98,
-          "AI_Skills_And_Macro_Stabilization/index.html": 94,
-          "globalfilms/index.html": 96,
-          "agents_live/index.html": 83,
-          "Unity_Office_App_Installer.html": 94
-        },
-        "live_scores": {
-          "https://globalteampartners.github.io/remote-agents-control/": 96,
-          "https://globalteampartners.github.io/remote-agents-control/index_en.html": 95,
-          "https://globalteampartners.github.io/remote-agents-control/ai_store_builder/": 99,
-          "https://unityspirit.github.io/remote-agents-control/": 82,
-          "https://unityspirit.github.io/alberta-hub/": 69,
-          "https://globalplus.tech/": 0,
-          "https://unityspiritpartners.com/": 75
-        },
-        "drifts": []
-      },
       {
         "ts": "2026-11-18T01:23:36Z",
         "local_avg": 95.3,
@@ -479,6 +453,32 @@
           "https://unityspiritpartners.com/": 100
         },
         "drifts": []
+      },
+      {
+        "ts": "2026-11-21T01:46:29Z",
+        "local_avg": 98.0,
+        "live_avg": 83.4,
+        "local_scores": {
+          "index.html": 100,
+          "index_en.html": 99,
+          "ai_store_builder/index.html": 99,
+          "Traffic/index.html": 99,
+          "12_IT_Products/index.html": 98,
+          "AI_Skills_And_Macro_Stabilization/index.html": 94,
+          "globalfilms/index.html": 96,
+          "agents_live/index.html": 99,
+          "Unity_Office_App_Installer.html": 98
+        },
+        "live_scores": {
+          "https://globalteampartners.github.io/remote-agents-control/": 100,
+          "https://globalteampartners.github.io/remote-agents-control/index_en.html": 99,
+          "https://globalteampartners.github.io/remote-agents-control/ai_store_builder/": 99,
+          "https://unityspirit.github.io/remote-agents-control/": 86,
+          "https://unityspirit.github.io/alberta-hub/": 100,
+          "https://globalplus.tech/": 0,
+          "https://unityspiritpartners.com/": 100
+        },
+        "drifts": []
       }
     ],
     "skills": [
@@ -567,27 +567,27 @@
   ],
   "agent_task_counts": {
     "agent_seo": {
-      "total": 26,
+      "total": 27,
       "active": 5,
-      "done": 20,
+      "done": 21,
       "attention": 1
     },
     "agent_traffic": {
-      "total": 34,
-      "active": 7,
+      "total": 35,
+      "active": 8,
       "done": 26,
       "attention": 1
     },
     "agent_research": {
-      "total": 121,
+      "total": 122,
       "active": 2,
-      "done": 89,
+      "done": 90,
       "attention": 30
     },
     "agent_store": {
-      "total": 14,
+      "total": 13,
       "active": 1,
-      "done": 12,
+      "done": 11,
       "attention": 1
     },
     "agent_apps": {
@@ -687,16 +687,16 @@
           "seo-dataforseo",
           "seo-drift"
         ],
-        "details": "Запускается ПЕРВЫМ при старте Windows и каждые 6ч. Последний цикл: 2026-11-20T19:44:27Z. Выполняет 47 on-page проверок, GEO/llms.txt, Schema, Sitemap и Drift."
+        "details": "Запускается ПЕРВЫМ при старте Windows и каждые 6ч. Последний цикл: 2026-11-21T01:47:42Z. Выполняет 47 on-page проверок, GEO/llms.txt, Schema, Sitemap и Drift."
       },
       {
         "id": "agent_cloud",
         "label": "Cloud Agents 24/7",
-        "sub": "Цикл #97 · Hydrogen/Argon",
+        "sub": "Цикл #100 · Hydrogen/Argon",
         "tier": 3,
         "kind": "agent",
         "status": "active",
-        "metric": "Цикл #97",
+        "metric": "Цикл #100",
         "skills": [
           "cloud_agent_worker",
           "GitHub Actions",
@@ -728,7 +728,7 @@
         "tier": 3,
         "kind": "agent",
         "status": "working",
-        "metric": "Issues: 10 откр.",
+        "metric": "Issues: 11 откр.",
         "skills": [
           "director_nlu_engine",
           "NotebookLM CLI",
@@ -744,7 +744,7 @@
         "tier": 3,
         "kind": "agent",
         "status": "attention",
-        "metric": "Live avg 82.9/100",
+        "metric": "Live avg 83.4/100",
         "skills": [
           "Traffic Engine",
           "seo-geo",
@@ -771,6 +771,24 @@
       },
       {
         "id": "task_node_0",
+        "label": "GH-91",
+        "sub": "TIM: [Тим] https://www.instagram.com/reel/Dd",
+        "tier": 4,
+        "kind": "task",
+        "status": "in_progress",
+        "metric": "P1",
+        "skills": [
+          "seo-audit",
+          "seo-technical",
+          "cro",
+          "copywriting",
+          "seo-content"
+        ],
+        "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/91",
+        "details": "TIM: [Тим] https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw== | PROJ: Traffic\n\nНавыки: seo-audit, seo-technical, cro, copywriting, seo-content\nРезультат: GitHub Issue #91 · Открыта — в обработке агентов"
+      },
+      {
+        "id": "task_node_1",
         "label": "GH-90",
         "sub": "TIM: [Тим] https://www.instagram.com/p/Df2vZ",
         "tier": 4,
@@ -788,7 +806,7 @@
         "details": "TIM: [Тим] https://www.instagram.com/p/Df2vZaXE7RH/?img_index=4&cnvx=MTR6NGk1MXc0NTllZw== | PROJ: Traffic\n\nНавыки: seo-audit, seo-technical, cro, copywriting, seo-content\nРезультат: GitHub Issue #90 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_1",
+        "id": "task_node_2",
         "label": "GH-89",
         "sub": "TIM: [Тим] Изучи что за сеть и как была сдел",
         "tier": 4,
@@ -805,7 +823,7 @@
         "details": "TIM: [Тим] Изучи что за сеть и как была сделана, что рекламирует? | PROJ: Traffic\n\nНавыки: seo-content, ads, emails, free-tools\nРезультат: GitHub Issue #89 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_2",
+        "id": "task_node_3",
         "label": "GH-88",
         "sub": "TIM: [Тим] https://youtube.com/shorts/C8PkQn",
         "tier": 4,
@@ -823,7 +841,7 @@
         "details": "TIM: [Тим] https://youtube.com/shorts/C8PkQngLV8U?is=RYCn7N3WUiSgnOac | PROJ: True 1 Team\n\nНавыки: seo-audit, seo-technical, cro, copywriting, seo-content\nРезультат: GitHub Issue #88 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_3",
+        "id": "task_node_4",
         "label": "GH-87",
         "sub": "TIM: [Тим] https://youtube.com/shorts/PXpujJ",
         "tier": 4,
@@ -841,7 +859,7 @@
         "details": "TIM: [Тим] https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm | PROJ: Главный Штаб\n\nНавыки: seo-audit, seo-technical, cro, copywriting, seo-content\nРезультат: GitHub Issue #87 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_4",
+        "id": "task_node_5",
         "label": "GH-86",
         "sub": "TIM: [Тим] https://clodix.ai — Разбор + собс",
         "tier": 4,
@@ -859,7 +877,7 @@
         "details": "TIM: [Тим] https://clodix.ai — Разбор + собственный бесплатный SEO-автопилот и SaaS на продажу | PROJ: 12 IT Продуктов (Короче Кап\n\nНавыки: seo-audit, seo-technical, cro, copywriting, semrush-competitor-gap\nРезультат: GitHub Issue #86 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_5",
+        "id": "task_node_6",
         "label": "GH-85",
         "sub": "TIM: [Тим] https://youtu.be/I-lJCF2HPSA?is=7",
         "tier": 4,
@@ -876,7 +894,7 @@
         "details": "TIM: [Тим] https://youtu.be/I-lJCF2HPSA?is=78ZDOQJpolH1nkL9 | PROJ: Главный Штаб\n\nНавыки: seo-audit, seo-technical, cro, copywriting\nРезультат: GitHub Issue #85 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_6",
+        "id": "task_node_7",
         "label": "GH-84",
         "sub": "TIM: [Тим] Как нам применить дипсик для наше",
         "tier": 4,
@@ -893,7 +911,7 @@
         "details": "TIM: [Тим] Как нам применить дипсик для нашей системы подключить харнес найди что ты до этого изучал по дипсику когда я ставил | P\n\nНавыки: seo-plan, cro, deep-research, semrush-keyword-research\nРезультат: GitHub Issue #84 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_7",
+        "id": "task_node_8",
         "label": "GH-83",
         "sub": "TIM: [Тим] https://quasarlab.dev/ | PROJ: Гл",
         "tier": 4,
@@ -910,7 +928,7 @@
         "details": "TIM: [Тим] https://quasarlab.dev/ | PROJ: Главный Штаб\n\nНавыки: seo-audit, seo-technical, cro, copywriting\nРезультат: GitHub Issue #83 · Открыта — в обработке агентов"
       },
       {
-        "id": "task_node_8",
+        "id": "task_node_9",
         "label": "GH-82",
         "sub": "TIM: [Тим] Детально посмотри что делает этот",
         "tier": 4,
@@ -926,24 +944,6 @@
         ],
         "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/82",
         "details": "TIM: [Тим] Детально посмотри что делает этот сайт и что сделанно, какие разработки использует и в чём преимущества | PROJ: Главный\n\nНавыки: seo-audit, seo-technical, cro, copywriting, semrush-competitor-gap\nРезультат: GitHub Issue #82 · Открыта — в обработке агентов"
-      },
-      {
-        "id": "task_node_9",
-        "label": "GH-79",
-        "sub": "TIM: [Тим] https://www.outsource.gov.uz/en?f",
-        "tier": 4,
-        "kind": "task",
-        "status": "in_progress",
-        "metric": "P1",
-        "skills": [
-          "seo-audit",
-          "seo-technical",
-          "cro",
-          "copywriting",
-          "semrush-competitor-gap"
-        ],
-        "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/79",
-        "details": "TIM: [Тим] https://www.outsource.gov.uz/en?fbclid=IwVERTSAVpyANleHRuA2FlbQIxMABwZG9mBXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABH30T3Y | P\n\nНавыки: seo-audit, seo-technical, cro, copywriting, semrush-competitor-gap\nРезультат: GitHub Issue #79 · Открыта — в обработке агентов"
       }
     ],
     "edges": [
@@ -1010,29 +1010,29 @@
       {
         "from": "agent_traffic",
         "to": "task_node_1",
+        "label": "seo-audit",
+        "active": true
+      },
+      {
+        "from": "agent_traffic",
+        "to": "task_node_2",
         "label": "seo-content",
         "active": true
       },
       {
         "from": "agent_research",
-        "to": "task_node_2",
-        "label": "seo-audit",
-        "active": true
-      },
-      {
-        "from": "agent_traffic",
         "to": "task_node_3",
         "label": "seo-audit",
         "active": true
       },
       {
-        "from": "agent_seo",
+        "from": "agent_traffic",
         "to": "task_node_4",
         "label": "seo-audit",
         "active": true
       },
       {
-        "from": "agent_traffic",
+        "from": "agent_seo",
         "to": "task_node_5",
         "label": "seo-audit",
         "active": true
@@ -1040,13 +1040,13 @@
       {
         "from": "agent_traffic",
         "to": "task_node_6",
-        "label": "seo-plan",
+        "label": "seo-audit",
         "active": true
       },
       {
         "from": "agent_traffic",
         "to": "task_node_7",
-        "label": "seo-audit",
+        "label": "seo-plan",
         "active": true
       },
       {
@@ -1056,7 +1056,7 @@
         "active": true
       },
       {
-        "from": "agent_seo",
+        "from": "agent_traffic",
         "to": "task_node_9",
         "label": "seo-audit",
         "active": true
@@ -1065,7 +1065,7 @@
   },
   "tasks": [
     {
-      "id": "seo-auto-1795203763",
+      "id": "seo-auto-1795225544",
       "source": "seo_autopilot",
       "title": "Scheduled startup SEO + GEO drift audit across Office & Brand domains",
       "url": "",
@@ -1081,10 +1081,32 @@
         "seo-sitemap"
       ],
       "result": "",
-      "updated_at": "2026-11-20T19:42:43Z",
+      "updated_at": "2026-11-21T01:45:44Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
+    },
+    {
+      "id": "seo-auto-1795203763",
+      "source": "seo_autopilot",
+      "title": "Scheduled startup SEO + GEO drift audit across Office & Brand domains",
+      "url": "",
+      "project": "SEO-Автопилот (35 скиллов)",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_seo",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-sitemap"
+      ],
+      "result": "Local Office SEO maintenance completed (0 updates)",
+      "updated_at": "2026-11-21T01:45:44Z",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
       "id": "seo-auto-1795176371",
@@ -1345,7 +1367,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1367,7 +1389,7 @@
         "continuous-agent-loop"
       ],
       "result": "Оценка 99/100 · HTTP 200",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1389,7 +1411,7 @@
         "seo-ecommerce"
       ],
       "result": "Оценка 99/100 · HTTP 200",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1397,7 +1419,7 @@
     {
       "id": "domain:Virtual Office Mirror (UnitySpirit)",
       "source": "seo_domain_health",
-      "title": "Virtual Office Mirror (UnitySpirit): SEO 82/100 (HTTP 200)",
+      "title": "Virtual Office Mirror (UnitySpirit): SEO 86/100 (HTTP 200)",
       "url": "https://unityspirit.github.io/remote-agents-control/",
       "project": "Домены & GEO",
       "status": "done",
@@ -1410,8 +1432,8 @@
         "copywriting",
         "continuous-agent-loop"
       ],
-      "result": "Оценка 82/100 · HTTP 200",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "result": "Оценка 86/100 · HTTP 200",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1433,7 +1455,7 @@
         "seo-local"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "alberta",
       "user_label": "💎 Альберта",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -1454,7 +1476,7 @@
         "copywriting"
       ],
       "result": "SSL/HTTPS ошибка — требуется обновление сертификата",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
@@ -1475,10 +1497,33 @@
         "copywriting"
       ],
       "result": "Оценка 100/100 · HTTP 200",
-      "updated_at": "2026-11-20T19:44:27Z",
+      "updated_at": "2026-11-21T01:47:42Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
+    },
+    {
+      "id": "GH-91",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Тим] https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw== | PROJ: Traffic",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/91",
+      "target_url": "https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==",
+      "project": "Traffic",
+      "status": "in_progress",
+      "priority": "P1",
+      "agent_id": "agent_traffic",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-content"
+      ],
+      "result": "GitHub Issue #91 · Открыта — в обработке агентов",
+      "updated_at": "2026-11-20T20:03:01Z",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)",
+      "action_plan_ru": "Агенты применяют [seo-audit, seo-technical, cro] для монетизации, оптимизации воронки и сокращения ручной рутины."
     },
     {
       "id": "GH-90",
@@ -1566,7 +1611,7 @@
         "seo-content"
       ],
       "result": "GitHub Issue #87 · Открыта — в обработке агентов",
-      "updated_at": "2026-11-19T22:50:30Z",
+      "updated_at": "2026-11-21T00:17:52Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Агенты применяют [seo-audit, seo-technical, cro] для монетизации, оптимизации воронки и сокращения ручной рутины."
@@ -1589,7 +1634,7 @@
         "semrush-competitor-gap"
       ],
       "result": "GitHub Issue #86 · Открыта — в обработке агентов",
-      "updated_at": "2026-11-20T19:40:35Z",
+      "updated_at": "2026-11-21T00:17:53Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Автопилот SEO применяет [seo-audit, seo-technical, cro] для роста индексации и органического трафика без бюджета на рекламу."
@@ -1908,29 +1953,6 @@
       ],
       "result": "GitHub Issue #72 · Выполнено Советом ИИ",
       "updated_at": "2026-11-17T21:45:24Z",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
-    },
-    {
-      "id": "GH-71",
-      "source": "telegram_director_issue",
-      "title": "TIM: https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=2405",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/71",
-      "target_url": "https://toonbee.ai/g-special?campaignid=24055309917&adgroupid=201682384747&adid=831011988388&gad_source=2&gad_campaignid=24055309917",
-      "project": "Входящие_Офис",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_store",
-      "skills": [
-        "seo-audit",
-        "seo-technical",
-        "cro",
-        "copywriting",
-        "seo-ecommerce"
-      ],
-      "result": "GitHub Issue #71 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-17T21:46:25Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -5392,14 +5414,36 @@
       "updated_at": "2026-11-20 05:37:43",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)"
+    },
+    {
+      "id": "CARD-91",
+      "source": "office_board",
+      "title": "https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==",
+      "url": "https://www.instagram.com/reel/DdU3ZaFTFC7/?fqnt=MXM0YjdjNW5sMWNpcw==",
+      "project": "Traffic",
+      "status": "done",
+      "priority": "done",
+      "agent_id": "agent_research",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-content"
+      ],
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro).",
+      "result": "Статус на доске: done (owner=gatekeeper)",
+      "updated_at": "2026-11-20 13:02:41",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)"
     }
   ],
   "live_feed": [
     {
-      "ts": "2026-11-20T19:44:27Z",
+      "ts": "2026-11-21T01:47:42Z",
       "actor": "Claude SEO-Автопилот",
       "kind": "seo",
-      "text": "Выполнен цикл (post_v34_7_sprint_verify): локал 98.0/100, домены 82.9/100, задач: 1"
+      "text": "Выполнен цикл (periodic_6h): локал 98.0/100, домены 83.4/100, задач: 1"
     },
     {
       "ts": "2026-11-14T23:32:44.925245+00:00",
