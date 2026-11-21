@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795226587415",
+      "ts": "2026-11-21T02:03:07.415664+00:00",
+      "time_local": "19:03:07",
+      "user_login": "true1team",
+      "full_name": "@true1team",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Traffic",
+      "summary": "Исполнен запрос (#93): Study and let's connect this method",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795226567949",
       "ts": "2026-11-21T02:02:47.949226+00:00",
       "time_local": "19:02:47",
@@ -340,5 +353,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-21T02:02:47.949226+00:00"
+  "updated_at": "2026-11-21T02:03:07.415664+00:00"
 }
