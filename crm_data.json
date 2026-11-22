@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-21T20:29:10.564037Z",
+  "updated_at": "2026-11-22T21:30:18.565684Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_175311",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175311.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_175247",
       "issue": "Auto",
@@ -2729,6 +2709,15 @@
       "source_url": "",
       "summary": "### Analysis & Integration Plan: Connecting the Method to the Traffic Circuit\n\n*Note on link & tools:* The direct scraping payload for this interaction did not return raw contents for `https://youtube.com/shorts/PXpujJZ_MWA` within this specific prompt frame (building on our previous analysis of this short regarding high-retention structural hooks/AI deployment). As for NotebookLM CLI: **please run `nlm login` once on your PC** to enable full automated workspace sync. Below is the structural blueprint from my traffic and media-buying expertise to integrate this specific method into our active ",
       "updated_at": "2026-11-21T02:03:00.576040Z"
+    },
+    {
+      "id": "kb-bot-103",
+      "issue": 103,
+      "category": "Проект: Главный Штаб",
+      "title": "https://www.instagram.com/reel/DcbbTdxyhbs/?knvt=MWN6NjJ0eGY2ZGVnbg==",
+      "source_url": "https://www.instagram.com/reel/DcbbTdxyhbs/?knvt=MWN6NjJ0eGY2ZGVnbg==",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #103.\n\nПо ссылке из Instagram (`lynte.genfarmer`, BoxPhone) мы имеем дело с **аппаратной фермой Android-устройств** (Phone Farm / Cloud Phone / Android Clustering). \n\n### 1. Что удалось извлечь из ссылки\n* **Final URL:** `https://www.instagram.com/reel/DcbbTdxyhbs/`\n* **Title / Description:** *«Managing hundreds of Android devices manually doesn't scale. BoxPhone combines real Android hardware with centralized control, allowing you to operate up to 200 devices from one PC...»*\n* Суть коммерческого продукта «BoxPhone» (или аналогов вроде *Multi-Contro",
+      "updated_at": "2026-11-22T21:30:14.215450Z"
     }
   ],
   "global_plus_matrix": [
