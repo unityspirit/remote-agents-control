@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-22T21:30:01.987128Z",
+  "updated_at": "2026-11-22T21:30:11.351918Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -368,6 +368,13 @@
       "project": "Главный Штаб",
       "issue": 103,
       "summary": "https://www.instagram.com/reel/DcbbTdxyhbs/?knvt=MWN6NjJ0eGY2ZGVnbg==: Здравия! Тим на связи. Главный Штаб, Задача #103.\n\nПо ссылке из Instagram (`lynte.genfarmer`, BoxPhone) мы имеем дело с **аппаратной фермой Android-устройств** (Phone Farm / Cloud Phone / Android Clustering). \n\n### 1. Что удалось извлечь из ссылки\n* **Final URL:** `https://www.in"
+    },
+    {
+      "id": "fact-dir-v343-iss104",
+      "ts": "2026-11-22T21:30:07.181167Z",
+      "project": "Главный Штаб",
+      "issue": 104,
+      "summary": "https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro: Здравия! Тим на связи. Главный Штаб, Задача #104.\n\n*Примечание по инструменту:* Профиль NotebookLM не авторизован (требуется 1 раз выполнить `nlm login` на ПК), поэтому разбор выполнен силами моей архитектуры и Памяти Офиса Global Spirit Group.\n\nИсходя из извлечённых данных по сс"
     }
   ],
   "projects": {
