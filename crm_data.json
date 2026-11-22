@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-22T21:30:29.060527Z",
+  "updated_at": "2026-11-22T21:30:44.600146Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_175220",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "🧠 Автоматический разбор источников для Unity Inc\n\nПроанализированные ссылки: https://www.altahq.com/lp/ai-calling-agent\n\n 📌 Ключевые тезисы и данные со страницы:\n- === ДАННЫЕ ПО ССЫЛКЕ https://www.altahq.com/lp/ai-calling-agent ===\n- Title: AI Sales Calling Agent | Alex by Alta\n- URL Source: https://www.altahq.com/lp/ai-calling-agent\n- ![Image 1: Revisit consent button](https://cdn-cookieyes.com/assets/images/revisi",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175220.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_175132",
       "issue": "Auto",
@@ -2707,6 +2687,15 @@
       "source_url": "https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro",
       "summary": "Здравия! Тим на связи. Главный Штаб, Задача #104.\n\n*Примечание по инструменту:* Профиль NotebookLM не авторизован (требуется 1 раз выполнить `nlm login` на ПК), поэтому разбор выполнен силами моей архитектуры и Памяти Офиса Global Spirit Group.\n\nИсходя из извлечённых данных по ссылке `https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro`, видео озаглавлено: **«4 ПРИЛОЖЕНИЯ НА СЛУЧАЙ БЛЭКАУТА»** (автор: Aleko Sokurashvili). \n\nВ условиях операционной устойчивости Главного Штаба и бизнес-контуров Global Spirit Group тема автономности критически важной инфраструктуры, связи и удержания опера",
       "updated_at": "2026-11-22T21:30:24.356065Z"
+    },
+    {
+      "id": "kb-bot-102",
+      "issue": 102,
+      "category": "Проект: Главный Штаб",
+      "title": "https://www.instagram.com/reel/DfUoq06IRm9/?fqnt=MWZwOWQ4YnFhem13NA==\n\nStudy and tell me how to make this work myself like service butter",
+      "source_url": "https://www.instagram.com/reel/DfUoq06IRm9/?fqnt=MWZwOWQ4YnFhem13NA==",
+      "summary": "Tim here. Reporting for Global Spirit Group, HQ.\n\nRegarding your request on the \"Service Butter\" automation (Ollie Kelliher-Mckinlay’s method):\n\n### 1. The Core Mechanism\nThe \"Butter\" workflow is an **AI-Agentic Automation Stack** designed to replace physical \"phone farms\" (multiple devices used for engagement/lead gen) with cloud-based headless browsers and LLM-orchestrated interactions.\n\nTo build this yourself, you need to replicate these three layers:\n*   **The Orchestrator (The Brain):** Instead of manual clicking, you use an automation framework (like **Playwright** or **Puppeteer**) cont",
+      "updated_at": "2026-11-22T21:30:39.886138Z"
     }
   ],
   "global_plus_matrix": [
