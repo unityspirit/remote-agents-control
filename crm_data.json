@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-22T21:30:18.565684Z",
+  "updated_at": "2026-11-22T21:30:29.060527Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_175247",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи\n\n| Показатель | Оценка | Комментарий |\n|------------|--------|-------------|\n| ROI (первый год) | ≈ + 150 % | При условии, что система заменит 20 % человеческих продажников (с 3 млн $ / год на зарплату) и при среднем доходе $ 12 млн / год от B2B‑дилов, экономия ≈ $ 2,4 млн / год. Инвестиции в разработку + запуск ≈ $ 1,6 млн → чистый доход ≈ $ 0,8 млн. |\n| Unit‑экономика | CPL ≈ $ 35",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175247.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_175220",
       "issue": "Auto",
@@ -2718,6 +2698,15 @@
       "source_url": "https://www.instagram.com/reel/DcbbTdxyhbs/?knvt=MWN6NjJ0eGY2ZGVnbg==",
       "summary": "Здравия! Тим на связи. Главный Штаб, Задача #103.\n\nПо ссылке из Instagram (`lynte.genfarmer`, BoxPhone) мы имеем дело с **аппаратной фермой Android-устройств** (Phone Farm / Cloud Phone / Android Clustering). \n\n### 1. Что удалось извлечь из ссылки\n* **Final URL:** `https://www.instagram.com/reel/DcbbTdxyhbs/`\n* **Title / Description:** *«Managing hundreds of Android devices manually doesn't scale. BoxPhone combines real Android hardware with centralized control, allowing you to operate up to 200 devices from one PC...»*\n* Суть коммерческого продукта «BoxPhone» (или аналогов вроде *Multi-Contro",
       "updated_at": "2026-11-22T21:30:14.215450Z"
+    },
+    {
+      "id": "kb-bot-104",
+      "issue": 104,
+      "category": "Проект: Главный Штаб",
+      "title": "https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro",
+      "source_url": "https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #104.\n\n*Примечание по инструменту:* Профиль NotebookLM не авторизован (требуется 1 раз выполнить `nlm login` на ПК), поэтому разбор выполнен силами моей архитектуры и Памяти Офиса Global Spirit Group.\n\nИсходя из извлечённых данных по ссылке `https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro`, видео озаглавлено: **«4 ПРИЛОЖЕНИЯ НА СЛУЧАЙ БЛЭКАУТА»** (автор: Aleko Sokurashvili). \n\nВ условиях операционной устойчивости Главного Штаба и бизнес-контуров Global Spirit Group тема автономности критически важной инфраструктуры, связи и удержания опера",
+      "updated_at": "2026-11-22T21:30:24.356065Z"
     }
   ],
   "global_plus_matrix": [
