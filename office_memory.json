@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-22T21:30:11.351918Z",
+  "updated_at": "2026-11-22T21:30:15.196634Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -375,6 +375,13 @@
       "project": "Главный Штаб",
       "issue": 104,
       "summary": "https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro: Здравия! Тим на связи. Главный Штаб, Задача #104.\n\n*Примечание по инструменту:* Профиль NotebookLM не авторизован (требуется 1 раз выполнить `nlm login` на ПК), поэтому разбор выполнен силами моей архитектуры и Памяти Офиса Global Spirit Group.\n\nИсходя из извлечённых данных по сс"
+    },
+    {
+      "id": "fact-dir-v343-iss102",
+      "ts": "2026-11-22T21:29:59.229784Z",
+      "project": "Главный Штаб",
+      "issue": 102,
+      "summary": "https://www.instagram.com/reel/DfUoq06IRm9/?fqnt=MWZwOWQ4YnFhem13NA==\n\nStudy and tell me how to make this work myself like service butter: Tim here. Reporting for Global Spirit Group, HQ.\n\nRegarding your request on the \"Service Butter\" automation (Ollie Kelliher-Mckinlay’s method):\n\n### 1. The Core Mechanism\nThe \"Butter\" workflow is an **AI-Agentic Automation Stack** designed to replace physical \"phone farms\" (multi"
     }
   ],
   "projects": {
