@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-21T20:28:56.462168Z",
+  "updated_at": "2026-11-22T21:30:01.987128Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -361,6 +361,13 @@
       "project": "Traffic",
       "issue": 95,
       "summary": "https://univerus.ai/: *Note: NotebookLM CLI profile is not authorized (requires `nlm login` once on the PC), so I am delivering this analysis leveraging Gemini core expertise, Office Memory, and current digital growth frameworks.*\n\n***\n\n### 1. Analysis of `https://univerus.ai/` (Direct Access Status)\n"
+    },
+    {
+      "id": "fact-dir-v343-iss103",
+      "ts": "2026-11-22T21:29:55.104524Z",
+      "project": "Главный Штаб",
+      "issue": 103,
+      "summary": "https://www.instagram.com/reel/DcbbTdxyhbs/?knvt=MWN6NjJ0eGY2ZGVnbg==: Здравия! Тим на связи. Главный Штаб, Задача #103.\n\nПо ссылке из Instagram (`lynte.genfarmer`, BoxPhone) мы имеем дело с **аппаратной фермой Android-устройств** (Phone Farm / Cloud Phone / Android Clustering). \n\n### 1. Что удалось извлечь из ссылки\n* **Final URL:** `https://www.in"
     }
   ],
   "projects": {
