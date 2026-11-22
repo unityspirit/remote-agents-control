@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795383031344",
+      "ts": "2026-11-22T21:30:31.344564+00:00",
+      "time_local": "14:30:31",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#104): https://youtube.com/shorts/HuCODFehKRg?is=8HE1MoXLlXBZ2Wro",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795383020986",
       "ts": "2026-11-22T21:30:20.986277+00:00",
       "time_local": "14:30:20",
@@ -405,5 +418,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-22T21:30:20.986277+00:00"
+  "updated_at": "2026-11-22T21:30:31.344564+00:00"
 }
