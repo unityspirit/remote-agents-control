@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-23T20:17:15.255323Z",
+  "updated_at": "2026-11-23T23:10:03.884475Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_175017",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175017.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_174955",
       "issue": "Auto",
@@ -2675,6 +2655,15 @@
       "summary": "**Устройство по фото (#107):** Xiaomi 14T (`2406APNFAG`, Global) · **Android 16** (`BP2A.250605.031.A3`, патч `2026-08-01`) · **HyperOS `3.0.303.0.WNEMIXM.C09`** · **MediaTek Dimensity 8300-Ultra** (`arm64-v8a`, 64-bit) · RAM `12+4 GB`.\n\n**1. Совместимость APK AmneziaVPN `5.1.1.10`:** 100% подходит официальный **`AmneziaVPN_5.1.1.10_android11+_arm64-v8a.apk`** (SHA-256 проверен, сохранён в `Unity Inc/AmneziaVPN_Setup_For_Beeline/`). Сборки `android9-10` и `armeabi-v7a` не нужны.\n**2. Протокол для мобильного Билайна:** строго **XRay REALITY** (TCP), не AmneziaWG (UDP режется ТСПУ Билайна). На ПК обновить клиент до `5.1.1.10`, на **Server 4 (Main US)** выставить `SNI = www.microsoft.com`, `Fingerprint = firefox` и перевыпустить ключ XRay; на **Server 3 (Backup FI)** заменить старый `www.googletagmanager.com` → `www.nvidia.com`/`www.samsung.com`, `Fingerprint = firefox`.\n**3. Обязательные настройки Xiaomi 14T (HyperOS 3.0 + Android 16):**\n- Android 16 Sideload: если заблокирует права -> *Настройки → Приложения → AmneziaVPN → ⋮ → Разрешить ограниченные настройки*.\n- HyperOS батарея (главная причина обрывов VPN): *Контроль активности → Нет ограничений*, *Автозапуск в фоне → ВКЛ*, закрепить **замком 🔒** в недавних.\n- *Настройки → Подключение и общий доступ → VPN → AmneziaVPN ⚙️ → Постоянный VPN (Always-on) = ВКЛ*.\n- *Частный DNS (Private DNS) → Отключён (Off)*, чтобы DNS шёл внутри туннеля без конфликта с Билайн/MediaTek.\n- При зависании на 4G/5G VoLTE переключить протокол APN Билайна с `IPv4/IPv6` на `IPv4`.\n- Импортировать `amnezia_ru_exclude.json` (71 RU-домен) в Site Split Tunneling + исключить Мой Билайн, банки, Госуслуги, Ozon/WB/Яндекс в App Split Tunneling.",
       "updated_at": "2026-11-23T20:17:09.760947Z",
       "date": "23.11.2026"
+    },
+    {
+      "id": "kb-bot-108",
+      "issue": 108,
+      "category": "Проект: Главный Штаб",
+      "title": "https://www.facebook.com/share/p/1ChJaWNsh1/",
+      "source_url": "https://www.facebook.com/share/p/1ChJaWNsh1/",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #108.\n\n### Анализ ссылки\nСсылка `https://www.facebook.com/share/p/1ChJaWNsh1/` является **стандартной короткой ссылкой Facebook для репоста конкретного поста**. \n\n**Важное уточнение:**\n1. **Технический статус:** При переходе по ссылке сервер Facebook выполняет редирект на страницу авторизации (`facebook.com/login`). Это происходит, так как контент поста ограничен настройками приватности автора или требует активной сессии пользователя.\n2. **Связь с предыдущим контекстом (Sfchronicle):** В нашей Памяти Офиса (Issue #105) фигурировала статья *SF Chronic",
+      "updated_at": "2026-11-23T23:09:57.862273Z"
     }
   ],
   "global_plus_matrix": [
