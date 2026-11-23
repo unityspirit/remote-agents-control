@@ -18085,6 +18085,30 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "gh-107": {
+      "id": "gh-107",
+      "gh_issue": 107,
+      "created": "2026-11-23 13:11:52",
+      "handoffs": [
+        {
+          "t": "2026-11-23 13:11:52",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "This is my version of my phone find a folder Unity Inc project in folder amneziavpn setup for beeline",
+      "urls": [],
+      "project": "Главный Штаб",
+      "kind": "command",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-23 13:11:52",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
