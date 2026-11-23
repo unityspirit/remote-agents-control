@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795464761005",
+      "ts": "2026-11-23T20:12:41.003545+00:00",
+      "time_local": "13:12:41",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_task_create",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#107): This is my version of my phone find a folder Unity Inc project in folder amneziavpn setup for beeline",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795446252878",
       "ts": "2026-11-23T15:04:12.877523+00:00",
       "time_local": "08:04:12",
@@ -444,5 +457,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-23T15:04:12.877523+00:00"
+  "updated_at": "2026-11-23T20:12:41.003545+00:00"
 }
