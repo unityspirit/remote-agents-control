@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795470072962",
+      "ts": "2026-11-23T21:41:12.962Z",
+      "time_local": "13:41:12",
+      "user_login": "mshlomon",
+      "full_name": "@MShlomoN (BMWecker)",
+      "bot_username": "Личный бот",
+      "director_name": "Аршак",
+      "action_type": "config",
+      "project": "Главный Штаб",
+      "summary": "Обновлён Личный Директор «Аршак» (без токена)",
+      "source": "virtual_office"
+    },
+    {
       "id": "dirlog-1795465037998",
       "ts": "2026-11-23T20:17:17.998243+00:00",
       "time_local": "13:17:17",
@@ -90,19 +103,6 @@
       "action_type": "nlu_follow_up_step",
       "project": "Главный Штаб",
       "summary": "Исполнен запрос (#87): Выполни конкретный Шаг #1 и дай готовый результат по запросу: Что для него сегодня было сделано? https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
-      "source": "telegram_bot"
-    },
-    {
-      "id": "dirlog-1795281487516",
-      "ts": "2026-11-21T17:18:07.516271+00:00",
-      "time_local": "10:18:07",
-      "user_login": "true1team",
-      "full_name": "@true1team",
-      "bot_username": "Личный бот",
-      "director_name": "Тим",
-      "action_type": "nlu_notebooklm_research",
-      "project": "Traffic",
-      "summary": "Исполнен запрос (#95): https://univerus.ai/",
       "source": "telegram_bot"
     },
     {
@@ -470,5 +470,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-23T20:17:17.998243+00:00"
+  "updated_at": "2026-11-23T21:41:12.962Z"
 }
