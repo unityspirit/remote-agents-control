@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-23T15:03:53.831167Z",
+  "updated_at": "2026-11-23T20:11:48.753729Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -389,6 +389,13 @@
       "project": "Главный Штаб",
       "issue": 105,
       "summary": "The richest person in San Francisco doesn’t work at Anthropic https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php: **Понятая цель:** The richest person in San Francisco doesn’t work at Anthropic https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php\n\n### Извлечённые данные по ссылкам:\n\n• `https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-2254182"
+    },
+    {
+      "id": "fact-dir-v343-iss107",
+      "ts": "2026-11-23T20:11:44.083701Z",
+      "project": "Главный Штаб",
+      "issue": 107,
+      "summary": "This is my version of my phone find a folder Unity Inc project in folder amneziavpn setup for beeline: **Понятая цель:** This is my version of my phone find a folder Unity Inc project in folder amneziavpn setup for beeline\n\n### Релевантные знания из Памяти Офиса:\n- [Главный Штаб #87]: https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm: Здравия! Тим на связи. Главный Штаб, "
     }
   ],
   "projects": {
