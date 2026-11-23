@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 21:12:29",
+  "updated": "2026-11-23 13:33:00",
   "projects_count": 61,
   "ledgers": {
     "12 IT Продуктов (Короче Капитан)": {
@@ -2452,20 +2452,20 @@
       "project": "Unity Inc",
       "folder": "Unity Inc",
       "state": "active",
-      "last_change": "2026-11-17",
+      "last_change": "2026-11-23",
       "lead_agent": "Enterprise Solutions Architect",
       "priority_score": 92,
       "revenue_potential": "Enterprise AI-аудиты и внедрение автоматизации: чеки $1,000 – $3,500 (50–250 тыс. ₽)",
       "why_first": "Упакована 3-шаговая модель JoinTECH (40-мин аудит -> 6 узлов ИИ-автоматизации -> внедрение под ключ) + регулярная фактура из @sysadminfuture для экспертного канала Global Plus.",
       "human_action": "Провести 40-минутный стратегический звонок с ЛПР заказчика по чек-листу аудита.",
       "counts": {
-        "completed_works": 100,
+        "completed_works": 101,
         "open_tasks": 0,
         "tim_reports": 3,
-        "saved_photos": 0,
-        "files_on_disk": 24,
-        "size_kb": 283323,
-        "ai_analyses": 96,
+        "saved_photos": 1,
+        "files_on_disk": 30,
+        "size_kb": 472606,
+        "ai_analyses": 97,
         "research_notes": 1
       },
       "continue_first": {
@@ -2495,8 +2495,29 @@
         }
       ],
       "research_topic": "внедрение AI агентов для малого и среднего бизнеса кейсы окупаемости B2B аудит 2026",
-      "media_items": [],
+      "media_items": [
+        {
+          "filename": "photo_107_xiaomi14t_android16.jpg",
+          "local_path": "C:\\Users\\Vlaslav\\Downloads\\Unity Inc\\_office\\media\\photo_107_xiaomi14t_android16.jpg",
+          "url": "https://raw.githubusercontent.com/unityspirit/remote-agents-control/data/uploads/unity_inc/photo_107_xiaomi14t_android16.jpg",
+          "issue": 107,
+          "project": "Unity Inc",
+          "timestamp": "2026-11-23 13:33:00",
+          "caption": "📷 Xiaomi 14T (2406APNFAG) · Android 16 / HyperOS 3.0 — AmneziaVPN Setup For Beeline",
+          "ocr_text": "Model: 2406APNFAG (Xiaomi 14T Global)\nCPU: MediaTek Dimensity 8300-Ultra Octa-core Max 3.35GHz (64-bit arm64-v8a)\nRAM: 12.0+4.0 GB | Storage: 99.6GB free / 264GB total (8GB ext)\nOS version: Xiaomi HyperOS 3.0.303.0.WNEMIXM.C09\nAndroid version: Android 16 (BP2A.250605.031.A3 | Security update: 2026-08-01)\nBaseband: MOLY.NR17.R1.MP3.TC8.PR3.SP.V2.P35\nKernel: 6.1.138-android14-11-g44bda9e8f6e9-ab13792638"
+        }
+      ],
       "work_items": [
+        {
+          "id": "issue-107-amneziavpn",
+          "date": "23.11.2026 13:33",
+          "project": "Unity Inc",
+          "type": "ai_study",
+          "agent": "🧠 ИИ-Аналитик папки + Директор Тим",
+          "title": "📷 Xiaomi 14T (Android 16 / HyperOS 3.0) — AmneziaVPN Setup For Beeline (#107)",
+          "summary": "Подтверждён APK 5.1.1.10 android11+ arm64-v8a (Dimensity 8300-Ultra), XRay REALITY (Fingerprint=firefox), Split Tunneling (71 RU-домен) и чек-лист HyperOS 3.0/Android 16.",
+          "status": "done"
+        },
         {
           "id": "hist-13",
           "date": "23.10.2026 18:20",
