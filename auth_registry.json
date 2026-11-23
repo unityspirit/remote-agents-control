@@ -350,12 +350,13 @@
       "pending_reset": null,
       "owner_action_stamp": "v34.9-mshlomon-full-access",
       "personal_bot": {
-        "director_name": "Тим",
+        "director_name": "Аршак",
         "bot_token": "",
+        "bot_username": "",
         "chat_id": "386965305",
+        "control_status": "active",
         "auto_send_reports": true,
-        "updated_at": "2026-11-23T17:41:25.540264+00:00",
-        "control_status": "active"
+        "updated_at": "2026-11-23T21:41:07.671Z"
       }
     }
   ],
