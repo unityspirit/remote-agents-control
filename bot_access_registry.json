@@ -14,7 +14,17 @@
       "approved_at": "2026-11-19T21:33:45.545995+00:00"
     }
   },
-  "pending": {},
+  "pending": {
+    "386965305": {
+      "chat_id": "386965305",
+      "username": "MShlomoN",
+      "first_name": "BMWecker",
+      "last_text": "/start",
+      "requested_at": "2026-11-23T17:27:42.405240+00:00",
+      "last_seen_at": "2026-11-23T17:27:42.405240+00:00",
+      "last_notified_ts": 1795454859.468513
+    }
+  },
   "banned": {},
   "cloud_tg_offset": 129582616
 }
