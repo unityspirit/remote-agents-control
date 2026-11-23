@@ -1,6 +1,6 @@
 {
   "version": "25.5",
-  "updated_at": "2026-11-13T22:32:00Z",
+  "updated_at": "2026-11-23T17:30:29.597Z",
   "users": [
     {
       "id": "owner-vlaslav",
@@ -249,18 +249,7 @@
       "pbkdf2_hash": "69506b2cb490e7ab0d48271b2e11b4ec813cb1b8f031d957477064920cea9611",
       "iterations": 120000,
       "updated_at": "2026-11-13T22:32:00Z",
-      "pending_reset": {
-        "code": "LOGIN-293781",
-        "requested_at": "2026-11-13T22:47:05.542Z",
-        "salt_hex": "cd82dd85e0d1721e9f088b5ebfa8bb0a",
-        "pbkdf2_hash": "553c9a5ac1d339c495abd916d355ac3d63b4dfc0498821793e2ead1a2874498b",
-        "iterations": 120000,
-        "rsa_envelope": {
-          "ek": "Ij9iTtZaBIS+0qwNk1vToyel4Lu3uCArVJJ7t6Ey2yXpe5ZYUyZk0jjr4NCQ3uYfVNtRkUEHfUuN7WbT3cGPsOCdeSgEDzwHlwnN8Ml7LuP1RSCiRB5oDzFfvg2KbapDj66v7/NGgntwcCQXlU2NPMQumw6kB/ZWVzOUooxQZZqX5fxEMwo31iAo5BO6irDS33LE+hl1aA2pnRVVyaH1YHaHQqoy+tfnw7n51ubp7anLJRfk7hCK9h2/du8XRsPpnyckv9Y8ONtU66Q1DYqTzzbmsgJyHjkmyCgNLDDzqT+Jfgf3RVh9eo83/g1JcsdOs7Q6gu0w0jjOhR4TeNmhZA==",
-          "iv": "w/kOz8rkoU2iU+vn",
-          "ct": "UIg+6Jzt4kZiDB8Tz1AMTVxkaCZ2m6vPrxA5GcpRgz1TjI866bZZfTt8WCIKm1Hcezb9+a7zrI5qNFZobSXosPQIdA4oG/YUsdqJFP8Hg2LMD5DPJhce6Ec9lF53loFynwX8hcAMJlNHIzSglsTZ/1Vsksok5gjHAEWHUC6G1QRxrmGmNUvlig=="
-        }
-      }
+      "pending_reset": null
     },
     {
       "id": "REQ-252172",
@@ -324,6 +313,26 @@
         "updated_at": "2026-11-11T13:50:43.065732+00:00",
         "control_status": "not_configured"
       }
+    },
+    {
+      "id": "REQ-029596",
+      "login": "mshlomon",
+      "full_name": "@MShlomoN",
+      "telegram": "@MShlomoN",
+      "role": "member",
+      "status": "pending",
+      "salt_hex": "74aa419946df6e7dad40732874220b98",
+      "pbkdf2_hash": "524b275148a65c09d0c66fb606f8b567637bada87dc1685d7a558b576988acee",
+      "iterations": 120000,
+      "rsa_envelope": {
+        "ek": "dJzp+sQT1wdxINjajehhdKnwYdFB3ULthE/pfz1zYZv1TJD0VL7vfiX6MBiwQgdVCbc1z+XXsOvag1YgeB2cgTySHF/oVp0kCDc5wHmjzgxIFjDqGPDB2WYc0O4bK2jp5QuEjVkDMtOwa5s80zl/LSnrmxgDwULWvrHfKKWiMCiiMFKff+KWoVd++OH5DkdMwDwNjwuNfkDunpH/P1akc5tw7Iet6T8svng8RmjWX8+53FB6+2EM+uNF90tAimXk8PZ3NKEbJYqFJQa0aRe2HDsl2Z+zwoxWeVLoOsnECSWAtn+MflejXJ9i1xoLkgdt3fqpL7JgPq6+4lgfCha6JQ==",
+        "iv": "OVHuTwx7SOB5CEDx",
+        "ct": "W1HPN5aMscyETWjPiQfB7rHparu/sZX8PGpo9yPKbTa1ep1b5XSeVaT0E8B2QhSoV7NVM2baFyznEWigdQz8UyyUmw4ZdzCWIw5QnBJkE4YZxEbLB3QQcH3PJ1TEO+b2vOXY98XYqBl8LKrmcaWBWq7tEg8sU5IgqPv/YIyYPb76Up3jwTwYeS5l4F0gN3nz98xb"
+      },
+      "assigned_projects": [],
+      "gta_completed": false,
+      "gta_archetype": "",
+      "created_at": "2026-11-23T17:30:29.596Z"
     }
   ],
   "security_version": "33.0"
