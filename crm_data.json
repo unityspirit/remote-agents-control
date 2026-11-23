@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-22T21:30:44.600146Z",
+  "updated_at": "2026-11-23T15:04:10.225783Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_175132",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_175132.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_175107",
       "issue": "Auto",
@@ -2696,6 +2676,15 @@
       "source_url": "https://www.instagram.com/reel/DfUoq06IRm9/?fqnt=MWZwOWQ4YnFhem13NA==",
       "summary": "Tim here. Reporting for Global Spirit Group, HQ.\n\nRegarding your request on the \"Service Butter\" automation (Ollie Kelliher-Mckinlay’s method):\n\n### 1. The Core Mechanism\nThe \"Butter\" workflow is an **AI-Agentic Automation Stack** designed to replace physical \"phone farms\" (multiple devices used for engagement/lead gen) with cloud-based headless browsers and LLM-orchestrated interactions.\n\nTo build this yourself, you need to replicate these three layers:\n*   **The Orchestrator (The Brain):** Instead of manual clicking, you use an automation framework (like **Playwright** or **Puppeteer**) cont",
       "updated_at": "2026-11-22T21:30:39.886138Z"
+    },
+    {
+      "id": "kb-bot-105",
+      "issue": 105,
+      "category": "Проект: Главный Штаб",
+      "title": "The richest person in San Francisco doesn’t work at Anthropic https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824",
+      "source_url": "https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php",
+      "summary": "**Понятая цель:** The richest person in San Francisco doesn’t work at Anthropic https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php\n\n### Извлечённые данные по ссылкам:\n\n• `https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php` — **Client Challenge**\n  Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn’t load. This may be due to a browser extension, network issues, or browser settings. Please check your connection, disable any ad \n\n### Релевантные знания из ",
+      "updated_at": "2026-11-23T15:04:05.434876Z"
     }
   ],
   "global_plus_matrix": [
