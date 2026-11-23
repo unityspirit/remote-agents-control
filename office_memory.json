@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-23T20:16:53.771092Z",
+  "updated_at": "2026-11-23T23:09:43.809101Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -396,6 +396,13 @@
       "project": "Unity Inc",
       "issue": 107,
       "summary": "Xiaomi 14T (2406APNFAG, Android 16, HyperOS 3.0.303.0, Dimensity 8300-Ultra arm64-v8a) -> AmneziaVPN 5.1.1.10 android11+ arm64-v8a + XRay REALITY (Fingerprint=firefox) + HyperOS no-restrictions/autostart/PrivateDNS Off + amnezia_ru_exclude.json (71 RU domains) for Beeline."
+    },
+    {
+      "id": "fact-dir-v343-iss108",
+      "ts": "2026-11-23T23:09:39.171351Z",
+      "project": "Главный Штаб",
+      "issue": 108,
+      "summary": "https://www.facebook.com/share/p/1ChJaWNsh1/: Здравия! Тим на связи. Главный Штаб, Задача #108.\n\n### Анализ ссылки\nСсылка `https://www.facebook.com/share/p/1ChJaWNsh1/` является **стандартной короткой ссылкой Facebook для репоста конкретного поста**. \n\n**Важное уточнение:**\n1. **Технический статус:** При переходе по ссылке с"
     }
   ],
   "projects": {
