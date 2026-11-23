@@ -92,6 +92,7 @@ USER_LABELS = {
     "dominicana": "🏝️ Доминикана",
     "dima": "🏭 Дима Урал",
     "svetlana": "🎬 Светлана (GlobalFilms)",
+    "mshlomon": "🧪 @MShlomoN (Full-Access QA)",
 }
 
 
