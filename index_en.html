@@ -2424,11 +2424,13 @@ body.auth-locked .bottom-nav {
 body.member-nodel .owner-only-ctrl,
 body.member-nodel #btn-top-secured-vault,
 body.member-nodel #btn-top-user-monitor,
-body.member-nodel #owner-pending-approval-banner,
-body.member-nodel #project-cat-filters,
-body.member-nodel #quick-web-apps-box,
-body.member-nodel .add-folder-banner-btn,
-body.member-nodel #crm-user-filters {
+body.member-nodel #owner-pending-approval-banner {
+    display: none !important;
+}
+body.member-nodel:not(.full-access-tester) #project-cat-filters,
+body.member-nodel:not(.full-access-tester) #quick-web-apps-box,
+body.member-nodel:not(.full-access-tester) .add-folder-banner-btn,
+body.member-nodel:not(.full-access-tester) #crm-user-filters {
     display: none !important;
 }
 
@@ -6128,7 +6130,7 @@ textarea.task-inline-input {
     function renderProjects() {
         const webAppsBox = document.getElementById("quick-web-apps-box");
         if (webAppsBox) {
-            webAppsBox.style.display = (typeof isFullAccessSession === "function" && isFullAccessSession()) ? "block" : "none";
+            webAppsBox.style.display = (typeof hasFullWorkspaceAccess === "function" && hasFullWorkspaceAccess()) ? "block" : "none";
         }
         const container = document.getElementById("projects-container");
         const q = (document.getElementById("project-search").value || "").toLowerCase().trim();
@@ -6164,6 +6166,21 @@ textarea.task-inline-input {
                     if (u.login) allNamesSet.add(canonicalProjectName("Личный Офис: @" + u.login));
                 });
             }
+        } else if (typeof hasFullWorkspaceAccess === "function" && hasFullWorkspaceAccess() && currentAuthUser && currentAuthUser.login) {
+            // 🧪 FULL-ACCESS PARTNER / QA TESTER: Sees all company projects, tools, Agent Graph & own personal office (Vault stays owner-only)
+            allNamesSet.add(canonicalProjectName("Личный Офис: @" + currentAuthUser.login));
+            folderList.forEach(f => {
+                const cf = canonicalProjectName(f);
+                if (cf && cf !== "23616818868" && cf !== "Secured_Users_Vault") allNamesSet.add(cf);
+            });
+            Object.keys(stats).forEach(k => {
+                const ck = canonicalProjectName(k);
+                if (ck && ck !== "Other" && ck !== "23616818868" && ck !== "Secured_Users_Vault") allNamesSet.add(ck);
+            });
+            Object.keys(PROJECT_META).forEach(k => {
+                const ck = canonicalProjectName(k);
+                if (ck && ck !== "Secured_Users_Vault") allNamesSet.add(ck);
+            });
         } else if (currentAuthUser && currentAuthUser.login) {
             // 👤 REGULAR MEMBER: Strictly isolated!
             // 1. User's own personal office folder (guaranteed!)
@@ -6222,6 +6239,22 @@ textarea.task-inline-input {
                 '<div style="display:flex; gap:6px;">' +
                     '<button class="mini-btn accent" onclick="openSecuredVaultModal(\'folders\')">👥 Назначить папки</button>' +
                     '<button class="mini-btn" style="background:rgba(245,158,11,0.2); color:#fde68a;" onclick="openSecuredVaultModal()">🔒 Сейф</button>' +
+                '</div>' +
+            '</div>';
+        } else if (currentAuthUser && typeof hasFullWorkspaceAccess === "function" && hasFullWorkspaceAccess()) {
+            const isMshlomon = normalizeAuthLogin(currentAuthUser.login) === "mshlomon";
+            html += '<div style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(56,189,248,0.18),rgba(139,92,246,0.18)); border:1px solid rgba(56,189,248,0.55); border-radius:14px; padding:12px 14px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">' +
+                '<div>' +
+                    '<div style="font-size:0.86rem; font-weight:900; color:#7dd3fc; display:flex; align-items:center; gap:6px; flex-wrap:wrap;">' +
+                        '🧪 <span>Full-Access Testing Office: @' + escapeHtml(currentAuthUser.login) + '</span>' +
+                        '<span style="background:rgba(16,185,129,0.28); color:#6ee7b7; font-size:0.65rem; padding:2px 7px; border-radius:999px;">All Folders &amp; Tools</span>' +
+                    '</div>' +
+                    '<div style="font-size:0.73rem; color:#cbd5e1; margin-top:3px;">Full access to all projects, Live Agent Graph, Open V3 Store Builder, SEO Autopilot, Reports &amp; Director Tim.</div>' +
+                '</div>' +
+                '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+                    (isMshlomon ? '<a href="mshlomon/index.html" target="_blank" rel="noopener" class="mini-btn accent" style="text-decoration:none; font-weight:800;">🚀 Showcase &amp; QA Guide ↗</a>' : '') +
+                    '<a href="agents_live/index.html" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; background:rgba(16,185,129,0.2); border-color:rgba(16,185,129,0.55); color:#6ee7b7; font-weight:800;">🕸️ Agent Graph ↗</a>' +
+                    '<a href="ai_store_builder/index.html?lang=en" target="_blank" rel="noopener" class="mini-btn" style="text-decoration:none; background:rgba(56,189,248,0.2); border-color:rgba(56,189,248,0.55); color:#7dd3fc; font-weight:800;">🛍️ Open V3 ↗</a>' +
                 '</div>' +
             '</div>';
         } else if (currentAuthUser) {
@@ -10293,9 +10326,15 @@ textarea.task-inline-input {
         return isFullAccessSession();
     }
 
+    function hasFullWorkspaceAccess() {
+        if (isFullAccessSession()) return true;
+        if (!isUserAuthenticated()) return false;
+        return Boolean(currentAuthUser.has_full_access === true && currentAuthUser.all_projects === true);
+    }
+
     function getUserAssignedProjects() {
         if (!currentAuthUser) return [];
-        if (isOwnerSession()) return ["*"];
+        if (hasFullWorkspaceAccess()) return ["*"];
         const l = (currentAuthUser.login || "").toLowerCase().replace(/^@/, "").trim();
         const personalFolder = "Личный Офис: @" + l;
         if (l === "aliashirani" || l === "alberta_shirani" || l === "alberta") {
@@ -10322,6 +10361,13 @@ textarea.task-inline-input {
             return true;
         }
         if (currentAuthUser.status !== "approved") return false;
+        // 🧪 FULL-ACCESS TESTER / CO-OWNER: Full access to all company folders & own personal office (Vault stays owner-only)
+        if (hasFullWorkspaceAccess()) {
+            const cLower = canonicalProjectName(projName).toLowerCase();
+            const myOwn = canonicalProjectName("Личный Офис: @" + currentAuthUser.login).toLowerCase();
+            if (cLower.startsWith("личный офис:") && cLower !== myOwn) return false;
+            return true;
+        }
 
         const canon = canonicalProjectName(projName);
         const myPersonalFolder = canonicalProjectName("Личный Офис: @" + currentAuthUser.login);
@@ -10453,11 +10499,19 @@ textarea.task-inline-input {
         if (isOwnerSession()) {
             currentAuthUser.role = "owner";
             document.body.classList.remove("member-nodel");
+            document.body.classList.remove("full-access-tester");
             document.body.classList.add("owner-full-access");
+        } else if (typeof hasFullWorkspaceAccess === "function" && hasFullWorkspaceAccess()) {
+            currentAuthUser.role = "member";
+            currentAuthUser.assigned_projects = ["*"];
+            document.body.classList.add("member-nodel");
+            document.body.classList.add("full-access-tester");
+            document.body.classList.remove("owner-full-access");
         } else {
             currentAuthUser.role = "member";
             currentAuthUser.assigned_projects = getUserAssignedProjects();
             document.body.classList.add("member-nodel");
+            document.body.classList.remove("full-access-tester");
             document.body.classList.remove("owner-full-access");
         }
 
@@ -10471,10 +10525,10 @@ textarea.task-inline-input {
         populateGlobalStudyFolders();
         startTeamActivityHeartbeat();
 
-        // Multi-tenant: Member automatically enters their own personal office workspace!
-        if (!isOwnerSession() && currentAuthUser && currentAuthUser.login) {
+        // Multi-tenant: Regular member enters their personal workspace; Full-Access tester sees full HQ folder hub!
+        if (!hasFullWorkspaceAccess() && currentAuthUser && currentAuthUser.login) {
             const myProjs = getUserAssignedProjects();
-            const primaryProj = myProjs.find(p => !p.startsWith("Личный Офис")) || ("Личный Офис: @" + currentAuthUser.login);
+            const primaryProj = myProjs.find(p => p && p !== "*" && !p.startsWith("Личный Офис")) || ("Личный Офис: @" + currentAuthUser.login);
             selectProject(primaryProj, "📁");
         }
         if (typeof applyStrictUserIsolationUI === "function") applyStrictUserIsolationUI();
@@ -15700,8 +15754,35 @@ function applyStrictUserIsolationUI() {
         return;
     }
 
+    if (typeof hasFullWorkspaceAccess === "function" && hasFullWorkspaceAccess()) {
+        document.body.classList.add("member-nodel");
+        document.body.classList.add("full-access-tester");
+        document.body.classList.remove("owner-full-access");
+        const isMshlomon = currentAuthUser && normalizeAuthLogin(currentAuthUser.login) === "mshlomon";
+        if (pillsBox) {
+            pillsBox.innerHTML =
+                '<span class="telemetry-pill" onclick="openAgentsStatusModal()" title="Status of all 12 autonomous AI agents">' +
+                    '<span class="pulse-indicator"></span>' +
+                    '<strong style="color:#34d399;">12 Agents 24/7</strong>' +
+                '</span>' +
+                '<span class="telemetry-pill" onclick="openDepartmentsModal()" style="border-color:rgba(168,85,247,0.5); background:rgba(168,85,247,0.14);">' +
+                    '🏛️ <strong style="color:#c084fc;">All Projects (6 Depts)</strong>' +
+                '</span>' +
+                '<a href="agents_live/index.html" target="_blank" rel="noopener" class="telemetry-pill" style="text-decoration:none; border-color:rgba(16,185,129,0.55); background:rgba(16,185,129,0.14);">' +
+                    '🕸️ <strong style="color:#6ee7b7;">Agent Graph Live ↗</strong>' +
+                '</a>' +
+                '<a href="ai_store_builder/index.html?lang=en" target="_blank" rel="noopener" class="telemetry-pill" style="text-decoration:none; border-color:rgba(56,189,248,0.55); background:rgba(56,189,248,0.14);">' +
+                    '🛍️ <strong style="color:#7dd3fc;">Open V3 Builder ↗</strong>' +
+                '</a>' +
+                (isMshlomon ? '<a href="mshlomon/index.html" target="_blank" rel="noopener" class="telemetry-pill" style="text-decoration:none; border-color:rgba(245,158,11,0.6); background:rgba(245,158,11,0.16);">🧪 <strong style="color:#fcd34d;">Showcase &amp; QA Guide ↗</strong></a>' : '');
+        }
+        if (rightLbl) rightLbl.innerHTML = '<span>🧪 Full-Access Testing (@' + escapeHtml((currentAuthUser && currentAuthUser.login) || "partner") + ')</span>';
+        return;
+    }
+
     // STRICT MEMBER VIEW: Only their own folders and their own agents!
     document.body.classList.add("member-nodel");
+    document.body.classList.remove("full-access-tester");
     document.body.classList.remove("owner-full-access");
     const prof = getMemberIsolationProfile();
     if (!prof) return;
