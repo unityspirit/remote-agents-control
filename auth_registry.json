@@ -317,10 +317,10 @@
     {
       "id": "REQ-029596",
       "login": "mshlomon",
-      "full_name": "@MShlomoN",
+      "full_name": "@MShlomoN (BMWecker)",
       "telegram": "@MShlomoN",
       "role": "member",
-      "status": "pending",
+      "status": "approved",
       "salt_hex": "74aa419946df6e7dad40732874220b98",
       "pbkdf2_hash": "524b275148a65c09d0c66fb606f8b567637bada87dc1685d7a558b576988acee",
       "iterations": 120000,
@@ -329,10 +329,34 @@
         "iv": "OVHuTwx7SOB5CEDx",
         "ct": "W1HPN5aMscyETWjPiQfB7rHparu/sZX8PGpo9yPKbTa1ep1b5XSeVaT0E8B2QhSoV7NVM2baFyznEWigdQz8UyyUmw4ZdzCWIw5QnBJkE4YZxEbLB3QQcH3PJ1TEO+b2vOXY98XYqBl8LKrmcaWBWq7tEg8sU5IgqPv/YIyYPb76Up3jwTwYeS5l4F0gN3nz98xb"
       },
-      "assigned_projects": [],
-      "gta_completed": false,
-      "gta_archetype": "",
-      "created_at": "2026-11-23T17:30:29.596Z"
+      "assigned_projects": [
+        "*",
+        "Личный Офис: @mshlomon",
+        "Главный Штаб",
+        "12 IT Продуктов (Короче Капитан)",
+        "Traffic",
+        "GlobalFilms",
+        "Alberta"
+      ],
+      "gta_completed": true,
+      "gta_archetype": "🧪 Архитектор Тестирования & Full-Access Партнёр",
+      "created_at": "2026-11-23T17:30:29.596Z",
+      "approved_by": "@unityspiritpartners",
+      "approved_at": "2026-11-23T17:41:25.540264+00:00",
+      "updated_at": "2026-11-23T17:41:25.540264+00:00",
+      "all_projects": true,
+      "has_full_access": true,
+      "verified_bot_chat_id": "386965305",
+      "pending_reset": null,
+      "owner_action_stamp": "v34.9-mshlomon-full-access",
+      "personal_bot": {
+        "director_name": "Тим",
+        "bot_token": "",
+        "chat_id": "386965305",
+        "auto_send_reports": true,
+        "updated_at": "2026-11-23T17:41:25.540264+00:00",
+        "control_status": "active"
+      }
     }
   ],
   "security_version": "33.0"
