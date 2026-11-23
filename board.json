@@ -18059,6 +18059,32 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "105": {
+      "id": 105,
+      "gh_issue": 105,
+      "created": "2026-11-23 08:03:55",
+      "handoffs": [
+        {
+          "t": "2026-11-23 08:03:55",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "The richest person in San Francisco doesn’t work at Anthropic https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php",
+      "urls": [
+        "https://www.sfchronicle.com/sf/article/greg-brockman-openai-net-worth-22541824.php"
+      ],
+      "project": "Главный Штаб",
+      "kind": "link",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-23 08:03:55",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
