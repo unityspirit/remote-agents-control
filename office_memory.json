@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-23T23:09:43.809101Z",
+  "updated_at": "2026-11-24T00:21:40.837769Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -403,6 +403,13 @@
       "project": "Главный Штаб",
       "issue": 108,
       "summary": "https://www.facebook.com/share/p/1ChJaWNsh1/: Здравия! Тим на связи. Главный Штаб, Задача #108.\n\n### Анализ ссылки\nСсылка `https://www.facebook.com/share/p/1ChJaWNsh1/` является **стандартной короткой ссылкой Facebook для репоста конкретного поста**. \n\n**Важное уточнение:**\n1. **Технический статус:** При переходе по ссылке с"
+    },
+    {
+      "id": "fact-dir-v343-iss109",
+      "ts": "2026-11-24T00:21:36.758926Z",
+      "project": "Главный Штаб",
+      "issue": 109,
+      "summary": "https://www.facebook.com/share/v/1F4wSz7Fqo/: Здравия! Тим на связи. Главный Штаб, Задача #109.\n\n### Анализ предоставленного источника\nПо вашей ссылке извлечены следующие открытые данные (OG-метки):\n* **Final URL:** `https://www.facebook.com/reel/1403422281611563/`\n* **Title:** *77 reactions · 12 shares | This made HOW MUCH "
     }
   ],
   "projects": {
