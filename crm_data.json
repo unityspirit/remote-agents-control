@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-24T00:21:55.462916Z",
+  "updated_at": "2026-11-24T05:42:44.805817Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_174932",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174932.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_174903",
       "issue": "Auto",
@@ -2653,6 +2633,15 @@
       "source_url": "https://www.facebook.com/share/v/1F4wSz7Fqo/",
       "summary": "Здравия! Тим на связи. Главный Штаб, Задача #109.\n\n### Анализ предоставленного источника\nПо вашей ссылке извлечены следующие открытые данные (OG-метки):\n* **Final URL:** `https://www.facebook.com/reel/1403422281611563/`\n* **Title:** *77 reactions · 12 shares | This made HOW MUCH MOBEY?? #aibuilder #bunker #asmr #higgsfieldpartner #dallas Higgsfield AI | WiFi Money Nate*\n* **Description:** *This made HOW MUCH MOBEY?? #aibuilder #bunker #asmr #higgsfieldpartner #dallas Higgsfield AI*\n* **Контекст:** Это видео-reel (Reels) от креатора *WiFi Money Nate*, созданное с использованием инструментов **H",
       "updated_at": "2026-11-24T00:21:50.782195Z"
+    },
+    {
+      "id": "kb-bot-110",
+      "issue": 110,
+      "category": "Проект: Главный Штаб",
+      "title": "https://aituber.app/",
+      "source_url": "https://aituber.app/",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #110.\n\nПо вашему запросу изучена платформа **AITuber** (`https://aituber.app/`). \n* **Извлечённые данные:** Страница позиционируется как сервис для автоматизированного создания «faceless» (безликих) видеороликов на автопилоте для YouTube Shorts, TikTok и Instagram Reels. Ключевой функционал платформы: генерация коротких и длинных 4K-видео с использованием более чем 1300+ ИИ-голосов, автоматических визуалов и субтитров. Особый интерес для нашего контура представляют их **API и MCP Server (Model Context Protocol)**, позволяющие запускать создание видео",
+      "updated_at": "2026-11-24T05:42:40.494080Z"
     }
   ],
   "global_plus_matrix": [
