@@ -18173,6 +18173,32 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "110": {
+      "id": 110,
+      "gh_issue": 110,
+      "created": "2026-11-23 22:42:32",
+      "handoffs": [
+        {
+          "t": "2026-11-23 22:42:32",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "title": "https://aituber.app/",
+      "urls": [
+        "https://aituber.app/"
+      ],
+      "project": "Главный Штаб",
+      "kind": "link",
+      "status": "done",
+      "owner": "gatekeeper",
+      "updated": "2026-11-23 22:42:32",
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
