@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 216,
+      "evidence_count": 217,
       "scope": "global",
-      "last_updated": "2026-11-25T10:50:56.436135"
+      "last_updated": "2026-11-25T10:51:26.857356"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 275,
+      "evidence_count": 276,
       "scope": "global",
-      "last_updated": "2026-11-25T10:50:56.438081"
+      "last_updated": "2026-11-25T10:51:26.859129"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 132,
+      "evidence_count": 133,
       "scope": "global",
-      "last_updated": "2026-11-25T10:49:11.401725"
+      "last_updated": "2026-11-25T10:51:26.859736"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 178,
+      "evidence_count": 179,
       "scope": "global",
-      "last_updated": "2026-11-25T10:50:56.441440"
+      "last_updated": "2026-11-25T10:51:26.860874"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 208,
+      "evidence_count": 209,
       "scope": "global",
-      "last_updated": "2026-11-25T10:50:56.442961"
+      "last_updated": "2026-11-25T10:51:26.862091"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 303,
+      "evidence_count": 304,
       "scope": "global",
-      "last_updated": "2026-11-25T10:50:56.446644"
+      "last_updated": "2026-11-25T10:51:26.863264"
     },
     {
       "id": "task-custom-request",
@@ -171,5 +171,5 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-25T17:50:57.397382+00:00"
+  "updated_at": "2026-11-25T17:51:27.690845+00:00"
 }
