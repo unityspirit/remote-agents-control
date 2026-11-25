@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-25T06:43:45.494182Z",
+  "updated_at": "2026-11-25T20:41:06.728792Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -431,6 +431,13 @@
       "project": "Главный Штаб",
       "issue": 112,
       "summary": "https://www.instagram.com/reel/DfPtwayN0bR/?dmpr=MTlnbjVhazBrYWxpMg==: Здравия! Тим на связи. Главный Штаб, Задача #112.\n\n### Анализ источника\nПо ссылке на Instagram Reel (`https://www.instagram.com/reel/DfPtwayN0bR/`) система извлекла следующие открытые данные:\n* **Title:** `Noah on Instagram: \"You understand it now?\"`\n* **Description:** `2,439 lik"
+    },
+    {
+      "id": "fact-dir-v343-iss114",
+      "ts": "2026-11-25T20:41:00.683622Z",
+      "project": "Татьяна tentorium.ru",
+      "issue": 114,
+      "summary": "Внимательно изучи две эти статьи и по их примеру настрой непробиваемый рабочий vpn\nhttps://habr.com/ru/articles/1103460/\nhttps://habr.com/ru/articles/1111936/: Здравия! Аршак на связи. \n\nПо первій ссылке (`https://habr.com/ru/articles/1103460/`) система успешно прочитала заголовок и введение (*«Методичка по построению VPN, осень 2026»*, автор `mureevms`). Статья посвящена массовым точечным блокировкам IP-адресов зарубежных серверов в РФ"
     }
   ],
   "projects": {
