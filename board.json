@@ -18315,6 +18315,12 @@
           "from": "tg_director",
           "to": "gatekeeper",
           "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        },
+        {
+          "t": "2026-11-25 13:57:54",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": {
@@ -18326,12 +18332,12 @@
         "https://unityspirit.github.io/alberta-hub/",
         "https://unityspirit.github.io/alberta-"
       ],
-      "project": "Alberta",
+      "project": "Татьяна tentorium.ru",
       "kind": "link",
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-11-25 13:55:02",
+      "updated": "2026-11-25 13:57:54",
       "gh_issue": 115,
       "next": {
         "who": "done",
