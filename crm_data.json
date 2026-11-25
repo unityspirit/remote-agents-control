@@ -1,27 +1,7 @@
 {
-  "updated_at": "2026-11-25T00:01:02.874985Z",
+  "updated_at": "2026-11-25T06:44:01.086222Z",
   "version": "10.0",
   "knowledge_base": [
-    {
-      "id": "kb-20261023_174843",
-      "issue": "Auto",
-      "category": "Проект: Unity Inc",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать сис",
-      "source_url": "https://www.altahq.com/lp/ai-calling-agent",
-      "secondary_url": "",
-      "date": "23.10.2026",
-      "summary": "1. Четкий ответ по существу задачи  \nСоздание системы голосовых ИИ‑агентов для B2B‑продаж (на основе Alta‑HQ) – это инвестиционный проект, который может принести сильный прирост выручки и снижение затрат на привлечение лидов.  \n\n| Показатель | Оценка (первый год) | Комментарий |\n|------------|---------------------|-------------|\n| Выручка | + $200 000 (20 % прирост конверсии, 10 % рост объёма сделок) | При текущем об",
-      "agent": "Enterprise Solutions Architect",
-      "domain": "[[web-агентство-globalplus-unityspirit]]",
-      "related_projects": [
-        "Дима Верхняя Синичиха Алапаевск",
-        "Traffic"
-      ],
-      "action_items": [
-        "Сохранено в Note_20261023_174843.md",
-        "Ведущий агент: Enterprise Solutions Architect"
-      ]
-    },
     {
       "id": "kb-20261023_174348",
       "issue": "Auto",
@@ -2631,6 +2611,15 @@
       "source_url": "https://www.instagram.com/reel/De2l_0uoPLx/?lqvp=d3lhZWs5anhjYzRh",
       "summary": "Tim here. Global Spirit Group, HQ. Task #111.\n\n### Analysis: SGP Card Joker\nThe link points to a promotional reel for the **SGP Card Joker**, a hardware-based cybersecurity tool. \n\n**Technical Profile:**\n*   **Form Factor:** Ultra-slim (credit card size).\n*   **Core Capabilities:** Wi-Fi/Bluetooth scanning, BadUSB/HID injection, wireless network analysis, and security testing.\n*   **Architecture:** Likely ESP32-based (common for this form factor), fully programmable.\n*   **Market Positioning:** Targeted at ethical hackers, penetration testers, and cybersecurity enthusiasts who require portable",
       "updated_at": "2026-11-25T00:00:58.202775Z"
+    },
+    {
+      "id": "kb-bot-112",
+      "issue": 112,
+      "category": "Проект: Главный Штаб",
+      "title": "https://www.instagram.com/reel/DfPtwayN0bR/?dmpr=MTlnbjVhazBrYWxpMg==",
+      "source_url": "https://www.instagram.com/reel/DfPtwayN0bR/?dmpr=MTlnbjVhazBrYWxpMg==",
+      "summary": "Здравия! Тим на связи. Главный Штаб, Задача #112.\n\n### Анализ источника\nПо ссылке на Instagram Reel (`https://www.instagram.com/reel/DfPtwayN0bR/`) система извлекла следующие открытые данные:\n* **Title:** `Noah on Instagram: \"You understand it now?\"`\n* **Description:** `2,439 likes, 139 comments - noahprofitphones on November 2, 2026: \"You understand it now?\".`\n* **Content:** Прямое видеосодержимое Instagram защищено политикой платформы и не может быть полностью прочитано текстовым парсером без авторизации, однако по метаданным аккаунта (`noahprofitphones`) и контексту подобных коротких видео ",
+      "updated_at": "2026-11-25T06:43:56.055735Z"
     }
   ],
   "global_plus_matrix": [
