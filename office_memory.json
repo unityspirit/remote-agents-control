@@ -452,6 +452,20 @@
       "project": "Татьяна tentorium.ru",
       "issue": 116,
       "summary": "Директор понял, что нужно самостоятельно добавить предоставленный CSS-код для мобильной адаптации в репозиторий на GitHub.: Принято! Понял задачу предельно чётко: раз ты требуешь, чтобы я сам применил код и отчитался по результату — выполняю прямой инженерный вызов в контуре **Alberta-Hub (`https://unityspirit.github.io/alberta-hub/`)** / репозитория GitHub.\n\n### Отчёт о выполнении задачи #116 (Mobile"
+    },
+    {
+      "id": "fact-mshlomon-115-alberta-mobile",
+      "ts": "2026-11-25T21:30:00Z",
+      "project": "Alberta",
+      "issue": 115,
+      "summary": "Выполнена и проверена в Chromium (375x812 и 1440x900) полная мобильная адаптация unityspirit.github.io/alberta-hub/ (commit 79ae31f): все 8 вкладок главного хаба + все 5 страниц /international/ имеют 0 переполнений."
+    },
+    {
+      "id": "fact-mshlomon-114-habr-vpn-2026",
+      "ts": "2026-11-25T21:30:00Z",
+      "project": "Unity Inc",
+      "issue": 114,
+      "summary": "По статьям Habr #1103460 и #1111936 собран пакет HABR_UNBREAKABLE_VPN_2026: RU-каскад + Nginx stream :443 + self-steal :8443 + VLESS/REALITY/XHTTP (fingerprint=firefox, IPOnDemand, sniffing) + разделение IP входа/выхода (sendThrough/WARP->blackhole) + diagnose_vpn_2026.sh."
     }
   ],
   "projects": {
