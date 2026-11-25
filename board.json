@@ -18355,6 +18355,44 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "116": {
+      "id": 116,
+      "created": "2026-11-25 14:04:30",
+      "handoffs": [
+        {
+          "t": "2026-11-25 14:04:30",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-25 14:05:06",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-25 14:05:37",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: [Аршак] /* ==========================================================\n   Global Spirit Group — Mobile Responsiveness Patch",
+      "urls": [],
+      "project": "Татьяна tentorium.ru",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-25 14:05:37",
+      "gh_issue": 116,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
