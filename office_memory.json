@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-24T05:42:30.285360Z",
+  "updated_at": "2026-11-25T00:00:47.347688Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -417,6 +417,13 @@
       "project": "Главный Штаб",
       "issue": 110,
       "summary": "https://aituber.app/: Здравия! Тим на связи. Главный Штаб, Задача #110.\n\nПо вашему запросу изучена платформа **AITuber** (`https://aituber.app/`). \n* **Извлечённые данные:** Страница позиционируется как сервис для автоматизированного создания «faceless» (безликих) видеороликов на автопилоте для YouTub"
+    },
+    {
+      "id": "fact-dir-v343-iss111",
+      "ts": "2026-11-25T00:00:42.973117Z",
+      "project": "Главный Штаб",
+      "issue": 111,
+      "summary": "https://www.instagram.com/reel/De2l_0uoPLx/?lqvp=d3lhZWs5anhjYzRh: Tim here. Global Spirit Group, HQ. Task #111.\n\n### Analysis: SGP Card Joker\nThe link points to a promotional reel for the **SGP Card Joker**, a hardware-based cybersecurity tool. \n\n**Technical Profile:**\n*   **Form Factor:** Ultra-slim (credit card size).\n*   **Core Capabilities:"
     }
   ],
   "projects": {
