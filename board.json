@@ -18251,6 +18251,42 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "114": {
+      "id": 114,
+      "created": "2026-11-25 13:40:41",
+      "handoffs": [
+        {
+          "t": "2026-11-25 13:40:41",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-25 13:41:08",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: [Аршак] Внимательно изучи две эти статьи и по их примеру настрой непробиваемый рабочий vpn\nhttps://habr.com/ru/articles/110",
+      "urls": [
+        "https://habr.com/ru/articles/110",
+        "https://habr.com/ru/articles/1103460/",
+        "https://habr.com/ru/articles/1111936/"
+      ],
+      "project": "Татьяна tentorium.ru",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-25 13:41:08",
+      "gh_issue": 114,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
