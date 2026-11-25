@@ -18287,6 +18287,41 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "115": {
+      "id": 115,
+      "created": "2026-11-25 13:52:26",
+      "handoffs": [
+        {
+          "t": "2026-11-25 13:52:26",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-25 13:52:39",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: [Аршак] Оптимизируй эту страницу и все с ней связанные вкладки под просмтор не только с пк, но и в мобильной версии, а то с",
+      "urls": [
+        "https://unityspirit.github.io/alberta-hub/",
+        "https://unityspirit.github.io/alberta-"
+      ],
+      "project": "Alberta",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-25 13:52:39",
+      "gh_issue": 115,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
