@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 295,
+      "evidence_count": 296,
       "scope": "global",
-      "last_updated": "2026-11-25T11:02:28.715588"
+      "last_updated": "2026-11-25T11:03:20.570405"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 198,
+      "evidence_count": 199,
       "scope": "global",
-      "last_updated": "2026-11-25T11:02:28.717859"
+      "last_updated": "2026-11-25T11:03:20.571651"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 225,
+      "evidence_count": 226,
       "scope": "global",
-      "last_updated": "2026-11-25T11:02:28.718992"
+      "last_updated": "2026-11-25T11:03:20.573150"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 324,
+      "evidence_count": 325,
       "scope": "global",
-      "last_updated": "2026-11-25T11:02:28.720118"
+      "last_updated": "2026-11-25T11:03:20.574671"
     },
     {
       "id": "task-custom-request",
@@ -171,5 +171,5 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-25T18:02:29.755134+00:00"
+  "updated_at": "2026-11-25T18:03:21.231466+00:00"
 }
