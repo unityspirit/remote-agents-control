@@ -18327,6 +18327,12 @@
           "from": "tg_director",
           "to": "gatekeeper",
           "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        },
+        {
+          "t": "2026-11-25 14:02:26",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": {
@@ -18343,7 +18349,7 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-11-25 13:59:57",
+      "updated": "2026-11-25 14:02:26",
       "gh_issue": 115,
       "next": {
         "who": "done",
