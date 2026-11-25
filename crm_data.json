@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 235,
+      "evidence_count": 236,
       "scope": "global",
-      "last_updated": "2026-11-25T11:06:17.823780"
+      "last_updated": "2026-11-25T13:41:49.643170"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 301,
+      "evidence_count": 302,
       "scope": "global",
-      "last_updated": "2026-11-25T11:06:17.824748"
+      "last_updated": "2026-11-25T13:41:49.644973"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 204,
+      "evidence_count": 205,
       "scope": "global",
-      "last_updated": "2026-11-25T11:06:17.830504"
+      "last_updated": "2026-11-25T13:41:49.646615"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 330,
+      "evidence_count": 331,
       "scope": "global",
-      "last_updated": "2026-11-25T11:06:17.832998"
+      "last_updated": "2026-11-25T13:41:49.647767"
     },
     {
       "id": "task-custom-request",
@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-25T20:41:28.577985Z",
+  "updated_at": "2026-11-25T20:41:51.210573+00:00",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
