@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-25T00:00:47.347688Z",
+  "updated_at": "2026-11-25T06:43:45.494182Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -424,6 +424,13 @@
       "project": "Главный Штаб",
       "issue": 111,
       "summary": "https://www.instagram.com/reel/De2l_0uoPLx/?lqvp=d3lhZWs5anhjYzRh: Tim here. Global Spirit Group, HQ. Task #111.\n\n### Analysis: SGP Card Joker\nThe link points to a promotional reel for the **SGP Card Joker**, a hardware-based cybersecurity tool. \n\n**Technical Profile:**\n*   **Form Factor:** Ultra-slim (credit card size).\n*   **Core Capabilities:"
+    },
+    {
+      "id": "fact-dir-v343-iss112",
+      "ts": "2026-11-25T06:43:41.192136Z",
+      "project": "Главный Штаб",
+      "issue": 112,
+      "summary": "https://www.instagram.com/reel/DfPtwayN0bR/?dmpr=MTlnbjVhazBrYWxpMg==: Здравия! Тим на связи. Главный Штаб, Задача #112.\n\n### Анализ источника\nПо ссылке на Instagram Reel (`https://www.instagram.com/reel/DfPtwayN0bR/`) система извлекла следующие открытые данные:\n* **Title:** `Noah on Instagram: \"You understand it now?\"`\n* **Description:** `2,439 lik"
     }
   ],
   "projects": {
