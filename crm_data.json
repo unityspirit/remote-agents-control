@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 280,
+      "evidence_count": 281,
       "scope": "global",
-      "last_updated": "2026-11-25T10:54:18.878041"
+      "last_updated": "2026-11-25T10:54:35.561203"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 183,
+      "evidence_count": 184,
       "scope": "global",
-      "last_updated": "2026-11-25T10:54:18.880378"
+      "last_updated": "2026-11-25T10:54:35.562459"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 309,
+      "evidence_count": 310,
       "scope": "global",
-      "last_updated": "2026-11-25T10:54:18.882060"
+      "last_updated": "2026-11-25T10:54:35.563623"
     },
     {
       "id": "task-custom-request",
@@ -171,5 +171,5 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-25T17:54:19.976914+00:00"
+  "updated_at": "2026-11-25T17:54:36.503846+00:00"
 }
