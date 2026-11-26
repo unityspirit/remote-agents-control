@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T10:32:35.592640+00:00",
+  "updated_at": "2026-11-26T10:32:44.435505Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -231,10 +231,10 @@
       "id": "kb-bot-119",
       "issue": 119,
       "category": "Проект: Главный Штаб",
-      "title": "https://lnkd.in/p/g2t4XeJw",
+      "title": "Сделай бэкраунд на фоне синтаура Торонто и улучши качество фото людей на фото — контекст: https://lnkd.in/p/g2t4XeJw (https://lnkd.in/p/g2t4",
       "source_url": "https://lnkd.in/p/g2t4XeJw",
-      "summary": "**Tim here. Global Spirit Group, HQ. Task #119.**\n\n### 🔗 Link & Source Analysis\n* **Final URL:** `https://www.linkedin.com/posts/pavelgvay_20-vc-funds-that-invest-pre-revenue-no-share-7530669949749653505-Y7GS/`\n* **Title:** Pavel Gvay | Shizune | LinkedIn\n* **Extracted Data:** A curated list of **20 VC funds that invest pre-revenue** (actively writing checks in pre-seed/seed rounds over the last 3 months across software, AI, health, fintech, etc., including regional spread: DEU, USA, CHN, IDN, LUX, LTU, DNK).\n\n---\n\n### 💡 Strategic Context & Application for Global Spirit Group\nBuilding on the p",
-      "updated_at": "2026-11-26T07:36:00.330767Z"
+      "summary": "Принято. Тим на связи. Задача по обработке визуала для контура «Главный Штаб» понятна.\n\n### 1. Анализ запроса\nСсылка (`https://lnkd.in/p/g2t4XeJw`) ведет на пост Павла Гвая о VC-фондах. В самом посте нет исходного фото, которое нужно обработать. **Важное уточнение:** если у вас есть конкретный файл, который нужно «прогнать» через нейросети, его необходимо прикрепить к следующему сообщению или загрузить в рабочую папку проекта.\n\n### 2. Инструментарий для реализации (AI-стек)\nДля замены фона на «Си-Эн Тауэр» (Торонто) и апскейлинга лиц используйте следующий пайплайн:\n\n*   **Улучшение качества ли",
+      "updated_at": "2026-11-26T10:32:36.652667Z"
     },
     {
       "id": "kb-bot-1795688948",
