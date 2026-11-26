@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 15:56:35",
+  "updated": "2026-11-26 16:00:11",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 111,
-      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-26 15:53:12"
+      "tasks_completed": 112,
+      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 16:00:02"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 92,
-      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-26 15:53:12"
+      "tasks_completed": 93,
+      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 16:00:02"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 88,
-      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
+      "tasks_completed": 89,
+      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
       "last_project": "Alberta",
-      "updated_at": "2026-11-26 07:13:27"
+      "updated_at": "2026-11-26 16:00:02"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 94,
-      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-26 15:53:12"
+      "tasks_completed": 95,
+      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 16:00:02"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     },
     "researcher": {
       "name": "Разведчик",
@@ -129,7 +129,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 104,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:56:35"
+      "updated_at": "2026-11-26 16:00:11"
     }
   },
   "daemons": {
@@ -238,12 +238,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 0,
-      "calls_by_provider": {},
-      "last_provider": "auto_standby",
-      "last_model": "auto",
-      "last_call_at": null,
-      "errors_count": 0
+      "calls_total": 1,
+      "calls_by_provider": {
+        "cloud_test_gateway": 1
+      },
+      "last_provider": "cloud_test_gateway",
+      "last_model": "openai-gateway",
+      "last_call_at": "2026-11-26T23:00:02.234681+00:00",
+      "errors_count": 1
     }
   },
   "statuses": {
