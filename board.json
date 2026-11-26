@@ -870,6 +870,18 @@
           "from": "tg_director",
           "to": "gatekeeper",
           "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        },
+        {
+          "t": "2026-11-26 07:04:13",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-26 07:11:15",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": {
@@ -885,7 +897,7 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-11-26 07:03:54",
+      "updated": "2026-11-26 07:11:15",
       "gh_issue": 125,
       "next": {
         "who": "done",
