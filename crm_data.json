@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 321,
+      "evidence_count": 322,
       "scope": "global",
-      "last_updated": "2026-11-26T16:00:22.036329"
+      "last_updated": "2026-11-26T16:30:12.102202"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -36,9 +36,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 113,
+      "evidence_count": 114,
       "scope": "global",
-      "last_updated": "2026-11-26T07:11:16.386078"
+      "last_updated": "2026-11-26T16:30:12.103743"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 224,
+      "evidence_count": 225,
       "scope": "global",
-      "last_updated": "2026-11-26T16:00:22.039773"
+      "last_updated": "2026-11-26T16:30:12.105116"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -86,9 +86,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 59,
+      "evidence_count": 60,
       "scope": "project:Alberta",
-      "last_updated": "2026-11-26T16:00:22.043005"
+      "last_updated": "2026-11-26T16:30:12.106396"
     },
     {
       "id": "autonomous-task-resolution",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 350,
+      "evidence_count": 351,
       "scope": "global",
-      "last_updated": "2026-11-26T16:00:22.044414"
+      "last_updated": "2026-11-26T16:30:12.107472"
     },
     {
       "id": "task-custom-request",
@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T23:30:03.092334Z",
+  "updated_at": "2026-11-26T23:30:12.983612+00:00",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
