@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 15:46:31",
+  "updated": "2026-11-26 15:51:34",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 109,
-      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 07:13:27"
+      "tasks_completed": 110,
+      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
+      "last_project": "Дима Верхняя Синичиха Алапаевск",
+      "updated_at": "2026-11-26 15:47:17"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 90,
-      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 07:13:27"
+      "tasks_completed": 91,
+      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
+      "last_project": "Дима Верхняя Синичиха Алапаевск",
+      "updated_at": "2026-11-26 15:47:17"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 92,
-      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 07:13:27"
+      "tasks_completed": 93,
+      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
+      "last_project": "Дима Верхняя Синичиха Алапаевск",
+      "updated_at": "2026-11-26 15:47:17"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -61,10 +61,10 @@
       "gives": "готовые КП и скрипты закрытия сделок",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 3,
-      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 07:13:27"
+      "tasks_completed": 4,
+      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
+      "last_project": "Дима Верхняя Синичиха Алапаевск",
+      "updated_at": "2026-11-26 15:47:17"
     },
     "creative_producer": {
       "name": "Креативный Продюсер",
@@ -103,7 +103,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     },
     "researcher": {
       "name": "Разведчик",
@@ -129,7 +129,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 104,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 15:46:31"
+      "updated_at": "2026-11-26 15:51:34"
     }
   },
   "daemons": {
