@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 241,
+      "evidence_count": 243,
       "scope": "global",
-      "last_updated": "2026-11-26T06:59:17.966043"
+      "last_updated": "2026-11-26T07:13:38.770547"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 318,
+      "evidence_count": 320,
       "scope": "global",
-      "last_updated": "2026-11-26T07:04:21.961741"
+      "last_updated": "2026-11-26T07:13:38.771246"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 160,
+      "evidence_count": 161,
       "scope": "global",
-      "last_updated": "2026-11-26T07:04:21.963727"
+      "last_updated": "2026-11-26T07:13:38.772384"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -36,9 +36,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 112,
+      "evidence_count": 113,
       "scope": "global",
-      "last_updated": "2026-11-26T07:04:21.964912"
+      "last_updated": "2026-11-26T07:11:16.386078"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 221,
+      "evidence_count": 223,
       "scope": "global",
-      "last_updated": "2026-11-26T07:04:21.966016"
+      "last_updated": "2026-11-26T07:13:38.773537"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 238,
+      "evidence_count": 239,
       "scope": "global",
-      "last_updated": "2026-11-26T07:04:21.967131"
+      "last_updated": "2026-11-26T07:13:38.774688"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -86,9 +86,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 57,
+      "evidence_count": 58,
       "scope": "project:Alberta",
-      "last_updated": "2026-11-25T14:05:22.736732"
+      "last_updated": "2026-11-26T07:13:38.775818"
     },
     {
       "id": "autonomous-task-resolution",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 347,
+      "evidence_count": 349,
       "scope": "global",
-      "last_updated": "2026-11-26T07:04:21.968234"
+      "last_updated": "2026-11-26T07:13:38.776345"
     },
     {
       "id": "task-custom-request",
@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T14:11:40.822780Z",
+  "updated_at": "2026-11-26T14:13:39.747120+00:00",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
