@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795702392561",
+      "ts": "2026-11-26T14:13:12.561599+00:00",
+      "time_local": "07:13:12",
+      "user_login": "aliashirani",
+      "full_name": "Alberta Shirani",
+      "bot_username": "@lermontovplusbot",
+      "director_name": "Директор Альберты",
+      "action_type": "exec",
+      "project": "Alberta",
+      "summary": "Запущен шаг #1 в папке «Alberta» (Задача #127)",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795702312577",
       "ts": "2026-11-26T14:11:52.577512+00:00",
       "time_local": "07:11:52",
@@ -899,5 +912,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-26T14:11:52.577512+00:00"
+  "updated_at": "2026-11-26T14:13:12.561599+00:00"
 }
