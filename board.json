@@ -687,22 +687,37 @@
           "from": "intake",
           "to": "gatekeeper",
           "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-26 16:00:04",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-26 16:00:05",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": {
         "level": "studied",
         "reason": ""
       },
-      "title": "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.com&gad_source=2&gad_campaignid=24276174909 ,что по этому пр",
-      "urls": [
-        "https://exponentialtraffic.com/dfy?gc_id=24276174909&h_ga_id=199975383066&h_ad_id=825749333656&h_keyword_id=&h_keyword=&h_placement=youtube.com&gad_source=2&gad_campaignid=24276174909"
-      ],
-      "project": "Traffic",
-      "kind": "link",
+      "title": "TIM: [Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "urls": [],
+      "project": "Alberta",
+      "kind": "command",
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-10-22 08:21:09"
+      "updated": "2026-11-26 16:00:05",
+      "gh_issue": 128,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     },
     "127": {
       "id": 127,
