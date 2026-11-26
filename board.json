@@ -18443,9 +18443,24 @@
           "from": "tg_director",
           "to": "gatekeeper",
           "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        },
+        {
+          "t": "2026-11-25 22:23:00",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-25 23:52:07",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
-      "evidence": null,
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
       "title": "TIM: [Тим] https://gric.agency/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRzdgV0mX9leHRuA2FlbQIxMQBwZ",
       "urls": [
         "https://gric.agency/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRzdgV0mX9leHRuA2FlbQIxMQBwZ",
@@ -18457,7 +18472,7 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-11-25 22:22:39",
+      "updated": "2026-11-25 23:52:07",
       "gh_issue": 118,
       "next": {
         "who": "done",
