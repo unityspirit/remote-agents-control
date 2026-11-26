@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T06:47:38.033187+00:00",
+  "updated_at": "2026-11-26T06:50:07.049825Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -217,6 +217,15 @@
       "source_url": "https://gric.agency/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRzdgV0mX9leHRuA2FlbQIxMQBwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABpzoDMmkFOWOhUj96ri6xk5o9td2GS1km-9wLry-7X8ZtDHULM-XNe50dbqEH_aem_BVmkBBsZ0Ifq3_SYq12T6Q",
       "summary": "### Tim here. Global Spirit Group, HQ. Task #118.\n\n### Analysis of the Source\nThe user provided a link to **`gric.agency`** (accessed via Instagram bio traffic, equipped with UTM and FBCLID tracking parameters). \n\n* **Extracted Data from URL:**\n  * **Final URL:** `https://gric.agency/...`\n  * **Title:** `GET READY IT'S CRAFTED. WEBSITES. SEO. ADS.`\n  * **Key Positioning:** Digital agency focused on performance marketing and engineering («Websites. SEO. ADS. We build digital systems designed to attract demand, convert traffic, and grow businesses — not sit idle.»).\n  * **Core Methodology stated",
       "updated_at": "2026-11-26T05:22:47.585981Z"
+    },
+    {
+      "id": "kb-bot-1795675802",
+      "issue": "Bot",
+      "category": "Проект: Главный Штаб",
+      "title": "Telegram вложение (Фото) от @unityspiritpartners",
+      "source_url": "",
+      "summary": "Файл сохранён в Офис: 01_Необработанное/media/tg_437_photo.jpg",
+      "updated_at": "2026-11-26T06:50:02.774898Z"
     }
   ]
 }
