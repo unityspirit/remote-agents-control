@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795718978007",
+      "ts": "2026-11-26T18:49:38.007624+00:00",
+      "time_local": "11:49:38",
+      "user_login": "mshlomon",
+      "full_name": "@MShlomoN (BMWecker)",
+      "bot_username": "Личный бот",
+      "director_name": "Аршак",
+      "action_type": "nlu_follow_up_step",
+      "project": "Alberta",
+      "summary": "Исполнен запрос (#126): Пидарас тупой! сам разверни на github- у тебя же токен есть! — контекст: Давай пока пойдём по варианту А делай сам — контекст: Сделай эту админку отдельно на github pages — контекс",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795718494182",
       "ts": "2026-11-26T18:41:34.182611+00:00",
       "time_local": "11:41:34",
@@ -990,5 +1003,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-26T18:41:34.182611+00:00"
+  "updated_at": "2026-11-26T18:49:38.007624+00:00"
 }
