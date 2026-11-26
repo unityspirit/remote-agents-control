@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-26T11:03:56.440548Z",
+  "updated_at": "2026-11-26T11:09:23.140988Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -487,6 +487,13 @@
       "project": "Татьяна tentorium.ru",
       "issue": 120,
       "summary": "Внимательно изучи этот репозитории на github :\nhttps://github.com/bmwecker/alya-everything\n\nВот токены, которые могут пригодиться для работы с этим направлением:\nВот github токен: ghp_9s2tJrkc5FbI6nel: Здравия! Аршак на связи, Личный ИИ-Директор в Global Spirit Group (контур «Татьяна tentorium.ru», Issue #120).\n\n### Анализ запроса и технического состояния\n1. **Проверка ссылки на GitHub:** \n   При попытке обращения к `https://github.com получен ст"
+    },
+    {
+      "id": "fact-dir-v343-iss121",
+      "ts": "2026-11-26T11:09:18.822066Z",
+      "project": "Татьяна tentorium.ru",
+      "issue": 121,
+      "summary": "Эти два попробуй:\nhttps://github.com/bmwecker/alya-platform\nhttps://github.com/bmwecker/alya-archetype-platform: Здравия! Аршак на связи, Личный ИИ-Директор в Global Spirit Group.\n\nПо результатам проверки переданных ссылок:\n1. **`https://github.com/bmwecker/alya-platform`** — вернул ошибку `HTTP Error 404: Not Found`.\n2. **`https://github.com/bmwecker/alya-archetype-platform`** — вернул оши"
     }
   ],
   "projects": {
