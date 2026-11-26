@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-26T07:26:56.481776Z",
+  "updated_at": "2026-11-26T07:35:49.236706Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -473,6 +473,13 @@
       "project": "Главный Штаб",
       "issue": 118,
       "summary": "https://gric.agency/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRzdgV0mX9leHRuA2FlbQIxMQBwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABpzoDMmkFOWOhUj96ri6xk5o9td2GS1km-9wLry-7X8: ### Tim here. Global Spirit Group, HQ. Task #118.\n\n### Analysis of the Source\nThe user provided a link to **`gric.agency`** (accessed via Instagram bio traffic, equipped with UTM and FBCLID tracking parameters). \n\n* **Extracted Data from URL:**\n  *"
+    },
+    {
+      "id": "fact-dir-v343-iss119",
+      "ts": "2026-11-26T07:35:40.813812Z",
+      "project": "Главный Штаб",
+      "issue": 119,
+      "summary": "https://lnkd.in/p/g2t4XeJw: **Tim here. Global Spirit Group, HQ. Task #119.**\n\n### 🔗 Link & Source Analysis\n* **Final URL:** `https://www.linkedin.com/posts/pavelgvay_20-vc-funds-that-invest-pre-revenue-no-share-7530669949749653505-Y7GS/`\n* **Title:** Pavel Gvay | Shizune | LinkedIn\n* **Extracted Data:** A "
     }
   ],
   "projects": {
