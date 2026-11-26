@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795693455587",
+      "ts": "2026-11-26T11:44:15.587760+00:00",
+      "time_local": "04:44:15",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#122): Study this photo and tell how we can set up LLC and get 500000$\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_482_photo.jpg]",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795691504850",
       "ts": "2026-11-26T11:11:44.850191+00:00",
       "time_local": "04:11:44",
@@ -756,5 +769,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-26T11:11:44.850191+00:00"
+  "updated_at": "2026-11-26T11:44:15.587760+00:00"
 }
