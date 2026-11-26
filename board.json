@@ -18682,6 +18682,44 @@
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       }
+    },
+    "122": {
+      "id": 122,
+      "created": "2026-11-26 04:43:42",
+      "handoffs": [
+        {
+          "t": "2026-11-26 04:43:42",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-26 04:43:56",
+          "from": "intake",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-26 04:43:57",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: [Тим] Study this photo and tell how we can set up LLC and get 500000$\n\n[Вложение сохранено в Офис: 01_Необработанное/medi",
+      "urls": [],
+      "project": "Главный Штаб",
+      "kind": "command",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-26 04:43:57",
+      "gh_issue": 122,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
