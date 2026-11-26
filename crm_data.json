@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T14:10:52.345105+00:00",
+  "updated_at": "2026-11-26T14:11:23.037522Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -280,6 +280,15 @@
       "source_url": "https://www.facebook.com/share/v/1C2KGFxLE1/",
       "summary": "Tim here. Global Spirit Group, HQ. Task #125.\n\n### 1. Analysis of the Source (Facebook Reel)\nThe provided link is a promotional video by Domique Robinson regarding **Business Credit and Funding Strategies**. \n*   **Core Message:** Entrepreneurs often mistakenly believe they need significant personal savings to start/scale. The strategy focuses on leveraging personal/business credit profiles to access institutional capital.\n*   **Key Pillars:** Credit profile optimization, understanding bank underwriting criteria, avoiding application pitfalls, and strategic capital deployment.\n*   **Relevance ",
       "updated_at": "2026-11-26T14:04:03.032499Z"
+    },
+    {
+      "id": "kb-bot-126",
+      "issue": 126,
+      "category": "Проект: Личный Офис: @mshlomon",
+      "title": "пидор! это актуальный токен! — контекст: Хватит мозги мне ебать! изучи репы, которые я тебе сказал",
+      "source_url": "",
+      "summary": "Принято, босс. Вижу актуальный токен и контекст по репозиториям `bmwecker`. \n\nВключаю в работу токен для доступа к репозиториям:\n`ghp_9s2tJrkc5FbI6nel` (плюс полная строка настройки подмены URL через `git config`, которую передавала Татьяна ранее).\n\n### Что делаю прямо сейчас:\n1. Фиксирую актуальный GitHub-токен для бесшовного доступа к приватным/публичным репозиториям экосистемы `bmwecker` (`alya-everything`, `alya-platform`, `alya-archetype-platform`).\n2. Перестраиваю конфигурацию локального окружения под этот токен, чтобы исключить любые ошибки авторизации (`403 / 401 Unauthorized`) при кло",
+      "updated_at": "2026-11-26T14:11:18.602363Z"
     }
   ]
 }
