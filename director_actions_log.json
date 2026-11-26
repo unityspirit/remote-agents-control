@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795702306616",
+      "ts": "2026-11-26T14:11:46.616617+00:00",
+      "time_local": "07:11:46",
+      "user_login": "aliashirani",
+      "full_name": "Alberta Shirani",
+      "bot_username": "@lermontovplusbot",
+      "director_name": "Директор Альберты",
+      "action_type": "status",
+      "project": "Alberta",
+      "summary": "Выдана сводка по папке «Alberta»",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795702302818",
       "ts": "2026-11-26T14:11:42.818475+00:00",
       "time_local": "07:11:42",
@@ -873,5 +886,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-26T14:11:42.818475+00:00"
+  "updated_at": "2026-11-26T14:11:46.616617+00:00"
 }
