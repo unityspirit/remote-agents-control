@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 308,
+      "evidence_count": 310,
       "scope": "global",
-      "last_updated": "2026-11-26T00:36:56.344387"
+      "last_updated": "2026-11-26T04:00:34.650230"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 155,
+      "evidence_count": 157,
       "scope": "global",
-      "last_updated": "2026-11-26T00:36:56.344954"
+      "last_updated": "2026-11-26T04:00:34.651867"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -36,9 +36,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 106,
+      "evidence_count": 108,
       "scope": "global",
-      "last_updated": "2026-11-26T00:36:56.346062"
+      "last_updated": "2026-11-26T04:00:34.653496"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 211,
+      "evidence_count": 213,
       "scope": "global",
-      "last_updated": "2026-11-26T00:36:56.348408"
+      "last_updated": "2026-11-26T04:00:34.654686"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -56,9 +56,9 @@
       "action": "Запускать локальный конвейер 0 ₽/мес: Agent Reach + Jina Reader + yt-dlp -> сценарий без воды -> озвучка edge-tts -> субтитры faster-whisper -> рендер 9:16 через FFmpeg",
       "confidence": 0.99,
       "domain": "content-pipeline",
-      "evidence_count": 232,
+      "evidence_count": 234,
       "scope": "global",
-      "last_updated": "2026-11-25T22:22:16.709409"
+      "last_updated": "2026-11-26T04:00:34.656296"
     },
     {
       "id": "gartner-2026-intelligent-crm",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 337,
+      "evidence_count": 339,
       "scope": "global",
-      "last_updated": "2026-11-26T00:36:56.349537"
+      "last_updated": "2026-11-26T04:00:34.657368"
     },
     {
       "id": "task-custom-request",
@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T11:00:11.913189Z",
+  "updated_at": "2026-11-26T11:00:35.608478+00:00",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
