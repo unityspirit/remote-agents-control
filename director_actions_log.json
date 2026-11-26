@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795670573390",
+      "ts": "2026-11-26T05:22:53.390949+00:00",
+      "time_local": "22:22:53",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Главный Штаб",
+      "summary": "Исполнен запрос (#118): https://gric.agency/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRzdgV0mX9leHRuA2FlbQIxMQBwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABpzoDMmkFOWOhUj96ri6xk5",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795640774380",
       "ts": "2026-11-25T21:06:14.380794+00:00",
       "time_local": "14:06:14",
@@ -626,5 +639,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-25T21:06:14.380794+00:00"
+  "updated_at": "2026-11-26T05:22:53.390949+00:00"
 }
