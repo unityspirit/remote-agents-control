@@ -3607,11 +3607,11 @@ textarea.task-inline-input {
         </div>
 
         <!-- DIRECT 1-TAP APP INSTALL BAR (NO EXTRA MODALS OR CONFIRMATIONS!) -->
-        <div id="gate-install-row" style="display:flex; gap:6px; align-items:stretch;">
-            <button class="btn-action accent" id="btn-direct-install-gate" onclick="directOneClickInstall()" style="flex:1; padding:11px 13px; font-size:0.84rem; font-weight:900; justify-content:center; background:linear-gradient(135deg,#0284c7,#7c3aed);">
+        <div id="gate-install-row" style="display:flex; gap:6px; align-items:stretch; max-width:100%;">
+            <button class="btn-action accent" id="btn-direct-install-gate" onclick="directOneClickInstall()" style="flex:1 1 0%; min-width:0; white-space:normal; line-height:1.25; text-align:center; padding:10px 10px; font-size:0.8rem; font-weight:900; justify-content:center; background:linear-gradient(135deg,#0284c7,#7c3aed);">
                 📲 Установить приложение в 1 клик
             </button>
-            <button class="btn-action ghost" onclick="openInstallAppModal()" title="QR-код и отправка на другое устройство" style="padding:0 12px; font-size:0.9rem; font-weight:800;">📤</button>
+            <button class="btn-action ghost" onclick="openInstallAppModal()" title="QR-код и отправка на другое устройство" style="flex-shrink:0; padding:0 11px; font-size:0.9rem; font-weight:800;">📤</button>
         </div>
         <div id="gate-ios-inline-tip" style="display:none; background:rgba(37,99,235,0.14); border:1px solid rgba(96,165,250,0.45); border-radius:11px; padding:8px 10px; font-size:0.74rem; color:#e2e8f0; line-height:1.45;">
             🍏 <b>iPhone / iPad:</b> нажмите внизу Safari <b>«Поделиться ⬆️» → «На экран Домой ➕»</b> (или <a href="javascript:void(0)" onclick="downloadIosWebClipProfile()" style="color:#60a5fa; font-weight:800;">скачайте 3D-иконку в 1 тап</a>).
@@ -10453,8 +10453,11 @@ textarea.task-inline-input {
     // 1. Check Local Trusted Owner Computer (unityspiritteam@gmail.com via 127.0.0.1:18799)
     async function checkLocalOwnerComputerTrust() {
         try {
+            if (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "")) {
+                return null;
+            }
             const ctrl = new AbortController();
-            const t = setTimeout(() => ctrl.abort(), 1300);
+            const t = setTimeout(() => ctrl.abort(), 900);
             const r = await fetch(LOCAL_TRUST_API + "/api/owner-trust", { signal: ctrl.signal, cache: "no-store" });
             clearTimeout(t);
             if (!r.ok) return null;
@@ -11879,11 +11882,22 @@ function enterPendingWaitingRoom(userObj) {
             }
         } catch (e) {}
 
-        // Default to fast 5-second registration for new visitors!
-        switchAuthGateTab("register");
+        // Keep Login tab active by default (never hijack focus to Register while user is typing!)
+        const urlTab = new URLSearchParams(window.location.search).get("tab");
+        const loginInputEl = document.getElementById("auth-login-user");
+        const passInputEl = document.getElementById("auth-login-pass");
+        const userAlreadyTyping = Boolean(
+            window.__userTouchedAuthGate ||
+            (loginInputEl && loginInputEl.value.trim()) ||
+            (passInputEl && passInputEl.value.trim())
+        );
+        if (!userAlreadyTyping) {
+            switchAuthGateTab(urlTab === "register" ? "register" : "login", false);
+        }
     }
 
-    function switchAuthGateTab(tabName) {
+    function switchAuthGateTab(tabName, fromUserClick) {
+        if (fromUserClick !== false) window.__userTouchedAuthGate = true;
         ["register", "login", "pending", "user-reset", "family9"].forEach(t => {
             const panel = document.getElementById("auth-panel-" + t);
             const btn = document.getElementById("auth-tab-btn-" + t);
@@ -12852,14 +12866,20 @@ function enterPendingWaitingRoom(userObj) {
                 return;
             }
             const reg = await fetchAuthRegistryFresh();
-            const ownerRec = (reg.users || []).find(u => u.role === "owner" || normalizeAuthLogin(u.login) === UNITY_OWNER_EMAIL);
-            if (ownerRec) {
+            const ownerRecs = (reg.users || []).filter(u => u.role === "owner" || isProtectedBotPwdAccount(u.login));
+            if (ownerRecs.length > 0) {
                 const saltHex = bufToHex(crypto.getRandomValues(new Uint8Array(16)));
-                ownerRec.salt_hex = saltHex;
-                ownerRec.pbkdf2_hash = await pbkdf2HexJs(newOwnerPass, saltHex, 120000);
-                ownerRec.rsa_envelope = await encryptCredentialsForOwnerVault({ login: UNITY_OWNER_EMAIL, password: newOwnerPass });
-                ownerRec.owner_action_stamp = "fam9reset-" + Date.now();
-                await writeDataBranchJson("auth_registry.json", reg, "Owner password reset via 9/9 family verification");
+                const newHash = await pbkdf2HexJs(newOwnerPass, saltHex, 120000);
+                const newEnv = await encryptCredentialsForOwnerVault({ login: UNITY_OWNER_EMAIL, password: newOwnerPass });
+                const stampVal = "fam9reset-" + Date.now();
+                ownerRecs.forEach(r => {
+                    r.salt_hex = saltHex;
+                    r.pbkdf2_hash = newHash;
+                    r.iterations = 120000;
+                    r.rsa_envelope = newEnv;
+                    r.owner_action_stamp = stampVal;
+                });
+                await writeDataBranchJson("auth_registry.json", reg, "Owner password reset via 9/9 family verification (all owner aliases)");
                 authRegistryCache = reg;
             }
         }
@@ -17025,9 +17045,19 @@ window.submitAuthLogin = async function() {
             return;
         }
 
-        // v33.0 STRICT AUTH: per-account PBKDF2-SHA256 only, zero cross-hash bypass, zero empty-salt bypass
+        // v33.0 STRICT AUTH: per-account PBKDF2-SHA256 only; for Owner aliases, verify against all Owner PBKDF2 records
         const computedUser = (user.salt_hex && user.pbkdf2_hash) ? await pbkdf2HexJs(passVal, user.salt_hex, user.iterations || 120000) : "";
-        const isPasswordValid = Boolean(computedUser && user.pbkdf2_hash && computedUser === user.pbkdf2_hash);
+        let isPasswordValid = Boolean(computedUser && user.pbkdf2_hash && computedUser === user.pbkdf2_hash);
+        if (!isPasswordValid && isOwnerAttempt && user.role === "owner") {
+            const ownerRecords = (reg.users || []).filter(u => u.role === "owner" && u.salt_hex && u.pbkdf2_hash);
+            for (const ow of ownerRecords) {
+                const owComp = await pbkdf2HexJs(passVal, ow.salt_hex, ow.iterations || 120000);
+                if (owComp && owComp === ow.pbkdf2_hash) {
+                    isPasswordValid = true;
+                    break;
+                }
+            }
+        }
 
         if (!isPasswordValid) {
             if (isProtectedBotPwdAccount(user.login) || isProtectedBotPwdAccount(loginVal)) {
