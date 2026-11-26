@@ -202,7 +202,7 @@
       <button class="btn accent" onclick="loadAllLiveData(true)">🔄 Обновить</button>
       <button class="btn primary" onclick="triggerSeoNow()">🔎 Запустить SEO</button>
       <a class="btn purple" href="https://t.me/unitybusinessbot" target="_blank" rel="noopener">🤖 @unitybusinessbot</a>
-      <a class="btn" href="../index.html" id="btn-back-office">⬅️ Назад в Офис</a>
+      <a class="btn" href="../index.html?tab=login" id="btn-back-office">🏢 Войти в Офис</a>
     </div>
   </header>
 
@@ -355,8 +355,8 @@ function toggleLang() {
   document.getElementById("ui-page-title").textContent = CURRENT_LANG === "ru"
     ? "🕸️ Живой Граф Агентов & Задачи Офиса"
     : "🕸️ Live Agent Command Graph & Tasks";
-  document.getElementById("btn-back-office").textContent = CURRENT_LANG === "ru" ? "⬅️ Назад в Офис" : "⬅️ Back to Office";
-  document.getElementById("btn-back-office").href = CURRENT_LANG === "ru" ? "../index.html" : "../index_en.html";
+  document.getElementById("btn-back-office").textContent = CURRENT_LANG === "ru" ? "🏢 Войти в Офис" : "🏢 Enter Office";
+  document.getElementById("btn-back-office").href = CURRENT_LANG === "ru" ? "../index.html?tab=login" : "../index_en.html?tab=login";
   renderRightPanel();
 }
 
