@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795690966004",
+      "ts": "2026-11-26T11:02:46.004055+00:00",
+      "time_local": "04:02:46",
+      "user_login": "mshlomon",
+      "full_name": "@MShlomoN (BMWecker)",
+      "bot_username": "Личный бот",
+      "director_name": "Аршак",
+      "action_type": "nlu_follow_up_step",
+      "project": "Татьяна tentorium.ru",
+      "summary": "Исполнен запрос (#120): да- тормоз. это закрытый репозиторий, api ключ я от него тебе дал. используй его для получения доступа — контекст: Внимательно изучи этот репозитории на github :\nhttps://github.com",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795690813495",
       "ts": "2026-11-26T11:00:13.495214+00:00",
       "time_local": "04:00:13",
@@ -704,5 +717,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-26T11:00:13.495214+00:00"
+  "updated_at": "2026-11-26T11:02:46.004055+00:00"
 }
