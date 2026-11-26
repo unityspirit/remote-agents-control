@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-26T23:27:13.797710+00:00",
+  "updated_at": "2026-11-26T23:30:03.092334Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -298,6 +298,15 @@
       "source_url": "",
       "summary": "@MShlomoN, информация принята, проанализирована и зафиксирована в оперативном контуре офиса. Навыки по работе с современными пайплайнами ИИ-пентеста (`hexstrike-ai`, `PentestGPT`, `pentest-ai-agents`, `pentest-ai`, `claude-pentest` и справочный модуль `PentestingEverything` в качестве agent skill) успешно интегрированы в профиль архитектурного анализа. \n\nВ условиях нашего контура (FastAPI-бэкенд `alya-archetype-bot.onrender.com`, инфраструктура `Alberta`) эти инструменты могут применяться для аудита безопасности эндпоинтов, проверки токенов доступа, анализа структуры фронтенда на GitHub Pages ",
       "updated_at": "2026-11-26T23:25:23.562491Z"
+    },
+    {
+      "id": "kb-bot-129",
+      "issue": 129,
+      "category": "Проект: Alberta",
+      "title": "ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https://github.com/ruvn-1fgas/",
+      "source_url": "https://github.com/ruvn-1fgas/2gis-parser",
+      "summary": "Здравия! Аршак на связи. Принял новые инструменты в рабочий контур проекта **Alberta** (папка `@mshlomon`). \n\nСкиллы и тулсеты зафиксированы в оперативной памяти:\n\n### 🛠️ Добавленный стек скрапинга и лидогенерации:\n1. **2GIS Parser** (`https://github.com/ruvn-1fgas/2gis-parser`): Scrapy-парсер для выгрузки локальной базы данных 2GIS (проверенная эффективность для локального бизнеса в СНГ).\n2. **Yandex Maps Scraper** (`https://github.com/b5401/scraper`): Инструмент сбора данных с Яндекс.Карт.\n3. **Google Maps Scraper** (`https://github.com/gosom/google-maps-scraper`): Масштабируемый сбор гео-да",
+      "updated_at": "2026-11-26T23:29:58.923011Z"
     }
   ]
 }
