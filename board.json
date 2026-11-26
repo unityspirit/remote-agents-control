@@ -864,22 +864,33 @@
           "from": "intake",
           "to": "gatekeeper",
           "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-26 07:03:54",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": {
         "level": "studied",
         "reason": ""
       },
-      "title": "https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxconv_demandgen&utm_content=828009486204&cc_gclid=CjwKCAjwxeHWBhBPEiwAiqtQ-Thm_Sy67dMRxYYWyTsJHLsKlr14PW6Os",
+      "title": "TIM: [Тим] https://www.facebook.com/share/v/1C2KGFxLE1/",
       "urls": [
-        "https://x.ai/bot?utm_source=google_paid&utm_medium=paid&utm_campaign=grokbot_yt_en_emea_t1_maxconv_demandgen&utm_content=828009486204&cc_gclid=CjwKCAjwxeHWBhBPEiwAiqtQ-Thm_Sy67dMRxYYWyTsJHLsKlr14PW6OsG6yhKWxHr7Zogi7rQ08BRoCVKUQAvD_BwE&gad_source=2&gad_campaignid=24187973224"
+        "https://www.facebook.com/share/v/1C2KGFxLE1/"
       ],
-      "project": "Grok_xAI_Teammates",
+      "project": "Главный Штаб",
       "kind": "link",
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-10-22 08:24:06"
+      "updated": "2026-11-26 07:03:54",
+      "gh_issue": 125,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     },
     "129": {
       "id": 129,
