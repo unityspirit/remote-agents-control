@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795702312577",
+      "ts": "2026-11-26T14:11:52.577512+00:00",
+      "time_local": "07:11:52",
+      "user_login": "mshlomon",
+      "full_name": "@MShlomoN (BMWecker)",
+      "bot_username": "Личный бот",
+      "director_name": "Аршак",
+      "action_type": "nlu_notebooklm_research",
+      "project": "Личный Офис: @mshlomon",
+      "summary": "Исполнен запрос (#126): Хватит мозги мне ебать! изучи репы, которые я тебе сказал",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795702306616",
       "ts": "2026-11-26T14:11:46.616617+00:00",
       "time_local": "07:11:46",
@@ -886,5 +899,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-26T14:11:46.616617+00:00"
+  "updated_at": "2026-11-26T14:11:52.577512+00:00"
 }
