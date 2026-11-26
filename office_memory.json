@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-26T14:03:52.062941Z",
+  "updated_at": "2026-11-26T14:11:08.146679Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -508,6 +508,13 @@
       "project": "Главный Штаб",
       "issue": 125,
       "summary": "https://www.facebook.com/share/v/1C2KGFxLE1/: Tim here. Global Spirit Group, HQ. Task #125.\n\n### 1. Analysis of the Source (Facebook Reel)\nThe provided link is a promotional video by Domique Robinson regarding **Business Credit and Funding Strategies**. \n*   **Core Message:** Entrepreneurs often mistakenly believe they need "
+    },
+    {
+      "id": "fact-dir-v343-iss126",
+      "ts": "2026-11-26T14:10:59.373845Z",
+      "project": "Личный Офис: @mshlomon",
+      "issue": 126,
+      "summary": "пидор! это актуальный токен!: Принято, босс. Вижу актуальный токен и контекст по репозиториям `bmwecker`. \n\nВключаю в работу токен для доступа к репозиториям:\n`ghp_9s2tJrkc5FbI6nel` (плюс полная строка настройки подмены URL через `git config`, которую передавала Татьяна ранее).\n\n### Что делаю прямо сейчас:\n1."
     }
   ],
   "projects": {
