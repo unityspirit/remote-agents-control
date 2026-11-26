@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 16:27:01",
+  "updated": "2026-11-26 16:29:59",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 112,
-      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "tasks_completed": 113,
+      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
       "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:00:02"
+      "updated_at": "2026-11-26 16:29:51"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 93,
-      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "tasks_completed": 94,
+      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
       "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:00:02"
+      "updated_at": "2026-11-26 16:29:51"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 89,
-      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "tasks_completed": 90,
+      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
       "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:00:02"
+      "updated_at": "2026-11-26 16:29:51"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 95,
-      "last_task": "[Аршак] какая нахер татьяна?  я тебе сказал Сделай эту админку для Альберты отдельно на github pages на гите, api ключ от к",
+      "tasks_completed": 96,
+      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
       "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:00:02"
+      "updated_at": "2026-11-26 16:29:51"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     },
     "researcher": {
       "name": "Разведчик",
@@ -129,7 +129,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 104,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 16:27:01"
+      "updated_at": "2026-11-26 16:29:59"
     }
   },
   "daemons": {
@@ -238,14 +238,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 1,
+      "calls_total": 2,
       "calls_by_provider": {
-        "cloud_test_gateway": 1
+        "cloud_test_gateway": 2
       },
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
-      "last_call_at": "2026-11-26T23:00:02.234681+00:00",
-      "errors_count": 1
+      "last_call_at": "2026-11-26T23:29:51.546632+00:00",
+      "errors_count": 2
     }
   },
   "statuses": {
