@@ -93,6 +93,23 @@
   .kpi-card {
     background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px;
     display: flex; flex-direction: column; gap: 4px;
+    cursor: pointer; transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    user-select: none;
+  }
+  .kpi-card:hover {
+    transform: translateY(-2px); border-color: rgba(56,189,248,0.55);
+    box-shadow: 0 4px 16px rgba(56,189,248,0.14);
+  }
+  .kpi-card:active {
+    transform: scale(0.97);
+  }
+  .kpi-card.attention-card {
+    border-color: rgba(244,63,94,0.4);
+    background: linear-gradient(135deg, rgba(244,63,94,0.08), rgba(15,23,42,0.95));
+  }
+  .kpi-card.attention-card:hover {
+    border-color: var(--rose);
+    box-shadow: 0 4px 18px rgba(244,63,94,0.24);
   }
   .kpi-val { font-size: 1.35rem; font-weight: 900; color: var(--cyan); line-height: 1.1; }
   .kpi-lbl { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
@@ -209,12 +226,12 @@
   <main class="shell">
     <!-- KPI CARDS -->
     <section class="kpi-grid">
-      <div class="kpi-card"><div class="kpi-val" id="kpi-agents">6</div><div class="kpi-lbl" id="lbl-k-agents">Подчинённых ИИ-агентов</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--purple);" id="kpi-skills">167 + 21</div><div class="kpi-lbl" id="lbl-k-skills">Скиллов (SEO/CRO/Semrush) + Агентов</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--emerald);" id="kpi-local-seo">96.4</div><div class="kpi-lbl" id="lbl-k-lseo">SEO балл Офиса (/100)</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--amber);" id="kpi-active-tasks">…</div><div class="kpi-lbl" id="lbl-k-active">В работе / Очередь</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:var(--rose);" id="kpi-attention">…</div><div class="kpi-lbl" id="lbl-k-att">Требуют внимания (SSL/SEO)</div></div>
-      <div class="kpi-card"><div class="kpi-val" style="color:#a5b4fc;" id="kpi-cloud-cycle">#77</div><div class="kpi-lbl" id="lbl-k-cycle">Облачный цикл 24/7 + Задачи</div></div>
+      <div class="kpi-card" onclick="openAllAgents()" title="Показать всех ИИ-агентов на графе"><div class="kpi-val" id="kpi-agents">6</div><div class="kpi-lbl" id="lbl-k-agents">Подчинённых ИИ-агентов</div></div>
+      <div class="kpi-card" onclick="openSkillsTab()" title="Открыть каталог скиллов"><div class="kpi-val" style="color:var(--purple);" id="kpi-skills">167 + 21</div><div class="kpi-lbl" id="lbl-k-skills">Скиллов (SEO/CRO) + Агентов</div></div>
+      <div class="kpi-card" onclick="openDomainsTab()" title="Открыть SEO Домены"><div class="kpi-val" style="color:var(--emerald);" id="kpi-local-seo">96.4</div><div class="kpi-lbl" id="lbl-k-lseo">SEO балл Офиса (/100)</div></div>
+      <div class="kpi-card" onclick="openActiveTasks()" title="Открыть задачи в работе и очереди"><div class="kpi-val" style="color:var(--amber);" id="kpi-active-tasks">…</div><div class="kpi-lbl" id="lbl-k-active">В работе / Очередь</div></div>
+      <div class="kpi-card attention-card" onclick="openAttentionTasks()" id="card-attention" title="Нажмите, чтобы открыть все задачи требующие внимания"><div class="kpi-val" style="color:var(--rose);" id="kpi-attention">…</div><div class="kpi-lbl" id="lbl-k-att">🚨 Требуют внимания (SSL/SEO) 👉</div></div>
+      <div class="kpi-card" onclick="openAllTasks()" title="Открыть все задачи 24/7"><div class="kpi-val" style="color:#a5b4fc;" id="kpi-cloud-cycle">#77</div><div class="kpi-lbl" id="lbl-k-cycle">Облачный цикл 24/7 + Задачи</div></div>
     </section>
 
     <!-- DIRECT COMMAND BAR -->
@@ -273,20 +290,20 @@
       <!-- RIGHT: LIVE OPERATIONS + FULL TASK QUEUE + SEO DOMAINS + SKILLS -->
       <div class="panel-box">
         <div class="tab-bar" id="right-tabs">
-          <button class="tab-btn active" onclick="switchRightTab('feed', this)">⚡ Что происходит сейчас</button>
-          <button class="tab-btn" onclick="switchRightTab('tasks', this)">📋 Все задачи (<span id="tab-cnt-tasks">0</span>)</button>
-          <button class="tab-btn" onclick="switchRightTab('domains', this)">🌐 SEO Домены</button>
-          <button class="tab-btn" onclick="switchRightTab('skills', this)">🧠 Скиллы (<span id="tab-cnt-skills">167</span>)</button>
+          <button class="tab-btn active" id="tab-btn-feed" onclick="switchRightTab('feed', this)">⚡ Что происходит сейчас</button>
+          <button class="tab-btn" id="tab-btn-tasks" onclick="switchRightTab('tasks', this)">📋 Все задачи (<span id="tab-cnt-tasks">0</span>)</button>
+          <button class="tab-btn" id="tab-btn-domains" onclick="switchRightTab('domains', this)">🌐 SEO Домены</button>
+          <button class="tab-btn" id="tab-btn-skills" onclick="switchRightTab('skills', this)">🧠 Скиллы (<span id="tab-cnt-skills">167</span>)</button>
         </div>
 
         <div id="tasks-toolbar" style="display:none; padding:10px 14px; border-bottom:1px solid var(--border); flex-direction:column; gap:8px;">
           <input type="text" class="cmd-input" id="task-search" style="flex:0 0 auto; width:100%;" placeholder="🔍 Фильтр по задаче, человеку, проекту, скиллу..." oninput="renderRightPanel()">
           <div id="status-filters" style="display:flex; gap:6px; flex-wrap:wrap;">
-            <button class="chip active" onclick="setTaskStatusFilter('all', this)">Все</button>
-            <button class="chip" onclick="setTaskStatusFilter('in_progress', this)">🟢 В работе</button>
-            <button class="chip" onclick="setTaskStatusFilter('attention', this)">🚨 Внимание</button>
-            <button class="chip" onclick="setTaskStatusFilter('queued', this)">🟡 Очередь</button>
-            <button class="chip" onclick="setTaskStatusFilter('done', this)">✅ Готово</button>
+            <button class="chip active" id="filter-btn-all" onclick="setTaskStatusFilter('all', this)">Все</button>
+            <button class="chip" id="filter-btn-inprogress" onclick="setTaskStatusFilter('in_progress', this)">🟢 В работе</button>
+            <button class="chip" id="filter-btn-attention" onclick="setTaskStatusFilter('attention', this)">🚨 Внимание</button>
+            <button class="chip" id="filter-btn-queued" onclick="setTaskStatusFilter('queued', this)">🟡 Очередь</button>
+            <button class="chip" id="filter-btn-done" onclick="setTaskStatusFilter('done', this)">✅ Готово</button>
           </div>
           <div id="user-filters" style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="chip active" onclick="setUserFilter('all', this)">👥 Все люди</button>
@@ -716,13 +733,58 @@ function setGraphFilter(mode, btn) {
   if (btn) btn.classList.add("active");
   nodePositions = {};
   layoutGraphNodes(true);
+  if (mode === "active") {
+    openAttentionTasks();
+  }
+}
+
+/* ---------- DIRECT KPI ACTIONS ---------- */
+function openAttentionTasks() {
+  switchRightTab('tasks', document.getElementById('tab-btn-tasks'));
+  setTaskStatusFilter('attention', document.getElementById('filter-btn-attention'));
+  const target = document.getElementById('tasks-toolbar') || document.getElementById('rightTabBody');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openActiveTasks() {
+  switchRightTab('tasks', document.getElementById('tab-btn-tasks'));
+  setTaskStatusFilter('in_progress', document.getElementById('filter-btn-inprogress'));
+  const target = document.getElementById('tasks-toolbar') || document.getElementById('rightTabBody');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openAllTasks() {
+  switchRightTab('tasks', document.getElementById('tab-btn-tasks'));
+  setTaskStatusFilter('all', document.getElementById('filter-btn-all'));
+  const target = document.getElementById('tasks-toolbar') || document.getElementById('rightTabBody');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openSkillsTab() {
+  switchRightTab('skills', document.getElementById('tab-btn-skills'));
+  const target = document.getElementById('rightTabBody');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openDomainsTab() {
+  switchRightTab('domains', document.getElementById('tab-btn-domains'));
+  const target = document.getElementById('rightTabBody');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openAllAgents() {
+  setGraphFilter('all', document.querySelector("#graph-filters button:first-child"));
+  resetCamera();
+  const target = document.getElementById('graphStage');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 /* ---------- RIGHT PANEL RENDERING ---------- */
 function switchRightTab(tab, btn) {
   RIGHT_TAB = tab;
   document.querySelectorAll("#right-tabs .tab-btn").forEach(b => b.classList.remove("active"));
-  if (btn) btn.classList.add("active");
+  const b = btn || document.getElementById(`tab-btn-${tab}`);
+  if (b) b.classList.add("active");
   document.getElementById("tasks-toolbar").style.display = tab === "tasks" ? "flex" : "none";
   renderRightPanel();
 }
@@ -730,7 +792,8 @@ function switchRightTab(tab, btn) {
 function setTaskStatusFilter(st, btn) {
   TASK_FILTER = st;
   document.querySelectorAll("#status-filters .chip").forEach(c => c.classList.remove("active"));
-  if (btn) btn.classList.add("active");
+  const b = btn || document.querySelector(`#status-filters button[onclick*="'${st}'"]`);
+  if (b) b.classList.add("active");
   renderRightPanel();
 }
 
