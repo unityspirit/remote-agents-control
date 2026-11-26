@@ -18565,6 +18565,40 @@
         "who": "mshlomon",
         "what": "Тестирование инструментов агентства"
       }
+    },
+    "120": {
+      "id": 120,
+      "created": "2026-11-26 03:59:39",
+      "handoffs": [
+        {
+          "t": "2026-11-26 03:59:39",
+          "from": "human",
+          "to": "intake",
+          "note": "Запрос из Виртуального Офиса"
+        },
+        {
+          "t": "2026-11-26 03:59:57",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        }
+      ],
+      "evidence": null,
+      "title": "TIM: [Аршак] Внимательно изучи этот репозитории на github :\nhttps://github.com/bmwecker/alya-everything\n\nВот токены, которые мог",
+      "urls": [
+        "https://github.com/bmwecker/alya-everything"
+      ],
+      "project": "Татьяна tentorium.ru",
+      "kind": "link",
+      "refers_to": null,
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-26 03:59:57",
+      "gh_issue": 120,
+      "next": {
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      }
     }
   }
 }
