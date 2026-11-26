@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-26T11:11:26.843567Z",
+  "updated_at": "2026-11-26T11:43:55.279871Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -494,6 +494,13 @@
       "project": "Татьяна tentorium.ru",
       "issue": 121,
       "summary": "Эти два попробуй:\nhttps://github.com/bmwecker/alya-platform\nhttps://github.com/bmwecker/alya-archetype-platform: Здравия! Аршак на связи, Личный ИИ-Директор в Global Spirit Group.\n\nПо результатам проверки переданных ссылок:\n1. **`https://github.com/bmwecker/alya-platform`** — вернул ошибку `HTTP Error 404: Not Found`.\n2. **`https://github.com/bmwecker/alya-archetype-platform`** — вернул оши"
+    },
+    {
+      "id": "fact-dir-v343-iss122",
+      "ts": "2026-11-26T11:43:49.054571Z",
+      "project": "Главный Штаб",
+      "issue": 122,
+      "summary": "Study this photo and tell how we can set up LLC and get 500000$\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_482_photo.jpg]: **Тим на связи. Главный Штаб, Задача #122.**\n\nПоскольку прямого текстового описания содержимого фотографии (`tg_482_photo.jpg`) в системных метаданных нет, а прямая работа с визуальным контентом опирается на переданный файл в папке `01_Необработанное/media/tg_482_photo.jpg` и пре"
     }
   ],
   "projects": {
