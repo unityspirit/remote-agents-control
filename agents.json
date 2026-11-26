@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 21:12:25",
+  "updated": "2026-11-26 15:46:31",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 60,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
-      "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 15:40:42"
+      "tasks_completed": 109,
+      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 07:13:27"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 50,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
-      "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 15:40:42"
+      "tasks_completed": 90,
+      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 07:13:27"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 46,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
-      "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 15:40:42"
+      "tasks_completed": 88,
+      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 07:13:27"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 50,
-      "last_task": "[Тим] https://www.instagram.com/reel/DfzPj_5NrgN/?lqvp=OHZuaW81NHhuZnQ3",
-      "last_project": "Главный Штаб",
-      "updated_at": "2026-11-17 15:40:42"
+      "tasks_completed": 92,
+      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 07:13:27"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -61,10 +61,10 @@
       "gives": "готовые КП и скрипты закрытия сделок",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 2,
-      "last_task": "Упакуй продающий 1-страничный оффер B2B AI-Аудита Unity Inc / Global Plus по модели JoinTECH и список первых 10 компаний для аутрича",
-      "last_project": "Unity Inc",
-      "updated_at": "2026-11-02 12:38:26"
+      "tasks_completed": 3,
+      "last_task": "DIRECTOR_ДИРЕКТОР АЛЬБЕРТЫ: Выполнение шага #1 (Alberta)",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-26 07:13:27"
     },
     "creative_producer": {
       "name": "Креативный Продюсер",
@@ -74,10 +74,10 @@
       "gives": "раскадровка, видео и музыкальные релизы",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 5,
-      "last_task": "https://youtube.com/shorts/dLGjXxAUvyg?is=E7S7KgIwREXT3BGY",
-      "last_project": "Входящие_Офис",
-      "updated_at": "2026-11-17 14:47:07"
+      "tasks_completed": 8,
+      "last_task": "[Тим] https://youtube.com/shorts/PXpujJZ_MWA?is=1S1py850MRT8Dlrm",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-25 11:02:17"
     },
     "vibe_coder": {
       "name": "Вайбкодер & Micro-SaaS",
@@ -88,9 +88,9 @@
       "next": "tim",
       "state": "online",
       "tasks_completed": 4,
-      "last_task": "Вайбкодер — предложи быстрый Micro-SaaS или Telegram-бот для Личный Офис: @true1team",
-      "last_project": "Личный Офис: @true1team",
-      "updated_at": "2026-11-02 12:30:45"
+      "last_task": "[Тим] https://www.google.com/url?opi=89978449&q=https://www.comss.ru/page.php%3Fid%3D23006&sa=U&ved=2ahUKE",
+      "last_project": "Входящие_Офис",
+      "updated_at": "2026-11-25 10:54:52"
     },
     "intake": {
       "name": "Приёмщик",
@@ -100,10 +100,10 @@
       "gives": "карточка со статусом new",
       "next": "researcher",
       "state": "online",
-      "tasks_completed": 149,
+      "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 104,
       "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
       "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-17 16:07:25"
+      "updated_at": "2026-11-26 15:46:28"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -126,10 +126,10 @@
       "gives": "проект + уверенность + альтернативы",
       "next": "analyst",
       "state": "online",
-      "tasks_completed": 149,
+      "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 68,
+      "tasks_completed": 104,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -152,10 +152,10 @@
       "gives": "финальный статус карточки",
       "next": "scribe",
       "state": "online",
-      "tasks_completed": 149,
+      "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     },
     "scribe": {
       "name": "Архивариус",
@@ -165,10 +165,10 @@
       "gives": "файлы в проекте + обновлённая ДОСКА.md",
       "next": "project_lead",
       "state": "online",
-      "tasks_completed": 114,
+      "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -178,10 +178,10 @@
       "gives": "выполненные шаги проекта",
       "next": "human",
       "state": "online",
-      "tasks_completed": 114,
+      "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-17 21:12:25"
+      "updated_at": "2026-11-26 15:46:31"
     }
   },
   "daemons": {
@@ -216,7 +216,7 @@
       "name": "KHL Auto-Learning (khl_auto_learning_service.py)",
       "emoji": "🧬",
       "project": "Юра",
-      "status": "standby",
+      "status": "online",
       "detail": "Автообучение и калибровка вероятностной модели КХЛ"
     },
     "channel_watcher": {
