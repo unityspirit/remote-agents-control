@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795767662836",
+      "ts": "2026-11-27T08:21:02.836234+00:00",
+      "time_local": "01:21:02",
+      "user_login": "aliashirani",
+      "full_name": "Alberta Shirani",
+      "bot_username": "@lermontovplusbot",
+      "director_name": "Директор Альберты",
+      "action_type": "hqask",
+      "project": "Alberta",
+      "summary": "Поручение от @aliashirani (Задача #134): ",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795767649036",
       "ts": "2026-11-27T08:20:49.036790+00:00",
       "time_local": "01:20:49",
@@ -1198,5 +1211,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-27T08:20:49.036790+00:00"
+  "updated_at": "2026-11-27T08:21:02.836234+00:00"
 }
