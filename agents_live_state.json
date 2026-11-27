@@ -1,16 +1,16 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-27T04:55:02Z",
+  "generated_at": "2026-11-27T09:45:21Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
   },
   "user_counts": {
-    "vlaslav": 179,
-    "alberta": 27,
+    "vlaslav": 173,
+    "alberta": 34,
     "yura": 2,
     "true1team": 9,
-    "tatiana": 14,
+    "tatiana": 13,
     "dominicana": 5,
     "dima": 3,
     "svetlana": 2,
@@ -216,7 +216,7 @@
     "seo_agents_installed": 21,
     "local_seo_score": 98.0,
     "live_seo_score": 83.4,
-    "cloud_cycle": 163,
+    "cloud_cycle": 167,
     "open_issues": 0,
     "closed_issues": 30,
     "board_total_cards": 199,
@@ -555,8 +555,8 @@
       "login": "aliashirani",
       "full_name": "Alberta Shirani",
       "director_name": "Директор Альберты",
-      "bot_username": "@lermontovplusbot",
-      "status": "active"
+      "bot_username": "pending_setup",
+      "status": "not_configured"
     },
     {
       "login": "yvyatkin",
@@ -575,27 +575,27 @@
   ],
   "agent_task_counts": {
     "agent_seo": {
-      "total": 29,
+      "total": 28,
       "active": 1,
-      "done": 27,
+      "done": 26,
       "attention": 1
     },
     "agent_store": {
-      "total": 19,
+      "total": 20,
       "active": 0,
-      "done": 18,
+      "done": 19,
       "attention": 1
     },
     "agent_traffic": {
-      "total": 32,
+      "total": 31,
       "active": 0,
-      "done": 31,
+      "done": 30,
       "attention": 1
     },
     "agent_research": {
-      "total": 156,
+      "total": 157,
       "active": 0,
-      "done": 154,
+      "done": 155,
       "attention": 2
     },
     "agent_apps": {
@@ -642,20 +642,7 @@
           "/audit",
           "Голос/Фото OCR"
         ],
-        "details": "Круглосуточный Telegram-шлюз v34.5 + API 127.0.0.1:18799. Принимает задачи от вас и синхронизирует личных ботов команды."
-      },
-      {
-        "id": "bot_alberta",
-        "label": "@lermontovplusbot",
-        "sub": "Личный бот · Альберта",
-        "tier": 1,
-        "kind": "bot",
-        "status": "active",
-        "skills": [
-          "Воронка 1M ₽",
-          "Личный Директор"
-        ],
-        "details": "Личный бот Альберты Ширани в системе Bot Mesh под контролем Главного Штаба."
+        "details": "Круглосуточный Telegram-шлюз v34.5 + API 127.0.0.1:18799. Принимает задачи от всей команды (включая Альберту, Shlomo, Юрия, Татьяну) и синхронизирует личные контуры."
       },
       {
         "id": "dir_tim",
@@ -700,11 +687,11 @@
       {
         "id": "agent_cloud",
         "label": "Cloud Agents 24/7",
-        "sub": "Цикл #163 · Hydrogen/Argon",
+        "sub": "Цикл #167 · Hydrogen/Argon",
         "tier": 3,
         "kind": "agent",
         "status": "active",
-        "metric": "Цикл #163",
+        "metric": "Цикл #167",
         "skills": [
           "cloud_agent_worker",
           "GitHub Actions",
@@ -1553,6 +1540,98 @@
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
+      "id": "GH-134",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Директор Альберты]  | PROJ: Alberta",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/134",
+      "target_url": "",
+      "project": "Alberta",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_store",
+      "skills": [
+        "seo-ecommerce",
+        "seo-schema",
+        "pricing",
+        "launch",
+        "seo-content"
+      ],
+      "result": "GitHub Issue #134 · Выполнено Советом ИИ",
+      "updated_at": "2026-11-27T08:21:58Z",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-ecommerce, seo-schema, pricing)."
+    },
+    {
+      "id": "GH-133",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Директор Альберты]  | PROJ: Alberta",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/133",
+      "target_url": "",
+      "project": "Alberta",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_store",
+      "skills": [
+        "seo-ecommerce",
+        "seo-schema",
+        "pricing",
+        "launch",
+        "seo-content"
+      ],
+      "result": "GitHub Issue #133 · Выполнено Советом ИИ",
+      "updated_at": "2026-11-27T08:21:22Z",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-ecommerce, seo-schema, pricing)."
+    },
+    {
+      "id": "GH-132",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Директор Альберты]  | PROJ: Alberta",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/132",
+      "target_url": "",
+      "project": "Alberta",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_store",
+      "skills": [
+        "seo-ecommerce",
+        "seo-schema",
+        "pricing",
+        "launch",
+        "seo-content"
+      ],
+      "result": "GitHub Issue #132 · Выполнено Советом ИИ",
+      "updated_at": "2026-11-27T08:13:16Z",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-ecommerce, seo-schema, pricing)."
+    },
+    {
+      "id": "GH-131",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Директор Альберты] Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/131",
+      "target_url": "",
+      "project": "Alberta",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_traffic",
+      "skills": [
+        "seo-content",
+        "ads",
+        "emails",
+        "free-tools",
+        "seo-local"
+      ],
+      "result": "GitHub Issue #131 · Выполнено Советом ИИ",
+      "updated_at": "2026-11-27T08:11:52Z",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-content, ads, emails)."
+    },
+    {
       "id": "GH-130",
       "source": "telegram_director_issue",
       "title": "TIM: [Тим] https://www.facebook.com/share/v/19sbi5mvuC/ | PROJ: Главный Штаб",
@@ -1918,98 +1997,6 @@
       "updated_at": "2026-11-25T21:27:51Z",
       "user_key": "alberta",
       "user_label": "💎 Альберта",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
-    },
-    {
-      "id": "GH-114",
-      "source": "telegram_director_issue",
-      "title": "TIM: [Аршак] Внимательно изучи две эти статьи и по их примеру настрой непробиваемый рабочий vpn\nhttps://habr.com/ru/articles/110 |",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/114",
-      "target_url": "https://habr.com/ru/articles/110",
-      "project": "Татьяна tentorium.ru",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_traffic",
-      "skills": [
-        "seo-audit",
-        "seo-technical",
-        "cro",
-        "copywriting",
-        "seo-ecommerce"
-      ],
-      "result": "GitHub Issue #114 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-25T21:27:52Z",
-      "user_key": "tatiana",
-      "user_label": "🐝 Татьяна",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
-    },
-    {
-      "id": "GH-113",
-      "source": "telegram_director_issue",
-      "title": "какие у нас есть готовые наработки для Альберты по теме трансформации личности? | PROJ: Главный Штаб",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/113",
-      "target_url": "",
-      "project": "Главный Штаб",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_seo",
-      "skills": [
-        "seo-content",
-        "ads",
-        "emails",
-        "free-tools",
-        "seo-local"
-      ],
-      "result": "GitHub Issue #113 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-25T21:27:53Z",
-      "user_key": "alberta",
-      "user_label": "💎 Альберта",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-content, ads, emails)."
-    },
-    {
-      "id": "GH-112",
-      "source": "telegram_director_issue",
-      "title": "TIM: [Тим] https://www.instagram.com/reel/DfPtwayN0bR/?dmpr=MTlnbjVhazBrYWxpMg== | PROJ: Главный Штаб",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/112",
-      "target_url": "https://www.instagram.com/reel/DfPtwayN0bR/?dmpr=MTlnbjVhazBrYWxpMg==",
-      "project": "Главный Штаб",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_store",
-      "skills": [
-        "seo-audit",
-        "seo-technical",
-        "cro",
-        "copywriting",
-        "seo-ecommerce"
-      ],
-      "result": "GitHub Issue #112 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-25T17:48:25Z",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
-    },
-    {
-      "id": "GH-111",
-      "source": "telegram_director_issue",
-      "title": "TIM: [Тим] https://www.instagram.com/reel/De2l_0uoPLx/?lqvp=d3lhZWs5anhjYzRh | PROJ: Главный Штаб",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/111",
-      "target_url": "https://www.instagram.com/reel/De2l_0uoPLx/?lqvp=d3lhZWs5anhjYzRh",
-      "project": "Главный Штаб",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_store",
-      "skills": [
-        "seo-audit",
-        "seo-technical",
-        "cro",
-        "copywriting",
-        "seo-ecommerce"
-      ],
-      "result": "GitHub Issue #111 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-25T17:48:55Z",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
@@ -2529,52 +2516,51 @@
     {
       "id": "CARD-131",
       "source": "office_board",
-      "title": "PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+      "title": "TIM: [Директор Альберты] Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg",
       "url": "",
-      "project": "Traffic",
+      "project": "Alberta",
       "status": "done",
       "priority": "done",
-      "agent_id": "agent_traffic",
+      "agent_id": "agent_research",
       "skills": [
-        "seo-content",
-        "ads",
-        "emails",
-        "free-tools"
+        "seo-plan",
+        "cro",
+        "deep-research",
+        "semrush-keyword-research"
       ],
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-content, ads, emails).",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-plan, cro, deep-research).",
       "result": "Статус на доске: done (owner=gatekeeper)",
-      "updated_at": "2026-10-23 18:23:28",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)"
+      "updated_at": "2026-11-27 01:11:44",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта"
     },
     {
       "id": "CARD-132",
       "source": "office_board",
-      "title": "/ceo Оцени экономический эффект и риски: https://www.altahq.com/lp/ai-calling-agent создать систему голосовых ИИ-агентов для прода",
-      "url": "https://www.altahq.com/lp/ai-calling-agent",
-      "project": "Unity Inc",
+      "title": "TIM: [Директор Альберты]",
+      "url": "",
+      "project": "Alberta",
       "status": "done",
       "priority": "done",
       "agent_id": "agent_research",
       "skills": [
-        "seo-audit",
-        "seo-technical",
+        "seo-plan",
         "cro",
-        "copywriting",
-        "semrush-competitor-gap"
+        "deep-research",
+        "semrush-keyword-research"
       ],
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro).",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-plan, cro, deep-research).",
       "result": "Статус на доске: done (owner=gatekeeper)",
-      "updated_at": "2026-10-23 18:21:27",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)"
+      "updated_at": "2026-11-27 01:13:08",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта"
     },
     {
       "id": "CARD-134",
       "source": "office_board",
-      "title": "REPORT: Полный отчёт по проектам",
+      "title": "TIM: [Директор Альберты]",
       "url": "",
-      "project": "Traffic",
+      "project": "Alberta",
       "status": "done",
       "priority": "done",
       "agent_id": "agent_research",
@@ -2586,16 +2572,16 @@
       ],
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-plan, cro, deep-research).",
       "result": "Статус на доске: done (owner=gatekeeper)",
-      "updated_at": "2026-10-23 19:07:15",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)"
+      "updated_at": "2026-11-27 01:21:47",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта"
     },
     {
       "id": "CARD-133",
       "source": "office_board",
-      "title": "[Ответ к #131] /ceo",
+      "title": "TIM: [Директор Альберты]",
       "url": "",
-      "project": "Traffic",
+      "project": "Alberta",
       "status": "done",
       "priority": "done",
       "agent_id": "agent_research",
@@ -2607,9 +2593,9 @@
       ],
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-plan, cro, deep-research).",
       "result": "Статус на доске: done (owner=gatekeeper)",
-      "updated_at": "2026-10-23 19:09:53",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)"
+      "updated_at": "2026-11-27 01:21:14",
+      "user_key": "alberta",
+      "user_label": "💎 Альберта"
     },
     {
       "id": "CARD-135",
