@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-27T02:25:12.283690+00:00",
+  "updated_at": "2026-11-27T02:29:24.356210Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -307,6 +307,15 @@
       "source_url": "https://github.com/ruvn-1fgas/2gis-parser",
       "summary": "Здравия! Аршак на связи. Принял новые инструменты в рабочий контур проекта **Alberta** (папка `@mshlomon`). \n\nСкиллы и тулсеты зафиксированы в оперативной памяти:\n\n### 🛠️ Добавленный стек скрапинга и лидогенерации:\n1. **2GIS Parser** (`https://github.com/ruvn-1fgas/2gis-parser`): Scrapy-парсер для выгрузки локальной базы данных 2GIS (проверенная эффективность для локального бизнеса в СНГ).\n2. **Yandex Maps Scraper** (`https://github.com/b5401/scraper`): Инструмент сбора данных с Яндекс.Карт.\n3. **Google Maps Scraper** (`https://github.com/gosom/google-maps-scraper`): Масштабируемый сбор гео-да",
       "updated_at": "2026-11-26T23:29:58.923011Z"
+    },
+    {
+      "id": "kb-bot-130",
+      "issue": 130,
+      "category": "Проект: Главный Штаб",
+      "title": "https://www.facebook.com/share/v/19sbi5mvuC/",
+      "source_url": "https://www.facebook.com/share/v/19sbi5mvuC/",
+      "summary": "Tim here. Global Spirit Group, HQ. Task #130.\n\n### 1. Analysis of the Source (Facebook Reel)\nBased on the extracted metadata and text excerpt from the Facebook Reel link (`https://www.facebook.com/share/v/19sbi5mvuC/` by **Crystal Claxton**), here are the verified facts we can read from the page:\n* **Final URL:** `https://www.facebook.com/reel/4652450724994554/`\n* **Creator / Author:** Crystal Claxton\n* **Core Topic:** Business and Commercial Auto Financing vs. Personal Credit.\n* **Key Message:** Many people mistakenly believe they must use their Social Security number and personal credit to f",
+      "updated_at": "2026-11-27T02:29:20.153671Z"
     }
   ]
 }
