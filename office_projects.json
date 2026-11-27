@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 05:53:34",
+  "updated": "2026-11-27 05:58:37",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -102,6 +102,18 @@
       "open_cards": []
     },
     {
+      "folder": "Anthropic_7_Resources",
+      "project": "Anthropic_7_Resources",
+      "state": "active",
+      "files": 50,
+      "size_kb": 826,
+      "last_change": "2026-11-27",
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
       "folder": "Beyondyourfood.com",
       "project": "Beyondyourfood.com",
       "state": "active",
@@ -154,7 +166,7 @@
       "project": "GitHub_Control_Panel",
       "state": "active",
       "files": 998,
-      "size_kb": 13992,
+      "size_kb": 13995,
       "last_change": "2026-11-27",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
