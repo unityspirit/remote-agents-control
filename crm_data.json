@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-27T09:46:20.064029+00:00",
+  "updated_at": "2026-11-27T09:46:44.752886Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -312,10 +312,10 @@
       "id": "kb-bot-130",
       "issue": 130,
       "category": "Проект: Главный Штаб",
-      "title": "https://www.facebook.com/share/v/19sbi5mvuC/",
+      "title": "⚠️ У @aliashirani ещё не настроен Chat ID или Bot Token. — контекст: https://www.facebook.com/share/v/19sbi5mvuC/ (https://www.facebook.com/",
       "source_url": "https://www.facebook.com/share/v/19sbi5mvuC/",
-      "summary": "Tim here. Global Spirit Group, HQ. Task #130.\n\n### 1. Analysis of the Source (Facebook Reel)\nBased on the extracted metadata and text excerpt from the Facebook Reel link (`https://www.facebook.com/share/v/19sbi5mvuC/` by **Crystal Claxton**), here are the verified facts we can read from the page:\n* **Final URL:** `https://www.facebook.com/reel/4652450724994554/`\n* **Creator / Author:** Crystal Claxton\n* **Core Topic:** Business and Commercial Auto Financing vs. Personal Credit.\n* **Key Message:** Many people mistakenly believe they must use their Social Security number and personal credit to f",
-      "updated_at": "2026-11-27T02:29:20.153671Z"
+      "summary": "Тим на связи. Главный Штаб, Контур интеграций.\n\nКасательно алерта: **`⚠️ У @aliashirani ещё не настроен Chat ID или Bot Token`** — это технический барьер в контуре связи (вероятно, в Telegram-мере уведомлений или CRM-модуле). Из-за отсутствия этих параметров система не может доставлять таргетированные алерты и апдейты по задачам конкретно этому пользователю.\n\n### 🛠️ Инструкция по устранению (Быстрый Настрой)\n\nДля привязки @aliashirani к системе требуется выполнить 2 простых шага в Telegram-боте:\n\n1. **Получить Bot Token:** \n   Если бот уже создан в `@BotFather`, используйте существующий токен ",
+      "updated_at": "2026-11-27T09:46:40.675531Z"
     },
     {
       "id": "kb-bot-1795766288",
