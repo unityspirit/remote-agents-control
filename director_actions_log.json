@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795767114408",
+      "ts": "2026-11-27T08:11:54.408790+00:00",
+      "time_local": "01:11:54",
+      "user_login": "aliashirani",
+      "full_name": "Alberta Shirani",
+      "bot_username": "@lermontovplusbot",
+      "director_name": "Директор Альберты",
+      "action_type": "nlu_follow_up_step",
+      "project": "Alberta",
+      "summary": "Исполнен запрос (#131): Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg]\n[Распознано с изображения: На изображении текст, версии, ошибки, настройк",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795766650650",
       "ts": "2026-11-27T08:04:10.650096+00:00",
       "time_local": "01:04:10",
@@ -1159,5 +1172,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-27T08:04:10.650096+00:00"
+  "updated_at": "2026-11-27T08:11:54.408790+00:00"
 }
