@@ -1696,21 +1696,28 @@
           "from": "gatekeeper",
           "to": "gatekeeper",
           "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-27 01:11:38",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": null,
-      "title": "PLAN_ACTIONS: Подготовить все материалы для шага: 🧭 Pirates World (#127): Выбрать проект (Unity Inc или Traffic)",
+      "title": "TIM: [Директор Альберты] Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg]\n[Распозн",
       "urls": [],
-      "project": "Traffic",
+      "project": "Alberta",
       "kind": "command",
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-10-23 18:23:28",
+      "updated": "2026-11-27 01:11:38",
       "next": {
-        "who": "agent",
-        "what": "Ошибка обработки: save_to_crm_knowledge_base() got an unexpected keyword argument 'compact'"
-      }
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
+      },
+      "gh_issue": 131
     },
     "132": {
       "id": 132,
