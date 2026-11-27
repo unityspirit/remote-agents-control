@@ -89,13 +89,7 @@
       "gta_completed": true,
       "personal_bot": {
         "director_name": "Директор Альберты",
-        "bot_token": "",
-        "bot_username": "@lermontovplusbot",
-        "chat_id": "",
-        "auto_send_reports": true,
-        "approved_by": "@unityspiritpartners",
-        "updated_at": "2026-11-12T11:45:00+00:00",
-        "control_status": "active"
+        "control_status": "not_configured"
       },
       "verified_bot_chat_id": "362482968"
     },
@@ -152,14 +146,9 @@
       "owner_action_stamp": "own-1793950981158",
       "personal_bot": {
         "director_name": "Директор Альберты",
-        "bot_token": "",
-        "bot_username": "@lermontovplusbot",
-        "chat_id": "",
-        "auto_send_reports": true,
-        "approved_by": "@unityspiritpartners",
-        "updated_at": "2026-11-12T11:45:00+00:00",
-        "control_status": "active"
-      }
+        "control_status": "not_configured"
+      },
+      "verified_bot_chat_id": "362482968"
     },
     {
       "id": "REQ-063613",
