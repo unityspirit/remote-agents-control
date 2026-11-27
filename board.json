@@ -2385,23 +2385,33 @@
           "from": "analyst",
           "to": "human",
           "note": "Предложение готово — ждёт утверждения"
+        },
+        {
+          "t": "2026-11-26 09:04:17",
+          "from": "antigravity_audit_engine",
+          "to": "done",
+          "note": "MVP скрипт aituber_faceless_generator_mvp.py и спецификация перенесены в 03_Утверждено_и_Распределено."
+        },
+        {
+          "t": "2026-11-27 12:22:03",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
       "evidence": {
         "level": "studied",
-        "reason": "",
-        "chars": 9048
+        "verified_at": "2026-11-26 09:04:17",
+        "deliverable": "C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\03_Утверждено_и_Распределено\\Утверждено_135_AITuber_Faceless_Video_Generator.md"
       },
-      "title": "https://aituber.app/ learn study and make the same app for me to sell!",
-      "urls": [
-        "https://aituber.app/"
-      ],
-      "project": "Входящие_Офис",
-      "kind": "link",
+      "title": "TIM: [Тим] Установи 7 free github repos for us",
+      "urls": [],
+      "project": "Главный Штаб",
+      "kind": "command",
       "refers_to": null,
-      "owner": "human",
-      "status": "awaiting_approval",
-      "updated": "2026-10-24 14:58:45",
+      "owner": "gatekeeper",
+      "status": "done",
+      "updated": "2026-11-27 12:22:03",
       "suggested_project": "Unity Inc",
       "route": {
         "confidence": "medium",
@@ -2415,8 +2425,8 @@
       "pending_file": "Карточка_135_https___aituber_app__learn_s.md",
       "raw_file": "raw_135_20261024_145815_https___aituber_app__learn_s.md",
       "next": {
-        "who": "human",
-        "what": "«✅ Утверждаю #135 → Unity Inc» или выбрать другой проект"
+        "who": "done",
+        "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
       },
       "skills_applied": [
         "seo-audit",
@@ -2425,7 +2435,9 @@
         "cro",
         "pricing"
       ],
-      "ai_solution": "«✅ Утверждаю #135 → Unity Inc» или выбрать другой проект"
+      "ai_solution": "MVP скрипт aituber_faceless_generator_mvp.py и спецификация перенесены в 03_Утверждено_и_Распределено.",
+      "deliverable_file": "C:\\Users\\Vlaslav\\Downloads\\Входящие_Офис\\03_Утверждено_и_Распределено\\Утверждено_135_AITuber_Faceless_Video_Generator.md",
+      "gh_issue": 135
     },
     "136": {
       "id": 136,
