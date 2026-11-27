@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-27T02:29:09.360281Z",
+  "updated_at": "2026-11-27T08:11:36.252138Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -536,6 +536,13 @@
       "project": "Главный Штаб",
       "issue": 130,
       "summary": "https://www.facebook.com/share/v/19sbi5mvuC/: Tim here. Global Spirit Group, HQ. Task #130.\n\n### 1. Analysis of the Source (Facebook Reel)\nBased on the extracted metadata and text excerpt from the Facebook Reel link (`https://www.facebook.com/share/v/19sbi5mvuC/` by **Crystal Claxton**), here are the verified facts we can re"
+    },
+    {
+      "id": "fact-dir-v343-iss131",
+      "ts": "2026-11-27T08:11:27.684141Z",
+      "project": "Alberta",
+      "issue": 131,
+      "summary": "Пользователь передал изображения: первое как исходник, второе как референс для дальнейшей работы.: Здравия, Альберта! (@aliashirani) \n\nЯ зафиксировал вложение (`01_Необработанное/media/tg_810_photo.jpg`), сохраненное в офисном контуре под задачу **#131**. \n\nПоскольку второе фото (референс) в текущем запросе не подгрузилось или не было передано, система видит только исходник. Ч"
     }
   ],
   "projects": {
