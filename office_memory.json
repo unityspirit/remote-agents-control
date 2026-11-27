@@ -1,6 +1,6 @@
 {
   "version": "34.1",
-  "updated_at": "2026-11-26T23:29:49.934741Z",
+  "updated_at": "2026-11-27T02:29:09.360281Z",
   "cycle_count": 20,
   "processed_triggers": [
     "issue:47:auto:6823241610",
@@ -529,6 +529,13 @@
       "project": "Alberta",
       "issue": 129,
       "summary": "ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https://github.com/ruvn-1fgas/2gis-parser\n- Yandex Maps: https://github.com/b5401/scraper\n: Здравия! Аршак на связи. Принял новые инструменты в рабочий контур проекта **Alberta** (папка `@mshlomon`). \n\nСкиллы и тулсеты зафиксированы в оперативной памяти:\n\n### 🛠️ Добавленный стек скрапинга и лидогенерации:\n1. **2GIS Parser** (`https://gith"
+    },
+    {
+      "id": "fact-dir-v343-iss130",
+      "ts": "2026-11-27T02:29:05.430692Z",
+      "project": "Главный Штаб",
+      "issue": 130,
+      "summary": "https://www.facebook.com/share/v/19sbi5mvuC/: Tim here. Global Spirit Group, HQ. Task #130.\n\n### 1. Analysis of the Source (Facebook Reel)\nBased on the extracted metadata and text excerpt from the Facebook Reel link (`https://www.facebook.com/share/v/19sbi5mvuC/` by **Crystal Claxton**), here are the verified facts we can re"
     }
   ],
   "projects": {
