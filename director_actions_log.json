@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795766650650",
+      "ts": "2026-11-27T08:04:10.650096+00:00",
+      "time_local": "01:04:10",
+      "user_login": "aliashirani",
+      "full_name": "Alberta Shirani",
+      "bot_username": "@lermontovplusbot",
+      "director_name": "Директор Альберты",
+      "action_type": "nlu_task_create",
+      "project": "Alberta",
+      "summary": "Исполнен запрос (#-): Дай конкретный, актуальный на сегодня план и готовый Шаг #1 для проекта «Alberta» на основе Памяти Офиса и реального статуса контура (без шаблонов и устаревших дат).",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795766524449",
       "ts": "2026-11-27T08:02:04.449294+00:00",
       "time_local": "01:02:04",
@@ -1146,5 +1159,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-27T08:02:04.449294+00:00"
+  "updated_at": "2026-11-27T08:04:10.650096+00:00"
 }
