@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 247,
+      "evidence_count": 248,
       "scope": "global",
-      "last_updated": "2026-11-27T01:21:35.592498"
+      "last_updated": "2026-11-27T01:22:10.625456"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 327,
+      "evidence_count": 328,
       "scope": "global",
-      "last_updated": "2026-11-27T01:21:35.595639"
+      "last_updated": "2026-11-27T01:22:10.627225"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -26,9 +26,9 @@
       "action": "Уровень $35K: авто-конспект всех ссылок в Базу Знаний; Уровень $100K: авто-квалификация лидов за 30 сек и контент по SOP; Уровень $1M+: развитие собственной мобильной CRM и автономного роя агентов",
       "confidence": 0.99,
       "domain": "ai-strategy",
-      "evidence_count": 164,
+      "evidence_count": 165,
       "scope": "global",
-      "last_updated": "2026-11-27T01:21:35.598489"
+      "last_updated": "2026-11-27T01:22:10.628516"
     },
     {
       "id": "ltv-qr-retention-without-discounts",
@@ -36,9 +36,9 @@
       "action": "Не давать прямых скидок 30% в лоб. Оцифровывать базу через QR-код -> Telegram Mini App с бонусом -> автоматический триггер возврата через 10-30 дней (возвращает до 35% клиентов)",
       "confidence": 0.99,
       "domain": "retention",
-      "evidence_count": 116,
+      "evidence_count": 117,
       "scope": "global",
-      "last_updated": "2026-11-27T01:21:35.601004"
+      "last_updated": "2026-11-27T01:22:10.630564"
     },
     {
       "id": "similarweb-free-traffic-system",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 229,
+      "evidence_count": 230,
       "scope": "global",
-      "last_updated": "2026-11-27T01:21:35.602324"
+      "last_updated": "2026-11-27T01:22:10.631793"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -86,9 +86,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 63,
+      "evidence_count": 64,
       "scope": "project:Alberta",
-      "last_updated": "2026-11-27T01:21:35.602324"
+      "last_updated": "2026-11-27T01:22:10.632888"
     },
     {
       "id": "autonomous-task-resolution",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 356,
+      "evidence_count": 357,
       "scope": "global",
-      "last_updated": "2026-11-27T01:21:35.602324"
+      "last_updated": "2026-11-27T01:22:10.634261"
     },
     {
       "id": "task-custom-request",
@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-27T08:21:36.746788+00:00",
+  "updated_at": "2026-11-27T08:22:11.810711+00:00",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
