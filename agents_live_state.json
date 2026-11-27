@@ -1,6 +1,6 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-27T09:45:21Z",
+  "generated_at": "2026-11-27T13:11:04Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
@@ -16,6 +16,7 @@
     "svetlana": 2,
     "mshlomon": 0
   },
+  "anthropic_7_resources_installed": 7,
   "skill_suites": {
     "claude_seo": [
       "seo",
@@ -207,12 +208,22 @@
       "verification-loop",
       "x-api"
     ],
-    "total_installed_skills_count": 167
+    "anthropic_7_tools": [
+      "claude-code-playground",
+      "skills",
+      "claude-plugins-official",
+      "launch-your-agent",
+      "knowledge-work-plugins",
+      "claude-quickstarts",
+      "prompt-eng-interactive-tutorial"
+    ],
+    "total_installed_skills_count": 722
   },
   "kpis": {
-    "agents_online": 6,
+    "agents_online": 7,
     "seo_skills_installed": 35,
-    "total_skills_installed": 167,
+    "total_skills_installed": 722,
+    "anthropic_repos_installed": 7,
     "seo_agents_installed": 21,
     "local_seo_score": 98.0,
     "live_seo_score": 83.4,
@@ -656,9 +667,31 @@
           "Memory RAG",
           "Multi-Agent Dispatch",
           "/seo",
-          "/store"
+          "/store",
+          "/doc",
+          "/video"
         ],
-        "details": "Личный ИИ-Директор: понимает ваши запросы (RU/EN), хранит контекст диалога, распределяет задачи между агентами и собирает отчёты."
+        "details": "Личный ИИ-Директор: понимает ваши запросы (RU/EN), хранит контекст диалога, генерирует фото/видео/PDF/DOCX/XLSX/PPTX и распределяет задачи между агентами."
+      },
+      {
+        "id": "anthropic_hub",
+        "label": "Anthropic 7 Resources Hub",
+        "sub": "Playground · Skills · Plugins · Quickstarts",
+        "tier": 2,
+        "kind": "skill_hub",
+        "status": "active",
+        "skills": [
+          "pdf",
+          "docx",
+          "xlsx",
+          "pptx",
+          "launch-your-agent",
+          "blast-radius",
+          "token-weather",
+          "knowledge-work-plugins",
+          "prompt-tutorial"
+        ],
+        "details": "Установлены все 7 официальных GitHub-ресурсов Anthropic: claude-code-playground, skills, claude-plugins-official, launch-your-agent, knowledge-work-plugins, claude-quickstarts, prompt-eng-interactive-tutorial."
       },
       {
         "id": "agent_seo",
@@ -1649,7 +1682,7 @@
         "seo-ecommerce"
       ],
       "result": "GitHub Issue #130 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-27T02:29:52Z",
+      "updated_at": "2026-11-27T09:46:45Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
@@ -2509,7 +2542,7 @@
       ],
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro).",
       "result": "Статус на доске: done (owner=gatekeeper)",
-      "updated_at": "2026-11-26 19:29:46",
+      "updated_at": "2026-11-27 02:46:50",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)"
     },
