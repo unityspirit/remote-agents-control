@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 01:09:10",
+  "updated": "2026-11-27 01:11:51",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 115,
-      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-26 22:30:28"
+      "tasks_completed": 116,
+      "last_task": "[Директор Альберты] Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg]\n[Распозн",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-27 01:11:42"
     },
     "strategist": {
       "name": "Стратег",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 98,
-      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-26 22:30:28"
+      "tasks_completed": 99,
+      "last_task": "[Директор Альберты] Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg]\n[Распозн",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-27 01:11:42"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -61,10 +61,10 @@
       "gives": "готовые КП и скрипты закрытия сделок",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 6,
-      "last_task": "Тим, организуй связку продажи щебня для Димы (Урал ЗКСК): маркетолог пишет КП, стратег считает маржу, разработчик делает быстрый лендинг",
-      "last_project": "Дима Верхняя Синичиха Алапаевск",
-      "updated_at": "2026-11-26 22:30:28"
+      "tasks_completed": 7,
+      "last_task": "[Директор Альберты] Фото 1 исходник, а фото 2 референс.\n\n[Вложение сохранено в Офис: 01_Необработанное/media/tg_810_photo.jpg]\n[Распозн",
+      "last_project": "Alberta",
+      "updated_at": "2026-11-27 01:11:42"
     },
     "creative_producer": {
       "name": "Креативный Продюсер",
@@ -103,7 +103,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     },
     "researcher": {
       "name": "Разведчик",
@@ -129,7 +129,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 105,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 01:09:10"
+      "updated_at": "2026-11-27 01:11:51"
     }
   },
   "daemons": {
@@ -238,12 +238,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 0,
-      "calls_by_provider": {},
-      "last_provider": "auto_standby",
-      "last_model": "auto",
-      "last_call_at": null,
-      "errors_count": 0
+      "calls_total": 1,
+      "calls_by_provider": {
+        "cloud_test_gateway": 1
+      },
+      "last_provider": "cloud_test_gateway",
+      "last_model": "openai-gateway",
+      "last_call_at": "2026-11-27T08:11:42.015198+00:00",
+      "errors_count": 1
     }
   },
   "statuses": {
