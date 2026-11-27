@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 05:58:37",
+  "updated": "2026-11-27 06:03:39",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -105,8 +105,8 @@
       "folder": "Anthropic_7_Resources",
       "project": "Anthropic_7_Resources",
       "state": "active",
-      "files": 50,
-      "size_kb": 826,
+      "files": 3776,
+      "size_kb": 167289,
       "last_change": "2026-11-27",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
@@ -165,8 +165,8 @@
       "folder": "GitHub_Control_Panel",
       "project": "GitHub_Control_Panel",
       "state": "active",
-      "files": 998,
-      "size_kb": 13995,
+      "files": 1000,
+      "size_kb": 14019,
       "last_change": "2026-11-27",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
