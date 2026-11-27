@@ -1638,9 +1638,24 @@
           "from": "tg_director",
           "to": "gatekeeper",
           "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
+        },
+        {
+          "t": "2026-11-26 19:29:46",
+          "from": "gatekeeper",
+          "to": "gatekeeper",
+          "note": "Ответ проверен"
+        },
+        {
+          "t": "2026-11-27 02:46:26",
+          "from": "tg_director",
+          "to": "gatekeeper",
+          "note": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data"
         }
       ],
-      "evidence": null,
+      "evidence": {
+        "level": "studied",
+        "reason": ""
+      },
       "title": "TIM: [Тим] https://www.facebook.com/share/v/19sbi5mvuC/",
       "urls": [
         "https://www.facebook.com/share/v/19sbi5mvuC/"
@@ -1650,7 +1665,7 @@
       "refers_to": null,
       "owner": "gatekeeper",
       "status": "done",
-      "updated": "2026-11-26 19:29:11",
+      "updated": "2026-11-27 02:46:26",
       "next": {
         "who": "done",
         "what": "Ответ сохранён в 04_База_Знаний_Синтез и crm_data.json"
