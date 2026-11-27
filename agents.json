@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 19:25:00",
+  "updated": "2026-11-26 19:29:52",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 113,
-      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:29:51"
+      "tasks_completed": 114,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19sbi5mvuC/",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-26 19:29:44"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 94,
-      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:29:51"
+      "tasks_completed": 95,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19sbi5mvuC/",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-26 19:29:44"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -35,10 +35,10 @@
       "gives": "воронка и каналы привлечения клиентов",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 90,
-      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:29:51"
+      "tasks_completed": 91,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19sbi5mvuC/",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-26 19:29:44"
     },
     "developer": {
       "name": "Главный Разработчик",
@@ -48,10 +48,10 @@
       "gives": "готовый код, интерактивные веб-модули и боты",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 96,
-      "last_task": "[Аршак] ещё эти скиллы себе добавь\n1. Список проверенных мной скраперов.\nЛучше всего работают 2gis и яндекс.\n\n- 2gis: https",
-      "last_project": "Alberta",
-      "updated_at": "2026-11-26 16:29:51"
+      "tasks_completed": 97,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19sbi5mvuC/",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-26 19:29:44"
     },
     "sales_closer": {
       "name": "B2B Продажи & Офферы",
@@ -103,7 +103,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     },
     "researcher": {
       "name": "Разведчик",
@@ -113,10 +113,10 @@
       "gives": "уровень доказательств: studied / partial / title_only / not_studied",
       "next": "router",
       "state": "online",
-      "tasks_completed": 104,
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-26 18:46:35"
+      "tasks_completed": 105,
+      "last_task": "[Тим] https://www.facebook.com/share/v/19sbi5mvuC/",
+      "last_project": "Главный Штаб",
+      "updated_at": "2026-11-26 19:29:44"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     },
     "analyst": {
       "name": "Аналитик",
@@ -139,10 +139,10 @@
       "gives": "файл в 02_На_Подтверждении",
       "next": "human",
       "state": "online",
-      "tasks_completed": 104,
+      "tasks_completed": 105,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-26 19:25:00"
+      "updated_at": "2026-11-26 19:29:52"
     }
   },
   "daemons": {
@@ -238,14 +238,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 2,
+      "calls_total": 3,
       "calls_by_provider": {
-        "cloud_test_gateway": 2
+        "cloud_test_gateway": 3
       },
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
-      "last_call_at": "2026-11-26T23:29:51.546632+00:00",
-      "errors_count": 2
+      "last_call_at": "2026-11-27T02:29:44.240966+00:00",
+      "errors_count": 3
     }
   },
   "statuses": {
