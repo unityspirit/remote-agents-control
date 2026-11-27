@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-27T16:03:23.720476+00:00",
+  "updated_at": "2026-11-27T16:06:31.196427Z",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
@@ -352,6 +352,15 @@
       "source_url": "",
       "summary": "Файл сохранён в Офис: 01_Необработанное/media/tg_811_photo.jpg\n\nРаспознано:\nНа изображении текст, версии, модели устройств, процессоры, ошибки, URL и настройки отсутствуют.",
       "updated_at": "2026-11-27T08:11:50.445702Z"
+    },
+    {
+      "id": "kb-bot-1795795586",
+      "issue": "Bot",
+      "category": "Проект: Главный Штаб",
+      "title": "Telegram вложение (Фото) от @unityspiritpartners",
+      "source_url": "",
+      "summary": "Файл сохранён в Офис: 01_Необработанное/media/tg_8278_photo.jpg\n\nРаспознано:\nНа изображении представлен скриншот поста в социальной сети (в темной теме), состоящий из текста и четырех блоков с графическими интерфейсами разработки и схем (интерфейс в стиле dark mode с цветными узлами, графиками и кодом). Внизу видна строка ввода «Reply to hendy__susilo» с иконками.\n\nТекст на изображении:\nAnthropic released 7 free GitHub resources for Claude Code:\n1. Playground — Team setups\n2. Skills — Create docs, PDFs & slides\n3. Plugins — Official extensions\n4. Launch Your Agent — Build & schedule agents\n5. ",
+      "updated_at": "2026-11-27T16:06:26.708304Z"
     }
   ]
 }
