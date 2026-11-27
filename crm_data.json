@@ -6,9 +6,9 @@
       "action": "Использовать 3-шаговую воронку Андрея Беловолова (JoinTECH): Бесплатный 40-мин разбор -> Платный Инженерный Аудит 6 узлов -> Внедрение пакетов (Сайты на чистом коде от 50к, CRM от 150к, Mini Apps от 50к, ИИ-агенты от 200к)",
       "confidence": 0.99,
       "domain": "business-model",
-      "evidence_count": 245,
+      "evidence_count": 246,
       "scope": "global",
-      "last_updated": "2026-11-26T22:30:28.301777"
+      "last_updated": "2026-11-27T01:13:29.570929"
     },
     {
       "id": "telegram-miniapp-over-labyrinths",
@@ -16,9 +16,9 @@
       "action": "Отказываться от 10-шаговых кнопочных ботов (теряющих 15-20% конверсии на каждом шаге) в пользу Telegram Mini Apps (Web UI в 2 клика) и единого Навигатора по каналу",
       "confidence": 0.99,
       "domain": "ux-conversion",
-      "evidence_count": 324,
+      "evidence_count": 326,
       "scope": "global",
-      "last_updated": "2026-11-26T22:30:28.302872"
+      "last_updated": "2026-11-27T01:13:29.573617"
     },
     {
       "id": "dan-martell-ai-leverage-matrix",
@@ -46,9 +46,9 @@
       "action": "Снимать Referrals (реферальные каталоги/рейтинги) и топ-ключи конкурентов через Similarweb, создавать быстрые отраслевые SEO-страницы на чистом коде (<1 сек на смартфонах)",
       "confidence": 0.99,
       "domain": "traffic-seo",
-      "evidence_count": 227,
+      "evidence_count": 228,
       "scope": "global",
-      "last_updated": "2026-11-26T22:30:28.304778"
+      "last_updated": "2026-11-27T01:13:29.576143"
     },
     {
       "id": "zero-cost-unlimited-content-factory",
@@ -86,9 +86,9 @@
       "action": "Выдерживать эстетику Kinfolk, спокойный экспертный тон, 60 FPS WebP видео-скролл и выдачу PDF лид-магнита через Telegram Mini App",
       "confidence": 0.99,
       "domain": "marketing",
-      "evidence_count": 60,
+      "evidence_count": 62,
       "scope": "project:Alberta",
-      "last_updated": "2026-11-26T16:30:12.106396"
+      "last_updated": "2026-11-27T01:13:29.578546"
     },
     {
       "id": "autonomous-task-resolution",
@@ -96,9 +96,9 @@
       "action": "Автономно выполнять, глубоко понимать контекст и выдавать конкретные интерактивные шаги",
       "confidence": 0.99,
       "domain": "agent-behavior",
-      "evidence_count": 353,
+      "evidence_count": 355,
       "scope": "global",
-      "last_updated": "2026-11-26T22:30:28.306921"
+      "last_updated": "2026-11-27T01:13:29.581380"
     },
     {
       "id": "task-custom-request",
@@ -171,7 +171,7 @@
       "last_updated": "2026-11-08T23:40:44.499129"
     }
   ],
-  "updated_at": "2026-11-27T08:12:03.655809Z",
+  "updated_at": "2026-11-27T08:13:30.680801+00:00",
   "knowledge_base": [
     {
       "id": "kb-bot-114",
