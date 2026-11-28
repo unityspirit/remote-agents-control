@@ -1,11 +1,11 @@
 {
   "version": "20.5",
-  "updated_at": "2026-11-28T02:53:24.261955+00:00",
+  "updated_at": "2026-11-28T02:55:26.535372+00:00",
   "members": {
     "unityspiritteam@gmail.com": {
       "audit_30d": {
-        "days_active": 29,
-        "days_to_30d_review": 1,
+        "days_active": 30,
+        "days_to_30d_review": 0,
         "active_minutes": 1.0,
         "active_hours": 0.02,
         "total_requests": 0,
@@ -131,8 +131,8 @@
     },
     "unityspiritpartners": {
       "audit_30d": {
-        "days_active": 29,
-        "days_to_30d_review": 1,
+        "days_active": 30,
+        "days_to_30d_review": 0,
         "active_minutes": 0.0,
         "active_hours": 0.0,
         "total_requests": 0,
@@ -141,9 +141,9 @@
         "nudges_shown": 0,
         "nudges_clicked": 0,
         "kpi_score": 0,
-        "verdict": "warning_replace",
-        "verdict_label": "⚠️ РИСК ЗАМЕНЫ (День 29/30 · низкий темп)",
-        "replacement_recommended": false,
+        "verdict": "replace",
+        "verdict_label": "🔴 КАНДИДАТ НА ЗАМЕНУ (30+ дней без продвижения)",
+        "replacement_recommended": true,
         "why_diagnosis": "Ещё не завершил стартовый GTA-опросник интересов — не выбрана личная миссия."
       },
       "metrics": {
