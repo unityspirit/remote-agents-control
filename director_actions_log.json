@@ -2,6 +2,19 @@
   "version": "29.0",
   "actions": [
     {
+      "id": "dirlog-1795838398019",
+      "ts": "2026-11-28T03:59:58.019626+00:00",
+      "time_local": "20:59:58",
+      "user_login": "unityspiritpartners",
+      "full_name": "Власлав (Главный Штаб)",
+      "bot_username": "Личный бот",
+      "director_name": "Тим",
+      "action_type": "media_saved",
+      "project": "Главный Штаб",
+      "summary": "Сохранено вложение @unityspiritpartners: 01_Необработанное\\media\\owner_pic.jpg",
+      "source": "telegram_bot"
+    },
+    {
       "id": "dirlog-1795838207776",
       "ts": "2026-11-28T03:56:47.776223+00:00",
       "time_local": "20:56:47",
@@ -1341,5 +1354,5 @@
       "source": "telegram_bot"
     }
   ],
-  "updated_at": "2026-11-28T03:56:47.776223+00:00"
+  "updated_at": "2026-11-28T03:59:58.019626+00:00"
 }
