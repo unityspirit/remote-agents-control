@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Syntex AI Studio — Global Spirit Group (Photo, Video, Audio, Chat, Docs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-void: #090b10;
+      --bg-panel: #111520;
+      --bg-card: #171c2b;
+      --bg-input: #0e121c;
+      --border: rgba(148, 163, 184, 0.16);
+      --border-focus: rgba(56, 189, 248, 0.55);
+      --accent-cyan: #38bdf8;
+      --accent-indigo: #6366f1;
+      --text-primary: #f1f5f9;
+      --text-muted: #94a3b8;
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --err: #f87171;
+      --r-lg: 16px;
+      --r-md: 12px;
+      --r-sm: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-void);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(60% 45% at 12% 0%, rgba(99, 102, 241, 0.14), transparent 70%),
+        radial-gradient(50% 40% at 92% 10%, rgba(56, 189, 248, 0.10), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .app-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 16px 20px 36px;
+    }
+
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(17, 21, 32, 0.88);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      margin-bottom: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan));
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.28);
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .brand p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-primary);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .pill.live::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+      box-shadow: 0 0 8px var(--ok);
+    }
+    .pill.offline::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warn);
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .sidebar {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .studio-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .studio-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 14px;
+      border-radius: var(--r-md);
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font: inherit;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .studio-btn:hover {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+    .studio-btn.active {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.22), rgba(56, 189, 248, 0.14));
+      border-color: var(--border-focus);
+      color: var(--text-primary);
+    }
+
+    .model-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .section-heading {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin: 0 0 4px;
+    }
+    .model-card {
+      padding: 11px 12px;
+      border-radius: var(--r-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-align: left;
+      color: var(--text-primary);
+      font: inherit;
+      width: 100%;
+    }
+    .model-card.active {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+    }
+    .model-card .m-title {
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .model-card .m-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent-cyan);
+      margin-top: 3px;
+      display: block;
+    }
+    .model-card .m-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .main-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .workbench {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 18px;
+      min-width: 0;
+    }
+    .panel h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .panel .sub {
+      margin: 0 0 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+    textarea, select, input[type="text"] {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 11px 13px;
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+    textarea:focus, select:focus, input[type="text"]:focus {
+      border-color: var(--accent-cyan);
+    }
+    textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .controls-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .upload-zone {
+      border: 1px dashed rgba(148, 163, 184, 0.35);
+      border-radius: var(--r-md);
+      padding: 12px;
+      background: rgba(14, 18, 28, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .upload-info {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .btn-secondary {
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: var(--r-sm);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primary {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: none;
+      border-radius: var(--r-md);
+      background: linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan));
+      color: #fff;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .presets-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .preset-chip {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .preset-chip:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    .stage {
+      min-height: 300px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .stage img, .stage video {
+      max-width: 100%;
+      max-height: 420px;
+      border-radius: var(--r-sm);
+      object-fit: contain;
+    }
+    .stage audio {
+      width: 100%;
+    }
+    .text-result {
+      width: 100%;
+      text-align: left;
+      white-space: pre-wrap;
+      font-size: 14px;
+      line-height: 1.6;
+      max-height: 400px;
+      overflow-y: auto;
+      color: var(--text-primary);
+    }
+    .meta-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--accent-cyan);
+      word-break: break-word;
+    }
+
+    .history-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 12px;
+    }
+    .hist-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hist-card .h-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hist-card .h-prompt {
+      font-size: 13px;
+      color: var(--text-primary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .remote-banner {
+      display: none;
+      padding: 12px 16px;
+      border-radius: var(--r-md);
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      font-size: 13px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .workspace-grid { grid-template-columns: 1fr; }
+      .workbench { grid-template-columns: 1fr; }
+      .studio-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .studio-btn {
+        width: auto;
+        white-space: nowrap;
+        flex: 0 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-logo">S</div>
+        <div>
+          <h1>Syntex AI Studio · GSG Edition</h1>
+          <p>Фото &amp; 4x Апскейл · Видео Veo/Kling · Озвучка &amp; Музыка · AI-Агенты · Документы</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span id="connPill" class="pill offline">Подключение...</span>
+        <span id="creditsPill" class="pill">Кредиты: —</span>
+        <a class="pill" href="https://t.me/unitybusinessbot" target="_blank" rel="noopener">Открыть в @unitybusinessbot</a>
+        <a class="pill" href="https://globalteampartners.github.io/remote-agents-control/" target="_blank" rel="noopener">Главный Офис</a>
+      </div>
+    </header>
+
+    <div id="remoteBanner" class="remote-banner">
+      Локальный сервер студии (<code id="apiOriginLabel"></code>) сейчас недоступен с этого устройства. Для генерации со смартфона в пути откройте <a href="https://t.me/unitybusinessbot" style="color:var(--accent-cyan)">@unitybusinessbot</a> и введите <code>/syntex</code> — там работают все те же модели и аккаунты команды.
+    </div>
+
+    <div class="workspace-grid">
+      <aside class="sidebar">
+        <div>
+          <p class="section-heading">Студии генерации</p>
+          <nav class="studio-nav" id="studioNav"></nav>
+        </div>
+        <div>
+          <p class="section-heading">Активная модель студии</p>
+          <div class="model-list" id="modelList"></div>
+        </div>
+      </aside>
+
+      <main class="main-col">
+        <section class="workbench">
+          <div class="panel">
+            <h2 id="wbTitle">Фото &amp; Апскейл</h2>
+            <p class="sub" id="wbSub">Создавайте визуалы, редактируйте фото по референсам или повышайте резкость в 2x–4x HD.</p>
+
+            <div class="presets-bar" id="presetsBar"></div>
+
+            <div class="form-group">
+              <label for="promptInput">Промпт или задача</label>
+              <textarea id="promptInput" placeholder="Опишите сцену, текст для озвучки, стиль саундтрека или запрос для документа..."></textarea>
+            </div>
+
+            <div class="controls-row">
+              <div class="form-group" style="margin-bottom:0">
+                <label for="aspectSelect">Формат / Соотношение</label>
+                <select id="aspectSelect">
+                  <option value="1:1">1:1 (Квадрат)</option>
+                  <option value="9:16">9:16 (Reels / Shorts)</option>
+                  <option value="16:9">16:9 (YouTube / Баннер)</option>
+                  <option value="4:5">4:5 (Пост)</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:0">
+                <label for="voiceOrDocSelect">Голос TTS / Формат файла</label>
+                <select id="voiceOrDocSelect">
+                  <option value="Kore">Голос Kore (Уверенный)</option>
+                  <option value="Aoede">Голос Aoede (Мягкий жен.)</option>
+                  <option value="Puck">Голос Puck (Динамичный)</option>
+                  <option value="Charon">Голос Charon (Глубокий)</option>
+                  <option value="pdf">Документ PDF</option>
+                  <option value="xlsx">Таблица Excel (XLSX)</option>
+                  <option value="pptx">Презентация PPTX</option>
+                  <option value="docx">Документ Word (DOCX)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="upload-zone">
+              <div class="upload-info" id="uploadInfo">Фото-референс (опционально, для Edit / Апскейла / Image-to-Video)</div>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <input type="file" id="refFileInput" accept="image/*" style="display:none" />
+                <button type="button" class="btn-secondary" id="pickFileBtn">Выбрать фото</button>
+                <button type="button" class="btn-secondary" id="clearFileBtn" style="display:none">Сбросить</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn-primary" id="runBtn">Запустить генерацию</button>
+          </div>
+
+          <div class="panel">
+            <h2>Результат генерации</h2>
+            <p class="sub">Готовые фото, MP4-видео, аудиодорожки WAV и документы сохраняются прямо в Офис.</p>
+            <div class="stage" id="outputStage">
+              <div style="color:var(--text-muted);font-size:14px;">Выберите студию, введите промпт (или выберите готовый шаблон Syntex Academy) и нажмите «Запустить генерацию».</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+            <div>
+              <h2 style="margin-bottom:2px;">История генераций студии</h2>
+              <p class="sub" style="margin:0;">Общие работы команды, доступные из Веб-студии и `@unitybusinessbot`</p>
+            </div>
+            <button type="button" class="btn-secondary" id="refreshHistoryBtn">Обновить ленту</button>
+          </div>
+          <div class="history-grid" id="historyGrid"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const apiBase = (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost")
+        ? window.location.origin
+        : "http://127.0.0.1:18799";
+
+      const fallbackCatalog = {
+        studios: [
+          { id: "images", title: "Фото & Апскейл", icon: "🖼️" },
+          { id: "video", title: "Видео & Reels AI", icon: "🎬" },
+          { id: "audio", title: "Аудио & Музыка / TTS", icon: "🎵" },
+          { id: "chat", title: "AI Чат & Агенты", icon: "🧠" },
+          { id: "docs", title: "Документы & Слайды", icon: "📄" },
+        ],
+        models: [
+          { id: "nano-banana-pro", studio: "images", name: "Nano Banana Pro (Gemini Image)", badge: "Photoreal · Multi-Photo", credits_cost: 4, desc: "Редактирование и генерация с сохранением черт лица." },
+          { id: "flux-cinema-pro", studio: "images", name: "Flux Cinema Pro", badge: "Poster · Ad Creative", credits_cost: 3, desc: "Рекламные обложки и визуалы 9:16 / 16:9 / 1:1." },
+          { id: "upscale-4x-hd", studio: "images", name: "Upscale 4x HD / Clarity", badge: "2x–4x Super-Res", credits_cost: 2, desc: "Повышение разрешения и резкости 2x–4x." },
+          { id: "veo-3.1-studio", studio: "video", name: "Google Veo 3.1 Studio", badge: "AI Video + Voice", credits_cost: 10, desc: "Кинематографичные Reels/Shorts с озвучкой." },
+          { id: "gemini-tts-pro", studio: "audio", name: "Gemini TTS Pro", badge: "Voiceover WAV", credits_cost: 2, desc: "Студийная озвучка голосами Kore, Aoede, Puck, Charon." },
+          { id: "syntex-music-suno", studio: "audio", name: "Syntex Music Synth", badge: "Soundtrack WAV", credits_cost: 3, desc: "Оригинальные фоновые треки для Reels." },
+          { id: "gemini-hydrogen", studio: "chat", name: "Gemini Hydrogen", badge: "Deep Strategy", credits_cost: 1, desc: "Стратегия, код и воронки." },
+          { id: "anthropic-pdf", studio: "docs", name: "Anthropic Skills Document", badge: "PDF / XLSX / PPTX", credits_cost: 2, desc: "Живые документы и таблицы с кириллицей." },
+        ],
+        academy_presets: [
+          { title: "🎬 Промо Reels 30–50", studio: "video", model: "veo-3.1-studio", prompt: "Вертикальный Reels 9:16 для женского клуба «Трансформация»: золотой свет, эстетика Kinfolk, тёплая озвучка про окружение и масштаб." },
+          { title: "🎵 Lo-Fi саундтрек", studio: "audio", model: "syntex-music-suno", prompt: "cinematic warm lofi ambient 92 bpm background for brand video" },
+          { title: "🎙️ Озвучка оффера", studio: "audio", model: "gemini-tts-pro", prompt: "Добро пожаловать в экосистему Global Spirit Group. За три минуты соберём ваш AI-офис и контент на месяц." },
+          { title: "📄 КП в PDF", studio: "docs", model: "anthropic-pdf", prompt: "Коммерческое предложение Global Spirit Agency + Syntex AI Studio" },
+        ],
+        history: [],
+      };
+
+      let catalog = fallbackCatalog;
+      let activeStudio = "images";
+      let activeModel = "nano-banana-pro";
+      let uploadedImageB64 = "";
+      let uploadedFileName = "";
+      let onlineApi = false;
+
+      const studioNav = document.getElementById("studioNav");
+      const modelList = document.getElementById("modelList");
+      const presetsBar = document.getElementById("presetsBar");
+      const historyGrid = document.getElementById("historyGrid");
+      const promptInput = document.getElementById("promptInput");
+      const aspectSelect = document.getElementById("aspectSelect");
+      const voiceOrDocSelect = document.getElementById("voiceOrDocSelect");
+      const runBtn = document.getElementById("runBtn");
+      const outputStage = document.getElementById("outputStage");
+      const connPill = document.getElementById("connPill");
+      const creditsPill = document.getElementById("creditsPill");
+      const remoteBanner = document.getElementById("remoteBanner");
+      const apiOriginLabel = document.getElementById("apiOriginLabel");
+
+      const studioMeta = {
+        images: ["Фото & 4x HD Апскейл", "Генерируйте новые изображения, редактируйте по фото-референсу или увеличивайте резкость 2x–4x."],
+        video: ["Видео & AI Reels (Veo / Kling)", "Создавайте MP4-ролики из текста или 1–4 фотографий с автоматической озвучкой Gemini TTS."],
+        audio: ["Аудио, Голос & Музыка", "Синтезируйте студийную озвучку текста или оригинальные музыкальные треки WAV."],
+        chat: ["AI Чат & Кастомные Агенты", "Переключайтесь между Gemini Hydrogen, Argon Fast, локальной Ollama и XML-агентами Anthropic."],
+        docs: ["Документы & Презентации", "Собирайте готовые PDF, Excel (XLSX), Word и PPTX презентации прямо в папку Офиса."],
+      };
+
+      function esc(str) {
+        return String(str || "").replace(/[&<>"']/g, s => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[s]));
+      }
+
+      function renderStudios() {
+        studioNav.innerHTML = "";
+        (catalog.studios || []).forEach(st => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "studio-btn" + (st.id === activeStudio ? " active" : "");
+          btn.textContent = `${st.icon}  ${st.title}`;
+          btn.onclick = () => {
+            activeStudio = st.id;
+            const firstM = (catalog.models || []).find(m => m.studio === activeStudio);
+            if (firstM) activeModel = firstM.id;
+            renderStudios();
+            renderModels();
+            const meta = studioMeta[activeStudio] || [st.title, ""];
+            document.getElementById("wbTitle").textContent = meta[0];
+            document.getElementById("wbSub").textContent = meta[1];
+          };
+          studioNav.appendChild(btn);
+        });
+      }
+
+      function renderModels() {
+        modelList.innerHTML = "";
+        const filtered = (catalog.models || []).filter(m => m.studio === activeStudio);
+        if (!filtered.some(m => m.id === activeModel) && filtered[0]) {
+          activeModel = filtered[0].id;
+        }
+        filtered.forEach(m => {
+          const card = document.createElement("button");
+          card.type = "button";
+          card.className = "model-card" + (m.id === activeModel ? " active" : "");
+          card.innerHTML = `
+            <span class="m-title"><span>${esc(m.name)}</span><span>${m.credits_cost} cr</span></span>
+            <span class="m-badge">${esc(m.badge)}</span>
+            <span class="m-desc">${esc(m.desc)}</span>
+          `;
+          card.onclick = () => {
+            activeModel = m.id;
+            renderModels();
+          };
+          modelList.appendChild(card);
+        });
+      }
+
+      function renderPresets() {
+        presetsBar.innerHTML = "";
+        (catalog.academy_presets || []).forEach(pr => {
+          const chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "preset-chip";
+          chip.textContent = pr.title;
+          chip.onclick = () => {
+            activeStudio = pr.studio;
+            activeModel = pr.model;
+            promptInput.value = pr.prompt;
+            renderStudios();
+            renderModels();
+          };
+          presetsBar.appendChild(chip);
+        });
+      }
+
+      function renderHistory() {
+        const items = catalog.history || [];
+        if (!items.length) {
+          historyGrid.innerHTML = '<div style="color:var(--text-muted);font-size:13px;">Пока нет записей генерации. Запустите первую выше.</div>';
+          return;
+        }
+        historyGrid.innerHTML = items.slice(0, 12).map(h => {
+          const fileUrl = h.file_url ? `${apiBase}${h.file_url}` : "";
+          const linkHtml = fileUrl ? `<a href="${esc(fileUrl)}" target="_blank" rel="noopener" style="color:var(--accent-cyan);font-size:12px;">Открыть: ${esc(h.file_name)}</a>` : "";
+          return `
+            <div class="hist-card">
+              <div class="h-top"><span>${esc(h.studio)} · ${esc(h.model)}</span><span>${h.ok ? "OK" : "ERR"}</span></div>
+              <div class="h-prompt">${esc(h.prompt)}</div>
+              <div style="font-size:11px;color:var(--text-muted);">${esc(h.engine_used || "")}</div>
+              ${linkHtml}
+            </div>
+          `;
+        }).join("");
+      }
+
+      function renderOutput(res) {
+        if (!res || (!res.ok && !res.text_output)) {
+          outputStage.innerHTML = `<div style="color:var(--err);font-weight:600;">Ошибка генерации</div><div class="text-result">${esc((res && (res.error || res.text_output)) || "Не удалось выполнить запрос.")}</div>`;
+          return;
+        }
+        const fUrl = res.history_entry && res.history_entry.file_url ? `${apiBase}${res.history_entry.file_url}` : "";
+        const fname = (res.history_entry && res.history_entry.file_name || "").toLowerCase();
+        let mediaHtml = "";
+        if (fUrl) {
+          if (fname.endsWith(".jpg") || fname.endsWith(".jpeg") || fname.endsWith(".png") || fname.endsWith(".webp")) {
+            mediaHtml = `<img src="${esc(fUrl)}" alt="Generated visual" /><a class="pill" href="${esc(fUrl)}" download="${esc(fname)}">Скачать изображение</a>`;
+          } else if (fname.endsWith(".mp4")) {
+            mediaHtml = `<video controls playsinline src="${esc(fUrl)}"></video><a class="pill" href="${esc(fUrl)}" download="${esc(fname)}">Скачать видео MP4</a>`;
+          } else if (fname.endsWith(".wav") || fname.endsWith(".mp3") || fname.endsWith(".ogg")) {
+            mediaHtml = `<audio controls src="${esc(fUrl)}"></audio><a class="pill" href="${esc(fUrl)}" download="${esc(fname)}">Скачать аудио</a>`;
+          } else {
+            mediaHtml = `<a class="pill" href="${esc(fUrl)}" download="${esc(fname)}" style="border-color:var(--accent-cyan)">Скачать готовый файл: ${esc(fname)}</a>`;
+          }
+        }
+        const txtHtml = res.text_output ? `<div class="text-result">${esc(res.text_output)}</div>` : "";
+        const warnHtml = !res.ok && res.error ? `<div style="color:var(--warn);font-size:13px;">${esc(res.error)}</div>` : "";
+        outputStage.innerHTML = `
+          <div class="meta-line">${esc(res.engine_used || activeModel)} · ${esc(res.duration_sec || 0)}s</div>
+          ${warnHtml}
+          ${mediaHtml}
+          ${txtHtml}
+        `;
+      }
+
+      async function loadCatalog() {
+        apiOriginLabel.textContent = apiBase;
+        try {
+          const resp = await fetch(`${apiBase}/api/syntex/catalog`, { cache: "no-store" });
+          if (!resp.ok) throw new Error("HTTP " + resp.status);
+          const data = await resp.json();
+          if (data && data.ok) {
+            catalog = data;
+            onlineApi = true;
+            connPill.className = "pill live";
+            connPill.textContent = "Студия активна (24/7)";
+            creditsPill.textContent = `GSG Pro · Кредитов использовано: ${data.user_prefs ? data.user_prefs.credits_used : 0}`;
+            remoteBanner.style.display = "none";
+          }
+        } catch (err) {
+          onlineApi = false;
+          connPill.className = "pill offline";
+          connPill.textContent = "Офлайн-превью";
+          remoteBanner.style.display = "block";
+        }
+        renderStudios();
+        renderModels();
+        renderPresets();
+        renderHistory();
+      }
+
+      document.getElementById("pickFileBtn").onclick = () => document.getElementById("refFileInput").click();
+      document.getElementById("refFileInput").onchange = ev => {
+        const file = ev.target.files && ev.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          uploadedImageB64 = String(reader.result || "");
+          uploadedFileName = file.name;
+          document.getElementById("uploadInfo").textContent = `Загружено: ${file.name} (${Math.round(file.size / 1024)} КБ)`;
+          document.getElementById("clearFileBtn").style.display = "inline-block";
+        };
+        reader.readAsDataURL(file);
+      };
+      document.getElementById("clearFileBtn").onclick = () => {
+        uploadedImageB64 = "";
+        uploadedFileName = "";
+        document.getElementById("refFileInput").value = "";
+        document.getElementById("uploadInfo").textContent = "Фото-референс (опционально, для Edit / Апскейла / Image-to-Video)";
+        document.getElementById("clearFileBtn").style.display = "none";
+      };
+
+      document.getElementById("refreshHistoryBtn").onclick = loadCatalog;
+
+      runBtn.onclick = async () => {
+        const prompt = promptInput.value.trim();
+        if (!prompt && activeModel !== "upscale-4x-hd") {
+          outputStage.innerHTML = '<div style="color:var(--warn)">Введите промпт или выберите шаблон выше.</div>';
+          return;
+        }
+        if (!onlineApi) {
+          outputStage.innerHTML = '<div style="color:var(--warn)">Локальный сервер студии сейчас не отвечает. Запустите команду <code>/syntex</code> в <a href="https://t.me/unitybusinessbot" style="color:var(--accent-cyan)">@unitybusinessbot</a>.</div>';
+          return;
+        }
+        runBtn.disabled = true;
+        runBtn.textContent = "Генерация...";
+        outputStage.innerHTML = '<div style="color:var(--accent-cyan)">Студия Syntex AI выполняет запрос... Это займёт 2–25 секунд.</div>';
+
+        const vd = voiceOrDocSelect.value;
+        const isDocFmt = ["pdf", "xlsx", "pptx", "docx"].includes(vd);
+        try {
+          const resp = await fetch(`${apiBase}/api/syntex/generate`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              studio: activeStudio,
+              model_id: activeModel,
+              prompt: prompt || "4x HD Enhance",
+              aspect: aspectSelect.value,
+              voice_name: isDocFmt ? "Kore" : vd,
+              doc_fmt: isDocFmt ? vd : "pdf",
+              image_base64: uploadedImageB64,
+              image_name: uploadedFileName,
+              user_login: "web_studio",
+              project_name: "Global Spirit Group",
+            }),
+          });
+          const res = await resp.json();
+          renderOutput(res);
+          await loadCatalog();
+        } catch (err) {
+          outputStage.innerHTML = `<div style="color:var(--err)">Ошибка соединения: ${esc(err.message || err)}</div>`;
+        } finally {
+          runBtn.disabled = false;
+          runBtn.textContent = "Запустить генерацию";
+        }
+      };
+
+      loadCatalog();
+    })();
+  </script>
+</body>
+</html>
