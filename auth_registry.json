@@ -70,8 +70,7 @@
       "created_at": "2026-10-30T05:36:47.209Z",
       "approved_at": "2026-11-03T22:53:08.168244+00:00",
       "owner_action_stamp": "pc-1793339556",
-      "pending_reset": null,
-      "verified_bot_chat_id": "1662528725"
+      "pending_reset": null
     },
     {
       "id": "REQ-388120",
@@ -192,5 +191,5 @@
       "pending_reset": null
     }
   ],
-  "updated_at": "2026-11-28T03:43:44.853467+00:00"
+  "updated_at": "2026-11-28T03:45:41.279144+00:00"
 }
