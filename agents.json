@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 20:47:54",
+  "updated": "2026-11-27 20:48:41",
   "system_agents": {
     "tim": {
       "name": "Директор Тим",
@@ -9,10 +9,10 @@
       "gives": "исполнительный отчёт + распределённые ТЗ отделам",
       "next": "strategist / marketer / developer / sales_closer / creative_producer / vibe_coder / researcher",
       "state": "online",
-      "tasks_completed": 121,
-      "last_task": "[Тим] Найди Syntex.ai",
+      "tasks_completed": 122,
+      "last_task": "[Тим] Изучи все задачи которые здесь ставили и спланируй создай себе список понимания что стоит тебе делать в первую очер",
       "last_project": "Traffic",
-      "updated_at": "2026-11-27 20:45:06"
+      "updated_at": "2026-11-27 20:48:31"
     },
     "strategist": {
       "name": "Стратег",
@@ -22,10 +22,10 @@
       "gives": "модель монетизации и финансовые метрики",
       "next": "tim",
       "state": "online",
-      "tasks_completed": 101,
-      "last_task": "[Тим] Найди Syntex.ai",
+      "tasks_completed": 102,
+      "last_task": "[Тим] Изучи все задачи которые здесь ставили и спланируй создай себе список понимания что стоит тебе делать в первую очер",
       "last_project": "Traffic",
-      "updated_at": "2026-11-27 20:45:06"
+      "updated_at": "2026-11-27 20:48:32"
     },
     "marketer": {
       "name": "Маркетолог & Трафик",
@@ -103,7 +103,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     },
     "researcher": {
       "name": "Разведчик",
@@ -114,9 +114,9 @@
       "next": "router",
       "state": "online",
       "tasks_completed": 105,
-      "last_task": "Фоновый обход TG-каналов (@vibecodings, @sysadminfuture, @ghostghettochild, @belovolov_andrey)",
-      "last_project": "Автономная_База_Знаний_Каналов",
-      "updated_at": "2026-11-27 20:05:46"
+      "last_task": "[Тим] Изучи все задачи которые здесь ставили и спланируй создай себе список понимания что стоит тебе делать в первую очер",
+      "last_project": "Traffic",
+      "updated_at": "2026-11-27 20:48:31"
     },
     "router": {
       "name": "Маршрутизатор",
@@ -129,7 +129,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     },
     "analyst": {
       "name": "Аналитик",
@@ -142,7 +142,7 @@
       "tasks_completed": 105,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     },
     "gatekeeper": {
       "name": "Контролёр",
@@ -155,7 +155,7 @@
       "tasks_completed": 199,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     },
     "scribe": {
       "name": "Архивариус",
@@ -168,7 +168,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     },
     "project_lead": {
       "name": "Ведущий агент проекта",
@@ -181,7 +181,7 @@
       "tasks_completed": 194,
       "last_task": "#9006: 🎬 Проверить Filmtools со смартфона (с Светланой)",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     },
     "human": {
       "name": "Власлав",
@@ -194,7 +194,7 @@
       "tasks_completed": 0,
       "last_task": "Готов к поручениям",
       "last_project": "Все проекты",
-      "updated_at": "2026-11-27 20:47:54"
+      "updated_at": "2026-11-27 20:48:41"
     }
   },
   "daemons": {
@@ -238,14 +238,14 @@
     "frontier_model": "auto-frontier",
     "economy_model": "auto-economy",
     "metrics": {
-      "calls_total": 1,
+      "calls_total": 2,
       "calls_by_provider": {
-        "cloud_test_gateway": 1
+        "cloud_test_gateway": 2
       },
       "last_provider": "cloud_test_gateway",
       "last_model": "openai-gateway",
-      "last_call_at": "2026-11-28T03:45:06.437263+00:00",
-      "errors_count": 1
+      "last_call_at": "2026-11-28T03:48:31.963947+00:00",
+      "errors_count": 2
     }
   },
   "statuses": {
