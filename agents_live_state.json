@@ -1,6 +1,6 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-28T03:54:51Z",
+  "generated_at": "2026-11-28T04:59:57Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
@@ -227,7 +227,7 @@
     "seo_agents_installed": 21,
     "local_seo_score": 98.0,
     "live_seo_score": 83.4,
-    "cloud_cycle": 172,
+    "cloud_cycle": 173,
     "open_issues": 0,
     "closed_issues": 30,
     "board_total_cards": 199,
@@ -720,11 +720,11 @@
       {
         "id": "agent_cloud",
         "label": "Cloud Agents 24/7",
-        "sub": "Цикл #172 · Hydrogen/Argon",
+        "sub": "Цикл #173 · Hydrogen/Argon",
         "tier": 3,
         "kind": "agent",
         "status": "active",
-        "metric": "Цикл #172",
+        "metric": "Цикл #173",
         "skills": [
           "cloud_agent_worker",
           "GitHub Actions",
@@ -799,8 +799,8 @@
       },
       {
         "id": "syntex_studio",
-        "label": "Syntex AI Studio",
-        "sub": "SYNTX Clone · Foto/Veo/Audio",
+        "label": "GlobalAI Studio",
+        "sub": "Render Cloud · Foto/Veo/Audio/BYOK",
         "tier": 3,
         "kind": "agent",
         "status": "active",
@@ -810,9 +810,10 @@
           "Upscale 4x HD",
           "Google Veo 3.1",
           "Gemini TTS Pro",
-          "Syntex Music Synth"
+          "GlobalAI Music Synth",
+          "Google Email BYOK + Ref"
         ],
-        "details": "Полный агрегатор в @unitybusinessbot (/syntex) и Web (:18799/syntex): изображения, 4x апскейл, Veo-ролики, озвучка, музыка и XML-агенты."
+        "details": "Агрегатор GlobalAI в @unitybusinessbot (/globalai), облаке Render (https://globalai-studio.onrender.com) и Web (:18799/globalai): фото, 4x апскейл, Veo-ролики, озвучка, музыка, PDF и реферальная программа."
       },
       {
         "id": "task_node_0",
@@ -1047,7 +1048,7 @@
       {
         "from": "dir_tim",
         "to": "syntex_studio",
-        "label": "/syntex · Фото/Видео/Звук",
+        "label": "/globalai · Фото/Видео/Звук",
         "active": true
       },
       {
