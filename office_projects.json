@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 21:45:53",
+  "updated": "2026-11-27 21:51:01",
   "projects": [
     {
       "folder": "12 IT Продуктов (Короче Капитан)",
@@ -167,6 +167,18 @@
       "state": "active",
       "files": 1009,
       "size_kb": 14224,
+      "last_change": "2026-11-27",
+      "lead_agent": "Autonomous Project Agent",
+      "next_who": "human",
+      "next_what": "Определить цель и ответственного.",
+      "open_cards": []
+    },
+    {
+      "folder": "GlobalAI_Studio",
+      "project": "GlobalAI_Studio",
+      "state": "active",
+      "files": 8,
+      "size_kb": 117,
       "last_change": "2026-11-27",
       "lead_agent": "Autonomous Project Agent",
       "next_who": "human",
