@@ -1,16 +1,16 @@
 {
   "schema_version": "34.7",
-  "generated_at": "2026-11-28T02:38:35Z",
+  "generated_at": "2026-11-28T03:54:51Z",
   "repos": {
     "primary": "GlobalTeamPartners/remote-agents-control",
     "mirror": "unityspirit/remote-agents-control"
   },
   "user_counts": {
-    "vlaslav": 174,
+    "vlaslav": 175,
     "alberta": 33,
     "yura": 2,
     "true1team": 9,
-    "tatiana": 13,
+    "tatiana": 12,
     "dominicana": 5,
     "dima": 3,
     "svetlana": 2,
@@ -227,7 +227,7 @@
     "seo_agents_installed": 21,
     "local_seo_score": 98.0,
     "live_seo_score": 83.4,
-    "cloud_cycle": 170,
+    "cloud_cycle": 172,
     "open_issues": 0,
     "closed_issues": 30,
     "board_total_cards": 199,
@@ -586,21 +586,21 @@
   ],
   "agent_task_counts": {
     "agent_seo": {
-      "total": 28,
+      "total": 27,
       "active": 1,
-      "done": 26,
+      "done": 25,
+      "attention": 1
+    },
+    "agent_traffic": {
+      "total": 31,
+      "active": 0,
+      "done": 30,
       "attention": 1
     },
     "agent_store": {
       "total": 21,
       "active": 0,
       "done": 20,
-      "attention": 1
-    },
-    "agent_traffic": {
-      "total": 30,
-      "active": 0,
-      "done": 29,
       "attention": 1
     },
     "agent_research": {
@@ -720,11 +720,11 @@
       {
         "id": "agent_cloud",
         "label": "Cloud Agents 24/7",
-        "sub": "Цикл #170 · Hydrogen/Argon",
+        "sub": "Цикл #172 · Hydrogen/Argon",
         "tier": 3,
         "kind": "agent",
         "status": "active",
-        "metric": "Цикл #170",
+        "metric": "Цикл #172",
         "skills": [
           "cloud_agent_worker",
           "GitHub Actions",
@@ -796,6 +796,23 @@
           "seo-schema"
         ],
         "details": "Развивает конвейер 12 Telegram Mini Apps, каталог GlobalFilms и 30 макроэкономических ИИ-навыков."
+      },
+      {
+        "id": "syntex_studio",
+        "label": "Syntex AI Studio",
+        "sub": "SYNTX Clone · Foto/Veo/Audio",
+        "tier": 3,
+        "kind": "agent",
+        "status": "active",
+        "metric": "5 студий · 13 моделей",
+        "skills": [
+          "Nano Banana Pro",
+          "Upscale 4x HD",
+          "Google Veo 3.1",
+          "Gemini TTS Pro",
+          "Syntex Music Synth"
+        ],
+        "details": "Полный агрегатор в @unitybusinessbot (/syntex) и Web (:18799/syntex): изображения, 4x апскейл, Veo-ролики, озвучка, музыка и XML-агенты."
       },
       {
         "id": "task_node_0",
@@ -1025,6 +1042,12 @@
         "from": "dir_tim",
         "to": "agent_apps",
         "label": "Продукты & Витрины",
+        "active": true
+      },
+      {
+        "from": "dir_tim",
+        "to": "syntex_studio",
+        "label": "/syntex · Фото/Видео/Звук",
         "active": true
       },
       {
@@ -1573,6 +1596,52 @@
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
+      "id": "GH-137",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Тим] Изучи все задачи которые здесь ставили и спланируй создай себе список понимания что стоит тебе делать в первую очер | P",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/137",
+      "target_url": "https://youtu.be/NxTsA72O5x0?is=s-V7foF6lqFoaocy",
+      "project": "Traffic",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_traffic",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-content"
+      ],
+      "result": "GitHub Issue #137 · Выполнено Советом ИИ",
+      "updated_at": "2026-11-28T03:48:43Z",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
+    },
+    {
+      "id": "GH-136",
+      "source": "telegram_director_issue",
+      "title": "TIM: [Тим] Найди Syntex.ai | PROJ: Traffic",
+      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/136",
+      "target_url": "",
+      "project": "Traffic",
+      "status": "done",
+      "priority": "normal",
+      "agent_id": "agent_traffic",
+      "skills": [
+        "seo-audit",
+        "seo-technical",
+        "cro",
+        "copywriting",
+        "seo-ecommerce"
+      ],
+      "result": "GitHub Issue #136 · Выполнено Советом ИИ",
+      "updated_at": "2026-11-28T03:45:17Z",
+      "user_key": "vlaslav",
+      "user_label": "👑 Власлав (Штаб)",
+      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
+    },
+    {
       "id": "GH-135",
       "source": "telegram_director_issue",
       "title": "TIM: [Тим] Установи 7 free github repos for us | PROJ: Главный Штаб",
@@ -1984,52 +2053,6 @@
       "updated_at": "2026-11-26T07:27:28Z",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
-    },
-    {
-      "id": "GH-117",
-      "source": "telegram_director_issue",
-      "title": "TIM: [Тим] https://www.facebook.com/share/r/1J1RAhAG8v/ | PROJ: Главный Штаб",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/117",
-      "target_url": "https://www.facebook.com/share/r/1J1RAhAG8v/",
-      "project": "Главный Штаб",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_seo",
-      "skills": [
-        "seo-audit",
-        "seo-technical",
-        "cro",
-        "copywriting",
-        "seo-ecommerce"
-      ],
-      "result": "GitHub Issue #117 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-26T05:22:52Z",
-      "user_key": "vlaslav",
-      "user_label": "👑 Власлав (Штаб)",
-      "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
-    },
-    {
-      "id": "GH-116",
-      "source": "telegram_director_issue",
-      "title": "TIM: [Аршак] /* ==========================================================\n   Global Spirit Group — Mobile Responsiveness Patch  |",
-      "url": "https://github.com/GlobalTeamPartners/remote-agents-control/issues/116",
-      "target_url": "",
-      "project": "Татьяна tentorium.ru",
-      "status": "done",
-      "priority": "normal",
-      "agent_id": "agent_traffic",
-      "skills": [
-        "seo-audit",
-        "seo-technical",
-        "cro",
-        "copywriting",
-        "seo-ecommerce"
-      ],
-      "result": "GitHub Issue #116 · Выполнено Советом ИИ",
-      "updated_at": "2026-11-25T21:05:57Z",
-      "user_key": "tatiana",
-      "user_label": "🐝 Татьяна",
       "action_plan_ru": "Выполнено и учтено в системе знаний Офиса (скиллы: seo-audit, seo-technical, cro)."
     },
     {
@@ -2655,9 +2678,9 @@
     {
       "id": "CARD-136",
       "source": "office_board",
-      "title": "https://youtube.com/shorts/mjFc8P5no8o?is=r2zw2yXqiOFp_rE- study and learn how we make money next week for sure I can invest my ti",
-      "url": "https://youtube.com/shorts/mjFc8P5no8o?is=r2zw2yXqiOFp_rE-",
-      "project": "12 IT Продуктов (Короче Капитан)",
+      "title": "TIM: [Тим] Найди Syntex.ai",
+      "url": "",
+      "project": "Traffic",
       "status": "done",
       "priority": "done",
       "agent_id": "agent_research",
@@ -2669,8 +2692,8 @@
         "pricing"
       ],
       "action_plan_ru": "AI PNG Print-on-Demand интегрирован в матрицу продуктов HOPE_SYNTAX_MOBILE_APP_BUILDER_SPEC_157_155.md.",
-      "result": "Статус на доске: done (owner=agent)",
-      "updated_at": "2026-11-26 09:04:17",
+      "result": "Статус на доске: done (owner=gatekeeper)",
+      "updated_at": "2026-11-27 20:45:08",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)"
     },
@@ -2743,9 +2766,9 @@
     {
       "id": "CARD-137",
       "source": "office_board",
-      "title": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ learn from every tool how can we use it for our needs.",
-      "url": "https://youtube.com/shorts/L_KAd2sl9RY?is=9tJYjcsCoAJ0HRKJ",
-      "project": "AI Skills & Nobel Stabilization",
+      "title": "TIM: [Тим] Изучи все задачи которые здесь ставили и спланируй создай себе список понимания что стоит тебе делать в первую очер",
+      "url": "",
+      "project": "Traffic",
       "status": "done",
       "priority": "done",
       "agent_id": "agent_research",
@@ -2757,8 +2780,8 @@
         "pricing"
       ],
       "action_plan_ru": "Git worktrees + самообучающиеся скиллы + DeepSeek API роутинг интегрированы в DEEPSEEK_8LAYER_SCION_HARNESS_BLUEPRINT_2026.md.",
-      "result": "Статус на доске: done (owner=agent)",
-      "updated_at": "2026-11-26 09:04:17",
+      "result": "Статус на доске: done (owner=gatekeeper)",
+      "updated_at": "2026-11-27 20:48:34",
       "user_key": "vlaslav",
       "user_label": "👑 Власлав (Штаб)"
     },
